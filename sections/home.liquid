@@ -1,14 +1,19 @@
-<div class="bg-black min-h-screen bg-black flex justify-center items-center">
-    <div class="flex flex-col justify-center items-center">
-        <h1 class="home__title text-white text-8xl">{{ section.settings.title }}</h1>
-        <div class="text-[40px] text-white">{{ section.settings.content }}</div>
-    </div>
+<div class="bg-black min-h-[70vh] bg-black flex justify-center items-center">
+  <div class="flex flex-col justify-center items-center">
+    <h1 class="home__title text-white text-[130px] tracking-tight leading-tight">{{ section.settings.title }}</h1>
+    <div class="text-[50px] text-white font-[100] leading-tight">{{ section.settings.content }}</div>
+  </div>
 </div>
 
 <style>
-    .home__title strong {
-        font-weight: 500;
-    }
+  .home__title strong {
+    font-weight: 400;
+    line-height: 110px;
+  }
+  .home__title p {
+    font-weight: 100;
+    line-height: 40px;
+  }
 
 </style>
 
