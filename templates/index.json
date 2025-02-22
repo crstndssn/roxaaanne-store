@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "hero": {
       "type": "home",
@@ -25,8 +25,8 @@
         "creator_DKj7qd"
       ],
       "settings": {
-        "title": "<p><strong>roxaaanne</strong> universo creativo</p>",
-        "content": "<p>descubre y crea el arte del futuro</p>"
+        "title": "<p><strong>roxaaanne</strong></p>",
+        "content": "<p>universo creativo</p>"
       }
     }
   },
