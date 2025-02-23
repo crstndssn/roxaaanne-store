@@ -1,11 +1,26 @@
-<div class="bg-black min-h-screen bg-black flex justify-center items-center">
-  <div class="flex flex-col justify-center items-center">
-    <h1 class="home__title text-white text-8xl">{{ section.settings.title }}</h1>
-    <div class="text-[40px] text-white">{{ section.settings.content }}</div>
+<div class="bg-black bg-black flex flex-col justify-center items-center">
+  <div class="flex flex-col justify-center items-center mt-32">
+    <h1 class="text-[50px] text-white font-[100] leading-tight">{{ section.settings.title }}</h1>
+    <div class="text-[50px] text-white font-[100] leading-tight">{{ section.settings.content }}</div>
   </div>
-  {% for block in settings.blocks %}
 
-  {% endfor %}
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mt-20">
+    {% for block in section.blocks %}
+      <a
+        class="text-white text-[23px] flex flex-col items-center gap-5 w-[300px] p-6 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20"
+        href="{{ block.settings.creator__link }}"
+        class="text-white">
+        <div class="w-[200px] h-[200px] rounded-full overflow-hidden">
+          <img
+            class="w-full h-full object-cover"
+            src="{{ block.settings.creator__image | image_url: width: master }}"
+            alt="">
+        </div>
+        {{ block.settings.creator__name }}
+      </a>
+    {% endfor %}
+  </div>
+
 </div>
 
 <style>
@@ -17,7 +32,7 @@
 
 {% schema %}
   {
-    "name": "Home",
+    "name": "Creators",
     "settings": [
       {
         "type": "richtext",
