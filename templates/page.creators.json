@@ -8,30 +8,56 @@
  * ------------------------------------------------------------
  */
  {
-    "sections": {
-      "hero": {
-        "type": "creators",
-        "blocks": {
-          "creator_DKj7qd": {
-            "type": "creator",
-            "settings": {
-              "creator__image": "shopify://shop_images/IMG_4805.jpg",
-              "creator__name": "cristian dussán",
-              "creator__link": "shopify://pages/cristian-dussan"
-            }
+  "sections": {
+    "hero": {
+      "type": "creators",
+      "blocks": {
+        "creator_DKj7qd": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/IMG_4805.jpg",
+            "creator__name": "cristian dussán",
+            "creator__link": "shopify://pages/cristian-dussan"
           }
         },
-        "block_order": [
-          "creator_DKj7qd"
-        ],
-        "settings": {
-          "title": "<p><strong>roxaaanne</strong> universo creativo</p>",
-          "content": "<p>descubre y crea el arte del futuro</p>"
+        "creator_Ct7WPf": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/centro31.jpg",
+            "creator__name": "Alejandro Ospina",
+            "creator__link": "shopify://pages/cristian-dussan"
+          }
+        },
+        "creator_nj9CN7": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/centro55.jpg",
+            "creator__name": "Felipe Quien",
+            "creator__link": "shopify://pages/cristian-dussan"
+          }
+        },
+        "creator_4jPpTJ": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/centro60.jpg",
+            "creator__name": "Camila Diaz",
+            "creator__link": ""
+          }
         }
+      },
+      "block_order": [
+        "creator_DKj7qd",
+        "creator_Ct7WPf",
+        "creator_nj9CN7",
+        "creator_4jPpTJ"
+      ],
+      "settings": {
+        "title": "",
+        "content": "<p>descubre y crea el arte del futuro</p>"
       }
-    },
-    "order": [
-      "hero"
-    ]
-  }
-  
+    }
+  },
+  "order": [
+    "hero"
+  ]
+}
