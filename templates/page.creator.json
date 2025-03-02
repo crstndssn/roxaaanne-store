@@ -9,29 +9,12 @@
  */
  {
     "sections": {
-      "hero": {
-        "type": "home",
-        "blocks": {
-          "creator_DKj7qd": {
-            "type": "creator",
-            "settings": {
-              "creator__image": "shopify://shop_images/IMG_4805.jpg",
-              "creator__name": "cristian dussán",
-              "creator__link": "shopify://pages/cristian-dussan"
-            }
-          }
-        },
-        "block_order": [
-          "creator_DKj7qd"
-        ],
-        "settings": {
-          "title": "<p><strong>roxaaanne</strong> universo creativo</p>",
-          "content": "<p>descubre y crea el arte del futuro</p>"
-        }
+      "creator": {
+        "type": "creator"
       }
     },
     "order": [
-      "hero"
+      "creator"
     ]
   }
   
