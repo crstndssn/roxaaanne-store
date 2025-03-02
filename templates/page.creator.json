@@ -7,31 +7,40 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "creator": {
       "type": "creator",
       "blocks": {
+        "products_eq7b9g": {
+          "type": "products",
+          "settings": {
+            "title": "eventos",
+            "description": "",
+            "content": "eventos"
+          }
+        },
         "blog_Ja6ate": {
           "type": "blog",
           "settings": {
             "title": "imágenes",
             "description": "",
-            "content": "noticias"
+            "content": "alterocio"
           }
         },
-        "products_eq7b9g": {
-          "type": "products",
+        "blog_yXpdaC": {
+          "type": "blog",
           "settings": {
-            "title": "Eventos",
+            "title": "películas",
             "description": "",
-            "content": "eventos"
+            "content": "peliculas"
           }
         }
       },
       "block_order": [
+        "products_eq7b9g",
         "blog_Ja6ate",
-        "products_eq7b9g"
+        "blog_yXpdaC"
       ],
       "settings": {}
     }
