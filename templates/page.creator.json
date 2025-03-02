@@ -8,13 +8,35 @@
  * ------------------------------------------------------------
  */
  {
-    "sections": {
-      "creator": {
-        "type": "creator"
-      }
-    },
-    "order": [
-      "creator"
-    ]
-  }
-  
+  "sections": {
+    "creator": {
+      "type": "creator",
+      "blocks": {
+        "blog_Ja6ate": {
+          "type": "blog",
+          "settings": {
+            "title": "imágenes",
+            "description": "",
+            "content": "noticias"
+          }
+        },
+        "products_eq7b9g": {
+          "type": "products",
+          "settings": {
+            "title": "Eventos",
+            "description": "",
+            "content": "eventos"
+          }
+        }
+      },
+      "block_order": [
+        "blog_Ja6ate",
+        "products_eq7b9g"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "creator"
+  ]
+}

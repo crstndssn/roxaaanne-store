@@ -1,38 +1,134 @@
-<div>
-  <div>
-    <div>
-      <img src="" alt="">
+<div class="container mx-auto px-10 md:px-0">
+  <div class="flex justify-center items-center flex-col gap-12 md:flex-row">
+    <div class="w-full flex justify-center md:w-1/3">
+      <div class="w-[300px] h-[300px] rounded-full overflow-hidden md:mt-12">
+        <img
+          class="w-full h-full object-cover"
+          src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/IMG_4805.jpg?v=1739837030"
+          alt="">
+      </div>
     </div>
-    <div>
-      <h1>cristian dussan</h1>
-      <p>artesano de portales a otras dimensiones visuales, auditivas y binarias, hace películas caseras para todo tipo de criaturas extrañas, lo puedes encontrar al lado de la última cruz del sur, acá puedes nadar en su mente</p>
-    </div>
-  </div>
-  <div>
-    <h2>
-      productos
-    </h2>
-    <div>
-      lista de productos             
-
-        (posibles iniciales productos)
-        -ropa (averiguar con Natalia los busos, camisetas)
-        - fotografias (averiguar primate fotografias)
-        - chocolate (averiguar con )
-        - concierto (Alejo, eventos)
-    </div>
-  </div>
-  <div>
-    <h2>
-      imagenes / peliculas / artículos [blog]
-    </h2>
-    <div>
-      lista de productos             
-
-        (posibles iniciales productos)
-        -ropa (averiguar con Natalia los busos, camisetas)
-        - fotografias (averiguar primate fotografias)
-        - chocolate (averiguar con )
+    <div class="mt-8 text-center">
+      <h1 class="text-white text-[40px] md:text-[80px] tracking-[-1px] md:tracking-[-2px] font-[400]">cristian dussán</h1>
+      <p class="text-2xl md:text-4xl font-[200]">artesano de portales a otros universos, hace películas caseras para todo tipo de criaturas extrañas. lo puedes encontrar al lado de la última cruz del sur, acá puedes nadar en su mente</p>
     </div>
   </div>
 </div>
+
+
+<div class="custom-blocks flex flex-col overflow-x-hidden pl-8">
+  {% for block in section.blocks %}
+    <div class="custom-block w-full mt-12">
+      <h2 class="text-3xl font-[400] mb-4 text-white">{{ block.settings.title }}</h2>
+      <p class="text-xl mb-4 text-white">{{ block.settings.description }}</p>
+
+      {% if block.type == "products" %}
+        {% if block.settings.content != blank %}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-x-scroll mr-8">
+            {% for product in block.settings.content.products %}
+              <a href="{{ product.url }}" class="">
+                <img
+                  src="{{ product.featured_image | img_url: 'master' }}"
+                  alt="{{ product.title }}"
+                  class="w-full h-auto rounded">
+
+                <div class="flex justify-between">
+                  <h3 class="mt-2 font-semibold text-white">{{ product.title }}</h3>
+                  <p class="text-gray-700 text-white">{{ product.price | money }}</p>
+                </div>
+
+              </a>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="text-gray-500">No hay productos seleccionados.</p>
+        {% endif %}
+
+
+      {% elsif block.type == "blog" %}
+        {% if block.settings.content != blank %}
+          <div class="flex md:grid flex-nowrap grid-cols-1 gap-4 mt-4 overflow-x-scroll pb-4 pr-8">
+            {% for article in block.settings.content.articles %}
+              <a href="{{ article.url }}" class="aa {% if block.settings.title == 'películas' %}border boder-white border-2 rounded-xl{% endif %}">
+
+                <div class="flex min-w-[300px] max-h-[200px] overflow-hidden rounded-xl">
+                  <img
+                    src="{{ article.image | img_url: 'master' }}"
+                    alt="{{ article.title }}"
+                    class="w-full h-auto object-cover object-center">
+                </div>
+                <h3 class="mt-2 font-semibold text-white hidden">{{ article.title }}</h3>
+                <p class="text-gray-500 hidden">Por {{ article.author }}</p>
+              </a>
+
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="text-gray-500">No hay artículos seleccionados.</p>
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Custom Blocks",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "products",
+        "name": "Productos",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Productos"
+          }, {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          }, {
+            "type": "collection",
+            "id": "content",
+            "label": "Lista de productos"
+          }
+        ]
+      }, {
+        "type": "blog",
+        "name": "Blog",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Título",
+            "default": "Imágenes / Películas / Artículos"
+          }, {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          }, {
+            "type": "blog",
+            "id": "content",
+            "label": "Seleccionar Blog"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Sección de Bloques",
+        "category": "Custom",
+        "blocks": [
+          {
+            "type": "products"
+          }, {
+            "type": "blog"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
