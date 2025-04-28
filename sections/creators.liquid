@@ -1,16 +1,11 @@
 <div class="bg-black bg-black flex flex-col justify-center items-center">
-  <div class="flex flex-col justify-center items-center mt-32">
-    <h1 class="text-[50px] text-white font-[100] leading-tight">{{ section.settings.title }}</h1>
-    <div class="text-[33px] md:text-[50px] text-white font-[100] leading-tight text-center">{{ section.settings.content }}</div>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-20">
+  <div class="container mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-20">
     {% for block in section.blocks %}
       <a
-        class="text-white text-[23px] flex flex-col items-center gap-5 w-[300px] p-6 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20"
+        class="text-white text-[23px] flex flex-col items-center gap-5 w-[300px] px-6 py-20 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20"
         href="{{ block.settings.creator__link }}"
         class="text-white">
-        <div class="w-[200px] h-[200px] rounded-full overflow-hidden">
+        <div class="w-[150px] h-[150px] rounded-full overflow-hidden mb-5">
           <img
             class="w-full h-full object-cover"
             src="{{ block.settings.creator__image | image_url: width: master }}"

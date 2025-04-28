@@ -1,6 +1,12 @@
+<style>
+  * {
+    color: white;
+  }
+</style>
+
 <product-info
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="bg-black section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
   data-update-url="true"
@@ -250,7 +256,7 @@
                       >
                     </span>
                   </label>
-                  <div class="price-per-item__container">
+                  <div class="price-per-item__container bg-white">
                     <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                       <button class="quantity__button" name="minus" type="button">
                         <span class="visually-hidden">
