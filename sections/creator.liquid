@@ -2,15 +2,17 @@
   <div class="flex justify-center items-center flex-col gap-12 md:flex-col">
     <div class="w-full flex justify-center md:w-1/3">
       <div class="w-[170px] h-[170px] rounded-full overflow-hidden md:mt-12">
-        <img
-          class="w-full h-full object-cover"
-          src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/IMG_4805.jpg?v=1739837030"
-          alt="">
+        {% if section.settings.image %}
+          <img
+            class="w-full h-full object-cover"
+            src="{{ section.settings.image | image_url }}"
+            alt="{{ section.settings.name | escape }}">
+        {% endif %}
       </div>
     </div>
     <div class="mt-2 text-center flex flex-col justifu-center items-center">
-      <h1 class="text-white text-[40px] md:text-[40px] tracking-[-1px] md:tracking-[-2px] font-[300]">cristian dussán</h1>
-      <p class="w-1/3 text-xl md:text-3xl font-[100]">artesano de portales a otros universos, hace películas caseras para todo tipo de criaturas extrañas. lo puedes encontrar al lado de la última cruz del sur, acá puedes nadar en su mente</p>
+      <h1 class="text-white text-[40px] md:text-[40px] tracking-[-1px] md:tracking-[-2px] font-[300]">{{ section.settings.name }}</h1>
+      <p class="w-1/3 text-xl md:text-3xl font-[100]">{{ section.settings.description }}</p>
     </div>
   </div>
 </div>
@@ -27,7 +29,22 @@
 {% schema %}
   {
     "name": "Custom Blocks",
-    "settings": [],
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Imagen"
+      }, {
+        "type": "text",
+        "id": "name",
+        "label": "Nombre",
+        "default": "Nombre de ejemplo"
+      }, {
+        "type": "richtext",
+        "id": "description",
+        "label": "Descripción"
+      }
+    ],
     "blocks": [
       {
         "type": "products",
