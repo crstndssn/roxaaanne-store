@@ -7,37 +7,40 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
-    "sections": {
-      "creator": {
-        "type": "creator",
-        "blocks": {
-          "blog_Ja6ate": {
-            "type": "blog",
-            "settings": {
-              "title": "imágenes",
-              "description": "",
-              "content": "noticias"
-            }
-          },
-          "products_eq7b9g": {
-            "type": "products",
-            "settings": {
-              "title": "Eventos",
-              "description": "",
-              "content": "eventos"
-            }
+{
+  "sections": {
+    "creator": {
+      "type": "creator",
+      "blocks": {
+        "blog_Ja6ate": {
+          "type": "blog",
+          "settings": {
+            "title": "imágenes",
+            "description": "",
+            "content": "noticias"
           }
         },
-        "block_order": [
-          "blog_Ja6ate",
-          "products_eq7b9g"
-        ],
-        "settings": {}
+        "products_eq7b9g": {
+          "type": "products",
+          "settings": {
+            "title": "Eventos",
+            "description": "",
+            "content": "eventos"
+          }
+        }
+      },
+      "block_order": [
+        "blog_Ja6ate",
+        "products_eq7b9g"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/felipe-quien.jpg",
+        "name": "felipe quien",
+        "description": "<p>musico, director, orquesta, profesor</p>"
       }
-    },
-    "order": [
-      "creator"
-    ]
-  }
-  
+    }
+  },
+  "order": [
+    "creator"
+  ]
+}
