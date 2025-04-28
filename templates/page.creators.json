@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "hero": {
       "type": "creators",
@@ -23,7 +23,7 @@
         "creator_Ct7WPf": {
           "type": "creator",
           "settings": {
-            "creator__image": "shopify://shop_images/centro31.jpg",
+            "creator__image": "shopify://shop_images/000006200011.jpg",
             "creator__name": "Alejandro Ospina",
             "creator__link": "shopify://pages/cristian-dussan"
           }
