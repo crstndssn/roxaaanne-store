@@ -7,7 +7,7 @@
     </div>
     <div class="w-[800px] mt-1 h-full text-black flex flex-wrap justify-center items-center gap-x-10">
       <p class="text-[70px] leading-[50px]">Gabriela Ponce</p>
-      <p class="text-[70px] leading-[50px]">Pedro Bonfim</p>
+      <p class="text-[70px] leading-[50px]">San Pedro Bonfim</p>
       <p class="text-[50px] leading-[50px]">Camila Noches</p>
       <p class="text-[50px] leading-[50px]">Los Perros Magneticos</p>
       <p class="text-[50px] leading-[50px]">Pechan Project</p>
@@ -38,8 +38,14 @@
     </div>
   </div>
 
-  <div class="description flex justify-center py-40">
-    <h1 class="text-[250px] text-white flex">ROXY
+  <div class="flex flex-col justify-center py-40">
+
+  
+  
+
+
+  <div class="description flex justify-center">
+    <h1 class="text-[250px] leading-[200px] text-white flex">ROXY
       <span class="opacity-40">FEST</span>
     </h1>
   </div>
@@ -47,7 +53,7 @@
 
 <product-info
 id="MainProduct-{{ section.id }}"
-class="bg-red-500 section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+class="bg-transparent section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
 data-section="{{ section.id }}"
 data-product-id="{{ product.id }}"
 data-update-url="true"
@@ -93,7 +99,7 @@ data-url="{{ product.url }}"
 {%- endif -%}
 
 {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-<div class="page-width">
+<div class="flex justify-center">
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <section
@@ -168,7 +174,7 @@ data-url="{{ product.url }}"
                     >
                   </span>
                 </label>
-                <div class="price-per-item__container bg-white">
+                <div class="price-per-item__container bg-transparent">
                   <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                     <button class="quantity__button" name="minus" type="button">
                       <span class="visually-hidden">
@@ -421,9 +427,18 @@ data-url="{{ product.url }}"
     </modal-dialog>
   {%- endfor -%}
 
+  
+
 </div>
 </product-info>
-
+<div class="description flex justify-center">
+    <h1 class="text-[45px] leading-[30px] text-white flex">
+        organiza
+        LACRA y
+        CEIBA
+    </h1>
+  </div>
+</div>
   <div class="sol min-h-[500px] pt-4 flex flex-col justify-end items-center text-black">
     <div class="w-[800px] mt-2 text-[#860D0D] flex flex-wrap justify-center items-center gap-x-7">
       <div class="flex justify-center items-center gap-x-10">
@@ -446,6 +461,11 @@ data-url="{{ product.url }}"
 </div>
 
 {% style %}
+
+.shopify-payment-button button {
+    width: 300px;
+    background-color: black !important;
+}
 
     /* * {
         color: white !important;
