@@ -9,17 +9,15 @@
         </div>
       {%- when 'featured_image' -%}
         {%- if article.image -%}
-
-            <div class="w-full h-[470px] bg-gray-100 overflow-hidden flex items-center justify-center">
-                <img
-                  class="w-full"
-                  src="{{ article.image | image_url: width: master }}"
-                  width="{{ article.image.width }}"
-                  height="{{ article.image.height }}"
-                  alt="{{ article.image.alt | escape }}">
-              </div>
+          <div class="w-full h-[470px] bg-gray-100 overflow-hidden flex items-center justify-center">
+            <img
+              class="w-full"
+              src="{{ article.image | image_url: width: master }}"
+              width="{{ article.image.width }}"
+              height="{{ article.image.height }}"
+              alt="{{ article.image.alt | escape }}">
+          </div>
         {%- endif -%}
-
       {%- when 'title' -%}
         <header class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}" {{ block.shopify_attributes }}>
           <h1 class="article-template__title">
@@ -265,9 +263,9 @@
 </script>
 
 <style>
-    * {
-        color: white !important;
-    }
+  * {
+    color: white !important;
+  }
 </style>
 
 {% schema %}
