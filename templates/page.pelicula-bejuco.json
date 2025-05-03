@@ -9,16 +9,24 @@
  */
  {
     "sections": {
-      "main": {
-        "type": "peliculas",
-        "settings": {
-          "padding_top": 28,
-          "padding_bottom": 28
-        }
-      }
+      "descripcion": {
+        "type": "pelicula-bejuco-descripcion"
+      },
+      "aspectos-tecnicos": {
+        "type": "pelicula-bejuco-aspectos-tecnicos"
+      },
+      "personajes": {
+        "type": "pelicula-bejuco-personajes"
+      },
+      "parchando": {
+        "type": "pelicula-bejuco-parchando"
+      },
     },
     "order": [
-      "main"
+      "descripcion",
+      "aspectos-tecnicos",
+      "personajes",
+      "parchando"
     ]
   }
   
