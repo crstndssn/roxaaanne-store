@@ -23,21 +23,13 @@
           "type": "section",
           "settings": {
             "title": "películas",
-            "link": "shopify://blogs/peliculas-de-alejandro-ospina"
-          }
-        },
-        "section_NEMmRq": {
-          "type": "section",
-          "settings": {
-            "title": "eventos",
-            "link": "shopify://collections/eventos"
+            "link": "shopify://pages/peliculas"
           }
         }
       },
       "block_order": [
         "section_nydPce",
-        "section_RtRyCc",
-        "section_NEMmRq"
+        "section_RtRyCc"
       ],
       "settings": {
         "image": "shopify://shop_images/000006200011.jpg",
