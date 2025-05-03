@@ -42,7 +42,11 @@
         "blog_Ja6ate",
         "blog_yXpdaC"
       ],
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/IMG_4805.jpg",
+        "name": "cristian dussán",
+        "description": "<p>artesano de portales a otros universos, hace películas caseras para todo tipo de criaturas extrañas. lo puedes encontrar al lado de la última cruz del sur, acá puedes nadar en su mente</p>"
+      }
     }
   },
   "order": [
