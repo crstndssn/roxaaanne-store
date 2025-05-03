@@ -1,22 +1,5 @@
 <!-- Demo styles -->
 <style>
-  html,
-  body {
-    position: relative;
-    height: 100%;
-  }
-
-  body {
-    background: #eee;
-    font-family: Helvetica Neue
-    , Helvetica
-    , Arial
-    , sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
 
   .swiper {
     width: 100%;
@@ -40,31 +23,80 @@
   }
 </style>
 
+<div class="bg-[#133131]">
+  <div class="container mx-auto">
+    <h1 class="text-[#605031] text-bejuco text-[50px] text-center pt-12 mb-4">{{ section.settings.title }}</h1>
+    <p class="hidden">{{ section.settings.description }}</p>
 
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    <div class="swiper-slide">Slide 4</div>
-    <div class="swiper-slide">Slide 5</div>
-    <div class="swiper-slide">Slide 6</div>
-    <div class="swiper-slide">Slide 7</div>
-    <div class="swiper-slide">Slide 8</div>
-    <div class="swiper-slide">Slide 9</div>
+    <div class="swiper mySwiperAspectosTecnicos">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% if block.settings.image %}
+            <div class="swiper-slide">
+              <img
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                alt="Slide"
+                class="w-full h-auto object-cover">
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
-  <div class="swiper-pagination"></div>
 </div>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
-    var swiper = new Swiper(".mySwiper", {
-      pagination: {
-        el: ".swiper-pagination",
-        dynamicBullets: true,
-      },
-    });
+  var swiper = new Swiper(".mySwiperAspectosTecnicos", {
+  slidesPerView: 1.2,
+  spaceBetween: 16,
+  freeMode: true,
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2.2
+    },
+    1024: {
+      slidesPerView: 3.5
+    }
+  }
+  });
 </script>
+
+{% schema %}
+  {
+    "name": "Swiper Aspectos Técnicos",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título",
+        "default": "Aspectos Técnicos"
+      }, {
+        "type": "textarea",
+        "id": "description",
+        "label": "Descripción",
+        "default": "Agrega aquí una breve descripción de los aspectos técnicos."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide de imagen",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Imagen del slide"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 20
+  }
+{% endschema %}
