@@ -91,7 +91,7 @@
       <div class="w-full flex flex-col justify-center items-center">
         {%- unless product.price_varies == false and product.compare_at_price_varies %}
 
-          <div class="w-full flex items-center gap-x-3">
+          <div class="w-full flex justify-center items-center gap-x-3">
             <div class="hidden">
               {%- if show_badges -%}
                 <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }} w-fit h-fit text-center">
