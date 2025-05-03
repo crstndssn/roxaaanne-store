@@ -12,26 +12,24 @@
     "creator": {
       "type": "creator",
       "blocks": {
-        "blog_Ja6ate": {
-          "type": "blog",
+        "section_qL6nPT": {
+          "type": "section",
           "settings": {
-            "title": "imágenes",
-            "description": "",
-            "content": "noticias"
+            "title": "fotografías",
+            "link": "shopify://pages/peliculas"
           }
         },
-        "products_eq7b9g": {
-          "type": "products",
+        "section_jwtBnt": {
+          "type": "section",
           "settings": {
-            "title": "Eventos",
-            "description": "",
-            "content": "eventos"
+            "title": "peliculas",
+            "link": "shopify://pages/peliculas"
           }
         }
       },
       "block_order": [
-        "blog_Ja6ate",
-        "products_eq7b9g"
+        "section_qL6nPT",
+        "section_jwtBnt"
       ],
       "settings": {
         "image": "shopify://shop_images/felipe-quien.jpg",
