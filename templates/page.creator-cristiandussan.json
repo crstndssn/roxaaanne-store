@@ -12,35 +12,32 @@
     "creator": {
       "type": "creator",
       "blocks": {
-        "products_eq7b9g": {
-          "type": "products",
+        "section_VURfcD": {
+          "type": "section",
           "settings": {
-            "title": "eventos",
-            "description": "",
-            "content": "eventos"
+            "title": "fotografías",
+            "link": "shopify://blogs/fotografias-de-cristian-dussan"
           }
         },
-        "blog_Ja6ate": {
-          "type": "blog",
-          "settings": {
-            "title": "imágenes",
-            "description": "",
-            "content": "alterocio"
-          }
-        },
-        "blog_yXpdaC": {
-          "type": "blog",
+        "section_wy4R8c": {
+          "type": "section",
           "settings": {
             "title": "películas",
-            "description": "",
-            "content": "peliculas"
+            "link": "shopify://blogs/peliculas-de-cristian-dussan"
+          }
+        },
+        "section_agptYb": {
+          "type": "section",
+          "settings": {
+            "title": "eventos",
+            "link": "shopify://blogs/eventos-de-cristian-dussan"
           }
         }
       },
       "block_order": [
-        "products_eq7b9g",
-        "blog_Ja6ate",
-        "blog_yXpdaC"
+        "section_VURfcD",
+        "section_wy4R8c",
+        "section_agptYb"
       ],
       "settings": {
         "image": "shopify://shop_images/IMG_4805.jpg",
