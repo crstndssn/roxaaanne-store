@@ -7,65 +7,29 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
-    "sections": {
-      "descripcion": {
-        "type": "pelicula-bejuco-descripcion",
-        "settings": {}
-      },
-      "aspectos-tecnicos": {
-        "type": "pelicula-bejuco-aspectos-tecnicos",
-        "blocks": {
-          "slide_7fAbgd": {
-            "type": "slide",
-            "settings": {
-              "image": "shopify://shop_images/centro2.jpg"
-            }
-          },
-          "slide_j3mfbk": {
-            "type": "slide",
-            "settings": {
-              "image": "shopify://shop_images/centro64.jpg"
-            }
-          },
-          "slide_TQnMHq": {
-            "type": "slide",
-            "settings": {
-              "image": "shopify://shop_images/centro70.jpg"
-            }
-          },
-          "slide_6nWfR4": {
-            "type": "slide",
-            "settings": {
-              "image": "shopify://shop_images/centro3.jpg"
-            }
-          }
-        },
-        "block_order": [
-          "slide_7fAbgd",
-          "slide_j3mfbk",
-          "slide_TQnMHq",
-          "slide_6nWfR4"
-        ],
-        "settings": {
-          "title": "Aspectos Técnicos",
-          "description": "Agrega aquí una breve descripción de los aspectos técnicos."
-        }
-      },
-      "personajes": {
-        "type": "pelicula-bejuco-personajes",
-        "settings": {}
-      },
-      "parchando": {
-        "type": "pelicula-bejuco-parchando",
-        "settings": {}
-      }
+{
+  "sections": {
+    "descripcion": {
+      "type": "pelicula-bejuco-descripcion",
+      "settings": {}
     },
-    "order": [
-      "descripcion",
-      "aspectos-tecnicos",
-      "personajes",
-      "parchando"
-    ]
-  }
-  
+    "aspectos-tecnicos": {
+      "type": "pelicula-bejuco-aspectos-tecnicos",
+      "settings": {}
+    },
+    "personajes": {
+      "type": "pelicula-bejuco-personajes",
+      "settings": {}
+    },
+    "parchando": {
+      "type": "pelicula-bejuco-parchando",
+      "settings": {}
+    }
+  },
+  "order": [
+    "descripcion",
+    "aspectos-tecnicos",
+    "personajes",
+    "parchando"
+  ]
+}

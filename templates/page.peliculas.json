@@ -7,14 +7,14 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
-    "sections": {
-      "peliculas": {
-        "type": "peliculas"
-      }
-    },
-    "order": [
-      "peliculas"
-    ]
-  }
-  
+{
+  "sections": {
+    "peliculas": {
+      "type": "peliculas",
+      "settings": {}
+    }
+  },
+  "order": [
+    "peliculas"
+  ]
+}

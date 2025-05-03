@@ -23,21 +23,13 @@
           "type": "section",
           "settings": {
             "title": "películas",
-            "link": "shopify://blogs/peliculas"
-          }
-        },
-        "section_agptYb": {
-          "type": "section",
-          "settings": {
-            "title": "eventos",
-            "link": "shopify://products/roxyfest"
+            "link": "shopify://pages/peliculas"
           }
         }
       },
       "block_order": [
         "section_VURfcD",
-        "section_wy4R8c",
-        "section_agptYb"
+        "section_wy4R8c"
       ],
       "settings": {
         "image": "shopify://shop_images/IMG_4805.jpg",
