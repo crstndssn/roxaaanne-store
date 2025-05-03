@@ -1395,7 +1395,7 @@ shopify-accelerated-checkout-cart {
   color: white;
   margin-left: 0;
   padding-left: 0;
-  min-height: 4.4rem;
+  min-height: auto;
 }
 
 details[open] > .share-button__fallback {
@@ -1949,9 +1949,6 @@ input[type='checkbox'] {
   padding: 0;
 }
 
-.quantity__button:first-child {
-  margin-left: calc(var(--inputs-border-width));
-}
 
 .quantity__button:last-child {
   margin-right: calc(var(--inputs-border-width));
@@ -1968,17 +1965,12 @@ input[type='checkbox'] {
   z-index: 2;
 }
 
-.quantity__button:focus,
+/* .quantity__button:focus,
 .quantity__input:focus {
   background-color: rgb(var(--color-background));
   z-index: 2;
-}
+} */
 
-.quantity__button:not(:focus-visible):not(.focused),
-.quantity__input:not(:focus-visible):not(.focused) {
-  box-shadow: inherit;
-  background-color: inherit;
-}
 
 .quantity__input:-webkit-autofill,
 .quantity__input:-webkit-autofill:hover,

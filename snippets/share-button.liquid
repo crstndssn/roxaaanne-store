@@ -14,16 +14,16 @@
 
 <share-button
   id="Share-{{ section.id }}"
-  class="share-button quick-add-hidden border border-white w-fit px-4 mt-4"
+  class="share-button quick-add-hidden border border-white w-fit h-auto flex rounded-full px-7"
   {{ block.shopify_attributes }}>
   <button class="share-button__button hidden border ">
     <span class="svg-wrapper">{{ 'icon-share.svg' | inline_asset_content }}</span>
-    {{ block.settings.share_label | escape }}
+    Compartir
   </button>
   <details id="Details-{{ block.id }}-{{ section.id }}">
     <summary class="share-button__button">
       <span class="svg-wrapper">{{ 'icon-share.svg' | inline_asset_content }}</span>
-      {{ block.settings.share_label | escape }}
+      Compartir
     </summary>
     <div class="share-button__fallback motion-reduce">
       <div class="field">
