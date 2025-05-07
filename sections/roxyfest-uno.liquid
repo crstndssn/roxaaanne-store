@@ -5,13 +5,13 @@
         música
       </h1>
     </div>
-    <div class="w-full md:w-[800px] mt-1 h-full text-black flex flex-wrap justify-center items-center gap-x-3 md:gap-x-10">
-      <p class="text-[23px] md:text-[70px] leading-[20px] md:leading-[50px]">Gabriela Ponce</p>
-      <p class="text-[23px] md:text-[70px] leading-[20px] md:leading-[50px]">San Pedro Bonfim</p>
-      <p class="text-[23px] md:text-[70px] leading-[20px] md:leading-[50px]">Camila Noches</p>
-      <p class="text-[23px] md:text-[70px] leading-[20px] md:leading-[50px]">Los Perros Magneticos</p>
-      <p class="text-[23px] md:text-[70px] leading-[20px] md:leading-[50px]">Pechan Project</p>
-      <p class="text-[23px] md:text-[70px] leading-[20px] md:leading-[50px]">Peregrino</p>
+    <div class="w-full w-[800px] md:w-[900px] mt-1 h-full text-black flex flex-wrap justify-center items-center gap-x-3 md:gap-x-10">
+      <p class="text-[23px] md:text-[53px] leading-[20px] md:leading-[50px]">Gabriela Ponce</p>
+      <p class="text-[23px] md:text-[53px] leading-[20px] md:leading-[50px]">San Pedro Bonfim</p>
+      <p class="text-[23px] md:text-[53px] leading-[20px] md:leading-[50px]">Camila Noches</p>
+      <p class="text-[23px] md:text-[53px] leading-[20px] md:leading-[50px]">Los Perros Magneticos</p>
+      <p class="text-[23px] md:text-[53px] leading-[20px] md:leading-[50px]">Pechan Project</p>
+      <p class="text-[23px] md:text-[53px] leading-[20px] md:leading-[50px]">Peregrino</p>
     </div>
     <div class="mt-2 md:mt-4">
       <h1 class="text-[15px] md:text-[30px] leading-[13px] md:leading-[30px] underline">
@@ -96,7 +96,8 @@ data-url="{{ product.url }}"
 
 {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 <div class="flex justify-center">
-  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+  <div style="
+    display: flex;" class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <section
         id="ProductInfo-{{ section.id }}"
