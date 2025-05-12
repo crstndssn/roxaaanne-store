@@ -12,29 +12,21 @@
     "creator": {
       "type": "creator",
       "blocks": {
-        "section_nydPce": {
-          "type": "section",
-          "settings": {
-            "title": "fotografías",
-            "link": "shopify://blogs/fotografias-de-alejandro-ospina"
-          }
-        },
         "section_RtRyCc": {
           "type": "section",
           "settings": {
             "title": "películas",
-            "link": "shopify://pages/peliculas"
+            "link": "shopify://pages/bejuco"
           }
         }
       },
       "block_order": [
-        "section_nydPce",
         "section_RtRyCc"
       ],
       "settings": {
         "image": "shopify://shop_images/000006200011.jpg",
         "name": "Alejandro Ospina",
-        "description": "<p>esta descripcion está por cambiar </p>"
+        "description": "<p>Realizador audiovisual, fotógrafo y gestor cultural de la ciudad de Neiva. Ha sido director de cortometrajes y videoclips musicales. También productor de contenidos para televisión y medios digitales. Es miembro del colectivo LACRA.</p>"
       }
     }
   },
