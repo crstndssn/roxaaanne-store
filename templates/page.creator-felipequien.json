@@ -12,13 +12,6 @@
     "creator": {
       "type": "creator",
       "blocks": {
-        "section_qL6nPT": {
-          "type": "section",
-          "settings": {
-            "title": "fotografías",
-            "link": "shopify://pages/peliculas"
-          }
-        },
         "section_jwtBnt": {
           "type": "section",
           "settings": {
@@ -28,7 +21,6 @@
         }
       },
       "block_order": [
-        "section_qL6nPT",
         "section_jwtBnt"
       ],
       "settings": {
