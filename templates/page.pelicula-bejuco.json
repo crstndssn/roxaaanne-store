@@ -15,15 +15,98 @@
     },
     "aspectos-tecnicos": {
       "type": "pelicula-bejuco-aspectos-tecnicos",
-      "settings": {}
+      "blocks": {
+        "slide_cy9wyC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-1.jpg"
+          }
+        },
+        "slide_E6J3wX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-2.jpg"
+          }
+        },
+        "slide_bGhHXk": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-3.jpg"
+          }
+        },
+        "slide_F3JqiP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-4.jpg"
+          }
+        },
+        "slide_qdReEb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-5.jpg"
+          }
+        },
+        "slide_zftzi8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-6.jpg"
+          }
+        },
+        "slide_w8H6y6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-7.jpg"
+          }
+        },
+        "slide_6zU3MW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-9.jpg"
+          }
+        },
+        "slide_8C8f8x": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-11.jpg"
+          }
+        },
+        "slide_AxJfic": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-12.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_cy9wyC",
+        "slide_E6J3wX",
+        "slide_bGhHXk",
+        "slide_F3JqiP",
+        "slide_qdReEb",
+        "slide_zftzi8",
+        "slide_w8H6y6",
+        "slide_6zU3MW",
+        "slide_8C8f8x",
+        "slide_AxJfic"
+      ],
+      "settings": {
+        "title": "Aspectos Técnicos",
+        "description": "Agrega aquí una breve descripción de los aspectos técnicos."
+      }
     },
     "personajes": {
       "type": "pelicula-bejuco-personajes",
-      "settings": {}
+      "settings": {
+        "title": "Personajes",
+        "description": "Agrega aquí una breve descripción de los personajes"
+      }
     },
     "parchando": {
       "type": "pelicula-bejuco-parchando",
-      "settings": {}
+      "settings": {
+        "title": "Parchando",
+        "description": "Agrega aquí una breve descripción la parchacion."
+      }
     }
   },
   "order": [
