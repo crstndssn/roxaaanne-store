@@ -107,12 +107,20 @@
         "title": "Parchando",
         "description": "Agrega aquí una breve descripción la parchacion."
       }
+    },
+    "equipo": {
+      "type": "pelicula-bejuco-equipo",
+      "settings": {
+        "title": "Equipo",
+        "description": "Agrega aquí una breve descripción la parchacion."
+      }
     }
   },
   "order": [
     "descripcion",
     "aspectos-tecnicos",
     "personajes",
-    "parchando"
+    "parchando",
+    "equipo"
   ]
 }

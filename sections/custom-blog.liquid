@@ -18,11 +18,14 @@
 
 {%- paginate blog.articles by 6 -%}
   <div class="container mx-auto">
-    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <div class="flex justify-center">
+       <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} border border-white w-fit px-5 py-2 rounded-full text-center">
       {{ blog.title | escape }}
     </h1>
+    </div>
+   
 
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-1 md:grid-cols-3">
       {%- for article in blog.articles -%}
         <div
           class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"

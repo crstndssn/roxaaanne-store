@@ -1,19 +1,18 @@
-<div class="container mx-auto my-8">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+<div class="container mx-auto my-8 px-7 md:px-0">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
     {% for block in section.blocks %}
       <div class="text-center">
         {% if block.settings.link != blank %}
           <a
             href="{{ block.settings.link }}"
             class="block group"
-            target="_blank"
             rel="noopener noreferrer">
         {% endif %}
         {% if block.settings.image %}
           <img
             src="{{ block.settings.image | image_url: width: 600 }}"
             alt="{{ block.settings.name | escape }}"
-            class="mx-auto mb-4 rounded-lg object-cover w-full h-48"
+            class="mx-auto mb-4 rounded-lg object-cover w-full h-[250px]"
             loading="lazy">
         {% endif %}
         {% if block.settings.name %}

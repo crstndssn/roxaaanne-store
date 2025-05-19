@@ -1,17 +1,37 @@
-<div class="bg-black min-h-[70vh] bg-black flex justify-center items-center">
-  <div class="flex flex-col justify-center items-center">
-    <h1 class="home__title text-white text-[60px] md:text-[130px] tracking-tight leading-[12rem]">{{ section.settings.title }}</h1>
-    <div class="text-[33px] md:text-[50px] text-white font-[100] leading-tight">{{ section.settings.content }}</div>
+<div class="relative bg-black min-h-[60vh] md:min-h-[70vh] bg-black flex flex-col justify-end items-center md:items-end">
+  <div class="absolute top-[-20px] w-full z-0">
+    <div class="relative flex items-center justify-center">
+      <img
+        class="absolute z-40 top-[-100px] w-[180px] md:top-[auto] left-[-60px] md:w-[420px]"
+        src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/1.svg?v=1746582688"
+        alt="">
+      <img
+        class="absolute z-30 top-[-150px] w-[280px] md:top-[auto] left-[-120px] md:w-[570px]"
+        src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/2.svg?v=1746582688"
+        alt="">
+      <img
+        class="absolute z-20 top-[-193px] w-[370px] md:top-[auto] left-[-170px] md:w-[720px]"
+        src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/3.svg?v=1746582688"
+        alt="">
+      <img
+        class="absolute hidden md:flex z-10 top-[-250px] w-[480px] md:top-[auto] left-[-260px] md:w-[920px] md:rotate-90"
+        src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/4.svg?v=1746582688"
+        alt=""></div>
+  </div>
+  <div class="container mx-auto flex flex-col justify-center items-center md:items-end mb-32">
+    <h1 class="home__title weird-font text-white text-[80px] md:text-[114px] tracking-tight leading-[114px]">{{ section.settings.title }}</h1>
+    <div class="text-[35px] leading-[23px] md:text-[51px] text-white font-[100] md:leading-[50px]">{{ section.settings.content }}</div>
   </div>
 </div>
 
 <style>
   .home__title strong {
     font-weight: 400;
+    line-height: 70px;
   }
   .home__title p {
     font-weight: 100;
-    line-height: 100px;
+    line-height: 70px;
   }
 
   @media (max-width: 480px) {

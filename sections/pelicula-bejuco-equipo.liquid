@@ -1,0 +1,101 @@
+<!-- Demo styles -->
+<style>
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<div class="bg-[#133131]">
+  <div class="container mx-auto">
+    <h1 class="text-[#605031] text-bejuco text-[50px] text-center pt-12 mb-4">{{ section.settings.title }}</h1>
+    <p class="hidden">{{ section.settings.description }}</p>
+
+    <div class="swiper mySwiperAspectosTecnicos">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% if block.settings.image %}
+            <div class="swiper-slide">
+              <img
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                alt="Slide"
+                class="w-full h-auto object-cover">
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiperAspectosTecnicos", {
+  slidesPerView: 1.2,
+  spaceBetween: 16,
+  freeMode: true,
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2.2
+    },
+    1024: {
+      slidesPerView: 3.5
+    }
+  }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Equipo",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título",
+        "default": "Equipo"
+      }, {
+        "type": "textarea",
+        "id": "description",
+        "label": "Descripción",
+        "default": "Agrega aquí una breve descripción de los personajes"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide de imagen",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Imagen del slide"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 20
+  }
+{% endschema %}
