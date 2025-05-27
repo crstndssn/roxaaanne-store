@@ -36,11 +36,11 @@
             "new_creation__subtitle": "por roxaaanne"
           }
         },
-        "new_creation_YciLmy": {
+        "new_creation_JQtXgA": {
           "type": "new_creation",
           "settings": {
-            "new_creation__image": "shopify://shop_images/Instagram_story_-_13_1.png",
-            "new_creation__title": "génesis",
+            "new_creation__image": "shopify://shop_images/BLUE.png",
+            "new_creation__title": "blue",
             "new_creation__subtitle": "por cristian dussaán"
           }
         },
@@ -52,11 +52,11 @@
             "new_creation__subtitle": "por cristian dussán"
           }
         },
-        "new_creation_JQtXgA": {
+        "new_creation_YciLmy": {
           "type": "new_creation",
           "settings": {
-            "new_creation__image": "shopify://shop_images/BLUE.png",
-            "new_creation__title": "blue",
+            "new_creation__image": "shopify://shop_images/Instagram_story_-_13_1.png",
+            "new_creation__title": "génesis",
             "new_creation__subtitle": "por cristian dussaán"
           }
         }
@@ -65,9 +65,9 @@
         "new_creation_pAV8YT",
         "new_creation_NHkdL7",
         "new_creation_mHFE7j",
-        "new_creation_YciLmy",
+        "new_creation_JQtXgA",
         "new_creation_pDiJaL",
-        "new_creation_JQtXgA"
+        "new_creation_YciLmy"
       ],
       "settings": {
         "title": "Últimas creaciones"
