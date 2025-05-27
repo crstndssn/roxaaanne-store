@@ -9,11 +9,11 @@
  */
 {
   "sections": {
-    "add-creator": {
-      "type": "add-creator"
+    "creator-add": {
+      "type": "creator-add"
     }
   },
   "order": [
-    "add-creator"
+    "creator-add"
   ]
 }
