@@ -1,0 +1,74 @@
+<!-- sections/new-creations.liquid -->
+<div class="bg-black flex flex-col justify-center items-center px-8 md:px-0">
+  <div class="w-full container mx-auto mb-12 mb-4">
+    {% if section.settings.title != blank %}
+      <h2 class="text-4xl text-white font-medium">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+
+    <div class="grid grid-cols-2 md:grid-cols-3 mt-5 mb-10 gap-4">
+      {% for block in section.blocks %}
+        {% if block.type == 'new_creation' %}
+          <div class="flex gap-3 items-center">
+            <div class="min-w-[50px] min-h-[50px] w-[50px] h-[50px] overflow-hidden rounded-xl">
+              <img 
+                src="{{ block.settings.new_creation__image | image_url: width: 100 }}" 
+                alt="{{ block.settings.new_creation__title }}" 
+                class="w-full h-full object-cover"
+              >    
+            </div>
+            <div class="flex flex-col">
+              <p class="font-[600] text-white">{{ block.settings.new_creation__title }}</p> 
+              <p class="text-[#777]">{{ block.settings.new_creation__subtitle }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "New Creations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Últimas creaciones"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "new_creation",
+      "name": "New Creation",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "new_creation__image",
+          "label": "Imagen"
+        },
+        {
+          "type": "text",
+          "id": "new_creation__title",
+          "label": "Título",
+          "default": "Nueva creadora"
+        },
+        {
+          "type": "text",
+          "id": "new_creation__subtitle",
+          "label": "Subtítulo",
+          "default": "por roxaaanne"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Creations"
+    }
+  ]
+}
+{% endschema %}

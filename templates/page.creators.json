@@ -9,7 +9,10 @@
  */
 {
   "sections": {
-    "hero": {
+    "new-creations": {
+      "type": "new-creations"
+    },
+    "creators": {
       "type": "creators",
       "blocks": {
         "creator_Ct7WPf": {
@@ -58,6 +61,7 @@
     }
   },
   "order": [
-    "hero"
+    "new-creations", 
+    "creators"
   ]
 }
