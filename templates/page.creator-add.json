@@ -10,7 +10,8 @@
 {
   "sections": {
     "creator-add": {
-      "type": "creator-add"
+      "type": "creator-add",
+      "settings": {}
     }
   },
   "order": [

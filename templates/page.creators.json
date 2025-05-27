@@ -10,7 +10,8 @@
 {
   "sections": {
     "new-creations": {
-      "type": "new-creations"
+      "type": "new-creations",
+      "settings": {}
     },
     "creators": {
       "type": "creators",
@@ -61,7 +62,7 @@
     }
   },
   "order": [
-    "new-creations", 
+    "new-creations",
     "creators"
   ]
 }
