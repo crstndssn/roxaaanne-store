@@ -9,26 +9,12 @@
  */
  {
     "sections": {
-      "peliculas": {
-        "type": "peliculas",
-        "blocks": {
-          "image_link_block_Tq9cXq": {
-            "type": "image_link_block",
-            "settings": {
-              "image": "shopify://shop_images/bejuco.png",
-              "link": "shopify://pages/bejuco",
-              "name": ""
-            }
-          }
-        },
-        "block_order": [
-          "image_link_block_Tq9cXq"
-        ],
-        "settings": {}
+      "roxaaanne": {
+        "type": "roxaaanne",
       }
     },
     "order": [
-      "peliculas"
+      "roxaaanne"
     ]
   }
   

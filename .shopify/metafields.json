@@ -1,30 +1,8 @@
 {
-  "article": [
-    {
-      "key": "hidden_keywords",
-      "namespace": "custom",
-      "name": "hidden_keywords",
-      "description": "Hidden keywords for blog posts",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "article": [],
   "blog": [],
   "brand": [],
-  "collection": [
-    {
-      "key": "bottom_content",
-      "namespace": "custom",
-      "name": "Bottom Content",
-      "description": "",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "collection": [],
   "company": [],
   "company_location": [],
   "location": [],
@@ -32,16 +10,6 @@
   "order": [],
   "page": [],
   "product": [
-    {
-      "key": "food-product-form",
-      "namespace": "shopify",
-      "name": "Food product form",
-      "description": "Specifies the form in which the food product is presented, such as dried or frozen",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
     {
       "key": "custom_product",
       "namespace": "mm-google-shopping",
@@ -54,36 +22,6 @@
     }
   ],
   "variant": [
-    {
-      "key": "price_per_hank",
-      "namespace": "my_fields",
-      "name": "price per hank",
-      "description": "price per hank",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "priced",
-      "namespace": "my_fields",
-      "name": "priced",
-      "description": "How the SKU is priced - by case or barrel",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "price_per_bag",
-      "namespace": "custom",
-      "name": "price per bag",
-      "description": "Price for each bag ",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
     {
       "key": "custom_label_4",
       "namespace": "mm-google-shopping",
