@@ -1,4 +1,4 @@
-<div class="relative bg-black min-h-[60vh] md:min-h-[70vh] bg-black flex flex-col justify-end items-center md:items-end">
+<div class="relative bg-black bg-black flex flex-col justify-end items-center md:items-end">
   <div class="absolute top-[-20px] w-full z-0">
     <div class="relative flex items-center justify-center">
       <img
@@ -18,7 +18,7 @@
         src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/4.svg?v=1746582688"
         alt=""></div>
   </div>
-  <div class="container mx-auto flex flex-col justify-center items-center md:items-end mb-32">
+  <div class="container mx-auto flex flex-col justify-center items-center md:items-end mb-32 mt-[190px]">
     <div>
       <h1 class="home__title weird-font text-white text-[80px] md:text-[114px] tracking-tight leading-[114px]">{{ section.settings.title }}</h1>
       <div class="text-[35px] leading-[35px] md:text-[51px] text-white font-[100] md:leading-[50px]">{{ section.settings.content }}</div>
@@ -29,9 +29,67 @@
     </div>
   </div>
 
+  <div class="container mx-auto px-4">
+    <a href="/products/roxyfest" class="roxyhome w-full flex flex-col justify-center items-center text-center py-6 w-full px-4 rounded-xl">
+      <h2 class="weird-font text-[50px] font-bold mb-2">roxyfest</h2>
+      <div class="text-3xl mb-2 flex jusitfy-center items-center">
+        <p>dedicado al sol 🌞</p>
+      </div>
+
+      <div id="countdown" class="weird-font text-5xl tracking-wide font-mono flex justify-center gap-4">
+        <span>
+          <span id="days">--</span>d</span>
+        <span>
+          <span id="hours">--</span>h</span>
+        <span>
+          <span id="minutes">--</span>m</span>
+        <span>
+          <span id="seconds">--</span>s</span>
+      </div>
+
+      <div class="mt-4">
+        <h2 class="border border-white text-white px-4 py-2 rounded-full mt-3" href="">entradas</h2>
+      </div>
+    </a>
+  </div>
+
+
+  <div>
+    ultimas creaciones</div>
+
+
+  <div>
+    tienda
+  </div>
+{% comment %} v.24   pricing{% endcomment %}
+{% comment %}
+  <div>
+  <div class="">
+  <h1>jardin</h1>
+
+  </div>
+  <div class="">
+  <h1>bosque</h1>
+
+  </div>
+  <div class="">
+  <h1>creador</h1>
+
+  </div>
+  </div>
+{% endcomment %}
+
+
 </div>
 
 <style>
+
+  .roxyhome {
+    background: linear-gradient(180deg, #0F0C3B 0%, #403B88 45%, #F28B2B 100%);
+    color: #fff;
+  }
+
+
   .home__title strong {
     font-weight: 400;
     line-height: 70px;
@@ -49,6 +107,29 @@
   }
 
 </style>
+
+<script>
+  const countdown = () => {
+    const targetDate = new Date("June 21, 2025 00:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) return;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+  };
+
+  setInterval(countdown, 1000);
+  countdown();
+</script>
 
 {% schema %}
   {
