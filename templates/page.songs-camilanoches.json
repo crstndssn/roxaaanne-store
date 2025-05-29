@@ -11,6 +11,34 @@
   "sections": {
     "songs-camilanoches": {
       "type": "songs-camilanoches",
+      "blocks": {
+        "song_KYBXmD": {
+          "type": "song",
+          "settings": {
+            "song_title": "De La Nostalgia (Acústico)",
+            "artist": "Camila Noches",
+            "audio_file": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/De_la_Nostalgia_05_Acoustic_Version.mp3?v=1748533694"
+          }
+        },
+        "song_QPUyAx": {
+          "type": "song",
+          "settings": {
+            "song_title": "Fuego en el Mar (Acústico)",
+            "artist": "Camila Noches",
+            "audio_file": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Fuego_en_el_Mar_Acoustic_Version.mp3?v=1748533694"
+          }
+        }
+      },
+      "block_order": [
+        "song_KYBXmD",
+        "song_QPUyAx"
+      ],
+      "settings": {
+        "cover": "shopify://shop_images/Screenshot_2025-05-29_at_10.45.50_AM.png",
+        "title": "Niña Gigante (Acoustic Version)",
+        "artist": "Camila Noches",
+        "year": "2023"
+      }
     }
   },
   "order": [

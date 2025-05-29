@@ -1,3 +1,82 @@
-<div>
-  aaaa
+<div class="bg-gradient-to-b from-[#1f1f1f] to-[#0e0e0e] text-white py-10 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <img
+      src="{{ section.settings.cover | image_url: width: 600 }}"
+      alt="Portada"
+      class="mx-auto mb-6 w-60 rounded-md shadow-lg">
+    <h2 class="text-4xl md:text-5xl font-bold mb-1">{{ section.settings.title }}</h2>
+    <p class="text-sm text-gray-400 mb-10">{{ section.settings.artist }} • {{ section.settings.year }} • {{ section.blocks.size }} songs</p>
+
+    <div class="space-y-6">
+      {% for block in section.blocks %}
+        <div class="bg-[#191919] p-4 rounded-xl flex flex-col md:flex-row items-center md:items-start gap-4 shadow-md">
+          <div class="flex-1 text-left">
+            <p class="text-lg font-semibold">{{ block.settings.song_title }}</p>
+            <p class="text-sm text-gray-400">{{ block.settings.artist }}</p>
+          </div>
+          <audio controls class="w-full md:w-64">
+            <source src="{{ block.settings.audio_file }}" type="audio/mpeg">
+            Tu navegador no soporta audio HTML5.
+          </audio>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
+
+{% schema %}
+  {
+    "name": "Acoustic Player",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "cover",
+        "label": "Portada del álbum"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Título del álbum",
+        "default": "Niña Gigante (Acoustic Version)"
+      }, {
+        "type": "text",
+        "id": "artist",
+        "label": "Artista",
+        "default": "Camila Noches"
+      }, {
+        "type": "text",
+        "id": "year",
+        "label": "Año",
+        "default": "2023"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "song",
+        "name": "Canción",
+        "settings": [
+          {
+            "type": "text",
+            "id": "song_title",
+            "label": "Título de la canción",
+            "default": "Título"
+          }, {
+            "type": "text",
+            "id": "artist",
+            "label": "Artista",
+            "default": "Camila Noches"
+          }, {
+            "type": "url",
+            "id": "audio_file",
+            "label": "Archivo de audio (MP3)"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Acoustic Player",
+        "category": "Multimedia"
+      }
+    ]
+  }
+{% endschema %}
