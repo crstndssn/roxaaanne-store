@@ -16,7 +16,7 @@
           "type": "new_creation",
           "settings": {
             "new_creation__image": "shopify://shop_images/cami.png",
-            "new_creation__title": "Nueva creadora",
+            "new_creation__title": "nueva creadora",
             "new_creation__subtitle": "por roxaaanne",
             "new_creation__link": "shopify://pages/camila-noches"
           }
@@ -24,8 +24,8 @@
         "new_creation_b3QKPP": {
           "type": "new_creation",
           "settings": {
-            "new_creation__image": "shopify://shop_images/000006200011.jpg",
-            "new_creation__title": "Nuevo creador",
+            "new_creation__image": "shopify://shop_images/InShot_20250512_191014071.jpg",
+            "new_creation__title": "nuevo creador",
             "new_creation__subtitle": "por roxaaanne",
             "new_creation__link": "shopify://pages/alejandro-ospina"
           }
