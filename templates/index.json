@@ -34,9 +34,9 @@
           "type": "new_creation",
           "settings": {
             "new_creation__image": "shopify://shop_images/felipe-quien.jpg",
-            "new_creation__title": "Nuevo creador",
+            "new_creation__title": "nuevo creador",
             "new_creation__subtitle": "por roxaaanne",
-            "new_creation__link": ""
+            "new_creation__link": "shopify://pages/felipe-quien"
           }
         },
         "new_creation_bQqLbL": {
@@ -44,8 +44,8 @@
           "settings": {
             "new_creation__image": "shopify://shop_images/BLUE.png",
             "new_creation__title": "blue",
-            "new_creation__subtitle": "por cristian dussaán",
-            "new_creation__link": ""
+            "new_creation__subtitle": "por cristian dussán",
+            "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/blue"
           }
         },
         "new_creation_DBCp7k": {
@@ -54,7 +54,7 @@
             "new_creation__image": "shopify://shop_images/Instagram_story_-_14.png",
             "new_creation__title": "mercúrio",
             "new_creation__subtitle": "por cristian dussán",
-            "new_creation__link": ""
+            "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/mercurio"
           }
         },
         "new_creation_QJ44W4": {
@@ -62,8 +62,8 @@
           "settings": {
             "new_creation__image": "shopify://shop_images/Instagram_story_-_13_1.png",
             "new_creation__title": "génesis",
-            "new_creation__subtitle": "por cristian dussaán",
-            "new_creation__link": ""
+            "new_creation__subtitle": "por cristian dussán",
+            "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/genesis"
           }
         }
       },
