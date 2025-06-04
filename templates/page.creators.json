@@ -16,27 +16,27 @@
           "type": "new_creation",
           "settings": {
             "new_creation__image": "shopify://shop_images/cami.png",
-            "new_creation__title": "Nueva creadora",
+            "new_creation__title": "nueva creadora",
             "new_creation__subtitle": "por roxaaanne",
-            "new_creation__link": ""
+            "new_creation__link": "shopify://pages/camila-noches"
           }
         },
         "new_creation_NHkdL7": {
           "type": "new_creation",
           "settings": {
-            "new_creation__image": "shopify://shop_images/000006200011.jpg",
-            "new_creation__title": "Nuevo creador",
+            "new_creation__image": "shopify://shop_images/InShot_20250512_191014071.jpg",
+            "new_creation__title": "nuevo creador",
             "new_creation__subtitle": "por roxaaanne",
-            "new_creation__link": ""
+            "new_creation__link": "shopify://pages/alejandro-ospina"
           }
         },
         "new_creation_mHFE7j": {
           "type": "new_creation",
           "settings": {
             "new_creation__image": "shopify://shop_images/felipe-quien.jpg",
-            "new_creation__title": "Nuevo creador",
+            "new_creation__title": "nuevo creador",
             "new_creation__subtitle": "por roxaaanne",
-            "new_creation__link": ""
+            "new_creation__link": "shopify://pages/felipe-quien"
           }
         },
         "new_creation_JQtXgA": {
@@ -44,8 +44,8 @@
           "settings": {
             "new_creation__image": "shopify://shop_images/BLUE.png",
             "new_creation__title": "blue",
-            "new_creation__subtitle": "por cristian dussaán",
-            "new_creation__link": ""
+            "new_creation__subtitle": "por cristian dussán",
+            "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/blue"
           }
         },
         "new_creation_pDiJaL": {
@@ -54,7 +54,7 @@
             "new_creation__image": "shopify://shop_images/Instagram_story_-_14.png",
             "new_creation__title": "mercúrio",
             "new_creation__subtitle": "por cristian dussán",
-            "new_creation__link": ""
+            "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/mercurio"
           }
         },
         "new_creation_YciLmy": {
@@ -62,8 +62,8 @@
           "settings": {
             "new_creation__image": "shopify://shop_images/Instagram_story_-_13_1.png",
             "new_creation__title": "génesis",
-            "new_creation__subtitle": "por cristian dussaán",
-            "new_creation__link": ""
+            "new_creation__subtitle": "por cristian dussán",
+            "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/genesis"
           }
         }
       },
@@ -85,7 +85,7 @@
         "creator_Ct7WPf": {
           "type": "creator",
           "settings": {
-            "creator__image": "shopify://shop_images/000006200011.jpg",
+            "creator__image": "shopify://shop_images/InShot_20250512_191014071.jpg",
             "creator__name": "Alejandro Ospina",
             "creator__link": "shopify://pages/alejandro-ospina"
           }
