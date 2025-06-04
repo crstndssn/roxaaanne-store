@@ -18,7 +18,7 @@
         src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/4.svg?v=1746582688"
         alt=""></div>
   </div>
-  <div class="container mx-auto flex flex-col justify-center items-center md:items-end mb-32 mt-[190px]">
+  <div class="container mx-auto flex flex-col justify-center items-center md:items-end mb-[113px] mt-[190px]">
     <div>
       <h1 class="home__title weird-font text-white text-[80px] md:text-[114px] tracking-tight leading-[114px]">{{ section.settings.title }}</h1>
       <div class="text-[35px] leading-[35px] md:text-[51px] text-white font-[100] md:leading-[50px]">{{ section.settings.content }}</div>
@@ -29,37 +29,59 @@
     </div>
   </div>
 
-  <div class="container mx-auto px-4">
-    <a href="/products/roxyfest" class="roxyhome w-full flex flex-col justify-center items-center text-center py-6 w-full px-4 rounded-xl">
-      <h2 class="weird-font text-[50px] font-bold mb-2">roxyfest</h2>
-      <div class="text-3xl mb-2 flex jusitfy-center items-center">
-        <p>dedicado al sol 🌞</p>
-      </div>
+  <div class="container mx-auto px-8 md:px-4 grid grid-cols-1 md:grid-cols-2">
+    <h2 class="text-4xl text-white font-medium mb-3">
+      entradas al roxy fest
+    </h2>
+    <a href="/products/roxyfest" class="roxycounter min-h-[420px] w-full flex flex-col justify-center items-center text-center py-6 w-full px-4 rounded-xl">
+      <h2 class="weird-font text-[70px] leading-[50px] font-bold mb-2">roxy<span class="opacity-50">fest</span>
+      </h2>
 
-      <div id="countdown" class="weird-font text-5xl tracking-wide font-mono flex justify-center gap-4">
-        <span>
+
+      <div id="countdown" class="weird-font text-5xl tracking-wide font-mono flex justify-center gap-4 mt-3">
+        <span class="bg-white/10 p-3 shadow-xl rounded-xl">
           <span id="days">--</span>d</span>
-        <span>
+        <span class="bg-white/10 p-3 shadow-xl rounded-xl">
           <span id="hours">--</span>h</span>
-        <span>
+        <span class="bg-white/10 p-3 shadow-xl rounded-xl">
           <span id="minutes">--</span>m</span>
-        <span>
+        <span class="bg-white/10 p-3 shadow-xl rounded-xl">
           <span id="seconds">--</span>s</span>
       </div>
 
-      <div class="mt-4">
-        <h2 class="border border-white text-white px-4 py-2 rounded-full mt-3" href="">entradas</h2>
+      <div class="bg-white/10 p-3 shadow-xl rounded-xl border border-white  px-16 mt-8 py-2 rounded-full mt-3 min-w-[100px]">
+        <h2 class="text-white font-[500]">entradas</h2>
       </div>
+
+
+      <div class="text-3xl mb-2 mt-3 flex jusitfy-center items-center">
+        <p class="font-[200] text-[15px]">dedicado al sol 🌞</p>
+      </div>
+
+
     </a>
-  </div>
+
+    <!-- sections/new-creations.liquid -->
+    <div class="bg-black flex flex-col justify-center items-center mt-3 md:px-0">
+      <div class="w-full container mx-auto mb-8 my-4">
+        {% if section.settings.title != blank %}
+          <h2 class="text-4xl text-white font-medium">
+            últimas creaciones
+          </h2>
+        {% endif %}
+
+        <div class="grid grid-cols-2 md:grid-cols-2 mt-7 mb-10 gap-7 md:gap-4">
+          {% for block in section.blocks %}
+            {% if block.type == 'new_creation' %}
+              {% render 'new-creation-card'
+                , block: block %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
 
 
-  <div>
-    ultimas creaciones</div>
-
-
-  <div>
-    tienda
   </div>
 {% comment %} v.24   pricing{% endcomment %}
 {% comment %}
@@ -87,6 +109,13 @@
   .roxyhome {
     background: linear-gradient(180deg, #0F0C3B 0%, #403B88 45%, #F28B2B 100%);
     color: #fff;
+  }
+
+  .roxycounter {
+    background-image: url('https://cdn.shopify.com/s/files/1/0700/8623/0213/files/counter.png?v=1748993160');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
 
@@ -147,26 +176,30 @@
     ],
     "blocks": [
       {
-        "type": "creator",
-        "name": "Creator",
+        "type": "new_creation",
+        "name": "New Creation",
         "settings": [
           {
             "type": "image_picker",
-            "id": "creator__image",
-            "label": "Photo"
+            "id": "new_creation__image",
+            "label": "Imagen"
           }, {
             "type": "text",
-            "id": "creator__name",
-            "label": "Texto",
-            "default": "Name"
+            "id": "new_creation__title",
+            "label": "Título",
+            "default": "Nueva creadora"
+          }, {
+            "type": "text",
+            "id": "new_creation__subtitle",
+            "label": "Subtítulo",
+            "default": "por roxaaanne"
           }, {
             "type": "url",
-            "id": "creator__link",
-            "label": "Link"
+            "id": "new_creation__link",
+            "label": "Enlace"
           }
         ]
       }
-
     ]
   }
 {% endschema %}

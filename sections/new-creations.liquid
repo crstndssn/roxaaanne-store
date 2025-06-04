@@ -10,18 +10,8 @@
     <div class="grid grid-cols-2 md:grid-cols-3 mt-7 mb-10 gap-5 md:gap-4">
       {% for block in section.blocks %}
         {% if block.type == 'new_creation' %}
-          <a href="{{ block.settings.new_creation__link }}" class="flex gap-3 items-center">
-            <div class="min-w-[50px] min-h-[50px] w-[50px] h-[50px] overflow-hidden rounded-xl">
-              <img
-                src="{{ block.settings.new_creation__image | image_url: width: 100 }}"
-                alt="{{ block.settings.new_creation__title }}"
-                class="w-full h-full object-cover">
-            </div>
-            <div class="flex flex-col">
-              <p class="font-[500] text-[15px] leading-[18px] text-white">{{ block.settings.new_creation__title }}</p>
-              <p class="text-[#777] text-[13px] leading-[15px]">{{ block.settings.new_creation__subtitle }}</p>
-            </div>
-          </a>
+          {% render 'new-creation-card'
+            , block: block %}
         {% endif %}
       {% endfor %}
     </div>

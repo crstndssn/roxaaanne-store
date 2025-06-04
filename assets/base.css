@@ -3587,3 +3587,11 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+.shopify-policy__title h1 {
+color: white;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: 200;
+}
