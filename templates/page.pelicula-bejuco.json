@@ -96,6 +96,31 @@
     },
     "personajes": {
       "type": "pelicula-bejuco-personajes",
+      "blocks": {
+        "slide_DFATap": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-4.jpg"
+          }
+        },
+        "slide_iXefKH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-6.jpg"
+          }
+        },
+        "slide_V36PWh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aspectos-tecnicos-7.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_DFATap",
+        "slide_iXefKH",
+        "slide_V36PWh"
+      ],
       "settings": {
         "title": "Personajes",
         "description": "Agrega aquí una breve descripción de los personajes"
