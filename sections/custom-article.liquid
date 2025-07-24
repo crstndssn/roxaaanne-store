@@ -9,7 +9,7 @@
         </div>
       {%- when 'featured_image' -%}
         {%- if article.image -%}
-          <div class="w-full h-[470px] bg-gray-100 overflow-hidden flex items-center justify-center">
+          <div class="w-full h-[200px]  md:h-[470px] bg-gray-100 overflow-hidden flex items-center justify-center">
             <img
               class="w-full"
               src="{{ article.image | image_url: width: master }}"
