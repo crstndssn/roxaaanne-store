@@ -21,15 +21,24 @@
         },
         "section_wy4R8c": {
           "type": "section",
+          "disabled": true,
           "settings": {
             "title": "películas",
             "link": "shopify://pages/peliculas"
+          }
+        },
+        "section_ECJAxU": {
+          "type": "section",
+          "settings": {
+            "title": "blog",
+            "link": "shopify://blogs/alterocio"
           }
         }
       },
       "block_order": [
         "section_VURfcD",
-        "section_wy4R8c"
+        "section_wy4R8c",
+        "section_ECJAxU"
       ],
       "settings": {
         "image": "shopify://shop_images/IMG_4805.jpg",
