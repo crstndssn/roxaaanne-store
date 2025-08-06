@@ -1,0 +1,43 @@
+{% schema %}
+  {
+    "name": "Home",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Título"
+      }, {
+        "type": "richtext",
+        "id": "content",
+        "label": "Contenido"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "new_creation",
+        "name": "New Creation",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "new_creation__image",
+            "label": "Imagen"
+          }, {
+            "type": "text",
+            "id": "new_creation__title",
+            "label": "Título",
+            "default": "Nueva creadora"
+          }, {
+            "type": "text",
+            "id": "new_creation__subtitle",
+            "label": "Subtítulo",
+            "default": "por roxaaanne"
+          }, {
+            "type": "url",
+            "id": "new_creation__link",
+            "label": "Enlace"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

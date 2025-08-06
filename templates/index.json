@@ -16,8 +16,8 @@
           "type": "new_creation",
           "settings": {
             "new_creation__image": "shopify://shop_images/cami.png",
-            "new_creation__title": "nueva creadora",
-            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__title": "Camila Noches",
+            "new_creation__subtitle": "nuevo perfil",
             "new_creation__link": "shopify://pages/camila-noches"
           }
         },
@@ -25,8 +25,8 @@
           "type": "new_creation",
           "settings": {
             "new_creation__image": "shopify://shop_images/InShot_20250512_191014071.jpg",
-            "new_creation__title": "nuevo creador",
-            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__title": "Alejando Ospina",
+            "new_creation__subtitle": "nuevo perfil",
             "new_creation__link": "shopify://pages/alejandro-ospina"
           }
         },
@@ -34,27 +34,27 @@
           "type": "new_creation",
           "settings": {
             "new_creation__image": "shopify://shop_images/felipe-quien.jpg",
-            "new_creation__title": "nuevo creador",
-            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__title": "Felipe Quien",
+            "new_creation__subtitle": "nuevo perfil",
             "new_creation__link": "shopify://pages/felipe-quien"
           }
         },
         "new_creation_bQqLbL": {
           "type": "new_creation",
           "settings": {
-            "new_creation__image": "shopify://shop_images/BLUE.png",
-            "new_creation__title": "blue",
-            "new_creation__subtitle": "por cristian dussán",
-            "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/blue"
+            "new_creation__image": "shopify://shop_images/IMG_4805.jpg",
+            "new_creation__title": "Cristian Dussán",
+            "new_creation__subtitle": "nuevo perfil",
+            "new_creation__link": "shopify://pages/cristian-dussan"
           }
         },
         "new_creation_DBCp7k": {
           "type": "new_creation",
           "settings": {
-            "new_creation__image": "shopify://shop_images/Instagram_story_-_14.png",
-            "new_creation__title": "mercúrio",
-            "new_creation__subtitle": "por cristian dussán",
-            "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/mercurio"
+            "new_creation__image": "shopify://shop_images/maito.png",
+            "new_creation__title": "Maito",
+            "new_creation__subtitle": "artículo",
+            "new_creation__link": "shopify://blogs/alterocio/quinto-festival-de-las-artes-rurales-de-maito"
           }
         },
         "new_creation_QJ44W4": {
@@ -62,7 +62,7 @@
           "settings": {
             "new_creation__image": "shopify://shop_images/Instagram_story_-_13_1.png",
             "new_creation__title": "génesis",
-            "new_creation__subtitle": "por cristian dussán",
+            "new_creation__subtitle": "fotografías",
             "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/genesis"
           }
         }
@@ -79,9 +79,18 @@
         "title": "<p><strong>roxaaanne</strong></p>",
         "content": "<p>universo creativo</p>"
       }
+    },
+    "articulos": {
+      "type": "home-articulos",
+      "settings": {
+        "title": "<p>artículos </p>",
+        "blog_handle": "articulos-recientes",
+        "articles_limit": 6
+      }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "articulos"
   ]
 }

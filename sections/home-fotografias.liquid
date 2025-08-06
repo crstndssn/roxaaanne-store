@@ -1,0 +1,64 @@
+<!-- fotografía -->
+<div class="bg-black flex flex-col justify-center items-center mt-3 md:px-0">
+  <div class="w-full container mx-auto mb-8 my-4">
+    {% if section.settings.title != blank %}
+      <h2 class="text-4xl text-white font-medium">
+        fotografias
+      </h2>
+    {% endif %}
+
+    <div class="grid grid-cols-2 md:grid-cols-2 mt-7 mb-10 gap-7 md:gap-4">
+      {% for block in section.blocks %}
+        {% if block.type == 'new_creation' %}
+          {% render 'new-creation-card'
+            , block: block %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Home",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Título"
+      }, {
+        "type": "richtext",
+        "id": "content",
+        "label": "Contenido"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "new_creation",
+        "name": "New Creation",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "new_creation__image",
+            "label": "Imagen"
+          }, {
+            "type": "text",
+            "id": "new_creation__title",
+            "label": "Título",
+            "default": "Nueva creadora"
+          }, {
+            "type": "text",
+            "id": "new_creation__subtitle",
+            "label": "Subtítulo",
+            "default": "por roxaaanne"
+          }, {
+            "type": "url",
+            "id": "new_creation__link",
+            "label": "Enlace"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
