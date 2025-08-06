@@ -1,26 +1,16 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template">
+<article class="container mx-auto">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
         <div class="page-width page-width--narrow">
           {% render block %}
         </div>
-      {%- when 'featured_image' -%}
-        {%- if article.image -%}
-          <div class="w-full h-[200px]  md:h-[470px] bg-gray-100 overflow-hidden flex items-center justify-center">
-            <img
-              class="w-full"
-              src="{{ article.image | image_url: width: master }}"
-              width="{{ article.image.width }}"
-              height="{{ article.image.height }}"
-              alt="{{ article.image.alt | escape }}">
-          </div>
-        {%- endif -%}
-      {%- when 'title' -%}
-        <header class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}" {{ block.shopify_attributes }}>
-          <h1 class="article-template__title">
+
+    {%- when 'title' -%}
+        <header>
+          <h1 class="text-[50px] tracking-[-3px] mt-[70px]">
             {{ article.title | escape }}
           </h1>
           {%- if block.settings.blog_show_date -%}
@@ -35,13 +25,26 @@
           {%- endif -%}
         </header>
 
+      {%- when 'featured_image' -%}
+        {%- if article.image -%}
+          <div class="w-full">
+            <img
+              class="w-full"
+              src="{{ article.image | image_url: width: master }}"
+              width="{{ article.image.width }}"
+              height="{{ article.image.height }}"
+              alt="{{ article.image.alt | escape }}">
+          </div>
+        {%- endif -%}
+
+
       {%- when 'content' -%}
-        <div class="p-7" {{ block.shopify_attributes }}>
+        <div class="text-[30px] max-w-[70%] leading-[40px] font-[300]" {{ block.shopify_attributes }}>
           {{ article.content }}
         </div>
 
       {%- when 'share' -%}
-        <div class="article-template__social-sharing page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {{ block.shopify_attributes }}>
+        <div class="my-10">
           {% assign share_url = request.origin | append: article.url %}
           {% render 'share-button'
             , block: block
@@ -264,7 +267,7 @@
 
 <style>
   * {
-    color: white !important;
+    color: #f6f5f0 !important;
   }
 </style>
 

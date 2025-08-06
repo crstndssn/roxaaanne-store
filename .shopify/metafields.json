@@ -1,5 +1,16 @@
 {
-  "article": [],
+  "article": [
+    {
+      "key": "autor",
+      "namespace": "custom",
+      "name": "autor",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
   "blog": [],
   "brand": [],
   "collection": [],

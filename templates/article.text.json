@@ -20,7 +20,7 @@
         },
         "title": {
           "type": "title",
-          "disabled": true,
+          "disabled": false,
           "settings": {
             "blog_show_date": true,
             "blog_show_author": false
