@@ -18,10 +18,18 @@
             "title": "peliculas",
             "link": "shopify://pages/peliculas"
           }
+        },
+        "section_HTMaXh": {
+          "type": "section",
+          "settings": {
+            "title": "artículos",
+            "link": "shopify://blogs/articulos-de-felipe-quien"
+          }
         }
       },
       "block_order": [
-        "section_jwtBnt"
+        "section_jwtBnt",
+        "section_HTMaXh"
       ],
       "settings": {
         "image": "shopify://shop_images/felipe-quien.jpg",
