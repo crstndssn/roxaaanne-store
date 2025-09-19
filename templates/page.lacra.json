@@ -10,19 +10,24 @@
 {
   "sections": {
     "audiovisual": {
-      "type": "new-creations"
+      "type": "lacra-audiovisual",
+      "settings": {}
     },
     "fotografias": {
-      "type": "creators"
+      "type": "lacra-fotografias",
+      "settings": {}
     },
     "sonoro": {
-        "type": "sonoro"
+      "type": "lacra-sonoro",
+      "settings": {}
     },
     "eventos": {
-        "type": "eventos"
+      "type": "lacra-eventos",
+      "settings": {}
     },
     "equipo": {
-        "type": "equipo"
+      "type": "lacra-equipo",
+      "settings": {}
     }
   },
   "order": [
