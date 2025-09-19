@@ -10,31 +10,20 @@
 {
   "sections": {
     "audiovisual": {
-      "type": "lacra-audiovisual",
-      "settings": {}
+      "type": "lacra-audiovisual"
     },
     "fotografias": {
-      "type": "lacra-fotografias",
-      "settings": {}
+      "type": "lacra-fotografias"
     },
     "sonoro": {
-      "type": "lacra-sonoro",
-      "settings": {}
+      "type": "lacra-sonoro"
     },
     "eventos": {
-      "type": "lacra-eventos",
-      "settings": {}
+      "type": "lacra-eventos"
     },
     "equipo": {
-      "type": "lacra-equipo",
-      "settings": {}
+      "type": "lacra-equipo"
     }
   },
-  "order": [
-    "audiovisual",
-    "fotografias",
-    "sonoro",
-    "eventos",
-    "equipo"
-  ]
+  "order": ["audiovisual", "fotografias", "sonoro", "eventos", "equipo"]
 }
