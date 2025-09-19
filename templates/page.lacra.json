@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "audiovisual": {
+      "type": "new-creations"
+    },
+    "fotografias": {
+      "type": "creators"
+    },
+    "sonoro": {
+        "type": "sonoro"
+    },
+    "eventos": {
+        "type": "eventos"
+    },
+    "equipo": {
+        "type": "equipo"
+    }
+  },
+  "order": [
+    "audiovisual",
+    "fotografias",
+    "sonoro",
+    "eventos",
+    "equipo"
+  ]
+}

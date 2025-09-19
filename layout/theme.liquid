@@ -22,13 +22,7 @@
     {%- endunless -%}
 
     <title>
-      {{ page_title }}
-      {%- if current_tags %}
-        &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %}
-        &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %}
-        &ndash; {{ shop.name }}{% endunless -%}
+      roxaaanne: universo creativo
     </title>
 
     {% if page_description %}
@@ -391,6 +385,7 @@ body {
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
+
     {% sections 'header-group' %}
 
     <main
@@ -400,6 +395,7 @@ body {
       tabindex="-1">
       {{ content_for_layout }}
     </main>
+
 
     {% sections 'footer-group' %}
 
