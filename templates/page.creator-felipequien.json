@@ -15,7 +15,7 @@
         "section_jwtBnt": {
           "type": "section",
           "settings": {
-            "title": "peliculas",
+            "title": "películas",
             "link": "shopify://pages/peliculas"
           }
         },
