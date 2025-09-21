@@ -82,10 +82,33 @@
     },
     "articulos": {
       "type": "home-articulos",
+      "blocks": {
+        "article_ae3KdG": {
+          "type": "article",
+          "settings": {
+            "article": "articulos-de-felipe-quien/el-jockey"
+          }
+        },
+        "article_EWPYcX": {
+          "type": "article",
+          "settings": {
+            "article": "articulos-de-cristian-dussan/quinto-festival-de-las-artes-rurales-de-maito"
+          }
+        },
+        "article_XKeMbE": {
+          "type": "article",
+          "settings": {
+            "article": "articulos-de-felipe-quien/tony-manero"
+          }
+        }
+      },
+      "block_order": [
+        "article_ae3KdG",
+        "article_EWPYcX",
+        "article_XKeMbE"
+      ],
       "settings": {
-        "title": "<p>artículos </p>",
-        "blog_handle": "articulos-recientes",
-        "articles_limit": 6
+        "title": "artículos destacados"
       }
     }
   },
