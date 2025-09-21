@@ -114,6 +114,8 @@
   },
   "order": [
     "hero",
-    "articulos"
+    "discover",
+    "articulos",
+    "about"
   ]
 }
