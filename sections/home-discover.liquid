@@ -1,0 +1,223 @@
+<div class="container mx-auto px-8 mt-4 md:px-4">
+
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 mb-12">
+    <div class="cols-span-1">
+      <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-6 md:mb-7">
+        eventos
+      </h2>
+      <div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex flex-col gap-3 opacity-50">
+            <p class="text-4xl">cristian dussán</p>
+            <div class="flex gap-5">
+              <div class="flex justify-center items-center bg-[#2A2A2A] text-white flex flex-col px-8 py-4 rounded-xl min-w-[70px] h-fit">
+                <h3 class="text-white text-[30px] leading-[30px] font-medium">15</h3>
+                <h4 class="text-white">sep</h4>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-2xl">Acompañar es Amar</p>
+                <p class="text-[#B3B3B3] text-2xl">
+                  Quito, Ecuador • Casa Palenque</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p class="text-4xl">Felipe Quien</p>
+            <div class="flex gap-5">
+              <div class="flex justify-center items-center bg-[#2A2A2A] text-white flex flex-col px-8 py-4 rounded-xl min-w-[70px] h-fit">
+                <h3 class="text-white text-[30px] leading-[30px] font-medium">11</h3>
+                <h4 class="text-white">oct</h4>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-2xl">Live Set Acid House</p>
+                <p class="text-[#B3B3B3] text-2xl">
+                  Neiva, Huila • Festival Bmx Trails Jam 3.0</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p class="text-4xl">LACRA</p>
+            <div class="flex gap-5">
+              <div class="flex justify-center items-center bg-[#2A2A2A] text-white flex flex-col px-8 py-4 rounded-xl min-w-[70px] h-fit">
+                <h3 class="text-white text-[30px] leading-[30px] font-medium">15</h3>
+                <h4 class="text-white">sep</h4>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-2xl">Acompañar es Amar</p>
+                <p class="text-[#B3B3B3] text-2xl">
+                  Quito, Ecuador • Casa Palenque</p>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <div class="border border-white shadow-md rounded-xl text-center mt-4 md:mt-12 h-fit">
+              <p class="py-5 md:py-8">solicitar un evento +</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cols-span-2">
+      <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-4 md:mb-7">
+        descubre
+      </h2>
+
+      <img
+        src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/lacra.png?v=1758247093"
+        alt=""
+        class="rounded-md">
+    </div>
+
+
+  </div>
+
+
+  {% comment %} roxy fest {% endcomment %}
+  <div>
+    <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-4 md:mb-10">
+      últimas publicaciones
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-10">
+      <a href="/products/roxyfest" class="col-span-1 roxycounter min-h-[420px] w-full flex flex-col justify-center items-center text-center py-6 px-4 rounded-xl">
+        <h2 class="weird-font text-[70px] leading-[50px] font-bold mb-2">roxy<span class="opacity-50">fest</span>
+        </h2>
+        <div class="bg-white/10 p-3 shadow-xl rounded-xl border border-white  px-16 mt-8 py-2 rounded-full mt-3 min-w-[100px]">
+          <h2 class="text-white font-[500]">edicion 2025</h2>
+        </div>
+        <div class="text-3xl mb-2 mt-3 flex jusitfy-center items-center">
+          <p class="font-[200] text-[15px]">dedicado al sol 🌞</p>
+        </div>
+      </a>
+
+      <div class="bg-black col-span-2 w-full flex flex-col justify-center items-center md:px-0">
+        <div class="w-full h-full container mx-auto">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-4 h-full">
+            {% for block in section.blocks %}
+              <a href="{{ block.settings.new_creation__link }}" class="flex flex-col justify-start items-start bg-white/10 gap-5 h-full gap-3 p-4 md:py-0 items-center rounded-xl">
+                <div class="min-w-[150px] min-h-[150px] w-full h-[150px] overflow-hidden rounded-xl">
+                  <img
+                    src="{{ block.settings.new_creation__image | image_url: width: 300 }}"
+                    alt="{{ block.settings.new_creation__title }}"
+                    class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                  <p class="font-[500] text-[15px] md:text-[20px] leading-[18px] md:leading-[24px] text-white">{{ block.settings.new_creation__title }}</p>
+                  <p class="text-[#777] text-[13px] leading-[15px]">{{ block.settings.new_creation__subtitle }}</p>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>{% comment %} v.24   pricing{% endcomment %}
+{% comment %}
+    <div>
+    <div class="">
+    <h1>jardin</h1>
+    </div>
+    <div class="">
+    <h1>bosque</h1>
+    </div>
+    <div class="">
+    <h1>creador</h1>
+    </div>
+    </div>
+  {% endcomment %}
+
+</div><style>
+
+.roxyhome {
+  background: linear-gradient(180deg, #0F0C3B 0%, #403B88 45%, #F28B2B 100%);
+  color: #fff;
+}
+
+.roxycounter {
+  background-image: url('https://cdn.shopify.com/s/files/1/0700/8623/0213/files/counter.png?v=1748993160');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.home__title strong {
+  font-weight: 400;
+  line-height: 70px;
+}
+.home__title p {
+  font-weight: 100;
+  line-height: 70px;
+}
+
+@media (max-width: 480px) {
+  .home__title p {
+    font-weight: 100;
+    line-height: 40px;
+  }
+}</style><script>
+  const countdown = () => {
+    const targetDate = new Date("June 21, 2025 00:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) return;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+  };
+
+  setInterval(countdown, 1000);
+  countdown();
+</script>{% schema %}
+{
+  "name": "Home",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Título"
+    }, {
+      "type": "richtext",
+      "id": "content",
+      "label": "Contenido"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "new_creation",
+      "name": "New Creation",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "new_creation__image",
+          "label": "Imagen"
+        }, {
+          "type": "text",
+          "id": "new_creation__title",
+          "label": "Título",
+          "default": "Nueva creadora"
+        }, {
+          "type": "text",
+          "id": "new_creation__subtitle",
+          "label": "Subtítulo",
+          "default": "por roxaaanne"
+        }, {
+          "type": "url",
+          "id": "new_creation__link",
+          "label": "Enlace"
+        }
+      ]
+    }
+  ]
+}{% endschema %}
