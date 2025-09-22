@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "roxyfest": {
+      "type": "roxyfest"
+    }
+  },
+  "order": [
+    "roxyfest"
+  ]
+}
