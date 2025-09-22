@@ -1,13 +1,13 @@
 <div class="container mx-auto px-8 mt-4 md:px-4">
 
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mb-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 mb-12">
     <div class="cols-span-1">
-      <h2 class="text-[28px] md:text-[40px] text-white font-[300] mb-2 md:mb-7">
+      <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-6 md:mb-7">
         eventos
       </h2>
       <div>
-        <div class="grid grid-cols-2 ">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="flex flex-col gap-3 opacity-50">
             <p class="text-4xl">cristian dussán</p>
             <div class="flex gap-5">
@@ -26,13 +26,13 @@
             <p class="text-4xl">Felipe Quien</p>
             <div class="flex gap-5">
               <div class="flex justify-center items-center bg-[#2A2A2A] text-white flex flex-col px-8 py-4 rounded-xl min-w-[70px] h-fit">
-                <h3 class="text-white text-[30px] leading-[30px] font-medium">15</h3>
-                <h4 class="text-white">sep</h4>
+                <h3 class="text-white text-[30px] leading-[30px] font-medium">11</h3>
+                <h4 class="text-white">oct</h4>
               </div>
               <div class="flex flex-col">
-                <p class="text-2xl">Acompañar es Amar</p>
+                <p class="text-2xl">Live Set Acid House</p>
                 <p class="text-[#B3B3B3] text-2xl">
-                  Quito, Ecuador • Casa Palenque</p>
+                  Neiva, Huila • Festival Bmx Trails Jam 3.0</p>
               </div>
             </div>
           </div>
@@ -51,8 +51,8 @@
             </div>
           </div>
           <div class="">
-            <div class="bg-[#2A2A2A] shadow-md rounded-xl text-center mt-12 h-fit">
-              <p class="py-8">solicitar un evento +</p>
+            <div class="border border-white shadow-md rounded-xl text-center mt-4 md:mt-12 h-fit">
+              <p class="py-5 md:py-8">solicitar un evento +</p>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
     </div>
 
     <div class="cols-span-2">
-      <h2 class="text-[40px] text-white font-[300] mb-2 md:mb-7">
+      <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-4 md:mb-7">
         descubre
       </h2>
 
@@ -76,7 +76,7 @@
 
   {% comment %} roxy fest {% endcomment %}
   <div>
-    <h2 class="text-[28px] md:text-[40px] text-white font-[300] mb-2 md:mb-10">
+    <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-4 md:mb-10">
       últimas publicaciones
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-10">
@@ -93,10 +93,10 @@
 
       <div class="bg-black col-span-2 w-full flex flex-col justify-center items-center md:px-0">
         <div class="w-full h-full container mx-auto">
-          <div class="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-4 h-full">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-4 h-full">
             {% for block in section.blocks %}
-              <a href="{{ block.settings.new_creation__link }}" class="flex flex-col justify-start items-start bg-white/10 gap-5 h-full gap-3 py-7 md:py-0 items-center rounded-xl">
-                <div class="min-w-[120px] min-h-[120px] w-[120px] h-[120px] overflow-hidden rounded-xl ml-3">
+              <a href="{{ block.settings.new_creation__link }}" class="flex flex-col justify-start items-start bg-white/10 gap-5 h-full gap-3 p-4 md:py-0 items-center rounded-xl">
+                <div class="min-w-[150px] min-h-[150px] w-full h-[150px] overflow-hidden rounded-xl">
                   <img
                     src="{{ block.settings.new_creation__image | image_url: width: 300 }}"
                     alt="{{ block.settings.new_creation__title }}"
