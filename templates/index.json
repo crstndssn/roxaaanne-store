@@ -9,8 +9,8 @@
  */
 {
   "sections": {
-    "hero": {
-      "type": "home",
+    "home-hero": {
+      "type": "home-hero",
       "blocks": {
         "new_creation_NKCpHC": {
           "type": "new_creation",
@@ -80,8 +80,11 @@
         "content": "<p>universo creativo</p>"
       }
     },
-    "articulos": {
-      "type": "home-articulos",
+    "home-discover": {
+      "type": "home-discover"
+    },
+    "home-blog": {
+      "type": "home-blog",
       "blocks": {
         "article_ae3KdG": {
           "type": "article",
@@ -110,12 +113,23 @@
       "settings": {
         "title": "artículos destacados"
       }
+    },
+    "home-best-sellers": {
+      "type": "home-best-sellers"
+    },
+    "home-pricing": {
+      "type": "home-pricing"
+    },
+    "home-about": {
+      "type": "home-about"
     }
   },
   "order": [
-    "hero",
-    "discover",
-    "articulos",
-    "about"
+    "home-hero",
+    "home-discover",
+    "home-blog",
+    "home-best-sellers",
+    "home-pricing",
+    "home-about"
   ]
 }
