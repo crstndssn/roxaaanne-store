@@ -113,13 +113,22 @@
             "creator__name": "cristian dussán",
             "creator__link": "shopify://pages/cristian-dussan"
           }
+        },
+        "creator_CPctTL": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/maito_8.jpg",
+            "creator__name": "Angel",
+            "creator__link": "shopify://pages/alejandro-ospina"
+          }
         }
       },
       "block_order": [
         "creator_Ct7WPf",
         "creator_nj9CN7",
         "creator_4jPpTJ",
-        "creator_DKj7qd"
+        "creator_DKj7qd",
+        "creator_CPctTL"
       ],
       "settings": {
         "title": "",
