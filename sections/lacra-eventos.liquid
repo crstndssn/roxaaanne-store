@@ -1,3 +1,142 @@
-<div>
-  eventos
+<div class="container mx-auto px-8 md:px-0">
+  {% if section.settings.title != blank %}
+    <h2 class="text-[27px] text-white font-medium mb-2 tracking-tight">
+      {{ section.settings.title }}
+    </h2>
+{% endif %}
+
+  {%- comment -%} Hero imágenes dinámicas con enlace opcional {%- endcomment -%}
+  {% assign desktop_img = section.settings.hero_image_desktop %}
+  {% assign mobile_img = section.settings.hero_image_mobile %}
+  {% assign hero_alt = section.settings.hero_image_alt %}
+  {% if section.settings.hero_link_url != blank %}
+    <a href="{{ section.settings.hero_link_url }}" class="block">
+  {% endif %}
+  {% if desktop_img != blank %}
+    <img
+      src="{{ desktop_img | image_url: width: 1600 }}"
+      srcset="{{ desktop_img | image_url: width: 800 }} 800w, {{ desktop_img | image_url: width: 1200 }} 1200w, {{ desktop_img | image_url: width: 1600 }} 1600w, {{ desktop_img | image_url: width: 2000 }} 2000w"
+      sizes="(min-width: 1024px) 100vw, 100vw"
+      alt="{{ hero_alt | default: 'Imagen destacada' }}"
+      class="rounded-md hidden md:block"
+      width="1600"
+      height="900">
+  {% endif %}
+  {% if mobile_img != blank %}
+    <img
+      src="{{ mobile_img | image_url: width: 900 }}"
+      srcset="{{ mobile_img | image_url: width: 400 }} 400w, {{ mobile_img | image_url: width: 600 }} 600w, {{ mobile_img | image_url: width: 900 }} 900w"
+      sizes="(max-width: 767px) 100vw, 100vw"
+      alt="{{ hero_alt | default: 'Imagen destacada' }}"
+      class="rounded-md block md:hidden"
+      width="900"
+      height="1200">
+  {% endif %}
+  {% if section.settings.hero_link_url != blank %}
+    </a>
+  {% endif %}
+
+  {%- comment -%} Audiovisual - título dinámico {%- endcomment -%}
+  {% if section.settings.audiovisual_title != blank %}
+    <h2 class="text-[27px] text-white font-medium mb-2 tracking-tight mt-8">
+      {{ section.settings.audiovisual_title }}
+    </h2>
+  {% endif %}
+
+  {%- comment -%} Bloques dinámicos: solo artículos {%- endcomment -%}
+  {% if section.blocks.size > 0 %}
+    <div class="flex overflow-x-scroll md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pb-8 mt-7 gap-7 md:gap-4">
+      {% for block in section.blocks %}
+        {% assign article = articles[block.settings.article] %}
+        {% if article %}
+          <a
+            href="{{ article.url }}"
+            class="bg-white/10 rounded-b-xl"
+            {{ block.shopify_attributes }}>
+            <div class="block w-full min-w-[270px] overflow-hidden flex flex-col">
+              {% if article.image %}
+                <img
+                  src="{{ article.image | image_url: width: 600 }}"
+                  alt="{{ article.title }}"
+                  class="w-full h-[170px] object-cover rounded-xl"
+                  width="600"
+                  height="340">
+              {% endif %}
+              <div class="p-4 flex justify-between items-center flex-1">
+                <h3 class="text-2xl font-semibold text-white">{{ article.title }}</h3>
+                <p class="text-lg text-gray-300 opacity-80 mb-1">
+                  por
+                  {% if article.metafields.custom.autor != blank %}
+                    {{ article.metafields.custom.autor }}
+                  {% else %}
+                    {{ article.author }}
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-gray-400 mt-4">No has agregado elementos todavía.</p>
+  {% endif %}
 </div>
+
+{% schema %}
+  {
+    "name": "Lacra Audiovisual",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título superior"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_image_desktop",
+        "label": "Imagen hero - Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_image_mobile",
+        "label": "Imagen hero - Mobile"
+      },
+      {
+        "type": "text",
+        "id": "hero_image_alt",
+        "label": "Alt de imagen hero",
+        "default": "Imagen destacada"
+      }, {
+        "type": "url",
+        "id": "hero_link_url",
+        "label": "URL del hero (opcional)"
+      }, {
+        "type": "text",
+        "id": "audiovisual_title",
+        "label": "Título - Audiovisual",
+        "default": "audiovisual"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "article_card",
+        "name": "Artículo",
+        "settings": [
+          {
+            "type": "article",
+            "id": "article",
+            "label": "Selecciona un artículo"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Lacra Audiovisual"
+      }
+    ]
+  }
+{% endschema %}

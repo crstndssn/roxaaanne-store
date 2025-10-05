@@ -9,21 +9,9 @@
  */
 {
   "sections": {
-    "audiovisual": {
-      "type": "lacra-audiovisual"
-    },
-    "fotografias": {
-      "type": "lacra-fotografias"
-    },
-    "sonoro": {
-      "type": "lacra-sonoro"
-    },
     "eventos": {
-      "type": "lacra-eventos"
-    },
-    "equipo": {
-      "type": "lacra-equipo"
+      "type": "eventos"
     }
   },
-  "order": ["audiovisual", "fotografias", "sonoro", "eventos", "equipo"]
+  "order": ["eventos"]
 }

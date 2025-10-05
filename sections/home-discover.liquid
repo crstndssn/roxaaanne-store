@@ -1,77 +1,81 @@
 <div class="container mx-auto px-8 mt-4 md:px-4">
 
-
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 mb-8 md:mb-12">
     <div class="cols-span-1">
-      <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-6 md:mb-7">
-        eventos
-      </h2>
+      {% if section.settings.events_title != blank %}
+        <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-6 md:mb-7">
+          {{ section.settings.events_title }}
+        </h2>
+      {% endif %}
+
       <div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="flex flex-col gap-3 opacity-50">
-            <p class="text-4xl">cristian dussán</p>
-            <div class="flex gap-5">
-              <div class="flex justify-center items-center bg-[#2A2A2A] text-white flex flex-col px-8 py-4 rounded-xl min-w-[70px] h-fit">
-                <h3 class="text-white text-[30px] leading-[30px] font-medium">15</h3>
-                <h4 class="text-white">sep</h4>
-              </div>
-              <div class="flex flex-col">
-                <p class="text-2xl">Acompañar es Amar</p>
-                <p class="text-[#B3B3B3] text-2xl">
-                  Quito, Ecuador • Casa Palenque</p>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-3">
-            <p class="text-4xl">Felipe Quien</p>
-            <div class="flex gap-5">
-              <div class="flex justify-center items-center bg-[#2A2A2A] text-white flex flex-col px-8 py-4 rounded-xl min-w-[70px] h-fit">
-                <h3 class="text-white text-[30px] leading-[30px] font-medium">11</h3>
-                <h4 class="text-white">oct</h4>
-              </div>
-              <div class="flex flex-col">
-                <p class="text-2xl">Live Set Acid House</p>
-                <p class="text-[#B3B3B3] text-2xl">
-                  Neiva, Huila • Festival Bmx Trails Jam 3.0</p>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-3">
-            <p class="text-4xl">LACRA</p>
-            <div class="flex gap-5">
-              <div class="flex justify-center items-center bg-[#2A2A2A] text-white flex flex-col px-8 py-4 rounded-xl min-w-[70px] h-fit">
-                <h3 class="text-white text-[30px] leading-[30px] font-medium">15</h3>
-                <h4 class="text-white">sep</h4>
-              </div>
-              <div class="flex flex-col">
-                <p class="text-2xl">Acompañar es Amar</p>
-                <p class="text-[#B3B3B3] text-2xl">
-                  Quito, Ecuador • Casa Palenque</p>
-              </div>
-            </div>
-          </div>
-          <div class="">
-            <div class="border border-white shadow-md rounded-xl text-center mt-4 md:mt-12 h-fit">
-              <p class="py-5 md:py-8">solicitar un evento +</p>
-            </div>
-          </div>
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'event' %}
+                <div class="flex flex-col gap-3 {% if block.settings.muted %}opacity-50{% endif %}" {{ block.shopify_attributes }}>
+                  {% if block.settings.artist != blank %}
+                    <p class="text-4xl">{{ block.settings.artist }}</p>
+                  {% endif %}
+                  <div class="flex gap-5">
+                    <div class="flex justify-center items-center bg-[#2A2A2A] text-white flex flex-col px-8 py-4 rounded-xl min-w-[70px] h-fit">
+                      <h3 class="text-white text-[30px] leading-[30px] font-medium">{{ block.settings.day }}</h3>
+                      <h4 class="text-white">{{ block.settings.month }}</h4>
+                    </div>
+                    <div class="flex flex-col">
+                      {% if block.settings.title != blank %}
+                        <p class="text-2xl">{{ block.settings.title }}</p>
+                      {% endif %}
+                      {% if block.settings.location != blank %}
+                        <p class="text-[#B3B3B3] text-2xl">{{ block.settings.location }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% when 'events_cta' %}
+                <div class="" {{ block.shopify_attributes }}>
+                  <a href="{{ block.settings.cta_url }}" class="block border border-white shadow-md rounded-xl text-center mt-4 md:mt-12 h-fit py-3">
+                    {{ block.settings.cta_text }}
+                  </a>
+                </div>
+            {% endcase %}
+          {% endfor %}
         </div>
       </div>
     </div>
 
     <div class="cols-span-2">
-      <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-4 md:mb-7">
-        descubre
-      </h2>
+      {% if section.settings.discover_title != blank %}
+        <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-4 md:mb-7">
+          {{ section.settings.discover_title }}
+        </h2>
+      {% endif %}
 
-      <img
-        src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/lacra.png?v=1758247093"
-        alt=""
-        class="rounded-md hidden md:block">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/lacra_3.png?v=1758512341"
-        alt=""
-        class="rounded-md block md:hidden">
+      {% assign desktop_img = section.settings.discover_image_desktop %}
+      {% assign mobile_img = section.settings.discover_image_mobile %}
+      {% assign discover_alt = section.settings.discover_image_alt %}
+      {% if section.settings.discover_link_url != blank %}
+        <a href="{{ section.settings.discover_link_url }}">
+      {% endif %}
+      {% if desktop_img != blank %}
+        <img
+          src="{{ desktop_img | image_url: width: 1600 }}"
+          alt="{{ discover_alt }}"
+          class="rounded-md hidden md:block"
+          width="1600"
+          height="900">
+      {% endif %}
+      {% if mobile_img != blank %}
+        <img
+          src="{{ mobile_img | image_url: width: 900 }}"
+          alt="{{ discover_alt }}"
+          class="rounded-md block md:hidden"
+          width="900"
+          height="1200">
+      {% endif %}
+      {% if section.settings.discover_link_url != blank %}
+        </a>
+      {% endif %}
     </div>
 
   </div>
@@ -79,11 +83,13 @@
 
   {% comment %} roxy fest {% endcomment %}
   <div>
-    <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-4 md:mb-10">
-      últimas publicaciones
-    </h2>
+    {% if section.settings.latest_title != blank %}
+      <h2 class="text-[27px] md:text-[40px] text-white font-medium tracking-tight mb-4 md:mb-10">
+        {{ section.settings.latest_title }}
+      </h2>
+    {% endif %}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-10">
-      <a href="/products/roxyfest" class="col-span-1 roxycounter min-h-[420px] w-full flex flex-col justify-center items-center text-center py-6 px-4 rounded-xl">
+      <a href="/pages/roxyfest" class="col-span-1 roxycounter min-h-[420px] w-full flex flex-col justify-center items-center text-center py-6 px-4 rounded-xl">
         <h2 class="weird-font text-[70px] leading-[50px] font-bold mb-2">roxy<span class="opacity-50">fest</span>
         </h2>
         <div class="bg-white/10 p-3 shadow-xl rounded-xl border border-white  px-16 mt-8 py-2 rounded-full mt-3 min-w-[100px]">
@@ -98,18 +104,25 @@
         <div class="w-full h-full container mx-auto">
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-4 h-full">
             {% for block in section.blocks %}
-              <a href="{{ block.settings.new_creation__link }}" class="flex flex-col justify-start items-start bg-white/10 gap-5 h-full gap-3 p-4 md:py-0 items-center rounded-xl">
-                <div class="min-w-[150px] min-h-[150px] w-full h-[150px] overflow-hidden rounded-xl">
-                  <img
-                    src="{{ block.settings.new_creation__image | image_url: width: 300 }}"
-                    alt="{{ block.settings.new_creation__title }}"
-                    class="w-full h-full object-cover">
-                </div>
-                <div class="flex flex-col items-center md:items-start">
-                  <p class="font-[500] text-[15px] md:text-[20px] leading-[18px] md:leading-[24px] text-white">{{ block.settings.new_creation__title }}</p>
-                  <p class="text-[#777] text-[13px] leading-[15px]">{{ block.settings.new_creation__subtitle }}</p>
-                </div>
-              </a>
+              {% if block.type == 'new_creation' %}
+                <a
+                  href="{{ block.settings.new_creation__link }}"
+                  class="flex flex-col justify-start items-start bg-white/10 gap-5 h-full gap-3 p-4 md:py-0 items-center rounded-xl"
+                  {{ block.shopify_attributes }}>
+                  <div class="min-w-[150px] min-h-[150px] w-full h-[150px] overflow-hidden rounded-xl">
+                    <img
+                      src="{{ block.settings.new_creation__image | image_url: width: 300 }}"
+                      alt="{{ block.settings.new_creation__title }}"
+                      class="w-full h-full object-cover"
+                      width="300"
+                      height="300">
+                  </div>
+                  <div class="flex flex-col items-center md:items-start">
+                    <p class="font-[500] text-[15px] md:text-[20px] leading-[18px] md:leading-[24px] text-white">{{ block.settings.new_creation__title }}</p>
+                    <p class="text-[#777] text-[13px] leading-[15px]">{{ block.settings.new_creation__subtitle }}</p>
+                  </div>
+                </a>
+              {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -177,17 +190,98 @@
     "name": "Home",
     "settings": [
       {
-        "type": "richtext",
-        "id": "title",
-        "label": "Título"
+        "type": "text",
+        "id": "events_title",
+        "label": "Título - Eventos",
+        "default": "eventos"
+      },
+      {
+        "type": "text",
+        "id": "discover_title",
+        "label": "Título - Descubre",
+        "default": "descubre"
+      },
+      {
+        "type": "image_picker",
+        "id": "discover_image_desktop",
+        "label": "Imagen Descubre - Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "discover_image_mobile",
+        "label": "Imagen Descubre - Mobile"
       }, {
-        "type": "richtext",
-        "id": "content",
-        "label": "Contenido"
+        "type": "text",
+        "id": "discover_image_alt",
+        "label": "Alt de imagen Descubre",
+        "default": "Descubre"
+      }, {
+        "type": "url",
+        "id": "discover_link_url",
+        "label": "URL de Descubre (opcional)"
+      }, {
+        "type": "text",
+        "id": "latest_title",
+        "label": "Título - Últimas publicaciones",
+        "default": "últimas publicaciones"
       }
     ],
     "blocks": [
       {
+        "type": "event",
+        "name": "Evento",
+        "settings": [
+          {
+            "type": "text",
+            "id": "artist",
+            "label": "Artista / Organizador",
+            "default": "Nombre"
+          },
+          {
+            "type": "text",
+            "id": "day",
+            "label": "Día",
+            "default": "01"
+          },
+          {
+            "type": "text",
+            "id": "month",
+            "label": "Mes (abr, may)",
+            "default": "ene"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Título del evento",
+            "default": "Título del evento"
+          }, {
+            "type": "text",
+            "id": "location",
+            "label": "Ubicación",
+            "default": "Ciudad, País • Lugar"
+          }, {
+            "type": "checkbox",
+            "id": "muted",
+            "label": "Atenuar (50% opacidad)",
+            "default": false
+          }
+        ]
+      }, {
+        "type": "events_cta",
+        "name": "CTA Eventos",
+        "settings": [
+          {
+            "type": "text",
+            "id": "cta_text",
+            "label": "Texto CTA",
+            "default": "solicitar un evento +"
+          }, {
+            "type": "url",
+            "id": "cta_url",
+            "label": "URL CTA"
+          }
+        ]
+      }, {
         "type": "new_creation",
         "name": "New Creation",
         "settings": [
