@@ -1,45 +1,9 @@
 <div class="container mx-auto px-8 md:px-0">
-  {% if section.settings.title != blank %}
-    <h2 class="text-[27px] text-white font-medium mb-2 tracking-tight">
-      {{ section.settings.title }}
-    </h2>
-{% endif %}
 
-  {%- comment -%} Hero imágenes dinámicas con enlace opcional {%- endcomment -%}
-  {% assign desktop_img = section.settings.hero_image_desktop %}
-  {% assign mobile_img = section.settings.hero_image_mobile %}
-  {% assign hero_alt = section.settings.hero_image_alt %}
-  {% if section.settings.hero_link_url != blank %}
-    <a href="{{ section.settings.hero_link_url }}" class="block">
-  {% endif %}
-  {% if desktop_img != blank %}
-    <img
-      src="{{ desktop_img | image_url: width: 1600 }}"
-      srcset="{{ desktop_img | image_url: width: 800 }} 800w, {{ desktop_img | image_url: width: 1200 }} 1200w, {{ desktop_img | image_url: width: 1600 }} 1600w, {{ desktop_img | image_url: width: 2000 }} 2000w"
-      sizes="(min-width: 1024px) 100vw, 100vw"
-      alt="{{ hero_alt | default: 'Imagen destacada' }}"
-      class="rounded-md hidden md:block"
-      width="1600"
-      height="900">
-  {% endif %}
-  {% if mobile_img != blank %}
-    <img
-      src="{{ mobile_img | image_url: width: 900 }}"
-      srcset="{{ mobile_img | image_url: width: 400 }} 400w, {{ mobile_img | image_url: width: 600 }} 600w, {{ mobile_img | image_url: width: 900 }} 900w"
-      sizes="(max-width: 767px) 100vw, 100vw"
-      alt="{{ hero_alt | default: 'Imagen destacada' }}"
-      class="rounded-md block md:hidden"
-      width="900"
-      height="1200">
-  {% endif %}
-  {% if section.settings.hero_link_url != blank %}
-    </a>
-  {% endif %}
-
-  {%- comment -%} Audiovisual - título dinámico {%- endcomment -%}
-  {% if section.settings.audiovisual_title != blank %}
+  {%- comment -%} Fotografías - título dinámico {%- endcomment -%}
+  {% if section.settings.fotografias_title != blank %}
     <h2 class="text-[27px] text-white font-medium mb-2 tracking-tight mt-8">
-      {{ section.settings.audiovisual_title }}
+      {{ section.settings.fotografias_title }}
     </h2>
   {% endif %}
 
@@ -115,9 +79,9 @@
         "label": "URL del hero (opcional)"
       }, {
         "type": "text",
-        "id": "audiovisual_title",
-        "label": "Título - Audiovisual",
-        "default": "audiovisual"
+        "id": "fotografias_title",
+        "label": "Título - Fotografías",
+        "default": "Fotografías"
       }
     ],
     "blocks": [

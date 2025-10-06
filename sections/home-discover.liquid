@@ -51,28 +51,17 @@
         </h2>
       {% endif %}
 
-      {% assign desktop_img = section.settings.discover_image_desktop %}
-      {% assign mobile_img = section.settings.discover_image_mobile %}
-      {% assign discover_alt = section.settings.discover_image_alt %}
       {% if section.settings.discover_link_url != blank %}
-        <a href="{{ section.settings.discover_link_url }}">
+        <a class="cursor-pointer" href="{{ section.settings.discover_link_url }}">
       {% endif %}
-      {% if desktop_img != blank %}
-        <img
-          src="{{ desktop_img | image_url: width: 1600 }}"
-          alt="{{ discover_alt }}"
-          class="rounded-md hidden md:block"
-          width="1600"
-          height="900">
-      {% endif %}
-      {% if mobile_img != blank %}
-        <img
-          src="{{ mobile_img | image_url: width: 900 }}"
-          alt="{{ discover_alt }}"
-          class="rounded-md block md:hidden"
-          width="900"
-          height="1200">
-      {% endif %}
+      <div class="rounded-md text-center min-h-[223px] flex flex-col justify-center" style="background-color: {{ section.settings.discover_bg_color | default: '#FEFFEE' }}">
+        {% if section.settings.discover_primary_text != blank %}
+          <h3 class="josefin-sans-title text-black text-[120px] leading-[100px] font-bold m-0">{{ section.settings.discover_primary_text }}</h3>
+        {% endif %}
+        {% if section.settings.discover_secondary_text != blank %}
+          <p class="josefin-sans-title text-black text-lg md:text-[19px]">{{ section.settings.discover_secondary_text }}</p>
+        {% endif %}
+      </div>
       {% if section.settings.discover_link_url != blank %}
         </a>
       {% endif %}
@@ -163,6 +152,16 @@
     }
   }
 </style>
+
+<style>
+  .josefin-sans-title {
+    font-family: "Josefin Sans"
+    , sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+</style>
 <script>
   const countdown = () => {
     const targetDate = new Date("June 21, 2025 00:00:00").getTime();
@@ -202,19 +201,21 @@
         "default": "descubre"
       },
       {
-        "type": "image_picker",
-        "id": "discover_image_desktop",
-        "label": "Imagen Descubre - Desktop"
+        "type": "text",
+        "id": "discover_primary_text",
+        "label": "Texto Principal - Descubre",
+        "default": "LACRA"
       },
       {
-        "type": "image_picker",
-        "id": "discover_image_mobile",
-        "label": "Imagen Descubre - Mobile"
-      }, {
         "type": "text",
-        "id": "discover_image_alt",
-        "label": "Alt de imagen Descubre",
-        "default": "Descubre"
+        "id": "discover_secondary_text",
+        "label": "Texto Secundario - Descubre",
+        "default": "LABORATORIO CREATIVO AUDIOVISUAL"
+      }, {
+        "type": "color",
+        "id": "discover_bg_color",
+        "label": "Color de fondo - Descubre",
+        "default": "#FEFFEE"
       }, {
         "type": "url",
         "id": "discover_link_url",
