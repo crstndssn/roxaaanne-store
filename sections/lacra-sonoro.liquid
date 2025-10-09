@@ -1,3 +1,106 @@
-<div>
-  sonoro
+<div class="container mx-auto px-8 md:px-0">
+
+  {%- comment -%} Sonoro - título dinámico {%- endcomment -%}
+  {% if section.settings.sonoro_title != blank %}
+    <h2 class="text-[27px] text-white font-medium mb-2 tracking-tight mt-8">
+      {{ section.settings.sonoro_title }}
+    </h2>
+  {% endif %}
+
+  {%- comment -%} Bloques dinámicos: solo artículos {%- endcomment -%}
+  {% if section.blocks.size > 0 %}
+    <div class="flex overflow-x-scroll md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pb-8 mt-7 gap-7 md:gap-4">
+      {% for block in section.blocks %}
+        {% assign article = articles[block.settings.article] %}
+        {% if article %}
+          <a
+            href="{{ article.url }}"
+            class="bg-white/10 rounded-b-xl"
+            {{ block.shopify_attributes }}>
+            <div class="block w-full min-w-[270px] overflow-hidden flex flex-col">
+              {% if article.image %}
+                <img
+                  src="{{ article.image | image_url: width: 600 }}"
+                  alt="{{ article.title }}"
+                  class="w-full h-[170px] object-cover rounded-xl"
+                  width="600"
+                  height="340">
+              {% endif %}
+              <div class="p-4 flex justify-between items-center flex-1">
+                <h3 class="text-2xl font-semibold text-white">{{ article.title }}</h3>
+                <p class="text-lg text-gray-300 opacity-80 mb-1">
+                  por
+                  {% if article.metafields.custom.autor != blank %}
+                    {{ article.metafields.custom.autor }}
+                  {% else %}
+                    {{ article.author }}
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-gray-400 mt-4">No has agregado elementos todavía.</p>
+  {% endif %}
 </div>
+
+{% schema %}
+  {
+    "name": "Lacra Audiovisual",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título superior"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_image_desktop",
+        "label": "Imagen hero - Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_image_mobile",
+        "label": "Imagen hero - Mobile"
+      },
+      {
+        "type": "text",
+        "id": "hero_image_alt",
+        "label": "Alt de imagen hero",
+        "default": "Imagen destacada"
+      }, {
+        "type": "url",
+        "id": "hero_link_url",
+        "label": "URL del hero (opcional)"
+      }, {
+        "type": "text",
+        "id": "sonoro_title",
+        "label": "Título - Sonoro",
+        "default": "Sonoro"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "article_card",
+        "name": "Artículo",
+        "settings": [
+          {
+            "type": "article",
+            "id": "article",
+            "label": "Selecciona un artículo"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Lacra Audiovisual"
+      }
+    ]
+  }
+{% endschema %}

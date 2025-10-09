@@ -11,6 +11,75 @@
   "sections": {
     "eventos": {
       "type": "eventos",
+      "blocks": {
+        "evento_bBd87L": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "21",
+            "month": "JUN",
+            "month_full": "Junio",
+            "title": "ROXYFEST",
+            "location": "Neiva, Huila • Cara Mala Club",
+            "muted": true
+          }
+        },
+        "evento_hhf8cc": {
+          "type": "evento",
+          "settings": {
+            "artist": "cristian dussán",
+            "day": "12",
+            "month": "SEP",
+            "month_full": "Septiembre",
+            "title": "ALTER_OCIO (exposición)",
+            "location": "Quito, Ecuador • Casa Palenque",
+            "muted": true
+          }
+        },
+        "evento_EJ44TD": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "03",
+            "month": "oct",
+            "month_full": "Octubre",
+            "title": "Tapazo - Trailer Bejuco",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": true
+          }
+        },
+        "evento_8qbTHA": {
+          "type": "evento",
+          "settings": {
+            "artist": "Felipe Quien",
+            "day": "11",
+            "month": "oct",
+            "month_full": "Octubre",
+            "title": "Live Set Acid House",
+            "location": "Neiva, Huila • Festival BMX Trails Jam 3.0",
+            "muted": false
+          }
+        },
+        "evento_cCmcL9": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "15",
+            "month": "nov",
+            "month_full": "Noviembre",
+            "title": "GAITANA FEST",
+            "location": "Neiva, Huila • Centro de Convenciones",
+            "muted": false
+          }
+        }
+      },
+      "block_order": [
+        "evento_bBd87L",
+        "evento_hhf8cc",
+        "evento_EJ44TD",
+        "evento_8qbTHA",
+        "evento_cCmcL9"
+      ],
       "settings": {}
     }
   },

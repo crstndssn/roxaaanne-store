@@ -1,0 +1,185 @@
+<section class="container mx-auto p-8 md:p-0">
+  <div class="flex flex-col items-center text-center mb-16">
+    <h2 class="text-white text-7xl font-medium mb-0 my-4 md:mt-[70px]">eventos</h2>
+    <div class="md:w-[50%]">
+      <p class="my-3 text-2xl md:text-3xl font-light leading-tight">Descubre los eventos donde tu creadores favoritos hacen: música, arte, cine y cultura alternativa en distintos lugares del país y Latinoamérica.<br>¡Entérate de lo que viene!</p>
+    </div>
+  </div>
+
+
+  {%- assign month_bucket_raw = '' -%}
+  {%- assign has_events = false -%}
+
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'evento' and block.settings.month_full != blank -%}
+      {%- assign has_events = true -%}
+      {%- assign m = block.settings.month_full -%}
+      {%- assign token = '||' | append: m | append: '||' -%}
+      {%- unless month_bucket_raw contains token -%}
+        {%- assign month_bucket_raw = month_bucket_raw | append: token -%}
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if has_events -%}
+    {%- assign months = month_bucket_raw | split: '||' | uniq -%}
+    {%- assign months_clean = '' -%}
+    {%- for m in months -%}
+      {%- if m != '' -%}
+        {%- assign months_clean = months_clean | append: m | append: '##' -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign months_list = months_clean | split: '##' -%}
+
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-8">
+      {%- for month_label in months_list -%}
+        {%- if month_label != '' -%}
+          <div class="mb-8" style="-webkit-column-break-inside: avoid; break-inside: avoid-column;">
+            <h3 class="text-white text-3xl font-medium mb-2 uppercase">{{ month_label }}</h3>
+            <div class="bg-[#080808] rounded-2xl p-6 border border-[#2A2A2A]">
+              <div class="flex flex-col gap-6">
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'evento' and block.settings.month_full == month_label -%}
+                    <div class="flex flex-col gap-3{% if block.settings.muted %} opacity-50{% endif %}" {{ block.shopify_attributes }}>
+                      {%- if block.settings.artist != blank -%}
+                        <p class="text-2xl md:text-3xl font-medium">{{ block.settings.artist }}</p>
+                      {%- endif -%}
+
+                      <div class="flex gap-5">
+                        <div class="flex justify-center items-center bg-[#2A2A2A] text-white flex-col px-6 py-4 rounded-xl min-w-[70px] h-fit">
+                          <h4 class="text-white text-[28px] leading-[28px] font-medium">{{ block.settings.day }}</h4>
+                          <span class="text-sm uppercase tracking-wide">{{ block.settings.month }}</span>
+                        </div>
+
+                        <div class="flex flex-col justify-center">
+                          {%- if block.settings.title != blank -%}
+                            <p class="text-xl md:text-2xl">{{ block.settings.title }}</p>
+                          {%- endif -%}
+                          {%- if block.settings.location != blank -%}
+                            <p class="text-[#B3B3B3] text-lg md:text-xl">{{ block.settings.location }}</p>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <div class="text-white text-center opacity-60">No hay eventos para mostrar.</div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+  {
+    "name": "Eventos",
+    "blocks": [
+      {
+        "type": "evento",
+        "name": "Evento",
+        "settings": [
+          {
+            "type": "text",
+            "id": "artist",
+            "label": "Artista/Colectivo",
+            "default": "LACRA"
+          },
+          {
+            "type": "text",
+            "id": "day",
+            "label": "Día",
+            "default": "03"
+          },
+          {
+            "type": "text",
+            "id": "month",
+            "label": "Mes abreviado",
+            "default": "oct"
+          },
+          {
+            "type": "select",
+            "id": "month_full",
+            "label": "Mes (nombre completo)",
+            "options": [
+              {
+                "value": "Enero",
+                "label": "Enero"
+              },
+              {
+                "value": "Febrero",
+                "label": "Febrero"
+              },
+              {
+                "value": "Marzo",
+                "label": "Marzo"
+              },
+              {
+                "value": "Abril",
+                "label": "Abril"
+              }, {
+                "value": "Mayo",
+                "label": "Mayo"
+              }, {
+                "value": "Junio",
+                "label": "Junio"
+              }, {
+                "value": "Julio",
+                "label": "Julio"
+              }, {
+                "value": "Agosto",
+                "label": "Agosto"
+              }, {
+                "value": "Septiembre",
+                "label": "Septiembre"
+              }, {
+                "value": "Octubre",
+                "label": "Octubre"
+              }, {
+                "value": "Noviembre",
+                "label": "Noviembre"
+              }, {
+                "value": "Diciembre",
+                "label": "Diciembre"
+              }
+            ],
+            "default": "Octubre"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Título del evento",
+            "default": "Tapazo - Trailer Bejuco"
+          }, {
+            "type": "text",
+            "id": "location",
+            "label": "Ubicación/Descripción",
+            "default": "Neiva, Huila • Cara Mala"
+          }, {
+            "type": "checkbox",
+            "id": "muted",
+            "label": "Atenuar (50% opacidad)",
+            "default": false
+          }
+        ]
+      }
+    ],
+    "max_blocks": 10,
+    "presets": [
+      {
+        "name": "Eventos",
+        "blocks": [
+          {
+            "type": "evento"
+          }, {
+            "type": "evento"
+          }, {
+            "type": "evento"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

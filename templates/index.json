@@ -136,6 +136,46 @@
             "new_creation__subtitle": "nuevo artículo",
             "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/genesis"
           }
+        },
+        "event_tAEkNV": {
+          "type": "event",
+          "settings": {
+            "artist": "LACRA",
+            "day": "03",
+            "month": "oct",
+            "title": "Tapazo - Trailer Bejuco",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": true
+          }
+        },
+        "event_8gbaKi": {
+          "type": "event",
+          "settings": {
+            "artist": "Felipe Quien",
+            "day": "11",
+            "month": "oct",
+            "title": "Live Set Acid House",
+            "location": "Neiva, Huila • Festival BMX Trails Jam 3.0",
+            "muted": false
+          }
+        },
+        "event_NELTpj": {
+          "type": "event",
+          "settings": {
+            "artist": "LACRA",
+            "day": "15",
+            "month": "nov",
+            "title": "GAITANA FEST",
+            "location": "Neiva, Huila • Centro de Convenciones",
+            "muted": false
+          }
+        },
+        "events_cta_jkEmPX": {
+          "type": "events_cta",
+          "settings": {
+            "cta_text": "ver todos",
+            "cta_url": "shopify://pages/eventos"
+          }
         }
       },
       "block_order": [
@@ -144,11 +184,20 @@
         "new_creation_GffKEq",
         "new_creation_GEDeqG",
         "new_creation_hBmGMj",
-        "new_creation_TtTzjH"
+        "new_creation_TtTzjH",
+        "event_tAEkNV",
+        "event_8gbaKi",
+        "event_NELTpj",
+        "events_cta_jkEmPX"
       ],
       "settings": {
-        "title": "",
-        "content": ""
+        "events_title": "eventos",
+        "discover_title": "descubre",
+        "discover_image_desktop": "shopify://shop_images/lacra.png",
+        "discover_image_mobile": "shopify://shop_images/lacra_3.png",
+        "discover_image_alt": "Descubre",
+        "discover_link_url": "shopify://pages/lacra",
+        "latest_title": "últimas publicaciones"
       }
     },
     "home-blog": {
@@ -179,20 +228,28 @@
         "article_XKeMbE"
       ],
       "settings": {
-        "title": "artículos destacados"
+        "title": "artículos destacados",
+        "view_all_url": "",
+        "view_all_text": "ver todos"
       }
     },
     "home-best-sellers": {
       "type": "home-best-sellers",
       "settings": {}
     },
-    "home-pricing": {
-      "type": "home-pricing",
-      "settings": {}
-    },
     "home-about": {
       "type": "home-about",
-      "settings": {}
+      "settings": {
+        "pricing_title": "precios",
+        "pricing_description": "crear un perfil es gratis. si quieres crear un perfil puedes ingresar acá o te podemos ayudar enviando un correo a info@roxaaanne.com",
+        "title": "somos - eres",
+        "image": "shopify://shop_images/inmune93.jpg",
+        "description": "aquí compartimos lo que somos, lo que hacemos y lo que amamos, si quieres compartir también puedes hacerlo acá o si quieres solo explorar empezar te recomendamos que vayas a la lista de creadores, todos son universos creativos y tu también lo eres",
+        "button_one_text": "explorar",
+        "button_one_url": "shopify://pages/creadores",
+        "button_two_text": "crear perfil",
+        "button_two_url": "shopify://pages/crear-mi-perfil"
+      }
     }
   },
   "order": [
@@ -200,7 +257,6 @@
     "home-discover",
     "home-blog",
     "home-best-sellers",
-    "home-pricing",
     "home-about"
   ]
 }
