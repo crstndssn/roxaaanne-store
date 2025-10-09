@@ -1,0 +1,89 @@
+{% comment %}
+  Renders an article card for a given blog with settings to either show the image or not.
+
+  Accepts:
+  - blog: {Object} Blog object
+  - article: {Object} Article object
+  - media_aspect_ratio: {String} The setting changes the aspect ratio of the article image, if shown
+  - media_height: {String} The setting changes the height of the article image. Overrides media_aspect_ratio.
+  - show_image: {String} The setting either show the article image or not. If it's not included it will show the image by default
+  - show_date: {String} The setting either show the article date or not. If it's not included it will not show the image by default
+  - show_author: {String} The setting either show the article author or not. If it's not included it will not show the author by default
+  - show_badge: {String} The setting either show the blog badge or not.
+  - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+
+  Usage:
+  {% render 'article-card' blog: blog, article: article, show_image: section.settings.show_image %}
+{% endcomment %}
+
+{%- if article and article != empty -%}
+  {%- liquid
+    assign ratio = 1
+    if media_aspect_ratio != null
+      assign ratio = media_aspect_ratio
+    endif
+  -%}
+
+  <div class="group hover:opacity-80 transition-opacity duration-300">
+    <div>
+      <div class="">
+        {%- if show_image == true and article.image -%}
+          <div class="mb-4">
+            <img
+              src="{{ article.image.src | image_url: width: 600 }}"
+              sizes="(min-width: 1024px) 300px, (min-width: 768px) 50vw, 100vw"
+              alt="{{ article.image.src.alt | escape }}"
+              class="w-full h-48 object-cover rounded-lg"
+              {% unless lazy_load == false %}
+              loading="lazy"
+              {% endunless %}
+              width="{{ article.image.width }}"
+              height="{{ article.image.height }}">
+          </div>
+        {%- endif -%}
+
+        <div class="space-y-3">
+          <div class="space-y-2">
+            <h3 class="text-lg font-semibold text-white leading-tight">
+              <a href="{{ article.url }}" class="hover:text-gray-300 transition-colors">
+                {{ article.title | truncate: 50 | escape }}
+              </a>
+            </h3>
+            <div class="flex items-center space-x-3 text-sm text-gray-400">
+              {%- if show_date -%}
+                <span>{{ article.published_at | time_tag: format: 'date' }}</span>
+              {%- endif -%}
+              {%- if show_author and show_date -%}
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+              {%- endif -%}
+              {%- if show_author -%}
+                <span>{{ article.author }}</span>
+              {%- endif -%}
+            </div>
+            {%- if show_excerpt -%}
+              {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
+                <p class="text-gray-300 text-sm leading-relaxed">
+                  {%- if article.excerpt.size > 0 -%}
+                    {{ article.excerpt | strip_html | truncatewords: 30 }}
+                  {%- else -%}
+                    {{ article.content | strip_html | truncatewords: 30 }}
+                  {%- endif -%}
+                </p>
+              {%- endif -%}
+              <div class="pt-2">
+                {%- if article.comments_count > 0 and blog.comments_enabled? -%}
+                  <span class="text-xs text-gray-500">{{ 'blogs.article.comments' | t: count: article.comments_count }}</span>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+          {%- if show_badge -%}
+            <div class="inline-block">
+              <span class="px-2 py-1 text-xs font-medium bg-white/10 text-white rounded-full">{{ 'blogs.article.blog' | t }}</span>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

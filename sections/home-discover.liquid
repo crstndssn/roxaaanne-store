@@ -56,10 +56,10 @@
       {% endif %}
       <div class="rounded-md text-center min-h-[223px] flex flex-col justify-center" style="background-color: {{ section.settings.discover_bg_color | default: '#FEFFEE' }}">
         {% if section.settings.discover_primary_text != blank %}
-          <h3 class="josefin-sans-title text-black text-[120px] leading-[100px] font-bold m-0">{{ section.settings.discover_primary_text }}</h3>
+          <h3 class="josefin-sans-title text-black text-[21vw] leading-[20vw] md:text-[120px] md:leading-[100px] font-bold m-0">{{ section.settings.discover_primary_text }}</h3>
         {% endif %}
         {% if section.settings.discover_secondary_text != blank %}
-          <p class="josefin-sans-title text-black text-lg md:text-[19px]">{{ section.settings.discover_secondary_text }}</p>
+          <p class="josefin-sans-title text-black text-[3.3vw] leading-[3.3vw] md:text-[19px]">{{ section.settings.discover_secondary_text }}</p>
         {% endif %}
       </div>
       {% if section.settings.discover_link_url != blank %}
