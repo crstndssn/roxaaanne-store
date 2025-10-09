@@ -1,6 +1,6 @@
 <div class="container mx-auto px-8 md:px-0">
   {% if section.settings.title != blank %}
-    <h2 class="text-[27px] text-white font-medium mb-2 tracking-tight">
+    <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-2 tracking-tight">
       {{ section.settings.title }}
     </h2>
 {% endif %}
@@ -38,7 +38,7 @@
 
   {%- comment -%} Audiovisual - título dinámico {%- endcomment -%}
   {% if section.settings.audiovisual_title != blank %}
-    <h2 class="text-[27px] text-white font-medium mb-2 tracking-tight mt-8">
+    <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-2 tracking-tight mt-8">
       {{ section.settings.audiovisual_title }}
     </h2>
   {% endif %}
