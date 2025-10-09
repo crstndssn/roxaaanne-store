@@ -193,9 +193,6 @@
       "settings": {
         "events_title": "eventos",
         "discover_title": "descubre",
-        "discover_image_desktop": "shopify://shop_images/lacra.png",
-        "discover_image_mobile": "shopify://shop_images/lacra_3.png",
-        "discover_image_alt": "Descubre",
         "discover_link_url": "shopify://pages/lacra",
         "latest_title": "últimas publicaciones"
       }

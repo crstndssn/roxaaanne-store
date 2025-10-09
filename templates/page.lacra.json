@@ -10,23 +10,36 @@
 {
   "sections": {
     "header": {
-      "type": "lacra-header"
+      "type": "lacra-header",
+      "settings": {}
     },
     "audiovisual": {
-      "type": "lacra-audiovisual"
+      "type": "lacra-audiovisual",
+      "settings": {}
     },
     "fotografias": {
-      "type": "lacra-fotografias"
+      "type": "lacra-fotografias",
+      "settings": {}
     },
     "sonoro": {
-      "type": "lacra-sonoro"
+      "type": "lacra-sonoro",
+      "settings": {}
     },
     "eventos": {
-      "type": "lacra-eventos"
+      "type": "lacra-eventos",
+      "settings": {}
     },
     "equipo": {
-      "type": "lacra-equipo"
+      "type": "lacra-equipo",
+      "settings": {}
     }
   },
-  "order": ["header", "audiovisual", "fotografias", "sonoro", "eventos", "equipo"]
+  "order": [
+    "header",
+    "audiovisual",
+    "fotografias",
+    "sonoro",
+    "eventos",
+    "equipo"
+  ]
 }

@@ -12,6 +12,13 @@
     "creator": {
       "type": "creator",
       "blocks": {
+        "section_ECJAxU": {
+          "type": "section",
+          "settings": {
+            "title": "diario",
+            "link": "shopify://blogs/articulos-de-cristian-dussan"
+          }
+        },
         "section_VURfcD": {
           "type": "section",
           "settings": {
@@ -19,26 +26,26 @@
             "link": "shopify://blogs/fotografias-de-cristian-dussan"
           }
         },
+        "section_UQULrC": {
+          "type": "section",
+          "settings": {
+            "title": "software",
+            "link": ""
+          }
+        },
         "section_wy4R8c": {
           "type": "section",
-          "disabled": true,
           "settings": {
             "title": "películas",
             "link": "shopify://pages/peliculas"
           }
-        },
-        "section_ECJAxU": {
-          "type": "section",
-          "settings": {
-            "title": "artículos",
-            "link": "shopify://blogs/articulos-de-cristian-dussan"
-          }
         }
       },
       "block_order": [
+        "section_ECJAxU",
         "section_VURfcD",
-        "section_wy4R8c",
-        "section_ECJAxU"
+        "section_UQULrC",
+        "section_wy4R8c"
       ],
       "settings": {
         "image": "shopify://shop_images/IMG_4805.jpg",
