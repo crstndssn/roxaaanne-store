@@ -15,19 +15,50 @@
     },
     "audiovisual": {
       "type": "lacra-audiovisual",
-      "settings": {}
+      "blocks": {
+        "article_card_TgRqXm": {
+          "type": "article_card",
+          "settings": {
+            "article": "alterocio/unidos-por-la-conservacion"
+          }
+        }
+      },
+      "block_order": [
+        "article_card_TgRqXm"
+      ],
+      "settings": {
+        "title": "",
+        "hero_image_alt": "Imagen destacada",
+        "hero_link_url": "",
+        "audiovisual_title": "Audiovisual"
+      }
     },
     "fotografias": {
       "type": "lacra-fotografias",
-      "settings": {}
+      "settings": {
+        "title": "",
+        "hero_image_alt": "Imagen destacada",
+        "hero_link_url": "",
+        "fotografias_title": "Fotografías"
+      }
     },
     "sonoro": {
       "type": "lacra-sonoro",
-      "settings": {}
+      "settings": {
+        "title": "",
+        "hero_image_alt": "Imagen destacada",
+        "hero_link_url": "",
+        "sonoro_title": "Sonoro"
+      }
     },
     "eventos": {
       "type": "lacra-eventos",
-      "settings": {}
+      "settings": {
+        "title": "",
+        "hero_image_alt": "Imagen destacada",
+        "hero_link_url": "",
+        "eventos_title": "Producción de Eventos"
+      }
     },
     "equipo": {
       "type": "lacra-equipo",
