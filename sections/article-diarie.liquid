@@ -1,6 +1,6 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<article class="container mx-auto">
+<article class="container mx-auto flex flex-col justify-center items-center px-8 md:px-0">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
@@ -9,19 +9,19 @@
         </div>
 
     {%- when 'title' -%}
-        <header>
-          <h1 class="text-[50px] tracking-[-3px] mt-[70px]">
+        <header class="flex flex-col justify-center items-center space-y-2 mt-10" {{ block.shopify_attributes }}>
+          <h1 class="text-[50px] tracking-[-3px] mt-5 md:mt-[50px] text-center">
             {{ article.title | escape }}
           </h1>
           {%- if block.settings.blog_show_date -%}
-            <span class="circle-divider caption-with-letter-spacing">
+            <span class="text-center opacity-70">
               {{- article.published_at | time_tag: format: 'date' -}}
             </span>
           {%- endif -%}
           {%- if block.settings.blog_show_author -%}
-            <span class="caption-with-letter-spacing">
-              <span>{{ article.author }}</span>
-            </span>
+  
+              <span class="capitalize">por: {{ article.metafields.custom.autor }}</span>
+   
           {%- endif -%}
         </header>
 
@@ -39,7 +39,7 @@
 
 
       {%- when 'content' -%}
-        <div class="text-[30px] md:max-w-[70%] leading-[40px] font-[300]" {{ block.shopify_attributes }}>
+        <div class="text-[20px] md:max-w-[70%] leading-[35px] font-[300] mt-10" {{ block.shopify_attributes }}>
           {{ article.content }}
         </div>
 
@@ -267,7 +267,8 @@
 
 <style>
   * {
-    color: #f6f5f0 !important;
+    color: #fff4e0 !important;
+    border-color: #fff4e0 !important;
   }
 </style>
 

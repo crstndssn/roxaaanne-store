@@ -26,7 +26,7 @@
 
   <div class="border border-white/20 rounded-lg p-5 hover:bg-white/5 transition-colors h-full w-full">
     {% comment %} <article aria-labelledby="Article-{{ article.id }}"> {% endcomment %}
-    <a href="{{ article.url }}" class="hover:text-gray-300 transition-colors w-full">
+    <a href="{{ article.url }}" class="hover:text-white transition-colors w-full">
       <div class="">
         {%- if show_image == true and article.image -%}
           <div class="mb-4">
@@ -51,7 +51,7 @@
 
             {%- if show_excerpt -%}
               {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
-                <p class="text-gray-300 text-3xl text-center leading-2xl mb-2">
+                <p class="text-white text-3xl text-center leading-2xl mb-2">
                   {%- if article.excerpt.size > 0 -%}
                     {{ article.excerpt | strip_html | truncatewords: 30 }}
                   {%- else -%}
