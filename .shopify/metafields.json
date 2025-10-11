@@ -9,6 +9,16 @@
         "name": "single_line_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "background_color",
+      "namespace": "custom",
+      "name": "background color",
+      "description": "este color va cuanto el post es tipo fotografía",
+      "type": {
+        "name": "color",
+        "category": "COLOR"
+      }
     }
   ],
   "blog": [],
