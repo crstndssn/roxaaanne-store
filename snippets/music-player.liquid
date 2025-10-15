@@ -1,0 +1,151 @@
+{% comment %}
+  Renders a fixed music player component
+
+  Accepts:
+  - song_url: {String} URL of the audio file
+  - song_name: {String} Name of the song
+  - artist_name: {String} Name of the artist
+  - show_player: {Boolean} Whether to show the player or not
+
+  Usage:
+  {% render 'music-player', song_url: 'audio.mp3', song_name: 'Song Title', artist_name: 'Artist Name', show_player: true %}
+{% endcomment %}
+
+{%- if show_player and song_url -%}
+<div id="music-player" class="fixed bottom-4 right-4 z-50 bg-black/90 backdrop-blur-sm border border-white/20 rounded-xl p-4 min-w-[300px] shadow-2xl">
+  <div class="flex items-center space-x-4">
+    <!-- Play/Pause Button -->
+    <button id="play-pause-btn" class="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors group">
+      <!-- Play Icon -->
+      <svg id="play-icon" class="w-5 h-5 text-black ml-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M8 5v10l8-5-8-5z"/>
+      </svg>
+      <!-- Pause Icon (hidden by default) -->
+      <svg id="pause-icon" class="w-5 h-5 text-black hidden" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M6 4h2v12H6V4zm6 0h2v12h-2V4z"/>
+      </svg>
+    </button>
+
+    <!-- Song Info -->
+    <div class="flex-1 min-w-0">
+      <div class="text-white font-medium text-sm truncate porter-sans">
+        {{ song_name | default: 'Unknown Song' }}
+      </div>
+      <div class="text-gray-300 text-xs truncate">
+        {{ artist_name | default: 'Unknown Artist' }}
+      </div>
+    </div>
+
+    <!-- Close Button -->
+    <button id="close-player-btn" class="flex-shrink-0 w-8 h-8 text-white/60 hover:text-white transition-colors">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="mt-3">
+    <div class="w-full bg-gray-600 h-1 rounded-full overflow-hidden">
+      <div id="progress-bar" class="bg-white h-full w-0 transition-all duration-100"></div>
+    </div>
+    <div class="flex justify-between text-xs text-gray-400 mt-1">
+      <span id="current-time">0:00</span>
+      <span id="total-time">0:00</span>
+    </div>
+  </div>
+
+  <!-- Hidden Audio Element -->
+  <audio id="audio-player" preload="metadata">
+    <source src="{{ song_url }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const player = document.getElementById('music-player');
+  const audio = document.getElementById('audio-player');
+  const playPauseBtn = document.getElementById('play-pause-btn');
+  const playIcon = document.getElementById('play-icon');
+  const pauseIcon = document.getElementById('pause-icon');
+  const closeBtn = document.getElementById('close-player-btn');
+  const progressBar = document.getElementById('progress-bar');
+  const currentTimeSpan = document.getElementById('current-time');
+  const totalTimeSpan = document.getElementById('total-time');
+
+  let isPlaying = false;
+
+  // Play/Pause functionality
+  playPauseBtn.addEventListener('click', function() {
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+  });
+
+  // Update play/pause button state
+  audio.addEventListener('play', function() {
+    isPlaying = true;
+    playIcon.classList.add('hidden');
+    pauseIcon.classList.remove('hidden');
+  });
+
+  audio.addEventListener('pause', function() {
+    isPlaying = false;
+    playIcon.classList.remove('hidden');
+    pauseIcon.classList.add('hidden');
+  });
+
+  // Update progress bar and time
+  audio.addEventListener('timeupdate', function() {
+    if (audio.duration) {
+      const progress = (audio.currentTime / audio.duration) * 100;
+      progressBar.style.width = progress + '%';
+      
+      currentTimeSpan.textContent = formatTime(audio.currentTime);
+    }
+  });
+
+  // Set total time when metadata loads
+  audio.addEventListener('loadedmetadata', function() {
+    totalTimeSpan.textContent = formatTime(audio.duration);
+  });
+
+  // Progress bar click to seek
+  progressBar.parentElement.addEventListener('click', function(e) {
+    if (audio.duration) {
+      const rect = this.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      const seekTime = (clickX / width) * audio.duration;
+      audio.currentTime = seekTime;
+    }
+  });
+
+  // Close player
+  closeBtn.addEventListener('click', function() {
+    audio.pause();
+    player.style.display = 'none';
+  });
+
+  // Format time helper
+  function formatTime(seconds) {
+    if (isNaN(seconds)) return '0:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return mins + ':' + (secs < 10 ? '0' : '') + secs;
+  }
+
+  // Auto-hide when song ends
+  audio.addEventListener('ended', function() {
+    isPlaying = false;
+    playIcon.classList.remove('hidden');
+    pauseIcon.classList.add('hidden');
+    progressBar.style.width = '0%';
+    currentTimeSpan.textContent = '0:00';
+  });
+});
+</script>
+{%- endif -%}

@@ -9,6 +9,66 @@
         "name": "single_line_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "background_color",
+      "namespace": "custom",
+      "name": "background color",
+      "description": "este color va cuanto el post es tipo fotografía",
+      "type": {
+        "name": "color",
+        "category": "COLOR"
+      }
+    },
+    {
+      "key": "song_credits",
+      "namespace": "custom",
+      "name": "song credits",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "song_name",
+      "namespace": "custom",
+      "name": "song name",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "border_color",
+      "namespace": "custom",
+      "name": "border color",
+      "description": "",
+      "type": {
+        "name": "color",
+        "category": "COLOR"
+      }
+    },
+    {
+      "key": "font_color",
+      "namespace": "custom",
+      "name": "font color",
+      "description": "",
+      "type": {
+        "name": "color",
+        "category": "COLOR"
+      }
+    },
+    {
+      "key": "song_url",
+      "namespace": "custom",
+      "name": "song url",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
     }
   ],
   "blog": [],
