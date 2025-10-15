@@ -42,7 +42,7 @@
               height="{{ article.image.height }}">
           </div>
         {%- else -%}
-          <div class="w-full h-full min-h-[150px] border rounded-2xl p-8 flex flex-col justify-center items-center" style="background-color: {{ article.metafields.custom.background_color.value | default: '#2A2A2A' }}; border-color : {{ article.metafields.custom.border_color.value | default: '#fbf7f1' }};">
+          <div class="w-full h-full min-h-[200px] border rounded-2xl p-8 flex flex-col justify-center items-center" style="background-color: {{ article.metafields.custom.background_color.value | default: '#2A2A2A' }}; border-color : {{ article.metafields.custom.border_color.value | default: '#fbf7f1' }};">
             <div class="space-y-3 text-center">
               <h3 style="color: {{ article.metafields.custom.font_color.value | default: '#fbf7f1' }};" class="porter-sans text-black text-5xl md:text-4xl md:text-6xl font-normal leading-tight tracking-tight">
                 {{ article.title | truncate: 50 | escape }}
