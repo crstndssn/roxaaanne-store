@@ -42,9 +42,9 @@
               height="{{ article.image.height }}">
           </div>
         {%- else -%}
-          <div class="w-full h-full min-h-[200px] rounded-lg p-8 flex flex-col justify-center items-center" style="background-color: {{ article.metafields.custom.background_color.value | default: '#2A2A2A' }}">
+          <div class="w-full h-full min-h-[150px] border rounded-2xl p-8 flex flex-col justify-center items-center" style="background-color: {{ article.metafields.custom.background_color.value | default: '#2A2A2A' }}; border-color : {{ article.metafields.custom.border_color.value | default: '#fbf7f1' }};">
             <div class="space-y-3 text-center">
-              <h3 class="porter-sans text-black text-5xl md:text-4xl md:text-6xl font-normal leading-tight tracking-tight">
+              <h3 style="color: {{ article.metafields.custom.font_color.value | default: '#fbf7f1' }};" class="porter-sans text-black text-5xl md:text-4xl md:text-6xl font-normal leading-tight tracking-tight">
                 {{ article.title | truncate: 50 | escape }}
               </h3>
 
@@ -62,7 +62,7 @@
 
               <div class="flex items-center justify-center space-x-3 text-sm text-gray-300">
                 {%- if show_date -%}
-                  <span class="opacity-70 text-2xl md:text-3xl border border-black text-black px-7 pt-1 rounded-full">{{ article.published_at | date: '%Y' }}</span>
+                  <span style="border-color: {{ article.metafields.custom.font_color.value | default: '#fbf7f1' }}; color: {{ article.metafields.custom.font_color.value | default: '#fbf7f1' }};" class="text-2xl md:text-3xl border border-black px-7 pt-1 rounded-full">{{ article.published_at | date: '%Y' }}</span>
                 {%- endif -%}
                 {%- if show_author and show_date -%}
                   <span class="w-1 h-1 bg-gray-400 rounded-full"></span>

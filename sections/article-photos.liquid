@@ -26,23 +26,22 @@
                           </header> {% endcomment %}
 
       {%- when 'featured_image' -%}
-        <div class="w-full max-w-4xl mx-auto">
-          <div class="w-full h-full min-h-[150px] rounded-lg p-8 flex flex-col justify-center items-center" style="background-color: {{ article.metafields.custom.background_color.value | default: '#2A2A2A' }}">
+        <div class="w-full mx-auto">
+          <div class="w-full h-full min-h-[200px] md:min-h-[250px] rounded-lg p-8 flex flex-col justify-center items-center border border-[{{ article.metafields.custom.border_color.value | default: '#fbf7f1' }}]" style="background-color: {{ article.metafields.custom.background_color.value | default: '#2A2A2A' }}">
             <div class="space-y-6 text-center">
-              <h1 class="porter-sans text-black text-6xl md:text-8xl font-normal leading-tight tracking-tight">
+              <h1 class="porter-sans text-[{{ article.metafields.custom.font_color.value | default: '#fbf7f1' }}] text-6xl md:text-8xl font-normal leading-tight tracking-tight">
                 {{ article.title | truncate: 50 | escape }}
               </h1>
-              <div class="flex items-center justify-center space-x-3">
-                <span class="opacity-70 text-3xl md:text-4xl border border-black text-black px-8 pt-2 rounded-full">{{ article.published_at | date: '%Y' }}</span>
+              <div class="flex items-center justify-center">
+                <span class="text-3xl md:text-4xl border border-[{{ article.metafields.custom.border_color.value | default: '#fbf7f1' }}] text-[{{ article.metafields.custom.font_color.value | default: '#fbf7f1' }}] px-8 pt-1 rounded-full">{{ article.published_at | date: '%Y' }}</span>
               </div>
             </div>
           </div>
 
-          <div class="flex justify-between items-center mt-2">
-            <h2 class="text-white text-xl m-0 text-right mr-1">por: {{ article.metafields.custom.autor }}</h2>
-            <p class="text-white text-xl m-0 text-left">
-              <span class="text-white">cancion por:</span>
-              {{ article.metafields.custom.song_credits }}
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-2">
+            <h2 class="text-white text-xl m-0 text-right font-light mr-1">fotografías por: <span class="font-medium">{{ article.metafields.custom.autor }}</span></h2>
+            <p class="text-white text-xl m-0 text-right font-light mr-1">
+              cancion por: <span class="font-medium">{{ article.metafields.custom.song_credits }}</span>
             </p>
           </div>
         </div>
@@ -50,7 +49,7 @@
 
       {%- when 'content' -%}
 
-        <div class="text-[20px] md:max-w-[70%] leading-[35px] font-[300]" {{ block.shopify_attributes }}>
+        <div class="text-[20px] md:max-w-[100%] leading-[35px] font-[300]" {{ block.shopify_attributes }}>
           {{ article.content }}
         </div>
 
@@ -65,7 +64,7 @@
   {%- endfor -%}
 
   <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
+    <a href="{{ blog.url }}" class="article-template__link link animate-arrow text-white">
       <span class="icon-wrap">
         <span class="svg-wrapper">
           {{- 'icon-arrow.svg' | inline_asset_content -}}
@@ -274,7 +273,7 @@
 
 <!-- Music Player -->
 {% comment %} {%- if article.metafields.custom.song_url.value -%} {% endcomment %}
-<div id="music-player" class="fixed bottom-4 inset-x-7 z-50 bg-black/90 backdrop-blur-sm border-2 border-[{{ article.metafields.custom.background_color.value }}] rounded-xl p-4 min-w-[80%] shadow-2xl">
+<div id="music-player" class="fixed bottom-4 inset-x-7 z-50 bg-black/90 backdrop-blur-sm border-2 border-[{{ article.metafields.custom.border_color.value }}] rounded-xl p-4 md:min-w-[80%] shadow-2xl">
 
   <div class="flex justify-between gap-4">
     <!-- Play/Pause Button -->
@@ -300,23 +299,24 @@
     <div class="w-full flex flex-col items-end justify-around">
 
       <!-- Song Info -->
-      <div class="flex gap-3">
+      <div class="flex gap-3 pr-3">
         <div class="font-medium text-2xl">
-          {{ article.title | truncate: 30 }}
+          {{ article.metafields.custom.song_name | truncate: 30 }}
         </div>
+        • 
         <div class="font-light text-2xl truncate">
-          {{ article.metafields.custom.autor | default: 'Artista desconocido' }}
+          {{ article.metafields.custom.song_credits | default: 'Artista desconocido' }}
         </div>
       </div>
 
-          <!-- Progress Bar -->
+      <!-- Progress Bar -->
       <div class="w-full flex justify-center items-center gap-2">
         <div class="flex justify-between text-sm text-gray-400 mt-1">
           <span id="current-time">0:00</span>
         </div>
 
         <div class="w-full bg-gray-600 h-1 rounded-full overflow-hidden cursor-pointer" id="progress-container">
-          <div id="progress-bar" class="bg-[{{ article.metafields.custom.background_color.value }}] h-full w-0 transition-all duration-100"></div>
+          <div id="progress-bar" class="bg-[{{ article.metafields.custom.border_color.value }}] h-full w-0 transition-all duration-100"></div>
         </div>
         <div class="flex justify-between text-sm text-gray-400 mt-1">
           <span id="total-time">0:00</span>
@@ -325,15 +325,11 @@
 
     </div>
 
-
-
-
-
     <!-- Hidden Audio Element -->
-    <audio id="audio-player" preload="metadata">
-      <source src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/sulky.mp3?v=1760165207" type="audio/mpeg">
-      <source src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/sulky.mp3?v=1760165207" type="audio/wav">
-      <source src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/sulky.mp3?v=1760165207" type="audio/ogg">
+    <audio id="audio-player" preload="metadata" autoplay="true">
+      <source src="{{ article.metafields.custom.song_url.value }}" type="audio/mpeg">
+      <source src="{{ article.metafields.custom.song_url.value }}" type="audio/wav">
+      <source src="{{ article.metafields.custom.song_url.value }}" type="audio/ogg">
       Tu navegador no soporta el elemento de audio.
     </audio>
   </div>
