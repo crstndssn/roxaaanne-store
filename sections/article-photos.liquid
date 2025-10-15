@@ -41,7 +41,7 @@
           <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-2">
             <h2 class="text-white text-xl m-0 text-right font-light mr-1">fotografías por: <span class="font-medium">{{ article.metafields.custom.autor }}</span></h2>
             <p class="text-white text-xl m-0 text-right font-light mr-1">
-              canción por: <span class="font-medium">{{ article.metafields.custom.song_credits }}</span>
+              cancion por: <span class="font-medium">{{ article.metafields.custom.song_credits }}</span>
             </p>
           </div>
         </div>
@@ -273,7 +273,7 @@
 
 <!-- Music Player -->
 {% comment %} {%- if article.metafields.custom.song_url.value -%} {% endcomment %}
-<div id="music-player" class="fixed bottom-10 inset-x-7 z-50 bg-black/90 backdrop-blur-sm border-2 border-[{{ article.metafields.custom.border_color.value }}] rounded-3xl p-4 md:min-w-[80%] shadow-2xl">
+<div id="music-player" class="fixed bottom-4 inset-x-7 z-50 bg-black/90 backdrop-blur-sm border-2 border-[{{ article.metafields.custom.border_color.value }}] rounded-xl p-4 md:min-w-[80%] shadow-2xl">
 
   <div class="flex justify-between gap-4">
     <!-- Play/Pause Button -->
@@ -326,7 +326,7 @@
     </div>
 
     <!-- Hidden Audio Element -->
-    <audio id="audio-player" preload="metadata" webkit-playsinline playsinline>
+    <audio id="audio-player" preload="metadata" autoplay="true">
       <source src="{{ article.metafields.custom.song_url.value }}" type="audio/mpeg">
       <source src="{{ article.metafields.custom.song_url.value }}" type="audio/wav">
       <source src="{{ article.metafields.custom.song_url.value }}" type="audio/ogg">
@@ -359,217 +359,46 @@
       const totalTimeSpan = document.getElementById('total-time');
 
       let isPlaying = false;
-      let iosAudioUnlocked = false;
-      let autoplayAttempted = false;
-
-      // Función helper para sincronizar iconos
-      function updatePlayPauseIcons(playing) {
-        isPlaying = playing;
-        if (playing) {
-          playIcon.classList.add('hidden');
-          pauseIcon.classList.remove('hidden');
-        } else {
-          playIcon.classList.remove('hidden');
-          pauseIcon.classList.add('hidden');
-        }
-      }
-
-      // Detectar si es iOS
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-      // Función para intentar autoplay múltiples veces en desktop
-      function attemptDesktopAutoplay() {
-        if (isMobile || autoplayAttempted) return;
-        
-        autoplayAttempted = true;
-        let attempts = 0;
-        const maxAttempts = 3;
-        
-        function tryPlay() {
-          attempts++;
-          const playPromise = audio.play();
-          
-          if (playPromise !== undefined) {
-            playPromise.then(() => {
-              console.log(`Autoplay exitoso en desktop (intento ${attempts})`);
-            }).catch((error) => {
-              console.log(`Autoplay fallido en desktop (intento ${attempts}):`, error);
-              if (attempts < maxAttempts) {
-                setTimeout(tryPlay, 500 * attempts); // Aumentar delay progresivamente
-              } else {
-                console.log('Autoplay definitivamente bloqueado en desktop');
-              }
-            });
-          }
-        }
-        
-        // Primer intento inmediato
-        tryPlay();
-      }
-
-      // Para iOS: desbloquear audio con primera interacción y empezar a reproducir
-      function unlockAudioContext() {
-        if (isIOS && !iosAudioUnlocked) {
-          iosAudioUnlocked = true;
-          const playPromise = audio.play();
-          if (playPromise !== undefined) {
-            playPromise.then(() => {
-              console.log('Audio desbloqueado y reproduciéndose en iOS');
-              // Los eventos 'play' manejarán los iconos automáticamente
-            }).catch((error) => {
-              console.log('No se pudo desbloquear/reproducir audio:', error);
-              updatePlayPauseIcons(false);
-            });
-          }
-        } else if (!isIOS) {
-          // En Android/otros móviles, también intentar reproducir
-          const playPromise = audio.play();
-          if (playPromise !== undefined) {
-            playPromise.then(() => {
-              console.log('Audio iniciado en móvil');
-            }).catch((error) => {
-              console.log('No se pudo reproducir en móvil:', error);
-            });
-          }
-        }
-      }
-
-      // Intentar autoplay cuando se carga la metadata
-      audio.addEventListener('loadedmetadata', function() {
-        if (audio.duration && !isNaN(audio.duration)) {
-          totalTimeSpan.textContent = formatTime(audio.duration);
-          
-          // En desktop: autoplay agresivo
-          // En móvil: esperar interacción del usuario
-          if (!isMobile) {
-            attemptDesktopAutoplay();
-          } else {
-            console.log('Dispositivo móvil: esperando interacción para reproducir');
-          }
-        }
-      });
-
-      function tryAutoplay() {
-        if (isMobile) {
-          console.log('Móvil: autoplay deshabilitado, esperando interacción');
-          return;
-        }
-
-        // En desktop, intentar autoplay más agresivamente
-        const playPromise = audio.play();
-        
-        if (playPromise !== undefined) {
-          playPromise.then(function() {
-            // Autoplay successful en desktop
-            console.log('Autoplay exitoso en desktop');
-          }).catch(function(error) {
-            // Autoplay blocked en desktop - intentar de nuevo después de un pequeño delay
-            console.log('Autoplay bloqueado en desktop, reintentando...', error);
-            setTimeout(() => {
-              const retryPromise = audio.play();
-              if (retryPromise) {
-                retryPromise.then(() => {
-                  console.log('Reintento de autoplay exitoso en desktop');
-                }).catch(e => {
-                  console.log('Autoplay definitivamente bloqueado en desktop:', e);
-                });
-              }
-            }, 1000);
-          });
-        }
-      }
-
-      // Desbloquear audio en primera interacción (solo en móviles)
-      let hasInteracted = false;
-      
-      if (isMobile) {
-        document.addEventListener('touchstart', function() {
-          if (!hasInteracted) {
-            hasInteracted = true;
-            unlockAudioContext();
-          }
-        }, { once: true });
-
-        document.addEventListener('click', function() {
-          if (!hasInteracted) {
-            hasInteracted = true;
-            unlockAudioContext();
-          }
-        }, { once: true });
-      }
 
       // Play/Pause functionality
       playPauseBtn.addEventListener('click', function() {
-        // En iOS, si no está desbloqueado, no hacer nada aquí porque unlockAudioContext ya maneja la reproducción
-        if (isIOS && !iosAudioUnlocked) {
-          return; // unlockAudioContext se encargará de la reproducción
-        }
-
-        if (isPlaying) {
-          audio.pause();
-        } else {
-          // Cambiar inmediatamente el icono para mejor UX
-          updatePlayPauseIcons(true);
-          
-          const playPromise = audio.play();
-          
-          if (playPromise !== undefined) {
-            playPromise.then(function() {
-              // Reproducción exitosa - el evento 'play' manejará los iconos
-              console.log('Reproducción iniciada desde botón');
-            }).catch(function(error) {
-              console.log('Error al reproducir desde botón:', error);
-              // Revertir los iconos si hay error
-              updatePlayPauseIcons(false);
-              
-              // Intentar recargar el audio en iOS
-              if (isIOS) {
-                audio.load();
-                setTimeout(() => {
-                  const retryPromise = audio.play();
-                  if (retryPromise) {
-                    retryPromise.catch(e => {
-                      console.log('Reintento fallido:', e);
-                      updatePlayPauseIcons(false);
-                    });
-                  }
-                }, 100);
-              }
-            });
-          }
-        }
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play().catch(function(error) {
+        console.log('Error al reproducir:', error);
+      });
+    }
       });
 
       // Update play/pause button state
       audio.addEventListener('play', function() {
-        updatePlayPauseIcons(true);
-        console.log('Estado: reproduciendo');
+    isPlaying = true;
+    playIcon.classList.add('hidden');
+    pauseIcon.classList.remove('hidden');
       });
 
       audio.addEventListener('pause', function() {
-        updatePlayPauseIcons(false);
-        console.log('Estado: pausado');
-      });
-
-      // También escuchar cambios en el estado de reproducción
-      audio.addEventListener('playing', function() {
-        updatePlayPauseIcons(true);
-      });
-
-      audio.addEventListener('waiting', function() {
-        // Mantener el icono de pause mientras espera
-        updatePlayPauseIcons(true);
+    isPlaying = false;
+    playIcon.classList.remove('hidden');
+    pauseIcon.classList.add('hidden');
       });
 
       // Update progress bar and time
       audio.addEventListener('timeupdate', function() {
-        if (audio.duration && !isNaN(audio.duration)) {
-          const progress = (audio.currentTime / audio.duration) * 100;
-          progressBar.style.width = progress + '%';
-          
-          currentTimeSpan.textContent = formatTime(audio.currentTime);
-        }
+    if (audio.duration && !isNaN(audio.duration)) {
+      const progress = (audio.currentTime / audio.duration) * 100;
+      progressBar.style.width = progress + '%';
+      
+      currentTimeSpan.textContent = formatTime(audio.currentTime);
+    }
+      });
+
+      // Set total time when metadata loads
+      audio.addEventListener('loadedmetadata', function() {
+    if (audio.duration && !isNaN(audio.duration)) {
+      totalTimeSpan.textContent = formatTime(audio.duration);
+    }
       });
 
       // Progress bar click to seek
@@ -599,12 +428,15 @@
 
       // Auto-reset when song ends
       audio.addEventListener('ended', function() {
-        updatePlayPauseIcons(false);
-        progressBar.style.width = '0%';
-        audio.currentTime = 0;
-        currentTimeSpan.textContent = '0:00';
-        console.log('Canción terminada - iconos actualizados');
-      });      // Error handling
+    isPlaying = false;
+    playIcon.classList.remove('hidden');
+    pauseIcon.classList.add('hidden');
+    progressBar.style.width = '0%';
+    audio.currentTime = 0;
+    currentTimeSpan.textContent = '0:00';
+      });
+
+      // Error handling
       audio.addEventListener('error', function(e) {
     console.log('Error de audio:', e);
     player.style.display = 'none';
