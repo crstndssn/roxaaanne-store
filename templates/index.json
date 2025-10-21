@@ -170,6 +170,17 @@
             "muted": false
           }
         },
+        "event_efzyDw": {
+          "type": "event",
+          "settings": {
+            "artist": "LACRA",
+            "day": "22",
+            "month": "oct",
+            "title": "Cine al Barrio: Viy",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
         "events_cta_jkEmPX": {
           "type": "events_cta",
           "settings": {
@@ -188,11 +199,15 @@
         "event_tAEkNV",
         "event_8gbaKi",
         "event_NELTpj",
+        "event_efzyDw",
         "events_cta_jkEmPX"
       ],
       "settings": {
         "events_title": "eventos",
         "discover_title": "descubre",
+        "discover_primary_text": "LACRA",
+        "discover_secondary_text": "LABORATORIO CREATIVO AUDIOVISUAL",
+        "discover_bg_color": "#feffee",
         "discover_link_url": "shopify://pages/lacra",
         "latest_title": "últimas publicaciones"
       }
