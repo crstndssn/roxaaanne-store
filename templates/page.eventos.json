@@ -57,6 +57,30 @@
             "month_full": "Octubre",
             "title": "Live Set Acid House",
             "location": "Neiva, Huila • Festival BMX Trails Jam 3.0",
+            "muted": true
+          }
+        },
+        "evento_Garzqd": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "22",
+            "month": "oct",
+            "month_full": "Octubre",
+            "title": "Cine al Barrio: Viy",
+            "location": "Neiva, Huila • Restaurante El Patio",
+            "muted": false
+          }
+        },
+        "evento_myhErh": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "29",
+            "month": "oct",
+            "month_full": "Octubre",
+            "title": "Cine al Barrio: Veneno para las hadas",
+            "location": "Neiva, Huila • Restaurante El Patio",
             "muted": false
           }
         },
@@ -78,6 +102,8 @@
         "evento_hhf8cc",
         "evento_EJ44TD",
         "evento_8qbTHA",
+        "evento_Garzqd",
+        "evento_myhErh",
         "evento_cCmcL9"
       ],
       "settings": {}
