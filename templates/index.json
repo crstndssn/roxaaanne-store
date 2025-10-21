@@ -160,17 +160,6 @@
             "muted": true
           }
         },
-        "event_NELTpj": {
-          "type": "event",
-          "settings": {
-            "artist": "LACRA",
-            "day": "15",
-            "month": "nov",
-            "title": "GAITANA FEST",
-            "location": "Neiva, Huila • Centro de Convenciones",
-            "muted": false
-          }
-        },
         "event_Xk8qym": {
           "type": "event",
           "settings": {
@@ -193,6 +182,17 @@
             "muted": false
           }
         },
+        "event_NELTpj": {
+          "type": "event",
+          "settings": {
+            "artist": "LACRA",
+            "day": "29",
+            "month": "nov",
+            "title": "GAITANA FEST",
+            "location": "Neiva, Huila • Centro de Convenciones",
+            "muted": false
+          }
+        },
         "events_cta_jkEmPX": {
           "type": "events_cta",
           "settings": {
@@ -210,9 +210,9 @@
         "new_creation_TtTzjH",
         "event_tAEkNV",
         "event_8gbaKi",
-        "event_NELTpj",
         "event_Xk8qym",
         "event_efzyDw",
+        "event_NELTpj",
         "events_cta_jkEmPX"
       ],
       "settings": {
