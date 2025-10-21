@@ -139,6 +139,7 @@
         },
         "event_tAEkNV": {
           "type": "event",
+          "disabled": true,
           "settings": {
             "artist": "LACRA",
             "day": "03",
@@ -156,7 +157,7 @@
             "month": "oct",
             "title": "Live Set Acid House",
             "location": "Neiva, Huila • Festival BMX Trails Jam 3.0",
-            "muted": false
+            "muted": true
           }
         },
         "event_NELTpj": {
@@ -170,13 +171,24 @@
             "muted": false
           }
         },
-        "event_efzyDw": {
+        "event_Xk8qym": {
           "type": "event",
           "settings": {
             "artist": "LACRA",
             "day": "22",
             "month": "oct",
             "title": "Cine al Barrio: Viy",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "event_efzyDw": {
+          "type": "event",
+          "settings": {
+            "artist": "LACRA",
+            "day": "29",
+            "month": "oct",
+            "title": "Cine al Barrio: Veneno para las hadas",
             "location": "Neiva, Huila • El Patio",
             "muted": false
           }
@@ -199,6 +211,7 @@
         "event_tAEkNV",
         "event_8gbaKi",
         "event_NELTpj",
+        "event_Xk8qym",
         "event_efzyDw",
         "events_cta_jkEmPX"
       ],
