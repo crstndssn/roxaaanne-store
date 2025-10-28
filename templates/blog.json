@@ -20,9 +20,50 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collage_gYJ8py": {
+      "type": "collage",
+      "blocks": {
+        "image_fU3Jq3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Monte_9.png"
+          }
+        },
+        "product_xfMxe7": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "second_image": false
+          }
+        },
+        "collection_gcQ3aa": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_fU3Jq3",
+        "product_xfMxe7",
+        "collection_gcQ3aa"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "Collage multimedia",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "collage_gYJ8py"
   ]
 }
