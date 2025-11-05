@@ -25,11 +25,19 @@
             "title": "artículos",
             "link": "shopify://blogs/articulos-de-angel-ceron"
           }
+        },
+        "section_KB8MiE": {
+          "type": "section",
+          "settings": {
+            "title": "Fotos",
+            "link": "shopify://blogs/fotografias-de-angel-ceron"
+          }
         }
       },
       "block_order": [
         "section_jwtBnt",
-        "section_HTMaXh"
+        "section_HTMaXh",
+        "section_KB8MiE"
       ],
       "settings": {
         "image": "shopify://shop_images/angel-ceron-perez.jpg",
