@@ -51,9 +51,9 @@
       </div>
 
       {% comment %} VOLTAJE {% endcomment %}
-      <div class="rounded-md text-center flex flex-col justify-center items-center" style="background-color: #2EFF05">
+      <div class="rounded-md text-center flex flex-col justify-center items-center py-14 md:py-0" style="background-color: #2EFF05">
         {% if section.settings.discover_primary_text != blank %}
-          <h3 class="stalinist-one-regular text-black text-[21vw] leading-[20vw] md:text-[70px] md:leading-[70px] font-bold m-0">VOLTAJE</h3>
+          <h3 class="stalinist-one-regular text-black text-[10vw] leading-[10vw] md:text-[70px] md:leading-[70px] font-bold m-0">VOLTAJE</h3>
           <p class="stalinist-one-regular text-black text-[3.3vw] leading-[20px] md:text-[21px] mb-0">LABORATORIO DE SÍNTESIS</p>
         {% endif %}
         {% if section.settings.discover_secondary_text != blank %}
@@ -68,6 +68,207 @@
     </div>
   </div>
 
+
+  {% comment %} CAROUSEL DE PRODUCTOS {% endcomment %}
+  <div class="mb-10">
+    {% if section.settings.products_title != blank %}
+      <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-6 md:mb-7">
+        {{ section.settings.products_title }}
+      </h2>
+    {% endif %}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <div class="product-carousel-wrapper relative">
+      <div class="swiper productCarousel">
+        <div class="swiper-wrapper">
+          {% comment %} Primero mostramos productos de la colección si está seleccionada {% endcomment %}
+          {% if section.settings.product_collection != blank %}
+            {% assign collection = section.settings.product_collection %}
+            {% for product in collection.products limit: 12 %}
+              <div class="swiper-slide">
+                <a href="{{ product.url }}" class="block group">
+                  <div class="bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300">
+                    <!-- Imagen del producto -->
+                    <div class="relative aspect-square overflow-hidden bg-gray-800">
+                      {% if product.featured_image %}
+                        <img
+                          src="{{ product.featured_image | image_url: width: 500 }}"
+                          alt="{{ product.title | escape }}"
+                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                          width="500"
+                          height="500">
+                      {% else %}
+                        <div class="w-full h-full flex items-center justify-center bg-gray-700">
+                          <span class="text-gray-400 text-sm">Sin imagen</span>
+                        </div>
+                      {% endif %}
+
+                      {% if product.compare_at_price > product.price %}
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          OFERTA
+                        </div>
+                      {% endif %}
+                    </div>
+
+                    <!-- Info del producto -->
+                    <div class="p-4">
+                      <h3 class="text-white text-lg font-medium mb-2 line-clamp-2">
+                        {{ product.title }}
+                      </h3>
+
+                      <div class="flex items-center gap-2 mb-3">
+                        {% if product.compare_at_price > product.price %}
+                          <span class="text-gray-400 line-through text-sm">
+                            {{ product.compare_at_price | money }}
+                          </span>
+                        {% endif %}
+                        <span class="text-white text-xl font-semibold">
+                          {{ product.price | money }}
+                        </span>
+                      </div>
+
+                      <button class="w-full bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors font-medium">
+                        Ver producto
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+          {% comment %} Luego mostramos productos individuales agregados manualmente {% endcomment %}
+          {% for block in section.blocks %}
+            {% if block.type == 'product' and block.settings.product != blank %}
+              {% assign product = block.settings.product %}
+              <div class="swiper-slide" {{ block.shopify_attributes }}>
+                <a href="{{ product.url }}" class="block group">
+                  <div class="bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300">
+                    <!-- Imagen del producto -->
+                    <div class="relative aspect-square overflow-hidden bg-gray-800">
+                      {% if product.featured_image %}
+                        <img
+                          src="{{ product.featured_image | image_url: width: 500 }}"
+                          alt="{{ product.title | escape }}"
+                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                          width="500"
+                          height="500">
+                      {% else %}
+                        <div class="w-full h-full flex items-center justify-center bg-gray-700">
+                          <span class="text-gray-400 text-sm">Sin imagen</span>
+                        </div>
+                      {% endif %}
+
+                      {% if product.compare_at_price > product.price %}
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          OFERTA
+                        </div>
+                      {% endif %}
+                    </div>
+
+                    <!-- Info del producto -->
+                    <div class="p-4">
+                      <h3 class="text-white text-lg font-medium mb-2 line-clamp-2">
+                        {{ product.title }}
+                      </h3>
+
+                      <div class="flex items-center gap-2 mb-3">
+                        {% if product.compare_at_price > product.price %}
+                          <span class="text-gray-400 line-through text-sm">
+                            {{ product.compare_at_price | money }}
+                          </span>
+                        {% endif %}
+                        <span class="text-white text-xl font-semibold">
+                          {{ product.price | money }}
+                        </span>
+                      </div>
+
+                      <button class="w-full bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors font-medium">
+                        Ver producto
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <!-- Navegación -->
+        <div class="swiper-button-next !text-white !w-12 !h-12 !bg-white/10 !rounded-full hover:!bg-white/20 transition-colors after:!text-[20px]"></div>
+        <div class="swiper-button-prev !text-white !w-12 !h-12 !bg-white/10 !rounded-full hover:!bg-white/20 transition-colors after:!text-[20px]"></div>
+
+        <!-- Paginación -->
+        <div class="swiper-pagination !bottom-0 !relative !mt-8"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof Swiper !== 'undefined') {
+          const productCarousel = new Swiper('.productCarousel', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            speed: 600,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            breakpoints: {
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            },
+          });
+        }
+      });
+    </script>
+
+    <style>
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        transition: all 0.3s ease;
+      }
+
+      .swiper-pagination-bullet {
+        background: white;
+        opacity: 0.5;
+      }
+
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+    </style>
+  </div>
+
+
+  {% comment %} DESCRUBRE {% endcomment %}
+
   <div class="flex flex-col mb-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-[50vh]">
 
@@ -77,7 +278,7 @@
             {{ section.settings.discover_title }}
           </h2>
         {% endif %}
-        <div class="rounded-md text-center flex-1 flex flex-col justify-center" style="background-color: {{ section.settings.discover_bg_color | default: '#FEFFEE' }}">
+        <div class="rounded-md text-center flex-1 flex flex-col justify-center py-14 md:py-0" style="background-color: {{ section.settings.discover_bg_color | default: '#FEFFEE' }}">
           {% if section.settings.discover_primary_text != blank %}
             <h3 class="josefin-sans-title text-black text-[21vw] leading-[24vw] md:text-[120px] md:leading-[100px] font-bold m-0">{{ section.settings.discover_primary_text }}</h3>
           {% endif %}
@@ -102,7 +303,7 @@
           {% for block in section.blocks %}
             {% if block.type == 'new_creation' %}
               <a
-                href="{{ block.settings.new_creation__link }}"
+                href="/pages/creadores"
                 class="flex flex-col justify-start items-start h-full gap-x-3 gap-y-7 items-center rounded-xl"
                 {{ block.shopify_attributes }}>
                 <div class="w-full w-48 h-48 overflow-hidden rounded-full">
@@ -234,6 +435,16 @@
         "id": "latest_title",
         "label": "Título - Últimas publicaciones",
         "default": "últimas publicaciones"
+      }, {
+        "type": "text",
+        "id": "products_title",
+        "label": "Título - Productos",
+        "default": "productos destacados"
+      }, {
+        "type": "collection",
+        "id": "product_collection",
+        "label": "Colección de productos (opcional)",
+        "info": "Si seleccionas una colección, se mostrarán hasta 12 productos de ella. También puedes agregar productos individuales con bloques."
       }
     ],
     "blocks": [
@@ -313,6 +524,16 @@
             "type": "url",
             "id": "new_creation__link",
             "label": "Enlace"
+          }
+        ]
+      }, {
+        "type": "product",
+        "name": "Producto",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Seleccionar producto"
           }
         ]
       }

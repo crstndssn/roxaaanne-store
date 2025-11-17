@@ -10,7 +10,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-8 gap-8">
 
-      <a href="/pages/roxyfest" class="col-span-3 roxycounter min-h-[420px] w-full flex flex-col justify-center items-center text-center py-6 px-4 rounded-xl">
+      <a href="/pages/roxyfest" class="w-full md:col-span-3 roxycounter min-h-[420px] w-full flex flex-col justify-center items-center text-center py-6 px-4 rounded-xl">
         <h2 class="weird-font text-[70px] leading-[50px] font-bold mb-2">roxy<span class="opacity-50">fest</span>
         </h2>
         <div class="bg-white/10 p-3 shadow-xl rounded-xl border border-white  px-16 mt-8 py-2 rounded-full mt-3 min-w-[100px]">
@@ -21,7 +21,7 @@
         </div>
       </a>
 
-      <div class="col-span-5">
+      <div class="md:col-span-5">
         {% if section.blocks.size > 0 %}
           <div class="flex overflow-x-scroll md:grid grid-cols-1 sm:grid-cols-2 pb-8 mt-7 gap-7 md:gap-4">
             {% for block in section.blocks %}
