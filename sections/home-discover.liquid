@@ -51,9 +51,9 @@
       </div>
 
       {% comment %} VOLTAJE {% endcomment %}
-      <div class="rounded-md text-center flex flex-col justify-center items-center" style="background-color: #2EFF05">
+      <div class="rounded-md text-center flex flex-col justify-center items-center py-14 md:py-0" style="background-color: #2EFF05">
         {% if section.settings.discover_primary_text != blank %}
-          <h3 class="stalinist-one-regular text-black text-[21vw] leading-[20vw] md:text-[70px] md:leading-[70px] font-bold m-0">VOLTAJE</h3>
+          <h3 class="stalinist-one-regular text-black text-[10vw] leading-[10vw] md:text-[70px] md:leading-[70px] font-bold m-0">VOLTAJE</h3>
           <p class="stalinist-one-regular text-black text-[3.3vw] leading-[20px] md:text-[21px] mb-0">LABORATORIO DE SÍNTESIS</p>
         {% endif %}
         {% if section.settings.discover_secondary_text != blank %}
@@ -77,7 +77,7 @@
             {{ section.settings.discover_title }}
           </h2>
         {% endif %}
-        <div class="rounded-md text-center flex-1 flex flex-col justify-center" style="background-color: {{ section.settings.discover_bg_color | default: '#FEFFEE' }}">
+        <div class="rounded-md text-center flex-1 flex flex-col justify-center py-14 md:py-0" style="background-color: {{ section.settings.discover_bg_color | default: '#FEFFEE' }}">
           {% if section.settings.discover_primary_text != blank %}
             <h3 class="josefin-sans-title text-black text-[21vw] leading-[24vw] md:text-[120px] md:leading-[100px] font-bold m-0">{{ section.settings.discover_primary_text }}</h3>
           {% endif %}

@@ -1,14 +1,14 @@
 <div class="container mx-auto">
 
 
-  <div class="w-full col-span-2 mx-8 md:container md:mx-auto">
- {% if section.settings.title != blank %}
-          <h2 class="text-[27px] md:text-[40px] text-white font-medium tracking-tight mb-4">
-            ¿quiénes somos?
-          </h2>
-        {% endif %}
+  <div class="w-full container mx-auto px-8 md:px-0">
+    {% if section.settings.title != blank %}
+      <h2 class="text-[27px] md:text-[40px] text-white font-medium tracking-tight mb-4">
+        ¿quiénes somos?
+      </h2>
+    {% endif %}
 
-    <div class=" bg-white/10 text-white rounded-xl flex flex-col md:grid grid-cols-2 items-center md:items-start p-8 md:p-0 overflow-hidden">
+    <div class="bg-white/10 text-white rounded-xl flex flex-col md:grid grid-cols-2 items-center md:items-start md:p-0 overflow-hidden">
 
       {% if section.settings.image %}
         <div>
@@ -32,7 +32,7 @@
           <p class="text-white text-2xl leading-relaxed pt-8 px-8">{{ section.settings.description }}</p>
         {% endif %}
 
-        <div class="flex gap-4 mb-8 p-8">
+        <div class="w-full flex gap-4 mb-8 p-8">
           {% if section.settings.button_one_text and section.settings.button_one_url %}
             <a href="{{ section.settings.button_one_url }}" class="w-full h-fit text-center border border-white rounded-lg py-3 hover:bg-white/10 transition-colors duration-200">
               {{ section.settings.button_one_text }}
@@ -75,7 +75,7 @@
         "type": "text",
         "id": "title",
         "label": "Título",
-      "default": "somos ~ eres"
+        "default": "somos ~ eres"
       },
       {
         "type": "image_picker",
