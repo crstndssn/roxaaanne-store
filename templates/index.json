@@ -83,15 +83,6 @@
     "home-discover": {
       "type": "home-discover",
       "blocks": {
-        "new_creation_qQinkr": {
-          "type": "new_creation",
-          "settings": {
-            "new_creation__image": "shopify://shop_images/cami.png",
-            "new_creation__title": "Camila Noches",
-            "new_creation__subtitle": "nuevo perfil",
-            "new_creation__link": "shopify://pages/camila-noches"
-          }
-        },
         "new_creation_9G3zYR": {
           "type": "new_creation",
           "settings": {
@@ -119,20 +110,20 @@
             "new_creation__link": "shopify://pages/cristian-dussan"
           }
         },
-        "new_creation_hBmGMj": {
+        "new_creation_qQinkr": {
           "type": "new_creation",
           "settings": {
-            "new_creation__image": "shopify://shop_images/maito.png",
-            "new_creation__title": "azul de Maito",
-            "new_creation__subtitle": "nuevo articulo",
-            "new_creation__link": "shopify://blogs/articulos-de-cristian-dussan/quinto-festival-de-las-artes-rurales-de-maito"
+            "new_creation__image": "shopify://shop_images/cami.png",
+            "new_creation__title": "Camila Noches",
+            "new_creation__subtitle": "nuevo perfil",
+            "new_creation__link": "shopify://pages/camila-noches"
           }
         },
         "new_creation_TtTzjH": {
           "type": "new_creation",
           "settings": {
-            "new_creation__image": "shopify://shop_images/GENESIS.png",
-            "new_creation__title": "génesis. 2017",
+            "new_creation__image": "shopify://shop_images/angel-ceron-perez.jpg",
+            "new_creation__title": "",
             "new_creation__subtitle": "nuevo artículo",
             "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/genesis"
           }
@@ -202,11 +193,10 @@
         }
       },
       "block_order": [
-        "new_creation_qQinkr",
         "new_creation_9G3zYR",
         "new_creation_GffKEq",
         "new_creation_GEDeqG",
-        "new_creation_hBmGMj",
+        "new_creation_qQinkr",
         "new_creation_TtTzjH",
         "event_tAEkNV",
         "event_8gbaKi",
