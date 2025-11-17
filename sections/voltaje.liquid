@@ -1,3 +1,153 @@
-<div>
-  voltaje
+<div class="">
+
+  <div class="container mx-auto rounded-md text-center flex flex-col justify-center items-center text-[#2EFF05] mt-20 md:mt-36">
+    <h3 class="stalinist-one-regular text-[#2EFF05] text-[11vw] leading-[11vw] md:text-[10vw] md:leading-[10vw] font-bold m-0">VOLTAJE</h3>
+    <p class="stalinist-one-regular text-[#2EFF05] text-[40px] leading-[40px] md:text-[71px] md:leading-[77px] mb-0">LA<br>BO<br>RA<br>TO<br>RIO<br>DE<br>S<span class="text-white">Í</span>N<br>TE<br>SIS</p>
+    <p class="stalinist-one-regular text-white text-[20px] md:leading-[70px] md:text-[70px] mt-10">CARAMALA</p>
+    <p class="stalinist-one-regular text-[#2EFF05] text-[20px] leading-[20px] md:leading-[50px] md:text-[50px] mt-4">28 DE NOVIEMBRE</p>
+    <p class="stalinist-one-regular text-[#2EFF05] text-[20px] md:leading-[50px] md:text-[50px] mt-4">7:00 PM</p>
+  </div>
+
+  <div class="container mx-auto px-8 md:px-0 flex flex-col justify-center items-center md:min-h-screen mt-32 md:mt-52">
+    <div class="md:w-2/3 w-full flex justify-start">
+      <h2 class="stalinist-one-regular text-[#2EFF05] text-[9vw] leading-[10vw] md:text-[5vw] md:leading-[5.2vw] mb-24 ">¿QUÉ<br> ES?<br> VOLTAJE</h2>
+    </div>
+    <div class="w-full flex justify-center">
+      <p class="text-[28px] md:text-[70px] md:leading-[70px] text-center md:w-1/2 uppercase font-semibold">es un
+        <span class="text-[#2EFF05]">jam electronico</span>
+        en el que puedes experimentar sonidos con sintetizadores</p>
+    </div>
+  </div>
+
+  <div class="md:min-h-screen mt-32 bg-[#2EFF05] py-24 md:py-32">
+
+
+    <div class="container mx-auto px-8 md:px-0 flex flex-col justify-center items-center">
+      <div class="md:w-2/3 w-full flex justify-end">
+        <h2 class="stalinist-one-regular text-black text-[9vw] leading-[10vw] md:text-[5vw] md:leading-[5.2vw] mb-24 text-right ">¿Y SI NO<br>TENGO<br>UN<br>SINTE?</h2>
+      </div>
+
+      <div class="w-full flex flex-col items-center justify-center">
+        <p class="text-[28px] md:text-[70px] md:leading-[70px] text-white text-center uppercase font-semibold">
+          HABRÁ SINTES<br>DISPONIBLES PARA<br>QUE TOQUES</p>
+        <p class="text-[28px] md:text-[70px] md:leading-[70px] text-black text-center uppercase font-semibold">
+          SIGUIENDO<br>ALGUNAS<br>INSTRUCCIONES
+        </p>
+
+
+      </div>
+    </div>
+
+
+  </div>
+  <div id="registro" class="container mx-auto px-8 md:px-0 flex flex-col justify-center items-center md:min-h-screen mt-24 md:mt-52 mb-4 md:mb-24">
+
+    <div class="w-2/3 w-full flex justify-center">
+      <h2 class="stalinist-one-regular text-[#2EFF05] text-[7vw] md:text-[5vw] md:leading-[5.2vw] mb-12 md:mb-24">REGISTRATE</h2>
+    </div>
+
+    <div class="w-full flex justify-center">
+      <form
+        action="https://formspree.io/f/xqawnnzl"
+        method="POST"
+        class="w-full max-w-2xl bg-white/5 backdrop-blur-sm border border-[#2EFF05] rounded-3xl p-8 md:p-12">
+
+        <!-- Nombre -->
+        <div class="mb-6">
+          <label for="name" class="block text-white text-lg mb-2 font-medium">Nombre completo *</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-3 bg-black border border-white/20 rounded-xl text-white focus:border-[#2EFF05] focus:outline-none"
+            placeholder="Tu nombre">
+        </div>
+
+        <!-- Email -->
+        <div class="mb-6">
+          <label for="email" class="block text-white text-lg mb-2 font-medium">Correo electrónico *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 bg-black border border-white/20 rounded-xl text-white focus:border-[#2EFF05] focus:outline-none"
+            placeholder="tu@email.com">
+        </div>
+
+        <!-- Número -->
+        <div class="mb-6">
+          <label for="phone" class="block text-white text-lg mb-2 font-medium">Número de teléfono *</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            class="w-full px-4 py-3 bg-black border border-white/20 rounded-xl text-white focus:border-[#2EFF05] focus:outline-none"
+            placeholder="3001234567">
+        </div>
+
+        <!-- Edad -->
+        <div class="mb-6">
+          <label for="age" class="block text-white text-lg mb-2 font-medium">Edad *</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            required
+            min="15"
+            max="99"
+            class="w-full px-4 py-3 bg-black border border-white/20 rounded-xl text-white focus:border-[#2EFF05] focus:outline-none"
+            placeholder="18">
+        </div>
+
+        <!-- ¿Tiene sintetizador? -->
+        <div class="mb-6">
+          <label for="has_synthesizer" class="block text-white text-lg mb-2 font-medium">¿Tienes un sintetizador? *</label>
+          <select
+            id="has_synthesizer"
+            name="has_synthesizer"
+            required
+            class="w-full px-4 py-3 bg-black border border-white/20 rounded-xl text-white focus:border-[#2EFF05] focus:outline-none">
+            <option value="">Selecciona una opción</option>
+            <option value="si">Sí, tengo uno</option>
+            <option value="no">No, necesito uno prestado</option>
+          </select>
+        </div>
+
+        <!-- Políticas de privacidad -->
+        <div class="mb-8">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="privacy_accepted"
+              required
+              class="mt-1 w-5 h-5 bg-black border border-white/20 rounded focus:ring-[#2EFF05]">
+            <span class="text-white text-sm">
+              Acepto las políticas de privacidad y el tratamiento de mis datos personales *
+            </span>
+          </label>
+        </div>
+
+        <!-- Botón de envío -->
+        <button type="submit" class="w-full stalinist-one-regular text-2xl bg-[#2EFF05] text-black py-4 rounded-xl hover:bg-[#26d904] transition-colors font-semibold">
+          INSCRIBIRME
+        </button>
+
+        <!-- Mensaje de campos requeridos -->
+        <p class="text-white/60 text-sm text-center mt-4">* Campos obligatorios</p>
+
+      </form>
+    </div>
+
+  </div>
+
 </div>
+
+<style>
+  .stalinist-one-regular {
+    font-family: 'Stalinist One'
+    , sans-serif;
+  }
+</style>
