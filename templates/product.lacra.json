@@ -10,8 +10,11 @@
 {
   "sections": {
     "lacra-products": {
-      "type": "lacra-products"
+      "type": "lacra-products",
+      "settings": {}
     }
   },
-  "order": ["lacra-products"]
+  "order": [
+    "lacra-products"
+  ]
 }
