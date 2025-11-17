@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "roxyfest": {
+      "type": "voltaje"
+    }
+  },
+  "order": [
+    "voltaje"
+  ]
+}
