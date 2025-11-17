@@ -272,7 +272,7 @@
 </article>
 
 <!-- Music Player -->
-{% comment %} {%- if article.metafields.custom.song_url.value -%} {% endcomment %}
+{%- if article.metafields.custom.song_url.value -%}
 <div id="music-player" class="fixed bottom-10 inset-x-7 z-50 bg-black/90 backdrop-blur-sm border-2 border-[{{ article.metafields.custom.border_color.value }}] rounded-3xl p-4 md:min-w-[80%] shadow-2xl">
 
   <div class="flex justify-between gap-4">
@@ -611,7 +611,7 @@
       });
     });
 </script>
-{% comment %} {%- endif -%} {% endcomment %}
+{%- endif -%}
 
 <script type="application/ld+json">
   {{ article | structured_data }}
