@@ -103,6 +103,17 @@
     },
     "eventos": {
       "type": "lacra-eventos",
+      "blocks": {
+        "article_card_8X6gBD": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-cristian-dussan/roxy-fest-by-lacra"
+          }
+        }
+      },
+      "block_order": [
+        "article_card_8X6gBD"
+      ],
       "settings": {
         "title": "",
         "hero_image_alt": "Imagen destacada",
