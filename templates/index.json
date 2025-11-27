@@ -142,6 +142,7 @@
         },
         "event_8gbaKi": {
           "type": "event",
+          "disabled": true,
           "settings": {
             "artist": "Felipe Quien",
             "day": "11",
@@ -153,6 +154,7 @@
         },
         "event_Xk8qym": {
           "type": "event",
+          "disabled": true,
           "settings": {
             "artist": "LACRA",
             "day": "22",
@@ -171,6 +173,28 @@
             "title": "Cine al Barrio: Veneno para las hadas",
             "location": "Neiva, Huila • El Patio",
             "muted": false
+          }
+        },
+        "event_PXBJcF": {
+          "type": "event",
+          "settings": {
+            "artist": "LACRA",
+            "day": "29",
+            "month": "oct",
+            "title": "Cine al Barrio: Veneno para las hadas",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "event_bJ9hqk": {
+          "type": "event",
+          "settings": {
+            "artist": "LACRA",
+            "day": "29",
+            "month": "oct",
+            "title": "Rodaje Murmurio",
+            "location": "Paicol, Huila",
+            "muted": true
           }
         },
         "event_NELTpj": {
@@ -202,6 +226,8 @@
         "event_8gbaKi",
         "event_Xk8qym",
         "event_efzyDw",
+        "event_PXBJcF",
+        "event_bJ9hqk",
         "event_NELTpj",
         "events_cta_jkEmPX"
       ],
@@ -212,7 +238,9 @@
         "discover_secondary_text": "LABORATORIO CREATIVO AUDIOVISUAL",
         "discover_bg_color": "#feffee",
         "discover_link_url": "shopify://pages/lacra",
-        "latest_title": "últimas publicaciones"
+        "latest_title": "últimas publicaciones",
+        "products_title": "productos destacados",
+        "product_collection": ""
       }
     },
     "home-blog": {

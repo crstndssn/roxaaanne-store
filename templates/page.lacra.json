@@ -16,6 +16,12 @@
     "audiovisual": {
       "type": "lacra-audiovisual",
       "blocks": {
+        "article_card_AMhfV4": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-angel-ceron/cocinando-la-resistencia-1"
+          }
+        },
         "article_card_TgRqXm": {
           "type": "article_card",
           "settings": {
@@ -24,6 +30,7 @@
         }
       },
       "block_order": [
+        "article_card_AMhfV4",
         "article_card_TgRqXm"
       ],
       "settings": {
@@ -35,6 +42,24 @@
     },
     "fotografias": {
       "type": "lacra-fotografias",
+      "blocks": {
+        "article_card_UrdtBR": {
+          "type": "article_card",
+          "settings": {
+            "article": "fotografias-de-angel-ceron/pie-de-monte-amazonico"
+          }
+        },
+        "article_card_GRGQiX": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-cristian-dussan/quinto-festival-de-las-artes-rurales-de-maito"
+          }
+        }
+      },
+      "block_order": [
+        "article_card_UrdtBR",
+        "article_card_GRGQiX"
+      ],
       "settings": {
         "title": "",
         "hero_image_alt": "Imagen destacada",
