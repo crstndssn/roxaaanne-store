@@ -16,12 +16,6 @@
     "audiovisual": {
       "type": "lacra-audiovisual",
       "blocks": {
-        "article_card_Tbkd3k": {
-          "type": "article_card",
-          "settings": {
-            "article": "alterocio/maito-iv"
-          }
-        },
         "article_card_gWFipb": {
           "type": "article_card",
           "settings": {
@@ -48,7 +42,6 @@
         }
       },
       "block_order": [
-        "article_card_Tbkd3k",
         "article_card_gWFipb",
         "article_card_AHD8bP",
         "article_card_AMhfV4",
