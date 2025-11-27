@@ -90,6 +90,17 @@
     },
     "sonoro": {
       "type": "lacra-sonoro",
+      "blocks": {
+        "article_card_FibitC": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-angel-ceron/neiva-sonora-laboratorio-sonoro"
+          }
+        }
+      },
+      "block_order": [
+        "article_card_FibitC"
+      ],
       "settings": {
         "title": "",
         "hero_image_alt": "Imagen destacada",
