@@ -123,7 +123,70 @@
     },
     "equipo": {
       "type": "lacra-equipo",
-      "settings": {}
+      "blocks": {
+        "team_member_xc7Tc7": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/felipe-quien.jpg",
+            "name": "Felipe Quien",
+            "url": "shopify://pages/felipe-quien",
+            "button_label": "Ver Perfil"
+          }
+        },
+        "team_member_LUwwX6": {
+          "type": "team_member",
+          "settings": {
+            "name": "Alejandro Ospina",
+            "url": "",
+            "button_label": "Ver perfil"
+          }
+        },
+        "team_member_9UM9tg": {
+          "type": "team_member",
+          "settings": {
+            "name": "Julian Velasquez",
+            "url": "",
+            "button_label": "Ver perfil"
+          }
+        },
+        "team_member_YBC7Fy": {
+          "type": "team_member",
+          "settings": {
+            "name": "Vaneza Rojas",
+            "url": "",
+            "button_label": "Ver perfil"
+          }
+        },
+        "team_member_JKTUNm": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-11-27_at_6.45.10_PM.png",
+            "name": "Katherine Garzón",
+            "url": "",
+            "button_label": "Ver Perfil"
+          }
+        },
+        "team_member_PzXBUh": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/angel-ceron-perez.jpg",
+            "name": "Angel Cerón",
+            "url": "shopify://pages/angel-ceron-perez",
+            "button_label": "Ver perfil"
+          }
+        }
+      },
+      "block_order": [
+        "team_member_xc7Tc7",
+        "team_member_LUwwX6",
+        "team_member_9UM9tg",
+        "team_member_YBC7Fy",
+        "team_member_JKTUNm",
+        "team_member_PzXBUh"
+      ],
+      "settings": {
+        "title": "Nuestro Equipo"
+      }
     }
   },
   "order": [
