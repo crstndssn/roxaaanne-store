@@ -197,6 +197,17 @@
             "muted": true
           }
         },
+        "event_84XiNC": {
+          "type": "event",
+          "settings": {
+            "artist": "Voltaje",
+            "day": "28",
+            "month": "nov",
+            "title": "Laboratorio de Síntesis",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": false
+          }
+        },
         "event_NELTpj": {
           "type": "event",
           "settings": {
@@ -228,6 +239,7 @@
         "event_efzyDw",
         "event_PXBJcF",
         "event_bJ9hqk",
+        "event_84XiNC",
         "event_NELTpj",
         "events_cta_jkEmPX"
       ],
