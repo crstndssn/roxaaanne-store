@@ -166,6 +166,7 @@
         },
         "event_efzyDw": {
           "type": "event",
+          "disabled": true,
           "settings": {
             "artist": "LACRA",
             "day": "29",
@@ -179,9 +180,9 @@
           "type": "event",
           "settings": {
             "artist": "LACRA",
-            "day": "29",
-            "month": "oct",
-            "title": "Cine al Barrio: Veneno para las hadas",
+            "day": "26",
+            "month": "nov",
+            "title": "Cine al Barrio: Frank",
             "location": "Neiva, Huila • El Patio",
             "muted": false
           }
