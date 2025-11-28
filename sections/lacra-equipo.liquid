@@ -1,0 +1,90 @@
+<div class="container mx-auto px-8 md:px-0">
+  {%- if section.settings.title != blank -%}
+    <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-2 tracking-tight mt-8">{{ section.settings.title }}</h2>
+  {%- endif -%}
+
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+    {%- for block in section.blocks -%}
+      <article class="bg-[#141414] rounded-2xl p-8 flex flex-col items-center text-center shadow-md" {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          <div class="w-52 h-52 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
+            <img
+              src="{{ block.settings.image | image_url: width: 800 }}"
+              alt="{{ block.settings.name | escape }}"
+              loading="lazy"
+              width="640"
+              height="640"
+              class="w-full h-full object-cover">
+          </div>
+        {%- else -%}
+          <div class="w-64 h-64 rounded-full bg-gray-300"></div>
+        {%- endif -%}
+
+        {%- if block.settings.name != blank -%}
+          <h3 class="mt-6 text-white text-3xl font-medium">{{ block.settings.name }}</h3>
+        {%- endif -%}
+
+        {%- if block.settings.url != blank -%}
+          <a href="{{ block.settings.url }}" class="border border-white mt-4 px-5 py-2 rounded-full text-white hover:bg-white/10 transition-colors duration-200 text-xl">
+            {{ block.settings.button_label | default: 'Ver perfil' }}
+          </a>
+        {%- endif -%}
+      </article>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Equipo LACRA",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título de la sección",
+        "default": "Nuestro Equipo"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "team_member",
+        "name": "Miembro del equipo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Imagen"
+          }, {
+            "type": "text",
+            "id": "name",
+            "label": "Nombre",
+            "default": "Nombre del miembro"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "URL del perfil"
+          }, {
+            "type": "text",
+            "id": "button_label",
+            "label": "Texto del botón",
+            "default": "Ver perfil"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Equipo LACRA",
+        "blocks": [
+          {
+            "type": "team_member"
+          }, {
+            "type": "team_member"
+          }, {
+            "type": "team_member"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

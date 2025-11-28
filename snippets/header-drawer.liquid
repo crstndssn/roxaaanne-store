@@ -118,11 +118,11 @@
               {%- endfor -%}
             </ul>
           </nav>
-          <div class="menu-drawer__utility-links border border-white rounded-full text-center m-8">
+          <div class="flex mx-8">
             {%- if shop.customer_accounts_enabled -%}
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-                class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
+                class="p-4 border w-fit h-fit text-white rounded-xl flex gap-4"
                 rel="nofollow">
                 {%- if section.settings.enable_customer_avatar -%}
                   <account-icon>
@@ -183,7 +183,7 @@
                 {%- endif -%}
               </div>
             {%- endif -%}
-            <ul class="list list-social list-unstyled" role="list">
+            <ul class="flex" role="list">
               {%- if settings.social_twitter_link != blank -%}
                 <li class="list-social__item">
                   <a href="{{ settings.social_twitter_link }}" class="list-social__link link">
