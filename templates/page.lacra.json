@@ -136,15 +136,17 @@
         "team_member_LUwwX6": {
           "type": "team_member",
           "settings": {
+            "image": "shopify://shop_images/InShot_20250512_191014071.jpg",
             "name": "Alejandro Ospina",
-            "url": "",
+            "url": "shopify://pages/alejandro-ospina",
             "button_label": "Ver perfil"
           }
         },
         "team_member_9UM9tg": {
           "type": "team_member",
           "settings": {
-            "name": "Julian Velasquez",
+            "image": "shopify://shop_images/maito_13.jpg",
+            "name": "Julian Blasquez",
             "url": "",
             "button_label": "Ver perfil"
           }
@@ -152,6 +154,7 @@
         "team_member_YBC7Fy": {
           "type": "team_member",
           "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-11-27_at_6.40.31_PM.png",
             "name": "Vaneza Rojas",
             "url": "",
             "button_label": "Ver perfil"
@@ -172,7 +175,7 @@
             "image": "shopify://shop_images/angel-ceron-perez.jpg",
             "name": "Angel Cerón",
             "url": "shopify://pages/angel-ceron-perez",
-            "button_label": "Ver perfil"
+            "button_label": "Ver Perfil"
           }
         },
         "team_member_NaEU68": {
@@ -180,7 +183,7 @@
           "settings": {
             "image": "shopify://shop_images/IMG_4805.jpg",
             "name": "cristian dussán",
-            "url": "",
+            "url": "shopify://pages/cristian-dussan",
             "button_label": "Ver perfil"
           }
         }
