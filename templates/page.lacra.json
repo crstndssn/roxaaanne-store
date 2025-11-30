@@ -174,6 +174,15 @@
             "url": "shopify://pages/angel-ceron-perez",
             "button_label": "Ver perfil"
           }
+        },
+        "team_member_NaEU68": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/IMG_4805.jpg",
+            "name": "cristian dussán",
+            "url": "",
+            "button_label": "Ver perfil"
+          }
         }
       },
       "block_order": [
@@ -182,7 +191,8 @@
         "team_member_9UM9tg",
         "team_member_YBC7Fy",
         "team_member_JKTUNm",
-        "team_member_PzXBUh"
+        "team_member_PzXBUh",
+        "team_member_NaEU68"
       ],
       "settings": {
         "title": "Nuestro Equipo"
