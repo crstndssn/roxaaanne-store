@@ -130,7 +130,7 @@
             "image": "shopify://shop_images/felipe-quien.jpg",
             "name": "Felipe Quien",
             "url": "shopify://pages/felipe-quien",
-            "button_label": "Ver Perfil"
+            "button_label": "ver perfil"
           }
         },
         "team_member_LUwwX6": {
@@ -139,7 +139,7 @@
             "image": "shopify://shop_images/InShot_20250512_191014071.jpg",
             "name": "Alejandro Ospina",
             "url": "shopify://pages/alejandro-ospina",
-            "button_label": "Ver perfil"
+            "button_label": "ver perfil"
           }
         },
         "team_member_9UM9tg": {
@@ -148,7 +148,7 @@
             "image": "shopify://shop_images/maito_13.jpg",
             "name": "Julian Blasquez",
             "url": "",
-            "button_label": "Ver perfil"
+            "button_label": "ver perfil"
           }
         },
         "team_member_YBC7Fy": {
@@ -157,7 +157,7 @@
             "image": "shopify://shop_images/Screenshot_2025-11-27_at_6.40.31_PM.png",
             "name": "Vaneza Rojas",
             "url": "",
-            "button_label": "Ver perfil"
+            "button_label": "ver perfil"
           }
         },
         "team_member_JKTUNm": {
@@ -166,7 +166,7 @@
             "image": "shopify://shop_images/Screenshot_2025-11-27_at_6.45.10_PM.png",
             "name": "Katherine Garzón",
             "url": "",
-            "button_label": "Ver Perfil"
+            "button_label": "ver perfil"
           }
         },
         "team_member_PzXBUh": {
@@ -175,7 +175,7 @@
             "image": "shopify://shop_images/angel-ceron-perez.jpg",
             "name": "Angel Cerón",
             "url": "shopify://pages/angel-ceron-perez",
-            "button_label": "Ver Perfil"
+            "button_label": "ver perfil"
           }
         },
         "team_member_NaEU68": {
@@ -184,7 +184,7 @@
             "image": "shopify://shop_images/IMG_4805.jpg",
             "name": "cristian dussán",
             "url": "shopify://pages/cristian-dussan",
-            "button_label": "Ver perfil"
+            "button_label": "ver perfil"
           }
         }
       },
@@ -200,6 +200,16 @@
       "settings": {
         "title": "Nuestro Equipo"
       }
+    },
+    "tienda": {
+      "type": "lacra-tienda",
+      "settings": {
+        "title": "",
+        "hero_image_alt": "Imagen destacada",
+        "hero_link_url": "",
+        "tienda_title": "Tienda",
+        "product_collection": "lacra"
+      }
     }
   },
   "order": [
@@ -208,6 +218,7 @@
     "fotografias",
     "sonoro",
     "eventos",
+    "tienda",
     "equipo"
   ]
 }

@@ -278,16 +278,27 @@
             {{ section.settings.discover_title }}
           </h2>
         {% endif %}
-        <div class="rounded-md text-center flex-1 flex flex-col justify-center py-14 md:py-0" style="background-color: {{ section.settings.discover_bg_color | default: '#FEFFEE' }}">
+        <div class="rounded-md text-center flex-1 flex flex-col items-center justify-center py-32 md:py-0" style="background-color: {{ section.settings.discover_bg_color | default: '#FEFFEE' }}">
           {% if section.settings.discover_primary_text != blank %}
-            <h3 class="josefin-sans-title text-black text-[21vw] leading-[24vw] md:text-[120px] md:leading-[100px] font-bold m-0">{{ section.settings.discover_primary_text }}</h3>
+            <h3 class="josefin-sans-title text-black text-[21vw] leading-[15vw] md:text-[120px] md:leading-[100px] font-bold m-0">{{ section.settings.discover_primary_text }}</h3>
           {% endif %}
-          {% if section.settings.discover_secondary_text != blank %}
-            <p class="josefin-sans-title text-black text-[3.3vw] leading-[1.3vw] md:text-[19px]">{{ section.settings.discover_secondary_text }}</p>
-          {% endif %}
-          <div class="flex justify-center gap-3">
-            <a href="/pages/lacra" class="josefin-sans-title text-[17px] leading-[16px] text-black mt-5 border-2 border-black w-fit px-4 py-5 pb-4 h-fit rounded-xl">PROYECTOS</a>
-            <a href="/pages/lacra" class="josefin-sans-title text-[17px] leading-[16px] bg-black text-[#FEFFEE] mt-5 border-2 border-black w-fit px-4 py-5 pb-4 h-fit rounded-xl">MERCA</a>
+          <div class="flex gap-3 md:gap-8 text-[3.5vw] leading-[3.5vw] md:text-[19px] text-black">
+            <div class="flex">
+              <span class="font-medium">LA</span>
+              <span class="font-light">BORATORIO</span>
+            </div>
+            <div class="flex">
+              <span class="font-medium">CR</span>
+              <span class="font-light">EATIVO</span>
+            </div>
+            <div class="flex">
+              <span class="font-medium">A</span>
+              <span class="font-light">UDIOVISUAL</span>
+            </div>
+          </div>
+          <div class="flex justify-center gap-3 w-full max-w-[73%] mt-4">
+            <a href="/pages/lacra" class="josefin-sans-title w-full text-[17px] leading-[16px] text-black border-2 border-black w-fit px-4 py-5 pb-4 h-fit rounded-xl">PROYECTOS</a>
+            <a href="/pages/lacra" class="josefin-sans-title w-full text-[17px] leading-[16px] bg-black text-[#FEFFEE] border-2 border-black w-fit px-4 py-5 pb-4 h-fit rounded-xl">MERCA</a>
           </div>
         </div>
       </div>
@@ -296,7 +307,7 @@
       <div class="h-full flex flex-col">
         {% if section.settings.discover_title != blank %}
           <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-4 md:mb-7">
-            creadores
+            creadorxs
           </h2>
         {% endif %}
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-7 flex-1 bg-white/10 rounded-3xl px-5 py-7">
@@ -439,7 +450,7 @@
         "type": "text",
         "id": "products_title",
         "label": "Título - Productos",
-        "default": "productos destacados"
+        "default": "merca"
       }, {
         "type": "collection",
         "id": "product_collection",
