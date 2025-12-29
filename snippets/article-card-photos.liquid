@@ -42,23 +42,11 @@
               height="{{ article.image.height }}">
           </div>
         {%- else -%}
-          <div class="w-full h-full min-h-[200px] border rounded-2xl p-8 flex flex-col justify-center items-center" style="background-color: {{ article.metafields.custom.background_color.value | default: '#2A2A2A' }}; border-color : {{ article.metafields.custom.border_color.value | default: '#fbf7f1' }};">
+          <div class="w-full h-full min-h-[200px] border rounded-2xl p-8 flex flex-col justify-center items-center bg-[#feffee] dark:bg-black" style="border-color : {{ article.metafields.custom.border_color.value | default: '#fbf7f1' }};">
             <div class="space-y-3 text-center">
               <h3 style="color: {{ article.metafields.custom.font_color.value | default: '#fbf7f1' }};" class="porter-sans text-black text-5xl md:text-4xl md:text-6xl font-normal leading-tight tracking-tight">
                 {{ article.title | truncate: 50 | escape }}
               </h3>
-
-              {%- if show_excerpt -%}
-                {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
-                  <p class="text-white text-lg md:text-xl leading-relaxed mb-4">
-                    {%- if article.excerpt.size > 0 -%}
-                      {{ article.excerpt | strip_html | truncatewords: 15 }}
-                    {%- else -%}
-                      {{ article.content | strip_html | truncatewords: 15 }}
-                    {%- endif -%}
-                  </p>
-                {%- endif -%}
-              {%- endif -%}
 
               <div class="flex items-center justify-center space-x-3 text-sm text-gray-300">
                 {%- if show_date -%}

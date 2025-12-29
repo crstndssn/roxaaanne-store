@@ -24,7 +24,7 @@
     endif
   -%}
 
-  <div class="border border-white/20 rounded-lg p-5 hover:bg-white/5 transition-colors h-full w-full">
+  <div class="border border-black dark:border-white/20 rounded-lg p-5 hover:bg-white/5 transition-colors h-full w-full">
     {% comment %} <article aria-labelledby="Article-{{ article.id }}"> {% endcomment %}
     <a href="{{ article.url }}" class="hover:text-white transition-colors w-full">
       <div class="">
@@ -45,13 +45,13 @@
 
         <div class="space-y-3 px-8 py-10">
           <div class="flex flex-col justify-center items-center">
-            <h3 class="text-8xl font-normal text-white leading-tight tracking-tight">
+            <h3 class="text-8xl font-normal text-black dark:text-[#feffee] leading-tight tracking-tight">
               {{ article.title | truncate: 50 | escape }}
             </h3>
 
             {%- if show_excerpt -%}
               {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
-                <p class="text-white text-3xl text-center leading-2xl mb-2">
+                <p class="dark:text-[#feffee] text-3xl text-center leading-2xl mb-2">
                   {%- if article.excerpt.size > 0 -%}
                     {{ article.excerpt | strip_html | truncatewords: 30 }}
                   {%- else -%}

@@ -1,0 +1,130 @@
+{%- if card_product and card_product != empty -%}
+  <a href="{{ card_product.url }}" class="group block">
+    <div class="border border-black bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300">
+
+      {%- comment -%} Imagen del producto {%- endcomment -%}
+      <div class="relative aspect-square overflow-hidden bg-gray-800">
+        {%- if card_product.featured_media -%}
+          <img
+            srcset="
+              {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+              {%- if card_product.featured_media.width >= 533 -%}{{ card_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+              {%- if card_product.featured_media.width >= 720 -%}{{ card_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+              {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
+            "
+            src="{{ card_product.featured_media | image_url: width: 533 }}"
+            alt="{{ card_product.featured_media.alt | escape }}"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            {% unless lazy_load == false %}
+            loading="lazy"
+            {% endunless %}
+            width="{{ card_product.featured_media.width }}"
+            height="{{ card_product.featured_media.height }}">
+
+          {%- comment -%} Imagen secundaria en hover {%- endcomment -%}
+          {%- if card_product.media[1] != null and show_secondary_image -%}
+            <img
+              srcset="
+                {%- if card_product.media[1].width >= 360 -%}{{ card_product.media[1] | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if card_product.media[1].width >= 533 -%}{{ card_product.media[1] | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if card_product.media[1].width >= 720 -%}{{ card_product.media[1] | image_url: width: 720 }} 720w,{%- endif -%}
+                {{ card_product.media[1] | image_url }} {{ card_product.media[1].width }}w
+              "
+              src="{{ card_product.media[1] | image_url: width: 533 }}"
+              alt="{{ card_product.title | escape }}"
+              class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              loading="lazy"
+              width="{{ card_product.media[1].width }}"
+              height="{{ card_product.media[1].height }}">
+          {%- endif -%}
+        {%- else -%}
+          <div class="w-full h-full flex items-center justify-center">
+            <span class="text-gray-500 text-sm">Sin imagen</span>
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Badges {%- endcomment -%}
+        {%- if card_product.available == false -%}
+          <div class="absolute top-4 right-4 bg-gray-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+            {{ 'products.product.sold_out' | t }}
+          </div>
+        {%- elsif card_product.compare_at_price > card_product.price -%}
+          <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+            {{ 'products.product.on_sale' | t }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Información del producto {%- endcomment -%}
+      <div class="p-4">
+        {%- comment -%} Vendor {%- endcomment -%}
+        {%- if show_vendor -%}
+          <p class="text-gray-400 text-sm mb-1">{{ card_product.vendor }}</p>
+        {%- endif -%}
+
+        {%- comment -%} Título {%- endcomment -%}
+        <h3 class="text-white text-lg font-medium mb-2 line-clamp-2">
+          {{ card_product.title | escape }}
+        </h3>
+
+        {%- comment -%} Rating {%- endcomment -%}
+        {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
+          <div class="mb-2">
+            {% render 'product-rating'
+              , product: card_product %}
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Precio {%- endcomment -%}
+        <div class="flex items-center gap-2 mb-3">
+          {%- if card_product.compare_at_price > card_product.price -%}
+            <span class="text-gray-400 line-through text-sm">
+              {{ card_product.compare_at_price | money }}
+            </span>
+          {%- endif -%}
+          <span class="text-white text-xl font-semibold">
+            {{ card_product.price | money }}
+          </span>
+        </div>
+
+        {%- comment -%} Quick add button {%- endcomment -%}
+        {%- if quick_add == 'standard' and card_product.available -%}
+          <button
+            type="button"
+            class="w-full bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors font-medium text-sm"
+            onclick="event.preventDefault(); event.stopPropagation();">
+            {{ 'products.product.add_to_cart' | t }}
+          </button>
+        {%- elsif quick_add == 'bulk' -%}
+          {%- render 'quick-add-bulk'
+            , product: card_product
+            , section_id: section_id -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </a>
+{%- else -%}
+  {%- comment -%} Placeholder cuando no hay producto {%- endcomment -%}
+  <div class="bg-white/5 rounded-2xl overflow-hidden">
+    <div class="aspect-square bg-gray-800 flex items-center justify-center">
+      {{ placeholder_image | default: 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover opacity-20' }}
+    </div>
+    <div class="p-4">
+      <h3 class="text-white text-lg font-medium mb-2">
+        {{ 'onboarding.product_title' | t }}
+      </h3>
+      <div class="text-white text-xl font-semibold">
+        $99.00
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
