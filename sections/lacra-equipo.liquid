@@ -21,12 +21,12 @@
         {%- endif -%}
 
         {%- if block.settings.name != blank -%}
-          <h3 class="mt-6 text-white text-3xl font-medium">{{ block.settings.name }}</h3>
+          <h3 class="mt-6 text-white text-2xl md:text-3xl font-medium">{{ block.settings.name }}</h3>
         {%- endif -%}
 
         {%- if block.settings.url != blank -%}
           <a href="{{ block.settings.url }}" class="border border-white mt-4 px-5 py-2 rounded-full text-white hover:bg-white/10 transition-colors duration-200 text-xl">
-            {{ block.settings.button_label | default: 'Ver perfil' }}
+            {{ block.settings.button_label | default: 'ver perfil' }}
           </a>
         {%- endif -%}
       </article>
@@ -67,7 +67,7 @@
             "type": "text",
             "id": "button_label",
             "label": "Texto del botón",
-            "default": "Ver perfil"
+            "default": "ver perfil"
           }
         ]
       }

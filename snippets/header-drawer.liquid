@@ -7,16 +7,16 @@
 
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
-    <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
+    <summary class="header__icon header__icon--menu header__icon--summary link focus-inset text-black dark:text-[#feffee]" aria-label="{{ 'sections.header.menu' | t }}">
       <span>
         {{- 'icon-hamburger.svg' | inline_asset_content -}}
         {{- 'icon-close.svg' | inline_asset_content -}}
       </span>
     </summary>
-    <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
-      <div class="menu-drawer__inner-container">
-        <div class="menu-drawer__navigation-container bg-black">
-          <nav class="menu-drawer__navigation">
+    <div id="menu-drawer" class="gradient menu-drawer motion-reduce border border-black dark:border-[#feffee] rounded-xl">
+      <div class="menu-drawer__inner-container bg-[#feffee] dark:bg-black">
+        <div class="menu-drawer__navigation-container">
+          <nav class="menu-drawer__navigation " aria-label="{{ 'sections.header.menu' | t }}">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>
@@ -107,7 +107,7 @@
                     <a
                       id="HeaderDrawer-{{ link.handle }}"
                       href="{{ link.url }}"
-                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset text-black dark:text-[#feffee] {% if link.current %} underline{% endif %}"
                       {% if link.current %}
                       aria-current="page"
                       {% endif %}>
@@ -118,11 +118,11 @@
               {%- endfor -%}
             </ul>
           </nav>
-          <div class="flex mx-8">
+          <div class="flex px-8 bg-[#feffee] dark:bg-black flex flex-col gap-3">
             {%- if shop.customer_accounts_enabled -%}
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-                class="p-4 border w-fit h-fit text-white rounded-xl flex gap-4"
+                class="p-4 border border-black dark:border-[#feffee] w-fit h-fit text-black dark:text-[#feffee] rounded-xl flex gap-4"
                 rel="nofollow">
                 {%- if section.settings.enable_customer_avatar -%}
                   <account-icon>

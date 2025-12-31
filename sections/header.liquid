@@ -142,7 +142,7 @@
       endif
     %}
 
-    <div class="flex justify-end w-1/2 {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+    <div class="flex justify-end w-1/2 z-10 {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
 
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -212,7 +212,7 @@
       {%- endfor -%}
 
       {% comment %} INICIO CARRITO {% endcomment %}
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset text-black dark:text-[#feffee]" id="cart-icon-bubble">
           {% if cart == empty %}
             <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
           {% else %}

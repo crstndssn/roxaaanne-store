@@ -1,8 +1,8 @@
 <!-- Home Articles Destacados -->
-<div class="bg-black flex flex-col justify-center items-center my-3 px-8 md:px-0 mb-10">
+<div class="flex flex-col justify-center items-center my-3 px-8 md:px-0 mb-10">
   <div class="w-full container mx-auto my-4">
     {% if section.settings.title != blank %}
-      <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-2 tracking-tight">
+      <h2 class="text-[33px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-3 tracking-[-1.3px]">
         {{ section.settings.title }}
       </h2>
     {% endif %}
@@ -17,7 +17,7 @@
           <h2 class="text-white font-[500]">edicion 2025</h2>
         </div>
         <div class="text-3xl mb-2 mt-3 flex jusitfy-center items-center">
-          <p class="font-[200] text-[15px]">dedicado al sol 🌞</p>
+          <p class="font-[200] text-[15px] text-[#feffee]">dedicado al sol 🌞</p>
         </div>
       </a>
 
@@ -27,7 +27,7 @@
             {% for block in section.blocks %}
               {% assign article = articles[block.settings.article] %}
               {% if article %}
-                <a href="{{ article.url }}" class="bg-white/10 rounded-b-xl">
+                <a href="{{ article.url }}" class="border border-black rounded-xl dark:bg-white/10 rounded-b-xl">
                   <div class="block w-full min-w-[270px] overflow-hidden flex flex-col">
                     {% if article.image %}
                       <img
@@ -35,12 +35,12 @@
                         height="auto"
                         src="{{ article.image | img_url: '600x' }}"
                         alt="{{ article.title }}"
-                        class="w-full h-[170px] object-cover rounded-xl">
+                        class="w-full h-[170px] object-cover rounded-[6px]">
                     {% endif %}
 
                     <div class="p-4 flex justify-between items-center flex-1">
-                      <h3 class="text-2xl font-semibold text-white">{{ article.title }}</h3>
-                      <p class="text-lg text-white opacity-80 mb-1">
+                      <h3 class="text-2xl font-semibold text-black dark:text-[#feffee]">{{ article.title }}</h3>
+                      <p class="text-lg text-black dark:text-[#feffee] opacity-80 mb-1">
                         por
                         {% if article.metafields.custom.autor != blank %}
                           {{ article.metafields.custom.autor }}
@@ -78,7 +78,7 @@
         "type": "text",
         "id": "title",
         "label": "Título de la sección",
-        "default": "Artículos destacados"
+        "default": "destacados"
       }, {
         "type": "url",
         "id": "view_all_url",

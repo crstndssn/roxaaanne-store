@@ -3,33 +3,33 @@
   <div class="flex flex-col mb-10">
     {% comment %} EVENTOS TITULO {% endcomment %}
     {% if section.settings.events_title != blank %}
-      <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-6 md:mb-7">
+      <h2 class="text-[33px] md:text-[40px] text-black dark:text-[#feffee] font-[500] mb-3 md:mb-7 tracking-[-1.3px]">
         {{ section.settings.events_title }}
       </h2>
     {% endif %}
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 md:mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-10 md:mb-16">
       {% comment %} EVENTOS {% endcomment %}
       <div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-0">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'event' %}
-                <div class="flex flex-col gap-3 {% if block.settings.muted %}opacity-50{% endif %}" {{ block.shopify_attributes }}>
-                  {% if block.settings.artist != blank %}
-                    <p class="text-4xl">{{ block.settings.artist }}</p>
-                  {% endif %}
+                <div class="flex flex-col gap-3 border border-black dark:border-[#131313] dark:bg-[#131313] p-3 rounded-xl {% if block.settings.muted %}opacity-50{% endif %}" {{ block.shopify_attributes }}>
                   <div class="flex gap-5">
                     <div class="flex justify-center items-center bg-[#2A2A2A] text-white flex flex-col px-8 py-4 rounded-xl min-w-[78px] h-fit">
                       <h3 class="text-white text-[30px] leading-[30px] font-medium">{{ block.settings.day }}</h3>
                       <h4 class="text-white">{{ block.settings.month }}</h4>
                     </div>
                     <div class="flex flex-col">
+                      {% if block.settings.artist != blank %}
+                        <p class="text-[13px] text-[#feffee] dark:text-black bg-[#131313] dark:bg-[#feffee] w-fit px-4 rounded-full mb-2 mt-1">{{ block.settings.artist }}</p>
+                      {% endif %}
                       {% if block.settings.title != blank %}
-                        <p class="text-2xl">{{ block.settings.title }}</p>
+                        <p class="text-2xl text-black dark:text-[#feffee]">{{ block.settings.title }}</p>
                       {% endif %}
                       {% if block.settings.location != blank %}
-                        <p class="text-[#B3B3B3] text-2xl">{{ block.settings.location }}</p>
+                        <p class="dark:text-[#9e9e9e] text-xl">{{ block.settings.location }}</p>
                       {% endif %}
                     </div>
                   </div>
@@ -42,7 +42,7 @@
           {% case block.type %}
             {% when 'events_cta' %}
               <div class="" {{ block.shopify_attributes }}>
-                <a href="{{ block.settings.cta_url }}" class="block border border-white shadow-md rounded-xl text-center mt-4 md:mt-3 h-fit py-3">
+                <a href="{{ block.settings.cta_url }}" class="block border-2 border-black bg-black text-[#feffee] dark:border-[#feffee] dark:text-[#feffee] shadow-md rounded-xl text-center mt-5 md:mt-3 h-fit py-3">
                   {{ block.settings.cta_text }}
                 </a>
               </div>
@@ -72,7 +72,7 @@
   {% comment %} CAROUSEL DE PRODUCTOS {% endcomment %}
   <div class="mb-10">
     {% if section.settings.products_title != blank %}
-      <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-6 md:mb-7">
+      <h2 class="text-[33px] md:text-[40px] font-medium mb-3 md:mb-7 text-black dark:text-[#feffee] tracking-[-1.3px]">
         {{ section.settings.products_title }}
       </h2>
     {% endif %}
@@ -88,7 +88,7 @@
             {% for product in collection.products limit: 12 %}
               <div class="swiper-slide">
                 <a href="{{ product.url }}" class="block group">
-                  <div class="bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300">
+                  <div class="border border-black dark:bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300">
                     <!-- Imagen del producto -->
                     <div class="relative aspect-square overflow-hidden bg-gray-800">
                       {% if product.featured_image %}
@@ -114,22 +114,22 @@
 
                     <!-- Info del producto -->
                     <div class="p-4">
-                      <h3 class="text-white text-lg font-medium mb-2 line-clamp-2">
+                      <h3 class="text-black dark:text-[#feffee] text-2xl font-medium mb-2 line-clamp-2">
                         {{ product.title }}
                       </h3>
 
                       <div class="flex items-center gap-2 mb-3">
                         {% if product.compare_at_price > product.price %}
-                          <span class="text-gray-400 line-through text-sm">
+                          <span class="text-black dark:text-[#feffee] line-through text-sm">
                             {{ product.compare_at_price | money }}
                           </span>
                         {% endif %}
-                        <span class="text-white text-xl font-semibold">
+                        <span class="text-black dark:text-[#feffee] text-xl font-semibold">
                           {{ product.price | money }}
                         </span>
                       </div>
 
-                      <button class="w-full bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors font-medium">
+                      <button class="w-full bg-black dark:bg-[#feffee] text-[#feffee] dark:text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors font-medium">
                         Ver producto
                       </button>
                     </div>
@@ -171,7 +171,7 @@
 
                     <!-- Info del producto -->
                     <div class="p-4">
-                      <h3 class="text-white text-lg font-medium mb-2 line-clamp-2">
+                      <h3 class="text-black dark:text-[#feffee] text-xl font-medium mb-2 line-clamp-2">
                         {{ product.title }}
                       </h3>
 
@@ -198,8 +198,8 @@
         </div>
 
         <!-- Navegación -->
-        <div class="swiper-button-next !text-white !w-12 !h-12 !bg-white/10 !rounded-full hover:!bg-white/20 transition-colors after:!text-[20px]"></div>
-        <div class="swiper-button-prev !text-white !w-12 !h-12 !bg-white/10 !rounded-full hover:!bg-white/20 transition-colors after:!text-[20px]"></div>
+        <div class="swiper-button-next !text-black dark:!text-white !w-12 !h-12 !bg-white/10 !rounded-full hover:!bg-white/20 transition-colors after:!text-[20px]"></div>
+        <div class="swiper-button-prev !text-black dark:!text-white !w-12 !h-12 !bg-white/10 !rounded-full hover:!bg-white/20 transition-colors after:!text-[20px]"></div>
 
         <!-- Paginación -->
         <div class="swiper-pagination !bottom-0 !relative !mt-8"></div>
@@ -255,14 +255,25 @@
         transition: all 0.3s ease;
       }
 
+      .dark .swiper-pagination-bullet-active {
+        opacity: 1 !important;
+      }
+
+      .swiper-pagination-bullet-active {
+        opacity: 1 !important;
+      }
+
       .swiper-pagination-bullet {
+        background: black;
+        opacity: 0.5;
+      }
+
+      .dark .swiper-pagination-bullet {
         background: white;
         opacity: 0.5;
       }
 
-      .swiper-pagination-bullet-active {
-        opacity: 1;
-      }
+
     </style>
   </div>
 
@@ -274,20 +285,31 @@
 
       <div class="h-full flex flex-col">
         {% if section.settings.discover_title != blank %}
-          <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-4 md:mb-7">
+          <h2 class="text-[33px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-3 md:mb-7 tracking-[-1.3px]">
             {{ section.settings.discover_title }}
           </h2>
         {% endif %}
-        <div class="rounded-md text-center flex-1 flex flex-col justify-center py-14 md:py-0" style="background-color: {{ section.settings.discover_bg_color | default: '#FEFFEE' }}">
+        <div class="rounded-md text-center flex-1 flex flex-col items-center justify-center py-32 md:py-0 bg-black dark:bg-[#feffee]">
           {% if section.settings.discover_primary_text != blank %}
-            <h3 class="josefin-sans-title text-black text-[21vw] leading-[24vw] md:text-[120px] md:leading-[100px] font-bold m-0">{{ section.settings.discover_primary_text }}</h3>
+            <h3 class="josefin-sans-title text-[#feffee] dark:text-black text-[21vw] leading-[15vw] md:text-[120px] md:leading-[100px] font-bold m-0">{{ section.settings.discover_primary_text }}</h3>
           {% endif %}
-          {% if section.settings.discover_secondary_text != blank %}
-            <p class="josefin-sans-title text-black text-[3.3vw] leading-[1.3vw] md:text-[19px]">{{ section.settings.discover_secondary_text }}</p>
-          {% endif %}
-          <div class="flex justify-center gap-3">
-            <a href="/pages/lacra" class="josefin-sans-title text-[17px] leading-[16px] text-black mt-5 border-2 border-black w-fit px-4 py-5 pb-4 h-fit rounded-xl">PROYECTOS</a>
-            <a href="/pages/lacra" class="josefin-sans-title text-[17px] leading-[16px] bg-black text-[#FEFFEE] mt-5 border-2 border-black w-fit px-4 py-5 pb-4 h-fit rounded-xl">MERCA</a>
+          <div class="flex gap-3 md:gap-8 text-[3.5vw] leading-[3.5vw] md:text-[19px] text-[#feffee] dark:text-black">
+            <div class="flex">
+              <span class="font-medium">LA</span>
+              <span class="font-light">BORATORIO</span>
+            </div>
+            <div class="flex">
+              <span class="font-medium">CR</span>
+              <span class="font-light">EATIVO</span>
+            </div>
+            <div class="flex">
+              <span class="font-medium">A</span>
+              <span class="font-light">UDIOVISUAL</span>
+            </div>
+          </div>
+          <div class="flex justify-center gap-3 w-full max-w-[73%] mt-4">
+            <a href="/pages/lacra" class="josefin-sans-title w-full text-[17px] leading-[16px] text-[#feffee] dark:text-black border-2 border-[#feffee] dark:border-black w-fit px-4 py-5 pb-4 h-fit rounded-xl">PROYECTOS</a>
+            <a href="/pages/lacra" class="josefin-sans-title w-full text-[17px] leading-[16px] text-black bg-[#feffee] dark:bg-black dark:text-[#FEFFEE] border-2 border-black w-fit px-4 py-5 pb-4 h-fit rounded-xl">MERCA</a>
           </div>
         </div>
       </div>
@@ -295,11 +317,11 @@
 
       <div class="h-full flex flex-col">
         {% if section.settings.discover_title != blank %}
-          <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-4 md:mb-7">
-            creadores
+          <h2 class="text-[33px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-3 md:mb-7 tracking-[-1.3px]">
+            creadorxs
           </h2>
         {% endif %}
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-7 flex-1 bg-white/10 rounded-3xl px-5 py-7">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-7 flex-1 border border-black dark:bg-white/10 rounded-3xl px-5 py-7">
           {% for block in section.blocks %}
             {% if block.type == 'new_creation' %}
               <a
@@ -439,7 +461,7 @@
         "type": "text",
         "id": "products_title",
         "label": "Título - Productos",
-        "default": "productos destacados"
+        "default": "merca"
       }, {
         "type": "collection",
         "id": "product_collection",

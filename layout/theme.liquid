@@ -68,19 +68,34 @@
         font-display: swap;
       }
 
-
-      .text-white {
-        color: #fbf7f1 !important;
-      }
-
       .bg-white {
-        background-color: #fbf7f1 !important;
+        background-color: #feffee !important;
       }
 
       a {
-        color: #fbf7f1;
+        color: #feffee;
       }
     {% endstyle %}
+
+    <style>
+      /* Estilos para modo CLARO (cuando tiene clase 'light') */
+      .light body {
+        background-color: #feffee !important;
+        color: #1a1a1a !important;
+      }
+
+
+      /*
+   .light a {
+   color: #1a1a1a !important;
+   }
+*/
+
+      /* Estilos adicionales para elementos con Tailwind dark: */.light [class*="dark:"] {
+      ;
+      /* Los estilos dark: de Tailwind solo se activan con clase 'dark' */
+    }
+    </style>
 
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
@@ -89,6 +104,19 @@
     {{ content_for_header }}
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'roxanne-light': '#fbf7f1',
+              'roxanne-dark': '#000000',
+            }
+          }
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
       rel="preconnect"
@@ -408,6 +436,15 @@ body {
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
+    <!-- Theme Toggle Button -->
+    <button
+      id="themeToggle"
+      class="fixed bottom-8 right-8 w-16 h-16 rounded-full bg-black/70 dark:bg-white/30 border-4 border-black dark:border-[#dcab28] hover:scale-110 active:scale-95 transition-all duration-300 ease-in-out flex items-center justify-center z-[9999] cursor-pointer"
+      aria-label="Toggle theme">
+      <span class="text-3xl transition-all duration-300 hidden dark:inline ml-[1px]">🌞</span>
+      <span class="text-3xl transition-all duration-300 inline dark:hidden">🌙</span>
+    </button>
+
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
@@ -417,7 +454,7 @@ body {
 
     <main
       id="MainContent"
-      class="content-for-layout focus-none bg-black text-white"
+      class="content-for-layout focus-none bg-[#feffee] dark:bg-black"
       role="main"
       tabindex="-1">
       {{ content_for_layout }}
@@ -511,6 +548,47 @@ body {
         const tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         document.head.appendChild(tag);
+    </script>
+
+    <script>
+      // Tailwind Dark Mode Toggle
+      (function() {
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference or default to 'dark'
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        // Apply the saved theme on page load
+        if (currentTheme === 'light') {
+          htmlElement.classList.add('light');
+          htmlElement.classList.remove('dark');
+        } else {
+          htmlElement.classList.add('dark');
+          htmlElement.classList.remove('light');
+        }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', function() {
+          const isLight = htmlElement.classList.contains('light');
+          
+          if (isLight) {
+            htmlElement.classList.remove('light');
+            htmlElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            htmlElement.classList.remove('dark');
+            htmlElement.classList.add('light');
+            localStorage.setItem('theme', 'light');
+          }
+          
+          // Add rotation animation feedback
+          themeToggle.style.transform = 'rotate(360deg)';
+          setTimeout(() => {
+            themeToggle.style.transform = '';
+          }, 300);
+        });
+      })();
     </script>
   </body>
 </html>
