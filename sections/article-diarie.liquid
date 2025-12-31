@@ -10,7 +10,7 @@
 
     {%- when 'title' -%}
         <header class="flex flex-col justify-center items-center space-y-2 mt-10" {{ block.shopify_attributes }}>
-          <h1 class="text-[50px] tracking-[-3px] mt-5 md:mt-[50px] text-center text-black dark:text-[#feffee]">
+          <h1 class="text-[50px] tracking-[-3px] mt-5 md:mt-[50px] text-center text-black dark:text-[#feffee] font-[500]">
             {{ article.title | escape }}
           </h1>
           {%- if block.settings.blog_show_date -%}
