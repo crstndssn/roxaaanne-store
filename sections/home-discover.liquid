@@ -51,7 +51,7 @@
       </div>
 
       {% comment %} VOLTAJE {% endcomment %}
-      <div class="rounded-md text-center flex flex-col justify-center items-center py-14 md:py-0" style="background-color: #2EFF05">
+      <div class="rounded-xl text-center flex flex-col justify-center items-center py-14 md:py-0" style="background-color: #2EFF05">
         {% if section.settings.discover_primary_text != blank %}
           <h3 class="stalinist-one-regular text-black text-[10vw] leading-[10vw] md:text-[70px] md:leading-[70px] font-bold m-0">VOLTAJE</h3>
           <p class="stalinist-one-regular text-black text-[3.3vw] leading-[20px] md:text-[21px] mb-0">LABORATORIO DE SÍNTESIS</p>
@@ -330,14 +330,14 @@
             creadorxs
           </h2>
         {% endif %}
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-7 flex-1 border border-black dark:bg-white/10 rounded-3xl px-5 py-7">
+        <div class="grid grid-cols-4 md:grid-cols-5 gap-4 md:gap-7 flex-1 border border-black dark:bg-white/10 rounded-3xl px-5 py-7">
           {% for block in section.blocks %}
             {% if block.type == 'new_creation' %}
               <a
                 href="/pages/creadores"
                 class="flex flex-col justify-start items-start h-full gap-x-3 gap-y-7 items-center rounded-xl"
                 {{ block.shopify_attributes }}>
-                <div class="w-full w-48 h-48 overflow-hidden rounded-full">
+                <div class="w-full w-28 md:w-40 h-28 md:h-40 overflow-hidden rounded-full">
                   <img
                     src="{{ block.settings.new_creation__image | image_url: width: 300 }}"
                     alt="{{ block.settings.new_creation__title }}"

@@ -1,16 +1,117 @@
 <div class="announcement container mx-auto mt-7 px-3 md:px-0 rounded-xl">
-  <a href="https://roxaaanne.com/products/roxyfest" class="announcement-color md:w-full flex justify-center rounded-xl items-center md:py-1">
-    <h1 class="weird-font font-[100] text-[33px] leading-[33px] text-center mb-1">
-      roxy<span class="opacity-50">fest</span>
-    </h1>
-    <p class="ml-2 text-[17px] leading-[17px] text-[200] mt-1">JUNIO 21 🌞</p>
-  </a>
+  {% for block in section.blocks %}
+    {% if block.type == 'announcement' %}
+      <a
+        href="{{ block.settings.url }}"
+        class="announcement-block announcement-block-{{ block.id }} md:w-full flex justify-center rounded-xl items-center md:py-1 {% if forloop.first %}active{% else %}hidden{% endif %}"
+        data-announcement-index="{{ forloop.index0 }}"
+        {{ block.shopify_attributes }}>
+        <h1 class="weird-font font-[100] text-[33px] leading-[33px] text-center mb-1">
+          {{ block.settings.title }}
+        </h1>
+        {% if block.settings.date != blank %}
+          <p class="ml-2 text-[17px] leading-[17px] text-[200] mt-1">{{ block.settings.date }}</p>
+        {% endif %}
+      </a>
+
+      {% if block.settings.custom_css != blank %}
+        <style>
+          .announcement-block-{{ block.id }} {
+            {{ block.settings.custom_css }}
+          }
+          .announcement-block-{{ block.id }}
+          h1
+          , .announcement-block-{{ block.id }}
+          p {
+            color: inherit;
+          }
+        </style>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
 </div>
 
+<script>
+  (function() {
+    const announcements = document.querySelectorAll('.announcement-block');
+    if (announcements.length <= 1) return;
+
+    let currentIndex = 0;
+
+    function showNextAnnouncement() {
+      announcements[currentIndex].classList.remove('active');
+      announcements[currentIndex].classList.add('hidden');
+
+      currentIndex = (currentIndex + 1) % announcements.length;
+
+      announcements[currentIndex].classList.remove('hidden');
+      announcements[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextAnnouncement, 3000);
+  })();
+</script>
 
 <style>
-  .announcement-color {
-    background: linear-gradient(90deg, #232246 0%, #3B3382 45%, #EF6400 100%);
-    color: #fff;
+  .announcement-block {
+    transition: opacity 0.5s ease-in-out;
+  }
+  .announcement-block.active {
+    opacity: 1;
+  }
+  .announcement-block.hidden {
+    display: none;
   }
 </style>
+
+{% schema %}
+  {
+    "name": "Announcement Bar",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "announcement",
+        "name": "Anuncio",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Título",
+            "default": "roxyfest"
+          }, {
+            "type": "text",
+            "id": "date",
+            "label": "Fecha",
+            "default": "JUNIO 21 🌞"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "URL de destino"
+          }, {
+            "type": "textarea",
+            "id": "custom_css",
+            "label": "CSS Personalizado",
+            "info": "Agrega estilos CSS personalizados (ej: background: linear-gradient(...); color: #fff;)",
+            "default": "background: linear-gradient(90deg, #232246 0%, #3B3382 45%, #EF6400 100%);\ncolor: #fff;"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Announcement Bar",
+        "blocks": [
+          {
+            "type": "announcement",
+            "settings": {
+              "title": "roxyfest",
+              "date": "JUNIO 21 🌞",
+              "url": "/products/roxyfest",
+              "custom_css": "background: linear-gradient(90deg, #232246 0%, #3B3382 45%, #EF6400 100%);\ncolor: #fff;"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
