@@ -268,7 +268,7 @@
         "article_EWPYcX": {
           "type": "article",
           "settings": {
-            "article": "articulos-de-cristian-dussan/quinto-festival-de-las-artes-rurales-de-maito"
+            "article": "articulos-de-angel-ceron/cocinando-la-resistencia-1"
           }
         },
         "article_XKeMbE": {
@@ -276,12 +276,26 @@
           "settings": {
             "article": "articulos-de-felipe-quien/tony-manero"
           }
+        },
+        "article_ngk4DP": {
+          "type": "article",
+          "settings": {
+            "article": "fotografias-de-angel-ceron/pie-de-monte-amazonico"
+          }
+        },
+        "article_FGbbdm": {
+          "type": "article",
+          "settings": {
+            "article": "articulos-de-angel-ceron/neiva-sonora-laboratorio-sonoro"
+          }
         }
       },
       "block_order": [
         "article_ae3KdG",
         "article_EWPYcX",
-        "article_XKeMbE"
+        "article_XKeMbE",
+        "article_ngk4DP",
+        "article_FGbbdm"
       ],
       "settings": {
         "title": "artículos destacados",
