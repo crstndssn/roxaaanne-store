@@ -128,6 +128,30 @@
             "new_creation__link": "shopify://blogs/fotografias-de-cristian-dussan/genesis"
           }
         },
+        "new_creation_hXYCff": {
+          "type": "new_creation",
+          "settings": {
+            "new_creation__title": "Nueva creadora",
+            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__link": ""
+          }
+        },
+        "new_creation_Kk7zXR": {
+          "type": "new_creation",
+          "settings": {
+            "new_creation__title": "Nueva creadora",
+            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__link": ""
+          }
+        },
+        "new_creation_GtRB7j": {
+          "type": "new_creation",
+          "settings": {
+            "new_creation__title": "Nueva creadora",
+            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__link": ""
+          }
+        },
         "event_tAEkNV": {
           "type": "event",
           "disabled": true,
@@ -234,6 +258,9 @@
         "new_creation_GEDeqG",
         "new_creation_qQinkr",
         "new_creation_TtTzjH",
+        "new_creation_hXYCff",
+        "new_creation_Kk7zXR",
+        "new_creation_GtRB7j",
         "event_tAEkNV",
         "event_8gbaKi",
         "event_Xk8qym",
