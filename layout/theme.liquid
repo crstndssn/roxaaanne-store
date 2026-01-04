@@ -1,6 +1,14 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
+    <!-- Script para prevenir flash del tema - debe ir primero -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.classList.add(theme);
+      })();
+    </script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -556,17 +564,8 @@ body {
         const themeToggle = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
         
-        // Check for saved theme preference or default to 'dark'
+        // El tema ya fue aplicado en el head, solo configuramos el toggle
         const currentTheme = localStorage.getItem('theme') || 'dark';
-        
-        // Apply the saved theme on page load
-        if (currentTheme === 'light') {
-          htmlElement.classList.add('light');
-          htmlElement.classList.remove('dark');
-        } else {
-          htmlElement.classList.add('dark');
-          htmlElement.classList.remove('light');
-        }
         
         // Toggle theme on button click
         themeToggle.addEventListener('click', function() {

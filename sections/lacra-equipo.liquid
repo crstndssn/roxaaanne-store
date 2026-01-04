@@ -1,11 +1,11 @@
 <div class="container mx-auto px-8 md:px-0">
   {%- if section.settings.title != blank -%}
-    <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-2 tracking-tight mt-8">{{ section.settings.title }}</h2>
+    <h2 class="text-[27px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-2 tracking-tight mt-8">{{ section.settings.title }}</h2>
   {%- endif -%}
 
   <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
     {%- for block in section.blocks -%}
-      <article class="bg-[#141414] rounded-2xl p-8 flex flex-col items-center text-center shadow-md" {{ block.shopify_attributes }}>
+      <article class="bg-[#feffee] dark:bg-[#141414] rounded-2xl p-8 flex flex-col items-center text-center border border-black dark:border-[#feffee]" {{ block.shopify_attributes }}>
         {%- if block.settings.image != blank -%}
           <div class="w-52 h-52 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
             <img
@@ -21,11 +21,11 @@
         {%- endif -%}
 
         {%- if block.settings.name != blank -%}
-          <h3 class="mt-6 text-white text-2xl md:text-3xl font-medium">{{ block.settings.name }}</h3>
+          <h3 class="mt-6 text-black dark:text-[#feffee] text-2xl md:text-3xl font-medium">{{ block.settings.name }}</h3>
         {%- endif -%}
 
         {%- if block.settings.url != blank -%}
-          <a href="{{ block.settings.url }}" class="border border-white mt-4 px-5 py-2 rounded-full text-white hover:bg-white/10 transition-colors duration-200 text-xl">
+          <a href="{{ block.settings.url }}" class="border border-black dark:border-[#feffee] mt-4 px-5 py-2 rounded-full text-black dark:text-[#feffee] hover:bg-white/10 transition-colors duration-200 text-xl">
             {{ block.settings.button_label | default: 'ver perfil' }}
           </a>
         {%- endif -%}

@@ -14,17 +14,17 @@
   <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-<div class="bg-black py-8 md:py-12">
+<div class="bg-[#feffee] dark:bg-black pb-8 md:py-12">
   {%- paginate collection.products by section.settings.products_per_page -%}
 
-    <div class="container mx-auto px-4 md:px-8">
+    <div class="container mx-auto px-8 md:px-0">
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
         <aside
           aria-labelledby="verticalTitle"
-          class="mb-6 md:mb-8"
+          class="mb-6 md:mb-5"
           id="main-collection-filters"
           data-id="{{ section.id }}">
           {% render 'facets'

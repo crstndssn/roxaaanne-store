@@ -1,6 +1,6 @@
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 
-<div class="container mx-auto px-8 py-16">
+<div class="container mx-auto px-8 pb-16">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
     <!-- Galería de imágenes del producto -->
@@ -25,7 +25,7 @@
             {% for media in product.media limit: 4 %}
               <button
                 type="button"
-                class="thumbnail-btn relative aspect-square bg-gray-900 rounded-lg overflow-hidden border-2 border-transparent hover:border-white transition-all {% if forloop.first %}border-white{% endif %}"
+                class="thumbnail-btn relative aspect-square bg-gray-900 rounded-lg overflow-hidden border-2 border-black-800 hover:border-black dark:hover:border-[#feffee] transition-all {% if forloop.first %}border-black dark:border-[#feffee]{% endif %}"
                 onclick="changeMainImage('{{ media | image_url: width: 800 }}', this)">
                 <img
                   src="{{ media | image_url: width: 200 }}"
@@ -38,7 +38,7 @@
         {% endif %}
       {% else %}
         <div class="aspect-square bg-gray-900 rounded-2xl flex items-center justify-center">
-          <span class="text-gray-500 text-lg">Sin imagen</span>
+          <span class="text-black dark:text-[#feffee] text-lg">Sin imagen</span>
         </div>
       {% endif %}
     </div>
@@ -46,12 +46,12 @@
     <!-- Información del producto -->
     <div class="product-info">
       <div class="mb-8">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h1 class="text-4xl md:text-5xl font-[400] text-black dark:text-[#feffee] mb-4">
           {{ product.title }}
         </h1>
 
         <!-- Precio -->
-        <div class="flex items-center gap-4 mb-6">
+        <div class="flex items-center gap-4 mb-3">
           {% if product.compare_at_price > product.price %}
             <span class="text-3xl font-bold text-red-500">
               {{ product.price | money }}
@@ -59,11 +59,11 @@
             <span class="text-2xl text-gray-400 line-through">
               {{ product.compare_at_price | money }}
             </span>
-            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+            <span class="bg-red-500 text-black dark:text-[#feffee] px-3 py-1 rounded-full text-sm font-semibold">
               -{{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%
             </span>
           {% else %}
-            <span class="text-3xl font-bold text-white">
+            <span class="text-3xl font-bold text-black dark:text-[#feffee]">
               {{ product.price | money }}
             </span>
           {% endif %}
@@ -71,7 +71,7 @@
 
         <!-- Descripción -->
         {% if product.description != blank %}
-          <div class="text-gray-300 text-lg leading-relaxed mb-8">
+          <div class="text-black dark:text-[#feffee] text-lg leading-relaxed mb-8">
             {{ product.description }}
           </div>
         {% endif %}
@@ -92,7 +92,7 @@
           <div class="variants-wrapper mb-6">
             {% for option in product.options_with_values %}
               <div class="variant-selector mb-6">
-                <label class="block text-white text-lg font-medium mb-3">
+                <label class="block text-black dark:text-[#feffee] text-lg font-medium mb-3">
                   {{ option.name }}
                 </label>
 
@@ -110,7 +110,7 @@
                           checked{% endif %}>
                         <div class="w-12 h-12 rounded-full border-2 border-gray-600 peer-checked:border-white transition-all flex items-center justify-center" style="background-color: {{ value | downcase | replace: ' ', '' }}">
                           <svg
-                            class="w-6 h-6 text-white hidden peer-checked:block"
+                            class="w-6 h-6 text-black dark:text-[#feffee] hidden peer-checked:block"
                             fill="currentColor"
                             viewBox="0 0 20 20">
                             <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
@@ -132,7 +132,7 @@
                           class="sr-only peer"
                           {% if option.selected_value == value %}
                           checked{% endif %}>
-                        <div class="px-6 py-3 border-2 border-gray-600 rounded-lg peer-checked:border-white peer-checked:bg-white peer-checked:text-black text-white font-medium transition-all hover:border-gray-400">
+                        <div class="px-6 py-3 border-2 border-gray-600 rounded-lg peer-checked:border-white peer-checked:bg-white peer-checked:text-black text-black dark:text-[#feffee] font-medium transition-all hover:border-gray-400">
                           {{ value }}
                         </div>
                       </label>
@@ -140,7 +140,7 @@
                   </div>
                 {% else %}
                   <!-- Selector dropdown para otras opciones -->
-                  <select name="option-{{ option.position }}" class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white focus:border-white focus:outline-none">
+                  <select name="option-{{ option.position }}" class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-black dark:text-[#feffee] focus:border-white focus:outline-none">
                     {% for value in option.values %}
                       <option
                         value="{{ value | escape }}"
@@ -158,14 +158,14 @@
 
         <!-- Cantidad -->
         <div class="quantity-selector mb-6">
-          <label class="block text-white text-lg font-medium mb-3">
+          <label class="block text-black dark:text-[#feffee] text-[15px] font-medium mb-3">
             Cantidad
           </label>
           <div class="flex items-center gap-4">
             <button
               type="button"
               onclick="changeQuantity(-1)"
-              class="w-12 h-12 bg-gray-900 border border-gray-600 rounded-lg text-white hover:bg-gray-800 transition-colors">
+              class="w-14 h-14 bg-[#feffee] dark:bg-black border-2 border-black dark:border-[#feffee] rounded-lg text-black hover:text-[#feffee] hover:dark:text-black dark:text-[#feffee] hover:bg-black hover:dark:bg-[#feffee] transition-colors">
               -
             </button>
             <input
@@ -174,11 +174,11 @@
               name="quantity"
               value="1"
               min="1"
-              class="w-20 h-12 text-center bg-gray-900 border border-gray-600 rounded-lg text-white text-lg font-medium focus:outline-none focus:border-white">
+              class="w-24 h-14 text-center bg-[#feffee] dark:bg-black border-2 border-black dark:border-[#feffee] rounded-lg text-black dark:text-[#feffee] text-[15px] font-medium focus:outline-none focus:border-white">
             <button
               type="button"
               onclick="changeQuantity(1)"
-              class="w-12 h-12 bg-gray-900 border border-gray-600 rounded-lg text-white hover:bg-gray-800 transition-colors">
+              class="w-14 h-14 bg-[#feffee] dark:bg-black border-2 border-black dark:border-[#feffee] rounded-lg text-black hover:text-[#feffee] hover:dark:text-black dark:text-[#feffee] hover:bg-black hover:dark:bg-[#feffee] transition-colors">
               +
             </button>
           </div>
@@ -188,7 +188,7 @@
         <button
           type="submit"
           name="add"
-          class="w-full bg-white text-black py-4 px-8 rounded-xl text-lg font-bold hover:bg-gray-200 transition-colors disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed mb-4"
+          class="w-full bg-black text-[#feffee] py-4 px-8 rounded-xl text-[17px] font-[500] hover:bg-[#feffee] hover:text-black border-2 border-black dark:border-[#feffee] transition-colors disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed mb-4"
           {% unless product.available %}
           disabled{% endunless %}>
           {% if product.available %}
@@ -207,7 +207,7 @@
               viewBox="0 0 20 20">
               <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
             </svg>
-            <span class="text-green-500">En stock</span>
+            <span class="text-green-500 text-black dark:text-[#feffee]">En stock</span>
           {% else %}
             <svg
               class="w-5 h-5 text-red-500"
@@ -215,18 +215,18 @@
               viewBox="0 0 20 20">
               <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" />
             </svg>
-            <span class="text-red-500">Agotado</span>
+            <span class="text-red-500 text-black dark:text-[#feffee]">Agotado</span>
           {% endif %}
         </div>
       {% endform %}
 
       <!-- Información adicional -->
-      <div class="mt-12 pt-8 border-t border-gray-800">
+      <div class="mt-12 pt-8">
         <details class="mb-4">
-          <summary class="text-white text-lg font-medium cursor-pointer hover:text-gray-300 transition-colors py-3">
+          <summary class="text-black dark:text-[#feffee] text-[15px] font-medium cursor-pointer hover:text-black hover:dark:text-gray-300 transition-colors py-3 border border-gray-700 rounded-lg px-4">
             Guía de tallas
           </summary>
-          <div class="pt-4 text-gray-300">
+          <div class="pt-4 text-black dark:text-[#feffee]">
             <table class="w-full text-left">
               <thead>
                 <tr class="border-b border-gray-700">
@@ -262,10 +262,10 @@
         </details>
 
         <details class="mb-4">
-          <summary class="text-white text-lg font-medium cursor-pointer hover:text-gray-300 transition-colors py-3">
+          <summary class="text-black dark:text-[#feffee] text-[15px] font-medium cursor-pointer hover:text-black hover:dark:text-gray-300 transition-colors py-3 border border-gray-700 rounded-lg px-4">
             Materiales y cuidados
           </summary>
-          <div class="pt-4 text-gray-300">
+          <div class="pt-4 text-black dark:text-[#feffee]">
             <ul class="list-disc list-inside space-y-2">
               <li>100% Algodón orgánico</li>
               <li>Lavar a máquina en agua fría</li>
@@ -277,10 +277,10 @@
         </details>
 
         <details>
-          <summary class="text-white text-lg font-medium cursor-pointer hover:text-gray-300 transition-colors py-3">
+          <summary class="text-black dark:text-[#feffee] text-[15px] font-medium cursor-pointer hover:text-black hover:dark:text-gray-300 transition-colors py-3 border border-gray-700 rounded-lg px-4">
             Envíos y devoluciones
           </summary>
-          <div class="pt-4 text-gray-300">
+          <div class="pt-4 text-black dark:text-[#feffee]">
             <p class="mb-2">📦 Envío gratis en compras superiores a $50.000</p>
             <p class="mb-2">🚚 Entrega en 3-5 días hábiles</p>
             <p>↩️ Devoluciones gratuitas dentro de 30 días</p>
@@ -298,10 +298,10 @@
     
     // Actualizar bordes de miniaturas
     document.querySelectorAll('.thumbnail-btn').forEach(btn => {
-      btn.classList.remove('border-white');
+      btn.classList.remove('border-black');
       btn.classList.add('border-transparent');
     });
-    button.classList.add('border-white');
+    button.classList.add('border-black');
     button.classList.remove('border-transparent');
   }
 
@@ -354,8 +354,10 @@
   details summary::after {
     content: '+';
     position: absolute;
-    right: 0;
-    font-size: 24px;
+    right: 17px;
+    font-size: 33px;
+    bottom: -7px;
+    font-weight: 300;
     transition: transform 0.3s ease;
   }
 
