@@ -149,7 +149,8 @@
         "new_creation_Kk7zXR": {
           "type": "new_creation",
           "settings": {
-            "new_creation__title": "Nueva creadora",
+            "new_creation__image": "shopify://shop_images/maito_13.jpg",
+            "new_creation__title": "Juli",
             "new_creation__subtitle": "por roxaaanne",
             "new_creation__link": ""
           }
@@ -157,7 +158,53 @@
         "new_creation_GtRB7j": {
           "type": "new_creation",
           "settings": {
+            "new_creation__image": "shopify://shop_images/gato-e-monte.jpg",
+            "new_creation__title": "gato",
+            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__link": ""
+          }
+        },
+        "new_creation_Ad9KPn": {
+          "type": "new_creation",
+          "settings": {
+            "new_creation__image": "shopify://shop_images/ana-vahos.jpg",
             "new_creation__title": "Nueva creadora",
+            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__link": ""
+          }
+        },
+        "new_creation_FnLWee": {
+          "type": "new_creation",
+          "settings": {
+            "new_creation__image": "shopify://shop_images/mauricio-dussan.jpg",
+            "new_creation__title": "Nueva creadora",
+            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__link": ""
+          }
+        },
+        "new_creation_Pqab8R": {
+          "type": "new_creation",
+          "settings": {
+            "new_creation__image": "shopify://shop_images/peregrino.jpg",
+            "new_creation__title": "Nueva creadora",
+            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__link": ""
+          }
+        },
+        "new_creation_f9xkFA": {
+          "type": "new_creation",
+          "settings": {
+            "new_creation__image": "shopify://shop_images/DSC_0044.jpg",
+            "new_creation__title": "lizeth",
+            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__link": ""
+          }
+        },
+        "new_creation_bkCmRN": {
+          "type": "new_creation",
+          "settings": {
+            "new_creation__image": "shopify://shop_images/pechan-project.jpg",
+            "new_creation__title": "pechan project",
             "new_creation__subtitle": "por roxaaanne",
             "new_creation__link": ""
           }
@@ -272,6 +319,11 @@
         "new_creation_E9dJkp",
         "new_creation_Kk7zXR",
         "new_creation_GtRB7j",
+        "new_creation_Ad9KPn",
+        "new_creation_FnLWee",
+        "new_creation_Pqab8R",
+        "new_creation_f9xkFA",
+        "new_creation_bkCmRN",
         "event_tAEkNV",
         "event_8gbaKi",
         "event_Xk8qym",
