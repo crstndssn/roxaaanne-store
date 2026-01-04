@@ -121,6 +121,16 @@
         "eventos_title": "Producción de Eventos"
       }
     },
+    "tienda": {
+      "type": "lacra-tienda",
+      "settings": {
+        "title": "",
+        "hero_image_alt": "Imagen destacada",
+        "hero_link_url": "",
+        "tienda_title": "Tienda",
+        "product_collection": "lacra"
+      }
+    },
     "equipo": {
       "type": "lacra-equipo",
       "blocks": {
@@ -199,16 +209,6 @@
       ],
       "settings": {
         "title": "Nuestro Equipo"
-      }
-    },
-    "tienda": {
-      "type": "lacra-tienda",
-      "settings": {
-        "title": "",
-        "hero_image_alt": "Imagen destacada",
-        "hero_link_url": "",
-        "tienda_title": "Tienda",
-        "product_collection": "lacra"
       }
     }
   },

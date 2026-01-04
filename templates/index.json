@@ -131,6 +131,16 @@
         "new_creation_hXYCff": {
           "type": "new_creation",
           "settings": {
+            "new_creation__image": "shopify://shop_images/Screenshot_2025-11-27_at_6.45.10_PM.png",
+            "new_creation__title": "khate",
+            "new_creation__subtitle": "por roxaaanne",
+            "new_creation__link": ""
+          }
+        },
+        "new_creation_E9dJkp": {
+          "type": "new_creation",
+          "settings": {
+            "new_creation__image": "shopify://shop_images/Screenshot_2025-11-27_at_6.40.31_PM.png",
             "new_creation__title": "Nueva creadora",
             "new_creation__subtitle": "por roxaaanne",
             "new_creation__link": ""
@@ -259,6 +269,7 @@
         "new_creation_qQinkr",
         "new_creation_TtTzjH",
         "new_creation_hXYCff",
+        "new_creation_E9dJkp",
         "new_creation_Kk7zXR",
         "new_creation_GtRB7j",
         "event_tAEkNV",
