@@ -23,11 +23,11 @@
 
       <div class="md:col-span-5">
         {% if section.blocks.size > 0 %}
-          <div class="flex overflow-x-scroll md:grid md:grid-cols-3 gap-4 mt-7 pb-4 md:pb-0">
+          <div class="grid grid-rows-2 grid-flow-col auto-cols-[280px] overflow-x-scroll md:grid-rows-1 md:grid-cols-3 md:grid-flow-row md:auto-cols-auto gap-4 pb-4 md:pb-0">
             {% for block in section.blocks limit: 6 %}
               {% assign article = articles[block.settings.article] %}
               {% if article %}
-                <a href="{{ article.url }}" class="border border-black dark:border-transparent rounded-xl dark:bg-white/10 hover:bg-black/5 dark:hover:bg-white/15 transition-all min-w-[280px] md:min-w-0">
+                <a href="{{ article.url }}" class="border border-black dark:border-transparent rounded-xl dark:bg-white/10 hover:bg-black/5 dark:hover:bg-white/15 transition-all">
                   <div class="flex flex-row gap-3 p-3">
                     {% if article.image %}
                       <img
