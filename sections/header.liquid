@@ -125,7 +125,8 @@
 
     {% comment %} INICIO MAIN LOGO {% endcomment %}
     <a class="flex justify-start items-center" href="{{ shop.url }}">
-      <img class="w-12 md:w-16 " src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/logodark_05364095-26ba-4dd7-9ac7-1bf113e78879.png?v=1740251201" alt="">
+      <img class="w-12 md:w-16 dark:block hidden" src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/logo-dark.png?v=1767200181" alt="logo roxaaanne dark">
+      <img class="w-12 md:w-16 block dark:hidden" src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/logo-light.png?v=1767200036" alt="logo roxaaanne light">
     </a>
      {% comment %} END LOGO {% endcomment %}
 
@@ -177,7 +178,7 @@
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-          class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+          class="header__icon header__icon--account text-black dark:text-[#feffee] link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
           rel="nofollow"
         >
           {%- if section.settings.enable_customer_avatar -%}

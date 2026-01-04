@@ -63,7 +63,7 @@
         {%- endif -%}
 
         {%- comment -%} Título {%- endcomment -%}
-        <h3 class="text-white text-lg font-medium mb-2 line-clamp-2">
+        <h3 class="text-black dark:text-[#feffee] text-lg font-medium mb-2 line-clamp-2">
           {{ card_product.title | escape }}
         </h3>
 
@@ -78,11 +78,11 @@
         {%- comment -%} Precio {%- endcomment -%}
         <div class="flex items-center gap-2 mb-3">
           {%- if card_product.compare_at_price > card_product.price -%}
-            <span class="text-gray-400 line-through text-sm">
+            <span class="text-black dark:text-gray-400 line-through text-sm">
               {{ card_product.compare_at_price | money }}
             </span>
           {%- endif -%}
-          <span class="text-white text-xl font-semibold">
+          <span class="text-black dark:text-[#feffee] text-xl font-semibold">
             {{ card_product.price | money }}
           </span>
         </div>

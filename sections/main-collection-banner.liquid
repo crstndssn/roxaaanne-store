@@ -9,19 +9,18 @@
   }
 {%- endstyle -%}
 
-<div class="bg-black collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
-  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    <div class="collection-hero__text-wrapper">
-      <h1 class="collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}:
-        </span>
-        {{- collection.title | escape -}}
-      </h1>
+<div class="bg-[#feffee] dark:bg-black container mx-auto px-8 md:px-0 collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
 
-      {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
-      {%- endif -%}
+  <div class="flex flex-col items-center text-center mb-7 border-2 border-black dark:border-[#feffee] rounded-xl p-4">
+    <h2 class="text-black dark:text-[#feffee] text-7xl font-medium mb-0 md:mb-1 my-4 md:mt-[30px] tracking-[-1.3px]">
+      {{- collection.title | escape -}}</h2>
+    <div class="md:w-[50%] text-black dark:text-[#feffee] my-2 text-[17px] md:text-3xl font-[400] leading-tight mb-10 md:mb-14">
+      {{ collection.description }}
     </div>
+  </div>
+
+  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+
 
     {%- if section.settings.show_collection_image and collection.image -%}
       <div class="collection-hero__image-container media gradient">
@@ -45,11 +44,7 @@
   </div>
 </div>
 
-<style>
-  * {
-    color: white !important;
-  }
-</style>
+
 {% schema %}
   {
     "name": "t:sections.main-collection-banner.name",

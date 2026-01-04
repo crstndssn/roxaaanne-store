@@ -1,6 +1,6 @@
 <div class="container mx-auto px-8 md:px-0">
   {% if section.settings.title != blank %}
-    <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-2 tracking-tight">
+    <h2 class="text-[27px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-2 tracking-tight">
       {{ section.settings.title }}
     </h2>
 {% endif %}
@@ -38,7 +38,7 @@
 
   {%- comment -%} eventos - título dinámico {%- endcomment -%}
   {% if section.settings.eventos_title != blank %}
-    <h2 class="text-[27px] md:text-[40px] text-white font-medium mb-2 tracking-tight mt-8">
+    <h2 class="text-[27px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-2 tracking-tight mt-8">
       {{ section.settings.eventos_title }}
     </h2>
   {% endif %}
@@ -51,9 +51,9 @@
         {% if article %}
           <a
             href="{{ article.url }}"
-            class="bg-white/10 rounded-b-xl"
+            class="border border-black dark:border-[#feffee] dark:bg-white/10 rounded-xl"
             {{ block.shopify_attributes }}>
-            <div class="block w-full min-w-[300px] max-w-[300px] md:min-w-full overflow-hidden flex flex-col">
+            <div class="block w-full min-w-[300px] max-w-[300px] md:min-w-full overflow-hidden flex flex-col rounded-xl">
               {% if article.image %}
                 <img
                   src="{{ article.image | image_url: width: 600 }}"
@@ -63,7 +63,7 @@
                   height="auto">
               {% endif %}
               <div class="flex flex-col justify-between items-start p-4">
-                <p class="text-lg text-white opacity-80 mb-1">
+                <p class="text-lg text-black dark:text-[#feffee] opacity-80 mb-1">
                   por
                   {% if article.metafields.custom.autor != blank %}
                     {{ article.metafields.custom.autor }}
@@ -71,7 +71,7 @@
                     {{ article.author }}
                   {% endif %}
                 </p>
-                <h3 class="text-2xl font-semibold text-white truncate w-full" title="{{ article.title | escape }}">{{ article.title }}</h3>
+                <h3 class="text-2xl font-semibold text-black dark:text-[#feffee] truncate w-full" title="{{ article.title | escape }}">{{ article.title }}</h3>
               </div>
             </div>
           </a>
@@ -79,7 +79,7 @@
       {% endfor %}
     </div>
   {% else %}
-    <p class="text-gray-400 mt-4">No has agregado elementos todavía.</p>
+    <p class="text-black dark:text-[#feffee] mt-4">No has agregado elementos todavía.</p>
   {% endif %}
 </div>
 

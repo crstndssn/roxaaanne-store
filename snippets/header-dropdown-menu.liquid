@@ -5,7 +5,7 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
-<nav class="header__inline-menu bg-[#feffee] dark:bg-black border border-black dark:border-[#feffee] px-[10px] pt-[3px] rounded-xl">
+<nav class="header__inline-menu bg-[#feffee] dark:bg-black border-2 border-black dark:border-[#feffee] px-[10px] pt-[3px] rounded-xl">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
       <li>
@@ -70,7 +70,7 @@
           <a
             id="HeaderMenu-{{ link.handle }}"
             href="{{ link.url }}"
-            class="header__menu-item list-menu__item link link--text focus-inset"
+            class="header__menu-item list-menu__item link link--text focus-inset text-black dark:text-[#feffee]{% if link.current %} {% endif %}"
             {% if link.current %}
             aria-current="page"
             {% endif %}>
