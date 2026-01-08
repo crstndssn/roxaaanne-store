@@ -17,7 +17,7 @@
         "announcement_Ezg7Ez": {
           "type": "announcement",
           "settings": {
-            "title": "CINERGIA",
+            "title": "cinergia",
             "date": "ENERO 21 ✨",
             "url": "shopify://pages/cinergia",
             "custom_css": "background: black;\ncolor: #feffee;"
@@ -26,18 +26,18 @@
         "announcement_JP9Qz9": {
           "type": "announcement",
           "settings": {
-            "title": "roxyfest",
-            "date": "JUNIO 21 🌞",
-            "url": "",
-            "custom_css": "background: linear-gradient(90deg, #232246 0%, #3B3382 45%, #EF6400 100%);\ncolor: #fff;"
+            "title": "voltaje",
+            "date": "ENERO 30 ⚡",
+            "url": "shopify://pages/voltaje",
+            "custom_css": "background: #2EFF05;\ncolor: #000000;"
           }
         },
         "announcement_4QKYDk": {
           "type": "announcement",
           "settings": {
             "title": "roxyfest",
-            "date": "JUNIO 21 🌞",
-            "url": "",
+            "date": "PRONTO 🌞",
+            "url": "shopify://pages/roxyfest",
             "custom_css": "background: linear-gradient(90deg, #232246 0%, #3B3382 45%, #EF6400 100%);\ncolor: #fff;"
           }
         }
