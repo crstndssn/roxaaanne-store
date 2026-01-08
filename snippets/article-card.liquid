@@ -17,73 +17,33 @@
 {% endcomment %}
 
 {%- if article and article != empty -%}
-  {%- liquid
-    assign ratio = 1
-    if media_aspect_ratio != null
-      assign ratio = media_aspect_ratio
-    endif
-  -%}
-
-  <div class="article-card-wrapper card-wrapper underline-links-hover">
-    {% comment %} <article aria-labelledby="Article-{{ article.id }}"> {% endcomment %}
-    <div>
-      <div class="">
-        {%- if show_image == true and article.image -%}
-          <div class="">
-              {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-            <img
-              src="{{ article.image.src | image_url: width: master }}"
-              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-              alt="{{ article.image.src.alt | escape }}"
-              class="motion-reduce w-full"
-              {% unless lazy_load == false %}
-              loading="lazy"
-              {% endunless %}
-              width="{{ article.image.width }}"
-              height="{{ article.image.height }}">
-            {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
-          </div>
-        {%- endif -%}
-
-        <div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
-              <a href="{{ article.url }}" class="full-unstyled-link">
-                {{ article.title | truncate: 50 | escape }}
-              </a>
-            </h3>
-            <div class="article-card__info caption-with-letter-spacing h5">
-              {%- if show_date -%}
-                <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>
-              {%- endif -%}
-              {%- if show_author -%}
-                <span>{{ article.author }}</span>
-              {%- endif -%}
-            </div>
-            {%- if show_excerpt -%}
-              {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
-                <p class="article-card__excerpt rte-width">
-                  {%- if article.excerpt.size > 0 -%}
-                    {{ article.excerpt | strip_html | truncatewords: 30 }}
-                  {%- else -%}
-                    {{ article.content | strip_html | truncatewords: 30 }}
-                  {%- endif -%}
-                </p>
-              {%- endif -%}
-              <div class="article-card__footer">
-                {%- if article.comments_count > 0 and blog.comments_enabled? -%}
-                  <span>{{ 'blogs.article.comments' | t: count: article.comments_count }}</span>
-                {%- endif -%}
-              </div>
-            {%- endif -%}
-          </div>
-          {%- if show_badge -%}
-            <div class="card__badge {{ settings.badge_position }}">
-              <span class="badge color-{{ settings.color_schemes | first }}">{{ 'blogs.article.blog' | t }}</span>
-            </div>
-          {%- endif -%}
+  <div class="border-2 border-[#c9c9c9] rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+    <a href="{{ article.url }}" class="block">
+      {%- if show_image == true and article.image -%}
+        <div class="w-full h-[250px] overflow-hidden">
+          <img
+            src="{{ article.image.src | image_url: width: 1500 }}"
+            alt="{{ article.image.src.alt | escape }}"
+            class="w-full h-full object-cover"
+            {% unless lazy_load == false %}
+            loading="lazy"
+            {% endunless %}
+            width="{{ article.image.width }}"
+            height="{{ article.image.height }}">
         </div>
+      {%- endif -%}
+
+      <div class="p-5">
+        <h3 class="text-[17px] font-semibold mb-2 text-black dark:text-[#feffee] hover:underline">
+          {{ article.title | escape }}
+        </h3>
+
+        {%- if show_date -%}
+          <p class="text-lg text-gray-600 dark:text-gray-400">
+            {{ article.published_at | time_tag: format: 'date' }}
+          </p>
+        {%- endif -%}
       </div>
-    </div>
+    </a>
   </div>
 {%- endif -%}

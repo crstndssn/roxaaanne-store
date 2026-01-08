@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "murmurio_section": {
+      "type": "murmurio",
+      "settings": {}
+    }
+  },
+  "order": [
+    "murmurio_section"
+  ]
+}

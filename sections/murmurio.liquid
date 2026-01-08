@@ -1,0 +1,34 @@
+<div class="container mx-auto my-8 px-7 md:px-0">
+  <h1 class="text-[23px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-2 tracking-tight mt-8">
+    murmurio
+  </h1>
+
+  <div class="mt-8">
+    <p class="text-base text-black dark:text-[#feffee]">
+      Contenido de la sección Murmurio
+    </p>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Murmurio",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título",
+        "default": "murmurio"
+      }, {
+        "type": "richtext",
+        "id": "content",
+        "label": "Contenido"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Murmurio"
+      }
+    ]
+  }
+{% endschema %}

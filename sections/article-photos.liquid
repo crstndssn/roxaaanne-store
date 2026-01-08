@@ -1,6 +1,6 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<article class="container mx-auto flex flex-col justify-center items-center px-8 md:px-0">
+  <article class="container mx-auto flex flex-col justify-center items-center px-8 md:px-0">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
@@ -10,20 +10,20 @@
 
       {%- when 'title' -%}
       {% comment %} <header class="flex flex-col justify-center items-center space-y-2 mt-10" {{ block.shopify_attributes }}>
-                                  <h1 class="text-[50px] tracking-[-3px] mt-5 md:mt-[50px] text-center">
-                                    {{ article.title | escape }}
-                                  </h1>
-                                  {%- if block.settings.blog_show_date -%}
-                                    <span class="text-center opacity-70">
-                                      {{- article.published_at | time_tag: format: 'date' -}}
-                                    </span>
-                                  {%- endif -%}
-                                  {%- if block.settings.blog_show_author -%}
-        
-                                      <span class="capitalize">por: {{ article.metafields.custom.autor }}</span>
-         
-                                  {%- endif -%}
-                          </header> {% endcomment %}
+                                          <h1 class="text-[50px] tracking-[-3px] mt-5 md:mt-[50px] text-center">
+                                            {{ article.title | escape }}
+                                          </h1>
+                                          {%- if block.settings.blog_show_date -%}
+                                            <span class="text-center opacity-70">
+                                              {{- article.published_at | time_tag: format: 'date' -}}
+                                            </span>
+                                          {%- endif -%}
+                                          {%- if block.settings.blog_show_author -%}
+          
+                                              <span class="capitalize">por: {{ article.metafields.custom.autor }}</span>
+           
+                                          {%- endif -%}
+                                </header> {% endcomment %}
 
       {%- when 'featured_image' -%}
         <div class="w-full mx-auto">
@@ -39,9 +39,12 @@
           </div>
 
           <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-2">
-            <h2 class="text-white text-xl m-0 text-right font-light mr-1">fotografías por: <span class="font-medium">{{ article.metafields.custom.autor }}</span></h2>
+            <h2 class="text-white text-xl m-0 text-right font-light mr-1">fotografías por:
+              <span class="font-medium">{{ article.metafields.custom.autor }}</span>
+            </h2>
             <p class="text-white text-xl m-0 text-right font-light mr-1">
-              canción por: <span class="font-medium">{{ article.metafields.custom.song_credits }}</span>
+              canción por:
+              <span class="font-medium">{{ article.metafields.custom.song_credits }}</span>
             </p>
           </div>
         </div>
@@ -63,16 +66,16 @@
     {%- endcase -%}
   {%- endfor -%}
 
-  <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <a href="{{ blog.url }}" class="article-template__link link animate-arrow text-white">
-      <span class="icon-wrap">
-        <span class="svg-wrapper">
-          {{- 'icon-arrow.svg' | inline_asset_content -}}
-        </span>
-      </span>
-      {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
-    </a>
-  </div>
+  {% comment %} <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <a href="{{ blog.url }}" class="article-template__link link animate-arrow text-white">
+          <span class="icon-wrap">
+            <span class="svg-wrapper">
+              {{- 'icon-arrow.svg' | inline_asset_content -}}
+            </span>
+          </span>
+          {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
+        </a>
+    </div> {% endcomment %}
   {%- if blog.comments_enabled? -%}
     <div class="article-template__comment-wrapper background-secondary">
       <div id="comments" class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -273,79 +276,83 @@
 
 <!-- Music Player -->
 {%- if article.metafields.custom.song_url.value -%}
-<div id="music-player" class="fixed bottom-10 inset-x-7 z-50 bg-black/90 backdrop-blur-sm border-2 border-[{{ article.metafields.custom.border_color.value }}] rounded-3xl p-4 md:min-w-[80%] shadow-2xl">
+  <div id="music-player" class="fixed bottom-10 inset-x-7 z-50 bg-black/90 backdrop-blur-sm border-2 border-[{{ article.metafields.custom.border_color.value }}] rounded-3xl p-4 md:min-w-[80%] shadow-2xl">
 
-  <div class="flex justify-between gap-4">
-    <!-- Play/Pause Button -->
-    <button id="play-pause-btn" class="flex-shrink-0 w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors group">
-      <!-- Play Icon -->
-      <svg
-        id="play-icon"
-        class="w-12 h-12 text-black"
-        fill="currentColor"
-        viewBox="0 0 20 20">
-        <path d="M8 5v10l8-5-8-5z" />
-      </svg>
-      <!-- Pause Icon (hidden by default) -->
-      <svg
-        id="pause-icon"
-        class="w-12 h-12 text-black hidden"
-        fill="currentColor"
-        viewBox="0 0 20 20">
-        <path d="M6 4h2v12H6V4zm6 0h2v12h-2V4z" />
-      </svg>
-    </button>
+    <div class="flex justify-between gap-4">
+      <!-- Play/Pause Button -->
+      <button id="play-pause-btn" class="flex-shrink-0 w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors group">
+        <!-- Play Icon -->
+        <svg
+          id="play-icon"
+          class="w-12 h-12 text-black"
+          fill="currentColor"
+          viewBox="0 0 20 20">
+          <path d="M8 5v10l8-5-8-5z" />
+        </svg>
+        <!-- Pause Icon (hidden by default) -->
+        <svg
+          id="pause-icon"
+          class="w-12 h-12 text-black hidden"
+          fill="currentColor"
+          viewBox="0 0 20 20">
+          <path d="M6 4h2v12H6V4zm6 0h2v12h-2V4z" />
+        </svg>
+      </button>
 
-    <div class="w-full flex flex-col items-end justify-around">
+      <div class="w-full flex flex-col items-end justify-around">
 
-      <!-- Song Info -->
-      <div class="flex gap-3 pr-3">
-        <div class="font-medium text-2xl">
-          {{ article.metafields.custom.song_name | truncate: 30 }}
+        <!-- Song Info -->
+        <div class="flex gap-3 pr-3">
+          <div class="font-medium text-2xl">
+            {{ article.metafields.custom.song_name | truncate: 30 }}
+          </div>
+          •
+          <div class="font-light text-2xl truncate">
+            {{ article.metafields.custom.song_credits | default: 'Artista desconocido' }}
+          </div>
         </div>
-        • 
-        <div class="font-light text-2xl truncate">
-          {{ article.metafields.custom.song_credits | default: 'Artista desconocido' }}
+
+        <!-- Progress Bar -->
+        <div class="w-full flex justify-center items-center gap-2">
+          <div class="flex justify-between text-sm text-gray-400 mt-1">
+            <span id="current-time">0:00</span>
+          </div>
+
+          <div class="w-full bg-gray-600 h-1 rounded-full overflow-hidden cursor-pointer" id="progress-container">
+            <div id="progress-bar" class="bg-[{{ article.metafields.custom.border_color.value }}] h-full w-0 transition-all duration-100"></div>
+          </div>
+          <div class="flex justify-between text-sm text-gray-400 mt-1">
+            <span id="total-time">0:00</span>
+          </div>
         </div>
+
       </div>
 
-      <!-- Progress Bar -->
-      <div class="w-full flex justify-center items-center gap-2">
-        <div class="flex justify-between text-sm text-gray-400 mt-1">
-          <span id="current-time">0:00</span>
-        </div>
-
-        <div class="w-full bg-gray-600 h-1 rounded-full overflow-hidden cursor-pointer" id="progress-container">
-          <div id="progress-bar" class="bg-[{{ article.metafields.custom.border_color.value }}] h-full w-0 transition-all duration-100"></div>
-        </div>
-        <div class="flex justify-between text-sm text-gray-400 mt-1">
-          <span id="total-time">0:00</span>
-        </div>
-      </div>
-
+      <!-- Hidden Audio Element -->
+      <audio
+        id="audio-player"
+        preload="metadata"
+        webkit-playsinline
+        playsinline>
+        <source src="{{ article.metafields.custom.song_url.value }}" type="audio/mpeg">
+        <source src="{{ article.metafields.custom.song_url.value }}" type="audio/wav">
+        <source src="{{ article.metafields.custom.song_url.value }}" type="audio/ogg">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
     </div>
-
-    <!-- Hidden Audio Element -->
-    <audio id="audio-player" preload="metadata" webkit-playsinline playsinline>
-      <source src="{{ article.metafields.custom.song_url.value }}" type="audio/mpeg">
-      <source src="{{ article.metafields.custom.song_url.value }}" type="audio/wav">
-      <source src="{{ article.metafields.custom.song_url.value }}" type="audio/ogg">
-      Tu navegador no soporta el elemento de audio.
-    </audio>
+  <!-- Close Button -->
+  {% comment %} <button id="close-player-btn" class="flex-shrink-0 w-8 h-8 text-white/60 hover:text-white transition-colors">
+                    <svg
+                      class="w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" />
+                    </svg>
+            </button> {% endcomment %}
   </div>
-<!-- Close Button -->
-{% comment %} <button id="close-player-btn" class="flex-shrink-0 w-8 h-8 text-white/60 hover:text-white transition-colors">
-                <svg
-                  class="w-4 h-4"
-                  fill="currentColor"
-                  viewBox="0 0 20 20">
-                  <path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" />
-                </svg>
-          </button> {% endcomment %}
-</div>
 
 
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       const player = document.getElementById('music-player');
       const audio = document.getElementById('audio-player');
@@ -610,7 +617,7 @@
     player.style.display = 'none';
       });
     });
-</script>
+  </script>
 {%- endif -%}
 
 <script type="application/ld+json">

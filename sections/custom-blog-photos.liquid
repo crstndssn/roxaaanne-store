@@ -24,7 +24,7 @@
       </h1>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 mt-5 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 gap-5">
       {%- for article in blog.articles -%}
         <div
           class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"

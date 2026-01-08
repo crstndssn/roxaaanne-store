@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "cinergia_section": {
+      "type": "cinergia",
+      "settings": {}
+    }
+  },
+  "order": [
+    "cinergia_section"
+  ]
+}

@@ -1,6 +1,6 @@
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 
-<div class="container mx-auto px-8 pb-16">
+<div class="container mx-auto px-8 md:px-0 pb-16">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
     <!-- Galería de imágenes del producto -->
@@ -188,13 +188,11 @@
         <button
           type="submit"
           name="add"
-          class="w-full bg-black text-[#feffee] py-4 px-8 rounded-xl text-[17px] font-[500] hover:bg-[#feffee] hover:text-black border-2 border-black dark:border-[#feffee] transition-colors disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed mb-4"
-          {% unless product.available %}
-          disabled{% endunless %}>
+          class="w-full bg-black text-[#feffee] py-4 px-8 rounded-xl text-[17px] font-[500] hover:bg-[#feffee] hover:text-black border-2 border-black dark:border-[#feffee] transition-colors mb-4">
           {% if product.available %}
             Añadir al carrito
           {% else %}
-            Agotado
+            Preventa
           {% endif %}
         </button>
 
@@ -210,12 +208,12 @@
             <span class="text-green-500 text-black dark:text-[#feffee]">En stock</span>
           {% else %}
             <svg
-              class="w-5 h-5 text-red-500"
+              class="w-5 h-5 text-yellow-500"
               fill="currentColor"
               viewBox="0 0 20 20">
-              <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" />
+              <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" />
             </svg>
-            <span class="text-red-500 text-black dark:text-[#feffee]">Agotado</span>
+            <span class="text-yellow-500 text-black dark:text-[#feffee]">Disponible en preventa</span>
           {% endif %}
         </div>
       {% endform %}
@@ -281,7 +279,7 @@
             Envíos y devoluciones
           </summary>
           <div class="pt-4 text-black dark:text-[#feffee]">
-            <p class="mb-2">📦 Envío gratis en compras superiores a $50.000</p>
+            <p class="mb-2">📦 Envío gratis en compras superiores a $100.000</p>
             <p class="mb-2">🚚 Entrega en 3-5 días hábiles</p>
             <p>↩️ Devoluciones gratuitas dentro de 30 días</p>
           </div>
