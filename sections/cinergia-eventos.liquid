@@ -1,7 +1,7 @@
 <div class="container mx-auto px-7 md:px-0 mt-10">
-  <!-- Scroll horizontal de eventos en 2 filas -->
-  <div class="relative">
-    <div class="grid grid-rows-2 grid-flow-col auto-cols-[320px] md:auto-cols-[400px] gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-custom scroll-container-{{ section.id }}">
+  <!-- Grid de eventos: scroll en mobile, grid en desktop -->
+  <div class="relative md:static">
+    <div class="grid grid-rows-2 grid-flow-col auto-cols-[320px] gap-4 overflow-x-auto pb-4 scrollbar-custom md:grid-cols-3 md:grid-rows-1 md:grid-flow-row md:auto-cols-auto md:overflow-visible md:gap-6 scroll-container-{{ section.id }}">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'event' %}
@@ -52,7 +52,7 @@
     .dark .scrollbar-custom::-webkit-scrollbar-thumb:hover {
       background: rgba(117, 117, 117, 0.7);
     }
-
+    
     @media (min-width: 768px) {
       .scrollbar-custom::-webkit-scrollbar {
         height: 8px;
@@ -63,7 +63,6 @@
 
 {% schema %}
   {
-    "name": "Cinergia Eventos",
     "settings": [],
     "blocks": [
       {
