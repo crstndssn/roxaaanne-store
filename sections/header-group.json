@@ -20,7 +20,7 @@
             "title": "CINERGIA",
             "date": "ENERO 21 ✨",
             "url": "shopify://pages/cinergia",
-            "custom_css": "BACKGROUND"
+            "custom_css": "background: black;\ncolor: #feffee;"
           }
         },
         "announcement_JP9Qz9": {
