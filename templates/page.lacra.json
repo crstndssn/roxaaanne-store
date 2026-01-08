@@ -16,6 +16,12 @@
     "audiovisual": {
       "type": "lacra-audiovisual",
       "blocks": {
+        "article_card_yBQnPd": {
+          "type": "article_card",
+          "settings": {
+            "article": "peliculas/bejuco"
+          }
+        },
         "article_card_gWFipb": {
           "type": "article_card",
           "settings": {
@@ -42,6 +48,7 @@
         }
       },
       "block_order": [
+        "article_card_yBQnPd",
         "article_card_gWFipb",
         "article_card_AHD8bP",
         "article_card_AMhfV4",
