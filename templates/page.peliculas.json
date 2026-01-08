@@ -12,6 +12,14 @@
     "peliculas": {
       "type": "peliculas",
       "blocks": {
+        "image_link_block_rW8NLf": {
+          "type": "image_link_block",
+          "settings": {
+            "image": "shopify://shop_images/murmurio_1.png",
+            "link": "shopify://pages/murmurio",
+            "name": ""
+          }
+        },
         "image_link_block_Tq9cXq": {
           "type": "image_link_block",
           "settings": {
@@ -22,6 +30,7 @@
         }
       },
       "block_order": [
+        "image_link_block_rW8NLf",
         "image_link_block_Tq9cXq"
       ],
       "settings": {}
