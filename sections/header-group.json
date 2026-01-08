@@ -13,6 +13,40 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement_Ezg7Ez": {
+          "type": "announcement",
+          "settings": {
+            "title": "CINERGIA",
+            "date": "ENERO 21 ✨",
+            "url": "shopify://pages/cinergia",
+            "custom_css": "BACKGROUND"
+          }
+        },
+        "announcement_JP9Qz9": {
+          "type": "announcement",
+          "settings": {
+            "title": "roxyfest",
+            "date": "JUNIO 21 🌞",
+            "url": "",
+            "custom_css": "background: linear-gradient(90deg, #232246 0%, #3B3382 45%, #EF6400 100%);\ncolor: #fff;"
+          }
+        },
+        "announcement_4QKYDk": {
+          "type": "announcement",
+          "settings": {
+            "title": "roxyfest",
+            "date": "JUNIO 21 🌞",
+            "url": "",
+            "custom_css": "background: linear-gradient(90deg, #232246 0%, #3B3382 45%, #EF6400 100%);\ncolor: #fff;"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_Ezg7Ez",
+        "announcement_JP9Qz9",
+        "announcement_4QKYDk"
+      ],
       "settings": {}
     },
     "header": {
