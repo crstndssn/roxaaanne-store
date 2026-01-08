@@ -9,12 +9,68 @@
  */
 {
   "sections": {
-    "cinergia_section": {
-      "type": "cinergia",
+    "cinergia_header": {
+      "type": "cinergia-header",
+      "settings": {}
+    },
+    "cinergia_eventos": {
+      "type": "cinergia-eventos",
+      "blocks": {
+        "event_1": {
+          "type": "event",
+          "settings": {
+            "day": "29",
+            "month": "ENE",
+            "artist": "LACRA",
+            "title": "Cinergia:",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        }
+      },
+      "block_order": [
+        "event_1"
+      ],
+      "settings": {}
+    },
+    "cinergia_proximamente": {
+      "type": "cinergia-proximamente",
+      "blocks": {
+        "prox_event_1": {
+          "type": "event",
+          "settings": {
+            "day": "29",
+            "month": "ENE",
+            "artist": "LACRA",
+            "title": "Cinergia:",
+            "location": "Neiva, Huila • El Patio"
+          }
+        }
+      },
+      "block_order": [
+        "prox_event_1"
+      ],
+      "settings": {}
+    },
+    "cinergia_lonuestro": {
+      "type": "cinergia-lonuestro",
+      "settings": {}
+    },
+    "cinergia_lecturas": {
+      "type": "cinergia-lecturas",
+      "settings": {}
+    },
+    "cinergia_referencias": {
+      "type": "cinergia-referencias",
       "settings": {}
     }
   },
   "order": [
-    "cinergia_section"
+    "cinergia_header",
+    "cinergia_eventos",
+    "cinergia_proximamente",
+    "cinergia_lonuestro",
+    "cinergia_lecturas",
+    "cinergia_referencias"
   ]
 }
