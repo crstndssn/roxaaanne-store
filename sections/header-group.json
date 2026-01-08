@@ -16,7 +16,6 @@
       "blocks": {
         "announcement_Ezg7Ez": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "title": "cinergia",
             "date": "ENERO 21 ✨",
@@ -27,7 +26,6 @@
         },
         "announcement_JP9Qz9": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "title": "voltaje",
             "date": "ENERO 30 ⚡",
@@ -38,7 +36,6 @@
         },
         "announcement_4QKYDk": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "title": "roxyfest",
             "date": "PRONTO 🌞",
