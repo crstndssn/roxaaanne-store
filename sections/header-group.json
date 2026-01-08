@@ -52,7 +52,7 @@
           "settings": {
             "title": "creadorxs",
             "date": "🔥",
-            "url": "",
+            "url": "shopify://pages/creadores",
             "custom_classes": "border-2 border-black bg-[#feffee]",
             "custom_css": "color: black !important;"
           }
