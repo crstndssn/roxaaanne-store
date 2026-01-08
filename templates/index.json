@@ -209,76 +209,6 @@
             "new_creation__link": ""
           }
         },
-        "event_tAEkNV": {
-          "type": "event",
-          "disabled": true,
-          "settings": {
-            "artist": "LACRA",
-            "day": "03",
-            "month": "oct",
-            "title": "Tapazo - Trailer Bejuco",
-            "location": "Neiva, Huila • Cara Mala",
-            "muted": true
-          }
-        },
-        "event_8gbaKi": {
-          "type": "event",
-          "disabled": true,
-          "settings": {
-            "artist": "Felipe Quien",
-            "day": "11",
-            "month": "oct",
-            "title": "Live Set Acid House",
-            "location": "Neiva, Huila • Festival BMX Trails Jam 3.0",
-            "muted": true
-          }
-        },
-        "event_Xk8qym": {
-          "type": "event",
-          "disabled": true,
-          "settings": {
-            "artist": "LACRA",
-            "day": "22",
-            "month": "oct",
-            "title": "Cine al Barrio: Viy",
-            "location": "Neiva, Huila • El Patio",
-            "muted": false
-          }
-        },
-        "event_efzyDw": {
-          "type": "event",
-          "disabled": true,
-          "settings": {
-            "artist": "LACRA",
-            "day": "29",
-            "month": "oct",
-            "title": "Cine al Barrio: Veneno para las hadas",
-            "location": "Neiva, Huila • El Patio",
-            "muted": false
-          }
-        },
-        "event_PXBJcF": {
-          "type": "event",
-          "settings": {
-            "artist": "LACRA",
-            "day": "26",
-            "month": "nov",
-            "title": "Cine al Barrio: Frank",
-            "location": "Neiva, Huila • El Patio",
-            "muted": false
-          }
-        },
-        "event_bJ9hqk": {
-          "type": "event",
-          "settings": {
-            "artist": "LACRA",
-            "day": "29",
-            "month": "oct",
-            "title": "Rodaje Murmurio",
-            "location": "Paicol, Huila",
-            "muted": true
-          }
-        },
         "event_84XiNC": {
           "type": "event",
           "settings": {
@@ -287,7 +217,7 @@
             "month": "nov",
             "title": "Laboratorio de Síntesis",
             "location": "Neiva, Huila • Cara Mala",
-            "muted": false
+            "muted": true
           }
         },
         "event_NELTpj": {
@@ -298,6 +228,28 @@
             "month": "nov",
             "title": "GAITANA FEST",
             "location": "Neiva, Huila • Centro de Convenciones",
+            "muted": true
+          }
+        },
+        "event_fhdUjE": {
+          "type": "event",
+          "settings": {
+            "artist": "LACRA",
+            "day": "21",
+            "month": "ene",
+            "title": "Cinergia: Sound of Noise",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "event_TLmEKz": {
+          "type": "event",
+          "settings": {
+            "artist": "LACRA",
+            "day": "28",
+            "month": "ene",
+            "title": "Cinergia: Whiplash",
+            "location": "Ciudad, País • Lugar",
             "muted": false
           }
         },
@@ -324,14 +276,10 @@
         "new_creation_Pqab8R",
         "new_creation_f9xkFA",
         "new_creation_bkCmRN",
-        "event_tAEkNV",
-        "event_8gbaKi",
-        "event_Xk8qym",
-        "event_efzyDw",
-        "event_PXBJcF",
-        "event_bJ9hqk",
         "event_84XiNC",
         "event_NELTpj",
+        "event_fhdUjE",
+        "event_TLmEKz",
         "events_cta_jkEmPX"
       ],
       "settings": {
