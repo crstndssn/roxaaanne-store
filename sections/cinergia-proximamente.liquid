@@ -1,0 +1,170 @@
+<div class="container mx-auto px-7 md:px-0 mt-10">
+  <h2 class="text-[27px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-2 tracking-tight mt-8">próximamente</h2>
+
+  <!-- Grid de películas -->
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+    {% for block in section.blocks %}
+      {% if block.type == 'movie' %}
+        <div
+          class="cursor-pointer group"
+          onclick="openModal{{ block.id }}()"
+          {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            <div class="rounded-xl overflow-hidden border-2 border-[#c9c9c9] dark:border-[#5a5a5a] hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+              <img
+                src="{{ block.settings.image | image_url: width: 500 }}"
+                alt="{{ block.settings.title | escape }}"
+                class="w-full h-auto aspect-[2/3] object-cover">
+            </div>
+          {% endif %}
+          {% if block.settings.title != blank %}
+            <h3 class="text-[17px] font-semibold text-black dark:text-[#feffee] mt-3 text-center">{{ block.settings.title }}</h3>
+          {% endif %}
+        </div>
+
+        <!-- Modal -->
+        <div
+          id="modal{{ block.id }}"
+          class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden items-center justify-center p-4"
+          onclick="closeModal{{ block.id }}(event)">
+          <div class="bg-[#feffee] dark:bg-[#1c1c1c] rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="p-6 md:p-8">
+              <!-- Botón cerrar -->
+              <button onclick="closeModal{{ block.id }}()" class="float-right text-3xl text-black dark:text-[#feffee] hover:text-gray-600 dark:hover:text-gray-400">&times;</button>
+
+              <div class="grid md:grid-cols-2 gap-6 mt-8">
+                <!-- Imagen -->
+                {% if block.settings.image != blank %}
+                  <div class="rounded-xl overflow-hidden">
+                    <img
+                      src="{{ block.settings.image | image_url: width: 800 }}"
+                      alt="{{ block.settings.title | escape }}"
+                      class="w-full h-auto">
+                  </div>
+                {% endif %}
+
+                <!-- Ficha técnica -->
+                <div class="space-y-4">
+                  {% if block.settings.title != blank %}
+                    <h2 class="text-3xl font-bold text-black dark:text-[#feffee] mb-4">{{ block.settings.title }}</h2>
+                  {% endif %}
+
+                  {% if block.settings.director != blank %}
+                    <div>
+                      <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Director</p>
+                      <p class="text-[17px] text-black dark:text-[#feffee]">{{ block.settings.director }}</p>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.year != blank %}
+                    <div>
+                      <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Año</p>
+                      <p class="text-[17px] text-black dark:text-[#feffee]">{{ block.settings.year }}</p>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.duration != blank %}
+                    <div>
+                      <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Duración</p>
+                      <p class="text-[17px] text-black dark:text-[#feffee]">{{ block.settings.duration }}</p>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.genre != blank %}
+                    <div>
+                      <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Género</p>
+                      <p class="text-[17px] text-black dark:text-[#feffee]">{{ block.settings.genre }}</p>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.country != blank %}
+                    <div>
+                      <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">País</p>
+                      <p class="text-[17px] text-black dark:text-[#feffee]">{{ block.settings.country }}</p>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.synopsis != blank %}
+                    <div class="pt-4">
+                      <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-2">Sinopsis</p>
+                      <p class="text-[15px] text-black dark:text-[#feffee] leading-relaxed">{{ block.settings.synopsis }}</p>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          function openModal{{ block.id }}() {
+            document.getElementById('modal{{ block.id }}').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          }
+
+          function closeModal{{ block.id }}(event) {
+            if (event) event.preventDefault();
+            document.getElementById('modal{{ block.id }}').style.display = 'none';
+            document.body.style.overflow = 'auto';
+          }
+        </script>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Cinergia Próximamente",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "movie",
+        "name": "Película",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Imagen del flyer"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Título"
+          },
+          {
+            "type": "text",
+            "id": "director",
+            "label": "Director"
+          },
+          {
+            "type": "text",
+            "id": "year",
+            "label": "Año"
+          }, {
+            "type": "text",
+            "id": "duration",
+            "label": "Duración"
+          }, {
+            "type": "text",
+            "id": "genre",
+            "label": "Género"
+          }, {
+            "type": "text",
+            "id": "country",
+            "label": "País"
+          }, {
+            "type": "textarea",
+            "id": "synopsis",
+            "label": "Sinopsis"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cinergia Próximamente"
+      }
+    ]
+  }
+{% endschema %}

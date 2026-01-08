@@ -1,0 +1,105 @@
+<div class="container mx-auto px-7 md:px-0 mt-10">
+  <h2 class="text-[27px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-2 tracking-tight mt-8">lecturas</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'article' %}
+          {% assign article = block.settings.article %}
+          {% if article != blank %}
+            <a
+              href="{{ article.url }}"
+              class="border-2 border-[#c9c9c9] dark:border-[#5a5a5a] rounded-xl overflow-hidden hover:shadow-lg transition-shadow bg-[#feffee] dark:bg-[#1c1c1c] block"
+              {{ block.shopify_attributes }}>
+              {% if article.image != blank %}
+                <div class="aspect-[3/4] bg-gray-200 dark:bg-[#2a2a2a]">
+                  <img
+                    src="{{ article.image | img_url: '400x' }}"
+                    alt="{{ article.title }}"
+                    class="w-full h-full object-cover">
+                </div>
+              {% endif %}
+              <div class="p-4">
+                <h3 class="text-xl font-semibold text-black dark:text-[#feffee] mb-2">{{ article.title }}</h3>
+                {% if article.metafields.custom.autor != blank %}
+                  <p class="text-[15px] text-gray-600 dark:text-gray-400 mb-3">{{ article.metafields.custom.autor }}</p>
+                {% endif %}
+                {% if article.excerpt != blank %}
+                  <p class="text-[15px] text-black dark:text-[#feffee]">{{ article.excerpt | strip_html | truncate: 120 }}</p>
+                {% endif %}
+              </div>
+            </a>
+          {% endif %}
+        {% when 'book' %}
+          <div class="border-2 border-[#c9c9c9] dark:border-[#5a5a5a] rounded-xl overflow-hidden hover:shadow-lg transition-shadow bg-[#feffee] dark:bg-[#1c1c1c]" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              <div class="aspect-[3/4] bg-gray-200 dark:bg-[#2a2a2a]">
+                <img
+                  src="{{ block.settings.image | img_url: '400x' }}"
+                  alt="{{ block.settings.title }}"
+                  class="w-full h-full object-cover">
+              </div>
+            {% endif %}
+            <div class="p-4">
+              {% if block.settings.title != blank %}
+                <h3 class="text-xl font-semibold text-black dark:text-[#feffee] mb-2">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.author != blank %}
+                <p class="text-[15px] text-gray-600 dark:text-gray-400 mb-3">{{ block.settings.author }}</p>
+              {% endif %}
+              {% if block.settings.description != blank %}
+                <p class="text-[15px] text-black dark:text-[#feffee]">{{ block.settings.description }}</p>
+              {% endif %}
+            </div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Cinergia Lecturas",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "article",
+        "name": "Artículo",
+        "settings": [
+          {
+            "type": "article",
+            "id": "article",
+            "label": "Seleccionar artículo"
+          }
+        ]
+      }, {
+        "type": "book",
+        "name": "Libro",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Imagen del libro"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Título"
+          }, {
+            "type": "text",
+            "id": "author",
+            "label": "Autor"
+          }, {
+            "type": "textarea",
+            "id": "description",
+            "label": "Descripción"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cinergia Lecturas"
+      }
+    ]
+  }
+{% endschema %}
