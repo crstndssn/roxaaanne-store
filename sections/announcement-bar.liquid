@@ -3,7 +3,7 @@
     {% if block.type == 'announcement' %}
       <a
         href="{{ block.settings.url }}"
-        class="announcement-block announcement-block-{{ block.id }} md:w-full flex justify-center rounded-xl items-center md:py-1 {% if forloop.first %}active{% else %}hidden{% endif %}"
+        class="announcement-block announcement-block-{{ block.id }} md:w-full flex justify-center rounded-xl items-center md:py-1 {{ block.settings.custom_classes }} {% if forloop.first %}active{% else %}hidden{% endif %}"
         data-announcement-index="{{ forloop.index0 }}"
         {{ block.shopify_attributes }}>
         <h1 class="weird-font font-[100] text-[33px] leading-[33px] text-center mb-1">
@@ -78,15 +78,23 @@
             "id": "title",
             "label": "Título",
             "default": "roxyfest"
-          }, {
+          },
+          {
             "type": "text",
             "id": "date",
             "label": "Fecha",
             "default": "JUNIO 21 🌞"
-          }, {
+          },
+          {
             "type": "url",
             "id": "url",
             "label": "URL de destino"
+          },
+          {
+            "type": "text",
+            "id": "custom_classes",
+            "label": "Clases Personalizadas",
+            "info": "Agrega clases de Tailwind CSS personalizadas (ej: bg-red-500 text-white py-4)"
           }, {
             "type": "textarea",
             "id": "custom_css",
