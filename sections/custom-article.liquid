@@ -1,6 +1,6 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template">
+  <article class="article-template">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
@@ -36,7 +36,7 @@
         </header>
 
       {%- when 'content' -%}
-        <div class="p-7 text-[22px] md:text-[24px] text-black dark:text-[#feffee]" {{ block.shopify_attributes }}>
+        <div class="p-7 text-[19px] md:text-[20px] text-black dark:text-[#feffee]" {{ block.shopify_attributes }}>
           {{ article.content }}
         </div>
 
@@ -51,15 +51,15 @@
   {%- endfor -%}
 
   {% comment %} <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
-      <span class="icon-wrap">
-        <span class="svg-wrapper">
-          {{- 'icon-arrow.svg' | inline_asset_content -}}
-        </span>
-      </span>
-      {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
-    </a>
-  </div> {% endcomment %}
+        <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
+          <span class="icon-wrap">
+            <span class="svg-wrapper">
+              {{- 'icon-arrow.svg' | inline_asset_content -}}
+            </span>
+          </span>
+          {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
+        </a>
+    </div> {% endcomment %}
 
   {%- if blog.comments_enabled? -%}
     <div class="container mx-auto px-7 md:px-0 py-12">
@@ -80,14 +80,16 @@
                   </footer>
                 </article>
               {%- endfor -%}
-              {% render 'pagination', paginate: paginate %}
+              {% render 'pagination'
+                , paginate: paginate %}
             </div>
           {% endpaginate %}
         {%- endif -%}
 
-        {% form 'new_comment', article %}
+        {% form 'new_comment'
+          , article %}
           <h2 class="text-3xl font-semibold mb-6 text-black dark:text-[#feffee]">{{ 'blogs.article.comment_form_title' | t }}</h2>
-          
+
           {%- if form.posted_successfully? -%}
             <div class="bg-green-100 dark:bg-green-900 border-2 border-green-500 rounded-xl p-4 mb-6">
               <p class="text-green-800 dark:text-green-200 font-medium">{{ 'blogs.article.success' | t }}</p>
@@ -109,7 +111,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label for="CommentForm-author" class="block text-sm font-medium mb-2 text-black dark:text-[#feffee]">
-                  {{ 'blogs.article.name' | t }} <span class="text-red-500">*</span>
+                  {{ 'blogs.article.name' | t }}
+                  <span class="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -121,7 +124,8 @@
               </div>
               <div>
                 <label for="CommentForm-email" class="block text-sm font-medium mb-2 text-black dark:text-[#feffee]">
-                  {{ 'blogs.article.email' | t }} <span class="text-red-500">*</span>
+                  {{ 'blogs.article.email' | t }}
+                  <span class="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
@@ -135,7 +139,8 @@
 
             <div>
               <label for="CommentForm-body" class="block text-sm font-medium mb-2 text-black dark:text-[#feffee]">
-                {{ 'blogs.article.message' | t }} <span class="text-red-500">*</span>
+                {{ 'blogs.article.message' | t }}
+                <span class="text-red-500">*</span>
               </label>
               <textarea
                 rows="5"
@@ -149,9 +154,7 @@
               <p class="text-sm text-gray-600 dark:text-gray-400">{{ 'blogs.article.moderated' | t }}</p>
             {%- endif -%}
 
-            <button
-              type="submit"
-              class="w-full bg-black text-[#feffee] py-4 px-8 rounded-xl text-[17px] font-[500] hover:bg-[#feffee] hover:text-black border-2 border-black dark:border-[#feffee] transition-colors">
+            <button type="submit" class="w-full bg-black text-[#feffee] py-4 px-8 rounded-xl text-[17px] font-[500] hover:bg-[#feffee] hover:text-black border-2 border-black dark:border-[#feffee] transition-colors">
               {{ 'blogs.article.post' | t }}
             </button>
           </div>

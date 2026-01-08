@@ -1,6 +1,6 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<article class="container mx-auto flex flex-col justify-center items-center px-8 md:px-0">
+  <article class="container mx-auto flex flex-col justify-center items-center px-8 md:px-0">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
@@ -8,7 +8,7 @@
           {% render block %}
         </div>
 
-    {%- when 'title' -%}
+      {%- when 'title' -%}
         <header class="flex flex-col justify-center items-center space-y-2 mt-10" {{ block.shopify_attributes }}>
           <h1 class="text-[50px] tracking-[-3px] mt-5 md:mt-[50px] text-center text-black dark:text-[#feffee] font-[500]">
             {{ article.title | escape }}
@@ -19,9 +19,9 @@
             </span>
           {%- endif -%}
           {%- if block.settings.blog_show_author -%}
-  
-              <span class="capitalize text-black dark:text-[#feffee]">por: {{ article.metafields.custom.autor }}</span>
-   
+
+            <span class="capitalize text-black dark:text-[#feffee]">por: {{ article.metafields.custom.autor }}</span>
+
           {%- endif -%}
         </header>
 
@@ -39,7 +39,7 @@
 
 
       {%- when 'content' -%}
-        <div class="text-[22px] md:max-w-[70%] leading-[38px] font-[300] mt-10 text-black dark:text-[#feffee]" {{ block.shopify_attributes }}>
+        <div class="text-[20px] md:max-w-[70%] leading-[35px] font-[300] mt-10 text-black dark:text-[#feffee]" {{ block.shopify_attributes }}>
           {{ article.content }}
         </div>
 
@@ -54,15 +54,15 @@
   {%- endfor -%}
 
   {% comment %} <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <a href="{{ blog.url }}" class="article-template__link link animate-arrow text-black dark:text-[#feffee]">
-      <span class="icon-wrap">
-        <span class="svg-wrapper">
-          {{- 'icon-arrow.svg' | inline_asset_content -}}
-        </span>
-      </span>
-      {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
-    </a>
-  </div> {% endcomment %}
+        <a href="{{ blog.url }}" class="article-template__link link animate-arrow text-black dark:text-[#feffee]">
+          <span class="icon-wrap">
+            <span class="svg-wrapper">
+              {{- 'icon-arrow.svg' | inline_asset_content -}}
+            </span>
+          </span>
+          {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
+        </a>
+    </div> {% endcomment %}
   {%- if blog.comments_enabled? -%}
     <div class="article-template__comment-wrapper background-secondary">
       <div id="comments" class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
