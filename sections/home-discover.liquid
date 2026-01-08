@@ -42,7 +42,7 @@
           {% case block.type %}
             {% when 'events_cta' %}
               <div class="" {{ block.shopify_attributes }}>
-                <a href="{{ block.settings.cta_url }}" class="block border-2 border-black bg-black text-[#feffee] dark:border-[#feffee] dark:text-[#feffee] shadow-md rounded-xl text-center mt-5 md:mt-3 h-fit py-3">
+                <a href="{{ block.settings.cta_url }}" class="inline-block w-full text-center border-2 border-black dark:border-[#feffee] text-black dark:text-[#feffee] px-8 py-3 rounded-xl hover:bg-black hover:text-[#feffee] dark:hover:bg-[#feffee] dark:hover:text-black transition-all font-medium mt-4">
                   {{ block.settings.cta_text }}
                 </a>
               </div>
@@ -129,9 +129,9 @@
                         </span>
                       </div>
 
-                      <button class="w-full bg-black dark:bg-[#feffee] text-[#feffee] dark:text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors font-medium">
-                        Ver producto
-                      </button>
+                    {% comment %} <button class="w-full bg-black dark:bg-[#feffee] text-[#feffee] dark:text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors font-medium">
+                                                                                                                Ver producto
+                                                                                                      </button> {% endcomment %}
                     </div>
                   </div>
                 </a>

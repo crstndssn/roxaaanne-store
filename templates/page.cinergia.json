@@ -9,12 +9,266 @@
  */
 {
   "sections": {
-    "cinergia_section": {
-      "type": "cinergia",
+    "cinergia_header": {
+      "type": "cinergia-header",
+      "settings": {}
+    },
+    "cinergia_eventos": {
+      "type": "cinergia-eventos",
+      "blocks": {
+        "event_gnLDtQ": {
+          "type": "event",
+          "settings": {
+            "day": "21",
+            "month": "ENE",
+            "artist": "LACRA",
+            "title": "Cinergia: Sound of Noise",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "event_4MgM9m": {
+          "type": "event",
+          "settings": {
+            "day": "28",
+            "month": "ENE",
+            "artist": "LACRA",
+            "title": "Cinergia: Whiplash",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "event_AEwxgf": {
+          "type": "event",
+          "settings": {
+            "day": "18",
+            "month": "FEB",
+            "artist": "LACRA",
+            "title": "Cinergia: La Guía Perversa De La Ideología",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "event_1": {
+          "type": "event",
+          "settings": {
+            "day": "25",
+            "month": "FEB",
+            "artist": "LACRA",
+            "title": "Cinergia: One Cut Of The Dead",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "event_cChdtr": {
+          "type": "event",
+          "settings": {
+            "day": "18",
+            "month": "MAR",
+            "artist": "LACRA",
+            "title": "Cinergia: La Hermanastra Mas Fea",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "event_dPmEPm": {
+          "type": "event",
+          "settings": {
+            "day": "25",
+            "month": "MAR",
+            "artist": "LACRA",
+            "title": "Cinergia: El Conde",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        }
+      },
+      "block_order": [
+        "event_gnLDtQ",
+        "event_4MgM9m",
+        "event_AEwxgf",
+        "event_1",
+        "event_cChdtr",
+        "event_dPmEPm"
+      ],
+      "settings": {}
+    },
+    "cinergia_proximamente": {
+      "type": "cinergia-proximamente",
+      "blocks": {
+        "movie_arhj7C": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/sound-of-noise.jpg",
+            "title": "Sound of Noise",
+            "director": "Ola Simonsson - Johannes Stjärne Nilsson",
+            "year": "2010",
+            "duration": "1h 42min",
+            "genre": "Comedia",
+            "country": "Suecia",
+            "synopsis": "Un policía sordo trabaja para localizar a un grupo de guerrilleros cuyas anárquicas actuaciones públicas están aterrorizando la ciudad."
+          }
+        },
+        "movie_NMwcRV": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/whiplash.jpg",
+            "title": "Whiplash",
+            "director": "",
+            "year": "",
+            "duration": "",
+            "genre": "",
+            "country": "",
+            "synopsis": ""
+          }
+        },
+        "movie_zeCRf9": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/la_guia_perversa_de_la_ideologia.jpg",
+            "title": "La Guía Perversa De La Ideología",
+            "director": "",
+            "year": "",
+            "duration": "",
+            "genre": "",
+            "country": "",
+            "synopsis": ""
+          }
+        },
+        "movie_whgJHE": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/one_cut_of_the_dead.webp",
+            "title": "One Cut Of The Dead",
+            "director": "",
+            "year": "",
+            "duration": "",
+            "genre": "",
+            "country": "",
+            "synopsis": ""
+          }
+        },
+        "movie_gcRKaU": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/la_hermanastra_fea.jpg",
+            "title": "La Hermanastra Fea",
+            "director": "",
+            "year": "",
+            "duration": "",
+            "genre": "",
+            "country": "",
+            "synopsis": ""
+          }
+        },
+        "movie_f9PHrT": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/el_conde.jpg",
+            "title": "El Conde",
+            "director": "",
+            "year": "",
+            "duration": "",
+            "genre": "",
+            "country": "",
+            "synopsis": ""
+          }
+        }
+      },
+      "block_order": [
+        "movie_arhj7C",
+        "movie_NMwcRV",
+        "movie_zeCRf9",
+        "movie_whgJHE",
+        "movie_gcRKaU",
+        "movie_f9PHrT"
+      ],
+      "settings": {}
+    },
+    "cinergia_lonuestro": {
+      "type": "cinergia-lonuestro",
+      "blocks": {
+        "image_link_WJja8V": {
+          "type": "image_link",
+          "settings": {
+            "image": "shopify://shop_images/murmurio_1.png",
+            "link": "shopify://pages/murmurio",
+            "name": ""
+          }
+        },
+        "image_link_KkbJaw": {
+          "type": "image_link",
+          "settings": {
+            "image": "shopify://shop_images/bejuco.png",
+            "link": "shopify://pages/bejuco",
+            "name": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_link_WJja8V",
+        "image_link_KkbJaw"
+      ],
+      "settings": {}
+    },
+    "cinergia_lecturas": {
+      "type": "cinergia-lecturas",
+      "blocks": {
+        "article_3Dy44j": {
+          "type": "article",
+          "settings": {
+            "article": "peliculas/bejuco"
+          }
+        }
+      },
+      "block_order": [
+        "article_3Dy44j"
+      ],
+      "settings": {}
+    },
+    "cinergia_referencias": {
+      "type": "cinergia-referencias",
+      "blocks": {
+        "movie_pXtPUw": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/Punch_Drunk_Love.jpg",
+            "title": "Punch Drunk Love",
+            "director": "",
+            "year": "",
+            "duration": "",
+            "genre": "",
+            "country": "",
+            "synopsis": ""
+          }
+        },
+        "movie_6eYW7Y": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/frank.jpg",
+            "title": "Frank",
+            "director": "",
+            "year": "",
+            "duration": "",
+            "genre": "",
+            "country": "",
+            "synopsis": ""
+          }
+        }
+      },
+      "block_order": [
+        "movie_pXtPUw",
+        "movie_6eYW7Y"
+      ],
       "settings": {}
     }
   },
   "order": [
-    "cinergia_section"
+    "cinergia_header",
+    "cinergia_eventos",
+    "cinergia_proximamente",
+    "cinergia_lonuestro",
+    "cinergia_lecturas",
+    "cinergia_referencias"
   ]
 }

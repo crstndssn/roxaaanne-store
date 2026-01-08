@@ -1,0 +1,235 @@
+<div class="container mx-auto px-7 md:px-0 mt-10">
+  <h2 class="text-[27px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-2 tracking-tight mt-8">próximamente</h2>
+
+  <!-- Scroll horizontal de películas -->
+  <div class="relative">
+    <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-custom snap-x snap-mandatory scroll-container-{{ section.id }}">
+      {% for block in section.blocks %}
+        {% if block.type == 'movie' %}
+          <div
+            class="flex-shrink-0 w-[200px] md:w-[250px] cursor-pointer group snap-start"
+            onclick="openModal{{ block.id }}()"
+            {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              <div class="rounded-xl overflow-hidden border-2 border-[#c9c9c9] dark:border-[#5a5a5a] hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <img
+                  src="{{ block.settings.image | image_url: width: 500 }}"
+                  alt="{{ block.settings.title | escape }}"
+                  class="w-full h-auto aspect-[2/3] object-cover">
+              </div>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <h3 class="text-[15px] md:text-[17px] font-semibold text-black dark:text-[#feffee] mt-3 text-center">{{ block.settings.title }}</h3>
+            {% endif %}
+          </div>
+
+          <!-- Modal -->
+          <div
+            id="modal{{ block.id }}"
+            class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden items-center justify-center p-4"
+            onclick="closeModal{{ block.id }}(event)">
+            <div class="bg-[#feffee] dark:bg-[#1c1c1c] rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+              <div class="p-6 md:p-8">
+                <!-- Botón cerrar -->
+                <button onclick="closeModal{{ block.id }}()" class="float-right text-3xl text-black dark:text-[#feffee] hover:text-gray-600 dark:hover:text-gray-400">&times;</button>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-8">
+                  <!-- Imagen -->
+                  {% if block.settings.image != blank %}
+                    <div class="rounded-xl overflow-hidden">
+                      <img
+                        src="{{ block.settings.image | image_url: width: 800 }}"
+                        alt="{{ block.settings.title | escape }}"
+                        class="w-full h-auto">
+                    </div>
+                  {% endif %}
+
+                  <!-- Ficha técnica -->
+                  <div class="space-y-4">
+                    {% if block.settings.title != blank %}
+                      <h2 class="text-3xl font-bold text-black dark:text-[#feffee] mb-4">{{ block.settings.title }}</h2>
+                    {% endif %}
+
+                    {% if block.settings.director != blank %}
+                      <div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Director</p>
+                        <p class="text-[17px] text-black dark:text-[#feffee]">{{ block.settings.director }}</p>
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.year != blank %}
+                      <div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Año</p>
+                        <p class="text-[17px] text-black dark:text-[#feffee]">{{ block.settings.year }}</p>
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.duration != blank %}
+                      <div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Duración</p>
+                        <p class="text-[17px] text-black dark:text-[#feffee]">{{ block.settings.duration }}</p>
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.genre != blank %}
+                      <div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Género</p>
+                        <p class="text-[17px] text-black dark:text-[#feffee]">{{ block.settings.genre }}</p>
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.country != blank %}
+                      <div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">País</p>
+                        <p class="text-[17px] text-black dark:text-[#feffee]">{{ block.settings.country }}</p>
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.synopsis != blank %}
+                      <div class="pt-4">
+                        <p class="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-2">Sinopsis</p>
+                        <p class="text-[15px] text-black dark:text-[#feffee] leading-relaxed">{{ block.settings.synopsis }}</p>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+                      function openModal{{ block.id }}() {
+            document.getElementById('modal{{ block.id }}').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+                      }
+
+                      function closeModal{{ block.id }}(event) {
+            if (event) event.preventDefault();
+            document.getElementById('modal{{ block.id }}').style.display = 'none';
+            document.body.style.overflow = 'auto';
+                      }
+          </script>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Sombra indicadora izquierda -->
+    <div class="shadow-left-{{ section.id }} absolute top-0 left-0 h-full w-40 bg-gradient-to-r from-[#feffee]/60 via-[#feffee]/20 dark:from-[#1c1c1c]/60 dark:via-[#1c1c1c]/20 to-transparent pointer-events-none opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Sombra indicadora derecha -->
+    <div class="shadow-right-{{ section.id }} absolute top-0 right-0 h-full w-40 bg-gradient-to-l from-[#feffee]/60 via-[#feffee]/20 dark:from-[#1c1c1c]/60 dark:via-[#1c1c1c]/20 to-transparent pointer-events-none transition-opacity duration-300"></div>
+  </div>
+
+  <script>
+    (function() {
+      const container = document.querySelector('.scroll-container-{{ section.id }}');
+      const shadowLeft = document.querySelector('.shadow-left-{{ section.id }}');
+      const shadowRight = document.querySelector('.shadow-right-{{ section.id }}');
+
+      function updateShadows() {
+        const scrollLeft = container.scrollLeft;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+
+        // Mostrar sombra izquierda si no está al inicio
+        if (scrollLeft > 10) {
+          shadowLeft.style.opacity = '1';
+        } else {
+          shadowLeft.style.opacity = '0';
+        }
+
+        // Mostrar sombra derecha si no está al final
+        if (scrollLeft < maxScroll - 10) {
+          shadowRight.style.opacity = '1';
+        } else {
+          shadowRight.style.opacity = '0';
+        }
+      }
+
+      // Actualizar al cargar y al hacer scroll
+      updateShadows();
+      container.addEventListener('scroll', updateShadows);
+      window.addEventListener('resize', updateShadows);
+    })();
+  </script>
+
+  <style>
+    .scrollbar-custom::-webkit-scrollbar {
+      height: 8px;
+    }
+    .scrollbar-custom::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 10px;
+    }
+    .scrollbar-custom::-webkit-scrollbar-thumb {
+      background: #c9c9c9;
+      border-radius: 10px;
+      border: 2px solid #c9c9c9;
+    }
+    .dark .scrollbar-custom::-webkit-scrollbar-thumb {
+      background: #5a5a5a;
+      border: 2px solid #5a5a5a;
+    }
+    .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+      background: #a0a0a0;
+    }
+    .dark .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+      background: #757575;
+    }
+  </style>
+</div>
+
+{% schema %}
+  {
+    "name": "Cinergia Próximamente",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "movie",
+        "name": "Película",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Imagen del flyer"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Título"
+          },
+          {
+            "type": "text",
+            "id": "director",
+            "label": "Director"
+          },
+          {
+            "type": "text",
+            "id": "year",
+            "label": "Año"
+          }, {
+            "type": "text",
+            "id": "duration",
+            "label": "Duración"
+          }, {
+            "type": "text",
+            "id": "genre",
+            "label": "Género"
+          }, {
+            "type": "text",
+            "id": "country",
+            "label": "País"
+          }, {
+            "type": "textarea",
+            "id": "synopsis",
+            "label": "Sinopsis"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cinergia Próximamente"
+      }
+    ]
+  }
+{% endschema %}
