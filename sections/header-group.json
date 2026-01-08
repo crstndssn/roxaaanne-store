@@ -16,6 +16,7 @@
       "blocks": {
         "announcement_Ezg7Ez": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "title": "cinergia",
             "date": "ENERO 21 ✨",
@@ -26,6 +27,7 @@
         },
         "announcement_JP9Qz9": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "title": "voltaje",
             "date": "ENERO 30 ⚡",
@@ -36,6 +38,7 @@
         },
         "announcement_4QKYDk": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "title": "roxyfest",
             "date": "PRONTO 🌞",
@@ -43,12 +46,23 @@
             "custom_classes": "",
             "custom_css": "background: linear-gradient(90deg, #232246 0%, #3B3382 45%, #EF6400 100%);\ncolor: #fff;\nborder: 2px rgba(255, 255, 255, 0.8) solid;"
           }
+        },
+        "announcement_cqpLfX": {
+          "type": "announcement",
+          "settings": {
+            "title": "creadorxs",
+            "date": "🔥",
+            "url": "",
+            "custom_classes": "border-2 border-black bg-[#feffee]",
+            "custom_css": "color: black !important;"
+          }
         }
       },
       "block_order": [
         "announcement_Ezg7Ez",
         "announcement_JP9Qz9",
-        "announcement_4QKYDk"
+        "announcement_4QKYDk",
+        "announcement_cqpLfX"
       ],
       "settings": {}
     },
