@@ -12,6 +12,18 @@
     "eventos": {
       "type": "eventos",
       "blocks": {
+        "evento_FAYaje": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "03",
+            "month": "oct",
+            "month_full": "Enero",
+            "title": "Tapazo - Trailer Bejuco",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": false
+          }
+        },
         "evento_bBd87L": {
           "type": "evento",
           "settings": {
@@ -33,18 +45,6 @@
             "month_full": "Septiembre",
             "title": "ALTER_OCIO (exposición)",
             "location": "Quito, Ecuador • Casa Palenque",
-            "muted": true
-          }
-        },
-        "evento_EJ44TD": {
-          "type": "evento",
-          "settings": {
-            "artist": "LACRA",
-            "day": "03",
-            "month": "oct",
-            "month_full": "Octubre",
-            "title": "Tapazo - Trailer Bejuco",
-            "location": "Neiva, Huila • Cara Mala",
             "muted": true
           }
         },
@@ -70,6 +70,18 @@
             "title": "Cine al Barrio: Viy",
             "location": "Neiva, Huila • Restaurante El Patio",
             "muted": false
+          }
+        },
+        "evento_EJ44TD": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "03",
+            "month": "oct",
+            "month_full": "Octubre",
+            "title": "Tapazo - Trailer Bejuco",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": true
           }
         },
         "evento_myhErh": {
@@ -98,11 +110,12 @@
         }
       },
       "block_order": [
+        "evento_FAYaje",
         "evento_bBd87L",
         "evento_hhf8cc",
-        "evento_EJ44TD",
         "evento_8qbTHA",
         "evento_Garzqd",
+        "evento_EJ44TD",
         "evento_myhErh",
         "evento_cCmcL9"
       ],
