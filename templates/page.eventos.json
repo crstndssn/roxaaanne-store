@@ -16,11 +16,71 @@
           "type": "evento",
           "settings": {
             "artist": "LACRA",
-            "day": "03",
-            "month": "oct",
+            "day": "21",
+            "month": "enero",
             "month_full": "Enero",
-            "title": "Tapazo - Trailer Bejuco",
-            "location": "Neiva, Huila • Cara Mala",
+            "title": "cinergia : sound  of noise",
+            "location": "el patio, la cultura",
+            "muted": false
+          }
+        },
+        "evento_KRXGfF": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "28",
+            "month": "enero",
+            "month_full": "Enero",
+            "title": "cinergia : whiplash",
+            "location": "el patio, la cultura",
+            "muted": false
+          }
+        },
+        "evento_wU4c78": {
+          "type": "evento",
+          "settings": {
+            "artist": "Lacra",
+            "day": "18",
+            "month": "febrero",
+            "month_full": "Febrero",
+            "title": "cinergia : la guia perversa de la ideologia",
+            "location": "el patio, la cultura",
+            "muted": false
+          }
+        },
+        "evento_imF6zL": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "25",
+            "month": "febrero",
+            "month_full": "Febrero",
+            "title": "cinergia : one cut of the dead",
+            "location": "el patio, la cultura",
+            "muted": false
+          }
+        },
+        "evento_qkY34j": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "18",
+            "month": "marzo",
+            "month_full": "Marzo",
+            "title": "cinergia : la hermanastra mas fea",
+            "location": "el patio, la cultura",
+            "muted": false
+          }
+        },
+        "evento_Kjjwty": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "25",
+            "month": "marzo",
+            "month_full": "Marzo",
+            "title": "cinergia : el conde",
+            "location": "El patio, la cultura",
             "muted": false
           }
         },
@@ -111,6 +171,11 @@
       },
       "block_order": [
         "evento_FAYaje",
+        "evento_KRXGfF",
+        "evento_wU4c78",
+        "evento_imF6zL",
+        "evento_qkY34j",
+        "evento_Kjjwty",
         "evento_bBd87L",
         "evento_hhf8cc",
         "evento_8qbTHA",
