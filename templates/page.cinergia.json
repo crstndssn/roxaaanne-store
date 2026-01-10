@@ -114,12 +114,12 @@
           "settings": {
             "image": "shopify://shop_images/whiplash.jpg",
             "title": "Whiplash",
-            "director": "",
-            "year": "",
-            "duration": "",
-            "genre": "",
-            "country": "",
-            "synopsis": ""
+            "director": "Damien Chazelle",
+            "year": "2014",
+            "duration": "1h 46min",
+            "genre": "Drama psicologico drama musica",
+            "country": "estadounidense",
+            "synopsis": "Un joven y prometedor bateria se inscribe en un competitivo conservatorio donde sus sueños de grandeza son guiados por un instructor que no se detiene ante nada para realizar el potencial de su estudiante"
           }
         },
         "movie_zeCRf9": {
