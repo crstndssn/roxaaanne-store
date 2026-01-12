@@ -84,88 +84,16 @@
             "muted": false
           }
         },
-        "evento_bBd87L": {
+        "evento_2025_link": {
           "type": "evento",
           "settings": {
-            "artist": "LACRA",
-            "day": "21",
-            "month": "JUN",
-            "month_full": "Junio",
-            "title": "ROXYFEST",
-            "location": "Neiva, Huila • Cara Mala Club",
+            "artist": "•",
+            "day": "",
+            "month": "2025",
+            "month_full": "",
+            "title": "Ver eventos del 2025",
+            "location": "/pages/eventos2025",
             "muted": true
-          }
-        },
-        "evento_hhf8cc": {
-          "type": "evento",
-          "settings": {
-            "artist": "cristian dussán",
-            "day": "12",
-            "month": "SEP",
-            "month_full": "Septiembre",
-            "title": "ALTER_OCIO (exposición)",
-            "location": "Quito, Ecuador • Casa Palenque",
-            "muted": true
-          }
-        },
-        "evento_8qbTHA": {
-          "type": "evento",
-          "settings": {
-            "artist": "Felipe Quien",
-            "day": "11",
-            "month": "oct",
-            "month_full": "Octubre",
-            "title": "Live Set Acid House",
-            "location": "Neiva, Huila • Festival BMX Trails Jam 3.0",
-            "muted": true
-          }
-        },
-        "evento_Garzqd": {
-          "type": "evento",
-          "settings": {
-            "artist": "LACRA",
-            "day": "22",
-            "month": "oct",
-            "month_full": "Octubre",
-            "title": "Cine al Barrio: Viy",
-            "location": "Neiva, Huila • Restaurante El Patio",
-            "muted": false
-          }
-        },
-        "evento_EJ44TD": {
-          "type": "evento",
-          "settings": {
-            "artist": "LACRA",
-            "day": "03",
-            "month": "oct",
-            "month_full": "Octubre",
-            "title": "Tapazo - Trailer Bejuco",
-            "location": "Neiva, Huila • Cara Mala",
-            "muted": true
-          }
-        },
-        "evento_myhErh": {
-          "type": "evento",
-          "settings": {
-            "artist": "LACRA",
-            "day": "29",
-            "month": "oct",
-            "month_full": "Octubre",
-            "title": "Cine al Barrio: Veneno para las hadas",
-            "location": "Neiva, Huila • Restaurante El Patio",
-            "muted": false
-          }
-        },
-        "evento_cCmcL9": {
-          "type": "evento",
-          "settings": {
-            "artist": "LACRA",
-            "day": "15",
-            "month": "nov",
-            "month_full": "Noviembre",
-            "title": "GAITANA FEST",
-            "location": "Neiva, Huila • Centro de Convenciones",
-            "muted": false
           }
         }
       },
@@ -176,13 +104,7 @@
         "evento_imF6zL",
         "evento_qkY34j",
         "evento_Kjjwty",
-        "evento_bBd87L",
-        "evento_hhf8cc",
-        "evento_8qbTHA",
-        "evento_Garzqd",
-        "evento_EJ44TD",
-        "evento_myhErh",
-        "evento_cCmcL9"
+        "evento_2025_link"
       ],
       "settings": {}
     }

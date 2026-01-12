@@ -69,6 +69,23 @@
         {%- endif -%}
       {%- endfor -%}
     </div>
+    
+    {%- comment -%} Link a eventos de años anteriores {%- endcomment -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'evento' and block.settings.month_full == blank and block.settings.location contains '/pages/' -%}
+        <div class="flex justify-center mt-8">
+          <a href="{{ block.settings.location }}" class="inline-flex items-center gap-3 border border-black dark:border-[#2A2A2A] dark:bg-[#080808] rounded-xl px-4 py-3 hover:bg-[#f5f5f5] dark:hover:bg-[#1a1a1a] transition-colors" {{ block.shopify_attributes }}>
+            <div class="flex justify-center items-center bg-[#2A2A2A] text-white rounded-lg px-3 py-1">
+              <span class="text-sm font-medium uppercase">{{ block.settings.month }}</span>
+            </div>
+            <p class="text-lg font-medium text-black dark:text-[#feffee]">{{ block.settings.title }}</p>
+            <svg class="w-5 h-5 text-black dark:text-[#feffee]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
   {%- else -%}
     <div class="text-white text-center opacity-60">No hay eventos para mostrar.</div>
   {%- endif -%}
