@@ -117,8 +117,8 @@
             "director": "Damien Chazelle",
             "year": "2014",
             "duration": "1h 46min",
-            "genre": "Drama psicologico drama musica",
-            "country": "estadounidense",
+            "genre": "Drama Musical",
+            "country": "Estadounidense",
             "synopsis": "Un joven y prometedor bateria se inscribe en un competitivo conservatorio donde sus sueños de grandeza son guiados por un instructor que no se detiene ante nada para realizar el potencial de su estudiante"
           }
         },
@@ -137,6 +137,7 @@
         },
         "movie_whgJHE": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/one_cut_of_the_dead.webp",
             "title": "One Cut Of The Dead",
@@ -150,6 +151,7 @@
         },
         "movie_gcRKaU": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/la_hermanastra_fea.jpg",
             "title": "La Hermanastra Fea",
@@ -163,6 +165,7 @@
         },
         "movie_f9PHrT": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/el_conde.jpg",
             "title": "El Conde",
