@@ -17,10 +17,10 @@
           "settings": {
             "artist": "LACRA",
             "day": "21",
-            "month": "enero",
+            "month": "ene",
             "month_full": "Enero",
-            "title": "cinergia : sound  of noise",
-            "location": "el patio, la cultura",
+            "title": "Cinergia: Sound Of Noise",
+            "location": "Neiva, Huila • El Patio",
             "muted": false
           }
         },
@@ -29,10 +29,10 @@
           "settings": {
             "artist": "LACRA",
             "day": "28",
-            "month": "enero",
+            "month": "ene",
             "month_full": "Enero",
-            "title": "cinergia : whiplash",
-            "location": "el patio, la cultura",
+            "title": "Cinergia: Whiplash",
+            "location": "Neiva, Huila • El Patio",
             "muted": false
           }
         },
@@ -41,10 +41,10 @@
           "settings": {
             "artist": "Lacra",
             "day": "18",
-            "month": "febrero",
+            "month": "feb",
             "month_full": "Febrero",
-            "title": "cinergia : la guia perversa de la ideologia",
-            "location": "el patio, la cultura",
+            "title": "Cinergia: La Guia Perversa De La Ideologia",
+            "location": "Neiva, Huila • El Patio",
             "muted": false
           }
         },
@@ -53,11 +53,11 @@
           "settings": {
             "artist": "LACRA",
             "day": "25",
-            "month": "febrero",
+            "month": "feb",
             "month_full": "Febrero",
-            "title": "cinergia : one cut of the dead",
-            "location": "el patio, la cultura",
-            "muted": false
+            "title": "Cinergia: One Cut Of The Dead",
+            "location": "Neiva, Huila • El Patio",
+            "muted": true
           }
         },
         "evento_qkY34j": {
@@ -65,10 +65,10 @@
           "settings": {
             "artist": "LACRA",
             "day": "18",
-            "month": "marzo",
+            "month": "mar",
             "month_full": "Marzo",
-            "title": "cinergia : la hermanastra mas fea",
-            "location": "el patio, la cultura",
+            "title": "Cinergia: La Hermanastra Fea",
+            "location": "Neiva, Huila • El Patio",
             "muted": false
           }
         },
@@ -77,10 +77,10 @@
           "settings": {
             "artist": "LACRA",
             "day": "25",
-            "month": "marzo",
+            "month": "mar",
             "month_full": "Marzo",
-            "title": "cinergia : el conde",
-            "location": "El patio, la cultura",
+            "title": "Cinergia: El Conde",
+            "location": "Neiva, Huila • El Patio",
             "muted": false
           }
         },
@@ -92,7 +92,7 @@
             "month": "2025",
             "month_full": "",
             "title": "Ver eventos del 2025",
-            "location": "/pages/eventos2025",
+            "location": "/pages/eventos-2025",
             "muted": true
           }
         }
