@@ -83,6 +83,13 @@
     "creators": {
       "type": "creators",
       "blocks": {
+        "creator_FNbb4z": {
+          "type": "creator",
+          "settings": {
+            "creator__name": "Peregrino",
+            "creator__link": ""
+          }
+        },
         "creator_r3cNQW": {
           "type": "creator",
           "disabled": true,
@@ -141,6 +148,7 @@
         }
       },
       "block_order": [
+        "creator_FNbb4z",
         "creator_r3cNQW",
         "creator_KYrqga",
         "creator_Ct7WPf",
