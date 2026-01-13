@@ -94,6 +94,7 @@
           "type": "creator",
           "disabled": true,
           "settings": {
+            "creator__image": "shopify://shop_images/imagen_2026-01-13_172046293.png",
             "creator__name": "Julián Blásquez",
             "creator__link": ""
           }
