@@ -1,0 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "creator": {
+      "type": "creator",
+      "blocks": {
+        "section_RtRyCc": {
+          "type": "section",
+          "settings": {
+            "title": "películas",
+            "link": "shopify://pages/peliculas"
+          }
+        }
+      },
+      "block_order": [
+        "section_RtRyCc"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/InShot_20250512_191014071.jpg",
+        "name": "Alejandro Ospina",
+        "description": "<p>Realizador audiovisual, fotógrafo y gestor cultural de la ciudad de Neiva. Ha sido director de cortometrajes y videoclips musicales. También productor de contenidos para televisión y medios digitales. Es miembro del colectivo LACRA.</p>"
+      }
+    }
+  },
+  "order": [
+    "creator"
+  ]
+}
