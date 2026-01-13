@@ -12,6 +12,126 @@
     "eventos": {
       "type": "eventos",
       "blocks": {
+        "evento_mdUGLf": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "11",
+            "month": "Junio",
+            "month_full": "Junio",
+            "title": "Cinergia: Perfect Day",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "evento_Qbhiki": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "18",
+            "month": "Junio",
+            "month_full": "Junio",
+            "title": "Cinergia: Malcom X",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "evento_iTxyBL": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "21",
+            "month": "Junio",
+            "month_full": "Junio",
+            "title": "roxy fest",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": false
+          }
+        },
+        "evento_qCWHUG": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "16",
+            "month": "Julio",
+            "month_full": "Julio",
+            "title": "Cinergia: El Jokey",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "evento_M3aLgQ": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "23",
+            "month": "Julio",
+            "month_full": "Julio",
+            "title": "Cinergia: Tony Manero",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "evento_M64834": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "27",
+            "month": "Agosto",
+            "month_full": "Agosto",
+            "title": "Cinergia: The Spine Of the night",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "evento_Mip7LR": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "12",
+            "month": "Septiembre",
+            "month_full": "Septiembre",
+            "title": "Cinergia: alter_ocio (exposición)",
+            "location": "Quito, ecuador",
+            "muted": false
+          }
+        },
+        "evento_rnEJRh": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "24",
+            "month": "Septiembre",
+            "month_full": "Septiembre",
+            "title": "Cinergia: Canino",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "evento_mJYCyc": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "03",
+            "month": "Octubre",
+            "month_full": "Octubre",
+            "title": "Tapazo - Trailer Bejuco",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": false
+          }
+        },
+        "evento_XF7heR": {
+          "type": "evento",
+          "settings": {
+            "artist": "Felipe Quien",
+            "day": "11",
+            "month": "Octubre",
+            "month_full": "Octubre",
+            "title": "Cinergia: Live Set Acid House",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": false
+          }
+        },
         "evento_bBd87L": {
           "type": "evento",
           "settings": {
@@ -48,19 +168,79 @@
             "muted": true
           }
         },
-        "evento_Garzqd": {
+        "evento_G8dnzf": {
+          "type": "evento",
+          "settings": {
+            "artist": "roxaaanne/Cara Mala",
+            "day": "31",
+            "month": "Octubre",
+            "month_full": "Octubre",
+            "title": "Plum Blum Felipe Quien Live Set",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": false
+          }
+        },
+        "evento_WKGMwt": {
           "type": "evento",
           "settings": {
             "artist": "LACRA",
             "day": "22",
-            "month": "oct",
+            "month": "Octubre",
             "month_full": "Octubre",
-            "title": "Cine al Barrio: Viy",
-            "location": "Neiva, Huila • Restaurante El Patio",
+            "title": "Cinergia: VIP",
+            "location": "Neiva, Huila • El Patio",
             "muted": false
           }
         },
-        "evento_EJ44TD": {
+        "evento_jQqAhz": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "29",
+            "month": "Octubre",
+            "month_full": "Octubre",
+            "title": "Cinergia: Veneno Para Las Hadas",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "evento_KFUAM4": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "12",
+            "month": "Noviembre",
+            "month_full": "Noviembre",
+            "title": "Cinergia: Embriagado De Amor",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "evento_8Wa7HR": {
+          "type": "evento",
+          "settings": {
+            "artist": "Felipe Quien",
+            "day": "29",
+            "month": "Noviembre",
+            "month_full": "Noviembre",
+            "title": "VOLTAJE",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": false
+          }
+        },
+        "evento_UCx7Bj": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "26",
+            "month": "Noviembre",
+            "month_full": "Noviembre",
+            "title": "Cinergia: Frank",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "evento_JTygE3": {
           "type": "evento",
           "settings": {
             "artist": "LACRA",
@@ -69,18 +249,6 @@
             "month_full": "Octubre",
             "title": "Tapazo - Trailer Bejuco",
             "location": "Neiva, Huila • Cara Mala",
-            "muted": true
-          }
-        },
-        "evento_myhErh": {
-          "type": "evento",
-          "settings": {
-            "artist": "LACRA",
-            "day": "29",
-            "month": "oct",
-            "month_full": "Octubre",
-            "title": "Cine al Barrio: Veneno para las hadas",
-            "location": "Neiva, Huila • Restaurante El Patio",
             "muted": false
           }
         },
@@ -88,8 +256,8 @@
           "type": "evento",
           "settings": {
             "artist": "LACRA",
-            "day": "15",
-            "month": "nov",
+            "day": "30",
+            "month": "Noviembre",
             "month_full": "Noviembre",
             "title": "GAITANA FEST",
             "location": "Neiva, Huila • Centro de Convenciones",
@@ -98,12 +266,26 @@
         }
       },
       "block_order": [
+        "evento_mdUGLf",
+        "evento_Qbhiki",
+        "evento_iTxyBL",
+        "evento_qCWHUG",
+        "evento_M3aLgQ",
+        "evento_M64834",
+        "evento_Mip7LR",
+        "evento_rnEJRh",
+        "evento_mJYCyc",
+        "evento_XF7heR",
         "evento_bBd87L",
         "evento_hhf8cc",
         "evento_8qbTHA",
-        "evento_Garzqd",
-        "evento_EJ44TD",
-        "evento_myhErh",
+        "evento_G8dnzf",
+        "evento_WKGMwt",
+        "evento_jQqAhz",
+        "evento_KFUAM4",
+        "evento_8Wa7HR",
+        "evento_UCx7Bj",
+        "evento_JTygE3",
         "evento_cCmcL9"
       ],
       "settings": {}
