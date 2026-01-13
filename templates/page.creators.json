@@ -83,6 +83,14 @@
     "creators": {
       "type": "creators",
       "blocks": {
+        "creator_KYrqga": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/WhatsApp_Image_2026-01-13_at_2.29.51_PM.jpg",
+            "creator__name": "Katherin Garzón",
+            "creator__link": ""
+          }
+        },
         "creator_Ct7WPf": {
           "type": "creator",
           "settings": {
@@ -125,6 +133,7 @@
         }
       },
       "block_order": [
+        "creator_KYrqga",
         "creator_Ct7WPf",
         "creator_nj9CN7",
         "creator_4jPpTJ",
