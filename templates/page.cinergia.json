@@ -217,7 +217,19 @@
     "cinergia_lecturas": {
       "type": "cinergia-lecturas",
       "blocks": {
+        "article_aLMhJi": {
+          "type": "article",
+          "settings": {
+            "article": ""
+          }
+        },
         "article_3Dy44j": {
+          "type": "article",
+          "settings": {
+            "article": "peliculas/bejuco"
+          }
+        },
+        "article_WzabGR": {
           "type": "article",
           "settings": {
             "article": "peliculas/bejuco"
@@ -225,7 +237,9 @@
         }
       },
       "block_order": [
-        "article_3Dy44j"
+        "article_aLMhJi",
+        "article_3Dy44j",
+        "article_WzabGR"
       ],
       "settings": {}
     },
