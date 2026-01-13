@@ -1,32 +1,70 @@
-<form id="profile-form" action="https://formspree.io/f/xanorejb" method="POST" class="container mx-auto max-w-[900px] p-6 rounded-2xl shadow-md space-y-4">
-  <h2 class="weird-font text-[61px] md:text-[100px] text-2xl font-white font-bold mb-2 mt-12 mb-20">crear mi perfil</h2>
+<form
+  id="profile-form"
+  action="https://formspree.io/f/xanorejb"
+  method="POST"
+  class="container mx-auto max-w-[900px] p-6 rounded-2xl shadow-md space-y-4">
+  <h2 class="weird-font text-[61px] md:text-[100px] text-2xl text-black dark:text-[#feffee] font-bold mb-2 mt-12 mb-20">crear mi perfil</h2>
 
   <div class="flex flex-col gap-3">
     <div>
-      <label for="name" class="block font-medium mb-1">nombre</label>
-      <input type="text" id="name" name="name" required class="w-full p-2 bg-black border border-gray-300 rounded-lg">
+      <label for="name" class="block font-medium mb-1 text-black dark:text-[#feffee]">nombre</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="w-full p-2 bg-[#feffee] dark:bg-black text-black dark:text-[#feffee] border border-black dark:border-[#feffee] rounded-lg focus:outline-none focus:border-black dark:focus:border-[#feffee] placeholder:text-gray-500 dark:placeholder:text-gray-400">
     </div>
 
     <div>
-      <label for="description" class="block font-medium mb-1">descripción</label>
-      <textarea id="description" name="description" rows="3" required class="w-full p-2 bg-black border border-gray-300 rounded-lg"></textarea>
+      <label for="description" class="block font-medium mb-1 text-black dark:text-[#feffee]">describe tu proyecto en 33 palabras</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="3"
+        required
+        class="w-full p-2 bg-[#feffee] dark:bg-black text-black dark:text-[#feffee] border border-black dark:border-[#feffee] rounded-lg focus:outline-none focus:border-black dark:focus:border-[#feffee] placeholder:text-gray-500 dark:placeholder:text-gray-400"></textarea>
     </div>
 
     <div>
-      <label for="reason" class="block font-medium mb-1">por qué quiero crear un perfil?</label>
-      <textarea id="reason" name="reason" rows="3" required class="w-full p-2 bg-black border border-gray-300 rounded-lg"></textarea>
-    </div>
-
-    <div>
-      <label for="content_type" class="block font-medium mb-1">qué tipo de contenido quiero publicar?</label>
-      <input type="text" id="content_type" name="content_type" required class="w-full p-2 bg-black border border-gray-300 rounded-lg">
+      <label for="content_type" class="block font-medium mb-1 text-black dark:text-[#feffee]">qué tipo de contenido quiero publicar?</label>
+      <input
+        type="text"
+        id="content_type"
+        name="content_type"
+        required
+        class="w-full p-2 bg-[#feffee] dark:bg-black text-black dark:text-[#feffee] border border-black dark:border-[#feffee] rounded-lg focus:outline-none focus:border-black dark:focus:border-[#feffee] placeholder:text-gray-500 dark:placeholder:text-gray-400">
     </div>
 
     <div class="pt-4">
-      <button type="submit" class="bg-white text-black border border-white w-full px-4 py-4 rounded-xl hover:bg-black hover:text-white transition">enviar</button>
+      <button type="submit" class="bg-black dark:bg-[#feffee] text-[#feffee] dark:text-black border border-black dark:border-[#feffee] w-full px-4 py-4 rounded-xl hover:bg-[#feffee] hover:text-black dark:hover:bg-black dark:hover:text-[#feffee] transition">enviar</button>
     </div>
   </div>
 </form>
+
+<style>
+  /* Estilos de selección para modo light */
+  #profile-form ::selection {
+    background-color: black;
+    color: #feffee;
+  }
+
+  #profile-form ::-moz-selection {
+    background-color: black;
+    color: #feffee;
+  }
+
+  /* Estilos de selección para modo dark */
+  .dark #profile-form ::selection {
+    background-color: #feffee;
+    color: black;
+  }
+
+  .dark #profile-form ::-moz-selection {
+    background-color: #feffee;
+    color: black;
+  }
+</style>
 
 <script>
   const form = document.getElementById('profile-form');
