@@ -83,6 +83,13 @@
     "creators": {
       "type": "creators",
       "blocks": {
+        "creator_r3cNQW": {
+          "type": "creator",
+          "settings": {
+            "creator__name": "Julián Blásquez",
+            "creator__link": ""
+          }
+        },
         "creator_KYrqga": {
           "type": "creator",
           "settings": {
@@ -133,6 +140,7 @@
         }
       },
       "block_order": [
+        "creator_r3cNQW",
         "creator_KYrqga",
         "creator_Ct7WPf",
         "creator_nj9CN7",
