@@ -85,6 +85,7 @@
       "blocks": {
         "creator_r3cNQW": {
           "type": "creator",
+          "disabled": true,
           "settings": {
             "creator__name": "Julián Blásquez",
             "creator__link": ""
