@@ -96,19 +96,6 @@
     "cinergia_proximamente": {
       "type": "cinergia-proximamente",
       "blocks": {
-        "movie_arhj7C": {
-          "type": "movie",
-          "settings": {
-            "image": "shopify://shop_images/sound-of-noise.jpg",
-            "title": "Sound of Noise",
-            "director": "Ola Simonsson - Johannes Stjärne Nilsson",
-            "year": "2010",
-            "duration": "1h 42min",
-            "genre": "Comedia",
-            "country": "Suecia",
-            "synopsis": "Un policía sordo trabaja para localizar a un grupo de guerrilleros cuyas anárquicas actuaciones públicas están aterrorizando la ciudad."
-          }
-        },
         "movie_NMwcRV": {
           "type": "movie",
           "settings": {
@@ -120,6 +107,19 @@
             "genre": "Drama Musical",
             "country": "Estadounidense",
             "synopsis": "Un joven y prometedor bateria se inscribe en un competitivo conservatorio donde sus sueños de grandeza son guiados por un instructor que no se detiene ante nada para realizar el potencial de su estudiante"
+          }
+        },
+        "movie_arhj7C": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/sound-of-noise.jpg",
+            "title": "Sound of Noise",
+            "director": "Ola Simonsson - Johannes Stjärne Nilsson",
+            "year": "2010",
+            "duration": "1h 42min",
+            "genre": "Comedia",
+            "country": "Suecia",
+            "synopsis": "Un policía sordo trabaja para localizar a un grupo de guerrilleros cuyas anárquicas actuaciones públicas están aterrorizando la ciudad."
           }
         },
         "movie_zeCRf9": {
@@ -176,8 +176,8 @@
         }
       },
       "block_order": [
-        "movie_arhj7C",
         "movie_NMwcRV",
+        "movie_arhj7C",
         "movie_zeCRf9",
         "movie_whgJHE",
         "movie_gcRKaU",
