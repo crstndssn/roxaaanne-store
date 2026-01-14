@@ -257,6 +257,7 @@
         },
         "movie_iKiewn": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "title": "Perfect Day",
             "director": "Wim Wenders",
@@ -269,6 +270,7 @@
         },
         "movie_83aanU": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "title": "Malcom x",
             "director": "En Japón, un conserje conduce de un trabajo a otro escuchando música rock.",
@@ -281,6 +283,7 @@
         },
         "movie_ffDxzL": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "title": "El jockey",
             "director": "Luis Ortega",
@@ -293,6 +296,7 @@
         },
         "movie_R3FPDe": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "title": "Tony Manero",
             "director": "Pablo Larraín",
@@ -305,6 +309,7 @@
         },
         "movie_U8mzQ4": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "title": "The Spine Of The Night",
             "director": "Philip Gelatt y Morgan Galen King",
@@ -317,6 +322,7 @@
         },
         "movie_LqFFj9": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "title": "Canino",
             "director": "Yorgos Lanthimos",
@@ -329,6 +335,7 @@
         },
         "movie_qrNyRz": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "title": "VIY",
             "director": "Konstantin Yershov y Georgi Kropachyov",
@@ -341,6 +348,7 @@
         },
         "movie_nMWRDf": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "title": "Veneno para las hadas",
             "director": "Carlos Enrique Taboada",
@@ -349,18 +357,6 @@
             "genre": "Terror sobrenatural / Fantasía oscura",
             "country": "México",
             "synopsis": "La película sigue a Verónica, una niña solitaria que se cree bruja y vive obsesionada con la magia negra. Cuando conoce a Flavia, otra niña ingenua, comienza a manipularla y llenarla de miedo, llevando su juego de hechicería a consecuencias cada vez más oscuras y peligrosas."
-          }
-        },
-        "movie_hrhdRq": {
-          "type": "movie",
-          "settings": {
-            "title": "",
-            "director": "",
-            "year": "",
-            "duration": "",
-            "genre": "",
-            "country": "",
-            "synopsis": ""
           }
         }
       },
@@ -374,8 +370,7 @@
         "movie_U8mzQ4",
         "movie_LqFFj9",
         "movie_qrNyRz",
-        "movie_nMWRDf",
-        "movie_hrhdRq"
+        "movie_nMWRDf"
       ],
       "settings": {}
     }
