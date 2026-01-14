@@ -66,7 +66,7 @@
             "day": "18",
             "month": "MAR",
             "artist": "LACRA",
-            "title": "Cinergia: La Hermanastra Fea",
+            "title": "Cinergia: La Hermanastra Mas Fea",
             "location": "Neiva, Huila • El Patio",
             "muted": false
           }
@@ -214,12 +214,6 @@
     "cinergia_lecturas": {
       "type": "cinergia-lecturas",
       "blocks": {
-        "article_jr3cVm": {
-          "type": "article",
-          "settings": {
-            "article": "alterocio/bejuco-carta-del-director"
-          }
-        },
         "article_3Dy44j": {
           "type": "article",
           "settings": {
@@ -228,7 +222,6 @@
         }
       },
       "block_order": [
-        "article_jr3cVm",
         "article_3Dy44j"
       ],
       "settings": {}
@@ -261,11 +254,128 @@
             "country": " Países Bajos (Holanda),",
             "synopsis": "trata sobre Jon, un aspirante a músico que se une a una excéntrica banda de pop vanguardista llamada The Soronprfbs, liderada por el enigmático y emocionalmente inestable Frank, quien siempre lleva una enorme cabeza de papel maché, explorando la fama, la creatividad y la amistad mientras la banda graba un disco y busca el"
           }
+        },
+        "movie_iKiewn": {
+          "type": "movie",
+          "settings": {
+            "title": "Perfect Day",
+            "director": "Wim Wenders",
+            "year": "2023",
+            "duration": "2h 4m",
+            "genre": "Drama, Recuentos de la vida y Contemplativa/Psicológica",
+            "country": "japonesa",
+            "synopsis": "En Japón, un conserje conduce de un trabajo a otro escuchando música rock."
+          }
+        },
+        "movie_83aanU": {
+          "type": "movie",
+          "settings": {
+            "title": "Malcom x",
+            "director": "En Japón, un conserje conduce de un trabajo a otro escuchando música rock.",
+            "year": "1992",
+            "duration": "3h 21m",
+            "genre": " Drama Biográfico, Épico e Histórico",
+            "country": "Estados Unidos",
+            "synopsis": "narra la vida del activista afroamericano Malcolm Little, desde sus inicios como delincuente y su encarcelamiento, hasta su conversión al Islam con la Nación del Islam, su evolución ideológica tras un viaje a La Meca, su liderazgo en el nacionalismo negro y su trágico asesinato en 1965, destacando su lucha contra el racismo y su llamado a la dignidad y la liberación negra por cualquier medio necesario."
+          }
+        },
+        "movie_ffDxzL": {
+          "type": "movie",
+          "settings": {
+            "title": "El jockey",
+            "director": "Luis Ortega",
+            "year": "2024",
+            "duration": "1h 36m",
+            "genre": "Drama, Suspenso / misterio, Comedia negra Y Cine surrealista / psicológico",
+            "country": "Argentina",
+            "synopsis": "un jinete legendario con una tendencia autodestructiva, cuyo comportamiento empieza a poner en peligro su carrera y su relación afectiva."
+          }
+        },
+        "movie_R3FPDe": {
+          "type": "movie",
+          "settings": {
+            "title": "Tony Manero",
+            "director": "Pablo Larraín",
+            "year": "2008",
+            "duration": "1h 38m",
+            "genre": "DramaThriller psicológicoCine político / social",
+            "country": "chile",
+            "synopsis": "La película sigue a Raúl Peralta, un hombre solitario y obsesionado con el personaje de Tony Manero de Fiebre de sábado por la noche. Raúl vive únicamente para imitarlo: ensaya sus pasos, copia su apariencia y sueña con ganar un concurso televisivo que busca al mejor doble del personaje."
+          }
+        },
+        "movie_U8mzQ4": {
+          "type": "movie",
+          "settings": {
+            "title": "The Spine Of The Night",
+            "director": "Philip Gelatt y Morgan Galen King",
+            "year": "2021",
+            "duration": "1h 33m",
+            "genre": "fantasía/horror/animación para adultos",
+            "country": "Estados Unidos",
+            "synopsis": "La trama sigue la historia de un misterioso cristal mágico, fuente de poder absoluto y corrupción. Aquellos que buscan dominarlo son llevados por la codicia y la ambición, y sus vidas se entrelazan con violencia, traición y magia oscura."
+          }
+        },
+        "movie_LqFFj9": {
+          "type": "movie",
+          "settings": {
+            "title": "Canino",
+            "director": "Yorgos Lanthimos",
+            "year": "2009",
+            "duration": "1h 34m",
+            "genre": "Drama / Comedia negra / Drama psicológico",
+            "country": "Grecia",
+            "synopsis": "La película sigue a una familia aparentemente normal que vive en una casa aislada, donde los hijos han sido criados bajo reglas estrictas, extrañas y controladoras, dictadas por sus padres. Los niños crecen en un ambiente completamente desconectado del mundo exterior, sin contacto con otras personas y sin conocer las normas sociales normales."
+          }
+        },
+        "movie_qrNyRz": {
+          "type": "movie",
+          "settings": {
+            "title": "VIY",
+            "director": "Konstantin Yershov y Georgi Kropachyov",
+            "year": "1967",
+            "duration": "1h 17m",
+            "genre": "Fantasía / Horror / Folk horror",
+            "country": "Unión Soviética",
+            "synopsis": "Un joven seminarista, Khristian Khoma, es llamado a rezar por el alma de una mujer recién muerta en un pueblo remoto. Pronto descubre que su espíritu está poseído por fuerzas sobrenaturales y peligrosas, y debe enfrentarse al terrible demonio Viy durante tres noches de terror."
+          }
+        },
+        "movie_nMWRDf": {
+          "type": "movie",
+          "settings": {
+            "title": "Veneno para las hadas",
+            "director": "Carlos Enrique Taboada",
+            "year": "1986",
+            "duration": "1h 30m",
+            "genre": "Terror sobrenatural / Fantasía oscura",
+            "country": "México",
+            "synopsis": "La película sigue a Verónica, una niña solitaria que se cree bruja y vive obsesionada con la magia negra. Cuando conoce a Flavia, otra niña ingenua, comienza a manipularla y llenarla de miedo, llevando su juego de hechicería a consecuencias cada vez más oscuras y peligrosas."
+          }
+        },
+        "movie_hrhdRq": {
+          "type": "movie",
+          "settings": {
+            "title": "",
+            "director": "",
+            "year": "",
+            "duration": "",
+            "genre": "",
+            "country": "",
+            "synopsis": ""
+          }
         }
       },
       "block_order": [
         "movie_pXtPUw",
-        "movie_6eYW7Y"
+        "movie_6eYW7Y",
+        "movie_iKiewn",
+        "movie_83aanU",
+        "movie_ffDxzL",
+        "movie_R3FPDe",
+        "movie_U8mzQ4",
+        "movie_LqFFj9",
+        "movie_qrNyRz",
+        "movie_nMWRDf",
+        "movie_hrhdRq"
       ],
       "settings": {}
     }
