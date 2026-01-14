@@ -26,7 +26,7 @@
       "settings": {
         "image": "shopify://shop_images/WhatsApp_Image_2026-01-13_at_2.29.51_PM.jpg",
         "name": "Katherin Garzón",
-        "description": ""
+        "description": "<p>Descripsion de kate</p>"
       }
     }
   },
@@ -34,9 +34,3 @@
     "creator"
   ]
 }
-
-
-
-
-
-

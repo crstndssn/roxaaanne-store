@@ -156,6 +156,13 @@
             "creator__name": "Khate",
             "creator__link": "shopify://pages/katherin-garzon"
           }
+        },
+        "creator_eyCDXh": {
+          "type": "creator",
+          "settings": {
+            "creator__name": "Name",
+            "creator__link": ""
+          }
         }
       },
       "block_order": [
@@ -167,7 +174,8 @@
         "creator_4jPpTJ",
         "creator_DKj7qd",
         "creator_CPctTL",
-        "creator_JrBH7D"
+        "creator_JrBH7D",
+        "creator_eyCDXh"
       ],
       "settings": {
         "title": "",
