@@ -177,6 +177,14 @@
             "creator__name": "Evie Clark",
             "creator__link": "shopify://pages/evie-clark"
           }
+        },
+        "creator_dzx3y3": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/maito_37.jpg",
+            "creator__name": "Majo Benitez",
+            "creator__link": ""
+          }
         }
       },
       "block_order": [
@@ -191,7 +199,8 @@
         "creator_dUmedA",
         "creator_q3amT8",
         "creator_6J3itA",
-        "creator_J9FGzK"
+        "creator_J9FGzK",
+        "creator_dzx3y3"
       ],
       "settings": {
         "title": "",
