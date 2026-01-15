@@ -11,6 +11,19 @@
   "sections": {
     "creator": {
       "type": "creator",
+      "blocks": {
+        "products_rLViLW": {
+          "type": "products",
+          "settings": {
+            "title": "peliculas",
+            "description": "<p>peliculas</p>",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "products_rLViLW"
+      ],
       "settings": {
         "image": "shopify://shop_images/peregrino.jpg",
         "name": "Peregrino",
