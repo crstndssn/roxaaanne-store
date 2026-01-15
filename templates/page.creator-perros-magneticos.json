@@ -19,18 +19,17 @@
             "link": "shopify://pages/peliculas"
           }
         },
-        "products_GrDbYV": {
-          "type": "products",
+        "section_WUQ4fG": {
+          "type": "section",
           "settings": {
             "title": "roxy fest",
-            "description": "<p>roxy fest</p>",
-            "content": ""
+            "link": "shopify://pages/roxyfest"
           }
         }
       },
       "block_order": [
         "section_RtRyCc",
-        "products_GrDbYV"
+        "section_WUQ4fG"
       ],
       "settings": {
         "image": "shopify://shop_images/perros-mmagneticos.webp",
