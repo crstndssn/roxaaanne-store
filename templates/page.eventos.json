@@ -48,6 +48,18 @@
             "muted": false
           }
         },
+        "evento_3YKXFt": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "25",
+            "month": "Febrero",
+            "month_full": "Febrero",
+            "title": "Cinergia: One Cut Of The Dead",
+            "location": "Neiva, Huila • El patio",
+            "muted": false
+          }
+        },
         "evento_imF6zL": {
           "type": "evento",
           "settings": {
@@ -101,6 +113,7 @@
         "evento_FAYaje",
         "evento_KRXGfF",
         "evento_wU4c78",
+        "evento_3YKXFt",
         "evento_imF6zL",
         "evento_qkY34j",
         "evento_Kjjwty",
