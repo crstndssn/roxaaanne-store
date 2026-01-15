@@ -11,18 +11,6 @@
   "sections": {
     "creator": {
       "type": "creator",
-      "blocks": {
-        "section_RtRyCc": {
-          "type": "section",
-          "settings": {
-            "title": "películas",
-            "link": "shopify://pages/peliculas"
-          }
-        }
-      },
-      "block_order": [
-        "section_RtRyCc"
-      ],
       "settings": {
         "image": "shopify://shop_images/peregrino.jpg",
         "name": "Peregrino",
