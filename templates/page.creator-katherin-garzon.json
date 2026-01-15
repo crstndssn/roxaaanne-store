@@ -12,13 +12,6 @@
     "creator": {
       "type": "creator",
       "blocks": {
-        "section_RtRyCc": {
-          "type": "section",
-          "settings": {
-            "title": "películas",
-            "link": "shopify://pages/peliculas"
-          }
-        },
         "products_ibtTUe": {
           "type": "products",
           "settings": {
@@ -29,7 +22,6 @@
         }
       },
       "block_order": [
-        "section_RtRyCc",
         "products_ibtTUe"
       ],
       "settings": {
