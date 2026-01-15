@@ -33,6 +33,13 @@
             "link": "shopify://blogs/software-de-cristian-dussan"
           }
         },
+        "section_exETHi": {
+          "type": "section",
+          "settings": {
+            "title": "películas",
+            "link": "shopify://pages/peliculas"
+          }
+        },
         "section_wy4R8c": {
           "type": "section",
           "settings": {
@@ -45,6 +52,7 @@
         "section_ECJAxU",
         "section_VURfcD",
         "section_UQULrC",
+        "section_exETHi",
         "section_wy4R8c"
       ],
       "settings": {
