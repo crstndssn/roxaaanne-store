@@ -18,10 +18,18 @@
             "title": "canciones",
             "link": "shopify://pages/canciones-de-camila-noches"
           }
+        },
+        "section_9bxfNC": {
+          "type": "section",
+          "settings": {
+            "title": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
         }
       },
       "block_order": [
-        "section_wy4R8c"
+        "section_wy4R8c",
+        "section_9bxfNC"
       ],
       "settings": {
         "image": "shopify://shop_images/cami.png",
