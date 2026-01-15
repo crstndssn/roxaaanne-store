@@ -18,10 +18,19 @@
             "title": "películas",
             "link": "shopify://pages/peliculas"
           }
+        },
+        "products_ibtTUe": {
+          "type": "products",
+          "settings": {
+            "title": "Roxy Fest",
+            "description": "",
+            "content": ""
+          }
         }
       },
       "block_order": [
-        "section_RtRyCc"
+        "section_RtRyCc",
+        "products_ibtTUe"
       ],
       "settings": {
         "image": "shopify://shop_images/WhatsApp_Image_2026-01-13_at_2.29.51_PM.jpg",
