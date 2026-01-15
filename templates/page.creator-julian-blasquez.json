@@ -12,6 +12,14 @@
     "creator": {
       "type": "creator",
       "blocks": {
+        "products_KYET9V": {
+          "type": "products",
+          "settings": {
+            "title": "peliculas",
+            "description": "<p>peliculas</p>",
+            "content": ""
+          }
+        },
         "products_KRk7YJ": {
           "type": "products",
           "settings": {
@@ -20,18 +28,18 @@
             "content": ""
           }
         },
-        "products_KYET9V": {
-          "type": "products",
+        "section_AU9te9": {
+          "type": "section",
           "settings": {
-            "title": "peliculas",
-            "description": "<p>peliculas</p>",
-            "content": ""
+            "title": "roxy fest",
+            "link": "shopify://pages/roxyfest"
           }
         }
       },
       "block_order": [
+        "products_KYET9V",
         "products_KRk7YJ",
-        "products_KYET9V"
+        "section_AU9te9"
       ],
       "settings": {
         "image": "shopify://shop_images/1768426569478.jpg",
