@@ -32,12 +32,21 @@
             "title": "Fotos",
             "link": "shopify://blogs/fotografias-de-angel-ceron"
           }
+        },
+        "products_PPydDW": {
+          "type": "products",
+          "settings": {
+            "title": "roxy fest",
+            "description": "<p>roxy fest</p>",
+            "content": ""
+          }
         }
       },
       "block_order": [
         "section_jwtBnt",
         "section_HTMaXh",
-        "section_KB8MiE"
+        "section_KB8MiE",
+        "products_PPydDW"
       ],
       "settings": {
         "image": "shopify://shop_images/angel-ceron-perez.jpg",
