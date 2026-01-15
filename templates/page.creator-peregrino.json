@@ -19,10 +19,19 @@
             "description": "<p>peliculas</p>",
             "content": ""
           }
+        },
+        "products_MrYfFr": {
+          "type": "products",
+          "settings": {
+            "title": "roxy fet",
+            "description": "<p>roxy fest</p>",
+            "content": ""
+          }
         }
       },
       "block_order": [
-        "products_rLViLW"
+        "products_rLViLW",
+        "products_MrYfFr"
       ],
       "settings": {
         "image": "shopify://shop_images/peregrino.jpg",
