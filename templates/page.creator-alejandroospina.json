@@ -26,11 +26,19 @@
             "description": "<p>peliculas</p>",
             "content": ""
           }
+        },
+        "section_qLUytM": {
+          "type": "section",
+          "settings": {
+            "title": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
         }
       },
       "block_order": [
         "section_RtRyCc",
-        "products_hYrYHn"
+        "products_hYrYHn",
+        "section_qLUytM"
       ],
       "settings": {
         "image": "shopify://shop_images/InShot_20250512_191014071.jpg",
