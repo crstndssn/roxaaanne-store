@@ -12,12 +12,11 @@
     "creator": {
       "type": "creator",
       "blocks": {
-        "products_HAwg7E": {
-          "type": "products",
+        "section_LV7BQB": {
+          "type": "section",
           "settings": {
-            "title": "peliculas",
-            "description": "<p>peliculas</p>",
-            "content": ""
+            "title": "películas",
+            "link": ""
           }
         },
         "section_HTMaXh": {
@@ -36,7 +35,7 @@
         }
       },
       "block_order": [
-        "products_HAwg7E",
+        "section_LV7BQB",
         "section_HTMaXh",
         "section_9zyA49"
       ],
