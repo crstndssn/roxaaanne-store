@@ -48,6 +48,18 @@
             "muted": false
           }
         },
+        "evento_JDnyJn": {
+          "type": "evento",
+          "settings": {
+            "artist": "LACRA",
+            "day": "21",
+            "month": "junio",
+            "month_full": "Junio",
+            "title": "Tapazo - Trailer Bejuco",
+            "location": "Neiva, Huila • Cara Mala",
+            "muted": false
+          }
+        },
         "evento_qCWHUG": {
           "type": "evento",
           "settings": {
@@ -130,18 +142,6 @@
             "title": "Cinergia: Live Set Acid House",
             "location": "Neiva, Huila • Cara Mala",
             "muted": false
-          }
-        },
-        "evento_bBd87L": {
-          "type": "evento",
-          "settings": {
-            "artist": "LACRA",
-            "day": "21",
-            "month": "JUN",
-            "month_full": "Junio",
-            "title": "ROXYFEST",
-            "location": "Neiva, Huila • Cara Mala Club",
-            "muted": true
           }
         },
         "evento_hhf8cc": {
@@ -269,6 +269,7 @@
         "evento_mdUGLf",
         "evento_Qbhiki",
         "evento_iTxyBL",
+        "evento_JDnyJn",
         "evento_qCWHUG",
         "evento_M3aLgQ",
         "evento_M64834",
@@ -276,7 +277,6 @@
         "evento_rnEJRh",
         "evento_mJYCyc",
         "evento_XF7heR",
-        "evento_bBd87L",
         "evento_hhf8cc",
         "evento_8qbTHA",
         "evento_G8dnzf",
