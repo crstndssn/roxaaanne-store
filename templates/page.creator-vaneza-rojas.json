@@ -18,10 +18,19 @@
             "title": "películas",
             "link": "shopify://pages/peliculas"
           }
+        },
+        "products_ewqXdG": {
+          "type": "products",
+          "settings": {
+            "title": "roxy fest",
+            "description": "<p>roxy fest</p>",
+            "content": ""
+          }
         }
       },
       "block_order": [
-        "section_RtRyCc"
+        "section_RtRyCc",
+        "products_ewqXdG"
       ],
       "settings": {
         "image": "shopify://shop_images/Screenshot_2025-11-27_at_6.40.31_PM.png",
