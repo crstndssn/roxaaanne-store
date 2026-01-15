@@ -144,16 +144,16 @@
             "muted": false
           }
         },
-        "evento_hhf8cc": {
+        "evento_w9GVnR": {
           "type": "evento",
           "settings": {
-            "artist": "cristian dussán",
+            "artist": "Cristian Dussan",
             "day": "12",
-            "month": "SEP",
+            "month": "Septiembre",
             "month_full": "Septiembre",
-            "title": "ALTER_OCIO (exposición)",
-            "location": "Quito, Ecuador • Casa Palenque",
-            "muted": true
+            "title": "ALTER_ocio (exposicion)",
+            "location": "Quito Ecuador • Casa palenque",
+            "muted": false
           }
         },
         "evento_8qbTHA": {
@@ -277,7 +277,7 @@
         "evento_rnEJRh",
         "evento_mJYCyc",
         "evento_XF7heR",
-        "evento_hhf8cc",
+        "evento_w9GVnR",
         "evento_8qbTHA",
         "evento_G8dnzf",
         "evento_WKGMwt",
