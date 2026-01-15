@@ -20,15 +20,7 @@
             "content": ""
           }
         },
-        "products_KRk7YJ": {
-          "type": "products",
-          "settings": {
-            "title": "roxy fest",
-            "description": "",
-            "content": ""
-          }
-        },
-        "section_AU9te9": {
+        "section_yCkKrn": {
           "type": "section",
           "settings": {
             "title": "roxy fest",
@@ -38,8 +30,7 @@
       },
       "block_order": [
         "products_KYET9V",
-        "products_KRk7YJ",
-        "section_AU9te9"
+        "section_yCkKrn"
       ],
       "settings": {
         "image": "shopify://shop_images/1768426569478.jpg",
