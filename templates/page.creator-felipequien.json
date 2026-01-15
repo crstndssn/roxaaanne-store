@@ -12,13 +12,6 @@
     "creator": {
       "type": "creator",
       "blocks": {
-        "section_jwtBnt": {
-          "type": "section",
-          "settings": {
-            "title": "roxy fest",
-            "link": "shopify://pages/peliculas"
-          }
-        },
         "products_HAwg7E": {
           "type": "products",
           "settings": {
@@ -33,12 +26,19 @@
             "title": "artículos",
             "link": "shopify://blogs/articulos-de-felipe-quien"
           }
+        },
+        "section_9zyA49": {
+          "type": "section",
+          "settings": {
+            "title": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
         }
       },
       "block_order": [
-        "section_jwtBnt",
         "products_HAwg7E",
-        "section_HTMaXh"
+        "section_HTMaXh",
+        "section_9zyA49"
       ],
       "settings": {
         "image": "shopify://shop_images/felipe-quien.jpg",
