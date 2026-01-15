@@ -18,10 +18,19 @@
             "title": "películas",
             "link": "shopify://pages/peliculas"
           }
+        },
+        "products_jDdz98": {
+          "type": "products",
+          "settings": {
+            "title": "roxy fest",
+            "description": "<p>roxy fest</p>",
+            "content": ""
+          }
         }
       },
       "block_order": [
-        "section_RtRyCc"
+        "section_RtRyCc",
+        "products_jDdz98"
       ],
       "settings": {
         "image": "shopify://shop_images/pechan-project.jpg",
