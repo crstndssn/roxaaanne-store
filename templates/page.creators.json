@@ -167,7 +167,7 @@
           "type": "creator",
           "settings": {
             "creator__name": "Evie Clark",
-            "creator__link": ""
+            "creator__link": "shopify://pages/evie-clark"
           }
         }
       },
