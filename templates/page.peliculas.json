@@ -16,13 +16,22 @@
           "type": "image_link_block",
           "settings": {
             "image": "shopify://shop_images/bejuco.png",
-            "link": "",
+            "link": "shopify://pages/bejuco",
+            "name": ""
+          }
+        },
+        "image_link_block_knGyf8": {
+          "type": "image_link_block",
+          "settings": {
+            "image": "shopify://shop_images/murmurio_1.png",
+            "link": "shopify://pages/murmurio",
             "name": ""
           }
         }
       },
       "block_order": [
-        "image_link_block_zQBmYK"
+        "image_link_block_zQBmYK",
+        "image_link_block_knGyf8"
       ],
       "settings": {}
     }
