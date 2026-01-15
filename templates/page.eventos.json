@@ -39,7 +39,7 @@
         "evento_wU4c78": {
           "type": "evento",
           "settings": {
-            "artist": "Lacra",
+            "artist": "LACRA",
             "day": "18",
             "month": "feb",
             "month_full": "Febrero",
@@ -57,30 +57,6 @@
             "month_full": "Febrero",
             "title": "Cinergia: One Cut Of The Dead",
             "location": "Neiva, Huila • El patio",
-            "muted": false
-          }
-        },
-        "evento_imF6zL": {
-          "type": "evento",
-          "settings": {
-            "artist": "LACRA",
-            "day": "25",
-            "month": "feb",
-            "month_full": "Febrero",
-            "title": "Cinergia: One Cut Of The Dead",
-            "location": "Neiva, Huila • El Patio",
-            "muted": true
-          }
-        },
-        "evento_qkY34j": {
-          "type": "evento",
-          "settings": {
-            "artist": "LACRA",
-            "day": "18",
-            "month": "mar",
-            "month_full": "Marzo",
-            "title": "Cinergia: La Hermanastra Fea",
-            "location": "Neiva, Huila • El Patio",
             "muted": false
           }
         },
@@ -114,8 +90,6 @@
         "evento_KRXGfF",
         "evento_wU4c78",
         "evento_3YKXFt",
-        "evento_imF6zL",
-        "evento_qkY34j",
         "evento_Kjjwty",
         "evento_2025_link"
       ],
