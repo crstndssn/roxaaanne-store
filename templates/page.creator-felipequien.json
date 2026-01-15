@@ -19,6 +19,14 @@
             "link": "shopify://pages/peliculas"
           }
         },
+        "products_HAwg7E": {
+          "type": "products",
+          "settings": {
+            "title": "peliculas",
+            "description": "<p>peliculas</p>",
+            "content": ""
+          }
+        },
         "section_HTMaXh": {
           "type": "section",
           "settings": {
@@ -29,6 +37,7 @@
       },
       "block_order": [
         "section_jwtBnt",
+        "products_HAwg7E",
         "section_HTMaXh"
       ],
       "settings": {
