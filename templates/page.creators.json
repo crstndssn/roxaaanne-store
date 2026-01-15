@@ -85,7 +85,6 @@
       "blocks": {
         "creator_FNbb4z": {
           "type": "creator",
-          "disabled": true,
           "settings": {
             "creator__name": "Peregrino",
             "creator__link": ""
@@ -93,7 +92,6 @@
         },
         "creator_r3cNQW": {
           "type": "creator",
-          "disabled": true,
           "settings": {
             "creator__image": "shopify://shop_images/1768426569478.jpg",
             "creator__name": "Julián Blásquez",
@@ -102,7 +100,6 @@
         },
         "creator_KYrqga": {
           "type": "creator",
-          "disabled": true,
           "settings": {
             "creator__image": "shopify://shop_images/WhatsApp_Image_2026-01-13_at_2.29.51_PM.jpg",
             "creator__name": "Katherin Garzón",
@@ -149,18 +146,27 @@
             "creator__link": "shopify://pages/angel-ceron-perez"
           }
         },
-        "creator_JrBH7D": {
+        "creator_dqU8N3": {
           "type": "creator",
           "settings": {
-            "creator__image": "shopify://shop_images/WhatsApp_Image_2026-01-13_at_2.29.51_PM.jpg",
-            "creator__name": "Khate",
-            "creator__link": "shopify://pages/katherin-garzon"
+            "creator__image": "shopify://shop_images/1768420506249.jpg",
+            "creator__name": "peregrino",
+            "creator__link": ""
           }
         },
         "creator_eyCDXh": {
           "type": "creator",
           "settings": {
-            "creator__name": "Name",
+            "creator__image": "shopify://shop_images/1768420506249.jpg",
+            "creator__name": "Pechan Project",
+            "creator__link": ""
+          }
+        },
+        "creator_6J3itA": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/Screenshot_2025-11-27_at_6.40.31_PM.png",
+            "creator__name": "Vaneza Rojas",
             "creator__link": ""
           }
         }
@@ -174,8 +180,9 @@
         "creator_4jPpTJ",
         "creator_DKj7qd",
         "creator_CPctTL",
-        "creator_JrBH7D",
-        "creator_eyCDXh"
+        "creator_dqU8N3",
+        "creator_eyCDXh",
+        "creator_6J3itA"
       ],
       "settings": {
         "title": "",
