@@ -12,26 +12,24 @@
     "creator": {
       "type": "creator",
       "blocks": {
-        "products_rLViLW": {
-          "type": "products",
+        "section_8b93BH": {
+          "type": "section",
           "settings": {
-            "title": "peliculas",
-            "description": "<p>peliculas</p>",
-            "content": ""
+            "title": "películas",
+            "link": ""
           }
         },
-        "products_MrYfFr": {
-          "type": "products",
+        "section_NkHjBg": {
+          "type": "section",
           "settings": {
-            "title": "roxy fet",
-            "description": "<p>roxy fest</p>",
-            "content": ""
+            "title": "roxy fest",
+            "link": "shopify://pages/roxyfest"
           }
         }
       },
       "block_order": [
-        "products_rLViLW",
-        "products_MrYfFr"
+        "section_8b93BH",
+        "section_NkHjBg"
       ],
       "settings": {
         "image": "shopify://shop_images/peregrino.jpg",
