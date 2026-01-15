@@ -19,10 +19,19 @@
             "description": "",
             "content": ""
           }
+        },
+        "products_KYET9V": {
+          "type": "products",
+          "settings": {
+            "title": "peliculas",
+            "description": "<p>peliculas</p>",
+            "content": ""
+          }
         }
       },
       "block_order": [
-        "products_KRk7YJ"
+        "products_KRk7YJ",
+        "products_KYET9V"
       ],
       "settings": {
         "image": "shopify://shop_images/1768426569478.jpg",
