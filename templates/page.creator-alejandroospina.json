@@ -18,10 +18,19 @@
             "title": "roxy fest",
             "link": "shopify://pages/peliculas"
           }
+        },
+        "products_hYrYHn": {
+          "type": "products",
+          "settings": {
+            "title": "peliculas",
+            "description": "<p>peliculas</p>",
+            "content": ""
+          }
         }
       },
       "block_order": [
-        "section_RtRyCc"
+        "section_RtRyCc",
+        "products_hYrYHn"
       ],
       "settings": {
         "image": "shopify://shop_images/InShot_20250512_191014071.jpg",
