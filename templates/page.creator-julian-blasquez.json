@@ -12,12 +12,11 @@
     "creator": {
       "type": "creator",
       "blocks": {
-        "products_KYET9V": {
-          "type": "products",
+        "section_VCBrPW": {
+          "type": "section",
           "settings": {
-            "title": "peliculas",
-            "description": "<p>peliculas</p>",
-            "content": ""
+            "title": "peli",
+            "link": "shopify://pages/cinergia"
           }
         },
         "section_yCkKrn": {
@@ -29,7 +28,7 @@
         }
       },
       "block_order": [
-        "products_KYET9V",
+        "section_VCBrPW",
         "section_yCkKrn"
       ],
       "settings": {
