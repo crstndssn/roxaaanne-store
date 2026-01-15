@@ -139,6 +139,14 @@
             "creator__link": "shopify://pages/angel-ceron-perez"
           }
         },
+        "creator_3LkcTa": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/perros-mmagneticos.webp",
+            "creator__name": "Perros Magnéticos",
+            "creator__link": ""
+          }
+        },
         "creator_dUmedA": {
           "type": "creator",
           "settings": {
@@ -179,6 +187,7 @@
         "creator_4jPpTJ",
         "creator_DKj7qd",
         "creator_CPctTL",
+        "creator_3LkcTa",
         "creator_dUmedA",
         "creator_q3amT8",
         "creator_6J3itA",
