@@ -18,15 +18,24 @@
             "title": "películas",
             "link": "shopify://pages/peliculas"
           }
+        },
+        "products_GrDbYV": {
+          "type": "products",
+          "settings": {
+            "title": "roxy fest",
+            "description": "<p>roxy fest</p>",
+            "content": ""
+          }
         }
       },
       "block_order": [
-        "section_RtRyCc"
+        "section_RtRyCc",
+        "products_GrDbYV"
       ],
       "settings": {
-        "image": "shopify://shop_images/InShot_20250512_191014071.jpg",
-        "name": "Alejandro Ospina",
-        "description": "<p>Realizador audiovisual, fotógrafo y gestor cultural de la ciudad de Neiva. Ha sido director de cortometrajes y videoclips musicales. También productor de contenidos para televisión y medios digitales. Es miembro del colectivo LACRA.</p>"
+        "image": "shopify://shop_images/perros-mmagneticos.webp",
+        "name": "perros magneticos",
+        "description": "<p>perros <a href=\"/pages/perros-magneticos\" title=\"Perros Magnéticos\">magneticos</a></p>"
       }
     }
   },
