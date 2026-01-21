@@ -69,45 +69,60 @@
   </div>
 
   {% comment %} CINERGIA BANNER {% endcomment %}
-  <div class="mb-10 md:mb-16">
-    <a href="/pages/cinergia" class="block hover:opacity-90 transition-opacity">
-      <div class="flex flex-col md:flex-row md:items-center bg-black dark:bg-[#1c1c1c] border border-black dark:border-[#2A2A2A] rounded-xl overflow-hidden">
-        <div class="flex items-center justify-center flex-col pt-16 pb-16 md:pt-24 md:pb-32 relative">
-          <h1 class="josefin-sans-title text-[80px] leading-[80px] tracking-[-5.3px] md:text-[150px] lg:text-[180px] 2xl:text-[250px] 2xl:tracking-[-23px] leading-[12vw] text-[#feffee] text-center md:tracking-[-13px]">cinergia</h1>
-          <span class="josefin-sans-title text-3xl mr-20 md:text-5xl md:mr-24 absolute bottom-[33px] md:bottom-[70px] text-[#feffee] dark:text-[#feffee]">por
-            <b>LACRA</b>
-          </span>
-        </div>
+  {% if section.settings.cinergia_enabled %}
+    <div class="mb-10 md:mb-16">
+      <a href="{{ section.settings.cinergia_link_url | default: '/pages/cinergia' }}" class="block hover:opacity-90 transition-opacity">
+        <div class="flex flex-col md:flex-row md:items-center bg-black dark:bg-[#1c1c1c] border border-black dark:border-[#2A2A2A] rounded-xl overflow-hidden md:px-12">
+          <div class="flex items-center justify-center flex-col pt-16 pb-16 md:pt-24 md:pb-32 relative">
+            <h1 class="josefin-sans-title text-[80px] leading-[80px] tracking-[-5.3px] md:text-[150px] lg:text-[150px] 2xl:text-[250px] 2xl:tracking-[-23px] leading-[12vw] text-[#feffee] text-center md:tracking-[-13px]">{{ section.settings.cinergia_title_text | default: 'cinergia' }}</h1>
+            {% if section.settings.cinergia_subtitle_text != blank %}
+              <span class="josefin-sans-title text-3xl mr-20 md:text-4xl md:mr-24 absolute bottom-[33px] md:bottom-[50px] text-[#feffee] dark:text-[#feffee]">{{ section.settings.cinergia_subtitle_text }}</span>
+            {% endif %}
+          </div>
 
-        <div class="flex-1 px-8 pb-8 md:px-8 md:py-8">
-          <div class="border border-[#2A2A2A] bg-[#0a0a0a] rounded-xl p-4 md:p-6">
-            <div class="flex md:items-center gap-5">
-              <div class="w-28 h-40 md:w-24 md:h-36 rounded-lg overflow-hidden flex-shrink-0 mx-auto md:mx-0">
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/sound-of-noise.jpg?v=1234567890"
-                  alt="Sound of Noise"
-                  class="w-full h-full object-cover" />
-              </div>
-              <div class="flex-1 items-start md:text-left">
-                <p class="text-lg text-gray-400 mb-1">Próxima película</p>
-                <h4 class="text-2xl md:text-2xl font-medium text-[#feffee] mb-2">Sound of Noise</h4>
-                <div class="flex items-center justify-start md:justify-start gap-3">
-                  <div class="bg-[#2A2A2A] text-white px-2 py-2 rounded-lg text-center min-w-[60px]">
-                    <p class="text-4xl font-[500] leading-none">21</p>
-                    <p class="text-[12px]">ene</p>
-                  </div>
-                  <div class="text-left">
-                    <p class="text-xl font-medium text-[#feffee]">Casa Cultural <br> El Patio</p>
-                    <p class="text-lg text-gray-400">Neiva, Huila</p>
+          <div class="flex-1 px-8 pb-8 md:px-8 md:py-8">
+            <div class="border border-[#2A2A2A] bg-[#0a0a0a] rounded-xl p-4 md:p-6">
+              <div class="flex md:items-center gap-5">
+                <div class="w-28 h-40 md:w-24 md:h-36 rounded-lg overflow-hidden flex-shrink-0 mx-auto md:mx-0">
+                  {% if section.settings.next_movie_image != blank %}
+                    <img
+                      src="{{ section.settings.next_movie_image | image_url: width: 300 }}"
+                      alt="{{ section.settings.next_movie_title | escape }}"
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                      width="300"
+                      height="450">
+                  {% else %}
+                    <div class="w-full h-full flex items-center justify-center bg-[#1f1f1f] text-gray-400 text-sm">Sin imagen</div>
+                  {% endif %}
+                </div>
+                <div class="flex-1 items-start md:text-left">
+                  <p class="text-lg text-gray-400 mb-1">Próxima película</p>
+                  {% if section.settings.next_movie_title != blank %}
+                    <h4 class="text-2xl md:text-2xl font-medium text-[#feffee] mb-2">{{ section.settings.next_movie_title }}</h4>
+                  {% endif %}
+                  <div class="flex items-center justify-start md:justify-start gap-3">
+                    <div class="bg-[#2A2A2A] text-white px-2 py-2 rounded-lg text-center min-w-[60px]">
+                      <p class="text-4xl font-[500] leading-none">{{ section.settings.next_movie_day | default: '01' }}</p>
+                      <p class="text-[12px]">{{ section.settings.next_movie_month | default: 'ene' }}</p>
+                    </div>
+                    <div class="text-left">
+                      {% if section.settings.next_movie_venue != blank %}
+                        <p class="text-xl font-medium text-[#feffee]">{{ section.settings.next_movie_venue }}</p>
+                      {% endif %}
+                      {% if section.settings.next_movie_location != blank %}
+                        <p class="text-lg text-gray-400">{{ section.settings.next_movie_location }}</p>
+                      {% endif %}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </a>
-  </div>
+      </a>
+    </div>
+  {% endif %}
 
   <style>
     .josefin-sans-title {
@@ -168,21 +183,8 @@
                       <h3 class="text-black dark:text-[#feffee] text-2xl font-medium mb-2 line-clamp-2">
                         {{ product.title }}
                       </h3>
+                      Ver producto
 
-                      <div class="flex items-center gap-2 mb-3">
-                        {% if product.compare_at_price > product.price %}
-                          <span class="text-black dark:text-[#feffee] line-through text-sm">
-                            {{ product.compare_at_price | money }}
-                          </span>
-                        {% endif %}
-                        <span class="text-black dark:text-[#feffee] text-xl font-semibold">
-                          {{ product.price | money }}
-                        </span>
-                      </div>
-
-                    {% comment %} <button class="w-full bg-black dark:bg-[#feffee] text-[#feffee] dark:text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors font-medium">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Ver producto
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </button> {% endcomment %}
                     </div>
                   </div>
                 </a>
@@ -527,6 +529,55 @@
         "id": "product_collection",
         "label": "Colección de productos (opcional)",
         "info": "Si seleccionas una colección, se mostrarán hasta 12 productos de ella. También puedes agregar productos individuales con bloques."
+      }, {
+        "type": "checkbox",
+        "id": "cinergia_enabled",
+        "label": "Mostrar banner de Cinergia",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "cinergia_title_text",
+        "label": "Título principal del banner",
+        "default": "cinergia"
+      }, {
+        "type": "text",
+        "id": "cinergia_subtitle_text",
+        "label": "Subtítulo (ej. por LACRA)",
+        "default": "por LACRA"
+      }, {
+        "type": "url",
+        "id": "cinergia_link_url",
+        "label": "URL del banner",
+        "default": "/pages/cinergia"
+      }, {
+        "type": "image_picker",
+        "id": "next_movie_image",
+        "label": "Imagen/Poster de la próxima película"
+      }, {
+        "type": "text",
+        "id": "next_movie_title",
+        "label": "Título de la próxima película",
+        "default": "Nombre de la película"
+      }, {
+        "type": "text",
+        "id": "next_movie_day",
+        "label": "Día (número)",
+        "default": "01"
+      }, {
+        "type": "text",
+        "id": "next_movie_month",
+        "label": "Mes (ene, feb, etc.)",
+        "default": "ene"
+      }, {
+        "type": "text",
+        "id": "next_movie_venue",
+        "label": "Lugar (ej. Casa Cultural El Patio)",
+        "default": "Lugar"
+      }, {
+        "type": "text",
+        "id": "next_movie_location",
+        "label": "Ciudad/Región (ej. Neiva, Huila)",
+        "default": "Ciudad, Región"
       }
     ],
     "blocks": [
