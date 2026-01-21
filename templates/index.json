@@ -291,7 +291,17 @@
         "discover_link_url": "shopify://pages/lacra",
         "latest_title": "últimas publicaciones",
         "products_title": "merca",
-        "product_collection": "lacra"
+        "product_collection": "lacra",
+        "cinergia_enabled": true,
+        "cinergia_title_text": "cinergia",
+        "cinergia_subtitle_text": "por LACRA",
+        "cinergia_link_url": "shopify://pages/cinergia",
+        "next_movie_image": "shopify://shop_images/whiplash.jpg",
+        "next_movie_title": "Whiplash",
+        "next_movie_day": "22",
+        "next_movie_month": "ene",
+        "next_movie_venue": "Casa Cultural El Patio",
+        "next_movie_location": "Neiva, Huila"
       }
     },
     "home-blog": {
