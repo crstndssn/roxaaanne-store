@@ -231,25 +231,25 @@
             "muted": true
           }
         },
-        "event_fhdUjE": {
+        "event_TLmEKz": {
           "type": "event",
           "settings": {
             "artist": "LACRA",
             "day": "22",
             "month": "ene",
-            "title": "Cinergia: Sound of Noise",
-            "location": "Neiva, Huila • El Patio",
+            "title": "Cinergia: Whiplash",
+            "location": "Neiva Huila, El Patio",
             "muted": false
           }
         },
-        "event_TLmEKz": {
+        "event_fhdUjE": {
           "type": "event",
           "settings": {
             "artist": "LACRA",
             "day": "28",
             "month": "ene",
-            "title": "Cinergia: Whiplash",
-            "location": "Neiva Huila, El Patio",
+            "title": "Cinergia: Sound of Noise",
+            "location": "Neiva, Huila • El Patio",
             "muted": false
           }
         },
@@ -278,8 +278,8 @@
         "new_creation_bkCmRN",
         "event_84XiNC",
         "event_NELTpj",
-        "event_fhdUjE",
         "event_TLmEKz",
+        "event_fhdUjE",
         "events_cta_jkEmPX"
       ],
       "settings": {
