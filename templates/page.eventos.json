@@ -12,26 +12,26 @@
     "eventos": {
       "type": "eventos",
       "blocks": {
-        "evento_FAYaje": {
+        "evento_KRXGfF": {
           "type": "evento",
           "settings": {
             "artist": "LACRA",
             "day": "22",
             "month": "ene",
             "month_full": "Enero",
-            "title": "Cinergia: Sound Of Noise",
+            "title": "Cinergia: Whiplash",
             "location": "Neiva, Huila • El Patio",
             "muted": false
           }
         },
-        "evento_KRXGfF": {
+        "evento_FAYaje": {
           "type": "evento",
           "settings": {
             "artist": "LACRA",
             "day": "28",
             "month": "ene",
             "month_full": "Enero",
-            "title": "Cinergia: Whiplash",
+            "title": "Cinergia: Sound Of Noise",
             "location": "Neiva, Huila • El Patio",
             "muted": false
           }
@@ -86,8 +86,8 @@
         }
       },
       "block_order": [
-        "evento_FAYaje",
         "evento_KRXGfF",
+        "evento_FAYaje",
         "evento_wU4c78",
         "evento_eX3rzw",
         "evento_Kjjwty",
