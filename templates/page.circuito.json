@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "circuito_documents": {
+      "type": "circuito",
+      "settings": {
+        "title": "CIRCUITO",
+        "description": "Explora y descarga las lecturas paralelas disponibles"
+      },
+      "blocks": {
+        "document_1": {
+          "type": "document",
+          "settings": {
+            "document_title": "Lectura 01",
+            "document_description": "Primera lectura del circuito",
+            "document_size": "PDF • 1.2 MB"
+          }
+        },
+        "document_2": {
+          "type": "document",
+          "settings": {
+            "document_title": "Lectura 02",
+            "document_description": "Segunda lectura del circuito",
+            "document_size": "PDF • 890 KB"
+          }
+        }
+      },
+      "block_order": [
+        "document_1",
+        "document_2"
+      ]
+    }
+  },
+  "order": [
+    "circuito_documents"
+  ]
+}
