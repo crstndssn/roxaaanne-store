@@ -14,7 +14,6 @@
       "blocks": {
         "evento_KRXGfF": {
           "type": "evento",
-          "disabled": true,
           "settings": {
             "artist": "LACRA",
             "day": "22",
@@ -22,7 +21,7 @@
             "month_full": "Enero",
             "title": "Cinergia: Whiplash",
             "location": "Neiva, Huila • El Patio",
-            "muted": false
+            "muted": true
           }
         },
         "evento_FAYaje": {
