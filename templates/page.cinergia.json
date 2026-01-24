@@ -18,6 +18,7 @@
       "blocks": {
         "event_gnLDtQ": {
           "type": "event",
+          "disabled": true,
           "settings": {
             "day": "22",
             "month": "ENE",
