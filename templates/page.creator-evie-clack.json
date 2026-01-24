@@ -18,10 +18,18 @@
             "title": "películas",
             "link": "shopify://pages/peliculas"
           }
+        },
+        "section_eVUf8A": {
+          "type": "section",
+          "settings": {
+            "title": "fotografias",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "section_RtRyCc"
+        "section_RtRyCc",
+        "section_eVUf8A"
       ],
       "settings": {
         "image": "shopify://shop_images/1768420506249.jpg",
