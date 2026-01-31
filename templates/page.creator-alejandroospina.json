@@ -12,6 +12,13 @@
     "creator": {
       "type": "creator",
       "blocks": {
+        "section_dkyaPK": {
+          "type": "section",
+          "settings": {
+            "title": "fotografías",
+            "link": "shopify://blogs/fotografias-de-alejandro-ospina"
+          }
+        },
         "section_ChmF4V": {
           "type": "section",
           "settings": {
@@ -28,6 +35,7 @@
         }
       },
       "block_order": [
+        "section_dkyaPK",
         "section_ChmF4V",
         "section_qLUytM"
       ],
