@@ -1,7 +1,8 @@
 <div class="container mx-auto px-8 mt-4 md:px-1">
 
+
   <div class="flex flex-col mb-10">
-    {% comment %} EVENTOS TITULO {% endcomment %}
+
     {% if section.settings.events_title != blank %}
       <h2 class="text-[33px] md:text-[40px] text-black dark:text-[#feffee] font-[500] mb-3 md:mb-7 tracking-[-1.3px]">
         {{ section.settings.events_title }}
@@ -9,7 +10,7 @@
     {% endif %}
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-10 md:mb-16">
-      {% comment %} EVENTOS {% endcomment %}
+      {% comment %} 11111111 INICIO {% endcomment %}
       <div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-0">
           {% for block in section.blocks %}
@@ -49,36 +50,36 @@
           {% endcase %}
         {% endfor %}
       </div>
+      {% comment %} 11111111 FINAL {% endcomment %}
 
-      {% comment %} VOLTAJE {% endcomment %}
+      {% comment %} 22222222 INICIO {% endcomment %}
       <div class="rounded-xl text-center flex flex-col justify-center items-center py-14 md:py-0" style="background-color: #2EFF05">
         {% if section.settings.discover_primary_text != blank %}
           <h3 class="stalinist-one-regular text-black text-[10vw] leading-[10vw] md:text-[70px] md:leading-[70px] font-bold m-0">VOLTAJE</h3>
           <p class="stalinist-one-regular text-black text-[3.3vw] leading-[20px] md:text-[21px] mb-0">LABORATORIO DE SÍNTESIS</p>
         {% endif %}
         {% if section.settings.discover_secondary_text != blank %}
-          <p class="stalinist-one-regular text-black text-[3.3vw] leading-[17px] md:text-[14px] mt-4">30 DE ENERO | 7:00 PM | CARAMALA</p>
+          <p class="stalinist-one-regular text-black text-[3.3vw] leading-[17px] md:text-[14px] mt-4">PRÓXIMAMENTE | 7:00 PM | CARAMALA</p>
         {% endif %}
         <div class="flex gap-3">
           <a href="/pages/voltaje#registro" class="stalinist-one-regular text-xl text-black mt-5 border-2 border-black w-fit p-4 rounded-xl hover:border-3">REGISTRO</a>
           <a href="/pages/voltaje" class="stalinist-one-regular text-xl bg-black text-[#2EFF05] mt-5 border-2 border-black w-fit p-4 rounded-xl">VER MAS</a>
         </div>
-
+      {% comment %} 22222222 FIN {% endcomment %}
       </div>
     </div>
   </div>
 
 
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-10">
-    {% comment %} cinergia y carousel del producto  {% endcomment %}
-    <div class="md:col-span-1 flex flex-col">
-      {% comment %} CINERGIA BANNER {% endcomment %}
+  <div class="grid grid-cols-1 md:grid-cols-4 md:gap-16 mb-10">
+    <div class="md:col-span-2 flex flex-col">
+      {% comment %} 33333333 INICIO {% endcomment %}
       {% if section.settings.cinergia_enabled %}
-        <div class="mb-10 md:mb-16">
+        <div class="mb-10 md:mb-10">
           <a href="{{ section.settings.cinergia_link_url | default: '/pages/cinergia' }}" class="block hover:opacity-90 transition-opacity">
             <div class="flex flex-col md:items-center bg-black dark:bg-[#1c1c1c] border border-black dark:border-[#2A2A2A] rounded-xl overflow-hidden">
               <div class="flex items-center justify-center flex-col pt-16 pb-16 md:pt-24 md:pb-32 md:px-12 relative">
-                <h1 class="josefin-sans-title text-[80px] leading-[80px] tracking-[-5.3px] md:text-[150px] lg:text-[150px] 2xl:text-[250px] 2xl:tracking-[-23px] leading-[12vw] text-[#feffee] text-center md:tracking-[-13px]">{{ section.settings.cinergia_title_text | default: 'cinergia' }}</h1>
+                <h1 class="josefin-sans-title text-[80px] leading-[80px] tracking-[-5.3px] md:text-[150px] lg:text-[150px]  leading-[12vw] text-[#feffee] text-center md:tracking-[-13px]">{{ section.settings.cinergia_title_text | default: 'cinergia' }}</h1>
                 {% if section.settings.cinergia_subtitle_text != blank %}
                   <span class="josefin-sans-title text-3xl mr-20 md:text-4xl md:mr-24 absolute bottom-[33px] md:bottom-[50px] text-[#feffee] dark:text-[#feffee]">{{ section.settings.cinergia_subtitle_text }}</span>
                 {% endif %}
@@ -127,11 +128,12 @@
           </a>
         </div>
       {% endif %}
+      {% comment %} 33333333 FINAL {% endcomment %}
 
-      {% comment %} CAROUSEL DE PRODUCTOS {% endcomment %}
+      {% comment %} 44444444 INICIO {% endcomment %}
       <div class="mb-10">
         {% if section.settings.products_title != blank %}
-          <h2 class="text-[33px] md:text-[40px] font-medium mb-3 md:mb-7 text-black dark:text-[#feffee] tracking-[-1.3px]">
+          <h2 class="text-[33px] md:text-[40px] font-medium mb-3 md:mb-5 text-black dark:text-[#feffee] tracking-[-1.3px]">
             {{ section.settings.products_title }}
           </h2>
         {% endif %}
@@ -176,8 +178,6 @@
                           <h3 class="text-black dark:text-[#feffee] text-2xl font-medium mb-2 line-clamp-2">
                             {{ product.title }}
                           </h3>
-                          Ver producto
-
                         </div>
                       </div>
                     </a>
@@ -288,7 +288,7 @@
                 spaceBetween: 30,
               },
               1024: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 30,
               },
             },
@@ -331,48 +331,50 @@
 
         </style>
       </div>
+    {% comment %} 44444444 FINAL {% endcomment %}
     </div>
-    {% comment %} lecturas paralelas  {% endcomment %}
+
+    {% comment %} 55555555 INICIO {% endcomment %}
     <div class="md:col-span-2 flex flex-col">
-      {% comment %} CIRCUITO BANNER {% endcomment %}
+
       <a href="/pages/circuito" class="block hover:opacity-95 transition-opacity">
-        <div class="bg-[#0c0c33] rounded-xl border border-black dark:border-[#2A2A2A] overflow-hidden relative min-h-[400px] flex flex-col items-center justify-center px-8 py-16">
+        <div class="bg-[#0c0c33] rounded-xl border border-black dark:border-[#2A2A2A] overflow-hidden relative md:min-h-[805px] flex flex-col items-center justify-center px-8 py-16">
           <h2 class="text-[#feffee] text-[60px] md:text-[80px] lg:text-[100px] font-medium tracking-[0.02em] mb-8 md:mb-16" style="font-family: 'DM Sans', sans-serif;">CIRCUITO</h2>
 
           <div class="flex gap-16 md:gap-24 lg:gap-32 items-start justify-start">
             <div class="flex flex-col gap-2 md:gap-3" style="font-family: 'DM Sans', sans-serif;">
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">L</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">E</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">C</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">T</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">U</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">R</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">A</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">S</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">L</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">E</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">C</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">T</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">U</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">R</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">A</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">S</span>
             </div>
 
             <div class="flex flex-col gap-2 md:gap-3" style="font-family: 'DM Sans', sans-serif;">
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">P</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">A</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">R</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">A</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">L</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">E</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">L</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">A</span>
-              <span class="text-[#feffee] text-[28px] md:text-[36px] lg:text-[42px] font-medium tracking-[0.15em]">S</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">P</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">A</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">R</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">A</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">L</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">E</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">L</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">A</span>
+              <span class="text-[#feffee] text-[20px] md:text-[28px] lg:text-[33px] font-medium tracking-[0.15em]">S</span>
             </div>
           </div>
         </div>
       </a>
     </div>
+  {% comment %} 55555555 FINAL {% endcomment %}
   </div>
 
-  {% comment %} DESCRUBRE {% endcomment %}
 
   <div class=" flex flex-col mb-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-[50vh]">
-
+      {% comment %} 6666666 INICIO {% endcomment %}
       <div class="h-full flex flex-col">
         {% if section.settings.discover_title != blank %}
           <h2 class="text-[33px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-3 md:mb-7 tracking-[-1.3px]">
@@ -403,8 +405,9 @@
           </div>
         </div>
       </div>
+      {% comment %} 6666666 FINAL {% endcomment %}
 
-
+      {% comment %} 7777777 INICIO {% endcomment %}
       <div class="h-full flex flex-col">
         {% if section.settings.discover_title != blank %}
           <h2 class="text-[33px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-3 md:mb-7 tracking-[-1.3px]">
@@ -431,7 +434,7 @@
           {% endfor %}
         </div>
       </div>
-
+    {% comment %} 7777777 FINAL {% endcomment %}
     </div>
   </div>
 
