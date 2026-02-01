@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "title": "cinergia",
-            "date": "ENERO 21 ✨",
+            "date": "FEBRERO 18 ✨",
             "url": "shopify://pages/cinergia",
             "custom_classes": "border-2 border-white/80 bg-black text-[#feffee]",
             "custom_css": ""
@@ -28,7 +28,7 @@
           "type": "announcement",
           "settings": {
             "title": "voltaje",
-            "date": "ENERO 30 ⚡",
+            "date": "PRONTO ⚡",
             "url": "shopify://pages/voltaje",
             "custom_classes": "",
             "custom_css": "background: #2EFF05;\ncolor: #000000;\nborder: 2px #000 solid;"
