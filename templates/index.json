@@ -252,7 +252,7 @@
             "month": "ene",
             "title": "Cinergia: Sound of Noise",
             "location": "Neiva, Huila • El Patio",
-            "muted": false
+            "muted": true
           }
         },
         "event_HbwmRM": {
@@ -269,7 +269,7 @@
         "event_gN6kYR": {
           "type": "event",
           "settings": {
-            "artist": "Nombre",
+            "artist": "LACRA",
             "day": "25",
             "month": "feb",
             "title": "Cinergia: One Cut Of The Dead",
