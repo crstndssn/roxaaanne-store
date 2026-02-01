@@ -211,6 +211,7 @@
         },
         "event_84XiNC": {
           "type": "event",
+          "disabled": true,
           "settings": {
             "artist": "Voltaje",
             "day": "28",
@@ -222,6 +223,7 @@
         },
         "event_NELTpj": {
           "type": "event",
+          "disabled": true,
           "settings": {
             "artist": "LACRA",
             "day": "29",
@@ -253,6 +255,28 @@
             "muted": false
           }
         },
+        "event_HbwmRM": {
+          "type": "event",
+          "settings": {
+            "artist": "LACRA",
+            "day": "18",
+            "month": "feb",
+            "title": "Cinergia: La Guía Perversa De La Ideología",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
+        "event_gN6kYR": {
+          "type": "event",
+          "settings": {
+            "artist": "Nombre",
+            "day": "25",
+            "month": "feb",
+            "title": "Cinergia: One Cut Of The Dead",
+            "location": "Neiva, Huila • El Patio",
+            "muted": false
+          }
+        },
         "events_cta_jkEmPX": {
           "type": "events_cta",
           "settings": {
@@ -280,6 +304,8 @@
         "event_NELTpj",
         "event_TLmEKz",
         "event_fhdUjE",
+        "event_HbwmRM",
+        "event_gN6kYR",
         "events_cta_jkEmPX"
       ],
       "settings": {
