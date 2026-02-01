@@ -18,14 +18,13 @@
       "blocks": {
         "event_gnLDtQ": {
           "type": "event",
-          "disabled": true,
           "settings": {
             "day": "22",
             "month": "ENE",
             "artist": "LACRA",
             "title": "Cinergia: Whiplash",
             "location": "Neiva, Huila • El Patio",
-            "muted": false
+            "muted": true
           }
         },
         "event_4MgM9m": {
@@ -36,7 +35,7 @@
             "artist": "LACRA",
             "title": "Cinergia: Sound Of Nosie",
             "location": "Neiva, Huila • El Patio",
-            "muted": false
+            "muted": true
           }
         },
         "event_AEwxgf": {
