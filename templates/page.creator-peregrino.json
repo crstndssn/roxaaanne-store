@@ -11,6 +11,18 @@
   "sections": {
     "creator": {
       "type": "creator",
+      "blocks": {
+        "section_TyVK98": {
+          "type": "section",
+          "settings": {
+            "title": "roxy fest",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "section_TyVK98"
+      ],
       "settings": {
         "image": "shopify://shop_images/peregrino.jpg",
         "name": "Peregrino",
