@@ -1,7 +1,20 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "roxyfest": {
-      "type": "roxyfest"
+      "type": "roxyfest",
+      "settings": {
+        "title": "ROXY FEST 2025",
+        "intro": "Muchas gracias por ser parte de Roxy Fest, edición 2025; estos fueron unos de los mejores momentos."
+      }
     }
   },
   "order": [
