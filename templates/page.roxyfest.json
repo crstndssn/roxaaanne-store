@@ -11,6 +11,18 @@
   "sections": {
     "roxyfest": {
       "type": "roxyfest",
+      "blocks": {
+        "artist_E6p6qM": {
+          "type": "artist",
+          "settings": {
+            "artist_name": "",
+            "article": "roxy/peregrino"
+          }
+        }
+      },
+      "block_order": [
+        "artist_E6p6qM"
+      ],
       "settings": {
         "title": "ROXY FEST 2025",
         "intro": "Muchas gracias por ser parte de Roxy Fest, edición 2025; estos fueron unos de los mejores momentos."
