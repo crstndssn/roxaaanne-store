@@ -11,7 +11,7 @@
 
 <div class="bg-[#feffee] dark:bg-black container mx-auto px-8 md:px-0 collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
 
-  <div class="flex flex-col items-center text-center mb-7 border-2 border-black dark:border-[#feffee] rounded-xl p-4">
+  <div class="flex flex-col items-center text-center mb-7 border border-black dark:border-[#feffee] rounded-xl p-4">
     <h2 class="text-black dark:text-[#feffee] text-7xl font-medium mb-0 md:mb-1 my-4 md:mt-[30px] tracking-[-1.3px]">
       {{- collection.title | escape -}}</h2>
     <div class="md:w-[50%] text-black dark:text-[#feffee] my-2 text-[17px] md:text-3xl font-[400] leading-tight mb-10 md:mb-14">
@@ -42,7 +42,42 @@
       </div>
     {%- endif -%}
   </div>
+
+  {%- if section.settings.blog != blank -%}
+    {%- assign selected_blog = blogs[section.settings.blog] -%}
+    <div class="container mx-auto px-8 md:px-0 pb-16 mt-12">
+      <h2 class="text-black dark:text-[#feffee] text-4xl md:text-5xl font-medium mb-6">aquí y ahora</h2>
+      <div class="flex md:grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-x-visible pb-4 scrollbar-hide">
+        {%- for article in selected_blog.articles limit: 3 -%}
+          <a href="{{ article.url }}" class="flex-shrink-0 w-[65vw] md:w-auto bg-white/5 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-xl overflow-hidden hover:border-black dark:hover:border-[#feffee] transition-all">
+            {%- if article.image -%}
+              <div class="w-full h-[200px] overflow-hidden">
+                <img
+                  src="{{ article.image | image_url: width: 640 }}"
+                  alt="{{ article.title | escape }}"
+                  class="w-full h-full object-cover">
+              </div>
+            {%- endif -%}
+            <div class="p-4">
+              <h3 class="text-black dark:text-[#feffee] text-lg font-medium mb-2 line-clamp-2">{{ article.title }}</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm">{{ article.published_at | date: "%d %b %Y" }}</p>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
 </div>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
 
 
 {% schema %}
@@ -53,22 +88,29 @@
       {
         "type": "paragraph",
         "content": "t:sections.main-collection-banner.settings.paragraph.content"
-      }, {
+      },
+      {
         "type": "checkbox",
         "id": "show_collection_description",
         "default": true,
         "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
-      }, {
+      },
+      {
         "type": "checkbox",
         "id": "show_collection_image",
         "default": false,
         "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
         "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
-      }, {
+      },
+      {
         "type": "color_scheme",
         "id": "color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
+      }, {
+        "type": "blog",
+        "id": "blog",
+        "label": "Blog para 'aquí y ahora'"
       }
     ]
   }

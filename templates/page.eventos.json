@@ -15,60 +15,91 @@
         "evento_KRXGfF": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "22",
-            "month": "ene",
+            "day": "JUEVES 22",
             "month_full": "Enero",
             "title": "Cinergia: Whiplash",
             "location": "Neiva, Huila • El Patio",
+            "url": "shopify://pages/cinergia",
             "muted": true
           }
         },
         "evento_FAYaje": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "29",
-            "month": "ene",
+            "day": "JUEVES 29",
             "month_full": "Enero",
             "title": "Cinergia: Sound Of Noise",
             "location": "Neiva, Huila • El Patio",
+            "url": "shopify://pages/cinergia",
             "muted": true
           }
         },
         "evento_wU4c78": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "18",
-            "month": "feb",
+            "day": "JUEVES 18",
             "month_full": "Febrero",
             "title": "Cinergia: La Guia Perversa De La Ideologia",
             "location": "Neiva, Huila • El Patio",
+            "url": "shopify://pages/cinergia",
             "muted": false
           }
         },
         "evento_eX3rzw": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "25",
-            "month": "Febrero",
+            "day": "JUEVES 25",
             "month_full": "Febrero",
             "title": "Cinergia: One Cut Of The Dead",
             "location": "Neiva, Huila • Cara Mala",
+            "url": "shopify://pages/cinergia",
+            "muted": false
+          }
+        },
+        "evento_FeGUqE": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "artist": "LACRA",
+            "day": "SÁBADO 28",
+            "month_full": "Febrero",
+            "title": "Apertura Instalación Bejuco",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "shopify://pages/bejuco",
+            "muted": false
+          }
+        },
+        "evento_3REi9C": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "JUEVES 19",
+            "month_full": "Marzo",
+            "title": "Cinergia: La Hermanastra Fea",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "shopify://pages/cinergia",
             "muted": false
           }
         },
         "evento_Kjjwty": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "25",
-            "month": "mar",
+            "day": "JUEVES 26",
             "month_full": "Marzo",
             "title": "Cinergia: El Conde",
             "location": "Neiva, Huila • El Patio",
+            "url": "shopify://pages/cinergia",
             "muted": false
           }
         },
@@ -77,10 +108,10 @@
           "settings": {
             "artist": "•",
             "day": "",
-            "month": "2025",
             "month_full": "",
             "title": "Ver eventos del 2025",
             "location": "/pages/eventos-2025",
+            "url": "",
             "muted": true
           }
         }
@@ -90,6 +121,8 @@
         "evento_FAYaje",
         "evento_wU4c78",
         "evento_eX3rzw",
+        "evento_FeGUqE",
+        "evento_3REi9C",
         "evento_Kjjwty",
         "evento_2025_link"
       ],

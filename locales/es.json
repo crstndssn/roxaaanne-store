@@ -401,7 +401,7 @@
       "view_addresses": "Ver direcciones",
       "return": "Regresar a detalles de la cuenta"
     },
-    "account_fallback": "Cuenta",
+    "account_fallback": "Mi Cuenta",
     "activate_account": {
       "title": "Activar cuenta",
       "subtext": "Crea tu contraseña para activar tu cuenta.",

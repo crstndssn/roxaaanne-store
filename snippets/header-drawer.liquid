@@ -118,7 +118,7 @@
               {%- endfor -%}
             </ul>
           </nav>
-          <div class="flex px-8 bg-[#feffee] dark:bg-black flex flex-col gap-3">
+          <div class="flex px-8 bg-[#feffee] dark:bg-black flex flex-col gap-[3rem]">
             {%- if shop.customer_accounts_enabled -%}
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
@@ -183,7 +183,7 @@
                 {%- endif -%}
               </div>
             {%- endif -%}
-            <ul class="flex" role="list">
+            <ul class="flex hidden" role="list">
               {%- if settings.social_twitter_link != blank -%}
                 <li class="list-social__item">
                   <a href="{{ settings.social_twitter_link }}" class="list-social__link link">

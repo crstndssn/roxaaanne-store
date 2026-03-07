@@ -39,17 +39,25 @@
     <div>
       <h1 class="home__title weird-font text-black dark:text-[#feffee] text-[80px] md:text-[114px] tracking-tight leading-[114px]">{{ section.settings.title }}</h1>
       <div class="text-[37px] leading-[23px] mb-6 md:text-[51px] text-black dark:text-[#feffee] font-[300] md:leading-[50px] tracking-[-1.3px]">{{ section.settings.content }}</div>
-      <div class="flex gap-3 text-center mt-4">
-        <a class="border-2 text-black dark:text-[#feffee] rounded-xl w-full py-3 md:py-4 font-medium border-black dark:border-[#feffee]" href="/pages/creadores">explorar</a>
-        <a class="bg-black text-[#feffee] dark:text-black dark:bg-[#feffee] rounded-xl w-full py-3 pt-4 md:py-4 font-medium" href="/pages/creadores">crear perfil</a>
+      <div class="flex flex-col gap-3 text-center mt-4">
+        <a class="border hover:bg-[#feffee] text-black dark:hover:text-black dark:text-[#feffee] rounded-xl w-full py-3 md:py-4 font-medium border-black dark:border-[#feffee] cursor-pointer" href="/pages/eventos">eventos</a>
+        <a class="border hover:bg-[#feffee] text-black dark:hover:text-black dark:text-[#feffee] rounded-xl w-full py-3 md:py-4 font-medium border-black dark:border-[#feffee] cursor-pointer" href="/pages/creadores">creadorxs</a>
+        <a class="border hover:bg-[#feffee] text-black dark:hover:text-black dark:text-[#feffee] rounded-xl w-full py-3 md:py-4 font-medium border-black dark:border-[#feffee] cursor-pointer" href="/collections/lacra">merca</a>
       </div>
     </div>
   </div>
 </div>
 
 <style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-  .roxyhome {
+  <style > .roxyhome {
     background: linear-gradient(180deg, #0F0C3B 0%, #403B88 45%, #F28B2B 100%);
     color: #fff;
   }

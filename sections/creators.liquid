@@ -1,6 +1,6 @@
 <div class="flex flex-col justify-center text-left items-center px-8 md:px-0">
 
-  <div class="container mx-auto flex flex-col items-center text-center mb-7 border-2 border-black dark:border-[#feffee] rounded-xl p-4">
+  <div class="container mx-auto flex flex-col items-center text-center mb-7 border border-black dark:border-[#feffee] rounded-xl p-4">
     <h2 class="text-black dark:text-[#feffee] text-7xl font-medium mb-0 md:mb-1 my-4 md:mt-[30px] tracking-[-1.3px]">creadorxs</h2>
     <div class="md:w-[50%]">
       <p class="text-black dark:text-[#feffee] my-2 text-[17px] md:text-3xl font-[400] leading-tight mb-10 md:mb-14">Descubre cada universo de los creadorxs que hacen posible este espacio; también puedes ser uno de nosotrxs, crea tu perfil.</p>
@@ -9,7 +9,7 @@
 
   <div class="container mx-auto w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
     <a
-      class="w-full px-4 md:px-0 bg-[#feffee] dark:bg-[#1c1c1c] border-2 hover:border-black border-[#c9c9c9] dark:border-[#1c1c1c] flex flex-col justify-center items-center py-12 mt-1 rounded-xl min-h-[255px]"
+      class="w-full px-4 md:px-0 bg-white/5 dark:bg-white/5 backdrop-blur-md border hover:border-black border-white/20 dark:border-white/10 flex flex-col justify-center items-center py-12 mt-1 rounded-xl min-h-[255px]"
       href="/pages/crear-mi-perfil"
       class="text-white">
       <div class="w-[50px] h-[50px] rounded-full overflow-hidden mb-5">
@@ -24,7 +24,7 @@
     </a>
     {% for block in section.blocks %}
       <a
-        class="bg-[#feffee] dark:bg-[#1c1c1c] border-2 hover:border-black border-[#c9c9c9] dark:border-[#1c1c1c] flex flex-col justify-center items-center py-12 mt-1 rounded-xl"
+        class="bg-white/5 dark:bg-white/5 backdrop-blur-md border hover:border-black border-white/20 dark:border-white/10 flex flex-col justify-center items-center py-12 mt-1 rounded-xl"
         href="{{ block.settings.creator__link }}"
         class="text-white">
         <div class="w-[123px] h-[123px] md:w-[150px] md:h-[150px] rounded-full overflow-hidden mb-5">
@@ -36,16 +36,53 @@
         <div class="text-black dark:text-[#feffee] text-[16px]  md:text-[18px] tracking-[-0.3px] mt-3 font-[500]">
           {{ block.settings.creator__name }}
         </div>
+        {% if block.settings.show_new_post %}
+          <div class="mt-2 flex items-center gap-1 bg-green-500/30 px-3 py-1 rounded-full">
+            <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+            <span class="text-[12px] dark:text-[#feffee]">nuevo post</span>
+          </div>
+        {% endif %}
       </a>
     {% endfor %}
   </div>
+
+  {%- if section.settings.blog != blank -%}
+    {%- assign selected_blog = blogs[section.settings.blog] -%}
+    <div class="container mx-auto px-8 md:px-0 pb-16 mt-12">
+      <h2 class="text-black dark:text-[#feffee] text-4xl md:text-5xl font-medium mb-6">aquí y ahora</h2>
+      <div class="flex md:grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-x-visible pb-4 scrollbar-hide">
+        {%- for article in selected_blog.articles limit: 3 -%}
+          <a href="{{ article.url }}" class="flex-shrink-0 w-[65vw] md:w-auto bg-white/5 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-xl overflow-hidden hover:border-black dark:hover:border-[#feffee] transition-all">
+            {%- if article.image -%}
+              <div class="w-full h-[200px] overflow-hidden">
+                <img
+                  src="{{ article.image | image_url: width: 640 }}"
+                  alt="{{ article.title | escape }}"
+                  class="w-full h-full object-cover">
+              </div>
+            {%- endif -%}
+            <div class="p-4">
+              <h3 class="text-black dark:text-[#feffee] text-lg font-medium mb-2 line-clamp-2">{{ article.title }}</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm">{{ article.published_at | date: "%d %b %Y" }}</p>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
 </div>
 
 <style>
   .home__title strong {
     font-weight: 500;
   }
-
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 </style>
 
 {% schema %}
@@ -60,6 +97,10 @@
         "type": "richtext",
         "id": "content",
         "label": "Contenido"
+      }, {
+        "type": "blog",
+        "id": "blog",
+        "label": "Blog para 'aquí y ahora'"
       }
     ],
     "blocks": [
@@ -80,6 +121,11 @@
             "type": "url",
             "id": "creator__link",
             "label": "Link"
+          }, {
+            "type": "checkbox",
+            "id": "show_new_post",
+            "label": "Mostrar 'new post'",
+            "default": false
           }
         ]
       }, {

@@ -83,6 +83,41 @@
     "creators": {
       "type": "creators",
       "blocks": {
+        "creator_8Jwz3g": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/lacra_eventos.png",
+            "creator__name": "LACRA",
+            "creator__link": "shopify://pages/lacra",
+            "show_new_post": true
+          }
+        },
+        "creator_c4DbWV": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/cinergia_eventos.png",
+            "creator__name": "cinergia",
+            "creator__link": "shopify://pages/cinergia",
+            "show_new_post": true
+          }
+        },
+        "creator_HWPncm": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/roxy-fest-perfil.png",
+            "creator__name": "roxy fest",
+            "creator__link": "",
+            "show_new_post": true
+          }
+        },
+        "creator_KGrRJw": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/voltaje-perfil_870cedb2-4812-42e4-a22f-ea1f4178e219.png",
+            "creator__name": "VOLTAJE",
+            "creator__link": "shopify://pages/voltaje"
+          }
+        },
         "creator_r3cNQW": {
           "type": "creator",
           "settings": {
@@ -189,19 +224,23 @@
         }
       },
       "block_order": [
+        "creator_Ct7WPf",
+        "creator_CPctTL",
+        "creator_4jPpTJ",
+        "creator_c4DbWV",
+        "creator_DKj7qd",
+        "creator_J9FGzK",
+        "creator_nj9CN7",
         "creator_r3cNQW",
         "creator_KYrqga",
-        "creator_Ct7WPf",
-        "creator_nj9CN7",
-        "creator_4jPpTJ",
-        "creator_DKj7qd",
-        "creator_CPctTL",
-        "creator_3LkcTa",
-        "creator_dUmedA",
+        "creator_8Jwz3g",
+        "creator_dzx3y3",
         "creator_q3amT8",
+        "creator_dUmedA",
+        "creator_3LkcTa",
+        "creator_HWPncm",
         "creator_6J3itA",
-        "creator_J9FGzK",
-        "creator_dzx3y3"
+        "creator_KGrRJw"
       ],
       "settings": {
         "title": "",
