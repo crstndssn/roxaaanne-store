@@ -49,9 +49,9 @@
           "type": "announcement",
           "settings": {
             "title": "bejuco",
-            "date": "instalación 👹",
+            "date": "VEN AL PATIO 👹",
             "url": "shopify://pages/bejuco",
-            "custom_classes": "",
+            "custom_classes": "border-2 border-white/80",
             "custom_css": "background: #B30404;\ncolor: #fff;"
           }
         },
