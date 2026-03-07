@@ -26,6 +26,7 @@
         },
         "announcement_JP9Qz9": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "title": "voltaje",
             "date": "PRONTO ⚡",
@@ -44,6 +45,16 @@
             "custom_css": "background: linear-gradient(90deg, #232246 0%, #3B3382 45%, #EF6400 100%);\ncolor: #fff;\nborder: 2px rgba(255, 255, 255, 0.8) solid;"
           }
         },
+        "announcement_tziYQL": {
+          "type": "announcement",
+          "settings": {
+            "title": "bejuco",
+            "date": "instalación",
+            "url": "",
+            "custom_classes": "",
+            "custom_css": "background: #B30404;\ncolor: #000"
+          }
+        },
         "announcement_cqpLfX": {
           "type": "announcement",
           "settings": {
@@ -59,6 +70,7 @@
         "announcement_Ezg7Ez",
         "announcement_JP9Qz9",
         "announcement_4QKYDk",
+        "announcement_tziYQL",
         "announcement_cqpLfX"
       ],
       "settings": {}
