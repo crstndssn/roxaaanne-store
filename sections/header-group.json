@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "title": "cinergia",
-            "date": "FEBRERO 18 ✨",
+            "date": "MARZO 19 ✨",
             "url": "shopify://pages/cinergia",
             "custom_classes": "border-2 border-white/80 bg-black text-[#feffee]",
             "custom_css": ""
@@ -50,13 +50,14 @@
           "settings": {
             "title": "bejuco",
             "date": "instalación 👹",
-            "url": "",
+            "url": "shopify://pages/bejuco",
             "custom_classes": "",
             "custom_css": "background: #B30404;\ncolor: #fff;"
           }
         },
         "announcement_cqpLfX": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "title": "creadorxs",
             "date": "🔥",
