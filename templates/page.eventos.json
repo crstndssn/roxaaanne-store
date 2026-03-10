@@ -38,33 +38,85 @@
             "muted": true
           }
         },
-        "evento_wU4c78": {
+        "evento_gUxNJA": {
           "type": "evento",
           "settings": {
-            "image": "shopify://shop_images/cinergia_eventos.png",
-            "artist": "LACRA",
-            "day": "JUEVES 18",
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "LUNES 9",
             "month_full": "Febrero",
-            "title": "Cinergia: La Guia Perversa De La Ideologia",
-            "location": "Neiva, Huila • El Patio",
-            "url": "shopify://pages/cinergia",
+            "title": "ROXY FEST: Peregrino y Frigio - Avant Garde",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
             "muted": false
           }
         },
-        "evento_eX3rzw": {
+        "evento_ct9PJG": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "JUEVES 12",
+            "month_full": "Febrero",
+            "title": "ROXY FEST: Peregrino y Frigio - Eπisteme Zur",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
+            "muted": false
+          }
+        },
+        "evento_inn9yP": {
           "type": "evento",
           "settings": {
             "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "JUEVES 25",
+            "day": "JUEVES 19",
+            "month_full": "Febrero",
+            "title": "Cinergia: La guía perversa de la ideología",
+            "location": "Neiva, Huila • El patio",
+            "url": "",
+            "muted": false
+          }
+        },
+        "evento_h3cT9z": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "SÁBADO 21",
+            "month_full": "Febrero",
+            "title": "ROXY FEST: Camila Noches - De La Nostalgia, 05",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
+            "muted": false
+          }
+        },
+        "evento_7GDzyL": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "JUEVES 26",
             "month_full": "Febrero",
             "title": "Cinergia: One Cut Of The Dead",
-            "location": "Neiva, Huila • Cara Mala",
-            "url": "shopify://pages/cinergia",
+            "location": "Neiva, Huila • El patio",
+            "url": "",
             "muted": false
           }
         },
-        "evento_FeGUqE": {
+        "evento_TbwLcA": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 27",
+            "month_full": "Febrero",
+            "title": "ROXY FEST: Camila Noches - Pasaje A Tus Ojos",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
+            "muted": false
+          }
+        },
+        "evento_XTzcTk": {
           "type": "evento",
           "settings": {
             "image": "shopify://shop_images/lacra_eventos.png",
@@ -72,8 +124,8 @@
             "day": "SÁBADO 28",
             "month_full": "Febrero",
             "title": "Apertura Instalación Bejuco",
-            "location": "Neiva, Huila • Cara Mala",
-            "url": "shopify://pages/bejuco",
+            "location": "Neiva, Huila • El patio",
+            "url": "",
             "muted": false
           }
         },
@@ -184,9 +236,13 @@
       "block_order": [
         "evento_KRXGfF",
         "evento_FAYaje",
-        "evento_wU4c78",
-        "evento_eX3rzw",
-        "evento_FeGUqE",
+        "evento_gUxNJA",
+        "evento_ct9PJG",
+        "evento_inn9yP",
+        "evento_h3cT9z",
+        "evento_7GDzyL",
+        "evento_TbwLcA",
+        "evento_XTzcTk",
         "evento_9RjPf4",
         "evento_ABtegg",
         "evento_NqTBkA",
