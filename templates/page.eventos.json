@@ -77,32 +77,6 @@
             "muted": false
           }
         },
-        "evento_3REi9C": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/cinergia_eventos.png",
-            "artist": "LACRA",
-            "day": "JUEVES 19",
-            "month_full": "Marzo",
-            "title": "Cinergia: La Hermanastra Fea",
-            "location": "Neiva, Huila • Cara Mala",
-            "url": "shopify://pages/cinergia",
-            "muted": false
-          }
-        },
-        "evento_Kjjwty": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/cinergia_eventos.png",
-            "artist": "LACRA",
-            "day": "JUEVES 26",
-            "month_full": "Marzo",
-            "title": "Cinergia: El Conde",
-            "location": "Neiva, Huila • El Patio",
-            "url": "shopify://pages/cinergia",
-            "muted": false
-          }
-        },
         "evento_2025_link": {
           "type": "evento",
           "settings": {
@@ -114,6 +88,97 @@
             "url": "",
             "muted": true
           }
+        },
+        "evento_9RjPf4": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "SÁBADO 7",
+            "month_full": "Marzo",
+            "title": "ROXY FEST: Camila Noches - Nocturna",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
+            "muted": false
+          }
+        },
+        "evento_ABtegg": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "JUEVES 12",
+            "month_full": "Marzo",
+            "title": "ROXY FEST: Publicación primer video Pechan Project",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
+            "muted": false
+          }
+        },
+        "evento_NqTBkA": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "MARTES 17",
+            "month_full": "Marzo",
+            "title": "ROXY FEST: Publicación segundo video Pechan Project",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
+            "muted": false
+          }
+        },
+        "evento_8CxV4H": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "artist": "LACRA",
+            "day": "JUEVES 19",
+            "month_full": "Marzo",
+            "title": "Cinergia: La hermanastra fea",
+            "location": "Neiva, Huila • El Patio",
+            "url": "",
+            "muted": false
+          }
+        },
+        "evento_cKmhqN": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "MARTES 24",
+            "month_full": "Marzo",
+            "title": "ROXY FEST: Publicación tercer video Pechan Project",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
+            "muted": false
+          }
+        },
+        "evento_bWHxAM": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "artist": "LACRA",
+            "day": "JUEVES 26",
+            "month_full": "Marzo",
+            "title": "Cinergia: El Conde",
+            "location": "Neiva, Huila • El Patio",
+            "url": "",
+            "muted": false
+          }
+        },
+        "evento_QKPWmg": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "MARTES 31",
+            "month_full": "Marzo",
+            "title": "ROXY FEST: Publicación primer video Ana Vahos",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
+            "muted": false
+          }
         }
       },
       "block_order": [
@@ -122,11 +187,18 @@
         "evento_wU4c78",
         "evento_eX3rzw",
         "evento_FeGUqE",
-        "evento_3REi9C",
-        "evento_Kjjwty",
-        "evento_2025_link"
+        "evento_2025_link",
+        "evento_9RjPf4",
+        "evento_ABtegg",
+        "evento_NqTBkA",
+        "evento_8CxV4H",
+        "evento_cKmhqN",
+        "evento_bWHxAM",
+        "evento_QKPWmg"
       ],
-      "settings": {}
+      "settings": {
+        "blog": ""
+      }
     }
   },
   "order": [
