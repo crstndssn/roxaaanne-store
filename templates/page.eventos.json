@@ -77,18 +77,6 @@
             "muted": false
           }
         },
-        "evento_2025_link": {
-          "type": "evento",
-          "settings": {
-            "artist": "•",
-            "day": "",
-            "month_full": "",
-            "title": "Ver eventos del 2025",
-            "location": "/pages/eventos-2025",
-            "url": "",
-            "muted": true
-          }
-        },
         "evento_9RjPf4": {
           "type": "evento",
           "settings": {
@@ -131,7 +119,7 @@
         "evento_8CxV4H": {
           "type": "evento",
           "settings": {
-            "image": "shopify://shop_images/lacra_eventos.png",
+            "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
             "day": "JUEVES 19",
             "month_full": "Marzo",
@@ -157,7 +145,7 @@
         "evento_bWHxAM": {
           "type": "evento",
           "settings": {
-            "image": "shopify://shop_images/lacra_eventos.png",
+            "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
             "day": "JUEVES 26",
             "month_full": "Marzo",
@@ -179,6 +167,18 @@
             "url": "",
             "muted": false
           }
+        },
+        "evento_2025_link": {
+          "type": "evento",
+          "settings": {
+            "artist": "•",
+            "day": "",
+            "month_full": "",
+            "title": "Ver eventos del 2025",
+            "location": "/pages/eventos-2025",
+            "url": "",
+            "muted": true
+          }
         }
       },
       "block_order": [
@@ -187,14 +187,14 @@
         "evento_wU4c78",
         "evento_eX3rzw",
         "evento_FeGUqE",
-        "evento_2025_link",
         "evento_9RjPf4",
         "evento_ABtegg",
         "evento_NqTBkA",
         "evento_8CxV4H",
         "evento_cKmhqN",
         "evento_bWHxAM",
-        "evento_QKPWmg"
+        "evento_QKPWmg",
+        "evento_2025_link"
       ],
       "settings": {
         "blog": ""
