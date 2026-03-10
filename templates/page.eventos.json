@@ -38,6 +38,19 @@
             "muted": true
           }
         },
+        "evento_DnfK3Q": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "SÁBADO 7",
+            "month_full": "Febrero",
+            "title": "Publicación del primer video de peregrino en youtube",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
+            "muted": false
+          }
+        },
         "evento_gUxNJA": {
           "type": "evento",
           "settings": {
@@ -236,6 +249,7 @@
       "block_order": [
         "evento_KRXGfF",
         "evento_FAYaje",
+        "evento_DnfK3Q",
         "evento_gUxNJA",
         "evento_ct9PJG",
         "evento_inn9yP",
