@@ -253,8 +253,7 @@
         "prod_13",
         "prod_14",
         "prod_15",
-        "prod_16",
-        "prod_17"
+        "prod_16"
       ],
       "settings": {
         "title": "ROXY FEST 2025",
@@ -262,7 +261,9 @@
         "cantautorxs_title": "CANTAUTORXS",
         "produccion_title": "PRODUCCIÓN",
         "fotografxs_title": "FOTOGRAFXS",
-        "estrenos_title": "ESTRENOS"
+        "estrenos_title": "ESTRENOS",
+        "blog_historias": "articulos-de-cristian-dussan",
+        "blog": "aqui-y-ahora"
       }
     }
   },
