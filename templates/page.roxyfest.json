@@ -37,14 +37,14 @@
           "type": "cantautorxs",
           "settings": {
             "artist_name": "Camila Noches",
-            "url": ""
+            "url": "shopify://pages/camila-noches"
           }
         },
         "cantautor_5": {
           "type": "cantautorxs",
           "settings": {
             "artist_name": "Peregrino",
-            "url": ""
+            "url": "shopify://pages/peregrino"
           }
         },
         "cantautor_6": {
@@ -58,7 +58,7 @@
           "type": "fotografxs",
           "settings": {
             "photographer_name": "Alejandro Ospina",
-            "url": ""
+            "url": "shopify://pages/alejandro-ospina"
           }
         },
         "fotografx_2": {
@@ -93,7 +93,7 @@
           "type": "estrenos",
           "settings": {
             "name": "Tráiler Bejuco",
-            "url": ""
+            "url": "shopify://pages/bejuco"
           }
         },
         "prod_1": {
