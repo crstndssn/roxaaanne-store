@@ -1,52 +1,215 @@
-<div class="container mx-auto px-6 md:px-10 py-10">
-  {% if section.settings.title != blank %}
-    <h1 class="text-4xl md:text-5xl font-semibold text-center text-white mb-6">
-      {{ section.settings.title }}
-    </h1>
-  {% endif %}
+<div class="container mx-auto px-8 md:px-10">
 
   {% if section.settings.hero_image != blank %}
     <img
       src="{{ section.settings.hero_image | image_url: width: 2000 }}"
       alt="{{ section.settings.title | escape }}"
-      class="w-full h-auto rounded-2xl mb-6">
+      class="w-full h-auto mb-6">
   {% else %}
     <img
       src="https://cdn.shopify.com/s/files/1/0700/8623/0213/files/flyerfinal2025.jpg?v=1760030715"
       alt="{{ section.settings.title | escape }}"
-      class="w-full h-auto rounded-2xl mb-6">
+      class="w-full h-auto mb-6">
   {% endif %}
 
-  {% if section.settings.intro != blank %}
-    <p class="text-white text-lg md:text-xl mb-10">
-      {{ section.settings.intro }}
-    </p>
-  {% endif %}
 
-  {% for block in section.blocks %}
-    {% if block.type == 'artist' %}
-      {% assign article = articles[block.settings.article] %}
-      {% if article %}
-        <div class="mb-12" {{ block.shopify_attributes }}>
+  <div class="w-full flex flex-col justify-center items-center">
+    {% if section.settings.title != blank %}
+      <h1 class="text-5xl md:text-7xl font-semibold text-center text-[#feffee] mb-3 mt-10 ">
+        {{ section.settings.title }}
+      </h1>
+    {% endif %}
+
+    {% if section.settings.intro != blank %}
+      <p class="text-[#feffee] text-center text-[17px] md:text-[20px] mb-5 md:w-[70%]">
+        {{ section.settings.intro }}
+      </p>
+    {% endif %}
+  </div>
+
+
+  <!-- Cantautorxs -->
+  {% if section.settings.cantautorxs_title != blank %}
+    <h2 class="text-3xl md:text-4xl font-semibold text-[#feffee] mb-6 mt-12 text-center">
+      {{ section.settings.cantautorxs_title }}
+    </h2>
+  {% endif %}
+  <div class="flex flex-wrap gap-4 justify-center">
+    {% for block in section.blocks %}
+      {% if block.type == 'cantautorxs' %}
+        <div {{ block.shopify_attributes }}>
           {% if block.settings.artist_name != blank %}
-            <h2 class="text-3xl font-medium text-white mb-4">
-              {{ block.settings.artist_name }}
-            </h2>
-          {% endif %}
-
-          <a href="{{ article.url }}" class="block">
-            {% if article.image %}
-              <img
-                src="{{ article.image | image_url: width: 2000 }}"
-                alt="{{ article.title }}"
-                class="w-full h-auto object-cover rounded-xl">
+            {% if block.settings.url != blank %}
+              <a href="{{ block.settings.url }}" class="block text-[#feffee]/50 text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee] rounded-lg hover:bg-[#feffee] hover:text-black transition-colors uppercase text-center">
+                {{ block.settings.artist_name }}
+              </a>
+            {% else %}
+              <p class="text-[#feffee]/60 text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee]/30 rounded-lg uppercase text-center">
+                {{ block.settings.artist_name }}
+              </p>
             {% endif %}
-          </a>
+          {% endif %}
         </div>
       {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Fotografxs -->
+  {% if section.settings.fotografxs_title != blank %}
+    <h2 class="text-3xl md:text-4xl font-semibold text-[#feffee] mb-6 mt-12 text-center">
+      {{ section.settings.fotografxs_title }}
+    </h2>
+  {% endif %}
+  <div class="flex flex-wrap gap-4 justify-center">
+    {% for block in section.blocks %}
+      {% if block.type == 'fotografxs' %}
+        <div {{ block.shopify_attributes }}>
+          {% if block.settings.photographer_name != blank %}
+            {% if block.settings.url != blank %}
+              <a href="{{ block.settings.url }}" class="block text-[#feffee]/50 text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee] rounded-lg hover:bg-[#feffee] hover:text-black transition-colors uppercase text-center">
+                {{ block.settings.photographer_name }}
+              </a>
+            {% else %}
+              <p class="text-[#feffee]/60 text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee]/30 rounded-lg uppercase text-center">
+                {{ block.settings.photographer_name }}
+              </p>
+            {% endif %}
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Estrenos -->
+  {% if section.settings.estrenos_title != blank %}
+    <h2 class="text-3xl md:text-4xl font-semibold text-[#feffee] mb-6 mt-12 text-center">
+      {{ section.settings.estrenos_title }}
+    </h2>
+  {% endif %}
+  <div class="flex flex-wrap gap-4 justify-center">
+    {% for block in section.blocks %}
+      {% if block.type == 'estrenos' %}
+        <div {{ block.shopify_attributes }}>
+          {% if block.settings.name != blank %}
+            {% if block.settings.url != blank %}
+              <a href="{{ block.settings.url }}" class="block text-[#feffee]/50 text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee] rounded-lg hover:bg-[#feffee] hover:text-black transition-colors uppercase text-center">
+                {{ block.settings.name }}
+              </a>
+            {% else %}
+              <p class="text-[#feffee]/60 text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee]/30 rounded-lg uppercase text-center">
+                {{ block.settings.name }}
+              </p>
+            {% endif %}
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Producción -->
+  {% if section.settings.produccion_title != blank %}
+    <h2 class="text-3xl md:text-4xl font-semibold text-[#feffee] mb-6 mt-12 text-center">
+      {{ section.settings.produccion_title }}
+    </h2>
+  {% endif %}
+  <div class="flex flex-wrap gap-4 justify-center">
+    {% for block in section.blocks %}
+      {% if block.type == 'produccion' %}
+        <div {{ block.shopify_attributes }}>
+          {% if block.settings.names != blank %}
+            <div class="text-[#feffee]/60 px-5 py-2 border-2 border-[#feffee]/30 rounded-lg w-fit text-center">
+              {% if block.settings.role != blank %}
+                <p class="text-[10px] md:text-[12px] opacity-70 break-words max-w-full">{{ block.settings.role }}</p>
+              {% endif %}
+              <p class="text-[14px] md:text-[20px]">{{ block.settings.names }}</p>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Artist (legacy) -->
+  {% for block in section.blocks %}
+    {% if block.type == 'artist' %}
+      <div class="mb-8" {{ block.shopify_attributes }}>
+        {% if block.settings.artist_name != blank %}
+          <h2 class="text-3xl font-medium text-white">
+            {{ block.settings.artist_name }}
+          </h2>
+        {% endif %}
+      </div>
     {% endif %}
   {% endfor %}
+
+  <!-- Blog Section: historias -->
+  {% if section.settings.blog_historias != blank %}
+    {% assign blog_historias = blogs[section.settings.blog_historias] %}
+    <div class="mt-20 md:mt-32">
+      <h2 class="text-3xl md:text-4xl font-medium text-center text-[#feffee] mb-8 md:mb-12 uppercase">HISTORIAS</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {% for article in blog_historias.articles limit: 3 %}
+          <a href="{{ article.url }}" class="group block">
+            <div class="border border-[#feffee]/30 hover:border-[#feffee] hover:bg-[#feffee]/5 transition-all duration-300 overflow-hidden">
+              {% if article.image %}
+                <div class="aspect-square overflow-hidden">
+                  <img
+                    src="{{ article.image | image_url: width: 600 }}"
+                    alt="{{ article.image.alt | escape }}"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy">
+                </div>
+              {% endif %}
+              <div class="p-6">
+                <h3 class="text-[17px] md:text-[23px] font-medium text-[#feffee] mb-3">{{ article.title }}</h3>
+                <p class="text-[12px] md:text-[14px] text-[#feffee]/60">{{ article.published_at | date: "%d.%m.%Y" }}</p>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Blog Section: aquí y ahora -->
+  {% if section.settings.blog != blank %}
+    {% assign blog = blogs[section.settings.blog] %}
+    <div class="mt-20 md:mt-32">
+      <h2 class="text-3xl md:text-4xl font-medium text-center text-[#feffee] mb-8 md:mb-12 uppercase">AQUÍ Y AHORA</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {% for article in blog.articles limit: 3 %}
+          <a href="{{ article.url }}" class="group block">
+            <div class="border border-[#feffee]/30 hover:border-[#feffee] hover:bg-[#feffee]/5 transition-all duration-300 overflow-hidden">
+              {% if article.image %}
+                <div class="aspect-square overflow-hidden">
+                  <img
+                    src="{{ article.image | image_url: width: 600 }}"
+                    alt="{{ article.image.alt | escape }}"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy">
+                </div>
+              {% endif %}
+              <div class="p-6">
+                <h3 class="text-[17px] md:text-[23px] font-medium text-[#feffee] mb-3">{{ article.title }}</h3>
+                <p class="text-[12px] md:text-[14px] text-[#feffee]/60">{{ article.published_at | date: "%d.%m.%Y" }}</p>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
 </div>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
 
 {% schema %}
   {
@@ -59,15 +222,46 @@
         "id": "title",
         "label": "Título",
         "default": "Roxy Fest 2025"
-      }, {
+      },
+      {
         "type": "image_picker",
         "id": "hero_image",
         "label": "Imagen principal"
-      }, {
+      },
+      {
         "type": "textarea",
         "id": "intro",
         "label": "Texto intro",
         "default": "Muchas gracias por ser parte de Roxy Fest, edición 2025; estos fueron unos de los mejores momentos."
+      },
+      {
+        "type": "text",
+        "id": "cantautorxs_title",
+        "label": "Título Cantautorxs",
+        "default": "CANTAUTORXS"
+      }, {
+        "type": "text",
+        "id": "produccion_title",
+        "label": "Título Producción",
+        "default": "PRODUCCIÓN"
+      }, {
+        "type": "text",
+        "id": "fotografxs_title",
+        "label": "Título Fotografxs",
+        "default": "FOTOGRAFXS"
+      }, {
+        "type": "text",
+        "id": "estrenos_title",
+        "label": "Título Estrenos",
+        "default": "ESTRENOS"
+      }, {
+        "type": "blog",
+        "id": "blog_historias",
+        "label": "Blog (historias)"
+      }, {
+        "type": "blog",
+        "id": "blog",
+        "label": "Blog (aquí y ahora)"
       }
     ],
     "blocks": [
@@ -83,6 +277,65 @@
             "type": "article",
             "id": "article",
             "label": "Artículo del artista"
+          }
+        ]
+      },
+      {
+        "type": "produccion",
+        "name": "Producción",
+        "settings": [
+          {
+            "type": "text",
+            "id": "role",
+            "label": "Cargo/Rol"
+          }, {
+            "type": "text",
+            "id": "names",
+            "label": "Nombres"
+          }
+        ]
+      },
+      {
+        "type": "cantautorxs",
+        "name": "Cantautorxs",
+        "settings": [
+          {
+            "type": "text",
+            "id": "artist_name",
+            "label": "Nombre del/la cantautor/a"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "URL (perfil o artículo)"
+          }
+        ]
+      },
+      {
+        "type": "fotografxs",
+        "name": "Fotografxs",
+        "settings": [
+          {
+            "type": "text",
+            "id": "photographer_name",
+            "label": "Nombre del/la fotógrafx"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "URL (perfil o redes)"
+          }
+        ]
+      }, {
+        "type": "estrenos",
+        "name": "Estrenos",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Nombre"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
           }
         ]
       }

@@ -5,7 +5,7 @@
 
   <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
     {%- for block in section.blocks -%}
-      <article class="bg-[#feffee] dark:bg-[#141414] rounded-2xl p-8 flex flex-col items-center text-center border border-black dark:border-[#feffee]" {{ block.shopify_attributes }}>
+      <article class="bg-[#feffee] dark:bg-[#141414] rounded-2xl p-8 flex flex-col items-center text-center border border-black" {{ block.shopify_attributes }}>
         {%- if block.settings.image != blank -%}
           <div class="w-52 h-52 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
             <img

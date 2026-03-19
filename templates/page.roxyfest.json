@@ -12,20 +12,257 @@
     "roxyfest": {
       "type": "roxyfest",
       "blocks": {
-        "artist_E6p6qM": {
-          "type": "artist",
+        "cantautor_1": {
+          "type": "cantautorxs",
           "settings": {
-            "artist_name": "",
-            "article": "roxy-fest/peregrino"
+            "artist_name": "Ana María Vahos",
+            "url": ""
+          }
+        },
+        "cantautor_2": {
+          "type": "cantautorxs",
+          "settings": {
+            "artist_name": "Gato e' Monte",
+            "url": ""
+          }
+        },
+        "cantautor_3": {
+          "type": "cantautorxs",
+          "settings": {
+            "artist_name": "Pechan Project",
+            "url": ""
+          }
+        },
+        "cantautor_4": {
+          "type": "cantautorxs",
+          "settings": {
+            "artist_name": "Camila Noches",
+            "url": ""
+          }
+        },
+        "cantautor_5": {
+          "type": "cantautorxs",
+          "settings": {
+            "artist_name": "Peregrino",
+            "url": ""
+          }
+        },
+        "cantautor_6": {
+          "type": "cantautorxs",
+          "settings": {
+            "artist_name": "Los Perros Magnéticos",
+            "url": ""
+          }
+        },
+        "fotografx_1": {
+          "type": "fotografxs",
+          "settings": {
+            "photographer_name": "Alejandro Ospina",
+            "url": ""
+          }
+        },
+        "fotografx_2": {
+          "type": "fotografxs",
+          "settings": {
+            "photographer_name": "Mauricio Dussán",
+            "url": ""
+          }
+        },
+        "fotografx_3": {
+          "type": "fotografxs",
+          "settings": {
+            "photographer_name": "alter_ocio",
+            "url": ""
+          }
+        },
+        "fotografx_4": {
+          "type": "fotografxs",
+          "settings": {
+            "photographer_name": "Lizeth Sanabria",
+            "url": ""
+          }
+        },
+        "fotografx_5": {
+          "type": "fotografxs",
+          "settings": {
+            "photographer_name": "Alejandro Perdomo",
+            "url": ""
+          }
+        },
+        "estreno_1": {
+          "type": "estrenos",
+          "settings": {
+            "name": "Tráiler Bejuco",
+            "url": ""
+          }
+        },
+        "prod_1": {
+          "type": "produccion",
+          "settings": {
+            "role": "una producción de",
+            "names": "ROXAAAANNE"
+          }
+        },
+        "prod_2": {
+          "type": "produccion",
+          "settings": {
+            "role": "en coproducción con",
+            "names": "LACRA FILMS"
+          }
+        },
+        "prod_3": {
+          "type": "produccion",
+          "settings": {
+            "role": "producción ejecutiva",
+            "names": "CRISTIAN DUSSÁN"
+          }
+        },
+        "prod_4": {
+          "type": "produccion",
+          "settings": {
+            "role": "producción general",
+            "names": "ALEJANDRO OSPINA"
+          }
+        },
+        "prod_5": {
+          "type": "produccion",
+          "settings": {
+            "role": "producción técnica",
+            "names": "ANGEL CERON"
+          }
+        },
+        "prod_6": {
+          "type": "produccion",
+          "settings": {
+            "role": "producción de campo",
+            "names": "LAURA VANEZA ROJAS"
+          }
+        },
+        "prod_7": {
+          "type": "produccion",
+          "settings": {
+            "role": "coordinador de postproducción",
+            "names": "FELIPE SALCEDO"
+          }
+        },
+        "prod_8": {
+          "type": "produccion",
+          "settings": {
+            "role": "dirección de arte",
+            "names": "KATHERINE GARZÓN"
+          }
+        },
+        "prod_9a": {
+          "type": "produccion",
+          "settings": {
+            "role": "cámara",
+            "names": "JULIÁN BLASQUEZ"
+          }
+        },
+        "prod_9b": {
+          "type": "produccion",
+          "settings": {
+            "role": "cámara",
+            "names": "CAROLINA DÍAZ"
+          }
+        },
+        "prod_9c": {
+          "type": "produccion",
+          "settings": {
+            "role": "cámara",
+            "names": "JAVIER PÉREZ"
+          }
+        },
+        "prod_10": {
+          "type": "produccion",
+          "settings": {
+            "role": "dirección de fotografía",
+            "names": "ANGEL CERON"
+          }
+        },
+        "prod_11": {
+          "type": "produccion",
+          "settings": {
+            "role": "edición de video",
+            "names": "ALEJANDRO OSPINA"
+          }
+        },
+        "prod_12": {
+          "type": "produccion",
+          "settings": {
+            "role": "grabación de audio",
+            "names": "ROBER DUCUARA - ANGEL CERON"
+          }
+        },
+        "prod_13": {
+          "type": "produccion",
+          "settings": {
+            "role": "mezcla y masterización",
+            "names": "ANGEL CERON"
+          }
+        },
+        "prod_14": {
+          "type": "produccion",
+          "settings": {
+            "role": "diseño gráfico",
+            "names": "CRISTIAN DUSSÁN"
+          }
+        },
+        "prod_15": {
+          "type": "produccion",
+          "settings": {
+            "role": "póster",
+            "names": "YIRLY PINTA"
+          }
+        },
+        "prod_16": {
+          "type": "produccion",
+          "settings": {
+            "role": "dirección creativa",
+            "names": "CRISTIAN DUSSÁN"
           }
         }
       },
       "block_order": [
-        "artist_E6p6qM"
+        "cantautor_1",
+        "cantautor_2",
+        "cantautor_3",
+        "cantautor_4",
+        "cantautor_5",
+        "cantautor_6",
+        "fotografx_1",
+        "fotografx_2",
+        "fotografx_3",
+        "fotografx_4",
+        "fotografx_5",
+        "estreno_1",
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4",
+        "prod_5",
+        "prod_6",
+        "prod_7",
+        "prod_8",
+        "prod_9a",
+        "prod_9b",
+        "prod_9c",
+        "prod_10",
+        "prod_11",
+        "prod_12",
+        "prod_13",
+        "prod_14",
+        "prod_15",
+        "prod_16",
+        "prod_17"
       ],
       "settings": {
         "title": "ROXY FEST 2025",
-        "intro": "Muchas gracias por ser parte de Roxy Fest, edición 2025; estos fueron unos de los mejores momentos."
+        "intro": "un ocaso lleno de magia; esa noche nos preparamos para un nuevo amanecer, nos vimos crecer. ofrecimos nuestro corazón para transformar nuestro hogar, he aquí nuestro álbum de recuerdos",
+        "cantautorxs_title": "CANTAUTORXS",
+        "produccion_title": "PRODUCCIÓN",
+        "fotografxs_title": "FOTOGRAFXS",
+        "estrenos_title": "ESTRENOS"
       }
     }
   },
