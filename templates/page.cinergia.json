@@ -154,6 +154,7 @@
         },
         "movie_gcRKaU": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/la_hermanastra_fea.jpg",
             "title": "La Hermanastra Fea",
@@ -316,6 +317,19 @@
             "synopsis": "Las cosas van mal para un director y su equipo de filmación al grabar una película de zombis de bajo presupuesto en una instalación japonesa abandonada de la Segunda Guerra Mundial, cuando son atacados por zombis reales."
           }
         },
+        "movie_AYFVH7": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/la_hermanastra_fea.jpg",
+            "title": "La Hermanastra Fea",
+            "director": "Emilie Blichfeldt",
+            "year": "2025",
+            "duration": "1h 45m",
+            "genre": "Terror corporal, comedia negra, sátira, body horror. ",
+            "country": "Principalmente Noruega, pero coproducción internacional. ",
+            "synopsis": "En una retorcida versión del clásico cuento de Cenicienta, \"La hermanastra fea\" sigue a Elvira en su lucha por competir con su increíblemente bella hermanastra. En un reino de cuento de hadas donde la belleza es un negocio brutal"
+          }
+        },
         "movie_iKiewn": {
           "type": "movie",
           "disabled": true,
@@ -428,6 +442,7 @@
         "movie_37xyix",
         "movie_wLNWV6",
         "movie_idfHUc",
+        "movie_AYFVH7",
         "movie_iKiewn",
         "movie_83aanU",
         "movie_ffDxzL",
