@@ -46,7 +46,7 @@
             "artist": "LACRA",
             "title": "Cinergia: La Guía Perversa De La Ideología",
             "location": "Neiva, Huila • El Patio",
-            "muted": false
+            "muted": true
           }
         },
         "event_1": {
@@ -57,7 +57,7 @@
             "artist": "LACRA",
             "title": "Cinergia: One Cut Of The Dead",
             "location": "Neiva, Huila • El Patio",
-            "muted": false
+            "muted": true
           }
         },
         "event_cChdtr": {
@@ -68,7 +68,7 @@
             "artist": "LACRA",
             "title": "Cinergia: La Hermanastra Mas Fea",
             "location": "Neiva, Huila • El Patio",
-            "muted": false
+            "muted": true
           }
         },
         "event_dPmEPm": {
