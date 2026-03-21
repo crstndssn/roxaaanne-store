@@ -89,7 +89,7 @@
             "creator__image": "shopify://shop_images/InShot_20250512_191014071.jpg",
             "creator__name": "Alejandro Ospina",
             "creator__link": "shopify://pages/alejandro-ospina",
-            "show_new_post": false
+            "show_new_post": true
           }
         },
         "creator_CPctTL": {
