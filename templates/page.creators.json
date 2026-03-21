@@ -83,13 +83,31 @@
     "creators": {
       "type": "creators",
       "blocks": {
-        "creator_8Jwz3g": {
+        "creator_Ct7WPf": {
           "type": "creator",
           "settings": {
-            "creator__image": "shopify://shop_images/lacra_eventos.png",
-            "creator__name": "LACRA",
-            "creator__link": "shopify://pages/lacra",
-            "show_new_post": true
+            "creator__image": "shopify://shop_images/InShot_20250512_191014071.jpg",
+            "creator__name": "Alejandro Ospina",
+            "creator__link": "shopify://pages/alejandro-ospina",
+            "show_new_post": false
+          }
+        },
+        "creator_CPctTL": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/angel-ceron-perez.jpg",
+            "creator__name": "Ángel Cerón",
+            "creator__link": "shopify://pages/angel-ceron-perez",
+            "show_new_post": false
+          }
+        },
+        "creator_4jPpTJ": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/cami.png",
+            "creator__name": "Camila Noches",
+            "creator__link": "shopify://pages/camila-noches",
+            "show_new_post": false
           }
         },
         "creator_c4DbWV": {
@@ -101,109 +119,13 @@
             "show_new_post": true
           }
         },
-        "creator_HWPncm": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/roxy-fest-perfil.png",
-            "creator__name": "roxy fest",
-            "creator__link": "",
-            "show_new_post": true
-          }
-        },
-        "creator_KGrRJw": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/voltaje-perfil_870cedb2-4812-42e4-a22f-ea1f4178e219.png",
-            "creator__name": "VOLTAJE",
-            "creator__link": "shopify://pages/voltaje"
-          }
-        },
-        "creator_r3cNQW": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/1768426569478.jpg",
-            "creator__name": "Julián Blásquez",
-            "creator__link": "shopify://pages/julian-blasquez"
-          }
-        },
-        "creator_KYrqga": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/WhatsApp_Image_2026-01-13_at_2.29.51_PM.jpg",
-            "creator__name": "Katherin Garzón",
-            "creator__link": "shopify://pages/katherin-garzon"
-          }
-        },
-        "creator_Ct7WPf": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/InShot_20250512_191014071.jpg",
-            "creator__name": "Alejandro Ospina",
-            "creator__link": "shopify://pages/alejandro-ospina"
-          }
-        },
-        "creator_nj9CN7": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/felipe-quien.jpg",
-            "creator__name": "Felipe Quien",
-            "creator__link": "shopify://pages/felipe-quien"
-          }
-        },
-        "creator_4jPpTJ": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/cami.png",
-            "creator__name": "Camila Noches",
-            "creator__link": "shopify://pages/camila-noches"
-          }
-        },
         "creator_DKj7qd": {
           "type": "creator",
           "settings": {
             "creator__image": "shopify://shop_images/IMG_4805.jpg",
             "creator__name": "cristian dussán",
-            "creator__link": "shopify://pages/cristian-dussan"
-          }
-        },
-        "creator_CPctTL": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/angel-ceron-perez.jpg",
-            "creator__name": "Ángel Cerón",
-            "creator__link": "shopify://pages/angel-ceron-perez"
-          }
-        },
-        "creator_3LkcTa": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/perros-mmagneticos.webp",
-            "creator__name": "Perros Magnéticos",
-            "creator__link": "shopify://pages/perros-magneticos"
-          }
-        },
-        "creator_dUmedA": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/peregrino.jpg",
-            "creator__name": "Peregrino",
-            "creator__link": "shopify://pages/peregrino"
-          }
-        },
-        "creator_q3amT8": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/pechan-project.jpg",
-            "creator__name": "Pechan Project",
-            "creator__link": "shopify://pages/pechan-project"
-          }
-        },
-        "creator_6J3itA": {
-          "type": "creator",
-          "settings": {
-            "creator__image": "shopify://shop_images/Screenshot_2025-11-27_at_6.40.31_PM.png",
-            "creator__name": "Vaneza Rojas",
-            "creator__link": "shopify://pages/vaneza-rojas"
+            "creator__link": "shopify://pages/cristian-dussan",
+            "show_new_post": false
           }
         },
         "creator_J9FGzK": {
@@ -211,7 +133,44 @@
           "settings": {
             "creator__image": "shopify://shop_images/evie-clark.jpg",
             "creator__name": "Evie Clark",
-            "creator__link": "shopify://pages/evie-clark"
+            "creator__link": "shopify://pages/evie-clark",
+            "show_new_post": false
+          }
+        },
+        "creator_nj9CN7": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/felipe-quien.jpg",
+            "creator__name": "Felipe Quien",
+            "creator__link": "shopify://pages/felipe-quien",
+            "show_new_post": false
+          }
+        },
+        "creator_r3cNQW": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/1768426569478.jpg",
+            "creator__name": "Julián Blásquez",
+            "creator__link": "shopify://pages/julian-blasquez",
+            "show_new_post": false
+          }
+        },
+        "creator_KYrqga": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/WhatsApp_Image_2026-01-13_at_2.29.51_PM.jpg",
+            "creator__name": "Katherin Garzón",
+            "creator__link": "shopify://pages/katherin-garzon",
+            "show_new_post": false
+          }
+        },
+        "creator_8Jwz3g": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/lacra_eventos.png",
+            "creator__name": "LACRA",
+            "creator__link": "shopify://pages/lacra",
+            "show_new_post": true
           }
         },
         "creator_dzx3y3": {
@@ -219,7 +178,62 @@
           "settings": {
             "creator__image": "shopify://shop_images/maito_207.jpg",
             "creator__name": "Majo Benitez",
-            "creator__link": ""
+            "creator__link": "shopify://pages/majo-benitez",
+            "show_new_post": false
+          }
+        },
+        "creator_q3amT8": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/pechan-project.jpg",
+            "creator__name": "Pechan Project",
+            "creator__link": "shopify://pages/pechan-project",
+            "show_new_post": false
+          }
+        },
+        "creator_dUmedA": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/peregrino.jpg",
+            "creator__name": "Peregrino",
+            "creator__link": "shopify://pages/peregrino",
+            "show_new_post": false
+          }
+        },
+        "creator_3LkcTa": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/perros-mmagneticos.webp",
+            "creator__name": "Perros Magnéticos",
+            "creator__link": "shopify://pages/perros-magneticos",
+            "show_new_post": false
+          }
+        },
+        "creator_HWPncm": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/roxy-fest-perfil.png",
+            "creator__name": "roxy fest",
+            "creator__link": "shopify://pages/roxyfest",
+            "show_new_post": true
+          }
+        },
+        "creator_6J3itA": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/Screenshot_2025-11-27_at_6.40.31_PM.png",
+            "creator__name": "Vaneza Rojas",
+            "creator__link": "shopify://pages/vaneza-rojas",
+            "show_new_post": false
+          }
+        },
+        "creator_KGrRJw": {
+          "type": "creator",
+          "settings": {
+            "creator__image": "shopify://shop_images/voltaje-perfil_870cedb2-4812-42e4-a22f-ea1f4178e219.png",
+            "creator__name": "VOLTAJE",
+            "creator__link": "shopify://pages/voltaje",
+            "show_new_post": false
           }
         }
       },
@@ -244,7 +258,8 @@
       ],
       "settings": {
         "title": "",
-        "content": "<p>descubre y crea el arte del futurO</p>"
+        "content": "<p>descubre y crea el arte del futurO</p>",
+        "blog": ""
       }
     }
   },
