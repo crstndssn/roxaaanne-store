@@ -140,6 +140,7 @@
         },
         "movie_whgJHE": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/one_cut_of_the_dead.webp",
             "title": "One Cut Of The Dead",
@@ -302,6 +303,19 @@
             "synopsis": "Somos responsables de nuestros sueños. Esa es la máxima enseñanza del psicoanálisis y del cine de ficción. Los responsables de 'Manual de cine para pervertidos' regresan con esta otra entrega, centrada en la ideología. El filósofo Slavoj Zizek y la cineasta Sophie Fiennes utilizan su interpretación de distintas películas para presentar un variado viaje cinematográfico al corazón de la ideología: los sueños que dan forma a nuestras creencias y prácticas colectivas."
           }
         },
+        "movie_idfHUc": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/one_cut_of_the_dead.webp",
+            "title": "One Cut Of The Dead",
+            "director": "Shinichirou Ueda",
+            "year": "Noviembre 4, 2017",
+            "duration": "1h 36m",
+            "genre": "Horror, Action, Zombie comedy, Comedy, Zombie, Comedy horror, Short, Drama",
+            "country": "Japon",
+            "synopsis": "Las cosas van mal para un director y su equipo de filmación al grabar una película de zombis de bajo presupuesto en una instalación japonesa abandonada de la Segunda Guerra Mundial, cuando son atacados por zombis reales."
+          }
+        },
         "movie_iKiewn": {
           "type": "movie",
           "disabled": true,
@@ -413,6 +427,7 @@
         "movie_t7n4kQ",
         "movie_37xyix",
         "movie_wLNWV6",
+        "movie_idfHUc",
         "movie_iKiewn",
         "movie_83aanU",
         "movie_ffDxzL",
