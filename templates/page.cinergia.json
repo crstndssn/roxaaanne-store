@@ -98,6 +98,7 @@
       "blocks": {
         "movie_NMwcRV": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/whiplash.jpg",
             "title": "Whiplash",
@@ -226,6 +227,11 @@
       ],
       "settings": {}
     },
+    "cinergia_eventos_hWhafy": {
+      "type": "cinergia-eventos",
+      "name": "Cinergia Eventos",
+      "settings": {}
+    },
     "cinergia_referencias": {
       "type": "cinergia-referencias",
       "blocks": {
@@ -253,6 +259,19 @@
             "genre": "comedia dramática",
             "country": " Países Bajos (Holanda),",
             "synopsis": "trata sobre Jon, un aspirante a músico que se une a una excéntrica banda de pop vanguardista llamada The Soronprfbs, liderada por el enigmático y emocionalmente inestable Frank, quien siempre lleva una enorme cabeza de papel maché, explorando la fama, la creatividad y la amistad mientras la banda graba un disco y busca el"
+          }
+        },
+        "movie_t7n4kQ": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/whiplash.jpg",
+            "title": "Whiplash",
+            "director": "Damien Chazelle",
+            "year": "2014",
+            "duration": "1h 46min",
+            "genre": "Drama Musical",
+            "country": "Estadounidense",
+            "synopsis": "Un joven y prometedor bateria se inscribe en un competitivo conservatorio donde sus sueños de grandeza son guiados por un instructor que no se detiene ante nada para realizar el potencial de su estudiante"
           }
         },
         "movie_iKiewn": {
@@ -363,6 +382,7 @@
       "block_order": [
         "movie_pXtPUw",
         "movie_6eYW7Y",
+        "movie_t7n4kQ",
         "movie_iKiewn",
         "movie_83aanU",
         "movie_ffDxzL",
@@ -381,6 +401,7 @@
     "cinergia_proximamente",
     "cinergia_lonuestro",
     "cinergia_lecturas",
+    "cinergia_eventos_hWhafy",
     "cinergia_referencias"
   ]
 }
