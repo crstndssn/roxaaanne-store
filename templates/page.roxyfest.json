@@ -265,9 +265,18 @@
         "blog_historias": "articulos-de-cristian-dussan",
         "blog": "aqui-y-ahora"
       }
+    },
+    "aqui-y-ahora": {
+      "type": "aqui-y-ahora",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "title": "aquí y ahora"
+      }
     }
   },
   "order": [
-    "roxyfest"
+    "roxyfest",
+    "aqui-y-ahora"
   ]
 }

@@ -17,7 +17,7 @@
 {% endcomment %}
 
 {%- if article and article != empty -%}
-  <div class="border-2 border-[#c9c9c9] rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+  <div class="w-full border border-[#c9c9c9] rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
     <a href="{{ article.url }}" class="block">
       {%- if show_image == true and article.image -%}
         <div class="w-full h-[250px] overflow-hidden">
