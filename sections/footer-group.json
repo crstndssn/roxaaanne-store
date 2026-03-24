@@ -14,9 +14,42 @@
     "footer": {
       "type": "footer",
       "settings": {}
+    },
+    "aqui-y-ahora": {
+      "type": "aqui-y-ahora",
+      "settings": {
+        "title": "aquí y ahora"
+      },
+      "blocks": {
+        "articulo_TJa6P4": {
+          "type": "articulo",
+          "settings": {
+            "image": "shopify://shop_images/CAMILA_NOCHES_2.png",
+            "title": "",
+            "url": "shopify://blogs/roxy-fest/camila-noches",
+            "creator": "roxy fest",
+            "creator_url": "/blogs/roxy-fest/camila-noches"
+          }
+        },
+        "articulo_WFYbDY": {
+          "type": "articulo",
+          "settings": {
+            "image": "shopify://shop_images/PEREGRINO.png",
+            "title": "",
+            "url": "shopify://blogs/roxy-fest/peregrino",
+            "creator": "roxy fest",
+            "creator_url": "/blogs/roxy-fest/peregrino"
+          }
+        }
+      },
+      "block_order": [
+        "articulo_TJa6P4",
+        "articulo_WFYbDY"
+      ]
     }
   },
   "order": [
+    "aqui-y-ahora",
     "footer"
   ]
 }
