@@ -261,15 +261,33 @@
         "cantautorxs_title": "CANTAUTORXS",
         "produccion_title": "PRODUCCIÓN",
         "fotografxs_title": "FOTOGRAFXS",
-        "estrenos_title": "ESTRENOS",
-        "blog_historias": "articulos-de-cristian-dussan",
-        "blog": "aqui-y-ahora"
+        "estrenos_title": "ESTRENOS"
       }
     },
     "aqui-y-ahora": {
       "type": "aqui-y-ahora",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "articulo_TJa6P4": {
+          "type": "articulo",
+          "settings": {
+            "image": "shopify://shop_images/CAMILA_NOCHES_2.png",
+            "title": "",
+            "url": "shopify://blogs/roxy-fest/camila-noches"
+          }
+        },
+        "articulo_WFYbDY": {
+          "type": "articulo",
+          "settings": {
+            "image": "shopify://shop_images/PEREGRINO.png",
+            "title": "",
+            "url": "shopify://blogs/roxy-fest/peregrino"
+          }
+        }
+      },
+      "block_order": [
+        "articulo_TJa6P4",
+        "articulo_WFYbDY"
+      ],
       "settings": {
         "title": "aquí y ahora"
       }
