@@ -26,8 +26,7 @@
   <div class="container mx-auto">
     <h1 class="text-[#DED49E] text-bejuco text-[50px] text-center pt-12 mb-4">{{ section.settings.title }}</h1>
     <p class="hidden">{{ section.settings.description }}</p>
-    <div>
-
+    <div class="flex overflow-x-auto">
       {% for block in section.blocks %}
         {% if block.settings.image %}
           <img
@@ -36,7 +35,6 @@
             class="w-full h-auto object-cover">
         {% endif %}
       {% endfor %}
-
     </div>
   </div>
 </div>
