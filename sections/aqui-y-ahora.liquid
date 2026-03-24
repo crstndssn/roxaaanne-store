@@ -28,7 +28,7 @@
               <div class="flex items-center justify-between flex-nowrap bg-black/60 rounded-b-lg py-2 gap-4">
                 <div class="flex gap-1 text-lg text-white/80 whitespace-nowrap">
                   {% if block.settings.creator_url != blank %}
-                    creado por <a href="{{ block.settings.creator_url }}" class="font-bold underline text-white" target="_blank">{{ block.settings.creator }}</a>
+                    creado por <a href="{{ block.settings.creator_url }}" class="font-bold underline text-white">{{ block.settings.creator }}</a>
                   {% else %}
                     creado por <span class="font-bold text-white">{{ block.settings.creator }}</span>
                   {% endif %}
