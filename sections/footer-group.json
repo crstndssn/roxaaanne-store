@@ -29,7 +29,7 @@
           "settings": {
             "image": "shopify://shop_images/bejuco_banner_1.png",
             "title": "",
-            "url": "",
+            "url": "shopify://pages/bejuco",
             "creator": "LACRA",
             "creator_url": "shopify://pages/bejuco"
           }
