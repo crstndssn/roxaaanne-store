@@ -16,78 +16,22 @@
     "aspectos-tecnicos": {
       "type": "pelicula-bejuco-aspectos-tecnicos",
       "blocks": {
-        "slide_cy9wyC": {
+        "slide_Ck848h": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-1.jpg"
+            "image": "shopify://shop_images/bejuco-tecnica-1.jpg"
           }
         },
-        "slide_E6J3wX": {
+        "slide_yJbmhf": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-2.jpg"
-          }
-        },
-        "slide_bGhHXk": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-3.jpg"
-          }
-        },
-        "slide_F3JqiP": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-4.jpg"
-          }
-        },
-        "slide_qdReEb": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-5.jpg"
-          }
-        },
-        "slide_zftzi8": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-6.jpg"
-          }
-        },
-        "slide_w8H6y6": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-7.jpg"
-          }
-        },
-        "slide_6zU3MW": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-9.jpg"
-          }
-        },
-        "slide_8C8f8x": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-11.jpg"
-          }
-        },
-        "slide_AxJfic": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-12.jpg"
+            "image": "shopify://shop_images/bejuco-tecnica-2.jpg"
           }
         }
       },
       "block_order": [
-        "slide_cy9wyC",
-        "slide_E6J3wX",
-        "slide_bGhHXk",
-        "slide_F3JqiP",
-        "slide_qdReEb",
-        "slide_zftzi8",
-        "slide_w8H6y6",
-        "slide_6zU3MW",
-        "slide_8C8f8x",
-        "slide_AxJfic"
+        "slide_Ck848h",
+        "slide_yJbmhf"
       ],
       "settings": {
         "title": "Aspectos Técnicos",
@@ -97,29 +41,15 @@
     "personajes": {
       "type": "pelicula-bejuco-personajes",
       "blocks": {
-        "slide_DFATap": {
+        "slide_NCrCEB": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-4.jpg"
-          }
-        },
-        "slide_iXefKH": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-6.jpg"
-          }
-        },
-        "slide_V36PWh": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/aspectos-tecnicos-7.jpg"
+            "image": "shopify://shop_images/bejuco-personajes-1.jpg"
           }
         }
       },
       "block_order": [
-        "slide_DFATap",
-        "slide_iXefKH",
-        "slide_V36PWh"
+        "slide_NCrCEB"
       ],
       "settings": {
         "title": "Personajes",
@@ -128,6 +58,17 @@
     },
     "parchando": {
       "type": "pelicula-bejuco-parchando",
+      "blocks": {
+        "slide_ihCY69": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/bejuco-parchadas-1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_ihCY69"
+      ],
       "settings": {
         "title": "Parchando",
         "description": "Agrega aquí una breve descripción la parchacion."
@@ -135,8 +76,19 @@
     },
     "equipo": {
       "type": "pelicula-bejuco-equipo",
+      "blocks": {
+        "slide_PdRgCV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/bejuco-reparto-1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PdRgCV"
+      ],
       "settings": {
-        "title": "Equipo",
+        "title": "Reparto",
         "description": "Agrega aquí una breve descripción la parchacion."
       }
     }
