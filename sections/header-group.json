@@ -26,10 +26,9 @@
         },
         "announcement_JP9Qz9": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "title": "voltaje",
-            "date": "PRONTO ⚡",
+            "date": "16 ABRIL ⚡",
             "url": "shopify://pages/voltaje",
             "custom_classes": "",
             "custom_css": "background: #2EFF05;\ncolor: #000000;\nborder: 2px #000 solid;"
