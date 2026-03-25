@@ -155,21 +155,9 @@
             "muted": true
           }
         },
-        "evento_ABtegg": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/roxy-fest-perfil.png",
-            "artist": "roxaaanne",
-            "day": "SÁBADO 14",
-            "month_full": "Marzo",
-            "title": "ROXY FEST: Publicación primer video Pechan Project",
-            "location": "Neiva, Huila • Cara Mala",
-            "url": "shopify://pages/roxyfest",
-            "muted": true
-          }
-        },
         "evento_NqTBkA": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -196,6 +184,7 @@
         },
         "evento_cKmhqN": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -220,8 +209,22 @@
             "muted": false
           }
         },
+        "evento_ABtegg": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 27",
+            "month_full": "Marzo",
+            "title": "ROXY FEST: Pechan Project - Humano Chamán",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "shopify://pages/roxyfest",
+            "muted": false
+          }
+        },
         "evento_QKPWmg": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -258,11 +261,11 @@
         "evento_TbwLcA",
         "evento_XTzcTk",
         "evento_9RjPf4",
-        "evento_ABtegg",
         "evento_NqTBkA",
         "evento_8CxV4H",
         "evento_cKmhqN",
         "evento_bWHxAM",
+        "evento_ABtegg",
         "evento_QKPWmg",
         "evento_2025_link"
       ],
