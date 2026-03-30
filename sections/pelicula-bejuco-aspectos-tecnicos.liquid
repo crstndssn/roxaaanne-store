@@ -2,7 +2,20 @@
 <style>
   .swiper {
     width: 100%;
-    height: 100%;
+    height: 360px;
+    /* altura por defecto (móvil) */
+  }
+
+  @media (min-width: 768px) {
+    .swiper {
+      height: 480px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .swiper {
+      height: 600px;
+    }
   }
 
   .swiper-slide {
@@ -20,45 +33,78 @@
     height: 100%;
     object-fit: cover;
   }
+
+  /* Pagination bullets styling */
+  .swiper-pagination {
+    bottom: 12px;
+    text-align: center;
+    z-index: 20;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #DED49E;
+    opacity: 0.6;
+    border-radius: 50%;
+    margin: 0 6px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.15);
+    background: #DED49E;
+  }
 </style>
 
 <div class="bg-[#000]">
-  <div class="container mx-auto">
+  <div class="md:container md:mx-auto">
     <h1 class="text-[#DED49E] text-bejuco text-[50px] text-center pt-12 mb-4">{{ section.settings.title }}</h1>
     <p class="hidden">{{ section.settings.description }}</p>
-    <div class="flex overflow-x-auto">
-      {% for block in section.blocks %}
-        {% if block.settings.image %}
-          <img
-            src="{{ block.settings.image | image_url: width: 800 }}"
-            alt="Slide"
-            class="w-full h-auto object-cover">
-        {% endif %}
-      {% endfor %}
+    <div class="swiper mySwiperAspectosTecnicos">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% if block.settings.image %}
+            <div class="swiper-slide">
+              <img
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                alt="Slide"
+                class="w-full h-full object-cover">
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </div>
 
 
-<!-- Initialize Swiper -->
+<!-- Initialize Swiper (scoped to this section) -->
 <script>
-  var swiper = new Swiper(".mySwiperAspectosTecnicos", {
-  slidesPerView: 1.2,
-  spaceBetween: 16,
-  freeMode: true,
-  pagination: {
-    el: ".swiper-pagination",
-    dynamicBullets: true,
-  },
-  breakpoints: {
-    768: {
-      slidesPerView: 2.2
-    },
-    1024: {
-      slidesPerView: 3.5
-    }
-  }
-  });
+  (function(){
+    var script = document.currentScript;
+    var root = script && script.previousElementSibling;
+    while (root && root.nodeType !== 1) root = root.previousElementSibling;
+    var swiperEl = root && root.classList && root.classList.contains('swiper') ? root : (root && root.querySelector ? root.querySelector('.mySwiperAspectosTecnicos') : null);
+    if (!swiperEl) return;
+
+    new Swiper(swiperEl, {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+      freeMode: true,
+      grabCursor: true,
+      pagination: {
+        el: swiperEl.querySelector('.swiper-pagination'),
+        dynamicBullets: true,
+        clickable: true
+      },
+      breakpoints: {
+        768: { slidesPerView: 2.2 },
+        1024: { slidesPerView: 3.5 }
+      }
+    });
+  })();
 </script>
 
 {% schema %}
