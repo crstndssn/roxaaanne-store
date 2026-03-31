@@ -15,7 +15,7 @@
         "image_link_block_zQBmYK": {
           "type": "image_link_block",
           "settings": {
-            "image": "shopify://shop_images/bejuco.png",
+            "image": "shopify://shop_images/bejuco-fondo_negro.png",
             "link": "shopify://pages/bejuco",
             "name": ""
           }
