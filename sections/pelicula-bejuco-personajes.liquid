@@ -16,6 +16,14 @@
     .swiper {
       height: 600px;
     }
+    .mySwiperPersonajes .swiper-slide {
+      width: auto !important;
+    }
+    .mySwiperPersonajes .swiper-slide img {
+      width: auto;
+      height: 100%;
+      object-fit: unset;
+    }
   }
 
   .swiper-slide {
@@ -60,18 +68,54 @@
   <div class="container mx-auto">
     <h1 class="text-[#DED49E] text-bejuco text-[50px] text-center pt-12 mb-4">{{ section.settings.title }}</h1>
     <p class="hidden">{{ section.settings.description }}</p>
-    <div class="swiper mySwiperAspectosTecnicos">
+    <div class="swiper mySwiperPersonajes">
       <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          {% if block.settings.image %}
-            <div class="swiper-slide">
-              <img
-                src="{{ block.settings.image | image_url: width: 800 }}"
-                alt="Slide"
-                class="w-full h-full object-cover">
-            </div>
-          {% endif %}
-        {% endfor %}
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-1.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-2.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-3.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-4.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-5.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-6.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-7.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-8.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-9.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-10.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-11.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-12.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-13.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-14.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-15.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-16.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-17.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-18.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-19.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-20.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-21.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-22.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-23.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-24.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-25.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-26.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-27.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-28.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-29.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-30.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-31.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-32.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-33.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-34.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-35.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-36.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-37.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-38.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-39.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-40.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-41.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-42.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-43.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-44.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-45.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-personajes-46.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -84,7 +128,7 @@
     var script = document.currentScript;
     var root = script && script.previousElementSibling;
     while (root && root.nodeType !== 1) root = root.previousElementSibling;
-    var swiperEl = root && root.classList && root.classList.contains('swiper') ? root : (root && root.querySelector ? root.querySelector('.mySwiperAspectosTecnicos') : null);
+    var swiperEl = root && root.classList && root.classList.contains('swiper') ? root : (root && root.querySelector ? root.querySelector('.mySwiperPersonajes') : null);
     if (!swiperEl) return;
 
     new Swiper(swiperEl, {
@@ -99,7 +143,7 @@
       },
       breakpoints: {
         768: { slidesPerView: 2.2 },
-        1024: { slidesPerView: 3.5 }
+        1024: { slidesPerView: 'auto' }
       }
     });
   })();
@@ -120,20 +164,6 @@
         "label": "Descripción",
         "default": "Agrega aquí una breve descripción de los personajes"
       }
-    ],
-    "blocks": [
-      {
-        "type": "slide",
-        "name": "Slide de imagen",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Imagen del slide"
-          }
-        ]
-      }
-    ],
-    "max_blocks": 20
+    ]
   }
 {% endschema %}

@@ -16,6 +16,14 @@
     .swiper {
       height: 600px;
     }
+    .mySwiperAspectosTecnicos .swiper-slide {
+      width: auto !important;
+    }
+    .mySwiperAspectosTecnicos .swiper-slide img {
+      width: auto;
+      height: 100%;
+      object-fit: unset;
+    }
   }
 
   .swiper-slide {
@@ -63,16 +71,28 @@
     <p class="hidden">{{ section.settings.description }}</p>
     <div class="swiper mySwiperAspectosTecnicos">
       <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          {% if block.settings.image %}
-            <div class="swiper-slide">
-              <img
-                src="{{ block.settings.image | image_url: width: 800 }}"
-                alt="Slide"
-                class="w-full h-full object-cover">
-            </div>
-          {% endif %}
-        {% endfor %}
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-1.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-2.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-3.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-4.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-5.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-6.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-7.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-8.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-9.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-10.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-11.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-12.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-13.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-14.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-15.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-16.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-17.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-18.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-19.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-20.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-21.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-tecnica-22.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -101,7 +121,7 @@
       },
       breakpoints: {
         768: { slidesPerView: 2.2 },
-        1024: { slidesPerView: 3.5 }
+        1024: { slidesPerView: 'auto' }
       }
     });
   })();
@@ -122,108 +142,6 @@
         "label": "Descripción",
         "default": "Agrega aquí una breve descripción de los aspectos técnicos."
       }
-    ],
-    "blocks": [
-      {
-        "type": "slide",
-        "name": "Slide de imagen",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Imagen del slide"
-          }
-        ]
-      }
-    ],
-    "max_blocks": 20
+    ]
   }
 {% endschema %}
-
-
-<script>
-
-
-
-  (function () {
-
-  const init = () => {
-    const title = document.querySelector('[data-testid="download-brochure-page_download-brochure-title"]');
-    if (!title || document.querySelector('.custom-brochure-banner')) return;
-
-    title.textContent = "Begin your journey with the programme brochure";
-
-    const firstParagraph = document.querySelector('#Programme-calendar p');
-    if (firstParagraph) {
-      firstParagraph.textContent = "Thank you for your interest in our programme.";
-    }
-
-    const banner = document.createElement("section");
-    banner.className = "custom-brochure-banner";
-
-    banner.innerHTML = `
-      <div class="custom-brochure-inner">
-        <h3 class="custom-brochure-title">In the brochure you'll find:</h3>
-        <ul class="custom-brochure-list">
-          <li>More information about the programme content and structure.</li>
-          <li>Details on who attends this programme.</li>
-          <li>How the programme will benefit you.</li>
-        </ul>
-      </div>
-    `;
-
-    title.parentNode.insertBefore(banner, title.nextSibling);
-
-    if (!document.querySelector('#custom-brochure-styles')) {
-      const style = document.createElement("style");
-      style.id = "custom-brochure-styles";
-      style.innerHTML = `
-        .custom-brochure-banner {
-          background-color: #0B2A6F;
-          color: white;
-          width: 100%;
-          margin: 40px 0;
-        }
-
-        .custom-brochure-inner {
-          padding: 20px;
-          max-width: 1100px;
-        }
-
-        .custom-brochure-title {
-          font-family: 'Montserrat', sans-serif;
-          font-weight: 700;
-          font-size: 18px;
-          margin-bottom: 5px;
-        }
-
-        #Programme-calendar p {
-          font-size: 18px;
-        }
-
-        .custom-brochure-list {
-          list-style: disc;
-          padding-left: 24px;
-          margin: 0;
-        }
-
-        .custom-brochure-list li {
-          font-size: 16px;
-          line-height: 18px;
-          margin-bottom: 5px;
-        }
-      `;
-      document.head.appendChild(style);
-    }
-
-    observer.disconnect();
-  };
-
-  const observer = new MutationObserver(init);
-  observer.observe(document.body, { childList: true, subtree: true });
-
-  init();
-
-  })();
-
-</script>

@@ -1,0 +1,94 @@
+<section class="bg-[#000] px-8 md:px-0 py-16">
+  <div class="container mx-auto">
+    {% if section.settings.title != blank %}
+      <h2 class="text-[#DED49E] text-bejuco text-[50px] text-center pt-12 mb-4">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    <div class="flex md:grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-x-visible pb-4 scrollbar-hide">
+      {% for block in section.blocks %}
+        {% if block.type == 'producto' %}
+          {% assign product = all_products[block.settings.product] %}
+          <div {{ block.shopify_attributes }} class="flex-shrink-0 w-[95vw] md:w-auto relative rounded-xl overflow-hidden border border-white/10 shadow-lg">
+            {% if product != blank %}
+              <a href="{{ product.url }}" class="block">
+            {% else %}
+              <div>
+            {% endif %}
+
+              {% if product.featured_image != blank %}
+                <div class="w-full aspect-auto overflow-hidden">
+                  <img
+                    src="{{ product.featured_image | image_url: width: 640 }}"
+                    alt="{{ product.title | escape }}"
+                    class="w-full h-full object-contain"
+                    loading="lazy">
+                </div>
+              {% endif %}
+
+              <div class="mt-3 px-3 pb-3">
+                <div class="flex items-center justify-between flex-nowrap bg-black/60 rounded-b-lg py-2 gap-4">
+                  <div class="text-white text-base font-semibold truncate flex-1">
+                    {% if product.title != blank %}{{ product.title }}{% endif %}
+                  </div>
+                  <div class="text-[#DED49E] font-bold whitespace-nowrap">
+                    {{ product.price | money }}
+                  </div>
+                </div>
+              </div>
+
+            {% if product != blank %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bejuco Merca",
+  "tag": "section",
+  "class": "section pelicula-bejuco-merca",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Merca"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "producto",
+      "name": "Producto",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Producto"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bejuco Merca",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

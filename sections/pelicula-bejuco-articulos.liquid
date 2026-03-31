@@ -1,0 +1,110 @@
+<section class="bg-[#000] px-8 md:px-0 py-16">
+  <div class="container mx-auto">
+    {% if section.settings.title != blank %}
+      <h2 class="text-[#DED49E] text-bejuco text-[50px] text-center pt-12 mb-4">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    <div class="flex md:grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-x-visible pb-4 scrollbar-hide">
+      {% for block in section.blocks %}
+        {% if block.type == 'articulo' %}
+          <div {{ block.shopify_attributes }} class="flex-shrink-0 w-[95vw] md:w-auto relative rounded-xl overflow-hidden border border-white/10 shadow-lg">
+            {% assign article = articles[block.settings.article] %}
+            {% if article != blank %}
+              <a href="{{ article.url }}" class="block">
+            {% else %}
+              <div>
+            {% endif %}
+
+              {% assign article = articles[block.settings.article] %}
+              {% if article.image != blank %}
+                <div class="w-full aspect-auto overflow-hidden">
+                  <img
+                    src="{{ article.image | image_url: width: 640 }}"
+                    alt="{{ article.title | escape }}"
+                    class="w-full h-full object-contain"
+                    loading="lazy">
+                </div>
+              {% endif %}
+
+              <div class="mt-3 px-3 pb-3">
+                <div class="flex items-center justify-between flex-nowrap bg-black/60 rounded-b-lg py-2 gap-4">
+                  <div class="flex gap-1 text-lg text-white/80 whitespace-nowrap">
+                    {% if block.settings.creator_url != blank %}
+                      creado por <a href="{{ block.settings.creator_url }}" class="font-bold underline text-white">{{ block.settings.creator }}</a>
+                    {% else %}
+                      creado por <span class="font-bold text-white">{{ block.settings.creator }}</span>
+                    {% endif %}
+                  </div>
+                  <div class="text-white text-base font-semibold truncate text-left flex-1">
+                    {% if article.title != blank %}{{ article.title }}{% endif %}
+                  </div>
+                </div>
+              </div>
+
+            {% if article != blank %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bejuco Artículos",
+  "tag": "section",
+  "class": "section pelicula-bejuco-articulos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Artículos"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "articulo",
+      "name": "Artículo",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Artículo"
+        },
+        {
+          "type": "text",
+          "id": "creator",
+          "label": "Creador (nombre del perfil)",
+          "default": "roxy fest"
+        },
+        {
+          "type": "url",
+          "id": "creator_url",
+          "label": "URL del perfil del creador"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bejuco Artículos",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -15,6 +15,14 @@
     .swiper {
       height: 600px;
     }
+    .mySwiperEquipo .swiper-slide {
+      width: auto !important;
+    }
+    .mySwiperEquipo .swiper-slide img {
+      width: auto;
+      height: 100%;
+      object-fit: unset;
+    }
   }
 
   .swiper-slide {
@@ -60,18 +68,83 @@
   <div class="container mx-auto">
     <h1 class="text-[#DED49E] text-bejuco text-[50px] text-center pt-12 mb-4">{{ section.settings.title }}</h1>
     <p class="hidden">{{ section.settings.description }}</p>
-    <div class="swiper mySwiperAspectosTecnicos">
+    <div class="swiper mySwiperEquipo">
       <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          {% if block.settings.image %}
-            <div class="swiper-slide">
-              <img
-                src="{{ block.settings.image | image_url: width: 800 }}"
-                alt="Slide"
-                class="w-full h-full object-cover">
-            </div>
-          {% endif %}
-        {% endfor %}
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-1.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-2.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-3.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-4.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-5.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-6.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-7.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-8.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-9.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-10.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-11.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-12.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-13.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-14.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-15.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-16.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-17.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-18.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-19.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-20.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-21.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-22.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-23.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-24.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-25.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-26.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-27.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-28.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-29.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-30.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-arte-31.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-dirección-1.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-dirección-2.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-dirección-3.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-dirección-4.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-dirección-5.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-dirección-6.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-dirección-7.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-dirección-8.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-dirección-9.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-dirección-10.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-1.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-2.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-3.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-4.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-5.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-6.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-7.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-8.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-9.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-10.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-11.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-12.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-13.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-14.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-15.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-16.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-17.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-18.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-19.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-20.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-foto-21.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-producción-1.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-producción-2.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-reparto-1.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-reparto-2.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-reparto-3.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-reparto-4.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-reparto-5.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-reparto-6.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-reparto-7.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-reparto-8.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-sonido-1.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-sonido-2.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="swiper-slide"><img src="{{ 'bejuco-sonido-3.jpg' | file_url }}" alt="Slide" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -85,7 +158,7 @@
     var script = document.currentScript;
     var root = script && script.previousElementSibling;
     while (root && root.nodeType !== 1) root = root.previousElementSibling;
-    var swiperEl = root && root.classList && root.classList.contains('swiper') ? root : (root && root.querySelector ? root.querySelector('.mySwiperAspectosTecnicos') : null);
+    var swiperEl = root && root.classList && root.classList.contains('swiper') ? root : (root && root.querySelector ? root.querySelector('.mySwiperEquipo') : null);
     if (!swiperEl) return;
 
     new Swiper(swiperEl, {
@@ -100,7 +173,7 @@
       },
       breakpoints: {
         768: { slidesPerView: 2.2 },
-        1024: { slidesPerView: 3.5 }
+        1024: { slidesPerView: 'auto' }
       }
     });
   })();
@@ -119,22 +192,8 @@
         "type": "textarea",
         "id": "description",
         "label": "Descripción",
-        "default": "Agrega aquí una breve descripción de los personajes"
+        "default": "Agrega aquí una breve descripción la parchacion."
       }
-    ],
-    "blocks": [
-      {
-        "type": "slide",
-        "name": "Slide de imagen",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Imagen del slide"
-          }
-        ]
-      }
-    ],
-    "max_blocks": 20
+    ]
   }
 {% endschema %}
