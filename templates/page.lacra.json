@@ -16,6 +16,12 @@
     "audiovisual": {
       "type": "lacra-audiovisual",
       "blocks": {
+        "article_card_jgfeUt": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-felipe-quien/bejuco-carta-del-director"
+          }
+        },
         "article_card_yBQnPd": {
           "type": "article_card",
           "settings": {
@@ -48,6 +54,7 @@
         }
       },
       "block_order": [
+        "article_card_jgfeUt",
         "article_card_yBQnPd",
         "article_card_gWFipb",
         "article_card_AHD8bP",
