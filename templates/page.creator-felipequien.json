@@ -14,6 +14,7 @@
       "blocks": {
         "section_PVtYQc": {
           "type": "section",
+          "disabled": true,
           "settings": {
             "title": "sonido",
             "link": "shopify://blogs/sonidos-de-felipe-quien"
