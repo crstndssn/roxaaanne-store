@@ -164,7 +164,7 @@
           "settings": {
             "image": "shopify://shop_images/1768426569478.jpg",
             "name": "Julian Blasquez",
-            "url": "",
+            "url": "shopify://pages/julian-blasquez",
             "button_label": "ver perfil"
           }
         },
@@ -173,7 +173,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2025-11-27_at_6.40.31_PM.png",
             "name": "Vaneza Rojas",
-            "url": "",
+            "url": "shopify://pages/vaneza-rojas",
             "button_label": "ver perfil"
           }
         },
@@ -182,7 +182,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2025-11-27_at_6.45.10_PM.png",
             "name": "Katherine Garzón",
-            "url": "",
+            "url": "shopify://pages/katherin-garzon",
             "button_label": "ver perfil"
           }
         },
