@@ -12,6 +12,13 @@
     "creator": {
       "type": "creator",
       "blocks": {
+        "section_PVtYQc": {
+          "type": "section",
+          "settings": {
+            "title": "sonido",
+            "link": ""
+          }
+        },
         "section_LV7BQB": {
           "type": "section",
           "settings": {
@@ -35,6 +42,7 @@
         }
       },
       "block_order": [
+        "section_PVtYQc",
         "section_LV7BQB",
         "section_HTMaXh",
         "section_9zyA49"
