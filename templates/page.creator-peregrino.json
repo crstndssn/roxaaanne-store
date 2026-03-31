@@ -12,6 +12,22 @@
     "creator": {
       "type": "creator",
       "blocks": {
+        "section_DcmQBa": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "title": "música",
+            "link": ""
+          }
+        },
+        "section_n7yhN8": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "title": "video",
+            "link": ""
+          }
+        },
         "section_TyVK98": {
           "type": "section",
           "settings": {
@@ -21,6 +37,8 @@
         }
       },
       "block_order": [
+        "section_DcmQBa",
+        "section_n7yhN8",
         "section_TyVK98"
       ],
       "settings": {
