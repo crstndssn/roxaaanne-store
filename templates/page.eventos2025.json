@@ -34,7 +34,7 @@
             "month_full": "Junio",
             "title": "Cinergia: Malcom X",
             "location": "Neiva, Huila • El Patio",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -47,7 +47,7 @@
             "month_full": "Junio",
             "title": "ROXYFEST",
             "location": "Neiva, Huila • Cara Mala",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -60,7 +60,7 @@
             "month_full": "Julio",
             "title": "Cinergia: El Jokey",
             "location": "Neiva, Huila • El Patio",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -73,7 +73,7 @@
             "month_full": "Julio",
             "title": "Cinergia: Tony Manero",
             "location": "Neiva, Huila • El Patio",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -86,7 +86,7 @@
             "month_full": "Agosto",
             "title": "Cinergia: The Spine Of the night",
             "location": "Neiva, Huila • El Patio",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -99,7 +99,7 @@
             "month_full": "Septiembre",
             "title": "Cinergia: alter_ocio (exposición)",
             "location": "Quito, ecuador",
-            "url": "",
+            "url": "shopify://pages/cristian-dussan",
             "muted": true
           }
         },
@@ -112,7 +112,7 @@
             "month_full": "Septiembre",
             "title": "Cinergia: Canino",
             "location": "Neiva, Huila • El Patio",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -125,7 +125,7 @@
             "month_full": "Octubre",
             "title": "Tapazo - Trailer Bejuco",
             "location": "Neiva, Huila • Cara Mala",
-            "url": "",
+            "url": "shopify://pages/bejuco",
             "muted": true
           }
         },
@@ -138,7 +138,7 @@
             "month_full": "Octubre",
             "title": "Cinergia: Live Set Acid House",
             "location": "Neiva, Huila • Cara Mala",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -151,7 +151,7 @@
             "month_full": "Octubre",
             "title": "Live Set Acid House",
             "location": "Neiva, Huila • Festival BMX Trails Jam 3.0",
-            "url": "",
+            "url": "shopify://pages/felipe-quien",
             "muted": true
           }
         },
@@ -164,7 +164,7 @@
             "month_full": "Octubre",
             "title": "Cinergia: VIY",
             "location": "Neiva, Huila • El Patio",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -177,7 +177,7 @@
             "month_full": "Octubre",
             "title": "Cinergia: Veneno Para Las Hadas",
             "location": "Neiva, Huila • El Patio",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -190,7 +190,7 @@
             "month_full": "Octubre",
             "title": "Plum Blum Felipe Quien Live Set",
             "location": "Neiva, Huila • Cara Mala",
-            "url": "",
+            "url": "shopify://pages/felipe-quien",
             "muted": true
           }
         },
@@ -203,7 +203,7 @@
             "month_full": "Noviembre",
             "title": "Cinergia: Embriagado De Amor",
             "location": "Neiva, Huila • El Patio",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -216,7 +216,7 @@
             "month_full": "Noviembre",
             "title": "Cinergia: Frank",
             "location": "Neiva, Huila • El Patio",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
@@ -229,7 +229,7 @@
             "month_full": "Noviembre",
             "title": "VOLTAJE",
             "location": "Neiva, Huila • Cara Mala",
-            "url": "",
+            "url": "shopify://pages/voltaje",
             "muted": true
           }
         },
@@ -242,7 +242,7 @@
             "month_full": "Noviembre",
             "title": "GAITANA FEST",
             "location": "Neiva, Huila • Centro de Convenciones",
-            "url": "",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         }
