@@ -204,7 +204,7 @@
         "image_link_KkbJaw": {
           "type": "image_link",
           "settings": {
-            "image": "shopify://shop_images/bejuco.png",
+            "image": "shopify://shop_images/bejuco_banner_1.png",
             "link": "shopify://pages/bejuco",
             "name": ""
           }
