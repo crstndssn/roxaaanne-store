@@ -119,7 +119,7 @@
         "evento_mJYCyc": {
           "type": "evento",
           "settings": {
-            "image": "shopify://shop_images/bejuco-fondo_negro.png",
+            "image": "shopify://shop_images/bejuco_banner_1.png",
             "artist": "LACRA",
             "day": "VIERNES 3",
             "month_full": "Octubre",
@@ -145,6 +145,7 @@
         "evento_8qbTHA": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/felipe-quien.jpg",
             "artist": "Felipe Quien",
             "day": "SÁBADO 11",
             "month_full": "Octubre",
@@ -183,6 +184,7 @@
         "evento_G8dnzf": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/felipe-quien.jpg",
             "artist": "roxaaanne/Cara Mala",
             "day": "VIERNES 31",
             "month_full": "Octubre",
@@ -221,6 +223,7 @@
         "evento_8Wa7HR": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/felipe-quien.jpg",
             "artist": "Felipe Quien",
             "day": "SÁBADO 29",
             "month_full": "Noviembre",
