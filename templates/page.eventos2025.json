@@ -28,8 +28,9 @@
         "evento_Qbhiki": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "18",
+            "day": "Miércoles 18",
             "month_full": "Junio",
             "title": "Cinergia: Malcom X",
             "location": "Neiva, Huila • El Patio",
