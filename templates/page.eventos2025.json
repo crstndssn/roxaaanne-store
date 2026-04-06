@@ -41,10 +41,11 @@
         "evento_iTxyBL": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "LACRA",
-            "day": "21",
+            "day": "Sábado 21",
             "month_full": "Junio",
-            "title": "roxy fest",
+            "title": "Roxy Fest",
             "location": "Neiva, Huila • Cara Mala",
             "url": "",
             "muted": false
