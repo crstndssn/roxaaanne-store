@@ -195,49 +195,52 @@
         "evento_KFUAM4": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "12",
+            "day": "MIÉRCOLES 12",
             "month_full": "Noviembre",
             "title": "Cinergia: Embriagado De Amor",
             "location": "Neiva, Huila • El Patio",
             "url": "",
-            "muted": false
+            "muted": true
+          }
+        },
+        "evento_UCx7Bj": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "MIÉRCOLES 26",
+            "month_full": "Noviembre",
+            "title": "Cinergia: Frank",
+            "location": "Neiva, Huila • El Patio",
+            "url": "",
+            "muted": true
           }
         },
         "evento_8Wa7HR": {
           "type": "evento",
           "settings": {
             "artist": "Felipe Quien",
-            "day": "29",
+            "day": "SÁBADO 29",
             "month_full": "Noviembre",
             "title": "VOLTAJE",
             "location": "Neiva, Huila • Cara Mala",
             "url": "",
-            "muted": false
-          }
-        },
-        "evento_UCx7Bj": {
-          "type": "evento",
-          "settings": {
-            "artist": "LACRA",
-            "day": "26",
-            "month_full": "Noviembre",
-            "title": "Cinergia: Frank",
-            "location": "Neiva, Huila • El Patio",
-            "url": "",
-            "muted": false
+            "muted": true
           }
         },
         "evento_cCmcL9": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
             "artist": "LACRA",
-            "day": "30",
+            "day": "DOMINGO 30",
             "month_full": "Noviembre",
             "title": "GAITANA FEST",
             "location": "Neiva, Huila • Centro de Convenciones",
             "url": "",
-            "muted": false
+            "muted": true
           }
         }
       },
@@ -257,8 +260,8 @@
         "evento_jQqAhz",
         "evento_G8dnzf",
         "evento_KFUAM4",
-        "evento_8Wa7HR",
         "evento_UCx7Bj",
+        "evento_8Wa7HR",
         "evento_cCmcL9"
       ],
       "settings": {
