@@ -15,11 +15,13 @@
         "evento_mdUGLf": {
           "type": "evento",
           "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "11",
+            "day": "Miércoles 11",
             "month_full": "Junio",
             "title": "Cinergia: Perfect Day",
             "location": "Neiva, Huila • El Patio",
+            "url": "",
             "muted": false
           }
         },
@@ -31,6 +33,7 @@
             "month_full": "Junio",
             "title": "Cinergia: Malcom X",
             "location": "Neiva, Huila • El Patio",
+            "url": "",
             "muted": false
           }
         },
@@ -42,6 +45,7 @@
             "month_full": "Junio",
             "title": "roxy fest",
             "location": "Neiva, Huila • Cara Mala",
+            "url": "",
             "muted": false
           }
         },
@@ -53,6 +57,7 @@
             "month_full": "Junio",
             "title": "ROXYFEST",
             "location": "Neiva, Huila • Cara Mala",
+            "url": "",
             "muted": false
           }
         },
@@ -64,6 +69,7 @@
             "month_full": "Julio",
             "title": "Cinergia: El Jokey",
             "location": "Neiva, Huila • El Patio",
+            "url": "",
             "muted": false
           }
         },
@@ -75,6 +81,7 @@
             "month_full": "Julio",
             "title": "Cinergia: Tony Manero",
             "location": "Neiva, Huila • El Patio",
+            "url": "",
             "muted": false
           }
         },
@@ -86,6 +93,7 @@
             "month_full": "Agosto",
             "title": "Cinergia: The Spine Of the night",
             "location": "Neiva, Huila • El Patio",
+            "url": "",
             "muted": false
           }
         },
@@ -97,6 +105,7 @@
             "month_full": "Septiembre",
             "title": "Cinergia: alter_ocio (exposición)",
             "location": "Quito, ecuador",
+            "url": "",
             "muted": false
           }
         },
@@ -108,6 +117,7 @@
             "month_full": "Septiembre",
             "title": "Cinergia: Canino",
             "location": "Neiva, Huila • El Patio",
+            "url": "",
             "muted": false
           }
         },
@@ -119,6 +129,7 @@
             "month_full": "Octubre",
             "title": "Tapazo - Trailer Bejuco",
             "location": "Neiva, Huila • Cara Mala",
+            "url": "",
             "muted": false
           }
         },
@@ -130,6 +141,7 @@
             "month_full": "Octubre",
             "title": "Cinergia: Live Set Acid House",
             "location": "Neiva, Huila • Cara Mala",
+            "url": "",
             "muted": false
           }
         },
@@ -141,6 +153,7 @@
             "month_full": "Septiembre",
             "title": "ALTER_ocio (exposicion)",
             "location": "Quito Ecuador • Casa palenque",
+            "url": "",
             "muted": false
           }
         },
@@ -152,6 +165,7 @@
             "month_full": "Octubre",
             "title": "Live Set Acid House",
             "location": "Neiva, Huila • Festival BMX Trails Jam 3.0",
+            "url": "",
             "muted": true
           }
         },
@@ -163,6 +177,7 @@
             "month_full": "Octubre",
             "title": "Plum Blum Felipe Quien Live Set",
             "location": "Neiva, Huila • Cara Mala",
+            "url": "",
             "muted": false
           }
         },
@@ -174,6 +189,7 @@
             "month_full": "Octubre",
             "title": "Cinergia: VIY",
             "location": "Neiva, Huila • El Patio",
+            "url": "",
             "muted": false
           }
         },
@@ -185,6 +201,7 @@
             "month_full": "Octubre",
             "title": "Cinergia: Veneno Para Las Hadas",
             "location": "Neiva, Huila • El Patio",
+            "url": "",
             "muted": false
           }
         },
@@ -196,6 +213,7 @@
             "month_full": "Noviembre",
             "title": "Cinergia: Embriagado De Amor",
             "location": "Neiva, Huila • El Patio",
+            "url": "",
             "muted": false
           }
         },
@@ -207,6 +225,7 @@
             "month_full": "Noviembre",
             "title": "VOLTAJE",
             "location": "Neiva, Huila • Cara Mala",
+            "url": "",
             "muted": false
           }
         },
@@ -218,6 +237,7 @@
             "month_full": "Noviembre",
             "title": "Cinergia: Frank",
             "location": "Neiva, Huila • El Patio",
+            "url": "",
             "muted": false
           }
         },
@@ -229,6 +249,7 @@
             "month_full": "Octubre",
             "title": "Tapazo - Trailer Bejuco",
             "location": "Neiva, Huila • Cara Mala",
+            "url": "",
             "muted": false
           }
         },
@@ -240,6 +261,7 @@
             "month_full": "Noviembre",
             "title": "GAITANA FEST",
             "location": "Neiva, Huila • Centro de Convenciones",
+            "url": "",
             "muted": false
           }
         }
@@ -267,7 +289,9 @@
         "evento_JTygE3",
         "evento_cCmcL9"
       ],
-      "settings": {}
+      "settings": {
+        "blog": ""
+      }
     }
   },
   "order": [
