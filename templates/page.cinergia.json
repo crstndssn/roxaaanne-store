@@ -195,6 +195,7 @@
       "blocks": {
         "image_link_WJja8V": {
           "type": "image_link",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/murmurio_1.png",
             "link": "shopify://pages/murmurio",
@@ -219,6 +220,12 @@
     "cinergia_lecturas": {
       "type": "cinergia-lecturas",
       "blocks": {
+        "article_MpGVyi": {
+          "type": "article",
+          "settings": {
+            "article": "articulos-de-felipe-quien/bejuco-carta-del-director"
+          }
+        },
         "article_3Dy44j": {
           "type": "article",
           "settings": {
@@ -227,6 +234,7 @@
         }
       },
       "block_order": [
+        "article_MpGVyi",
         "article_3Dy44j"
       ],
       "settings": {}
