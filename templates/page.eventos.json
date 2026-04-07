@@ -274,6 +274,19 @@
             "muted": false
           }
         },
+        "evento_m7JY8j": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 24",
+            "month_full": "Abril",
+            "title": "ROXY FEST: publicación tercer video Pechan Project",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "https://roxaaanne.com/pages/roxy-fest",
+            "muted": false
+          }
+        },
         "evento_QKPWmg": {
           "type": "evento",
           "disabled": true,
@@ -322,6 +335,7 @@
         "evento_QmLPJP",
         "evento_Br4DQK",
         "evento_JKwhKb",
+        "evento_m7JY8j",
         "evento_QKPWmg",
         "evento_2025_link"
       ],
