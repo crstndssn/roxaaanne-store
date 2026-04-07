@@ -352,6 +352,19 @@
             "muted": false
           }
         },
+        "evento_4RQwtr": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "LACRA",
+            "day": "VIERNES 5",
+            "month_full": "Junio",
+            "title": "ROXY FEST: sesión Gato E' Monte",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "https://roxaaanne.com/pages/roxy-fest",
+            "muted": false
+          }
+        },
         "evento_QKPWmg": {
           "type": "evento",
           "disabled": true,
@@ -406,6 +419,7 @@
         "evento_MmjeVE",
         "evento_fXLHQN",
         "evento_HdNmew",
+        "evento_4RQwtr",
         "evento_QKPWmg",
         "evento_2025_link"
       ],
