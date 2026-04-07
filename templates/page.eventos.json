@@ -248,6 +248,19 @@
             "muted": false
           }
         },
+        "evento_Br4DQK": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 10",
+            "month_full": "Abril",
+            "title": "ROXY FEST: Pechan Project - Humano Chamán",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "https://roxaaanne.com/pages/roxy-fest",
+            "muted": false
+          }
+        },
         "evento_QKPWmg": {
           "type": "evento",
           "disabled": true,
@@ -294,6 +307,7 @@
         "evento_ABtegg",
         "evento_kTrNjV",
         "evento_QmLPJP",
+        "evento_Br4DQK",
         "evento_QKPWmg",
         "evento_2025_link"
       ],
