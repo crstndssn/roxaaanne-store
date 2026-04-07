@@ -235,19 +235,6 @@
             "muted": false
           }
         },
-        "evento_kTrNjV": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/voltaje-perfil.png",
-            "artist": "VOLTAJE",
-            "day": "JUEVES 23",
-            "month_full": "Abril",
-            "title": "VOLTAJE: Laboratorio de síntesis",
-            "location": "Neiva, Huila • Cara Mala",
-            "url": "https://roxaaanne.com/pages/voltaje",
-            "muted": false
-          }
-        },
         "evento_JKwhKb": {
           "type": "evento",
           "settings": {
@@ -258,6 +245,19 @@
             "title": "ROXY FEST: Qué es mirar - Pechan Project",
             "location": "Neiva, Huila • Cara Mala",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "muted": false
+          }
+        },
+        "evento_kTrNjV": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/voltaje-perfil.png",
+            "artist": "VOLTAJE",
+            "day": "JUEVES 23",
+            "month_full": "Abril",
+            "title": "VOLTAJE: Laboratorio de síntesis",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "https://roxaaanne.com/pages/voltaje",
             "muted": false
           }
         },
@@ -410,8 +410,8 @@
         "evento_bWHxAM",
         "evento_QmLPJP",
         "evento_Br4DQK",
-        "evento_kTrNjV",
         "evento_JKwhKb",
+        "evento_kTrNjV",
         "evento_m7JY8j",
         "evento_V7z7D7",
         "evento_WzgEMf",
