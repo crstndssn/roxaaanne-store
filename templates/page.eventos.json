@@ -240,11 +240,11 @@
           "settings": {
             "image": "shopify://shop_images/voltaje-perfil.png",
             "artist": "VOLTAJE",
-            "day": "JUEVES 16",
+            "day": "JUEVES 23",
             "month_full": "Abril",
             "title": "VOLTAJE: Laboratorio de síntesis",
             "location": "Neiva, Huila • Cara Mala",
-            "url": "shopify://pages/voltaje",
+            "url": "https://roxaaanne.com/pages/voltaje",
             "muted": false
           }
         },
