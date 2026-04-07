@@ -235,6 +235,19 @@
             "muted": false
           }
         },
+        "evento_QmLPJP": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "JUEVES 9",
+            "month_full": "Abril",
+            "title": "Cinergia: La única opción - Chan-Woo Park",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "https://roxaaanne.com/pages/cinergia",
+            "muted": false
+          }
+        },
         "evento_QKPWmg": {
           "type": "evento",
           "disabled": true,
@@ -280,6 +293,7 @@
         "evento_bWHxAM",
         "evento_ABtegg",
         "evento_kTrNjV",
+        "evento_QmLPJP",
         "evento_QKPWmg",
         "evento_2025_link"
       ],
