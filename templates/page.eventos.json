@@ -209,19 +209,6 @@
             "muted": true
           }
         },
-        "evento_kTrNjV": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/voltaje-perfil.png",
-            "artist": "VOLTAJE",
-            "day": "JUEVES 16",
-            "month_full": "Abril",
-            "title": "VOLTAJE: Laboratorio de síntesis",
-            "location": "Neiva, Huila • Cara Mala",
-            "url": "shopify://pages/voltaje",
-            "muted": false
-          }
-        },
         "evento_QmLPJP": {
           "type": "evento",
           "settings": {
@@ -245,6 +232,19 @@
             "title": "ROXY FEST: Pechan Project - Humano Chamán",
             "location": "Neiva, Huila • Cara Mala",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "muted": false
+          }
+        },
+        "evento_kTrNjV": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/voltaje-perfil.png",
+            "artist": "VOLTAJE",
+            "day": "JUEVES 16",
+            "month_full": "Abril",
+            "title": "VOLTAJE: Laboratorio de síntesis",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "shopify://pages/voltaje",
             "muted": false
           }
         },
@@ -408,9 +408,9 @@
         "evento_8CxV4H",
         "evento_cKmhqN",
         "evento_bWHxAM",
-        "evento_kTrNjV",
         "evento_QmLPJP",
         "evento_Br4DQK",
+        "evento_kTrNjV",
         "evento_JKwhKb",
         "evento_m7JY8j",
         "evento_V7z7D7",
