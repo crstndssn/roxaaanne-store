@@ -261,6 +261,19 @@
             "muted": false
           }
         },
+        "evento_JKwhKb": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 17",
+            "month_full": "Abril",
+            "title": "ROXY FEST: Qué es mirar - Pechan Project",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "https://roxaaanne.com/pages/roxy-fest",
+            "muted": false
+          }
+        },
         "evento_QKPWmg": {
           "type": "evento",
           "disabled": true,
@@ -308,6 +321,7 @@
         "evento_kTrNjV",
         "evento_QmLPJP",
         "evento_Br4DQK",
+        "evento_JKwhKb",
         "evento_QKPWmg",
         "evento_2025_link"
       ],
