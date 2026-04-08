@@ -29,7 +29,7 @@
         {%- assign months_clean = months_clean | append: m | append: '##' -%}
       {%- endif -%}
     {%- endfor -%}
-    {%- assign months_list = months_clean | split: '##' -%}
+    {%- assign months_list = months_clean | split: '##' | reverse -%}
 
     <div class="columns-1 md:columns-2 lg:columns-3 gap-8">
       {%- for month_label in months_list -%}
@@ -40,40 +40,73 @@
               <div class="flex flex-col gap-6">
                 {%- for block in section.blocks -%}
                   {%- if block.type == 'evento' and block.settings.month_full == month_label -%}
-                    <div class="flex flex-col gap-3{% if block.settings.muted %} opacity-50{% endif %}" {{ block.shopify_attributes }}>
-                      {%- if block.settings.url != blank -%}
-                        <a href="{{ block.settings.url }}" class="block hover:opacity-80 transition-opacity">
-                      {%- endif -%}
-
-                      <div class="flex gap-5">
-                        {%- if block.settings.image != blank -%}
-                          <div class="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden flex-shrink-0">
-                            <img src="{{ block.settings.image | image_url: width: 300 }}" alt="{{ block.settings.artist | escape }}" class="w-full h-full object-cover" loading="lazy" width="300" height="300">
+                    {%- if block.settings.featured -%}
+                      <!-- Evento destacado -->
+                      <div class="flex flex-col gap-3" {{ block.shopify_attributes }}>
+                        {%- if block.settings.url != blank -%}<a href="{{ block.settings.url }}" class="block hover:opacity-80 transition-opacity">{%- endif -%}
+                        <div class="flex gap-5">
+                          {%- if block.settings.image != blank -%}
+                            <div class="w-48 h-48 md:w-56 md:h-56 rounded-lg overflow-hidden flex-shrink-0">
+                              <img src="{{ block.settings.image | image_url: width: 500 }}" alt="{{ block.settings.artist | escape }}" class="w-full h-full object-cover" loading="lazy" width="500" height="500">
+                            </div>
+                          {%- endif -%}
+                          <div class="flex flex-col gap-3">
+                            <div class="flex justify-center items-center bg-[#2A2A2A] text-white px-3 py-3 rounded-xl w-fit h-fit">
+                              <h4 class="text-white text-[20px] md:text-[24px] leading-[24px] font-medium">{{ block.settings.day }}</h4>
+                            </div>
+                            <div class="flex flex-col justify-center gap-1">
+                              {%- if block.settings.title != blank -%}<p class="text-[18px] leading-[22px] md:text-[20px] md:leading-[24px] text-black dark:text-[#feffee]">{{ block.settings.title }}</p>{%- endif -%}
+                              {%- if block.settings.location != blank -%}<p class="text-[#B3B3B3] text-[15px] md:text-[17px]">{{ block.settings.location }}</p>{%- endif -%}
+                            </div>
                           </div>
-                        {%- endif -%}
-
-
-                        <div class="flex flex-col gap-3">
-                             <div class="flex justify-center items-center bg-[#2A2A2A] text-white gap-3 px-3 md:px-6 py-3 md:px-3 rounded-xl min-w-[70px] w-fit h-fit">
-                          <h4 class="text-white text-[17px] md:text-[20px] leading-[20px] font-medium">{{ block.settings.day }}</h4>
                         </div>
-
-                        <div class="flex flex-col justify-center gap-1">
-                          {%- if block.settings.title != blank -%}
-                            <p class="text-[15px] leading-[19px] md:text-[16px] md:leading-[20px] text-black dark:text-[#feffee]">{{ block.settings.title }}</p>
-                          {%- endif -%}
-                          {%- if block.settings.location != blank -%}
-                            <p class="text-[#B3B3B3] text-[15px] md:text-xl">{{ block.settings.location }}</p>
-                          {%- endif -%}
-                        </div>
-                        </div>
-                     
+                        {%- if block.settings.url != blank -%}</a>{%- endif -%}
                       </div>
-
-                      {%- if block.settings.url != blank -%}
-                        </a>
-                      {%- endif -%}
-                    </div>
+                    {%- elsif block.settings.muted -%}
+                      <!-- Evento pasado: layout compacto -->
+                      <div class="flex flex-col gap-3 opacity-50" {{ block.shopify_attributes }}>
+                        {%- if block.settings.url != blank -%}<a href="{{ block.settings.url }}" class="block hover:opacity-80 transition-opacity">{%- endif -%}
+                        <div class="flex gap-5">
+                          {%- if block.settings.image != blank -%}
+                            <div class="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden flex-shrink-0">
+                              <img src="{{ block.settings.image | image_url: width: 300 }}" alt="{{ block.settings.artist | escape }}" class="w-full h-full object-cover" loading="lazy" width="300" height="300">
+                            </div>
+                          {%- endif -%}
+                          <div class="flex flex-col gap-3">
+                            <div class="flex justify-center items-center bg-[#2A2A2A] text-white px-3 py-3 rounded-xl w-fit h-fit">
+                              <h4 class="text-white text-[17px] md:text-[20px] leading-[20px] font-medium">{{ block.settings.day }}</h4>
+                            </div>
+                            <div class="flex flex-col justify-center gap-1">
+                              {%- if block.settings.title != blank -%}<p class="text-[15px] leading-[19px] md:text-[16px] md:leading-[20px] text-black dark:text-[#feffee]">{{ block.settings.title }}</p>{%- endif -%}
+                              {%- if block.settings.location != blank -%}<p class="text-[#B3B3B3] text-[15px] md:text-xl">{{ block.settings.location }}</p>{%- endif -%}
+                            </div>
+                          </div>
+                        </div>
+                        {%- if block.settings.url != blank -%}</a>{%- endif -%}
+                      </div>
+                    {%- else -%}
+                      <!-- Evento normal -->
+                      <div class="flex flex-col gap-3" {{ block.shopify_attributes }}>
+                        {%- if block.settings.url != blank -%}<a href="{{ block.settings.url }}" class="block hover:opacity-80 transition-opacity">{%- endif -%}
+                        <div class="flex gap-5">
+                          {%- if block.settings.image != blank -%}
+                            <div class="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden flex-shrink-0">
+                              <img src="{{ block.settings.image | image_url: width: 300 }}" alt="{{ block.settings.artist | escape }}" class="w-full h-full object-cover" loading="lazy" width="300" height="300">
+                            </div>
+                          {%- endif -%}
+                          <div class="flex flex-col gap-3">
+                            <div class="flex justify-center items-center bg-[#2A2A2A] text-white px-3 py-3 rounded-xl w-fit h-fit">
+                              <h4 class="text-white text-[17px] md:text-[20px] leading-[20px] font-medium">{{ block.settings.day }}</h4>
+                            </div>
+                            <div class="flex flex-col justify-center gap-1">
+                              {%- if block.settings.title != blank -%}<p class="text-[15px] leading-[19px] md:text-[16px] md:leading-[20px] text-black dark:text-[#feffee]">{{ block.settings.title }}</p>{%- endif -%}
+                              {%- if block.settings.location != blank -%}<p class="text-[#B3B3B3] text-[15px] md:text-xl">{{ block.settings.location }}</p>{%- endif -%}
+                            </div>
+                          </div>
+                        </div>
+                        {%- if block.settings.url != blank -%}</a>{%- endif -%}
+                      </div>
+                    {%- endif -%}
                   {%- endif -%}
                 {%- endfor -%}
               </div>
@@ -229,6 +262,11 @@
             "type": "url",
             "id": "url",
             "label": "URL del evento"
+          }, {
+            "type": "checkbox",
+            "id": "featured",
+            "label": "Destacado (card con imagen arriba)",
+            "default": false
           }, {
             "type": "checkbox",
             "id": "muted",

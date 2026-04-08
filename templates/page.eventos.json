@@ -46,7 +46,7 @@
             "day": "SÁBADO 7",
             "month_full": "Febrero",
             "title": "Publicación del primer video de peregrino en youtube",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/blogs/roxy-fest/peregrino",
             "muted": true
           }
@@ -59,7 +59,7 @@
             "day": "LUNES 9",
             "month_full": "Febrero",
             "title": "ROXY FEST: Peregrino y Frigio - Avant Garde",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxyfest",
             "muted": true
           }
@@ -72,7 +72,7 @@
             "day": "JUEVES 12",
             "month_full": "Febrero",
             "title": "ROXY FEST: Peregrino y Frigio - Eπisteme Zur",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxyfest",
             "muted": true
           }
@@ -85,7 +85,7 @@
             "day": "JUEVES 19",
             "month_full": "Febrero",
             "title": "Cinergia: La guía perversa de la ideología",
-            "location": "Neiva, Huila • El patio",
+            "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
             "muted": true
           }
@@ -98,7 +98,7 @@
             "day": "SÁBADO 21",
             "month_full": "Febrero",
             "title": "ROXY FEST: Camila Noches - De La Nostalgia, 05",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxyfest",
             "muted": true
           }
@@ -111,7 +111,7 @@
             "day": "JUEVES 26",
             "month_full": "Febrero",
             "title": "Cinergia: One Cut Of The Dead",
-            "location": "Neiva, Huila • El patio",
+            "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
             "muted": true
           }
@@ -124,7 +124,7 @@
             "day": "VIERNES 27",
             "month_full": "Febrero",
             "title": "ROXY FEST: Camila Noches - Pasaje A Tus Ojos",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxyfest",
             "muted": true
           }
@@ -137,7 +137,7 @@
             "day": "SÁBADO 28",
             "month_full": "Febrero",
             "title": "Apertura Instalación Bejuco",
-            "location": "Neiva, Huila • El patio",
+            "location": "Neiva, Huila • El Patio",
             "url": "https://www.instagram.com/p/DVRLxT-DoXB/",
             "muted": true
           }
@@ -150,7 +150,7 @@
             "day": "SÁBADO 7",
             "month_full": "Marzo",
             "title": "ROXY FEST: Camila Noches - Nocturna",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxyfest",
             "muted": true
           }
@@ -164,7 +164,7 @@
             "day": "MARTES 17",
             "month_full": "Marzo",
             "title": "ROXY FEST: Publicación segundo video Pechan Project",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "shopify://pages/roxyfest",
             "muted": true
           }
@@ -191,7 +191,7 @@
             "day": "MARTES 24",
             "month_full": "Marzo",
             "title": "ROXY FEST: Publicación tercer video Pechan Project",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "shopify://pages/roxyfest",
             "muted": false
           }
@@ -217,8 +217,9 @@
             "day": "JUEVES 9",
             "month_full": "Abril",
             "title": "Cinergia: La única opción - Chan-Woo Park",
-            "location": "Neiva, Huila • El patio",
+            "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
+            "featured": true,
             "muted": false
           }
         },
@@ -230,8 +231,9 @@
             "day": "VIERNES 10",
             "month_full": "Abril",
             "title": "ROXY FEST: Pechan Project - Humano Chamán",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": true,
             "muted": false
           }
         },
@@ -243,7 +245,7 @@
             "day": "VIERNES 17",
             "month_full": "Abril",
             "title": "ROXY FEST: Qué es mirar - Pechan Project",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "muted": false
           }
@@ -269,7 +271,7 @@
             "day": "VIERNES 24",
             "month_full": "Abril",
             "title": "ROXY FEST: publicación tercer video Pechan Project",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "muted": false
           }
@@ -282,85 +284,91 @@
             "day": "MIÉRCOLES 30",
             "month_full": "Abril",
             "title": "Cinergia: Perro que Ladra no Muerde - Bong Joon Ho",
-            "location": "Neiva, Huila • El patio",
+            "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
             "muted": false
           }
         },
         "evento_WzgEMf": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
             "day": "VIERNES 1",
             "month_full": "Mayo",
             "title": "ROXY FEST: publicación primer video Ana Vahos",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "muted": false
           }
         },
         "evento_MmjeVE": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
             "day": "VIERNES 8",
             "month_full": "Mayo",
             "title": "ROXY FEST: sesión Ana María Vahos",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "muted": false
           }
         },
         "evento_fXLHQN": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
             "day": "VIERNES 15",
             "month_full": "Mayo",
             "title": "ROXY FEST: sesión Ana María Vahos",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "muted": false
           }
         },
         "evento_HdNmew": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
             "day": "LUNES 25",
             "month_full": "Mayo",
             "title": "ROXY FEST: sesión Gato E' Monte",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "muted": false
           }
         },
         "evento_4RQwtr": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
             "day": "VIERNES 5",
             "month_full": "Junio",
             "title": "ROXY FEST: sesión Gato E' Monte",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "muted": false
           }
         },
         "evento_3jw79j": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
             "day": "VIERNES 12",
             "month_full": "Junio",
             "title": "ROXY FEST: sesión Gato E' Monte",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "muted": false
           }
@@ -374,7 +382,7 @@
             "day": "MARTES 31",
             "month_full": "Marzo",
             "title": "ROXY FEST: Publicación primer video Ana Vahos",
-            "location": "Neiva, Huila • Cara Mala",
+            "location": "Neiva, Huila • roxaaanne",
             "url": "shopify://pages/roxyfest",
             "muted": false
           }
