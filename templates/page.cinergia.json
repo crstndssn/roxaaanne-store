@@ -78,7 +78,7 @@
             "title": "La Única Opción",
             "event_date": "JUE 9 ABR • 4:30pm",
             "event_location": "Neiva, Huila • El Patio",
-            "article_url": ""
+            "article_url": "shopify://blogs/alterocio/la-unica-opcion"
           }
         },
         "movie_new2": {
@@ -88,7 +88,7 @@
             "title": "Perro que Ladra No Muerde",
             "event_date": "MIÉ 29 ABR • 4:30pm",
             "event_location": "Neiva, Huila • El Patio",
-            "article_url": ""
+            "article_url": "shopify://blogs/alterocio/perro-que-ladra-no-muerde"
           }
         }
       },
@@ -162,7 +162,7 @@
           "settings": {
             "image": "shopify://shop_images/el_conde.jpg",
             "title": "El Conde",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/el-conde"
           }
         },
         "movie_pXtPUw": {
@@ -170,7 +170,7 @@
           "settings": {
             "image": "shopify://shop_images/Punch_Drunk_Love.jpg",
             "title": "Punch Drunk Love",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/punch-drunk-love"
           }
         },
         "movie_6eYW7Y": {
@@ -178,7 +178,7 @@
           "settings": {
             "image": "shopify://shop_images/frank.jpg",
             "title": "Frank",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/frank"
           }
         },
         "movie_t7n4kQ": {
@@ -186,7 +186,7 @@
           "settings": {
             "image": "shopify://shop_images/whiplash.jpg",
             "title": "Whiplash",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/whiplash"
           }
         },
         "movie_37xyix": {
@@ -194,7 +194,7 @@
           "settings": {
             "image": "shopify://shop_images/sound-of-noise.jpg",
             "title": "Sound of Noise",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/sound-of-noise"
           }
         },
         "movie_wLNWV6": {
@@ -202,7 +202,7 @@
           "settings": {
             "image": "shopify://shop_images/la_guia_perversa_de_la_ideologia.jpg",
             "title": "La Guía Perversa De La Ideología",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/la-guia-perversa-de-la-ideologia"
           }
         },
         "movie_idfHUc": {
@@ -210,7 +210,7 @@
           "settings": {
             "image": "shopify://shop_images/one_cut_of_the_dead.webp",
             "title": "One Cut Of The Dead",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/one-cut-of-the-dead"
           }
         },
         "movie_AYFVH7": {
@@ -218,7 +218,7 @@
           "settings": {
             "image": "shopify://shop_images/la_hermanastra_fea.jpg",
             "title": "La Hermanastra Fea",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/la-hermanastra-fea"
           }
         },
         "movie_iKiewn": {
