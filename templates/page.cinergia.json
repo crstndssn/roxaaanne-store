@@ -13,6 +13,15 @@
       "type": "cinergia-header",
       "settings": {}
     },
+    "cinergia_bio": {
+      "type": "cinergia-bio",
+      "settings": {
+        "author": "Felipe Quién",
+        "author_url": "",
+        "paragraph_1": "El cine club – Cinergia - tiene como propósito facilitar el encuentro y el diálogo alrededor del gusto y la curiosidad por el cine y las expresiones artísticas. Así mismo busca incentivar las iniciativas creativas alrededor de la realización de películas ofreciendo ideas, conceptos y obras sobre las cuales conversar profundizando en sus aspectos técnicos y narrativos. De tal modo el cine club aporta a la formación de audiencias para el cine y al mismo tiempo construye una red de creatividad desde la cual apoyar iniciativas artísticas locales.",
+        "paragraph_2": "Esta selección de películas busca atravesar algunas preguntas que surgen en los ambientes creativos y que pueden convertirse en obstáculos, pues el mundo del arte ha sido un escenario excluyente sea por las configuraciones socioeconómicas como por estereotipos creados por el mercado del arte y el marketing. En ese sentido los asistentes a las proyecciones podrán encontrar nuevas preguntas y respuestas disidentes que en el mejor de los casos pueden contribuir a un posicionamiento distinto frente a las expresiones artísticas en general y frente a sí mismos como potenciales creadorxs."
+      }
+    },
     "cinergia_proximamente": {
       "type": "cinergia-proximamente",
       "blocks": {
@@ -153,15 +162,6 @@
         "article_3Dy44j"
       ],
       "settings": {}
-    },
-    "cinergia_bio": {
-      "type": "cinergia-bio",
-      "settings": {
-        "author": "Felipe Quién",
-        "author_url": "",
-        "paragraph_1": "El cine club – Cinergia - tiene como propósito facilitar el encuentro y el diálogo alrededor del gusto y la curiosidad por el cine y las expresiones artísticas. Así mismo busca incentivar las iniciativas creativas alrededor de la realización de películas ofreciendo ideas, conceptos y obras sobre las cuales conversar profundizando en sus aspectos técnicos y narrativos. De tal modo el cine club aporta a la formación de audiencias para el cine y al mismo tiempo construye una red de creatividad desde la cual apoyar iniciativas artísticas locales.",
-        "paragraph_2": "Esta selección de películas busca atravesar algunas preguntas que surgen en los ambientes creativos y que pueden convertirse en obstáculos, pues el mundo del arte ha sido un escenario excluyente sea por las configuraciones socioeconómicas como por estereotipos creados por el mercado del arte y el marketing. En ese sentido los asistentes a las proyecciones podrán encontrar nuevas preguntas y respuestas disidentes que en el mejor de los casos pueden contribuir a un posicionamiento distinto frente a las expresiones artísticas en general y frente a sí mismos como potenciales creadorxs."
-      }
     },
     "cinergia_referencias": {
       "type": "cinergia-referencias",
@@ -324,10 +324,10 @@
   },
   "order": [
     "cinergia_header",
+    "cinergia_bio",
     "cinergia_proximamente",
     "cinergia_lonuestro",
     "cinergia_lecturas",
-    "cinergia_bio",
     "cinergia_referencias",
     "cinergia_merca"
   ]
