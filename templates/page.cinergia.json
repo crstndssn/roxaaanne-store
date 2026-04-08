@@ -13,15 +13,6 @@
       "type": "cinergia-header",
       "settings": {}
     },
-    "cinergia_bio": {
-      "type": "cinergia-bio",
-      "settings": {
-        "author": "Felipe Quién",
-        "author_url": "",
-        "paragraph_1": "El cine club – Cinergia - tiene como propósito facilitar el encuentro y el diálogo alrededor del gusto y la curiosidad por el cine y las expresiones artísticas. Así mismo busca incentivar las iniciativas creativas alrededor de la realización de películas ofreciendo ideas, conceptos y obras sobre las cuales conversar profundizando en sus aspectos técnicos y narrativos. De tal modo el cine club aporta a la formación de audiencias para el cine y al mismo tiempo construye una red de creatividad desde la cual apoyar iniciativas artísticas locales.",
-        "paragraph_2": "Esta selección de películas busca atravesar algunas preguntas que surgen en los ambientes creativos y que pueden convertirse en obstáculos, pues el mundo del arte ha sido un escenario excluyente sea por las configuraciones socioeconómicas como por estereotipos creados por el mercado del arte y el marketing. En ese sentido los asistentes a las proyecciones podrán encontrar nuevas preguntas y respuestas disidentes que en el mejor de los casos pueden contribuir a un posicionamiento distinto frente a las expresiones artísticas en general y frente a sí mismos como potenciales creadorxs."
-      }
-    },
     "cinergia_proximamente": {
       "type": "cinergia-proximamente",
       "blocks": {
@@ -85,7 +76,7 @@
           "settings": {
             "image": "shopify://shop_images/cinergia-la-unica-opcion.png",
             "title": "La Única Opción",
-            "event_date": "JUE 9 ABR • 5pm",
+            "event_date": "JUE 9 ABR • 4:30pm",
             "event_location": "Neiva, Huila • El Patio",
             "article_url": ""
           }
@@ -95,9 +86,9 @@
           "settings": {
             "image": "shopify://shop_images/cinergia-perro-que-ladra-no-muerde.jpg",
             "title": "Perro que Ladra No Muerde",
-            "event_date": "MIÉ 29 ABR • 5pm",
+            "event_date": "MIÉ 29 ABR • 4:30pm",
             "event_location": "Neiva, Huila • El Patio",
-            "article_url": ""
+            "article_url": "shopify://blogs/alterocio/perro-que-ladra-no-muerde"
           }
         }
       },
@@ -171,7 +162,7 @@
           "settings": {
             "image": "shopify://shop_images/el_conde.jpg",
             "title": "El Conde",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/el-conde"
           }
         },
         "movie_pXtPUw": {
@@ -179,7 +170,7 @@
           "settings": {
             "image": "shopify://shop_images/Punch_Drunk_Love.jpg",
             "title": "Punch Drunk Love",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/punch-drunk-love"
           }
         },
         "movie_6eYW7Y": {
@@ -187,7 +178,7 @@
           "settings": {
             "image": "shopify://shop_images/frank.jpg",
             "title": "Frank",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/frank"
           }
         },
         "movie_t7n4kQ": {
@@ -195,7 +186,7 @@
           "settings": {
             "image": "shopify://shop_images/whiplash.jpg",
             "title": "Whiplash",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/whiplash"
           }
         },
         "movie_37xyix": {
@@ -203,7 +194,7 @@
           "settings": {
             "image": "shopify://shop_images/sound-of-noise.jpg",
             "title": "Sound of Noise",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/sound-of-noise"
           }
         },
         "movie_wLNWV6": {
@@ -211,7 +202,7 @@
           "settings": {
             "image": "shopify://shop_images/la_guia_perversa_de_la_ideologia.jpg",
             "title": "La Guía Perversa De La Ideología",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/la-guia-perversa-de-la-ideologia"
           }
         },
         "movie_idfHUc": {
@@ -219,7 +210,7 @@
           "settings": {
             "image": "shopify://shop_images/one_cut_of_the_dead.webp",
             "title": "One Cut Of The Dead",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/one-cut-of-the-dead"
           }
         },
         "movie_AYFVH7": {
@@ -227,7 +218,7 @@
           "settings": {
             "image": "shopify://shop_images/la_hermanastra_fea.jpg",
             "title": "La Hermanastra Fea",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/la-hermanastra-fea"
           }
         },
         "movie_iKiewn": {
@@ -320,15 +311,24 @@
       "settings": {
         "collection": "lacra"
       }
+    },
+    "cinergia_bio": {
+      "type": "cinergia-bio",
+      "settings": {
+        "author": "Andrés Felipe Salcedo C.",
+        "author_url": "",
+        "paragraph_1": "El cine club – Cinergia - tiene como propósito facilitar el encuentro y el diálogo alrededor del gusto y la curiosidad por el cine y las expresiones artísticas. Así mismo busca incentivar las iniciativas creativas alrededor de la realización de películas ofreciendo ideas, conceptos y obras sobre las cuales conversar profundizando en sus aspectos técnicos y narrativos. De tal modo el cine club aporta a la formación de audiencias para el cine y al mismo tiempo construye una red de creatividad desde la cual apoyar iniciativas artísticas locales.",
+        "paragraph_2": "Esta selección de películas busca atravesar algunas preguntas que surgen en los ambientes creativos y que pueden convertirse en obstáculos, pues el mundo del arte ha sido un escenario excluyente sea por las configuraciones socioeconómicas como por estereotipos creados por el mercado del arte y el marketing. En ese sentido los asistentes a las proyecciones podrán encontrar nuevas preguntas y respuestas disidentes que en el mejor de los casos pueden contribuir a un posicionamiento distinto frente a las expresiones artísticas en general y frente a sí mismos como potenciales creadorxs."
+      }
     }
   },
   "order": [
     "cinergia_header",
-    "cinergia_bio",
     "cinergia_proximamente",
     "cinergia_lonuestro",
     "cinergia_lecturas",
     "cinergia_referencias",
-    "cinergia_merca"
+    "cinergia_merca",
+    "cinergia_bio"
   ]
 }
