@@ -22,6 +22,7 @@
             "title": "Cinergia: Whiplash",
             "location": "Neiva, Huila • El Patio",
             "url": "shopify://pages/cinergia",
+            "featured": false,
             "muted": true
           }
         },
@@ -35,6 +36,7 @@
             "title": "Cinergia: Sound Of Noise",
             "location": "Neiva, Huila • El Patio",
             "url": "shopify://pages/cinergia",
+            "featured": false,
             "muted": true
           }
         },
@@ -48,6 +50,7 @@
             "title": "Publicación del primer video de peregrino en youtube",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/blogs/roxy-fest/peregrino",
+            "featured": false,
             "muted": true
           }
         },
@@ -61,6 +64,7 @@
             "title": "ROXY FEST: Peregrino y Frigio - Avant Garde",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxyfest",
+            "featured": false,
             "muted": true
           }
         },
@@ -74,6 +78,7 @@
             "title": "ROXY FEST: Peregrino y Frigio - Eπisteme Zur",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxyfest",
+            "featured": false,
             "muted": true
           }
         },
@@ -87,6 +92,7 @@
             "title": "Cinergia: La guía perversa de la ideología",
             "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
+            "featured": false,
             "muted": true
           }
         },
@@ -100,6 +106,7 @@
             "title": "ROXY FEST: Camila Noches - De La Nostalgia, 05",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxyfest",
+            "featured": false,
             "muted": true
           }
         },
@@ -113,6 +120,7 @@
             "title": "Cinergia: One Cut Of The Dead",
             "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
+            "featured": false,
             "muted": true
           }
         },
@@ -126,6 +134,7 @@
             "title": "ROXY FEST: Camila Noches - Pasaje A Tus Ojos",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxyfest",
+            "featured": false,
             "muted": true
           }
         },
@@ -139,6 +148,7 @@
             "title": "Apertura Instalación Bejuco",
             "location": "Neiva, Huila • El Patio",
             "url": "https://www.instagram.com/p/DVRLxT-DoXB/",
+            "featured": false,
             "muted": true
           }
         },
@@ -152,6 +162,7 @@
             "title": "ROXY FEST: Camila Noches - Nocturna",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxyfest",
+            "featured": false,
             "muted": true
           }
         },
@@ -166,6 +177,7 @@
             "title": "ROXY FEST: Publicación segundo video Pechan Project",
             "location": "Neiva, Huila • roxaaanne",
             "url": "shopify://pages/roxyfest",
+            "featured": false,
             "muted": true
           }
         },
@@ -179,6 +191,7 @@
             "title": "Cinergia: La hermanastra fea",
             "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
+            "featured": false,
             "muted": true
           }
         },
@@ -193,6 +206,7 @@
             "title": "ROXY FEST: Publicación tercer video Pechan Project",
             "location": "Neiva, Huila • roxaaanne",
             "url": "shopify://pages/roxyfest",
+            "featured": false,
             "muted": false
           }
         },
@@ -206,6 +220,7 @@
             "title": "Cinergia: El Conde",
             "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
+            "featured": false,
             "muted": true
           }
         },
@@ -247,6 +262,7 @@
             "title": "ROXY FEST: Qué es mirar - Pechan Project",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
             "muted": false
           }
         },
@@ -260,6 +276,7 @@
             "title": "VOLTAJE: Laboratorio de síntesis",
             "location": "Neiva, Huila • Cara Mala",
             "url": "https://roxaaanne.com/pages/voltaje",
+            "featured": false,
             "muted": false
           }
         },
@@ -273,6 +290,7 @@
             "title": "ROXY FEST: publicación tercer video Pechan Project",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
             "muted": false
           }
         },
@@ -286,6 +304,7 @@
             "title": "Cinergia: Perro que Ladra no Muerde - Bong Joon Ho",
             "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
+            "featured": false,
             "muted": false
           }
         },
@@ -300,6 +319,7 @@
             "title": "ROXY FEST: publicación primer video Ana Vahos",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
             "muted": false
           }
         },
@@ -314,6 +334,7 @@
             "title": "ROXY FEST: sesión Ana María Vahos",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
             "muted": false
           }
         },
@@ -328,6 +349,7 @@
             "title": "ROXY FEST: sesión Ana María Vahos",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
             "muted": false
           }
         },
@@ -342,6 +364,7 @@
             "title": "ROXY FEST: sesión Gato E' Monte",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
             "muted": false
           }
         },
@@ -356,6 +379,7 @@
             "title": "ROXY FEST: sesión Gato E' Monte",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
             "muted": false
           }
         },
@@ -370,6 +394,7 @@
             "title": "ROXY FEST: sesión Gato E' Monte",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
             "muted": false
           }
         },
@@ -384,6 +409,7 @@
             "title": "ROXY FEST: Publicación primer video Ana Vahos",
             "location": "Neiva, Huila • roxaaanne",
             "url": "shopify://pages/roxyfest",
+            "featured": false,
             "muted": false
           }
         },
@@ -396,6 +422,7 @@
             "title": "EVENTOS PASADOS",
             "location": "/pages/eventos-2025",
             "url": "",
+            "featured": false,
             "muted": true
           }
         }
