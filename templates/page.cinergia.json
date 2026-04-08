@@ -309,7 +309,7 @@
     "cinergia_merca": {
       "type": "cinergia-merca",
       "settings": {
-        "collection": ""
+        "collection": "lacra"
       }
     },
     "cinergia_bio": {
