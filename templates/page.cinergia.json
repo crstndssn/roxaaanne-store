@@ -13,86 +13,6 @@
       "type": "cinergia-header",
       "settings": {}
     },
-    "cinergia_eventos": {
-      "type": "cinergia-eventos",
-      "blocks": {
-        "event_gnLDtQ": {
-          "type": "event",
-          "settings": {
-            "day": "22",
-            "month": "ENE",
-            "artist": "LACRA",
-            "title": "Cinergia: Whiplash",
-            "location": "Neiva, Huila • El Patio",
-            "muted": true
-          }
-        },
-        "event_4MgM9m": {
-          "type": "event",
-          "settings": {
-            "day": "29",
-            "month": "ENE",
-            "artist": "LACRA",
-            "title": "Cinergia: Sound Of Nosie",
-            "location": "Neiva, Huila • El Patio",
-            "muted": true
-          }
-        },
-        "event_AEwxgf": {
-          "type": "event",
-          "settings": {
-            "day": "18",
-            "month": "FEB",
-            "artist": "LACRA",
-            "title": "Cinergia: La Guía Perversa De La Ideología",
-            "location": "Neiva, Huila • El Patio",
-            "muted": true
-          }
-        },
-        "event_1": {
-          "type": "event",
-          "settings": {
-            "day": "25",
-            "month": "FEB",
-            "artist": "LACRA",
-            "title": "Cinergia: One Cut Of The Dead",
-            "location": "Neiva, Huila • El Patio",
-            "muted": true
-          }
-        },
-        "event_cChdtr": {
-          "type": "event",
-          "settings": {
-            "day": "18",
-            "month": "MAR",
-            "artist": "LACRA",
-            "title": "Cinergia: La Hermanastra Mas Fea",
-            "location": "Neiva, Huila • El Patio",
-            "muted": true
-          }
-        },
-        "event_dPmEPm": {
-          "type": "event",
-          "settings": {
-            "day": "25",
-            "month": "MAR",
-            "artist": "LACRA",
-            "title": "Cinergia: El Conde",
-            "location": "Neiva, Huila • El Patio",
-            "muted": true
-          }
-        }
-      },
-      "block_order": [
-        "event_gnLDtQ",
-        "event_4MgM9m",
-        "event_AEwxgf",
-        "event_1",
-        "event_cChdtr",
-        "event_dPmEPm"
-      ],
-      "settings": {}
-    },
     "cinergia_proximamente": {
       "type": "cinergia-proximamente",
       "blocks": {
@@ -166,17 +86,20 @@
             "synopsis": "En una retorcida versión del clásico cuento de Cenicienta, \"La hermanastra fea\" sigue a Elvira en su lucha por competir con su increíblemente bella hermanastra. En un reino de cuento de hadas donde la belleza es un negocio brutal"
           }
         },
-        "movie_f9PHrT": {
+        "movie_new1": {
           "type": "movie",
           "settings": {
-            "image": "shopify://shop_images/el_conde.jpg",
-            "title": "El Conde",
-            "director": "Pablo Larraín",
-            "year": "2023",
-            "duration": "1h 50m",
-            "genre": "Comedia negra, terror, sátira, fantasía, drama,",
-            "country": "chilena",
-            "synopsis": "Se centra en Augusto Pinochet, que no está muerto sino que es un vampiro envejecido. Tras vivir 250 años en este mundo, ha decidido morir de una vez por todas"
+            "title": "La Única Opción",
+            "event_date": "JUE 9 ABR • 5pm",
+            "event_location": "Neiva, Huila • El Patio"
+          }
+        },
+        "movie_new2": {
+          "type": "movie",
+          "settings": {
+            "title": "Perro que Ladra No Muerde",
+            "event_date": "MIÉ 29 ABR • 5pm",
+            "event_location": "Neiva, Huila • El Patio"
           }
         }
       },
@@ -186,7 +109,8 @@
         "movie_zeCRf9",
         "movie_whgJHE",
         "movie_gcRKaU",
-        "movie_f9PHrT"
+        "movie_new1",
+        "movie_new2"
       ],
       "settings": {}
     },
@@ -207,7 +131,8 @@
           "settings": {
             "image": "shopify://shop_images/bejuco_banner_1.png",
             "link": "shopify://pages/bejuco",
-            "name": ""
+            "name": "bejuco",
+            "date": "próximamente"
           }
         }
       },
@@ -239,14 +164,26 @@
       ],
       "settings": {}
     },
-    "cinergia_eventos_hWhafy": {
-      "type": "cinergia-eventos",
-      "name": "Cinergia Eventos",
+    "cinergia_merca": {
+      "type": "cinergia-merca",
+      "blocks": {},
+      "block_order": [],
+      "settings": {}
+    },
+    "cinergia_bio": {
+      "type": "cinergia-bio",
       "settings": {}
     },
     "cinergia_referencias": {
       "type": "cinergia-referencias",
       "blocks": {
+        "movie_el_conde": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/el_conde.jpg",
+            "title": "El Conde"
+          }
+        },
         "movie_pXtPUw": {
           "type": "movie",
           "settings": {
@@ -444,6 +381,7 @@
         }
       },
       "block_order": [
+        "movie_el_conde",
         "movie_pXtPUw",
         "movie_6eYW7Y",
         "movie_t7n4kQ",
@@ -465,11 +403,11 @@
   },
   "order": [
     "cinergia_header",
-    "cinergia_eventos",
     "cinergia_proximamente",
     "cinergia_lonuestro",
     "cinergia_lecturas",
-    "cinergia_eventos_hWhafy",
-    "cinergia_referencias"
+    "cinergia_referencias",
+    "cinergia_merca",
+    "cinergia_bio"
   ]
 }

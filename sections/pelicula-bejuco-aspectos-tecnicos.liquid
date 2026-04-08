@@ -16,14 +16,6 @@
     .swiper {
       height: 600px;
     }
-    .mySwiperAspectosTecnicos .swiper-slide {
-      width: auto !important;
-    }
-    .mySwiperAspectosTecnicos .swiper-slide img {
-      width: auto;
-      height: 100%;
-      object-fit: unset;
-    }
   }
 
   .swiper-slide {
@@ -35,11 +27,15 @@
     align-items: center;
   }
 
-  .swiper-slide img {
+  .mySwiperAspectosTecnicos .swiper-slide {
+    width: auto !important;
+  }
+
+  .mySwiperAspectosTecnicos .swiper-slide img {
     display: block;
-    width: 100%;
+    width: auto;
     height: 100%;
-    object-fit: cover;
+    object-fit: unset;
   }
 
   /* Pagination bullets styling */
@@ -110,7 +106,7 @@
     if (!swiperEl) return;
 
     new Swiper(swiperEl, {
-      slidesPerView: 1.2,
+      slidesPerView: 'auto',
       spaceBetween: 16,
       freeMode: true,
       grabCursor: true,
@@ -119,10 +115,6 @@
         dynamicBullets: true,
         clickable: true
       },
-      breakpoints: {
-        768: { slidesPerView: 2.2 },
-        1024: { slidesPerView: 'auto' }
-      }
     });
   })();
 </script>

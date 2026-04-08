@@ -1,0 +1,54 @@
+<div class="container mx-auto px-7 md:px-0 mt-6">
+  <h2 class="text-[27px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-2 tracking-tight mt-8">¿qué es cinergia?</h2>
+  <div class="border-2 border-black dark:border-[#3a3a3a] rounded-xl bg-[#feffee] dark:bg-[#1c1c1c]">
+    <div class="px-8 md:px-12 lg:px-32 pt-10 pb-12 md:pt-14 md:pb-16">
+      <div class="space-y-6">
+        <p class="text-justify font-extralight text-black dark:text-[#feffee] text-2xl md:text-2xl lg:text-3xl leading-relaxed">{{ section.settings.paragraph_1 }}</p>
+        <p class="text-justify font-extralight text-black dark:text-[#feffee] text-2xl md:text-2xl lg:text-3xl leading-relaxed">{{ section.settings.paragraph_2 }}</p>
+      </div>
+      <div class="flex justify-end mt-6">
+        {% if section.settings.author_url != blank %}
+          <a href="{{ section.settings.author_url }}" class="text-black dark:text-[#feffee] text-[19px] md:text-[19px] font-medium opacity-50 hover:opacity-100 transition-opacity underline underline-offset-2">{{ section.settings.author }}</a>
+        {% else %}
+          <p class="text-black dark:text-[#feffee] text-[19px] md:text-[19px] font-medium opacity-50">{{ section.settings.author }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Cinergia Bio",
+    "settings": [
+      {
+        "type": "text",
+        "id": "author",
+        "label": "Autor",
+        "default": "Andrés Felipe Salcedo C."
+      },
+      {
+        "type": "url",
+        "id": "author_url",
+        "label": "URL del perfil del autor"
+      },
+      {
+        "type": "textarea",
+        "id": "paragraph_1",
+        "label": "Párrafo 1",
+        "default": "El cine club – Cinergia - tiene como propósito facilitar el encuentro y el diálogo alrededor del gusto y la curiosidad por el cine y las expresiones artísticas. Así mismo busca incentivar las iniciativas creativas alrededor de la realización de películas ofreciendo ideas, conceptos y obras sobre las cuales conversar profundizando en sus aspectos técnicos y narrativos. De tal modo el cine club aporta a la formación de audiencias para el cine y al mismo tiempo construye una red de creatividad desde la cual apoyar iniciativas artísticas locales."
+      },
+      {
+        "type": "textarea",
+        "id": "paragraph_2",
+        "label": "Párrafo 2",
+        "default": "Esta selección de películas busca atravesar algunas preguntas que surgen en los ambientes creativos y que pueden convertirse en obstáculos, pues el mundo del arte ha sido un escenario excluyente sea por las configuraciones socioeconómicas como por estereotipos creados por el mercado del arte y el marketing. En ese sentido los asistentes a las proyecciones podrán encontrar nuevas preguntas y respuestas disidentes que en el mejor de los casos pueden contribuir a un posicionamiento distinto frente a las expresiones artísticas en general y frente a sí mismos como potenciales creadorxs."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cinergia Bio"
+      }
+    ]
+  }
+{% endschema %}

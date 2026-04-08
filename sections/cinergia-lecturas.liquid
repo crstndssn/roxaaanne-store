@@ -1,7 +1,7 @@
 <div class="container mx-auto px-7 md:px-0 mt-10">
   <h2 class="text-[27px] md:text-[40px] text-black dark:text-[#feffee] font-medium mb-2 tracking-tight mt-8">lecturas</h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-custom snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:pb-0">
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'article' %}
@@ -9,13 +9,15 @@
           {% if article != blank %}
             <a
               href="{{ article.url }}"
-              class="border-2 border-[#c9c9c9] dark:border-[#5a5a5a] rounded-xl overflow-hidden hover:shadow-lg transition-shadow bg-[#feffee] dark:bg-[#1c1c1c] block"
+              class="flex-shrink-0 w-[280px] md:w-auto snap-start border-2 border-[#c9c9c9] dark:border-[#5a5a5a] rounded-xl overflow-hidden hover:shadow-lg transition-shadow bg-[#feffee] dark:bg-[#1c1c1c] block"
               {{ block.shopify_attributes }}>
               {% if article.image != blank %}
-                <div class="aspect-[3/4] bg-gray-200 dark:bg-[#2a2a2a]">
+                <div class="aspect-[16/9] overflow-hidden">
                   <img
-                    src="{{ article.image | img_url: '400x' }}"
+                    src="{{ article.image | image_url: width: 800 }}"
                     alt="{{ article.title }}"
+                    width="800"
+                    height="450"
                     class="w-full h-full object-cover">
                 </div>
               {% endif %}
@@ -31,12 +33,14 @@
             </a>
           {% endif %}
         {% when 'book' %}
-          <div class="border-2 border-[#c9c9c9] dark:border-[#5a5a5a] rounded-xl overflow-hidden hover:shadow-lg transition-shadow bg-[#feffee] dark:bg-[#1c1c1c]" {{ block.shopify_attributes }}>
+          <div class="flex-shrink-0 w-[280px] md:w-auto snap-start border-2 border-[#c9c9c9] dark:border-[#5a5a5a] rounded-xl overflow-hidden hover:shadow-lg transition-shadow bg-[#feffee] dark:bg-[#1c1c1c]" {{ block.shopify_attributes }}>
             {% if block.settings.image != blank %}
-              <div class="aspect-[3/4] bg-gray-200 dark:bg-[#2a2a2a]">
+              <div class="aspect-[16/9] overflow-hidden">
                 <img
-                  src="{{ block.settings.image | img_url: '400x' }}"
+                  src="{{ block.settings.image | image_url: width: 800 }}"
                   alt="{{ block.settings.title }}"
+                  width="800"
+                  height="450"
                   class="w-full h-full object-cover">
               </div>
             {% endif %}
@@ -55,6 +59,13 @@
       {% endcase %}
     {% endfor %}
   </div>
+
+  <style>
+    .scrollbar-custom::-webkit-scrollbar { height: 6px; }
+    .scrollbar-custom::-webkit-scrollbar-track { background: transparent; border-radius: 10px; }
+    .scrollbar-custom::-webkit-scrollbar-thumb { background: rgba(201, 201, 201, 0.5); border-radius: 10px; border: 1px solid rgba(201, 201, 201, 0.3); }
+    .dark .scrollbar-custom::-webkit-scrollbar-thumb { background: rgba(90, 90, 90, 0.5); border: 1px solid rgba(90, 90, 90, 0.3); }
+  </style>
 </div>
 
 {% schema %}
