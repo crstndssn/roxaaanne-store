@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "title": "cinergia",
-            "date": "ABRIL  9 ✨",
+            "date": "ABRIL 9 ✨",
             "url": "shopify://pages/cinergia",
             "custom_classes": "border-2 border-white/80 bg-black text-[#feffee]",
             "custom_css": ""
@@ -28,8 +28,8 @@
           "type": "announcement",
           "settings": {
             "title": "voltaje",
-            "date": "16 ABRIL ⚡",
-            "url": "shopify://pages/voltaje",
+            "date": "23 ABRIL ⚡",
+            "url": "shopify://products/voltaje-23-de-abril",
             "custom_classes": "",
             "custom_css": "background: #2EFF05;\ncolor: #000000;\nborder: 2px #000 solid;"
           }
