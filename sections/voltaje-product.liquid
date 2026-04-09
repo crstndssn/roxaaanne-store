@@ -61,6 +61,7 @@
             name="quantity"
             value="1">
 
+          {% comment %}
           <button
             type="submit"
             name="add"
@@ -73,6 +74,7 @@
               AGOTADO
             {% endif %}
           </button>
+          {% endcomment %}
 
           {{ form | payment_button }}
         {%- endform -%}
@@ -94,9 +96,9 @@
         <span class="stalinist-one-regular text-[#feffee] text-base">CARAMALA</span>
       </div>
     </div>
-    <a href="#registro" class="stalinist-one-regular text-2xl bg-[#2EFF05] text-black w-full py-6 text-center hover:bg-[#26d904] transition-colors font-semibold">
-      COMPRA TU ENTRADA
-    </a>
+    <button onclick="voltajeDirectCheckout()" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %} class="stalinist-one-regular text-2xl bg-[#2EFF05] text-black w-full py-6 text-center hover:bg-[#26d904] transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed">
+      {% if product.selected_or_first_available_variant.available %}COMPRA TU ENTRADA{% else %}AGOTADO{% endif %}
+    </button>
   </div>
   <!-- Desktop: info + botón -->
   <div class="hidden md:flex items-center justify-between gap-6 px-10 py-5">
@@ -104,9 +106,9 @@
       <span class="stalinist-one-regular text-[#2EFF05] text-lg">23 DE ABRIL · 7:00 PM</span>
       <span class="stalinist-one-regular text-[#feffee] text-sm">CARAMALA</span>
     </div>
-    <a href="#registro" class="stalinist-one-regular text-2xl bg-[#2EFF05] text-black px-12 py-4 rounded-xl hover:bg-[#26d904] transition-colors font-semibold whitespace-nowrap">
-      COMPRA TU ENTRADA
-    </a>
+    <button onclick="voltajeDirectCheckout()" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %} class="stalinist-one-regular text-2xl bg-[#2EFF05] text-black px-12 py-4 rounded-xl hover:bg-[#26d904] transition-colors font-semibold whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed">
+      {% if product.selected_or_first_available_variant.available %}COMPRA TU ENTRADA{% else %}AGOTADO{% endif %}
+    </button>
   </div>
 </div>
 
@@ -128,3 +130,16 @@
     background-color: #26d904 !important;
   }
 </style>
+
+<script>
+  function voltajeDirectCheckout() {
+    var variantId = {{ product.selected_or_first_available_variant.id }};
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: variantId, quantity: 1 })
+    }).then(function() {
+      window.location.href = '/checkout';
+    });
+  }
+</script>
