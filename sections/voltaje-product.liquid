@@ -67,7 +67,7 @@
               name="quantity"
               value="1"
               min="1"
-              class="stalinist-one-regular text-[#2EFF05] text-2xl text-center bg-transparent w-16 py-3 border-0 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+              class="stalinist-one-regular text-[#2EFF05] text-2xl text-center bg-transparent w-16 py-3 border-0 outline-none voltaje-qty-input">
             <button
               type="button"
               onclick="voltajeQty(1)"
@@ -141,6 +141,17 @@
   .stalinist-one-regular {
     font-family: 'Stalinist One'
     , sans-serif;
+  }
+
+  .voltaje-qty-input {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  .voltaje-qty-input::-webkit-outer-spin-button,
+  .voltaje-qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 
   .shopify-payment-button__button--unbranded {
