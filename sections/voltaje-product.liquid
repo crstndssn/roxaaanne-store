@@ -49,14 +49,23 @@
 
         <p class="stalinist-one-regular text-[#2EFF05] text-[6vw] md:text-[3vw] text-center">{{ product.price | money }}</p>
 
-        {%- form 'product', product, class: 'w-full flex flex-col gap-4' -%}
-          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-          <input type="hidden" name="quantity" value="1">
+        {%- form 'product'
+          , product
+          , class: 'w-full flex flex-col gap-4' -%}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}">
+          <input
+            type="hidden"
+            name="quantity"
+            value="1">
 
           <button
             type="submit"
             name="add"
-            {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+            {% unless product.selected_or_first_available_variant.available %}
+            disabled{% endunless %}
             class="w-full stalinist-one-regular text-2xl bg-black text-[#2EFF05] border-2 border-[#2EFF05] py-4 rounded-xl hover:bg-[#0a1a00] transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed">
             {% if product.selected_or_first_available_variant.available %}
               AGREGAR AL CARRITO
@@ -110,7 +119,8 @@
   .shopify-payment-button__button--unbranded {
     background-color: #2EFF05 !important;
     color: #000 !important;
-    font-family: 'Stalinist One', sans-serif !important;
+    font-family: 'Stalinist One'
+    , sans-serif !important;
     font-size: 1.5rem !important;
   }
 
