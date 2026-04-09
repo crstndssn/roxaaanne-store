@@ -56,10 +56,23 @@
             type="hidden"
             name="id"
             value="{{ product.selected_or_first_available_variant.id }}">
-          <input
-            type="hidden"
-            name="quantity"
-            value="1">
+          <div class="flex items-center justify-center gap-0 border-2 border-[#2EFF05] rounded-xl overflow-hidden">
+            <button
+              type="button"
+              onclick="voltajeQty(-1)"
+              class="stalinist-one-regular text-[#2EFF05] text-3xl px-6 py-3 hover:bg-[#2EFF05] hover:text-black transition-colors">−</button>
+            <input
+              id="voltaje-qty"
+              type="number"
+              name="quantity"
+              value="1"
+              min="1"
+              class="stalinist-one-regular text-[#2EFF05] text-2xl text-center bg-transparent w-16 py-3 border-0 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+            <button
+              type="button"
+              onclick="voltajeQty(1)"
+              class="stalinist-one-regular text-[#2EFF05] text-3xl px-6 py-3 hover:bg-[#2EFF05] hover:text-black transition-colors">+</button>
+          </div>
 
           {% comment %}
           <button
@@ -95,6 +108,11 @@
         <span class="stalinist-one-regular text-[#2EFF05] text-xl">23 DE ABRIL · 7:00 PM</span>
         <span class="stalinist-one-regular text-[#feffee] text-base">CARAMALA</span>
       </div>
+      <div class="flex items-center border-2 border-[#2EFF05] rounded-xl overflow-hidden">
+        <button type="button" onclick="voltajeQty(-1)" class="stalinist-one-regular text-[#2EFF05] text-2xl px-4 py-2 hover:bg-[#2EFF05] hover:text-black transition-colors">−</button>
+        <span id="voltaje-qty-display-mobile" class="stalinist-one-regular text-[#2EFF05] text-xl w-10 text-center">1</span>
+        <button type="button" onclick="voltajeQty(1)" class="stalinist-one-regular text-[#2EFF05] text-2xl px-4 py-2 hover:bg-[#2EFF05] hover:text-black transition-colors">+</button>
+      </div>
     </div>
     <button onclick="voltajeDirectCheckout()" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %} class="stalinist-one-regular text-2xl bg-[#2EFF05] text-black w-full py-6 text-center hover:bg-[#26d904] transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed">
       {% if product.selected_or_first_available_variant.available %}COMPRA TU ENTRADA{% else %}AGOTADO{% endif %}
@@ -106,9 +124,16 @@
       <span class="stalinist-one-regular text-[#2EFF05] text-lg">23 DE ABRIL · 7:00 PM</span>
       <span class="stalinist-one-regular text-[#feffee] text-sm">CARAMALA</span>
     </div>
-    <button onclick="voltajeDirectCheckout()" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %} class="stalinist-one-regular text-2xl bg-[#2EFF05] text-black px-12 py-4 rounded-xl hover:bg-[#26d904] transition-colors font-semibold whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed">
-      {% if product.selected_or_first_available_variant.available %}COMPRA TU ENTRADA{% else %}AGOTADO{% endif %}
-    </button>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center border-2 border-[#2EFF05] rounded-xl overflow-hidden">
+        <button type="button" onclick="voltajeQty(-1)" class="stalinist-one-regular text-[#2EFF05] text-2xl px-5 py-3 hover:bg-[#2EFF05] hover:text-black transition-colors">−</button>
+        <span id="voltaje-qty-display-desktop" class="stalinist-one-regular text-[#2EFF05] text-xl w-12 text-center">1</span>
+        <button type="button" onclick="voltajeQty(1)" class="stalinist-one-regular text-[#2EFF05] text-2xl px-5 py-3 hover:bg-[#2EFF05] hover:text-black transition-colors">+</button>
+      </div>
+      <button onclick="voltajeDirectCheckout()" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %} class="stalinist-one-regular text-2xl bg-[#2EFF05] text-black px-12 py-4 rounded-xl hover:bg-[#26d904] transition-colors font-semibold whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed">
+        {% if product.selected_or_first_available_variant.available %}COMPRA TU ENTRADA{% else %}AGOTADO{% endif %}
+      </button>
+    </div>
   </div>
 </div>
 
@@ -132,12 +157,21 @@
 </style>
 
 <script>
+  function voltajeQty(delta) {
+    var input = document.getElementById('voltaje-qty');
+    var val = Math.max(1, parseInt(input.value) + delta);
+    input.value = val;
+    document.getElementById('voltaje-qty-display-mobile').textContent = val;
+    document.getElementById('voltaje-qty-display-desktop').textContent = val;
+  }
+
   function voltajeDirectCheckout() {
     var variantId = {{ product.selected_or_first_available_variant.id }};
+    var qty = parseInt(document.getElementById('voltaje-qty').value) || 1;
     fetch('/cart/add.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: variantId, quantity: 1 })
+      body: JSON.stringify({ id: variantId, quantity: qty })
     }).then(function() {
       window.location.href = '/checkout';
     });
