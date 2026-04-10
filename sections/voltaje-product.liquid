@@ -92,6 +92,55 @@
           {{ form | payment_button }}
         {%- endform -%}
 
+        <div class="w-full border-t border-[#2EFF05]/30 pt-6 flex flex-col items-center gap-3">
+          <p class="stalinist-one-regular text-[#feffee] text-sm md:text-base text-center uppercase">o paga por Nequi · Daviplata</p>
+          <p class="stalinist-one-regular text-[#2EFF05] text-2xl md:text-4xl tracking-widest">301 676 0223</p>
+          <p class="text-[#feffee]/50 text-xs text-center uppercase">envía el comprobante a este mismo número</p>
+        </div>
+
+        <div class="w-full border-t border-[#2EFF05]/30 pt-8 flex flex-col gap-2">
+          <p class="stalinist-one-regular text-[#2EFF05] text-xl md:text-2xl text-center mb-4">FORMULARIO DE INSCRIPCIÓN</p>
+
+          {%- form 'contact', id: 'voltaje-inscription' -%}
+            {% if form.posted_successfully? %}
+              <p class="stalinist-one-regular text-[#2EFF05] text-2xl text-center py-4">¡LISTO! TE ESPERAMOS.</p>
+            {% else %}
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-1">
+                  <label class="stalinist-one-regular text-[#feffee]/60 text-xs uppercase tracking-widest" for="voltaje-nombre">Nombre</label>
+                  <input id="voltaje-nombre" type="text" name="contact[nombre]" required placeholder="Tu nombre"
+                    class="bg-transparent border-b-2 border-[#2EFF05]/50 focus:border-[#2EFF05] text-[#feffee] placeholder-[#feffee]/30 stalinist-one-regular text-lg py-2 outline-none w-full transition-colors">
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label class="stalinist-one-regular text-[#feffee]/60 text-xs uppercase tracking-widest" for="voltaje-email">Email</label>
+                  <input id="voltaje-email" type="email" name="contact[email]" required placeholder="tu@email.com"
+                    class="bg-transparent border-b-2 border-[#2EFF05]/50 focus:border-[#2EFF05] text-[#feffee] placeholder-[#feffee]/30 stalinist-one-regular text-lg py-2 outline-none w-full transition-colors">
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label class="stalinist-one-regular text-[#feffee]/60 text-xs uppercase tracking-widest" for="voltaje-telefono">Teléfono</label>
+                  <input id="voltaje-telefono" type="tel" name="contact[telefono]" placeholder="300 000 0000"
+                    class="bg-transparent border-b-2 border-[#2EFF05]/50 focus:border-[#2EFF05] text-[#feffee] placeholder-[#feffee]/30 stalinist-one-regular text-lg py-2 outline-none w-full transition-colors">
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="stalinist-one-regular text-[#feffee]/60 text-xs uppercase tracking-widest">¿Tienes sintetizador?</label>
+                  <div class="flex gap-8">
+                    <label class="flex items-center gap-2 stalinist-one-regular text-[#feffee] text-lg cursor-pointer">
+                      <input type="radio" name="contact[sinte]" value="Sí" class="accent-[#2EFF05]"> Sí
+                    </label>
+                    <label class="flex items-center gap-2 stalinist-one-regular text-[#feffee] text-lg cursor-pointer">
+                      <input type="radio" name="contact[sinte]" value="No" class="accent-[#2EFF05]"> No
+                    </label>
+                  </div>
+                </div>
+                <button type="submit"
+                  class="stalinist-one-regular text-xl bg-[#2EFF05] text-black py-4 rounded-xl hover:bg-[#26d904] transition-colors font-semibold w-full mt-2">
+                  INSCRIBIRME
+                </button>
+              </div>
+            {% endif %}
+          {%- endform -%}
+        </div>
+
       </div>
     </div>
 
