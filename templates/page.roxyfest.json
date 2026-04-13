@@ -54,45 +54,45 @@
             "url": ""
           }
         },
-        "fotografx_1": {
-          "type": "fotografxs",
+        "cantautor_7": {
+          "type": "cantautorxs",
           "settings": {
-            "photographer_name": "Alejandro Ospina",
+            "artist_name": "Alejandro Ospina",
             "url": "shopify://pages/alejandro-ospina"
           }
         },
-        "fotografx_2": {
-          "type": "fotografxs",
+        "cantautor_8": {
+          "type": "cantautorxs",
           "settings": {
-            "photographer_name": "Mauricio Dussán",
+            "artist_name": "Mauricio Dussán",
             "url": ""
           }
         },
-        "fotografx_3": {
-          "type": "fotografxs",
+        "cantautor_9": {
+          "type": "cantautorxs",
           "settings": {
-            "photographer_name": "alter_ocio",
+            "artist_name": "alter_ocio",
             "url": ""
           }
         },
-        "fotografx_4": {
-          "type": "fotografxs",
+        "cantautor_10": {
+          "type": "cantautorxs",
           "settings": {
-            "photographer_name": "Lizeth Sanabria",
+            "artist_name": "Lizeth Sanabria",
             "url": ""
           }
         },
-        "fotografx_5": {
-          "type": "fotografxs",
+        "cantautor_11": {
+          "type": "cantautorxs",
           "settings": {
-            "photographer_name": "Alejandro Perdomo",
+            "artist_name": "Alejandro Perdomo",
             "url": ""
           }
         },
-        "estreno_1": {
-          "type": "estrenos",
+        "cantautor_12": {
+          "type": "cantautorxs",
           "settings": {
-            "name": "Tráiler Bejuco",
+            "artist_name": "Tráiler Bejuco",
             "url": "shopify://pages/bejuco"
           }
         },
@@ -230,12 +230,12 @@
         "cantautor_4",
         "cantautor_5",
         "cantautor_6",
-        "fotografx_1",
-        "fotografx_2",
-        "fotografx_3",
-        "fotografx_4",
-        "fotografx_5",
-        "estreno_1",
+        "cantautor_7",
+        "cantautor_8",
+        "cantautor_9",
+        "cantautor_10",
+        "cantautor_11",
+        "cantautor_12",
         "prod_1",
         "prod_2",
         "prod_3",
@@ -258,10 +258,8 @@
       "settings": {
         "title": "ROXY FEST 2025",
         "intro": "un ocaso lleno de magia; esa noche nos preparamos para un nuevo amanecer, nos vimos crecer. ofrecimos nuestro corazón para transformar nuestro hogar, he aquí nuestro álbum de recuerdos",
-        "cantautorxs_title": "CANTAUTORXS",
-        "produccion_title": "PRODUCCIÓN",
-        "fotografxs_title": "FOTOGRAFXS",
-        "estrenos_title": "ESTRENOS"
+        "cantautorxs_title": "ARTISTAS",
+        "produccion_title": "PRODUCCIÓN"
       }
     },
     

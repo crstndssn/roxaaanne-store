@@ -28,7 +28,7 @@
   </div>
 
 
-  <!-- Cantautorxs -->
+  <!-- Artistas -->
   {% if section.settings.cantautorxs_title != blank %}
     <h2 class="text-3xl md:text-5xl font-semibold text-[#feffee] mb-6 mt-12 md:mt-24 text-center">
       {{ section.settings.cantautorxs_title }}
@@ -46,58 +46,6 @@
             {% else %}
               <p class="text-[#feffee]/60 text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee]/30 rounded-lg uppercase text-center">
                 {{ block.settings.artist_name }}
-              </p>
-            {% endif %}
-          {% endif %}
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-
-  <!-- Fotografxs -->
-  {% if section.settings.fotografxs_title != blank %}
-    <h2 class="text-3xl md:text-5xl font-semibold text-[#feffee] mb-6 mt-12 md:mt-24 text-center">
-      {{ section.settings.fotografxs_title }}
-    </h2>
-  {% endif %}
-  <div class="flex flex-wrap gap-4 justify-center">
-    {% for block in section.blocks %}
-      {% if block.type == 'fotografxs' %}
-        <div {{ block.shopify_attributes }}>
-          {% if block.settings.photographer_name != blank %}
-            {% if block.settings.url != blank %}
-              <a href="{{ block.settings.url }}" class="block bg-[#feffee] text-black text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee] rounded-lg hover:bg-transparent hover:text-[#feffee] transition-colors uppercase text-center">
-                {{ block.settings.photographer_name }}
-              </a>
-            {% else %}
-              <p class="text-[#feffee]/60 text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee]/30 rounded-lg uppercase text-center">
-                {{ block.settings.photographer_name }}
-              </p>
-            {% endif %}
-          {% endif %}
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-
-  <!-- Estrenos -->
-  {% if section.settings.estrenos_title != blank %}
-    <h2 class="text-3xl md:text-5xl font-semibold text-[#feffee] mb-6 mt-12 md:mt-24 text-center">
-      {{ section.settings.estrenos_title }}
-    </h2>
-  {% endif %}
-  <div class="flex flex-wrap gap-4 justify-center">
-    {% for block in section.blocks %}
-      {% if block.type == 'estrenos' %}
-        <div {{ block.shopify_attributes }}>
-          {% if block.settings.name != blank %}
-            {% if block.settings.url != blank %}
-              <a href="{{ block.settings.url }}" class="block bg-[#feffee] text-black text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee] rounded-lg hover:bg-transparent hover:text-[#feffee] transition-colors uppercase text-center">
-                {{ block.settings.name }}
-              </a>
-            {% else %}
-              <p class="text-[#feffee]/60 text-[17px] md:text-[23px] px-4 py-3 border-2 border-[#feffee]/30 rounded-lg uppercase text-center">
-                {{ block.settings.name }}
               </p>
             {% endif %}
           {% endif %}
@@ -167,23 +115,13 @@
       {
         "type": "text",
         "id": "cantautorxs_title",
-        "label": "Título Cantautorxs",
+        "label": "Título Artistas",
         "default": "CANTAUTORXS"
       }, {
         "type": "text",
         "id": "produccion_title",
         "label": "Título Producción",
         "default": "PRODUCCIÓN"
-      }, {
-        "type": "text",
-        "id": "fotografxs_title",
-        "label": "Título Fotografxs",
-        "default": "FOTOGRAFXS"
-      }, {
-        "type": "text",
-        "id": "estrenos_title",
-        "label": "Título Estrenos",
-        "default": "ESTRENOS"
       }
     ],
     "blocks": [
@@ -213,34 +151,6 @@
             "type": "url",
             "id": "url",
             "label": "URL (perfil o artículo)"
-          }
-        ]
-      }, {
-        "type": "fotografxs",
-        "name": "Fotografxs",
-        "settings": [
-          {
-            "type": "text",
-            "id": "photographer_name",
-            "label": "Nombre del/la fotógrafx"
-          }, {
-            "type": "url",
-            "id": "url",
-            "label": "URL (perfil o redes)"
-          }
-        ]
-      }, {
-        "type": "estrenos",
-        "name": "Estrenos",
-        "settings": [
-          {
-            "type": "text",
-            "id": "name",
-            "label": "Nombre"
-          }, {
-            "type": "url",
-            "id": "url",
-            "label": "URL"
           }
         ]
       }
