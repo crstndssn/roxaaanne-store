@@ -11,6 +11,46 @@
   "sections": {
     "main": {
       "type": "article-music",
+      "blocks": {
+        "track_3zt9yW": {
+          "type": "track",
+          "settings": {
+            "track_title": "De La Nostalgia",
+            "track_subtitle": "",
+            "artists": "Camila Noches",
+            "duration": "4:45",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/De_la_Nostalgia_05_Acoustic_Version.mp3?v=1748533694",
+            "youtube_url": ""
+          }
+        },
+        "track_t6qhEj": {
+          "type": "track",
+          "settings": {
+            "track_title": "Fuego en el Mar",
+            "track_subtitle": "",
+            "artists": "Camila Noches",
+            "duration": "3:34",
+            "audio_url": "",
+            "youtube_url": ""
+          }
+        },
+        "track_GDJJRE": {
+          "type": "track",
+          "settings": {
+            "track_title": "De La Nostalgia, 05",
+            "track_subtitle": "",
+            "artists": "Camila Noches",
+            "duration": "4:06",
+            "audio_url": "",
+            "youtube_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "track_3zt9yW",
+        "track_t6qhEj",
+        "track_GDJJRE"
+      ],
       "settings": {}
     }
   },
