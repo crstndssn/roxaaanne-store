@@ -1,0 +1,301 @@
+{% assign active_track = null %}
+
+<!-- Hero -->
+<div class="relative min-h-[340px] md:min-h-[420px] flex items-end overflow-hidden bg-black">
+  {% if article.image %}
+    <div class="absolute inset-0">
+      <img
+        src="{{ article.image | image_url: width: 1400 }}"
+        alt=""
+        class="w-full h-full object-cover opacity-40 blur-xl scale-110">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black"></div>
+    </div>
+  {% else %}
+    <div class="absolute inset-0 bg-gradient-to-b from-zinc-900 to-black"></div>
+  {% endif %}
+
+  <div class="relative z-10 container mx-auto px-6 md:px-10 pb-10 pt-16 flex flex-col md:flex-row items-end md:items-end gap-8">
+    {% if article.image %}
+      <img
+        src="{{ article.image | image_url: width: 400 }}"
+        alt="{{ article.title | escape }}"
+        class="w-40 h-40 md:w-56 md:h-56 object-cover rounded-xl shadow-2xl flex-shrink-0">
+    {% endif %}
+    <div class="flex flex-col gap-2">
+      <p class="text-white/60 text-xs uppercase tracking-widest">Álbum</p>
+      <h1 class="text-white text-3xl md:text-5xl font-bold leading-tight">{{ article.title | escape }}</h1>
+      <p class="text-white/70 text-sm md:text-base">{{ article.author }}</p>
+      <p class="text-white/50 text-sm">
+        {{ article.published_at | date: '%Y' }}
+        {% if section.blocks.size > 0 %}
+          &nbsp;·&nbsp; {{ section.blocks | where: 'type', 'track' | size }} tracks
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Controls -->
+<div class="bg-black px-6 md:px-10 py-6 flex items-center gap-4 border-b border-white/10">
+  <button onclick="musicPlayAll()" class="flex items-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-white/90 transition-colors text-sm">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><polygon points="2,1 13,7 2,13"/></svg>
+    Play
+  </button>
+  <button onclick="musicShuffle()" class="flex items-center gap-2 bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition-colors text-sm">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+    Shuffle
+  </button>
+</div>
+
+<!-- Track list -->
+<div class="bg-black min-h-screen">
+  <div class="container mx-auto px-6 md:px-10">
+
+    <!-- Header row -->
+    <div class="hidden md:grid grid-cols-[40px_1fr_1fr_80px_60px] gap-4 px-4 py-3 border-b border-white/10 text-white/40 text-xs uppercase tracking-widest">
+      <span>#</span>
+      <span>Título</span>
+      <span>Artistas</span>
+      <span class="text-right">Duración</span>
+      <span></span>
+    </div>
+
+    {% assign track_index = 0 %}
+    {% for block in section.blocks %}
+      {% if block.type == 'track' %}
+        {% assign track_index = track_index | plus: 1 %}
+        <div
+          {{ block.shopify_attributes }}
+          class="music-track-row grid grid-cols-[40px_1fr_60px] md:grid-cols-[40px_1fr_1fr_80px_60px] gap-4 px-4 py-3 border-b border-white/5 items-center hover:bg-white/5 cursor-pointer rounded-lg transition-colors group"
+          data-index="{{ track_index }}"
+          data-audio="{{ block.settings.audio_url }}"
+          data-youtube="{{ block.settings.youtube_url }}"
+          data-title="{{ block.settings.track_title | escape }}"
+          onclick="musicSelectTrack(this)">
+
+          <span class="track-number text-white/40 text-sm text-center group-hover:hidden">{{ track_index }}</span>
+          <span class="track-play hidden group-hover:flex items-center justify-center text-white">
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="currentColor"><polygon points="2,1 13,7 2,13"/></svg>
+          </span>
+
+          <div class="flex flex-col min-w-0">
+            <span class="track-title text-white text-sm font-medium truncate">
+              {{ block.settings.track_title | default: 'Sin título' }}
+            </span>
+            {% if block.settings.track_subtitle != blank %}
+              <span class="text-white/40 text-xs truncate">{{ block.settings.track_subtitle }}</span>
+            {% endif %}
+          </div>
+
+          <span class="hidden md:block text-white/50 text-sm truncate">{{ block.settings.artists }}</span>
+          <span class="hidden md:block text-white/50 text-sm text-right">{{ block.settings.duration }}</span>
+
+          <div class="flex items-center justify-end gap-2">
+            {% if block.settings.youtube_url != blank %}
+              <span class="text-white/30 text-xs" title="Video disponible">▶</span>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+  </div>
+</div>
+
+<!-- Mini player (fijo abajo) -->
+<div id="music-player" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-zinc-900/95 backdrop-blur-md border-t border-white/10">
+  <div class="container mx-auto px-6 md:px-10 py-3 flex flex-col gap-3">
+
+    <!-- Toggle audio/video -->
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span id="player-track-name" class="text-white text-sm font-medium truncate max-w-[200px] md:max-w-none"></span>
+      </div>
+      <div id="player-toggle-wrap" class="hidden flex items-center gap-2">
+        <span class="text-white/50 text-xs">Audio</span>
+        <button
+          id="player-toggle"
+          onclick="musicToggleMode()"
+          class="relative w-10 h-5 bg-white/20 rounded-full transition-colors"
+          aria-label="Cambiar a video">
+          <span id="player-toggle-dot" class="absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full transition-transform"></span>
+        </button>
+        <span class="text-white/50 text-xs">Video</span>
+      </div>
+      <button onclick="musicClose()" class="text-white/40 hover:text-white text-xl leading-none ml-4">×</button>
+    </div>
+
+    <!-- Audio player -->
+    <div id="player-audio-wrap">
+      <audio id="player-audio" controls class="w-full h-8 accent-white" style="filter: invert(1) hue-rotate(180deg);"></audio>
+    </div>
+
+    <!-- YouTube embed -->
+    <div id="player-video-wrap" class="hidden">
+      <div id="player-youtube" class="w-full aspect-video max-h-[50vh]"></div>
+    </div>
+
+  </div>
+</div>
+
+{% if article.content != blank %}
+  <div class="bg-black px-6 md:px-10 py-12 container mx-auto prose prose-invert max-w-none">
+    {{ article.content }}
+  </div>
+{% endif %}
+
+<style>
+  .music-track-row.is-playing .track-number { display: none; }
+  .music-track-row.is-playing .track-play { display: flex !important; color: #1db954; }
+  .music-track-row.is-playing .track-title { color: #1db954; }
+</style>
+
+<script>
+  var musicTracks = [];
+  var musicCurrentIndex = -1;
+  var musicMode = 'audio'; // 'audio' or 'video'
+  var musicShuffled = false;
+
+  document.querySelectorAll('.music-track-row').forEach(function(row, i) {
+    musicTracks.push({
+      el: row,
+      audio: row.dataset.audio,
+      youtube: row.dataset.youtube,
+      title: row.dataset.title,
+      index: i
+    });
+  });
+
+  function musicSelectTrack(el) {
+    var idx = parseInt(el.dataset.index) - 1;
+    musicLoadTrack(idx);
+  }
+
+  function musicLoadTrack(idx) {
+    if (idx < 0 || idx >= musicTracks.length) return;
+    musicCurrentIndex = idx;
+
+    // Clear playing state
+    document.querySelectorAll('.music-track-row').forEach(function(r) { r.classList.remove('is-playing'); });
+    musicTracks[idx].el.classList.add('is-playing');
+
+    var track = musicTracks[idx];
+    document.getElementById('player-track-name').textContent = track.title;
+
+    var hasVideo = track.youtube && track.youtube !== '';
+    document.getElementById('player-toggle-wrap').classList.toggle('hidden', !hasVideo);
+
+    if (!hasVideo) musicMode = 'audio';
+    musicRenderPlayer(track);
+
+    document.getElementById('music-player').classList.remove('hidden');
+  }
+
+  function musicRenderPlayer(track) {
+    if (musicMode === 'video' && track.youtube) {
+      document.getElementById('player-audio-wrap').classList.add('hidden');
+      document.getElementById('player-video-wrap').classList.remove('hidden');
+      document.getElementById('player-toggle-dot').style.transform = 'translateX(20px)';
+      document.getElementById('player-toggle').style.backgroundColor = 'rgba(255,255,255,0.6)';
+
+      var ytId = musicYoutubeId(track.youtube);
+      document.getElementById('player-youtube').innerHTML =
+        '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + ytId + '?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="rounded-lg"></iframe>';
+    } else {
+      document.getElementById('player-audio-wrap').classList.remove('hidden');
+      document.getElementById('player-video-wrap').classList.add('hidden');
+      document.getElementById('player-toggle-dot').style.transform = 'translateX(0)';
+      document.getElementById('player-toggle').style.backgroundColor = '';
+
+      var audio = document.getElementById('player-audio');
+      audio.src = track.audio;
+      audio.play();
+
+      audio.onended = function() {
+        musicLoadTrack(musicCurrentIndex + 1);
+      };
+    }
+  }
+
+  function musicToggleMode() {
+    musicMode = musicMode === 'audio' ? 'video' : 'audio';
+    musicRenderPlayer(musicTracks[musicCurrentIndex]);
+  }
+
+  function musicPlayAll() {
+    musicShuffled = false;
+    musicLoadTrack(0);
+  }
+
+  function musicShuffle() {
+    musicShuffled = true;
+    musicLoadTrack(Math.floor(Math.random() * musicTracks.length));
+  }
+
+  function musicClose() {
+    document.getElementById('music-player').classList.add('hidden');
+    var audio = document.getElementById('player-audio');
+    audio.pause();
+    audio.src = '';
+    document.getElementById('player-youtube').innerHTML = '';
+    document.querySelectorAll('.music-track-row').forEach(function(r) { r.classList.remove('is-playing'); });
+    musicCurrentIndex = -1;
+  }
+
+  function musicYoutubeId(url) {
+    var match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([^&?\/\s]+)/);
+    return match ? match[1] : url;
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Article Music",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "track",
+      "name": "Track",
+      "settings": [
+        {
+          "type": "text",
+          "id": "track_title",
+          "label": "Título"
+        },
+        {
+          "type": "text",
+          "id": "track_subtitle",
+          "label": "Subtítulo (opcional)"
+        },
+        {
+          "type": "text",
+          "id": "artists",
+          "label": "Artistas"
+        },
+        {
+          "type": "text",
+          "id": "duration",
+          "label": "Duración (ej: 3:24)"
+        },
+        {
+          "type": "text",
+          "id": "audio_url",
+          "label": "URL del audio (mp3, wav...)"
+        },
+        {
+          "type": "text",
+          "id": "youtube_url",
+          "label": "URL de YouTube (opcional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Music"
+    }
+  ]
+}
+{% endschema %}
