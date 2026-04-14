@@ -32,9 +32,9 @@
         "section_2"
       ],
       "settings": {
-        "image": "",
+        "image": "shopify://shop_images/maito_207.jpg",
         "name": "Majo Benitez",
-        "description": "<p>Majo Benitez descripción</p>"
+        "description": ""
       }
     }
   },
