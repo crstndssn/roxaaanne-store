@@ -15,21 +15,13 @@
         "section_1": {
           "type": "section",
           "settings": {
-            "title": "proyectos",
-            "link": ""
-          }
-        },
-        "section_2": {
-          "type": "section",
-          "settings": {
-            "title": "portafolio",
-            "link": ""
+            "title": "fiestas",
+            "link": "shopify://blogs/fiestas-de-majo"
           }
         }
       },
       "block_order": [
-        "section_1",
-        "section_2"
+        "section_1"
       ],
       "settings": {
         "image": "shopify://shop_images/maito_207.jpg",
