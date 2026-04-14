@@ -9,10 +9,10 @@
         </div>
       {%- when 'featured_image' -%}
         {%- if article.image -%}
-          <div class="w-full h-[200px] md:h-[470px] bg-gray-100 dark:bg-[#1c1c1c] overflow-hidden flex items-center justify-center">
+          <div class="page-width page-width--narrow">
             <img
-              class="w-full"
-              src="{{ article.image | image_url: width: master }}"
+              class="w-full h-auto block"
+              src="{{ article.image | image_url: width: 1600 }}"
               width="{{ article.image.width }}"
               height="{{ article.image.height }}"
               alt="{{ article.image.alt | escape }}">
