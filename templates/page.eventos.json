@@ -234,7 +234,7 @@
             "title": "Cinergia: La única opción - Chan-Woo Park",
             "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
-            "featured": true,
+            "featured": false,
             "muted": true
           }
         },
@@ -248,7 +248,7 @@
             "title": "ROXY FEST: Pechan Project - Humano Chamán",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
-            "featured": true,
+            "featured": false,
             "muted": true
           }
         },
