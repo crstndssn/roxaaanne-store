@@ -235,7 +235,7 @@
             "location": "Neiva, Huila • El Patio",
             "url": "https://roxaaanne.com/pages/cinergia",
             "featured": true,
-            "muted": false
+            "muted": true
           }
         },
         "evento_Br4DQK": {
@@ -249,7 +249,7 @@
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "featured": true,
-            "muted": false
+            "muted": true
           }
         },
         "evento_JKwhKb": {
