@@ -244,6 +244,16 @@
         "name": "boolean",
         "category": "TRUE_FALSE"
       }
+    },
+    {
+      "key": "radio_queue",
+      "namespace": "custom",
+      "name": "Radio Queue",
+      "description": "",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
     }
   ]
 }

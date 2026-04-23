@@ -1,0 +1,1837 @@
+<!-- Global Player Bar -->
+<style>
+  body {
+    padding-bottom: 100px !important;
+  }
+
+  #roxy-player {
+    display: none;
+    position: fixed;
+    bottom: 7px;
+    left: 20px;
+    right: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+    height: 90px;
+    background: rgb(33 33 33 / 33%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  #roxy-player-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  @media (min-width: 640px) {
+    #roxy-player-inner {
+      padding: 0 20px;
+      gap: 16px;
+    }
+  }
+
+  /* ── Left ── */
+  #roxy-player-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
+    max-width: 160px;
+  }
+
+  @media (min-width: 640px) {
+    #roxy-player-left {
+      gap: 10px;
+      max-width: 260px;
+    }
+  }
+
+  #roxy-player-art {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #222;
+    display: none;
+  }
+
+  #roxy-player-info {
+    min-width: 0;
+  }
+
+  #roxy-player-title {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 170px;
+  }
+
+  #roxy-player-artist {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 170px;
+    margin-top: 2px;
+  }
+
+  /* ── Center ── */
+  #roxy-player-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  /* Radio center — only live indicator + progress */
+  #roxy-player-radio-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+  }
+
+  #roxy-player-live-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #roxy-player-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #cc0000;
+    animation: roxy-player-pulse 1.4s ease-in-out infinite;
+  }
+
+  @keyframes roxy-player-pulse {
+    0,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.4;
+      transform: scale(0.8);
+    }
+  }
+
+  #roxy-player-live-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  /* Radio progress (display only, no seek) */
+  #roxy-player-radio-bar {
+    width: 100%;
+    max-width: 480px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    position: relative;
+  }
+
+  #roxy-player-radio-fill {
+    height: 100%;
+    width: 0;
+    background: #cc0000;
+    border-radius: 2px;
+    transition: width 0.1s linear;
+  }
+
+  /* Music center — full controls */
+  #roxy-player-music-center {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 4px;
+  }
+
+  #roxy-player-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  #roxy-player-controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  #roxy-player-controls button:hover {
+    color: #fff;
+  }
+
+  #roxy-player-btn-shuffle,
+  #roxy-player-btn-repeat {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  #roxy-player-btn-play {
+    background: #fff !important;
+    color: #000 !important;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+  }
+
+  #roxy-player-icon-pause {
+    display: none;
+  }
+
+  #roxy-player-music-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  #roxy-player-time-cur,
+  #roxy-player-time-dur {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 10px;
+    min-width: 28px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #roxy-player-time-cur {
+    text-align: right;
+  }
+
+  #roxy-player-progress-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  #roxy-player-progress-fill {
+    height: 100%;
+    width: 0;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+    pointer-events: none;
+    transition: width 0.1s linear;
+  }
+
+  #roxy-player-progress-bar:hover #roxy-player-progress-fill {
+    background: #fff;
+  }
+
+  /* ── Right ── */
+  #roxy-player-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  @media (min-width: 640px) {
+    #roxy-player-right {
+      gap: 12px;
+    }
+  }
+
+  /* ── Mobile progress strip (top of player bar) ── */
+  #roxy-mobile-strip {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  #roxy-mobile-strip-fill {
+    height: 100%;
+    width: 0;
+    background: rgba(255, 255, 255, 0.55);
+    transition: width 0.1s linear;
+  }
+
+  /* ── Mobile layout (< 640px) ── */
+  @media (max-width: 639px) {
+    body {
+      padding-bottom: 80px !important;
+    }
+
+    #roxy-player {
+      height: 72px;
+      width: 95%;
+    }
+
+    #roxy-mobile-strip {
+      display: block;
+    }
+
+    #roxy-player-inner {
+      padding: 0 10px;
+      gap: 6px;
+      position: relative;
+    }
+
+    /* Left: art + info */
+    #roxy-player-left {
+      flex: 1;
+      max-width: none;
+      gap: 8px;
+    }
+
+    #roxy-player-art {
+      width: 36px;
+      height: 36px;
+    }
+
+    #roxy-player-title {
+      font-size: 12px;
+      max-width: 120px;
+    }
+
+    #roxy-player-artist {
+      font-size: 10px;
+      max-width: 120px;
+    }
+
+    #roxy-player-btn-add {
+      display: none !important;
+    }
+
+    /* Center: controls only, no progress row */
+    #roxy-player-center {
+      flex: 0 0 auto;
+      gap: 0;
+    }
+
+    #roxy-player-radio-center {
+      gap: 0;
+    }
+
+    /* Hide progress rows on mobile — strip handles it */
+    #roxy-player-music-center #roxy-player-music-progress,
+    #roxy-player-radio-center #roxy-player-music-progress {
+      display: none !important;
+    }
+
+    #roxy-player-controls {
+      gap: 8px;
+    }
+
+    #roxy-player-btn-play {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Right: only panel toggle */
+    #roxy-player-btn-shuffle,
+    #roxy-player-btn-repeat,
+
+    #themeToggle {
+      display: none !important;
+    }
+
+    #roxy-player-right {
+      gap: 7px;
+    }
+  }
+
+  /* Theme toggle */
+  #themeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  #themeToggle:hover {
+    transform: rotate(20deg);
+  }
+
+  /* Video panel toggle */
+  #roxy-player-btn-videopanel {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s;
+    flex-shrink: 0;
+  }
+
+  #roxy-player-btn-videopanel:hover,
+  #roxy-player-btn-videopanel.active {
+    color: #fff;
+  }
+
+  /* Mute button (radio mode only) */
+  #roxy-player-btn-mute {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  #roxy-player-btn-mute:hover {
+    color: #fff;
+  }
+
+  /* Mode toggle tabs */
+  #roxy-player-mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 4px;
+  }
+
+  .roxy-player-mode-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 6px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.35);
+    transition: background 0.15s
+    , color 0.15s;
+  }
+
+  .roxy-player-mode-btn.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  /* Volume popup */
+  #roxy-player-volume-wrap {
+    display: none;
+    position: absolute;
+    bottom: 55px;
+    right: 0;
+    align-items: center;
+    background: rgba(33, 33, 33, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  #roxy-player-volume-wrap.open {
+    display: flex;
+  }
+
+  #roxy-player-volume {
+    width: 80px;
+    accent-color: white;
+    cursor: pointer;
+  }
+
+  /* Add to playlist */
+  #roxy-player-btn-add {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: border-color 0.15s
+    , color 0.15s;
+  }
+
+  #roxy-player-btn-add:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    color: #fff;
+  }
+  #roxy-player-btn-add.saved {
+    border-color: #1db954;
+    color: #1db954;
+  }
+
+  /* ── Video panel wrapper (matches player positioning) ── */
+  #roxy-video-panel-wrap {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    bottom: 105px;
+    left: 20px;
+    right: 20px;
+    z-index: 9998;
+    transition: opacity 0.2s
+    , visibility 0.2s;
+  }
+
+  #roxy-video-panel-wrap.open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ── Video panel ── */
+  #roxy-video-panel {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.5);
+    background: rgb(33 33 33 / 33%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: row;
+    display: flex;
+    height: 280px;
+  }
+
+  #roxy-video-panel.open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Left: video */
+  #roxy-video-left {
+    flex: 0 0 50%;
+    position: relative;
+    background: #000;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+  }
+
+  #roxy-video-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  /* Right: recommended */
+  #roxy-video-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 14px 0;
+  }
+
+  #roxy-video-rec-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  #roxy-video-rec-title {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  #roxy-video-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: color 0.15s;
+  }
+
+  #roxy-video-close:hover {
+    color: #fff;
+  }
+
+  #roxy-video-rec-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 6px 0;
+  }
+
+  #roxy-video-rec-list::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  #roxy-video-rec-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+  }
+
+  .roxy-rec-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 16px;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 6px;
+    margin: 0 6px;
+  }
+
+  .roxy-rec-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .roxy-rec-item.playing {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .roxy-rec-art {
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #333;
+  }
+
+  .roxy-rec-info {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .roxy-rec-name {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .roxy-rec-artist {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+  }
+
+  .roxy-rec-item.playing .roxy-rec-name {
+    color: #1db954;
+  }
+
+  /* Radio: panel ocupa todo el ancho (sin video) */
+  #roxy-video-panel.radio-mode #roxy-video-left {
+    display: none;
+  }
+
+  #roxy-video-panel.radio-mode #roxy-video-right {
+    flex: 1;
+  }
+
+  /* Programa item */
+  .roxy-prog-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .roxy-prog-item:last-child {
+    border-bottom: none;
+  }
+
+  .roxy-prog-item.current {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+  }
+
+  .roxy-prog-time {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    min-width: 38px;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .roxy-prog-item.current .roxy-prog-time {
+    color: #cc0000;
+  }
+
+  .roxy-prog-title {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .roxy-prog-item.current .roxy-prog-title {
+    color: #fff;
+  }
+
+  .roxy-prog-host {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+</style>
+
+<!-- Video panel wrapper (same positioning as player bar) -->
+<div id="roxy-video-panel-wrap">
+  <div id="roxy-video-panel" class="container mx-auto">
+    <!-- Left: video (music mode only) -->
+    <div id="roxy-video-left">
+      <iframe
+        id="roxy-video-iframe"
+        src=""
+        allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    </div>
+    <!-- Right: recommended (music) / programming (radio) -->
+    <div id="roxy-video-right">
+      <div id="roxy-video-rec-header">
+        <span id="roxy-video-rec-title">Recomendadas</span>
+        <button
+          id="roxy-video-close"
+          onclick="rpCloseVideo()"
+          title="Ocultar">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+      </div>
+      <div id="roxy-video-rec-list"></div>
+    </div>
+  </div>
+</div>
+
+<div id="roxy-player" class="container mx-auto">
+  <div id="roxy-mobile-strip">
+    <div id="roxy-mobile-strip-fill"></div>
+  </div>
+  <div id="roxy-player-inner">
+
+    <!-- Left: art + info + add button -->
+    <div id="roxy-player-left">
+      <img
+        id="roxy-player-art"
+        src=""
+        alt=""
+        width="50"
+        height="50">
+      <div id="roxy-player-info">
+        <div id="roxy-player-title"></div>
+        <div id="roxy-player-artist"></div>
+      </div>
+      <button
+        id="roxy-player-btn-add"
+        onclick="rpAddToPlaylist()"
+        title="Guardar en mi lista">+</button>
+    </div>
+
+    <!-- Center -->
+    <div id="roxy-player-center">
+
+      <!-- Radio: live dot + read-only progress -->
+      <div id="roxy-player-radio-center">
+        <div id="roxy-player-live-row">
+          <span id="roxy-player-live-dot"></span>
+          <span id="roxy-player-live-label">RADIO</span>
+        </div>
+        <div id="roxy-player-music-progress" style="display:flex;">
+          <span id="roxy-player-radio-time-cur" style="color:rgba(255,255,255,0.35);font-size:10px;min-width:28px;text-align:right;font-variant-numeric:tabular-nums;">0:00</span>
+          <div id="roxy-player-radio-bar">
+            <div id="roxy-player-radio-fill"></div>
+          </div>
+          <span id="roxy-player-radio-time-dur" style="color:rgba(255,255,255,0.35);font-size:10px;min-width:28px;font-variant-numeric:tabular-nums;">0:00</span>
+        </div>
+      </div>
+
+      <!-- Music: full controls -->
+      <div id="roxy-player-music-center">
+        <div id="roxy-player-controls">
+          <button
+            onclick="rpShuffle()"
+            id="roxy-player-btn-shuffle"
+            title="Aleatorio">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round">
+              <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5" />
+            </svg>
+          </button>
+          <button onclick="rpPrev()">
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="currentColor">
+              <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
+            </svg>
+          </button>
+          <button onclick="rpTogglePlay()" id="roxy-player-btn-play">
+            <svg
+              id="roxy-player-icon-play"
+              width="13"
+              height="13"
+              viewBox="0 0 14 14"
+              fill="currentColor">
+              <polygon points="3,1 13,7 3,13" />
+            </svg>
+            <svg
+              id="roxy-player-icon-pause"
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="currentColor">
+              <rect
+                x="6"
+                y="4"
+                width="4"
+                height="16" /><rect
+                x="14"
+                y="4"
+                width="4"
+                height="16" />
+            </svg>
+          </button>
+          <button onclick="rpNext()">
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="currentColor">
+              <path d="M6 18l8.5-6L6 6v12zm2-8.14L11.03 12 8 14.14V9.86zM16 6h2v12h-2z" />
+            </svg>
+          </button>
+          <button
+            onclick="rpToggleRepeat()"
+            id="roxy-player-btn-repeat"
+            title="Repetir">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round">
+              <path d="M17 1l4 4-4 4" /><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4" />
+              <path d="M21 13v2a4 4 0 01-4 4H3" />
+            </svg>
+          </button>
+        </div>
+        <div id="roxy-player-music-progress">
+          <span id="roxy-player-time-cur">0:00</span>
+          <div id="roxy-player-progress-bar" onclick="rpSeek(event)">
+            <div id="roxy-player-progress-fill"></div>
+          </div>
+          <span id="roxy-player-time-dur">0:00</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: volume + mode toggle -->
+    <div id="roxy-player-right">
+      <!-- Volume popup (toggle on speaker click) -->
+      <div id="roxy-player-volume-wrap">
+        <input
+          id="roxy-player-volume"
+          type="range"
+          min="0"
+          max="1"
+          step="0.05"
+          value="1"
+          oninput="rpVolume(this.value)">
+      </div>
+
+      <!-- Video panel toggle (always visible) -->
+      <button
+        id="roxy-player-btn-videopanel"
+        onclick="rpToggleVideopanel()"
+        title="Ver panel">
+        <!-- Hamburger: shown when no video -->
+        <svg
+          id="roxy-videopanel-icon-menu"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <line
+            x1="3"
+            y1="6"
+            x2="21"
+            y2="6" />
+          <line
+            x1="3"
+            y1="12"
+            x2="21"
+            y2="12" />
+          <line
+            x1="3"
+            y1="18"
+            x2="21"
+            y2="18" />
+        </svg>
+        <!-- Screen: shown when video available -->
+        <svg
+          id="roxy-videopanel-icon-video"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="display:none;">
+          <rect
+            x="2"
+            y="4"
+            width="20"
+            height="16"
+            rx="3" />
+          <polygon
+            points="10,9 16,12 10,15"
+            fill="currentColor"
+            stroke="none" />
+        </svg>
+      </button>
+
+      <!-- Theme toggle (sun / moon) -->
+      <button id="themeToggle" aria-label="Cambiar tema">
+        <!-- Sun: visible in dark mode -->
+        <svg
+          id="roxy-icon-sun"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="display:none;color:rgba(255,255,255,0.5);">
+          <circle
+            cx="12"
+            cy="12"
+            r="4" />
+          <line
+            x1="12"
+            y1="2"
+            x2="12"
+            y2="4" /><line
+            x1="12"
+            y1="20"
+            x2="12"
+            y2="22" />
+          <line
+            x1="4.22"
+            y1="4.22"
+            x2="5.64"
+            y2="5.64" /><line
+            x1="18.36"
+            y1="18.36"
+            x2="19.78"
+            y2="19.78" />
+          <line
+            x1="2"
+            y1="12"
+            x2="4"
+            y2="12" /><line
+            x1="20"
+            y1="12"
+            x2="22"
+            y2="12" />
+          <line
+            x1="4.22"
+            y1="19.78"
+            x2="5.64"
+            y2="18.36" /><line
+            x1="18.36"
+            y1="5.64"
+            x2="19.78"
+            y2="4.22" />
+        </svg>
+        <!-- Moon: visible in light mode -->
+        <svg
+          id="roxy-icon-moon"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="color:rgba(255,255,255,0.5);">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+
+      <!-- Volume button (always visible) -->
+      <button
+        id="roxy-player-btn-mute"
+        onclick="rpToggleVolume()"
+        title="Volumen">
+        <svg
+          id="roxy-player-icon-sound"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+        </svg>
+        <svg
+          id="roxy-player-icon-muted"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          style="display:none;">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+          <line
+            x1="23"
+            y1="9"
+            x2="17"
+            y2="15" /><line
+            x1="17"
+            y1="9"
+            x2="23"
+            y2="15" />
+        </svg>
+      </button>
+
+      <!-- Mode toggle -->
+      <div id="roxy-player-mode-toggle">
+        <button
+          class="roxy-player-mode-btn active"
+          id="roxy-player-tab-radio"
+          onclick="rpSetMode('radio')"
+          title="Radio">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M19 4H9C8.07 4 7.605 4 7.224 4.102C6.188 4.38 5.38 5.188 5.102 6.224C5 6.605 5 7.089 5 8.019M5 8.019C5.314 8 5.702 8 6.2 8H17.8C18.92 8 19.48 8 19.908 8.218C20.284 8.41 20.59 8.716 20.782 9.092C21 9.52 21 10.08 21 11.2V16.8C21 17.92 21 18.48 20.782 18.908C20.59 19.284 20.284 19.59 19.908 19.782C19.48 20 18.92 20 17.8 20H6.2C5.08 20 4.52 20 4.092 19.782C3.716 19.59 3.41 19.284 3.218 18.908C3 18.48 3 17.92 3 16.8V11.2C3 10.08 3 9.52 3.218 9.092C3.41 8.716 3.716 8.41 4.092 8.218C4.33 8.097 4.608 8.043 5 8.019Z" />
+            <path d="M14 12H18M14 16H18" />
+            <path d="M10 14C10 15.105 9.105 16 8 16C6.895 16 6 15.105 6 14C6 12.895 6.895 12 8 12C9.105 12 10 12.895 10 14Z" />
+          </svg>
+        </button>
+        <button
+          class="roxy-player-mode-btn"
+          id="roxy-player-tab-music"
+          onclick="rpSetMode('music')"
+          title="Música">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M9 19C9 20.105 7.657 21 6 21C4.343 21 3 20.105 3 19C3 17.895 4.343 17 6 17C7.657 17 9 17.895 9 19ZM9 19V5L21 3V17M21 17C21 18.105 19.657 19 18 19C16.343 19 15 18.105 15 17C15 15.895 16.343 15 18 15C19.657 15 21 15.895 21 17ZM9 9L21 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Two separate audio elements -->
+<audio id="roxy-player-audio-radio" style="display:none;"></audio>
+<audio id="roxy-player-audio-music" style="display:none;"></audio>
+
+<script>
+  var RP = {
+    radioQueue: [],
+    queue: [],
+    recommended: [],
+    radioProgram: [],
+    radioProgramIdx: -1,
+    myPlaylist: [],
+    radioIdx: 0,
+    musicIdx: -1,
+    uiMode: 'radio',
+    isShuffle: false,
+    isRepeat: false,
+    radioAudio: null,
+    musicAudio: null,
+    _radioStarted: false,
+    isIOS: /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1),
+
+    init: function() {
+      RP.radioAudio = document.getElementById('roxy-player-audio-radio');
+      RP.musicAudio = document.getElementById('roxy-player-audio-music');
+
+      // Radio audio: always loops through queue
+      RP.radioAudio.addEventListener('ended', function() { RP.radioNext(); });
+      RP.radioAudio.addEventListener('timeupdate', function() { RP.onRadioTimeUpdate(); });
+
+      // Music audio events
+      RP.musicAudio.addEventListener('ended', function() {
+        if (RP.isRepeat) { RP.musicAudio.play(); return; }
+        // Last track without shuffle → switch back to radio
+        if (!RP.isShuffle && RP.musicIdx >= RP.queue.length - 1) {
+          RP.applyUiMode('radio');
+          RP.saveState();
+          return;
+        }
+        RP.musicNext();
+      });
+      RP.musicAudio.addEventListener('timeupdate', function() { RP.onMusicTimeUpdate(); });
+      RP.musicAudio.addEventListener('play', function() { RP.setPlayIcon(true); });
+      RP.musicAudio.addEventListener('pause', function() { RP.setPlayIcon(false); });
+
+      // Load personal playlist
+      try { RP.myPlaylist = JSON.parse(localStorage.getItem('rp_myplaylist') || '[]'); } catch(e) {}
+
+      var metafieldRadioQueue = RP.radioQueue.slice();
+
+      // Pick a random starting point in the program on each page load
+      if (RP.radioProgram.length > 0) {
+        RP.radioProgramIdx = Math.floor(Math.random() * RP.radioProgram.length);
+      }
+
+      var restored = false;
+
+      // Restore session
+      try {
+        var saved = sessionStorage.getItem('rp_state');
+        if (saved) {
+          var s = JSON.parse(saved);
+          RP.radioQueue = metafieldRadioQueue.length > 0 ? metafieldRadioQueue : (s.radioQueue || []);
+          RP.queue = s.queue || [];
+          RP.radioIdx = s.radioIdx || 0;
+          RP.musicIdx = s.musicIdx != null ? s.musicIdx : -1;
+          RP.uiMode = s.uiMode || 'radio';
+          RP.isShuffle = s.isShuffle || false;
+          RP.isRepeat = s.isRepeat || false;
+
+          if (RP.isShuffle) document.getElementById('roxy-player-btn-shuffle').style.color = '#fff';
+          if (RP.isRepeat) document.getElementById('roxy-player-btn-repeat').style.color = '#fff';
+          if (!RP.isIOS) {
+            if (s.radioVolume != null) RP.radioAudio.volume = s.radioVolume;
+            if (s.musicVolume != null) RP.musicAudio.volume = s.musicVolume;
+          }
+
+          RP.applyUiMode(RP.uiMode);
+
+          // Start radio (always, it runs in background)
+          if (RP.radioQueue.length > 0) {
+            RP.startRadio(s.radioTime || 0);
+          }
+
+          // Restore music track info (don't autoplay unless in music mode)
+          if (RP.queue.length > 0 && RP.musicIdx >= 0) {
+            if (RP.uiMode === 'music') {
+              RP.renderMusicTrack(RP.musicIdx, false);
+              if (s.musicTime) {
+                RP.musicAudio.addEventListener('loadeddata', function onLoad() {
+                  RP.musicAudio.removeEventListener('loadeddata', onLoad);
+                  RP.musicAudio.currentTime = s.musicTime || 0;
+                  RP.musicAudio.play().catch(function() { RP.setPlayIcon(false); });
+                }, { once: true });
+              }
+            }
+          }
+
+          document.getElementById('roxy-player').style.display = 'flex';
+          restored = true;
+        }
+      } catch(e) {
+        // Corrupted session — clear it
+        try { sessionStorage.removeItem('rp_state'); } catch(x) {}
+      }
+
+      // No valid session — start fresh with radio at a random track + random position
+      if (!restored) {
+        RP.radioQueue = metafieldRadioQueue;
+        if (RP.radioQueue.length > 0) {
+          RP.radioIdx = Math.floor(Math.random() * RP.radioQueue.length);
+          RP.applyUiMode('radio');
+          // Start at a random time — we don't know duration yet so we pass -1 as sentinel
+          RP.startRadio(-1);
+          document.getElementById('roxy-player').style.display = 'flex';
+        }
+      }
+
+      // If autoplay was blocked, retry on first user interaction
+      if (RP.radioQueue.length > 0) {
+        var retryPlay = function() {
+          if (RP.radioAudio.paused && RP.radioAudio.src) {
+            RP.radioAudio.play().catch(function() {});
+          }
+          document.removeEventListener('click', retryPlay);
+          document.removeEventListener('touchstart', retryPlay);
+        };
+        document.addEventListener('click', retryPlay, { once: true });
+        document.addEventListener('touchstart', retryPlay, { once: true });
+      }
+
+      // Always listen for album queue from article pages
+      window.addEventListener('roxy:load-queue', function(e) {
+        rpCloseVideo();
+        RP.queue = e.detail.queue;
+        RP.recommended = e.detail.recommended || [];
+        RP.musicIdx = e.detail.startIndex || 0;
+        RP.renderMusicTrack(RP.musicIdx, true);
+        RP.applyUiMode('music');
+        document.getElementById('roxy-player').style.display = 'flex';
+        RP.saveState();
+      });
+
+      // Open video panel from track (video-only tracks)
+      window.addEventListener('roxy:open-video', function(e) {
+        var embedUrl = rpYoutubeEmbed(e.detail.youtube);
+        if (!embedUrl) return;
+        document.getElementById('roxy-video-iframe').src = embedUrl;
+        rpOpenVideo();
+      });
+    },
+
+    startRadio: function(fromTime) {
+      if (!RP.radioQueue.length) return;
+      if (RP.radioIdx >= RP.radioQueue.length) RP.radioIdx = 0;
+      var t = RP.radioQueue[RP.radioIdx];
+      if (!t || !t.audio) return;
+
+      RP.radioAudio.src = t.audio;
+      RP.radioAudio.muted = (RP.uiMode === 'music');
+      RP.radioAudio.load();
+
+      RP.radioAudio.addEventListener('loadeddata', function onLoad() {
+        RP.radioAudio.removeEventListener('loadeddata', onLoad);
+        var dur = RP.radioAudio.duration;
+        if (fromTime === -1 && dur && isFinite(dur)) {
+          // Random position within the track
+          RP.radioAudio.currentTime = Math.random() * dur;
+        } else if (fromTime > 0 && dur && fromTime < dur) {
+          RP.radioAudio.currentTime = fromTime;
+        }
+        RP.radioAudio.play().catch(function() {
+          RP._radioStarted = false;
+        });
+        RP._radioStarted = true;
+      }, { once: true });
+
+      // Always show track info
+      RP.renderRadioTrackInfo(t);
+    },
+
+    radioNext: function() {
+      RP.radioIdx = (RP.radioIdx + 1) % RP.radioQueue.length;
+      RP.startRadio(0);
+      RP.saveState();
+    },
+
+    renderRadioTrackInfo: function(t) {
+      document.getElementById('roxy-player-title').textContent = t.title || '';
+      document.getElementById('roxy-player-artist').textContent = t.artist || '';
+      var art = document.getElementById('roxy-player-art');
+      if (t.art) { art.src = t.art; art.style.display = 'block'; }
+      else { art.style.display = 'none'; }
+      // Refresh panel if open and in radio mode
+      if (RP.uiMode === 'radio' && document.getElementById('roxy-video-panel-wrap').classList.contains('open')) {
+        rpRenderRadioProgram();
+      }
+    },
+
+    renderMusicInfo: function(idx) {
+      var t = RP.queue[idx];
+      if (!t) return;
+      document.getElementById('roxy-player-title').textContent = t.title || '';
+      document.getElementById('roxy-player-artist').textContent = t.artist || '';
+      var art = document.getElementById('roxy-player-art');
+      if (t.art) { art.src = t.art; art.style.display = 'block'; }
+      else { art.style.display = 'none'; }
+      var isSaved = RP.myPlaylist.some(function(x) { return x.audio === t.audio; });
+      var addBtn = document.getElementById('roxy-player-btn-add');
+      addBtn.classList.toggle('saved', isSaved);
+      addBtn.textContent = isSaved ? '✓' : '+';
+    },
+
+    renderMusicTrack: function(idx, autoplay) {
+      RP.renderMusicInfo(idx);
+      var t = RP.queue[idx];
+      if (!t) return;
+      rpUpdatePanelIcon(!!(t.youtube));
+      RP.musicAudio.src = t.audio || '';
+      if (autoplay && t.audio) { RP.musicAudio.play(); }
+    },
+
+    applyUiMode: function(mode) {
+      RP.uiMode = mode;
+      var isRadio = mode === 'radio';
+      document.getElementById('roxy-mobile-strip-fill').style.width = isRadio ? '0' : document.getElementById('roxy-player-progress-fill').style.width;
+      document.getElementById('roxy-player-radio-center').style.display = isRadio ? 'flex' : 'none';
+      document.getElementById('roxy-player-music-center').style.display = isRadio ? 'none' : 'flex';
+      document.getElementById('roxy-player-btn-add').style.display = isRadio ? 'none' : 'flex';
+      document.getElementById('roxy-player-tab-radio').classList.toggle('active', isRadio);
+      document.getElementById('roxy-player-tab-music').classList.toggle('active', !isRadio);
+      // Close volume popup on mode switch
+      document.getElementById('roxy-player-volume-wrap').classList.remove('open');
+      // Radio never pauses — only muted when in music mode
+      if (isRadio) {
+        RP.radioAudio.muted = false;
+        if (!RP.musicAudio.paused) RP.musicAudio.pause();
+        // If radio stopped or never started, restart it
+        if (RP.radioAudio.paused && RP.radioQueue.length > 0) {
+          RP.startRadio(0);
+        }
+      } else {
+        RP.radioAudio.muted = true;
+      }
+      // Update volume slider and icon to match current mode
+      if (RP.isIOS) {
+        var currentAudio = isRadio ? RP.radioAudio : RP.musicAudio;
+        document.getElementById('roxy-player-icon-sound').style.display = currentAudio.muted ? 'none' : 'block';
+        document.getElementById('roxy-player-icon-muted').style.display = currentAudio.muted ? 'block' : 'none';
+      } else {
+        var vol = isRadio ? RP.radioAudio.volume : RP.musicAudio.volume;
+        document.getElementById('roxy-player-volume').value = vol;
+        var volMuted = vol === 0;
+        document.getElementById('roxy-player-icon-sound').style.display = volMuted ? 'none' : 'block';
+        document.getElementById('roxy-player-icon-muted').style.display = volMuted ? 'block' : 'none';
+      }
+      // Show correct track info (info only — never touch audio src here)
+      if (isRadio && RP.radioQueue[RP.radioIdx]) {
+        RP.renderRadioTrackInfo(RP.radioQueue[RP.radioIdx]);
+      } else if (!isRadio && RP.queue[RP.musicIdx]) {
+        RP.renderMusicInfo(RP.musicIdx);
+      }
+      // Update panel content if open
+      if (document.getElementById('roxy-video-panel-wrap').classList.contains('open')) {
+        rpRefreshPanel();
+      }
+    },
+
+    setPlayIcon: function(playing) {
+      document.getElementById('roxy-player-icon-play').style.display = playing ? 'none' : 'block';
+      document.getElementById('roxy-player-icon-pause').style.display = playing ? 'block' : 'none';
+    },
+
+    onRadioTimeUpdate: function() {
+      var a = RP.radioAudio;
+      if (!a.duration) return;
+      var pct = (a.currentTime / a.duration) * 100;
+      document.getElementById('roxy-player-radio-fill').style.width = pct + '%';
+      document.getElementById('roxy-mobile-strip-fill').style.width = pct + '%';
+      document.getElementById('roxy-player-radio-time-cur').textContent = RP.fmt(a.currentTime);
+      document.getElementById('roxy-player-radio-time-dur').textContent = RP.fmt(a.duration);
+      if (!RP._saveTimer) {
+        RP._saveTimer = setTimeout(function() { RP._saveTimer = null; RP.saveState(); }, 5000);
+      }
+    },
+
+    onMusicTimeUpdate: function() {
+      var a = RP.musicAudio;
+      if (!a.duration) return;
+      var pct = (a.currentTime / a.duration) * 100;
+      document.getElementById('roxy-player-progress-fill').style.width = pct + '%';
+      document.getElementById('roxy-mobile-strip-fill').style.width = pct + '%';
+      document.getElementById('roxy-player-time-cur').textContent = RP.fmt(a.currentTime);
+      document.getElementById('roxy-player-time-dur').textContent = RP.fmt(a.duration);
+    },
+
+    musicNext: function() {
+      if (!RP.queue.length) return;
+      var idx = RP.isShuffle
+        ? Math.floor(Math.random() * RP.queue.length)
+        : (RP.musicIdx + 1) % RP.queue.length;
+      RP.musicIdx = idx;
+      RP.renderMusicTrack(idx, true);
+      RP.saveState();
+    },
+
+    musicPrev: function() {
+      if (!RP.queue.length) return;
+      if (RP.musicAudio.currentTime > 3) { RP.musicAudio.currentTime = 0; return; }
+      var idx = (RP.musicIdx - 1 + RP.queue.length) % RP.queue.length;
+      RP.musicIdx = idx;
+      RP.renderMusicTrack(idx, true);
+      RP.saveState();
+    },
+
+    saveState: function() {
+      try {
+        sessionStorage.setItem('rp_state', JSON.stringify({
+          radioQueue: RP.radioQueue,
+          queue: RP.queue,
+          radioIdx: RP.radioIdx,
+          musicIdx: RP.musicIdx,
+          uiMode: RP.uiMode,
+          isShuffle: RP.isShuffle,
+          isRepeat: RP.isRepeat,
+          radioTime: RP.radioAudio ? RP.radioAudio.currentTime : 0,
+          musicTime: RP.musicAudio ? RP.musicAudio.currentTime : 0,
+          radioVolume: RP.radioAudio ? RP.radioAudio.volume : 1,
+          musicVolume: RP.musicAudio ? RP.musicAudio.volume : 1
+        }));
+      } catch(e) {}
+    },
+
+    fmt: function(s) {
+      if (!s || isNaN(s)) return '0:00';
+      var m = Math.floor(s / 60), sec = Math.floor(s % 60);
+      return m + ':' + (sec < 10 ? '0' : '') + sec;
+    }
+  };
+
+  function rpSetMode(mode) {
+    RP.applyUiMode(mode);
+    RP.saveState();
+  }
+  function rpToggleVolume() {
+    var audio = RP.uiMode === 'radio' ? RP.radioAudio : RP.musicAudio;
+    audio.muted = !audio.muted;
+    var isMuted = audio.muted;
+    document.getElementById('roxy-player-icon-sound').style.display = isMuted ? 'none' : 'block';
+    document.getElementById('roxy-player-icon-muted').style.display = isMuted ? 'block' : 'none';
+    if (!RP.isIOS) {
+      document.getElementById('roxy-player-volume').value = isMuted ? 0 : audio.volume;
+    }
+  }
+  function rpTogglePlay() {
+    if (RP.musicAudio.paused) RP.musicAudio.play();
+    else { RP.musicAudio.pause(); RP.saveState(); }
+  }
+  function rpNext() { RP.musicNext(); }
+  function rpPrev() { RP.musicPrev(); }
+  function rpVolume(v) {
+    var vol = parseFloat(v);
+    if (RP.isIOS) {
+      // iOS: can't set volume, use mute instead
+      var audio = RP.uiMode === 'radio' ? RP.radioAudio : RP.musicAudio;
+      audio.muted = vol === 0;
+    } else {
+      if (RP.uiMode === 'radio') {
+        RP.radioAudio.volume = vol;
+      } else {
+        RP.musicAudio.volume = vol;
+      }
+    }
+    var isMuted = vol === 0;
+    document.getElementById('roxy-player-icon-sound').style.display = isMuted ? 'none' : 'block';
+    document.getElementById('roxy-player-icon-muted').style.display = isMuted ? 'block' : 'none';
+  }
+  function rpShuffle() {
+    RP.isShuffle = !RP.isShuffle;
+    document.getElementById('roxy-player-btn-shuffle').style.color = RP.isShuffle ? '#fff' : 'rgba(255,255,255,0.35)';
+    RP.saveState();
+  }
+  function rpToggleRepeat() {
+    RP.isRepeat = !RP.isRepeat;
+    document.getElementById('roxy-player-btn-repeat').style.color = RP.isRepeat ? '#fff' : 'rgba(255,255,255,0.35)';
+    RP.saveState();
+  }
+  function rpSeek(e) {
+    var bar = document.getElementById('roxy-player-progress-bar');
+    if (RP.musicAudio.duration) RP.musicAudio.currentTime = (e.offsetX / bar.offsetWidth) * RP.musicAudio.duration;
+  }
+  function rpYoutubeEmbed(url) {
+    if (!url) return '';
+    var m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/))([^?&\s]+)/);
+    return m ? 'https://www.youtube.com/embed/' + m[1] + '?autoplay=1' : '';
+  }
+
+
+  function rpCloseVideo() {
+    document.getElementById('roxy-video-panel-wrap').classList.remove('open');
+    document.getElementById('roxy-player-btn-videopanel').classList.remove('active');
+    document.getElementById('roxy-player-btn-mute').style.display = '';
+  }
+
+  function rpOpenVideo() {
+    rpRefreshPanel();
+    document.getElementById('roxy-video-panel-wrap').classList.add('open');
+    document.getElementById('roxy-player-btn-videopanel').classList.add('active');
+    var t = RP.queue[RP.musicIdx];
+    var hasVideo = RP.uiMode === 'music' && !!(t && t.youtube);
+    if (hasVideo) {
+      document.getElementById('roxy-player-btn-mute').style.display = 'none';
+      document.getElementById('roxy-player-volume-wrap').classList.remove('open');
+    }
+  }
+
+  function rpToggleVideopanel() {
+    var wrap = document.getElementById('roxy-video-panel-wrap');
+    if (wrap.classList.contains('open')) {
+      rpCloseVideo();
+    } else {
+      rpOpenVideo();
+    }
+  }
+
+  function rpUpdatePanelIcon(hasVideo) {
+    document.getElementById('roxy-videopanel-icon-menu').style.display = hasVideo ? 'none' : 'block';
+    document.getElementById('roxy-videopanel-icon-video').style.display = hasVideo ? 'block' : 'none';
+  }
+
+  function rpRefreshPanel() {
+    var panel = document.getElementById('roxy-video-panel');
+    var isRadio = RP.uiMode === 'radio';
+    var title = document.getElementById('roxy-video-rec-title');
+
+    if (isRadio) {
+      panel.classList.add('radio-mode');
+      document.getElementById('roxy-video-iframe').src = '';
+      title.textContent = 'Programación';
+      rpUpdatePanelIcon(false);
+      document.getElementById('roxy-player-btn-mute').style.display = '';
+      rpRenderRadioProgram();
+    } else {
+      panel.classList.remove('radio-mode');
+      title.textContent = 'Recomendadas';
+      var t = RP.queue[RP.musicIdx];
+      var hasVideo = !!(t && t.youtube);
+      rpUpdatePanelIcon(hasVideo);
+      // Show/hide volume based on whether there's a real video
+      document.getElementById('roxy-player-btn-mute').style.display = hasVideo ? 'none' : '';
+      if (hasVideo) {
+        document.getElementById('roxy-player-volume-wrap').classList.remove('open');
+        var iframe = document.getElementById('roxy-video-iframe');
+        if (!iframe.src || iframe.src === window.location.href) {
+          iframe.src = rpYoutubeEmbed(t.youtube);
+        }
+      } else {
+        document.getElementById('roxy-video-iframe').src = '';
+      }
+      rpRenderRecommended();
+    }
+  }
+
+  function rpRenderRadioProgram() {
+    var list = document.getElementById('roxy-video-rec-list');
+    list.innerHTML = '';
+
+    // ── If radioProgram metafield is configured, use it ──
+    var prog = RP.radioProgram;
+    if (prog && prog.length) {
+      var currentIdx = RP.radioProgramIdx >= 0 ? RP.radioProgramIdx : 0;
+      prog.forEach(function(p, i) {
+        var isCurrent = i === currentIdx;
+        var isPast = i < currentIdx;
+        var el = document.createElement('div');
+        el.className = 'roxy-prog-item' + (isCurrent ? ' current' : '');
+        if (isPast) el.style.opacity = '0.3';
+        el.innerHTML =
+          '<div class="roxy-prog-time">' + (p.time || '') + '</div>' +
+          '<div style="min-width:0;flex:1;">' +
+            '<div class="roxy-prog-title">' +
+              (isCurrent ? '<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#cc0000;margin-right:5px;vertical-align:middle;animation:roxy-player-pulse 1.4s ease-in-out infinite;"></span>' : '') +
+              (p.title || '') +
+            '</div>' +
+            (p.host ? '<div class="roxy-prog-host">' + p.host + '</div>' : '') +
+          '</div>';
+        list.appendChild(el);
+        if (isCurrent) setTimeout(function() { el.scrollIntoView({ block: 'nearest' }); }, 50);
+      });
+      return;
+    }
+
+    // ── Fallback: use radioQueue to show past / now / upcoming ──
+    var queue = RP.radioQueue;
+    if (!queue || !queue.length) {
+      list.innerHTML = '<p style="color:rgba(255,255,255,0.25);font-size:11px;padding:16px;text-align:center;">Sin programación disponible</p>';
+      return;
+    }
+
+    var cur = RP.radioIdx;
+    var currentEl;
+
+    queue.forEach(function(t, i) {
+      var isCurrent = i === cur;
+      var isPast = i < cur;
+      var el = document.createElement('div');
+      el.style.cssText = 'display:flex;align-items:center;gap:10px;padding:8px 16px;border-radius:6px;margin:0 6px;transition:background 0.15s;' +
+        (isCurrent ? 'background:rgba(255,255,255,0.06);' : '') +
+        (isPast ? 'opacity:0.35;' : '');
+
+      el.innerHTML =
+        (t.art
+          ? '<img src="' + t.art + '" style="width:36px;height:36px;border-radius:5px;object-fit:cover;flex-shrink:0;background:#333;">'
+          : '<div style="width:36px;height:36px;border-radius:5px;background:#333;flex-shrink:0;"></div>') +
+        '<div style="min-width:0;flex:1;">' +
+          (isCurrent
+            ? '<div style="display:flex;align-items:center;gap:5px;margin-bottom:2px;">' +
+                '<span style="width:5px;height:5px;border-radius:50%;background:#cc0000;display:inline-block;flex-shrink:0;animation:roxy-player-pulse 1.4s ease-in-out infinite;"></span>' +
+                '<span style="color:rgba(255,255,255,0.4);font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">AHORA</span>' +
+              '</div>'
+            : (isPast
+                ? '<div style="color:rgba(255,255,255,0.3);font-size:9px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:2px;">Anterior</div>'
+                : '<div style="color:rgba(255,255,255,0.3);font-size:9px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:2px;">A continuación</div>'
+              )
+          ) +
+          '<div style="color:' + (isCurrent ? '#fff' : 'rgba(255,255,255,0.65)') + ';font-size:12px;font-weight:' + (isCurrent ? '600' : '500') + ';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (t.title || '') + '</div>' +
+          (t.artist ? '<div style="color:rgba(255,255,255,0.4);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px;">' + t.artist + '</div>' : '') +
+        '</div>';
+
+      list.appendChild(el);
+      if (isCurrent) currentEl = el;
+    });
+
+    if (currentEl) setTimeout(function() { currentEl.scrollIntoView({ block: 'nearest' }); }, 50);
+  }
+
+  function rpRenderRecommended() {
+    var list = document.getElementById('roxy-video-rec-list');
+    list.innerHTML = '';
+    var tracks = RP.recommended;
+    if (!tracks || !tracks.length) {
+      list.innerHTML = '<p style="color:rgba(255,255,255,0.25);font-size:11px;padding:16px;text-align:center;">Sin recomendadas</p>';
+      return;
+    }
+    tracks.forEach(function(t, i) {
+      var el = document.createElement('div');
+      el.className = 'roxy-rec-item';
+      el.innerHTML = (t.art ? '<img class="roxy-rec-art" src="' + t.art + '" alt="">' : '<div class="roxy-rec-art"></div>') +
+        '<div class="roxy-rec-info">' +
+          '<div class="roxy-rec-name">' + (t.title || '') + '</div>' +
+          '<div class="roxy-rec-artist">' + (t.artist || '') + '</div>' +
+        '</div>';
+      el.addEventListener('click', function() { rpPlayRecommended(i); });
+      list.appendChild(el);
+    });
+  }
+
+  function rpPlayRecommended(i) {
+    var t = RP.recommended[i];
+    if (!t) return;
+    // Mark active
+    document.querySelectorAll('.roxy-rec-item').forEach(function(el, idx) {
+      el.classList.toggle('playing', idx === i);
+    });
+    // Load into music player
+    document.getElementById('roxy-player-title').textContent = t.title || '';
+    document.getElementById('roxy-player-artist').textContent = t.artist || '';
+    var art = document.getElementById('roxy-player-art');
+    if (t.art) { art.src = t.art; art.style.display = 'block'; } else { art.style.display = 'none'; }
+    RP.musicAudio.src = t.audio || '';
+    if (t.audio) RP.musicAudio.play();
+    // Update video iframe if panel is open
+    if (document.getElementById('roxy-video-panel-wrap').classList.contains('open')) {
+      if (t.youtube) {
+        document.getElementById('roxy-video-iframe').src = rpYoutubeEmbed(t.youtube);
+      } else {
+        document.getElementById('roxy-video-iframe').src = '';
+      }
+    }
+  }
+
+  function rpAddToPlaylist() {
+    var t = RP.queue[RP.musicIdx];
+    if (!t) return;
+    var i = RP.myPlaylist.findIndex(function(x) { return x.audio === t.audio; });
+    if (i >= 0) RP.myPlaylist.splice(i, 1);
+    else RP.myPlaylist.push({ title: t.title, artist: t.artist, art: t.art, audio: t.audio });
+    try { localStorage.setItem('rp_myplaylist', JSON.stringify(RP.myPlaylist)); } catch(e) {}
+    RP.renderMusicInfo(RP.musicIdx);
+  }
+
+  // Load radio queue from metafield
+  {% if shop.metafields.custom.radio_queue %}
+    try { RP.radioQueue = {{ shop.metafields.custom.radio_queue.value | json }}; } catch(e) {}
+  {% endif %}
+
+  // Load radio programming from metafield
+  {% if shop.metafields.custom.radio_program %}
+    try {
+      {% if shop.metafields.custom.radio_program.type == 'json' %}
+        RP.radioProgram = {{ shop.metafields.custom.radio_program.value | json }};
+      {% else %}
+        RP.radioProgram = JSON.parse({{ shop.metafields.custom.radio_program.value | json }});
+      {% endif %}
+    } catch(e) { console.warn('radio_program metafield error:', e); }
+  {% else %}
+    console.warn('radio_program metafield not found. Create it at: Shopify Admin → Settings → Custom data → Shops → Add definition → namespace: custom, key: radio_program, type: JSON');
+  {% endif %}
+
+  document.addEventListener('DOMContentLoaded', function() {
+    RP.init();
+    // Close volume popup on outside click
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#roxy-player-volume-wrap') && !e.target.closest('#roxy-player-btn-mute')) {
+        document.getElementById('roxy-player-volume-wrap').classList.remove('open');
+      }
+      // Hide video panel on outside click (video keeps playing)
+      // Exclude the toggle button itself — it has its own handler
+      if (
+        !e.target.closest('#roxy-video-panel-wrap') &&
+        !e.target.closest('.music-track-row') &&
+        !e.target.closest('#roxy-player-btn-videopanel')
+      ) {
+        rpCloseVideo();
+      }
+    });
+  });
+
+  // ── AJAX Navigation ──────────────────────────────────────────────────────────
+  // Disabled in Shopify theme editor so section reloads work correctly
+  (function() {
+    if (window.Shopify && window.Shopify.designMode) return;
+
+    var busy = false;
+
+    function canIntercept(href) {
+      try {
+        var u = new URL(href, location.href);
+        if (u.origin !== location.origin) return false;
+        if (/^\/(checkout|cart|account|admin|password)/.test(u.pathname)) return false;
+        if (u.pathname === location.pathname && u.hash) return false;
+        return true;
+      } catch(e) { return false; }
+    }
+
+    function runScripts(container) {
+      container.querySelectorAll('script').forEach(function(s) {
+        var n = document.createElement('script');
+        Array.from(s.attributes).forEach(function(a) { n.setAttribute(a.name, a.value); });
+        n.textContent = s.textContent;
+        s.parentNode.replaceChild(n, s);
+      });
+    }
+
+    function go(url, push) {
+      if (busy) return;
+      busy = true;
+      // Close cart drawer if it's open
+      var cartDrawer = document.querySelector('cart-drawer');
+      if (cartDrawer && cartDrawer.classList.contains('active')) {
+        cartDrawer.close();
+      }
+      // Close menu drawer if it's open
+      var menuDrawer = document.querySelector('header-drawer');
+      if (menuDrawer && menuDrawer.mainDetailsToggle && menuDrawer.mainDetailsToggle.hasAttribute('open')) {
+        menuDrawer.mainDetailsToggle.removeAttribute('open');
+        menuDrawer.mainDetailsToggle.classList.remove('menu-opening');
+        var menuSummary = menuDrawer.mainDetailsToggle.querySelector('summary');
+        if (menuSummary) menuSummary.setAttribute('aria-expanded', 'false');
+        menuDrawer.mainDetailsToggle.querySelectorAll('details').forEach(function(d) {
+          d.removeAttribute('open');
+          d.classList.remove('menu-opening');
+        });
+        menuDrawer.mainDetailsToggle.querySelectorAll('.submenu-open').forEach(function(s) {
+          s.classList.remove('submenu-open');
+        });
+        var bp = menuDrawer.dataset.breakpoint || 'tablet';
+        document.body.classList.remove('overflow-hidden-' + bp);
+        var header = document.querySelector('.section-header');
+        if (header) header.classList.remove('menu-open');
+      }
+      fetch(url)
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          var newMain = doc.getElementById('MainContent');
+          var curMain = document.getElementById('MainContent');
+          if (newMain && curMain) {
+            curMain.innerHTML = newMain.innerHTML;
+            runScripts(curMain);
+          }
+          document.title = doc.title;
+          if (push !== false) history.pushState({ url: url }, doc.title, url);
+          window.scrollTo(0, 0);
+        })
+        .catch(function() { location.href = url; })
+        .finally(function() { busy = false; });
+    }
+
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (a.target === '_blank' || a.hasAttribute('download')) return;
+      var href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      if (!canIntercept(href)) return;
+      e.preventDefault();
+      go(href);
+    });
+
+    window.addEventListener('popstate', function() { go(location.href, false); });
+  })();
+</script>

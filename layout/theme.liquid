@@ -444,18 +444,12 @@ body {
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
-    <!-- Theme Toggle Button -->
-    <button
-      id="themeToggle"
-      class="fixed bottom-8 right-8 w-16 h-16 rounded-full bg-black/70 dark:bg-white/30 border-4 border-black dark:border-[#dcab28] hover:scale-110 active:scale-95 transition-all duration-300 ease-in-out flex items-center justify-center z-[9999] cursor-pointer"
-      aria-label="Toggle theme">
-      <span class="text-3xl transition-all duration-300 hidden dark:inline ml-[1px]">🌞</span>
-      <span class="text-3xl transition-all duration-300 inline dark:hidden">🌙</span>
-    </button>
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
+
+    {% section 'roxy-sidecart' %}
 
 
     {% sections 'header-group' %}
@@ -558,36 +552,40 @@ body {
         document.head.appendChild(tag);
     </script>
 
-    <script>
-      // Tailwind Dark Mode Toggle
-      (function() {
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
-        
-        // El tema ya fue aplicado en el head, solo configuramos el toggle
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        
-        // Toggle theme on button click
-        themeToggle.addEventListener('click', function() {
-          const isLight = htmlElement.classList.contains('light');
-          
-          if (isLight) {
-            htmlElement.classList.remove('light');
-            htmlElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-          } else {
-            htmlElement.classList.remove('dark');
-            htmlElement.classList.add('light');
-            localStorage.setItem('theme', 'light');
-          }
-          
-          // Add rotation animation feedback
-          themeToggle.style.transform = 'rotate(360deg)';
-          setTimeout(() => {
-            themeToggle.style.transform = '';
-          }, 300);
-        });
-      })();
-    </script>
+  {% render 'global-player' %}
+  <script>
+    // Re-run theme toggle setup now that global-player (themeToggle) is in the DOM
+    (function() {
+      var themeToggle = document.getElementById('themeToggle');
+      var htmlElement = document.documentElement;
+      if (!themeToggle) return;
+
+      function roxyUpdateThemeIcons() {
+        var isDark = htmlElement.classList.contains('dark');
+        var sun = document.getElementById('roxy-icon-sun');
+        var moon = document.getElementById('roxy-icon-moon');
+        if (sun) sun.style.display = isDark ? 'block' : 'none';
+        if (moon) moon.style.display = isDark ? 'none' : 'block';
+      }
+
+      roxyUpdateThemeIcons();
+
+      themeToggle.addEventListener('click', function() {
+        var isLight = htmlElement.classList.contains('light');
+        if (isLight) {
+          htmlElement.classList.remove('light');
+          htmlElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          htmlElement.classList.remove('dark');
+          htmlElement.classList.add('light');
+          localStorage.setItem('theme', 'light');
+        }
+        roxyUpdateThemeIcons();
+        themeToggle.style.transform = 'rotate(360deg)';
+        setTimeout(function() { themeToggle.style.transform = ''; }, 300);
+      });
+    })();
+  </script>
   </body>
 </html>

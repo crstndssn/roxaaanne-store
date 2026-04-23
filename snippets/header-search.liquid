@@ -8,6 +8,150 @@
   {% render 'header-search', input_id: 'My-Id'%}
 {% endcomment %}
 
+<style>
+  /* ── Search modal — dark glassmorphism theme ── */
+  .search-modal.modal__content.gradient {
+    background: rgb(14 14 14 / 92%) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+  }
+
+  /* Overlay behind modal */
+  details[open] .modal-overlay::after {
+    background-color: rgba(0, 0, 0, 0.65) !important;
+  }
+
+  /* Input field */
+  .search-modal .field__input,
+  .search-modal .search__input {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+    border-radius: 10px !important;
+  }
+
+  .search-modal .field__input:focus,
+  .search-modal .search__input:focus {
+    border-color: rgba(255, 255, 255, 0.28) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .search-modal .field__input::placeholder {
+    color: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  /* Floating label */
+  .search-modal .field__label {
+    color: rgba(255, 255, 255, 0.4) !important;
+    background: transparent !important;
+  }
+
+  .search-modal .field__input:focus ~ .field__label,
+  .search-modal .field__input:not(:placeholder-shown) ~ .field__label,
+  .search-modal .field__input:-webkit-autofill ~ .field__label {
+    color: rgba(255, 255, 255, 0.55) !important;
+  }
+
+  /* Search & reset buttons inside input */
+  .search-modal .field__button,
+  .search-modal .search__button,
+  .search-modal .reset__button {
+    color: rgba(255, 255, 255, 0.45) !important;
+  }
+
+  .search-modal .field__button:hover,
+  .search-modal .search__button:hover,
+  .search-modal .reset__button:hover {
+    color: #fff !important;
+  }
+
+  .search-modal .field__button svg,
+  .search-modal .search__button svg,
+  .search-modal .reset__button svg {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+
+  /* Separator line between reset and search buttons */
+  .search-modal .reset__button:not(:focus-visible)::after,
+  .search-modal .reset__button:not(:focus)::after {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Close button (X) */
+  .search-modal .search-modal__close-button {
+    color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  .search-modal .search-modal__close-button:hover {
+    color: #fff !important;
+  }
+
+  .search-modal .search-modal__close-button svg {
+    stroke: currentColor !important;
+  }
+
+  /* ── Predictive search dropdown ── */
+  .search-modal .predictive-search {
+    background: #111 !important;
+    border-color: rgba(255, 255, 255, 0.09) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+
+  .search-modal .predictive-search__heading {
+    color: rgba(255, 255, 255, 0.35) !important;
+    border-color: rgba(255, 255, 255, 0.07) !important;
+    font-size: 10px !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+  }
+
+  .search-modal .predictive-search__results-groups-wrapper {
+    border-color: rgba(255, 255, 255, 0.06) !important;
+  }
+
+  /* Result items */
+  .search-modal .predictive-search__item {
+    color: #fff !important;
+  }
+
+  .search-modal .predictive-search__item:hover,
+  .search-modal .predictive-search__item--link:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 6px !important;
+  }
+
+  .search-modal .predictive-search__item-heading {
+    color: #fff !important;
+  }
+
+  .search-modal .predictive-search__item .price {
+    color: rgba(255, 255, 255, 0.55) !important;
+  }
+
+  /* "Ver todos los resultados" button */
+  .search-modal .predictive-search__search-for-button {
+    color: rgba(255, 255, 255, 0.5) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+    background: transparent !important;
+    transition: color 0.15s !important;
+  }
+
+  .search-modal .predictive-search__search-for-button:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+  }
+
+  /* Loading spinner */
+  .search-modal .predictive-search__loading-state .loading__spinner {
+    stroke: rgba(255, 255, 255, 0.5) !important;
+  }
+</style>
+
 <details-modal class="header__search">
   <details>
     <summary

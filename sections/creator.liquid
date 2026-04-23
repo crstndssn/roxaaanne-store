@@ -25,6 +25,62 @@
   {% endfor %}
 </div>
 
+{%- if section.settings.collection -%}
+  {%- assign creator_col = section.settings.collection -%}
+  <div class="container mx-auto mt-16 px-8 md:px-0">
+
+    {%- if section.settings.products_title != blank -%}
+      <h2 class="text-black dark:text-[#feffee] text-[28px] tracking-[-0.5px] font-[400] mb-6">
+        {{ section.settings.products_title }}
+      </h2>
+    {%- endif -%}
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      {%- for product in creator_col.products limit: section.settings.products_count -%}
+        <a href="{{ product.url }}" class="group flex flex-col gap-3">
+          <div class="rounded-xl overflow-hidden bg-[#f2f2f2] dark:bg-[#1a1a1a]" style="aspect-ratio:1/1;">
+            {%- if product.featured_image -%}
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="{{ product.featured_image | image_url: width: 600 }}"
+                alt="{{ product.featured_image.alt | escape }}"
+                loading="lazy"
+                width="600"
+                height="600">
+            {%- else -%}
+              <div class="w-full h-full flex items-center justify-center opacity-20">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9l4-4 4 4 4-4 4 4"/><circle cx="8.5" cy="13.5" r="1.5"/></svg>
+              </div>
+            {%- endif -%}
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <span class="text-black dark:text-[#feffee] text-sm font-[500] leading-tight line-clamp-2">
+              {{ product.title }}
+            </span>
+            <span class="text-black/50 dark:text-[#feffee]/50 text-sm">
+              {%- if product.compare_at_price > product.price -%}
+                <span class="line-through mr-1 text-xs opacity-60">{{ product.compare_at_price | money }}</span>
+              {%- endif -%}
+              {{ product.price | money }}
+            </span>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+
+    {%- if creator_col.products_count > section.settings.products_count -%}
+      <div class="mt-10 flex justify-center">
+        <a
+          href="{{ creator_col.url }}"
+          class="border border-black dark:border-[#feffee] dark:border-opacity-50 text-black dark:text-[#feffee] text-sm px-8 py-3 rounded-lg hover:bg-black hover:text-[#feffee] dark:hover:bg-[#feffee] dark:hover:text-black transition-colors duration-200">
+          Ver todos los productos
+        </a>
+      </div>
+    {%- endif -%}
+
+  </div>
+{%- endif -%}
+
 
 {% schema %}
   {
@@ -43,6 +99,26 @@
         "type": "richtext",
         "id": "description",
         "label": "Descripción"
+      }, {
+        "type": "header",
+        "content": "Productos"
+      }, {
+        "type": "collection",
+        "id": "collection",
+        "label": "Colección de productos"
+      }, {
+        "type": "text",
+        "id": "products_title",
+        "label": "Título de la sección de productos",
+        "default": "Productos"
+      }, {
+        "type": "range",
+        "id": "products_count",
+        "label": "Cantidad de productos a mostrar",
+        "min": 2,
+        "max": 16,
+        "step": 2,
+        "default": 8
       }
     ],
     "blocks": [

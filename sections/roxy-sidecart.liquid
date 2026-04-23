@@ -1,0 +1,566 @@
+<style>
+  #roxy-sc-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 10000;
+    cursor: pointer;
+    animation: rxScFadeIn 0.25s ease;
+  }
+  #roxy-sc-overlay.open { display: block; }
+
+  @keyframes rxScFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  #roxy-sidecart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 400px;
+    max-width: 100vw;
+    z-index: 10001;
+    background: #141414;
+    border-left: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
+    color: #fff;
+    font-family: inherit;
+  }
+
+  #roxy-sidecart.open { transform: translateX(0); }
+
+  /* ── Header ── */
+  #roxy-sc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    flex-shrink: 0;
+  }
+
+  #roxy-sc-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #roxy-sc-title {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  #roxy-sc-badge {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 100px;
+    padding: 2px 8px;
+    min-width: 22px;
+    text-align: center;
+  }
+
+  #roxy-sc-close {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.45);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    transition: background 0.15s, color 0.15s;
+  }
+  #roxy-sc-close:hover {
+    background: rgba(255,255,255,0.07);
+    color: #fff;
+  }
+
+  /* ── Free shipping bar ── */
+  #roxy-sc-ship-bar {
+    padding: 14px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    flex-shrink: 0;
+  }
+
+  #roxy-sc-ship-msg {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    margin: 0 0 8px;
+    line-height: 1.4;
+  }
+
+  #roxy-sc-ship-track {
+    height: 5px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  #roxy-sc-ship-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 100px;
+    background: #cc0000;
+    transition: width 0.45s ease, background 0.45s ease;
+  }
+
+  /* ── Items ── */
+  #roxy-sc-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 6px 0;
+  }
+
+  #roxy-sc-items::-webkit-scrollbar { width: 4px; }
+  #roxy-sc-items::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+  }
+
+  #roxy-sc-empty {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 60px 24px;
+    color: rgba(255,255,255,0.2);
+  }
+  #roxy-sc-empty p { font-size: 14px; margin: 0; }
+
+  .roxy-sc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: opacity 0.2s;
+  }
+  .roxy-sc-item.loading {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .roxy-sc-item-img {
+    width: 68px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #222;
+    flex-shrink: 0;
+  }
+
+  .roxy-sc-item-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .roxy-sc-item-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .roxy-sc-item-variant {
+    font-size: 11px;
+    color: rgba(255,255,255,0.38);
+    margin-bottom: 8px;
+    min-height: 14px;
+  }
+
+  .roxy-sc-item-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .roxy-sc-item-qty {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .roxy-sc-item-qty button {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.65);
+    width: 32px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.12s, color 0.12s;
+    line-height: 1;
+  }
+  .roxy-sc-item-qty button:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+
+  .roxy-sc-item-qty span {
+    font-size: 13px;
+    font-weight: 600;
+    min-width: 28px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .roxy-sc-item-remove {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.22);
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    padding: 4px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: color 0.15s;
+    margin-top: -2px;
+  }
+  .roxy-sc-item-remove:hover { color: rgba(255,255,255,0.65); }
+
+  /* ── Footer ── */
+  #roxy-sc-footer {
+    padding: 18px 22px 28px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    flex-shrink: 0;
+  }
+
+  #roxy-sc-subtotal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+  }
+
+  #roxy-sc-subtotal-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  #roxy-sc-subtotal-val {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  #roxy-sc-taxes-note {
+    font-size: 11px;
+    color: rgba(255,255,255,0.28);
+    margin: 0 0 18px;
+  }
+
+  #roxy-sc-checkout {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    color: #000;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  #roxy-sc-checkout:hover { background: #e6e6e6; }
+  #roxy-sc-checkout:active { transform: scale(0.98); }
+
+  #roxy-sc-view-cart {
+    display: block;
+    text-align: center;
+    color: rgba(255,255,255,0.35);
+    font-size: 13px;
+    text-decoration: none;
+    padding: 6px;
+    transition: color 0.15s;
+  }
+  #roxy-sc-view-cart:hover { color: rgba(255,255,255,0.75); }
+
+  @media (max-width: 480px) {
+    #roxy-sidecart { width: 100vw; border-left: none; }
+  }
+</style>
+
+<script>
+  window.roxySCFmt   = {{ shop.money_format | json }};
+  window.roxySCLimit = {{ section.settings.free_shipping_threshold | times: 100 }};
+  window.roxySCShip  = {{ section.settings.free_shipping_enabled }};
+  window.roxySCMsg   = {{ section.settings.free_shipping_message | json }};
+</script>
+
+<div id="roxy-sc-overlay" onclick="roxyCloseSidecart()"></div>
+
+<div id="roxy-sidecart" role="dialog" aria-modal="true" aria-label="{{ section.settings.title | escape }}">
+
+  <div id="roxy-sc-header">
+    <div id="roxy-sc-heading">
+      <span id="roxy-sc-title">{{ section.settings.title | escape }}</span>
+      <span id="roxy-sc-badge">0</span>
+    </div>
+    <button id="roxy-sc-close" onclick="roxyCloseSidecart()" aria-label="Cerrar carrito">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  {%- if section.settings.free_shipping_enabled -%}
+  <div id="roxy-sc-ship-bar">
+    <p id="roxy-sc-ship-msg"></p>
+    <div id="roxy-sc-ship-track">
+      <div id="roxy-sc-ship-fill"></div>
+    </div>
+  </div>
+  {%- endif -%}
+
+  <div id="roxy-sc-items">
+    <div id="roxy-sc-empty">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <p>Tu carrito está vacío</p>
+    </div>
+    <div id="roxy-sc-item-list"></div>
+  </div>
+
+  <div id="roxy-sc-footer">
+    <div id="roxy-sc-subtotal-row">
+      <span id="roxy-sc-subtotal-label">Subtotal</span>
+      <span id="roxy-sc-subtotal-val">—</span>
+    </div>
+    <p id="roxy-sc-taxes-note">Los impuestos y gastos de envío se calculan al pagar</p>
+    <a href="/checkout" id="roxy-sc-checkout">Finalizar compra</a>
+    <a href="/cart" id="roxy-sc-view-cart">Ver carrito completo</a>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var SC = {
+    fmt: function(cents) {
+      var f = window.roxySCFmt || '${{amount}}';
+      var a = (cents / 100).toFixed(2);
+      var aNoDec = String(Math.round(cents / 100));
+      var aComma = a.replace('.', ',');
+      var aNoDecComma = aNoDec.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return f
+        .replace('{{amount_with_comma_separator_no_decimals}}', aNoDecComma)
+        .replace('{{amount_with_comma_separator}}', aComma)
+        .replace('{{amount_no_decimals}}', aNoDec)
+        .replace('{{amount}}', a);
+    },
+
+    load: function() {
+      return fetch('/cart.js')
+        .then(function(r) { return r.json(); })
+        .then(function(cart) { SC.render(cart); return cart; });
+    },
+
+    render: function(cart) {
+      var list   = document.getElementById('roxy-sc-item-list');
+      var empty  = document.getElementById('roxy-sc-empty');
+      var badge  = document.getElementById('roxy-sc-badge');
+      var subtot = document.getElementById('roxy-sc-subtotal-val');
+
+      if (badge)  badge.textContent  = cart.item_count;
+      if (subtot) subtot.textContent = SC.fmt(cart.total_price);
+
+      list.innerHTML = '';
+
+      if (!cart.item_count) {
+        empty.style.display = 'flex';
+      } else {
+        empty.style.display = 'none';
+        cart.items.forEach(function(item) {
+          list.appendChild(SC.buildItem(item));
+        });
+      }
+
+      SC.updateShipping(cart.total_price);
+    },
+
+    buildItem: function(item) {
+      var el = document.createElement('div');
+      el.className = 'roxy-sc-item';
+      el.dataset.key = item.key;
+
+      var img = item.featured_image && item.featured_image.url
+        ? item.featured_image.url
+        : (item.image || '');
+
+      el.innerHTML =
+        (img
+          ? '<img class="roxy-sc-item-img" src="' + img + '" alt="">'
+          : '<div class="roxy-sc-item-img"></div>') +
+        '<div class="roxy-sc-item-body">' +
+          '<div class="roxy-sc-item-title">' + (item.product_title || item.title || '') + '</div>' +
+          '<div class="roxy-sc-item-variant">' + (item.variant_title && item.variant_title !== 'Default Title' ? item.variant_title : '') + '</div>' +
+          '<div class="roxy-sc-item-price">' + SC.fmt(item.final_line_price) + '</div>' +
+          '<div class="roxy-sc-item-qty">' +
+            '<button type="button" aria-label="Menos">−</button>' +
+            '<span>' + item.quantity + '</span>' +
+            '<button type="button" aria-label="Más">+</button>' +
+          '</div>' +
+        '</div>' +
+        '<button type="button" class="roxy-sc-item-remove" aria-label="Eliminar">×</button>';
+
+      var qBtns = el.querySelectorAll('.roxy-sc-item-qty button');
+      var qty = item.quantity;
+      var key = item.key;
+      qBtns[0].addEventListener('click', function() { SC.changeQty(key, qty - 1); });
+      qBtns[1].addEventListener('click', function() { SC.changeQty(key, qty + 1); });
+      el.querySelector('.roxy-sc-item-remove').addEventListener('click', function() { SC.changeQty(key, 0); });
+
+      return el;
+    },
+
+    changeQty: function(key, qty) {
+      var el = document.querySelector('.roxy-sc-item[data-key="' + key + '"]');
+      if (el) el.classList.add('loading');
+
+      fetch('/cart/change.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: key, quantity: Math.max(0, qty) })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(cart) {
+        SC.render(cart);
+        SC.syncHeaderBubble(cart.item_count);
+      })
+      .catch(function() {
+        if (el) el.classList.remove('loading');
+      });
+    },
+
+    updateShipping: function(total) {
+      if (!window.roxySCShip) return;
+      var msgEl  = document.getElementById('roxy-sc-ship-msg');
+      var fillEl = document.getElementById('roxy-sc-ship-fill');
+      if (!msgEl || !fillEl) return;
+
+      var limit = window.roxySCLimit || 0;
+      if (!limit) return;
+
+      var pct = Math.min(total / limit * 100, 100);
+      fillEl.style.width = pct + '%';
+
+      if (pct >= 100) {
+        fillEl.style.background = '#1db954';
+        msgEl.innerHTML = '<strong style="color:#1db954;">' + (window.roxySCMsg || '¡Envío gratis!') + '</strong>';
+      } else {
+        fillEl.style.background = pct >= 60 ? '#f0a500' : '#cc0000';
+        msgEl.innerHTML = 'Te faltan <strong>' + SC.fmt(limit - total) + '</strong> para envío gratis 🚚';
+      }
+    },
+
+    syncHeaderBubble: function(count) {
+      var bubble = document.querySelector('.cart-count-bubble');
+      if (!bubble) return;
+      var visSpan = bubble.querySelector('[aria-hidden="true"]');
+      var srSpan  = bubble.querySelector('.visually-hidden');
+      if (count < 1) {
+        bubble.style.display = 'none';
+      } else {
+        bubble.style.display = '';
+        if (visSpan) visSpan.textContent = count;
+        if (srSpan)  srSpan.textContent  = count;
+      }
+    }
+  };
+
+  window.roxyOpenSidecart = function() {
+    SC.load().then(function() {
+      document.getElementById('roxy-sidecart').classList.add('open');
+      document.getElementById('roxy-sc-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  };
+
+  window.roxyCloseSidecart = function() {
+    document.getElementById('roxy-sidecart').classList.remove('open');
+    document.getElementById('roxy-sc-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Intercept cart icon click (capture phase beats other handlers)
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('#cart-icon-bubble')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.roxyOpenSidecart();
+      }
+    }, true);
+
+    // Close on Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') window.roxyCloseSidecart();
+    });
+
+    // Refresh on cart update events (Dawn-based themes)
+    document.addEventListener('cart:item-added', function() { SC.load(); });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Roxy Sidecart",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título del carrito",
+      "default": "Tu carrito"
+    },
+    {
+      "type": "header",
+      "content": "Envío gratis"
+    },
+    {
+      "type": "checkbox",
+      "id": "free_shipping_enabled",
+      "label": "Mostrar barra de envío gratis",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "free_shipping_threshold",
+      "label": "Monto mínimo para envío gratis",
+      "info": "Sin decimales, en la moneda de tu tienda (ej: 5000 para $5,000 MXN)",
+      "default": 5000
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_message",
+      "label": "Mensaje al alcanzar envío gratis",
+      "default": "¡Tienes envío gratis! 🎉"
+    }
+  ]
+}
+{% endschema %}
