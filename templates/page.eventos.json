@@ -364,6 +364,20 @@
             "muted": false
           }
         },
+        "evento_He3zzK": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 19",
+            "month_full": "Junio",
+            "title": "ROXY FEST: Sesión Gato E' Monte",
+            "location": "Neiva, Huila • roxaaanne",
+            "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
+            "muted": false
+          }
+        },
         "evento_V7z7D7": {
           "type": "evento",
           "settings": {
@@ -523,6 +537,7 @@
         "evento_4fFx7p",
         "evento_eVUN6b",
         "evento_BDAUEB",
+        "evento_He3zzK",
         "evento_V7z7D7",
         "evento_WzgEMf",
         "evento_MmjeVE",
