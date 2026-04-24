@@ -322,6 +322,20 @@
             "muted": false
           }
         },
+        "evento_4fFx7p": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 29",
+            "month_full": "Mayo",
+            "title": "ROXY FEST: Sesión Ana María Vahos",
+            "location": "Neiva, Huila • roxaaanne",
+            "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
+            "muted": false
+          }
+        },
         "evento_V7z7D7": {
           "type": "evento",
           "settings": {
@@ -478,6 +492,7 @@
         "evento_m7JY8j",
         "evento_jMDeey",
         "evento_Ft36Db",
+        "evento_4fFx7p",
         "evento_V7z7D7",
         "evento_WzgEMf",
         "evento_MmjeVE",
