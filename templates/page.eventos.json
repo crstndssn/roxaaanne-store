@@ -238,20 +238,6 @@
             "muted": true
           }
         },
-        "evento_Br4DQK": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/roxy-fest-perfil.png",
-            "artist": "roxaaanne",
-            "day": "VIERNES 24",
-            "month_full": "Abril",
-            "title": "ROXY FEST: Pechan Project - Humano Chamán",
-            "location": "Neiva, Huila • roxaaanne",
-            "url": "https://roxaaanne.com/pages/roxy-fest",
-            "featured": false,
-            "muted": false
-          }
-        },
         "evento_kTrNjV": {
           "type": "evento",
           "settings": {
@@ -266,13 +252,27 @@
             "muted": false
           }
         },
-        "evento_JKwhKb": {
+        "evento_Br4DQK": {
           "type": "evento",
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
             "day": "VIERNES 24",
             "month_full": "Abril",
+            "title": "ROXY FEST: Pechan Project - Humano Chamán",
+            "location": "Neiva, Huila • roxaaanne",
+            "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
+            "muted": false
+          }
+        },
+        "evento_Vh6k4n": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 1",
+            "month_full": "Mayo",
             "title": "ROXY FEST: Qué es mirar - Pechan Project",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
@@ -472,9 +472,9 @@
         "evento_cKmhqN",
         "evento_bWHxAM",
         "evento_QmLPJP",
-        "evento_Br4DQK",
         "evento_kTrNjV",
-        "evento_JKwhKb",
+        "evento_Br4DQK",
+        "evento_Vh6k4n",
         "evento_m7JY8j",
         "evento_jMDeey",
         "evento_Ft36Db",
