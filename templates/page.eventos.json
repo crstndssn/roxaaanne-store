@@ -243,13 +243,13 @@
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
-            "day": "VIERNES 17",
+            "day": "VIERNES 24",
             "month_full": "Abril",
             "title": "ROXY FEST: Pechan Project - Humano Chamán",
             "location": "Neiva, Huila • roxaaanne",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "featured": false,
-            "muted": true
+            "muted": false
           }
         },
         "evento_kTrNjV": {
@@ -285,7 +285,7 @@
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
-            "day": "VIERNES 1",
+            "day": "VIERNES",
             "month_full": "Mayo",
             "title": "ROXY FEST: publicación tercer video Pechan Project",
             "location": "Neiva, Huila • roxaaanne",
@@ -304,6 +304,20 @@
             "title": "ROXY FEST: publicación tercer video Pechan Project",
             "location": "Neiva, Huila • Cara Mala",
             "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
+            "muted": false
+          }
+        },
+        "evento_Ft36Db": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 15",
+            "month_full": "Mayo",
+            "title": "Tapazo - Trailer Bejuco",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "",
             "featured": false,
             "muted": false
           }
@@ -463,6 +477,7 @@
         "evento_JKwhKb",
         "evento_m7JY8j",
         "evento_jMDeey",
+        "evento_Ft36Db",
         "evento_V7z7D7",
         "evento_WzgEMf",
         "evento_MmjeVE",
