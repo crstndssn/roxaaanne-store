@@ -252,20 +252,6 @@
             "muted": true
           }
         },
-        "evento_JKwhKb": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/roxy-fest-perfil.png",
-            "artist": "roxaaanne",
-            "day": "VIERNES 24",
-            "month_full": "Abril",
-            "title": "ROXY FEST: Qué es mirar - Pechan Project",
-            "location": "Neiva, Huila • roxaaanne",
-            "url": "https://roxaaanne.com/pages/roxy-fest",
-            "featured": false,
-            "muted": false
-          }
-        },
         "evento_kTrNjV": {
           "type": "evento",
           "settings": {
@@ -280,6 +266,20 @@
             "muted": false
           }
         },
+        "evento_JKwhKb": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 24",
+            "month_full": "Abril",
+            "title": "ROXY FEST: Qué es mirar - Pechan Project",
+            "location": "Neiva, Huila • roxaaanne",
+            "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
+            "muted": false
+          }
+        },
         "evento_m7JY8j": {
           "type": "evento",
           "settings": {
@@ -289,6 +289,20 @@
             "month_full": "Mayo",
             "title": "ROXY FEST: publicación tercer video Pechan Project",
             "location": "Neiva, Huila • roxaaanne",
+            "url": "https://roxaaanne.com/pages/roxy-fest",
+            "featured": false,
+            "muted": false
+          }
+        },
+        "evento_jMDeey": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "roxaaanne",
+            "day": "VIERNES 8",
+            "month_full": "Mayo",
+            "title": "ROXY FEST: publicación tercer video Pechan Project",
+            "location": "Neiva, Huila • Cara Mala",
             "url": "https://roxaaanne.com/pages/roxy-fest",
             "featured": false,
             "muted": false
@@ -445,9 +459,10 @@
         "evento_bWHxAM",
         "evento_QmLPJP",
         "evento_Br4DQK",
-        "evento_JKwhKb",
         "evento_kTrNjV",
+        "evento_JKwhKb",
         "evento_m7JY8j",
+        "evento_jMDeey",
         "evento_V7z7D7",
         "evento_WzgEMf",
         "evento_MmjeVE",
