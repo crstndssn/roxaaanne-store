@@ -1,0 +1,108 @@
+{
+  "sections": {
+    "roxy-fest-header": {
+      "type": "product-roxy-fest-header",
+      "settings": {}
+    },
+    "roxy-fest-video": {
+      "type": "product-roxy-fest-video",
+      "settings": {
+        "height": "85vh",
+        "eyebrow": "",
+        "caption": ""
+      }
+    },
+    "roxy-fest-artistas": {
+      "type": "product-roxy-fest-artistas",
+      "settings": {
+        "eyebrow": "Line-up",
+        "title": "Artistas",
+        "general_text": "<p>Selecciona un artista para conocer más sobre él.<\/p>"
+      },
+      "blocks": {
+        "artista-1": {
+          "type": "artista",
+          "settings": {
+            "name": "Artista 1",
+            "description": "<p>Descripción del artista.<\/p>"
+          }
+        },
+        "artista-2": {
+          "type": "artista",
+          "settings": {
+            "name": "Artista 2",
+            "description": "<p>Descripción del artista.<\/p>"
+          }
+        },
+        "artista-3": {
+          "type": "artista",
+          "settings": {
+            "name": "Artista 3",
+            "description": "<p>Descripción del artista.<\/p>"
+          }
+        }
+      },
+      "blocks_order": ["artista-1", "artista-2", "artista-3"]
+    },
+    "roxy-fest-ubicacion": {
+      "type": "product-roxy-fest-ubicacion",
+      "settings": {
+        "eyebrow": "Venue",
+        "title": "¿Dónde?",
+        "address": "",
+        "date": "",
+        "map_embed_url": "",
+        "map_height": 450
+      }
+    },
+    "roxy-fest-preguntas": {
+      "type": "product-roxy-fest-preguntas",
+      "settings": {
+        "eyebrow": "FAQ",
+        "title": "Preguntas frecuentes",
+        "one_at_a_time": true
+      },
+      "blocks": {
+        "preg-1": {
+          "type": "pregunta",
+          "settings": {
+            "question": "¿Cómo llego al evento?",
+            "answer": "<p>Puedes llegar en transporte público o privado.<\/p>"
+          }
+        },
+        "preg-2": {
+          "type": "pregunta",
+          "settings": {
+            "question": "¿Hay estacionamiento disponible?",
+            "answer": "<p>Sí, hay estacionamiento disponible en el venue.<\/p>"
+          }
+        },
+        "preg-3": {
+          "type": "pregunta",
+          "settings": {
+            "question": "¿Puedo hacer cambio o devolución de mi boleto?",
+            "answer": "<p>Los boletos no son reembolsables, pero se pueden transferir.<\/p>"
+          }
+        }
+      },
+      "blocks_order": ["preg-1", "preg-2", "preg-3"]
+    },
+    "recomendados": {
+      "type": "product-recomendados",
+      "settings": {
+        "title": "También te puede interesar",
+        "products_count": 4,
+        "columns_desktop": "4",
+        "columns_mobile": "2"
+      }
+    }
+  },
+  "order": [
+    "roxy-fest-header",
+    "roxy-fest-video",
+    "roxy-fest-artistas",
+    "roxy-fest-ubicacion",
+    "roxy-fest-preguntas",
+    "recomendados"
+  ]
+}

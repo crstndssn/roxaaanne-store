@@ -1,0 +1,177 @@
+<style>
+  .rfv-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+  }
+  .rfv-wrap video,
+  .rfv-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .rfv-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .rfv-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 60px 40px 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .rfv-caption-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+  .rfv-caption-title {
+    font-size: clamp(28px, 5vw, 56px);
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .rfv-mute-btn {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.15s;
+    pointer-events: auto;
+  }
+  .rfv-mute-btn:hover { background: rgba(255,255,255,0.22); }
+</style>
+
+{%- assign vid_height = section.settings.height -%}
+
+<div class="rfv-wrap" style="height: {{ vid_height }};">
+
+  {%- if section.settings.video != blank -%}
+    {{
+      section.settings.video
+      | video_tag:
+        autoplay: true,
+        loop: true,
+        muted: true,
+        controls: false,
+        playsinline: true,
+        id: 'rfv-video',
+        style: 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0;'
+    }}
+  {%- elsif section.settings.video_url != blank -%}
+    <video
+      id="rfv-video"
+      autoplay loop muted playsinline
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <source src="{{ section.settings.video_url }}" type="video/mp4">
+    </video>
+  {%- endif -%}
+
+  <!-- Caption overlay -->
+  {%- if section.settings.eyebrow != blank or section.settings.caption != blank -%}
+    <div class="rfv-overlay">
+      <div class="rfv-caption">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="rfv-caption-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        {%- if section.settings.caption != blank -%}
+          <p class="rfv-caption-title">{{ section.settings.caption }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <!-- Mute toggle -->
+  {%- if section.settings.video != blank or section.settings.video_url != blank -%}
+    <button class="rfv-mute-btn" id="rfv-mute-btn" onclick="rfvToggleMute()" title="Silenciar / activar sonido">
+      <svg id="rfv-icon-muted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+      </svg>
+      <svg id="rfv-icon-sound" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      </svg>
+    </button>
+    <script>
+      function rfvToggleMute() {
+        var v = document.getElementById('rfv-video');
+        if (!v) return;
+        v.muted = !v.muted;
+        document.getElementById('rfv-icon-muted').style.display = v.muted ? 'block' : 'none';
+        document.getElementById('rfv-icon-sound').style.display  = v.muted ? 'none'  : 'block';
+      }
+    </script>
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+{
+  "name": "Fest — Video",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video (Shopify Files)"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "URL externa del video (.mp4)",
+      "info": "Se usa si no hay video seleccionado arriba"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Altura del video",
+      "options": [
+        { "value": "50vh",  "label": "50% pantalla" },
+        { "value": "70vh",  "label": "70% pantalla" },
+        { "value": "85vh",  "label": "85% pantalla" },
+        { "value": "100vh", "label": "Pantalla completa" }
+      ],
+      "default": "85vh"
+    },
+    {
+      "type": "header",
+      "content": "Texto sobre el video"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto pequeño",
+      "placeholder": "ej: Próximamente"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Título grande"
+    }
+  ],
+  "presets": [{ "name": "Fest Video" }]
+}
+{% endschema %}
