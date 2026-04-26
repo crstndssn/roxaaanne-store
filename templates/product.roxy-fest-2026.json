@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "header": {
+      "type": "product-roxy-fest-header",
+      "settings": {}
+    },
+    "video": {
+      "type": "product-roxy-fest-video",
+      "settings": {}
+    },
+    "artistas": {
+      "type": "product-roxy-fest-artistas",
+      "blocks": {},
+      "settings": {}
+    },
+    "ubicacion": {
+      "type": "product-roxy-fest-ubicacion",
+      "settings": {}
+    },
+    "preguntas": {
+      "type": "product-roxy-fest-preguntas",
+      "blocks": {},
+      "settings": {}
+    },
+    "recomendados": {
+      "type": "product-recomendados",
+      "settings": {}
+    }
+  },
+  "order": [
+    "header",
+    "video",
+    "artistas",
+    "ubicacion",
+    "preguntas",
+    "recomendados"
+  ]
+}
