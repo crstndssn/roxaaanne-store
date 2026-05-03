@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "event-hero": {
+      "type": "event-hero",
+      "settings": {}
+    },
+    "event-info": {
+      "type": "event-info",
+      "settings": {}
+    },
+    "event-gallery": {
+      "type": "event-gallery",
+      "settings": {}
+    },
+    "event-tickets": {
+      "type": "event-tickets",
+      "settings": {}
+    },
+    "event-creators": {
+      "type": "event-creators",
+      "settings": {}
+    },
+    "event-location": {
+      "type": "event-location",
+      "settings": {}
+    }
+  },
+  "order": ["event-hero", "event-info", "event-gallery", "event-tickets", "event-creators", "event-location"]
+}

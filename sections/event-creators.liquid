@@ -1,0 +1,35 @@
+<section class="event-creators">
+  {% if section.settings.heading != blank %}
+    <h2>{{ section.settings.heading }}</h2>
+  {% endif %}
+  <ul>
+    {% for block in section.blocks %}
+      <li>
+        {{ block.settings.image | img_tag: block.settings.name }}
+        <p>{{ block.settings.name }}</p>
+        <p>{{ block.settings.role }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "Event Creators",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Creators" }
+  ],
+  "blocks": [
+    {
+      "type": "creator",
+      "name": "Creator",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "role", "label": "Role" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Event Creators" }]
+}
+{% endschema %}

@@ -1,0 +1,24 @@
+<section class="size-care">
+  <details>
+    <summary>{{ section.settings.heading | default: 'Size guide' }}</summary>
+    <div>{{ section.settings.size_content }}</div>
+  </details>
+
+  <details>
+    <summary>{{ section.settings.care_heading | default: 'Care instructions' }}</summary>
+    <div>{{ section.settings.care_content }}</div>
+  </details>
+</section>
+
+{% schema %}
+{
+  "name": "Size and Care",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Size guide heading", "default": "Size guide" },
+    { "type": "richtext", "id": "size_content", "label": "Size content" },
+    { "type": "text", "id": "care_heading", "label": "Care heading", "default": "Care instructions" },
+    { "type": "richtext", "id": "care_content", "label": "Care content" }
+  ],
+  "presets": [{ "name": "Size and Care" }]
+}
+{% endschema %}

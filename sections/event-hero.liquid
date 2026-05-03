@@ -1,0 +1,19 @@
+<section class="event-hero">
+  {% if section.settings.image %}
+    {{ section.settings.image | img_tag: section.settings.title }}
+  {% endif %}
+  <h1>{{ section.settings.title }}</h1>
+  <p>{{ section.settings.tagline }}</p>
+</section>
+
+{% schema %}
+{
+  "name": "Event Hero",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Background image" },
+    { "type": "text", "id": "title", "label": "Title" },
+    { "type": "text", "id": "tagline", "label": "Tagline" }
+  ],
+  "presets": [{ "name": "Event Hero" }]
+}
+{% endschema %}
