@@ -149,6 +149,16 @@
             "event_location": "",
             "article_url": ""
           }
+        },
+        "movie_qNJ86C": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/el-jockey.jpg",
+            "title": "El Jokey",
+            "event_date": "",
+            "event_location": "",
+            "article_url": ""
+          }
         }
       },
       "block_order": [
@@ -163,7 +173,8 @@
         "movie_TePyWm",
         "movie_Kx8yej",
         "movie_ErHrfD",
-        "movie_AndQkE"
+        "movie_AndQkE",
+        "movie_qNJ86C"
       ],
       "settings": {}
     },
