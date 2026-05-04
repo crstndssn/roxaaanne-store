@@ -99,6 +99,56 @@
             "event_location": "Neiva, Huila • El Patio",
             "article_url": "shopify://blogs/alterocio/perro-que-ladra-no-muerde"
           }
+        },
+        "movie_rAQTDd": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/cinergia-the-spine-of-night.jpg",
+            "title": "La Espina de la Noche",
+            "event_date": "",
+            "event_location": "",
+            "article_url": ""
+          }
+        },
+        "movie_TePyWm": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/cinergia-canino.jpg",
+            "title": "Canino",
+            "event_date": "",
+            "event_location": "",
+            "article_url": ""
+          }
+        },
+        "movie_Kx8yej": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/cinergia-titane.jpg",
+            "title": "Titane",
+            "event_date": "",
+            "event_location": "",
+            "article_url": ""
+          }
+        },
+        "movie_ErHrfD": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/cinergia-el-viyi.jpg",
+            "title": "El Viyi",
+            "event_date": "",
+            "event_location": "",
+            "article_url": ""
+          }
+        },
+        "movie_AndQkE": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/cinergia-tony-manero.jpg",
+            "title": "Tony Manero",
+            "event_date": "",
+            "event_location": "",
+            "article_url": ""
+          }
         }
       },
       "block_order": [
@@ -108,7 +158,12 @@
         "movie_whgJHE",
         "movie_gcRKaU",
         "movie_new1",
-        "movie_new2"
+        "movie_new2",
+        "movie_rAQTDd",
+        "movie_TePyWm",
+        "movie_Kx8yej",
+        "movie_ErHrfD",
+        "movie_AndQkE"
       ],
       "settings": {}
     },
