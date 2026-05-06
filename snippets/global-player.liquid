@@ -1140,6 +1140,7 @@
     isRepeat: false,
     radioAudio: null,
     musicAudio: null,
+    radioMuted: true,
     _radioStarted: false,
     isIOS: /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1),
 
@@ -1193,6 +1194,7 @@
 
           if (RP.isShuffle) document.getElementById('roxy-player-btn-shuffle').style.color = '#fff';
           if (RP.isRepeat) document.getElementById('roxy-player-btn-repeat').style.color = '#fff';
+          if (s.radioMuted != null) RP.radioMuted = s.radioMuted;
           if (!RP.isIOS) {
             if (s.radioVolume != null) RP.radioAudio.volume = s.radioVolume;
             if (s.musicVolume != null) RP.musicAudio.volume = s.musicVolume;
@@ -1280,7 +1282,7 @@
       if (!t || !t.audio) return;
 
       RP.radioAudio.src = t.audio;
-      RP.radioAudio.muted = (RP.uiMode === 'music');
+      RP.radioAudio.muted = (RP.uiMode === 'music') || RP.radioMuted;
       RP.radioAudio.load();
 
       RP.radioAudio.addEventListener('loadeddata', function onLoad() {
@@ -1356,7 +1358,7 @@
       document.getElementById('roxy-player-volume-wrap').classList.remove('open');
       // Radio never pauses — only muted when in music mode
       if (isRadio) {
-        RP.radioAudio.muted = false;
+        RP.radioAudio.muted = RP.radioMuted;
         if (!RP.musicAudio.paused) RP.musicAudio.pause();
         // If radio stopped or never started, restart it
         if (RP.radioAudio.paused && RP.radioQueue.length > 0) {
@@ -1371,9 +1373,10 @@
         document.getElementById('roxy-player-icon-sound').style.display = currentAudio.muted ? 'none' : 'block';
         document.getElementById('roxy-player-icon-muted').style.display = currentAudio.muted ? 'block' : 'none';
       } else {
-        var vol = isRadio ? RP.radioAudio.volume : RP.musicAudio.volume;
+        var currentAudio = isRadio ? RP.radioAudio : RP.musicAudio;
+        var vol = currentAudio.volume;
         document.getElementById('roxy-player-volume').value = vol;
-        var volMuted = vol === 0;
+        var volMuted = currentAudio.muted || vol === 0;
         document.getElementById('roxy-player-icon-sound').style.display = volMuted ? 'none' : 'block';
         document.getElementById('roxy-player-icon-muted').style.display = volMuted ? 'block' : 'none';
       }
@@ -1449,7 +1452,8 @@
           radioTime: RP.radioAudio ? RP.radioAudio.currentTime : 0,
           musicTime: RP.musicAudio ? RP.musicAudio.currentTime : 0,
           radioVolume: RP.radioAudio ? RP.radioAudio.volume : 1,
-          musicVolume: RP.musicAudio ? RP.musicAudio.volume : 1
+          musicVolume: RP.musicAudio ? RP.musicAudio.volume : 1,
+          radioMuted: RP.radioMuted
         }));
       } catch(e) {}
     },
@@ -1469,6 +1473,7 @@
     var audio = RP.uiMode === 'radio' ? RP.radioAudio : RP.musicAudio;
     audio.muted = !audio.muted;
     var isMuted = audio.muted;
+    if (RP.uiMode === 'radio') RP.radioMuted = isMuted;
     document.getElementById('roxy-player-icon-sound').style.display = isMuted ? 'none' : 'block';
     document.getElementById('roxy-player-icon-muted').style.display = isMuted ? 'block' : 'none';
     if (!RP.isIOS) {

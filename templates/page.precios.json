@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "precios": {
+      "type": "precios",
+      "settings": {
+        "email": "hola@roxaaanne.com"
+      }
+    }
+  },
+  "order": [
+    "precios"
+  ]
+}
