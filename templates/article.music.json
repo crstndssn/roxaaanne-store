@@ -11,8 +11,94 @@
   "sections": {
     "main": {
       "type": "article-music",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "track_D6GFzn": {
+          "type": "track",
+          "settings": {
+            "track_title": "El Album",
+            "track_subtitle": "",
+            "artists": "Aterciopelados",
+            "duration": "3:58",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Aterciopelados_-_El_Album.mp3?v=1778434137",
+            "youtube_url": ""
+          }
+        },
+        "track_QJ9EA8": {
+          "type": "track",
+          "settings": {
+            "track_title": "Instant-Taneas",
+            "track_subtitle": "",
+            "artists": "Fito Paez, Luis Alberto Spinetta",
+            "duration": "5:37",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Spinetta_Paez_-_Instant-taneas_Letra.mp3?v=1776921258",
+            "youtube_url": ""
+          }
+        },
+        "track_6mbeFR": {
+          "type": "track",
+          "settings": {
+            "track_title": "Te Amo, Te Extranño",
+            "track_subtitle": "",
+            "artists": "Guayacán Orquesta",
+            "duration": "5:31",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Te_Amo_Te_Extrano_Salsa.mp3?v=1776921258",
+            "youtube_url": ""
+          }
+        },
+        "track_mHiFq6": {
+          "type": "track",
+          "settings": {
+            "track_title": "Lago en el Cielo",
+            "track_subtitle": "",
+            "artists": "Gustavo Cerati",
+            "duration": "5:09",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Gustavo_Cerati_-_Lago_en_el_Cielo_Lyric_Video.mp3?v=1776921258",
+            "youtube_url": ""
+          }
+        },
+        "track_cA4Qdk": {
+          "type": "track",
+          "settings": {
+            "track_title": "Caminar Bonito",
+            "track_subtitle": "",
+            "artists": "Natalia Lafourcade",
+            "duration": "3:57",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Natalia_Lafourcade_-_Caminar_bonito_Video_Lyric.mp3?v=1776921258",
+            "youtube_url": ""
+          }
+        },
+        "track_qVNwXA": {
+          "type": "track",
+          "settings": {
+            "track_title": "",
+            "track_subtitle": "",
+            "artists": "",
+            "duration": "",
+            "audio_url": "",
+            "youtube_url": ""
+          }
+        },
+        "track_Ym3JMA": {
+          "type": "track",
+          "settings": {
+            "track_title": "",
+            "track_subtitle": "",
+            "artists": "",
+            "duration": "",
+            "audio_url": "",
+            "youtube_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "track_D6GFzn",
+        "track_QJ9EA8",
+        "track_6mbeFR",
+        "track_mHiFq6",
+        "track_cA4Qdk",
+        "track_qVNwXA",
+        "track_Ym3JMA"
+      ],
       "settings": {}
     }
   },
