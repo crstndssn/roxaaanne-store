@@ -66,6 +66,39 @@
             "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Natalia_Lafourcade_-_Caminar_bonito_Video_Lyric.mp3?v=1776921258",
             "youtube_url": ""
           }
+        },
+        "track_txaNfy": {
+          "type": "track",
+          "settings": {
+            "track_title": "Curtis",
+            "track_subtitle": "",
+            "artists": "Babasonicos",
+            "duration": "3:27",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Babasonicos_-_Curtis.mp3?v=1778437456",
+            "youtube_url": ""
+          }
+        },
+        "track_eEwHKm": {
+          "type": "track",
+          "settings": {
+            "track_title": "Protagonista Estelar",
+            "track_subtitle": "",
+            "artists": "El Kalvo, Hi Kymon",
+            "duration": "3:13",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/El_Kalvo_-_Protagonista_Estelar_Prod._Hi-Kymon.mp3?v=1778437456",
+            "youtube_url": ""
+          }
+        },
+        "track_eTFzmx": {
+          "type": "track",
+          "settings": {
+            "track_title": "Agradezco",
+            "track_subtitle": "",
+            "artists": "Femina",
+            "duration": "4:54",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Femina_-_Agradezco_-_Perlas_Conchas.mp3?v=1778437090",
+            "youtube_url": ""
+          }
         }
       },
       "block_order": [
@@ -73,7 +106,10 @@
         "track_QJ9EA8",
         "track_6mbeFR",
         "track_mHiFq6",
-        "track_cA4Qdk"
+        "track_cA4Qdk",
+        "track_txaNfy",
+        "track_eEwHKm",
+        "track_eTFzmx"
       ],
       "settings": {}
     }
