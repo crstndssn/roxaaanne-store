@@ -19,6 +19,13 @@
             "link": "shopify://blogs/diario-de-cristian-dussan"
           }
         },
+        "section_gGFQyk": {
+          "type": "section",
+          "settings": {
+            "title": "música",
+            "link": ""
+          }
+        },
         "section_VURfcD": {
           "type": "section",
           "settings": {
@@ -50,6 +57,7 @@
       },
       "block_order": [
         "section_ECJAxU",
+        "section_gGFQyk",
         "section_VURfcD",
         "section_UQULrC",
         "section_exETHi",
@@ -58,7 +66,10 @@
       "settings": {
         "image": "shopify://shop_images/IMG_4805.jpg",
         "name": "cristian dussán",
-        "description": "<p>artesano de portales a otros universos, hace películas caseras para todo tipo de criaturas extrañas. lo puedes encontrar al lado de la última cruz del sur, acá puedes nadar en su mente</p>"
+        "description": "<p>artesano de portales a otros universos, hace películas caseras para todo tipo de criaturas extrañas. lo puedes encontrar al lado de la última cruz del sur, acá puedes nadar en su mente</p>",
+        "collection": "",
+        "products_title": "Productos",
+        "products_count": 8
       }
     }
   },
