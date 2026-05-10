@@ -66,28 +66,6 @@
             "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Natalia_Lafourcade_-_Caminar_bonito_Video_Lyric.mp3?v=1776921258",
             "youtube_url": ""
           }
-        },
-        "track_qVNwXA": {
-          "type": "track",
-          "settings": {
-            "track_title": "",
-            "track_subtitle": "",
-            "artists": "",
-            "duration": "",
-            "audio_url": "",
-            "youtube_url": ""
-          }
-        },
-        "track_Ym3JMA": {
-          "type": "track",
-          "settings": {
-            "track_title": "",
-            "track_subtitle": "",
-            "artists": "",
-            "duration": "",
-            "audio_url": "",
-            "youtube_url": ""
-          }
         }
       },
       "block_order": [
@@ -95,9 +73,7 @@
         "track_QJ9EA8",
         "track_6mbeFR",
         "track_mHiFq6",
-        "track_cA4Qdk",
-        "track_qVNwXA",
-        "track_Ym3JMA"
+        "track_cA4Qdk"
       ],
       "settings": {}
     }
