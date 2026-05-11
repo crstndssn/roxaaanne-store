@@ -1,7 +1,7 @@
 {% assign active_track = null %}
 
 <!-- Hero -->
-<div class="container mx-auto rounded-xl relative flex justify-center items-center overflow-hidden bg-black min-h-[520px] md:min-h-[330px]">
+<div class="am-hero container mx-auto rounded-xl relative flex justify-center items-center overflow-hidden bg-black min-h-[520px] md:min-h-[330px]">
   {% if article.image %}
     <div class="absolute inset-0">
       <img
@@ -14,21 +14,24 @@
     <div class="absolute inset-0 bg-gradient-to-b from-zinc-900 to-black"></div>
   {% endif %}
 
-  <div class="relative w-full container mx-auto px-10 md:px-10 pb-10 pt-0 pr-10">
+  <div class="relative w-full container mx-auto px-8 md:px-10 pb-10 pt-0 pr-10">
     <!-- Mobile: portada grande centrada arriba -->
-    <div class="flex flex-col items-center text-center md:hidden gap-5 mb-4">
+    <div class="flex flex-col items-center text-center md:hidden gap-5">
       {% if article.image %}
         <img
           src="{{ article.image | image_url: width: 800 }}"
           alt="{{ article.title | escape }}"
-          class="w-full max-w-xs object-cover rounded-2xl shadow-2xl"
+          class="w-full object-cover rounded-2xl shadow-2xl"
           style="aspect-ratio:1/1;">
       {% endif %}
-      <div class="flex flex-col gap-2">
+      <div class="am-hero-text flex flex-col gap-2">
         <p class="text-white/60 text-lg uppercase tracking-widest">Álbum</p>
-        <h1 class="text-white text-4xl font-bold leading-tight">{{ article.title | escape }}</h1>
-        <p class="text-white/70 text-base">{{ article.metafields.custom.autor }}</p>
-        <p class="text-white/50 text-sm">
+        <h1 class="text-white text-5xl font-bold leading-tight">{{ article.title | escape }}</h1>
+        {% if article.excerpt != blank %}
+          <p class="text-white/60 text-base">{{ article.excerpt }}</p>
+        {% endif %}
+        <p class="text-white/70 text-xl">{{ article.metafields.custom.autor }}</p>
+        <p class="text-white/50 text-base">
           {{ article.published_at | date: '%Y' }}
           {% if section.blocks.size > 0 %}
             &nbsp;·&nbsp; {{ section.blocks | where: 'type', 'track' | size }} tracks
@@ -44,9 +47,12 @@
           alt="{{ article.title | escape }}"
           class="w-[250px] h-[250px] object-cover rounded-xl shadow-2xl flex-shrink-0">
       {% endif %}
-      <div class="flex flex-col gap-3">
+      <div class="am-hero-text flex flex-col gap-3">
         <p class="text-white/60 text-xl uppercase tracking-widest">Álbum</p>
         <h1 class="text-white text-7xl font-bold leading-tight">{{ article.title | escape }}</h1>
+        {% if article.excerpt != blank %}
+          <p class="text-white/60 text-xl">{{ article.excerpt }}</p>
+        {% endif %}
         <p class="text-white/70 text-2xl">{{ article.metafields.custom.autor }}</p>
         <p class="text-white/50 text-xl">
           {{ article.published_at | date: '%Y' }}
@@ -60,7 +66,7 @@
 </div>
 
 <!-- Controls -->
-<div class="container mx-auto bg-black px-6 md:px-10 py-6 flex items-center gap-4 border-b border-white/10">
+<div class="am-controls container mx-auto bg-black px-6 md:px-10 py-6 flex items-center gap-4 border-b border-white/10">
   <button onclick="musicPlayAll()" class="flex items-center gap-3 bg-white text-black font-bold px-10 py-4 rounded-full hover:bg-white/90 transition-colors text-lg">
     <svg
       width="20"
@@ -69,7 +75,7 @@
       fill="currentColor"><polygon points="2,1 13,7 2,13" /></svg>
     Play
   </button>
-  <button onclick="musicShuffle()" class="flex items-center gap-3 bg-white/10 text-white font-bold px-10 py-4 rounded-full hover:bg-white/20 transition-colors text-lg">
+  <button onclick="musicShuffle()" class="am-shuffle-btn flex items-center gap-3 bg-white/10 text-white font-bold px-10 py-4 rounded-full hover:bg-white/20 transition-colors text-lg">
     <svg
       width="20"
       height="20"
@@ -86,7 +92,7 @@
   <div class="container mx-auto px-6 md:px-0">
 
     <!-- Header row -->
-    <div class="hidden md:grid grid-cols-[40px_1fr_1fr_80px_60px] gap-4 px-4 py-5 border-b border-white/10 text-white/40 text-lg uppercase tracking-widest">
+    <div class="am-track-header hidden md:grid grid-cols-[40px_1fr_1fr_80px_60px] gap-4 px-4 py-5 border-b border-white/10 text-white/40 text-lg uppercase tracking-widest">
       <span>#</span>
       <span>Título</span>
       <span>Artistas</span>
@@ -100,11 +106,13 @@
         {% assign track_index = track_index | plus: 1 %}
         <div
           {{ block.shopify_attributes }}
-          class="music-track-row grid grid-cols-[40px_1fr_60px] md:grid-cols-[40px_1fr_1fr_80px_60px] gap-4 px-4 py-7 border-b border-white/5 items-center hover:bg-white/5 cursor-pointer rounded-lg transition-colors group{% if block.settings.audio_url == blank and block.settings.youtube_url == blank %} no-audio{% endif %}"
+          class="music-track-row grid grid-cols-[40px_1fr_60px] md:grid-cols-[40px_1fr_1fr_80px_60px] gap-4 px-4 py-7 border-b border-white/5  mb-0 items-center hover:bg-white/5 cursor-pointer rounded-lg transition-colors group{% if block.settings.audio_url == blank and block.settings.youtube_url == blank %} no-audio{% endif %}"
           data-index="{{ track_index }}"
           data-audio="{{ block.settings.audio_url }}"
           data-youtube="{{ block.settings.youtube_url }}"
           data-title="{{ block.settings.track_title | escape }}"
+          data-artists="{{ block.settings.artists | escape }}"
+          data-duration="{{ block.settings.duration | escape }}"
           onclick="musicSelectTrack(this)">
 
           <span class="track-number text-white/40 text-2xl text-center group-hover:hidden">{{ track_index }}</span>
@@ -182,28 +190,68 @@
 
 
 {% if article.content != blank %}
-  <div class="bg-black px-6 md:px-10 py-12 container mx-auto prose prose-invert max-w-none">
+  <div class="article-music-content px-6 md:px-10 py-12 container mx-auto prose prose-invert max-w-none">
     {{ article.content }}
   </div>
 {% endif %}
 
 <style>
-  .music-track-row.is-playing .track-number {
-    display: none;
-  }
-  .music-track-row.is-playing .track-play {
-    display: flex !important;
-    color: #1db954;
-  }
-  .music-track-row.is-playing .track-title {
-    color: #1db954;
-  }
-  .music-track-row.no-audio {
-    opacity: 0.45;
-  }
-  .music-track-row.no-audio:hover {
-    opacity: 0.7;
-  }
+  /* ── Dark (default) ── */
+  .am-hero { background: #000; }
+  .am-controls { background: #000; border-color: rgba(255,255,255,0.1); }
+  .am-shuffle-btn { background: rgba(255,255,255,0.1); color: #fff; }
+  .am-shuffle-btn:hover { background: rgba(255,255,255,0.2); }
+  .am-track-header { color: rgba(255,255,255,0.4); border-color: rgba(255,255,255,0.1); }
+
+  /* Dark: explicit colors (prose-invert handles most, but belt+suspenders) */
+  .article-music-content { background: #000; }
+  .article-music-content p,
+  .article-music-content li,
+  .article-music-content blockquote { color: #e5e5e5; }
+  .article-music-content h1,
+  .article-music-content h2,
+  .article-music-content h3,
+  .article-music-content h4,
+  .article-music-content strong,
+  .article-music-content b { color: #fff; }
+  .article-music-content a { color: #fff; }
+
+  /* ── Light theme ── */
+  html.roxy-light .am-hero { background: #f0f0f0; }
+  html.roxy-light .am-hero-text * { color: #111 !important; }
+  html.roxy-light .am-hero-text p { opacity: 0.6; }
+
+  html.roxy-light .am-controls { background: #fff; border-color: rgba(0,0,0,0.08); }
+  html.roxy-light .am-shuffle-btn { background: rgba(0,0,0,0.07); color: #111; }
+  html.roxy-light .am-shuffle-btn:hover { background: rgba(0,0,0,0.12); }
+
+  html.roxy-light .am-track-header { color: rgba(0,0,0,0.4); border-color: rgba(0,0,0,0.08); }
+
+  html.roxy-light .music-track-row { border-color: rgba(0,0,0,0.06); }
+  html.roxy-light .music-track-row:hover { background: rgba(0,0,0,0.04) !important; }
+  html.roxy-light .track-number { color: rgba(0,0,0,0.35) !important; }
+  html.roxy-light .track-title { color: #111 !important; }
+  html.roxy-light .track-play { color: #111 !important; }
+  html.roxy-light .music-track-row .text-white\/50 { color: rgba(0,0,0,0.45) !important; }
+
+  html.roxy-light .article-music-content { background: #fff; }
+  html.roxy-light .article-music-content p,
+  html.roxy-light .article-music-content li,
+  html.roxy-light .article-music-content blockquote { color: #222; }
+  html.roxy-light .article-music-content h1,
+  html.roxy-light .article-music-content h2,
+  html.roxy-light .article-music-content h3,
+  html.roxy-light .article-music-content h4,
+  html.roxy-light .article-music-content strong,
+  html.roxy-light .article-music-content b { color: #000; }
+  html.roxy-light .article-music-content a { color: #000; }
+
+  /* ── Playing state ── */
+  .music-track-row.is-playing .track-number { display: none; }
+  .music-track-row.is-playing .track-play { display: flex !important; color: #FFDD00; }
+  .music-track-row.is-playing .track-title { color: #FFDD00; }
+  .music-track-row.no-audio { opacity: 0.45; }
+  .music-track-row.no-audio:hover { opacity: 0.7; }
 </style>
 
 <script>
@@ -220,6 +268,8 @@
       audio: row.dataset.audio,
       youtube: row.dataset.youtube,
       title: row.dataset.title,
+      trackArtist: row.dataset.artists,
+      duration: row.dataset.duration,
       art: '{{ article.image | image_url: width: 200 }}',
       artist: '{{ article.metafields.custom.autor | escape }}',
       index: i
@@ -228,7 +278,7 @@
 
   function musicBuildQueue() {
     return musicTracks.map(function(t) {
-      return { title: t.title, artist: t.artist, art: t.art, audio: t.audio, youtube: t.youtube };
+      return { title: t.title, artist: t.artist, trackArtist: t.trackArtist, duration: t.duration, art: t.art, audio: t.audio, youtube: t.youtube, articleUrl: '{{ article.url }}' };
     });
   }
 
@@ -248,7 +298,7 @@
   function musicDispatchQueue(startIndex) {
     var queue = musicBuildQueue();
     window.dispatchEvent(new CustomEvent('roxy:load-queue', {
-      detail: { queue: queue, startIndex: startIndex, recommended: musicRecommended }
+      detail: { queue: queue, startIndex: startIndex, recommended: musicRecommended, articleUrl: '{{ article.url }}' }
     }));
     // Highlight playing row
     document.querySelectorAll('.music-track-row').forEach(function(r) { r.classList.remove('is-playing'); });

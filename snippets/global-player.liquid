@@ -7,9 +7,9 @@
   #roxy-player {
     display: none;
     position: fixed;
-    bottom: 7px;
-    left: 20px;
-    right: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     border-radius: 10px;
     z-index: 9999;
     height: 90px;
@@ -84,6 +84,44 @@
     text-overflow: ellipsis;
     max-width: 170px;
     margin-top: 2px;
+  }
+
+  /* ── Song label: fixed line above the player ── */
+  #roxy-song-label {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    letter-spacing: 0.02em;
+    background: rgba(50, 50, 50, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 5px 14px;
+  }
+
+  @media (max-width: 639px) {
+    #roxy-song-label {
+      bottom: 78px;
+      font-size: 12px;
+    }
+  }
+
+  #roxy-mobile-time {
+    display: none;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 10px;
+    font-variant-numeric: tabular-nums;
+    margin-top: 3px;
   }
 
   /* ── Center ── */
@@ -288,8 +326,8 @@
     }
 
     #roxy-player {
-      height: 72px;
-      width: 95%;
+      height: 80px;
+      width: 100%;
     }
 
     #roxy-mobile-strip {
@@ -310,18 +348,16 @@
     }
 
     #roxy-player-art {
-      width: 36px;
-      height: 36px;
+      width: 50px;
+      height: 50px;
     }
 
-    #roxy-player-title {
-      font-size: 12px;
-      max-width: 120px;
+    #roxy-player-info {
+      display: none;
     }
 
-    #roxy-player-artist {
-      font-size: 10px;
-      max-width: 120px;
+    #roxy-mobile-time {
+      display: none;
     }
 
     #roxy-player-btn-add {
@@ -330,7 +366,6 @@
 
     /* Center: controls only, no progress row */
     #roxy-player-center {
-      flex: 0 0 auto;
       gap: 0;
     }
 
@@ -355,14 +390,12 @@
 
     /* Right: only panel toggle */
     #roxy-player-btn-shuffle,
-    #roxy-player-btn-repeat,
-
-    #themeToggle {
+    #roxy-player-btn-repeat {
       display: none !important;
     }
 
     #roxy-player-right {
-      gap: 7px;
+      gap: 17px;
     }
   }
 
@@ -402,8 +435,8 @@
     color: #fff;
   }
 
-  /* Mute button (radio mode only) */
-  #roxy-player-btn-mute {
+  /* Volume slider button */
+  #roxy-player-btn-volume {
     background: none;
     border: none;
     cursor: pointer;
@@ -412,7 +445,8 @@
     display: flex;
     align-items: center;
   }
-  #roxy-player-btn-mute:hover {
+  #roxy-player-btn-volume:hover,
+  #roxy-player-btn-volume.active {
     color: #fff;
   }
 
@@ -497,6 +531,7 @@
     color: #1db954;
   }
 
+
   /* ── Video panel wrapper (matches player positioning) ── */
   #roxy-video-panel-wrap {
     visibility: hidden;
@@ -526,9 +561,8 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    flex-direction: row;
+    flex-direction: column;
     display: flex;
-    height: 280px;
   }
 
   #roxy-video-panel.open {
@@ -537,13 +571,15 @@
     pointer-events: auto;
   }
 
-  /* Left: video */
+  /* Top: video (shown only when track has youtube) */
   #roxy-video-left {
-    flex: 0 0 50%;
+    display: none;
+    width: 100%;
     position: relative;
     background: #000;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 10px 0 0;
     overflow: hidden;
+    aspect-ratio: 16 / 9;
   }
 
   #roxy-video-iframe {
@@ -553,13 +589,13 @@
     display: block;
   }
 
-  /* Right: recommended */
+  /* Bottom: recommended (music) / programming (radio) */
   #roxy-video-right {
-    flex: 1;
     display: flex;
     flex-direction: column;
     min-width: 0;
     padding: 14px 0;
+    max-height: 280px;
   }
 
   #roxy-video-rec-header {
@@ -661,17 +697,9 @@
   }
 
   .roxy-rec-item.playing .roxy-rec-name {
-    color: #1db954;
+    color: #FFDD00;
   }
 
-  /* Radio: panel ocupa todo el ancho (sin video) */
-  #roxy-video-panel.radio-mode #roxy-video-left {
-    display: none;
-  }
-
-  #roxy-video-panel.radio-mode #roxy-video-right {
-    flex: 1;
-  }
 
   /* Programa item */
   .roxy-prog-item {
@@ -728,6 +756,9 @@
 
 </style>
 
+<!-- Song label above player -->
+<div id="roxy-song-label"></div>
+
 <!-- Video panel wrapper (same positioning as player bar) -->
 <div id="roxy-video-panel-wrap">
   <div id="roxy-video-panel" class="container mx-auto">
@@ -767,6 +798,7 @@
   <div id="roxy-mobile-strip">
     <div id="roxy-mobile-strip-fill"></div>
   </div>
+
   <div id="roxy-player-inner">
 
     <!-- Left: art + info + add button -->
@@ -780,6 +812,7 @@
       <div id="roxy-player-info">
         <div id="roxy-player-title"></div>
         <div id="roxy-player-artist"></div>
+        <div id="roxy-mobile-time"></div>
       </div>
       <button
         id="roxy-player-btn-add"
@@ -1037,43 +1070,14 @@
         </svg>
       </button>
 
-      <!-- Volume button (always visible) -->
+      <!-- Volume slider button -->
       <button
-        id="roxy-player-btn-mute"
-        onclick="rpToggleVolume()"
-        title="Volumen">
-        <svg
-          id="roxy-player-icon-sound"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round">
+        id="roxy-player-btn-volume"
+        onclick="rpToggleVolumePopup()"
+        title="Ajustar volumen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
           <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
-        </svg>
-        <svg
-          id="roxy-player-icon-muted"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          style="display:none;">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-          <line
-            x1="23"
-            y1="9"
-            x2="17"
-            y2="15" /><line
-            x1="17"
-            y1="9"
-            x2="23"
-            y2="15" />
         </svg>
       </button>
 
@@ -1260,10 +1264,12 @@
         RP.queue = e.detail.queue;
         RP.recommended = e.detail.recommended || [];
         RP.musicIdx = e.detail.startIndex || 0;
+        RP.articleUrl = e.detail.articleUrl || '';
         RP.renderMusicTrack(RP.musicIdx, true);
         RP.applyUiMode('music');
         document.getElementById('roxy-player').style.display = 'flex';
         RP.saveState();
+        window.dispatchEvent(new CustomEvent('roxy:playing-article', { detail: { articleUrl: RP.articleUrl } }));
       });
 
       // Open video panel from track (video-only tracks)
@@ -1311,8 +1317,10 @@
     },
 
     renderRadioTrackInfo: function(t) {
+      if (RP.uiMode === 'music') return;
       document.getElementById('roxy-player-title').textContent = t.title || '';
       document.getElementById('roxy-player-artist').textContent = t.artist || '';
+      document.getElementById('roxy-song-label').style.display = 'none';
       var art = document.getElementById('roxy-player-art');
       if (t.art) { art.src = t.art; art.style.display = 'block'; }
       else { art.style.display = 'none'; }
@@ -1327,6 +1335,13 @@
       if (!t) return;
       document.getElementById('roxy-player-title').textContent = t.title || '';
       document.getElementById('roxy-player-artist').textContent = t.artist || '';
+      var label = document.getElementById('roxy-song-label');
+      var parts = [];
+      if (t.title) parts.push(t.title);
+      if (t.trackArtist) parts.push(t.trackArtist);
+      if (t.duration) parts.push(t.duration);
+      label.textContent = parts.join('  ·  ');
+      label.style.display = parts.length ? 'block' : 'none';
       var art = document.getElementById('roxy-player-art');
       if (t.art) { art.src = t.art; art.style.display = 'block'; }
       else { art.style.display = 'none'; }
@@ -1342,7 +1357,9 @@
       if (!t) return;
       rpUpdatePanelIcon(!!(t.youtube));
       RP.musicAudio.src = t.audio || '';
-      if (autoplay && t.audio) { RP.musicAudio.play(); }
+      if (autoplay && t.audio) {
+        RP.musicAudio.play().catch(function() { RP.setPlayIcon(false); });
+      }
     },
 
     applyUiMode: function(mode) {
@@ -1367,18 +1384,10 @@
       } else {
         RP.radioAudio.muted = true;
       }
-      // Update volume slider and icon to match current mode
-      if (RP.isIOS) {
+      // Update volume slider to match current mode
+      if (!RP.isIOS) {
         var currentAudio = isRadio ? RP.radioAudio : RP.musicAudio;
-        document.getElementById('roxy-player-icon-sound').style.display = currentAudio.muted ? 'none' : 'block';
-        document.getElementById('roxy-player-icon-muted').style.display = currentAudio.muted ? 'block' : 'none';
-      } else {
-        var currentAudio = isRadio ? RP.radioAudio : RP.musicAudio;
-        var vol = currentAudio.volume;
-        document.getElementById('roxy-player-volume').value = vol;
-        var volMuted = currentAudio.muted || vol === 0;
-        document.getElementById('roxy-player-icon-sound').style.display = volMuted ? 'none' : 'block';
-        document.getElementById('roxy-player-icon-muted').style.display = volMuted ? 'block' : 'none';
+        document.getElementById('roxy-player-volume').value = currentAudio.volume;
       }
       // Show correct track info (info only — never touch audio src here)
       if (isRadio && RP.radioQueue[RP.radioIdx]) {
@@ -1402,7 +1411,7 @@
       if (!a.duration) return;
       var pct = (a.currentTime / a.duration) * 100;
       document.getElementById('roxy-player-radio-fill').style.width = pct + '%';
-      document.getElementById('roxy-mobile-strip-fill').style.width = pct + '%';
+      if (RP.uiMode === 'radio') document.getElementById('roxy-mobile-strip-fill').style.width = pct + '%';
       document.getElementById('roxy-player-radio-time-cur').textContent = RP.fmt(a.currentTime);
       document.getElementById('roxy-player-radio-time-dur').textContent = RP.fmt(a.duration);
       if (!RP._saveTimer) {
@@ -1416,8 +1425,11 @@
       var pct = (a.currentTime / a.duration) * 100;
       document.getElementById('roxy-player-progress-fill').style.width = pct + '%';
       document.getElementById('roxy-mobile-strip-fill').style.width = pct + '%';
-      document.getElementById('roxy-player-time-cur').textContent = RP.fmt(a.currentTime);
-      document.getElementById('roxy-player-time-dur').textContent = RP.fmt(a.duration);
+      var cur = RP.fmt(a.currentTime);
+      var dur = RP.fmt(a.duration);
+      document.getElementById('roxy-player-time-cur').textContent = cur;
+      document.getElementById('roxy-player-time-dur').textContent = dur;
+      document.getElementById('roxy-mobile-time').textContent = cur + ' / ' + dur;
     },
 
     musicNext: function() {
@@ -1469,16 +1481,11 @@
     RP.applyUiMode(mode);
     RP.saveState();
   }
-  function rpToggleVolume() {
-    var audio = RP.uiMode === 'radio' ? RP.radioAudio : RP.musicAudio;
-    audio.muted = !audio.muted;
-    var isMuted = audio.muted;
-    if (RP.uiMode === 'radio') RP.radioMuted = isMuted;
-    document.getElementById('roxy-player-icon-sound').style.display = isMuted ? 'none' : 'block';
-    document.getElementById('roxy-player-icon-muted').style.display = isMuted ? 'block' : 'none';
-    if (!RP.isIOS) {
-      document.getElementById('roxy-player-volume').value = isMuted ? 0 : audio.volume;
-    }
+  function rpToggleVolumePopup() {
+    var wrap = document.getElementById('roxy-player-volume-wrap');
+    var btn = document.getElementById('roxy-player-btn-volume');
+    var isOpen = wrap.classList.toggle('open');
+    btn.classList.toggle('active', isOpen);
   }
   function rpTogglePlay() {
     if (RP.musicAudio.paused) RP.musicAudio.play();
@@ -1499,9 +1506,6 @@
         RP.musicAudio.volume = vol;
       }
     }
-    var isMuted = vol === 0;
-    document.getElementById('roxy-player-icon-sound').style.display = isMuted ? 'none' : 'block';
-    document.getElementById('roxy-player-icon-muted').style.display = isMuted ? 'block' : 'none';
   }
   function rpShuffle() {
     RP.isShuffle = !RP.isShuffle;
@@ -1527,7 +1531,7 @@
   function rpCloseVideo() {
     document.getElementById('roxy-video-panel-wrap').classList.remove('open');
     document.getElementById('roxy-player-btn-videopanel').classList.remove('active');
-    document.getElementById('roxy-player-btn-mute').style.display = '';
+    document.getElementById('roxy-player-btn-volume').style.display = '';
   }
 
   function rpOpenVideo() {
@@ -1537,7 +1541,7 @@
     var t = RP.queue[RP.musicIdx];
     var hasVideo = RP.uiMode === 'music' && !!(t && t.youtube);
     if (hasVideo) {
-      document.getElementById('roxy-player-btn-mute').style.display = 'none';
+      document.getElementById('roxy-player-btn-volume').style.display = 'none';
       document.getElementById('roxy-player-volume-wrap').classList.remove('open');
     }
   }
@@ -1560,13 +1564,16 @@
     var panel = document.getElementById('roxy-video-panel');
     var isRadio = RP.uiMode === 'radio';
     var title = document.getElementById('roxy-video-rec-title');
+    var videoLeft = document.getElementById('roxy-video-left');
+    var iframe = document.getElementById('roxy-video-iframe');
 
     if (isRadio) {
       panel.classList.add('radio-mode');
-      document.getElementById('roxy-video-iframe').src = '';
+      videoLeft.style.display = 'none';
+      iframe.src = '';
       title.textContent = 'Programación';
       rpUpdatePanelIcon(false);
-      document.getElementById('roxy-player-btn-mute').style.display = '';
+      document.getElementById('roxy-player-btn-volume').style.display = '';
       rpRenderRadioProgram();
     } else {
       panel.classList.remove('radio-mode');
@@ -1574,16 +1581,17 @@
       var t = RP.queue[RP.musicIdx];
       var hasVideo = !!(t && t.youtube);
       rpUpdatePanelIcon(hasVideo);
-      // Show/hide volume based on whether there's a real video
-      document.getElementById('roxy-player-btn-mute').style.display = hasVideo ? 'none' : '';
       if (hasVideo) {
-        document.getElementById('roxy-player-volume-wrap').classList.remove('open');
-        var iframe = document.getElementById('roxy-video-iframe');
+        videoLeft.style.display = 'block';
         if (!iframe.src || iframe.src === window.location.href) {
           iframe.src = rpYoutubeEmbed(t.youtube);
         }
+        document.getElementById('roxy-player-btn-volume').style.display = 'none';
+        document.getElementById('roxy-player-volume-wrap').classList.remove('open');
       } else {
-        document.getElementById('roxy-video-iframe').src = '';
+        videoLeft.style.display = 'none';
+        iframe.src = '';
+        document.getElementById('roxy-player-btn-volume').style.display = '';
       }
       rpRenderRecommended();
     }
@@ -1665,45 +1673,42 @@
   function rpRenderRecommended() {
     var list = document.getElementById('roxy-video-rec-list');
     list.innerHTML = '';
-    var tracks = RP.recommended;
+    var tracks = RP.queue;
     if (!tracks || !tracks.length) {
-      list.innerHTML = '<p style="color:rgba(255,255,255,0.25);font-size:11px;padding:16px;text-align:center;">Sin recomendadas</p>';
+      list.innerHTML = '<p style="color:rgba(255,255,255,0.25);font-size:11px;padding:16px;text-align:center;">Sin canciones</p>';
       return;
     }
+    var headerTitle = document.getElementById('roxy-video-rec-title');
+    if (headerTitle && tracks[0]) headerTitle.textContent = tracks[0].artist || 'En este álbum';
     tracks.forEach(function(t, i) {
+      var isPlaying = i === RP.musicIdx;
       var el = document.createElement('div');
-      el.className = 'roxy-rec-item';
+      el.className = 'roxy-rec-item' + (isPlaying ? ' playing' : '');
       el.innerHTML = (t.art ? '<img class="roxy-rec-art" src="' + t.art + '" alt="">' : '<div class="roxy-rec-art"></div>') +
         '<div class="roxy-rec-info">' +
           '<div class="roxy-rec-name">' + (t.title || '') + '</div>' +
           '<div class="roxy-rec-artist">' + (t.artist || '') + '</div>' +
         '</div>';
-      el.addEventListener('click', function() { rpPlayRecommended(i); });
+      el.addEventListener('click', function() { rpPlayFromQueue(i); });
       list.appendChild(el);
     });
+    // Scroll to playing track
+    var playingEl = list.querySelector('.roxy-rec-item.playing');
+    if (playingEl) setTimeout(function() { playingEl.scrollIntoView({ block: 'nearest' }); }, 50);
   }
 
-  function rpPlayRecommended(i) {
-    var t = RP.recommended[i];
-    if (!t) return;
-    // Mark active
-    document.querySelectorAll('.roxy-rec-item').forEach(function(el, idx) {
-      el.classList.toggle('playing', idx === i);
+  function rpPlayFromQueue(idx) {
+    RP.musicIdx = idx;
+    RP.renderMusicTrack(idx, true);
+    RP.applyUiMode('music');
+    RP.saveState();
+    // Refresh panel to update highlighted track
+    document.querySelectorAll('.roxy-rec-item').forEach(function(el, i) {
+      el.classList.toggle('playing', i === idx);
     });
-    // Load into music player
-    document.getElementById('roxy-player-title').textContent = t.title || '';
-    document.getElementById('roxy-player-artist').textContent = t.artist || '';
-    var art = document.getElementById('roxy-player-art');
-    if (t.art) { art.src = t.art; art.style.display = 'block'; } else { art.style.display = 'none'; }
-    RP.musicAudio.src = t.audio || '';
-    if (t.audio) RP.musicAudio.play();
-    // Update video iframe if panel is open
-    if (document.getElementById('roxy-video-panel-wrap').classList.contains('open')) {
-      if (t.youtube) {
-        document.getElementById('roxy-video-iframe').src = rpYoutubeEmbed(t.youtube);
-      } else {
-        document.getElementById('roxy-video-iframe').src = '';
-      }
+    var t = RP.queue[idx];
+    if (t && t.youtube && document.getElementById('roxy-video-panel-wrap').classList.contains('open')) {
+      document.getElementById('roxy-video-iframe').src = rpYoutubeEmbed(t.youtube);
     }
   }
 
@@ -1735,12 +1740,33 @@
     console.warn('radio_program metafield not found. Create it at: Shopify Admin → Settings → Custom data → Shops → Add definition → namespace: custom, key: radio_program, type: JSON');
   {% endif %}
 
+  // Theme toggle
+  (function() {
+    function applyTheme(light) {
+      document.documentElement.classList.toggle('roxy-light', light);
+      document.getElementById('roxy-icon-sun').style.display = light ? 'block' : 'none';
+      document.getElementById('roxy-icon-moon').style.display = light ? 'none' : 'block';
+    }
+    try {
+      if (localStorage.getItem('roxy_theme') === 'light') applyTheme(true);
+    } catch(e) {}
+    var toggle = document.getElementById('themeToggle');
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        var isLight = document.documentElement.classList.contains('roxy-light');
+        applyTheme(!isLight);
+        try { localStorage.setItem('roxy_theme', isLight ? 'dark' : 'light'); } catch(e) {}
+      });
+    }
+  })();
+
   document.addEventListener('DOMContentLoaded', function() {
     RP.init();
     // Close volume popup on outside click
     document.addEventListener('click', function(e) {
-      if (!e.target.closest('#roxy-player-volume-wrap') && !e.target.closest('#roxy-player-btn-mute')) {
+      if (!e.target.closest('#roxy-player-volume-wrap') && !e.target.closest('#roxy-player-btn-volume')) {
         document.getElementById('roxy-player-volume-wrap').classList.remove('open');
+        document.getElementById('roxy-player-btn-volume').classList.remove('active');
       }
       // Hide video panel on outside click (video keeps playing)
       // Exclude the toggle button itself — it has its own handler
