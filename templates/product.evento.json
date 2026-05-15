@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "merch-event-hero": {
+      "type": "merch-event-hero",
+      "settings": {}
+    },
+    "merch-event-info": {
+      "type": "merch-event-info",
+      "settings": {}
+    },
+    "merch-event-gallery": {
+      "type": "merch-event-gallery",
+      "settings": {}
+    },
+    "merch-event-tickets": {
+      "type": "merch-event-tickets",
+      "settings": {}
+    },
+    "merch-event-creators": {
+      "type": "merch-event-creators",
+      "settings": {}
+    },
+    "merch-event-location": {
+      "type": "merch-event-location",
+      "settings": {}
+    }
+  },
+  "order": ["merch-event-hero", "merch-event-info", "merch-event-gallery", "merch-event-tickets", "merch-event-creators", "merch-event-location"]
+}

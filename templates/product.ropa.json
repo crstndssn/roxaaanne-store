@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "product-main": {
+      "type": "product-main",
+      "settings": {}
+    },
+    "product-story": {
+      "type": "product-story",
+      "settings": {}
+    },
+    "size-care": {
+      "type": "size-care",
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {}
+    }
+  },
+  "order": ["product-main", "product-story", "size-care", "related-products"]
+}
