@@ -506,6 +506,34 @@
             "muted": false
           }
         },
+        "evento_Npzp4c": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "MIÉRCOLES 13",
+            "month_full": "Mayo",
+            "title": "Cinergia: Tardes De Soledad",
+            "location": "Neiva, Huila • El Patio",
+            "url": "",
+            "featured": false,
+            "muted": false
+          }
+        },
+        "evento_EkicKm": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "MIÉRCOLES 20",
+            "month_full": "Mayo",
+            "title": "Cinergia: The Act Of Killing",
+            "location": "Neiva, Huila • El Patio",
+            "url": "",
+            "featured": false,
+            "muted": false
+          }
+        },
         "evento_2025_link": {
           "type": "evento",
           "settings": {
@@ -555,6 +583,8 @@
         "evento_4RQwtr",
         "evento_3jw79j",
         "evento_QKPWmg",
+        "evento_Npzp4c",
+        "evento_EkicKm",
         "evento_2025_link"
       ],
       "settings": {
