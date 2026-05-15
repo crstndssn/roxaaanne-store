@@ -254,6 +254,7 @@
         },
         "evento_Br4DQK": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -268,6 +269,7 @@
         },
         "evento_Vh6k4n": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -282,6 +284,7 @@
         },
         "evento_m7JY8j": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -296,6 +299,7 @@
         },
         "evento_jMDeey": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -310,6 +314,7 @@
         },
         "evento_Ft36Db": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -324,6 +329,7 @@
         },
         "evento_4fFx7p": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -338,6 +344,7 @@
         },
         "evento_eVUN6b": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -352,6 +359,7 @@
         },
         "evento_BDAUEB": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
@@ -366,6 +374,7 @@
         },
         "evento_He3zzK": {
           "type": "evento",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/roxy-fest-perfil.png",
             "artist": "roxaaanne",
