@@ -45,6 +45,17 @@
             "youtube_url": ""
           }
         },
+        "track_CApPrj": {
+          "type": "track",
+          "settings": {
+            "track_title": "Cuando el Río Suena",
+            "track_subtitle": "Capítulo 4 a Parrandera",
+            "artists": "a Parrandera",
+            "duration": "",
+            "audio_url": "",
+            "youtube_url": ""
+          }
+        },
         "track_D6GFzn": {
           "type": "track",
           "settings": {
@@ -193,6 +204,7 @@
         "track_apbQ8T",
         "track_pinp8H",
         "track_p7XtrP",
+        "track_CApPrj",
         "track_D6GFzn",
         "track_QJ9EA8",
         "track_6mbeFR",
