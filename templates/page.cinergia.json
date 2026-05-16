@@ -159,6 +159,16 @@
             "event_location": "",
             "article_url": "shopify://blogs/peliculas-de-cinergia/el-jockey"
           }
+        },
+        "movie_zi7DEt": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/tardes-de-soledad.jpg",
+            "title": "Tardes de Soledad",
+            "event_date": "",
+            "event_location": "",
+            "article_url": ""
+          }
         }
       },
       "block_order": [
@@ -174,7 +184,8 @@
         "movie_Kx8yej",
         "movie_ErHrfD",
         "movie_AndQkE",
-        "movie_qNJ86C"
+        "movie_qNJ86C",
+        "movie_zi7DEt"
       ],
       "settings": {}
     },
