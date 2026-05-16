@@ -15,11 +15,11 @@
         "track_pinp8H": {
           "type": "track",
           "settings": {
-            "track_title": "",
-            "track_subtitle": "",
-            "artists": "",
-            "duration": "",
-            "audio_url": "",
+            "track_title": "Cuando el Río Suena",
+            "track_subtitle": "Capítulo 2 Peregrino",
+            "artists": "Peregrino",
+            "duration": "17:36",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Cuando_el_Rio_Suena_Capitulo_2_Peregrino_-_Entrega.mp3?v=1777930747",
             "youtube_url": ""
           }
         },
