@@ -14,9 +14,8 @@
       "blocks": {
         "section_PVtYQc": {
           "type": "section",
-          "disabled": true,
           "settings": {
-            "title": "sonido",
+            "title": "radio",
             "link": "shopify://blogs/sonidos-de-felipe-quien"
           }
         },
@@ -51,7 +50,10 @@
       "settings": {
         "image": "shopify://shop_images/felipe-quien.jpg",
         "name": "Felipe quien",
-        "description": "<p>músico, director, orquesta, profesor</p>"
+        "description": "<p>músico, director, orquesta, profesor</p>",
+        "collection": "",
+        "products_title": "merca",
+        "products_count": 8
       }
     }
   },
