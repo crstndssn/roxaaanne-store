@@ -12,6 +12,17 @@
     "main": {
       "type": "article-music",
       "blocks": {
+        "track_apbQ8T": {
+          "type": "track",
+          "settings": {
+            "track_title": "Cuando el Río Suena",
+            "track_subtitle": "Capítulo 1 Son del Macizo",
+            "artists": "Son del Macizo",
+            "duration": "16:11",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Cuando_el_Rio_Suena_Capitulo_1_Son_del_Macizo_-_Entrega.mp3?v=1777930726",
+            "youtube_url": ""
+          }
+        },
         "track_pinp8H": {
           "type": "track",
           "settings": {
@@ -23,14 +34,14 @@
             "youtube_url": ""
           }
         },
-        "track_apbQ8T": {
+        "track_p7XtrP": {
           "type": "track",
           "settings": {
             "track_title": "Cuando el Río Suena",
-            "track_subtitle": "Capítulo 1 Son del Macizo",
-            "artists": "Son del Macizo",
-            "duration": "16:11",
-            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Cuando_el_Rio_Suena_Capitulo_1_Son_del_Macizo_-_Entrega.mp3?v=1777930726",
+            "track_subtitle": "Capítulo 3 Camila Noches",
+            "artists": "Camila Noches",
+            "duration": "18:16",
+            "audio_url": "https://cdn.shopify.com/s/files/1/0700/8623/0213/files/Cuando_el_Rio_Suena_Capitulo_3_Camila_Noches_-_Entrega.mp3?v=1777930775",
             "youtube_url": ""
           }
         },
@@ -179,8 +190,9 @@
         }
       },
       "block_order": [
-        "track_pinp8H",
         "track_apbQ8T",
+        "track_pinp8H",
+        "track_p7XtrP",
         "track_D6GFzn",
         "track_QJ9EA8",
         "track_6mbeFR",
