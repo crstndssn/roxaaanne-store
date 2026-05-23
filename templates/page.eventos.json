@@ -531,6 +531,20 @@
             "location": "Neiva, Huila • El Patio",
             "url": "",
             "featured": false,
+            "muted": true
+          }
+        },
+        "evento_yUAgbp": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/voltaje-perfil.png",
+            "artist": "LACRA",
+            "day": "JUEVES 28",
+            "month_full": "Mayo",
+            "title": "VOLTAJE: Laboratorio de Síntesis",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "https://roxaaanne.com/products/voltaje-23-de-mayo",
+            "featured": false,
             "muted": false
           }
         },
@@ -585,6 +599,7 @@
         "evento_QKPWmg",
         "evento_Npzp4c",
         "evento_EkicKm",
+        "evento_yUAgbp",
         "evento_2025_link"
       ],
       "settings": {
