@@ -428,8 +428,8 @@
     var isDark = document.documentElement.classList.contains('dark');
     var sun = document.getElementById('roxy-icon-sun');
     var moon = document.getElementById('roxy-icon-moon');
-    if (sun) sun.style.display = isDark ? 'none' : 'block';
-    if (moon) moon.style.display = isDark ? 'block' : 'none';
+    if (sun) sun.style.display = isDark ? 'block' : 'none';
+    if (moon) moon.style.display = isDark ? 'none' : 'block';
   }
   document.addEventListener('DOMContentLoaded', function() {
     syncIcons();
@@ -654,8 +654,7 @@
   ],
   "blocks": [
     {
-      "type": "@app",
-      "name": "App"
+      "type": "@app"
     }
   ]
 }

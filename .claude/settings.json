@@ -5,7 +5,10 @@
       "Bash(curl -s \"https://cdn.shopify.com/s/files/1/0700/8623/0213/files/logo-dark.png?v=1767200181\" -o /tmp/logo-dark.png)",
       "Bash(python3 -c \"from PIL import Image; img=Image.open\\('/tmp/logo-dark.png'\\); print\\(img.size\\)\")",
       "Bash(python3 -c ' *)",
-      "Bash(git -C /Users/crstndssn/Documents/roxaaanne/roxaaanne-store diff sections/header.liquid)"
+      "Bash(git -C /Users/crstndssn/Documents/roxaaanne/roxaaanne-store diff sections/header.liquid)",
+      "Bash(shopify theme *)",
+      "Bash(awk -F: '$2 <= 160 && $2 >= 150')",
+      "Bash(awk '/sections\\\\/header\\\\.liquid/{found=1} /sections\\\\/home-hero\\\\.liquid/{found=1} found && /╰/{found=0; print \"---\"} found{print}')"
     ]
   }
 }
