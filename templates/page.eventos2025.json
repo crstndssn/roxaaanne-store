@@ -12,170 +12,53 @@
     "eventos": {
       "type": "eventos2025",
       "blocks": {
-        "evento_mdUGLf": {
+        "evento_cCmcL9": {
           "type": "evento",
           "settings": {
-            "image": "shopify://shop_images/cinergia_eventos.png",
+            "image": "shopify://shop_images/lacra_eventos.png",
             "artist": "LACRA",
-            "day": "MIÉRCOLES 11",
-            "month_full": "Junio",
-            "title": "Cinergia: Perfect Day",
-            "location": "Neiva, Huila • El Patio",
-            "url": "shopify://pages/cinergia",
+            "day": "DOMINGO 30",
+            "month_full": "Noviembre",
+            "title": "GAITANA FEST",
+            "location": "Neiva, Huila • Centro de Convenciones",
+            "url": "shopify://pages/lacra",
             "muted": true
           }
         },
-        "evento_Qbhiki": {
+        "evento_8Wa7HR": {
           "type": "evento",
           "settings": {
-            "image": "shopify://shop_images/cinergia_eventos.png",
-            "artist": "LACRA",
-            "day": "MIÉRCOLES 18",
-            "month_full": "Junio",
-            "title": "Cinergia: Malcom X",
-            "location": "Neiva, Huila • El Patio",
-            "url": "shopify://pages/cinergia",
-            "muted": true
-          }
-        },
-        "evento_iTxyBL": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/roxy-fest-perfil.png",
-            "artist": "LACRA",
-            "day": "SÁBADO 21",
-            "month_full": "Junio",
-            "title": "ROXYFEST",
-            "location": "Neiva, Huila • Cara Mala",
-            "url": "shopify://pages/roxyfest",
-            "muted": true
-          }
-        },
-        "evento_qCWHUG": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/cinergia_eventos.png",
-            "artist": "LACRA",
-            "day": "MIÉRCOLES 16",
-            "month_full": "Julio",
-            "title": "Cinergia: El Jokey",
-            "location": "Neiva, Huila • El Patio",
-            "url": "shopify://pages/cinergia",
-            "muted": true
-          }
-        },
-        "evento_M3aLgQ": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/cinergia_eventos.png",
-            "artist": "LACRA",
-            "day": "MIÉRCOLES 23",
-            "month_full": "Julio",
-            "title": "Cinergia: Tony Manero",
-            "location": "Neiva, Huila • El Patio",
-            "url": "shopify://pages/cinergia",
-            "muted": true
-          }
-        },
-        "evento_M64834": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/cinergia_eventos.png",
-            "artist": "LACRA",
-            "day": "MIÉRCOLES 27",
-            "month_full": "Agosto",
-            "title": "Cinergia: The Spine Of the night",
-            "location": "Neiva, Huila • El Patio",
-            "url": "shopify://pages/cinergia",
-            "muted": true
-          }
-        },
-        "evento_Mip7LR": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/IMG_4805.jpg",
-            "artist": "LACRA",
-            "day": "VIERNES 12",
-            "month_full": "Septiembre",
-            "title": "Cinergia: alter_ocio (exposición)",
-            "location": "Quito, ecuador",
-            "url": "shopify://pages/cristian-dussan",
-            "muted": true
-          }
-        },
-        "evento_rnEJRh": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/cinergia_eventos.png",
-            "artist": "LACRA",
-            "day": "MIÉRCOLES 24",
-            "month_full": "Septiembre",
-            "title": "Cinergia: Canino",
-            "location": "Neiva, Huila • El Patio",
-            "url": "shopify://pages/cinergia",
-            "muted": true
-          }
-        },
-        "evento_mJYCyc": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/bejuco_banner_1.png",
-            "artist": "LACRA",
-            "day": "VIERNES 3",
-            "month_full": "Octubre",
-            "title": "Tapazo - Trailer Bejuco",
-            "location": "Neiva, Huila • Cara Mala",
-            "url": "shopify://pages/bejuco",
-            "muted": true
-          }
-        },
-        "evento_XF7heR": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/cinergia_eventos.png",
+            "image": "shopify://shop_images/voltaje-perfil.png",
             "artist": "Felipe Quien",
-            "day": "SÁBADO 11",
-            "month_full": "Octubre",
-            "title": "Cinergia: Live Set Acid House",
+            "day": "SÁBADO 29",
+            "month_full": "Noviembre",
+            "title": "VOLTAJE",
             "location": "Neiva, Huila • Cara Mala",
-            "url": "shopify://pages/cinergia",
+            "url": "shopify://pages/voltaje",
             "muted": true
           }
         },
-        "evento_8qbTHA": {
-          "type": "evento",
-          "settings": {
-            "image": "shopify://shop_images/felipe-quien.jpg",
-            "artist": "Felipe Quien",
-            "day": "SÁBADO 11",
-            "month_full": "Octubre",
-            "title": "Live Set Acid House",
-            "location": "Neiva, Huila • Festival BMX Trails Jam 3.0",
-            "url": "shopify://pages/felipe-quien",
-            "muted": true
-          }
-        },
-        "evento_WKGMwt": {
+        "evento_UCx7Bj": {
           "type": "evento",
           "settings": {
             "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "MIÉRCOLES 22",
-            "month_full": "Octubre",
-            "title": "Cinergia: VIY",
+            "day": "MIÉRCOLES 26",
+            "month_full": "Noviembre",
+            "title": "Cinergia: Frank",
             "location": "Neiva, Huila • El Patio",
             "url": "shopify://pages/cinergia",
             "muted": true
           }
         },
-        "evento_jQqAhz": {
+        "evento_KFUAM4": {
           "type": "evento",
           "settings": {
             "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "MIÉRCOLES 29",
-            "month_full": "Octubre",
-            "title": "Cinergia: Veneno Para Las Hadas",
+            "day": "MIÉRCOLES 12",
+            "month_full": "Noviembre",
+            "title": "Cinergia: Embriagado De Amor",
             "location": "Neiva, Huila • El Patio",
             "url": "shopify://pages/cinergia",
             "muted": true
@@ -194,55 +77,172 @@
             "muted": true
           }
         },
-        "evento_KFUAM4": {
+        "evento_jQqAhz": {
           "type": "evento",
           "settings": {
             "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "MIÉRCOLES 12",
-            "month_full": "Noviembre",
-            "title": "Cinergia: Embriagado De Amor",
+            "day": "MIÉRCOLES 29",
+            "month_full": "Octubre",
+            "title": "Cinergia: Veneno Para Las Hadas",
             "location": "Neiva, Huila • El Patio",
             "url": "shopify://pages/cinergia",
             "muted": true
           }
         },
-        "evento_UCx7Bj": {
+        "evento_WKGMwt": {
           "type": "evento",
           "settings": {
             "image": "shopify://shop_images/cinergia_eventos.png",
             "artist": "LACRA",
-            "day": "MIÉRCOLES 26",
-            "month_full": "Noviembre",
-            "title": "Cinergia: Frank",
+            "day": "MIÉRCOLES 22",
+            "month_full": "Octubre",
+            "title": "Cinergia: VIY",
             "location": "Neiva, Huila • El Patio",
             "url": "shopify://pages/cinergia",
             "muted": true
           }
         },
-        "evento_8Wa7HR": {
+        "evento_8qbTHA": {
           "type": "evento",
           "settings": {
-            "image": "shopify://shop_images/voltaje-perfil.png",
+            "image": "shopify://shop_images/felipe-quien.jpg",
             "artist": "Felipe Quien",
-            "day": "SÁBADO 29",
-            "month_full": "Noviembre",
-            "title": "VOLTAJE",
-            "location": "Neiva, Huila • Cara Mala",
-            "url": "shopify://pages/voltaje",
+            "day": "SÁBADO 11",
+            "month_full": "Octubre",
+            "title": "Live Set Acid House",
+            "location": "Neiva, Huila • Festival BMX Trails Jam 3.0",
+            "url": "shopify://pages/felipe-quien",
             "muted": true
           }
         },
-        "evento_cCmcL9": {
+        "evento_XF7heR": {
           "type": "evento",
           "settings": {
-            "image": "shopify://shop_images/lacra_eventos.png",
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "Felipe Quien",
+            "day": "SÁBADO 11",
+            "month_full": "Octubre",
+            "title": "Cinergia: Live Set Acid House",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "shopify://pages/cinergia",
+            "muted": true
+          }
+        },
+        "evento_mJYCyc": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/bejuco_banner_1.png",
             "artist": "LACRA",
-            "day": "DOMINGO 30",
-            "month_full": "Noviembre",
-            "title": "GAITANA FEST",
-            "location": "Neiva, Huila • Centro de Convenciones",
-            "url": "shopify://pages/lacra",
+            "day": "VIERNES 3",
+            "month_full": "Octubre",
+            "title": "Tapazo - Trailer Bejuco",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "shopify://pages/bejuco",
+            "muted": true
+          }
+        },
+        "evento_rnEJRh": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "MIÉRCOLES 24",
+            "month_full": "Septiembre",
+            "title": "Cinergia: Canino",
+            "location": "Neiva, Huila • El Patio",
+            "url": "shopify://pages/cinergia",
+            "muted": true
+          }
+        },
+        "evento_Mip7LR": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cristian_dussan.jpg",
+            "artist": "roxaaanne",
+            "day": "VIERNES 12",
+            "month_full": "Septiembre",
+            "title": "Alter_ocio (exposición)",
+            "location": "Quito, ecuador",
+            "url": "shopify://pages/cristian-dussan",
+            "muted": true
+          }
+        },
+        "evento_M64834": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "MIÉRCOLES 27",
+            "month_full": "Agosto",
+            "title": "Cinergia: The Spine Of the night",
+            "location": "Neiva, Huila • El Patio",
+            "url": "shopify://pages/cinergia",
+            "muted": true
+          }
+        },
+        "evento_M3aLgQ": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "MIÉRCOLES 23",
+            "month_full": "Julio",
+            "title": "Cinergia: Tony Manero",
+            "location": "Neiva, Huila • El Patio",
+            "url": "shopify://pages/cinergia",
+            "muted": true
+          }
+        },
+        "evento_qCWHUG": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "MIÉRCOLES 16",
+            "month_full": "Julio",
+            "title": "Cinergia: El Jokey",
+            "location": "Neiva, Huila • El Patio",
+            "url": "shopify://pages/cinergia",
+            "muted": true
+          }
+        },
+        "evento_iTxyBL": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "artist": "LACRA",
+            "day": "SÁBADO 21",
+            "month_full": "Junio",
+            "title": "ROXYFEST",
+            "location": "Neiva, Huila • Cara Mala",
+            "url": "shopify://pages/roxyfest",
+            "muted": true
+          }
+        },
+        "evento_Qbhiki": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "MIÉRCOLES 18",
+            "month_full": "Junio",
+            "title": "Cinergia: Malcom X",
+            "location": "Neiva, Huila • El Patio",
+            "url": "shopify://pages/cinergia",
+            "muted": true
+          }
+        },
+        "evento_mdUGLf": {
+          "type": "evento",
+          "settings": {
+            "image": "shopify://shop_images/cinergia_eventos.png",
+            "artist": "LACRA",
+            "day": "MIÉRCOLES 11",
+            "month_full": "Junio",
+            "title": "Cinergia: Perfect Day",
+            "location": "Neiva, Huila • El Patio",
+            "url": "shopify://pages/cinergia",
             "muted": true
           }
         }
