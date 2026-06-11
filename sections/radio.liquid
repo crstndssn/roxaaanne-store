@@ -1,0 +1,353 @@
+<style>
+  .radio-page-hero {
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0a;
+    border-radius: 16px;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 280px;
+  }
+
+  .radio-page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(204, 0, 0, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .radio-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(204, 0, 0, 0.15);
+    border: 1px solid rgba(204, 0, 0, 0.35);
+    border-radius: 20px;
+    padding: 5px 14px;
+    margin-bottom: 20px;
+  }
+
+  .radio-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #cc0000;
+    animation: radio-pulse 1.4s ease-in-out infinite;
+  }
+
+  @keyframes radio-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  .radio-live-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #cc0000;
+    text-transform: uppercase;
+  }
+
+  .radio-page-title {
+    font-size: clamp(36px, 8vw, 72px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .radio-page-subtitle {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.45);
+    max-width: 420px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+
+  .radio-play-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s;
+    letter-spacing: 0.02em;
+  }
+
+  .radio-play-btn:hover { background: #e0e0e0; transform: scale(1.03); }
+  .radio-play-btn svg { flex-shrink: 0; }
+
+  .radio-now-playing {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .radio-now-art {
+    width: 64px; height: 64px;
+    border-radius: 10px; object-fit: cover;
+    background: #1a1a1a; flex-shrink: 0;
+  }
+
+  .radio-now-label {
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #cc0000; margin-bottom: 4px;
+    display: flex; align-items: center; gap: 5px;
+  }
+
+  .radio-now-title {
+    font-size: 15px; font-weight: 600; color: #fff;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .radio-now-artist {
+    font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 3px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .radio-schedule-title {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35); margin-bottom: 12px;
+    padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .radio-schedule-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .radio-schedule-item:last-child { border-bottom: none; }
+  .radio-schedule-item.is-current {
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px; padding: 14px 12px; margin: 0 -12px;
+  }
+
+  .radio-schedule-time {
+    font-size: 12px; font-variant-numeric: tabular-nums;
+    color: rgba(255,255,255,0.3); min-width: 42px;
+    padding-top: 2px; flex-shrink: 0;
+  }
+  .radio-schedule-item.is-current .radio-schedule-time { color: #cc0000; }
+
+  .radio-schedule-name {
+    font-size: 14px; font-weight: 600;
+    color: rgba(255,255,255,0.8); line-height: 1.3;
+  }
+  .radio-schedule-item.is-current .radio-schedule-name { color: #fff; }
+
+  .radio-schedule-host { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+
+  .radio-schedule-now-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #cc0000; margin-bottom: 3px;
+  }
+
+  .radio-grid {
+    display: grid; grid-template-columns: 1fr; gap: 20px;
+  }
+  @media (min-width: 768px) {
+    .radio-grid { grid-template-columns: 1fr 340px; }
+  }
+
+  .radio-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px; padding: 24px;
+  }
+</style>
+
+<div class="container mx-auto px-5 md:px-0 py-10">
+
+  <!-- Hero -->
+  <div class="radio-page-hero mb-6">
+    <div class="radio-live-badge">
+      <span class="radio-live-dot"></span>
+      <span class="radio-live-text">En vivo</span>
+    </div>
+    <h1 class="radio-page-title">{{ section.settings.title | default: 'roxaaanne radio' }}</h1>
+    {% if section.settings.subtitle != blank %}
+      <p class="radio-page-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+    <button class="radio-play-btn" onclick="radioPagePlay()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><polygon points="3,1 13,7 3,13"/></svg>
+      <span id="radio-page-btn-label">Escuchar radio</span>
+    </button>
+  </div>
+
+  <!-- Main grid -->
+  <div class="radio-grid">
+
+    <!-- Left: now playing + description -->
+    <div style="display:flex;flex-direction:column;gap:20px;">
+
+      <div class="radio-card">
+        <div class="radio-schedule-title">Sonando ahora</div>
+        <div class="radio-now-playing">
+          <img id="radio-page-art" class="radio-now-art" src="" alt="" style="display:none;">
+          <div style="min-width:0;flex:1;">
+            <div class="radio-now-label">
+              <span class="radio-live-dot" style="width:5px;height:5px;"></span>
+              En vivo
+            </div>
+            <div id="radio-page-track-title" class="radio-now-title">—</div>
+            <div id="radio-page-track-artist" class="radio-now-artist"></div>
+          </div>
+        </div>
+      </div>
+
+      {% if section.settings.description != blank %}
+        <div class="radio-card">
+          <div class="radio-schedule-title">Sobre la radio</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;">
+            {{ section.settings.description }}
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+
+    <!-- Right: schedule -->
+    <div class="radio-card">
+      <div class="radio-schedule-title">Programación</div>
+      <div id="radio-page-schedule">
+        <p style="color:rgba(255,255,255,0.2);font-size:12px;text-align:center;padding:24px 0;">Cargando programación…</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof RP === 'undefined') { setTimeout(init, 200); return; }
+    renderNowPlaying();
+    renderSchedule();
+    updateBtn();
+
+    var origRender = RP.renderRadioTrackInfo.bind(RP);
+    RP.renderRadioTrackInfo = function(t) { origRender(t); renderNowPlaying(); };
+    var origNext = RP.radioNext.bind(RP);
+    RP.radioNext = function() { origNext(); renderNowPlaying(); };
+  }
+
+  function renderNowPlaying() {
+    if (typeof RP === 'undefined') return;
+    var t = RP.radioQueue[RP.radioIdx];
+    var titleEl  = document.getElementById('radio-page-track-title');
+    var artistEl = document.getElementById('radio-page-track-artist');
+    var artEl    = document.getElementById('radio-page-art');
+    if (!t) { if (titleEl) titleEl.textContent = '—'; return; }
+    if (titleEl)  titleEl.textContent  = t.title  || '—';
+    if (artistEl) artistEl.textContent = t.artist || '';
+    if (artEl) {
+      if (t.art) { artEl.src = t.art; artEl.style.display = 'block'; }
+      else { artEl.style.display = 'none'; }
+    }
+  }
+
+  function renderSchedule() {
+    var container = document.getElementById('radio-page-schedule');
+    if (!container || typeof RP === 'undefined') return;
+    var prog = RP.radioProgram;
+    if (prog && prog.length) {
+      var currentIdx = RP.radioProgramIdx >= 0 ? RP.radioProgramIdx : 0;
+      container.innerHTML = '';
+      prog.forEach(function(p, i) {
+        var isCurrent = i === currentIdx;
+        var isPast = i < currentIdx;
+        var el = document.createElement('div');
+        el.className = 'radio-schedule-item' + (isCurrent ? ' is-current' : '');
+        if (isPast) el.style.opacity = '0.3';
+        var nowTag = isCurrent
+          ? '<div class="radio-schedule-now-tag"><span style="width:5px;height:5px;border-radius:50%;background:#cc0000;display:inline-block;animation:radio-pulse 1.4s ease-in-out infinite;"></span>Ahora</div>'
+          : '';
+        el.innerHTML =
+          '<div class="radio-schedule-time">' + (p.time || '') + '</div>' +
+          '<div style="min-width:0;flex:1;">' + nowTag +
+            '<div class="radio-schedule-name">' + (p.title || '') + '</div>' +
+            (p.host ? '<div class="radio-schedule-host">' + p.host + '</div>' : '') +
+          '</div>';
+        container.appendChild(el);
+        if (isCurrent) setTimeout(function() { el.scrollIntoView({ block: 'nearest' }); }, 100);
+      });
+      return;
+    }
+    var queue = RP.radioQueue;
+    if (!queue || !queue.length) {
+      container.innerHTML = '<p style="color:rgba(255,255,255,0.2);font-size:12px;text-align:center;padding:24px 0;">Sin programación disponible</p>';
+      return;
+    }
+    container.innerHTML = '';
+    var cur = RP.radioIdx;
+    queue.forEach(function(t, i) {
+      var isCurrent = i === cur;
+      var isPast = i < cur;
+      var el = document.createElement('div');
+      el.className = 'radio-schedule-item' + (isCurrent ? ' is-current' : '');
+      if (isPast) el.style.opacity = '0.3';
+      var nowTag = isCurrent
+        ? '<div class="radio-schedule-now-tag"><span style="width:5px;height:5px;border-radius:50%;background:#cc0000;display:inline-block;animation:radio-pulse 1.4s ease-in-out infinite;"></span>Ahora</div>'
+        : '';
+      el.innerHTML =
+        '<div style="min-width:0;flex:1;">' + nowTag +
+          '<div class="radio-schedule-name">' + (t.title || '') + '</div>' +
+          (t.artist ? '<div class="radio-schedule-host">' + t.artist + '</div>' : '') +
+        '</div>';
+      container.appendChild(el);
+    });
+  }
+
+  function updateBtn() {
+    var label = document.getElementById('radio-page-btn-label');
+    if (!label || typeof RP === 'undefined') return;
+    label.textContent = (RP.uiMode === 'radio' && RP.radioAudio && !RP.radioAudio.paused)
+      ? 'Escuchando...' : 'Escuchar radio';
+  }
+
+  window.radioPagePlay = function() {
+    if (typeof RP === 'undefined') return;
+    if (RP.uiMode !== 'radio') {
+      rpSetMode('radio');
+    } else if (RP.radioAudio && RP.radioAudio.paused) {
+      RP.radioAudio.play().catch(function() {});
+    }
+    updateBtn();
+  };
+
+  document.addEventListener('DOMContentLoaded', init);
+  if (document.readyState !== 'loading') init();
+})();
+</script>
+
+{% render 'global-player' %}
+
+{% schema %}
+{
+  "name": "Radio",
+  "settings": [
+    { "type": "text",     "id": "title",       "label": "Título",    "default": "roxaaanne radio" },
+    { "type": "text",     "id": "subtitle",    "label": "Subtítulo", "default": "Música independiente, en vivo." },
+    { "type": "richtext", "id": "description", "label": "Descripción" }
+  ],
+  "presets": [{ "name": "Radio" }]
+}
+{% endschema %}

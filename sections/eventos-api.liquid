@@ -1,0 +1,231 @@
+<div class="container mx-auto px-5 md:px-0 py-6 md:py-10" id="eventos-root">
+
+  <!-- Header -->
+  <div class="mb-6">
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black dark:text-white mb-1">eventos</h1>
+    <p class="text-sm md:text-base text-black/50 dark:text-white/50">eventos de tus creadorxs favoritos, crea los tuyos también.</p>
+  </div>
+
+  <!-- Skeleton / error -->
+  <div id="ev-loading" class="text-sm opacity-40 text-black dark:text-white py-12 text-center">Cargando eventos…</div>
+  <div id="ev-error" class="text-sm opacity-40 text-black dark:text-white py-12 text-center" style="display:none">No se pudieron cargar los eventos.</div>
+
+  <!-- UI (hidden until data loads) -->
+  <div id="ev-ui" style="display:none" class="space-y-5">
+
+    <!-- Controls -->
+    <div class="space-y-2">
+      <p id="ev-count" class="text-lg text-[#888]"></p>
+
+      <div class="flex flex-wrap items-center gap-3">
+
+        <!-- Próximos / Anteriores toggle -->
+        <div id="ev-toggle" class="relative inline-flex bg-[#1a1a1a] rounded-full p-0.5 text-lg shrink-0">
+          <div id="ev-toggle-pill" class="absolute top-0.5 bottom-0.5 rounded-full bg-white transition-all duration-200" style="width:calc(50% - 2px);left:2px;"></div>
+          <button id="ev-btn-prox"  onclick="evSetTab('proximos')"   class="relative z-10 px-6 py-2.5 rounded-full transition-colors duration-200 text-[#000] font-medium">próximos</button>
+          <button id="ev-btn-antes" onclick="evSetTab('anteriores')" class="relative z-10 px-6 py-2.5 rounded-full transition-colors duration-200 text-[#888]">anteriores</button>
+        </div>
+
+        <!-- Dynamic pills -->
+        <div id="ev-pills" class="flex flex-wrap gap-2 items-center"></div>
+
+        <!-- Search -->
+        <div class="relative ml-auto">
+          <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 opacity-40 pointer-events-none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input id="ev-search" type="text" placeholder="buscar evento…" oninput="evRender()"
+            class="text-lg bg-[#1a1a1a] border border-[#2a2a2a] text-white rounded-full pl-10 pr-5 py-2.5 outline-none focus:border-white/40 transition-all w-44 focus:w-60 placeholder:text-[#555]">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Event grid -->
+    <div id="ev-grid"></div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var ALL = []
+  var tab = 'proximos'
+  var filtroAnio = 'todos'
+  var filtroMes  = 'todos'
+  var filtroSerie = 'todos'
+
+  var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
+
+  function parseFecha(iso) {
+    var d = new Date(iso)
+    return {
+      d: d,
+      dia: d.getDate(),
+      diaSemana: d.toLocaleDateString('es-CO', { weekday: 'long' }),
+      mes: MESES[d.getMonth()],
+      anio: d.getFullYear(),
+      mesKey: d.getFullYear() + '-' + String(d.getMonth()).padStart(2,'0'),
+    }
+  }
+
+  function esc(s) {
+    return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')
+  }
+
+  function renderCard(ev) {
+    var f = parseFecha(ev.fecha)
+    var loc = [ev.ciudad, ev.lugar].filter(Boolean).join(' · ')
+    var url = ev.url_boleteria || ''
+    var tag = ev.serie
+      ? '<div class="flex items-center gap-2 mt-3 px-3 py-1.5 rounded-full bg-[#2a2a2a] border border-[#333] w-fit">' +
+          (ev.imagen_url ? '<img src="' + esc(ev.imagen_url) + '" class="w-5 h-5 rounded-full object-cover shrink-0" alt="">' : '') +
+          '<span class="text-sm text-[#888] leading-none">' + esc(ev.serie) + '</span>' +
+        '</div>'
+      : ''
+
+    var inner =
+      '<div class="relative w-44 h-44 rounded-xl overflow-hidden shrink-0 bg-[#2a2a2a]">' +
+        (ev.imagen_url ? '<img src="' + esc(ev.imagen_url) + '" alt="' + esc(ev.titulo) + '" class="w-full h-full object-cover" loading="lazy">' : '') +
+      '</div>' +
+      '<div class="flex-1 min-w-0 px-3">' +
+        '<div class="flex items-baseline gap-2 mb-1.5">' +
+          '<span class="text-base text-[#888]">' + esc(f.diaSemana) + '</span>' +
+          '<span class="text-2xl font-black text-white">' + f.dia + '</span>' +
+        '</div>' +
+        '<p class="text-xl font-semibold leading-tight text-white truncate">' + esc(ev.titulo) + '</p>' +
+        (loc ? '<p class="text-base text-[#888] truncate mt-1">' + esc(loc) + '</p>' : '') +
+        tag +
+      '</div>'
+
+    return url
+      ? '<a href="' + esc(url) + '" class="flex items-center gap-3 rounded-2xl p-2.5 bg-[#111] hover:bg-[#1a1a1a] transition-colors cursor-pointer">' + inner + '</a>'
+      : '<div class="flex items-center gap-3 rounded-2xl p-2.5 bg-[#111]">' + inner + '</div>'
+  }
+
+  function groupByMes(list) {
+    var groups = {}
+    list.forEach(function(ev) {
+      if (!ev.fecha) return
+      var f = parseFecha(ev.fecha)
+      if (!groups[f.mesKey]) groups[f.mesKey] = { label: f.mes, anio: f.anio, eventos: [] }
+      groups[f.mesKey].eventos.push(ev)
+    })
+    return Object.keys(groups).sort().map(function(k) { return groups[k] })
+  }
+
+  window.evSetTab = function(t) {
+    tab = t
+    filtroAnio = 'todos'
+    filtroMes  = 'todos'
+    filtroSerie = 'todos'
+    var search = document.getElementById('ev-search')
+    if (search) search.value = ''
+    evRender()
+  }
+
+  window.evTogglePill = function(type, val) {
+    if (type === 'anio')  { filtroAnio  = filtroAnio  === val ? 'todos' : val; filtroMes = 'todos' }
+    if (type === 'mes')   { filtroMes   = filtroMes   === val ? 'todos' : val }
+    if (type === 'serie') { filtroSerie = filtroSerie === val ? 'todos' : val }
+    evRender()
+  }
+
+  window.evRender = function() {
+    var hoy = new Date(); hoy.setHours(0,0,0,0)
+    var q = ((document.getElementById('ev-search') || {}).value || '').toLowerCase().trim()
+
+    var proximos   = ALL.filter(function(e) { return e.fecha && new Date(e.fecha) >= hoy }).sort(function(a,b){ return new Date(a.fecha) - new Date(b.fecha) })
+    var anteriores = ALL.filter(function(e) { return e.fecha && new Date(e.fecha) <  hoy }).sort(function(a,b){ return new Date(b.fecha) - new Date(a.fecha) })
+
+    var base = tab === 'proximos' ? proximos : anteriores
+
+    var anios = [...new Set(base.filter(function(e){ return e.fecha }).map(function(e){ return String(parseFecha(e.fecha).anio) }))].sort(function(a,b){ return tab==='proximos'?a-b:b-a })
+    var baseByAnio = filtroAnio === 'todos' ? base : base.filter(function(e){ return e.fecha && String(parseFecha(e.fecha).anio) === filtroAnio })
+    var meses = [...new Map(baseByAnio.filter(function(e){return e.fecha}).map(function(e){ var f=parseFecha(e.fecha); return [f.mesKey,{key:f.mesKey,label:f.mes}] })).values()].sort(function(a,b){ return tab==='proximos'?a.key.localeCompare(b.key):b.key.localeCompare(a.key) })
+    var series = tab==='proximos' ? [...new Set(proximos.map(function(e){return e.serie}).filter(Boolean))] : []
+
+    var pillsHtml = ''
+    series.forEach(function(s) {
+      var active = filtroSerie === s
+      pillsHtml += '<button onclick="evTogglePill(\'serie\',\'' + esc(s) + '\')" class="text-base px-5 py-2.5 rounded-full border transition-colors cursor-pointer ' + (active ? 'bg-white text-black border-white' : 'border-[#333] text-[#888] hover:text-white hover:border-white') + '">' + esc(s) + '</button>'
+    })
+    anios.forEach(function(a) {
+      var active = filtroAnio === a
+      pillsHtml += '<button onclick="evTogglePill(\'anio\',\'' + a + '\')" class="text-base px-5 py-2.5 rounded-full border transition-colors cursor-pointer ' + (active ? 'bg-white text-black border-white' : 'border-[#333] text-[#888] hover:text-white hover:border-white') + '">' + a + '</button>'
+    })
+    meses.forEach(function(m) {
+      var active = filtroMes === m.key
+      pillsHtml += '<button onclick="evTogglePill(\'mes\',\'' + m.key + '\')" class="text-base px-5 py-2.5 rounded-full border transition-colors cursor-pointer ' + (active ? 'bg-white text-black border-white' : 'border-[#2a2a2a] text-[#666] hover:text-white hover:border-white') + '">' + esc(m.label) + '</button>'
+    })
+    document.getElementById('ev-pills').innerHTML = pillsHtml
+
+    var pill = document.getElementById('ev-toggle-pill')
+    var btnP = document.getElementById('ev-btn-prox')
+    var btnA = document.getElementById('ev-btn-antes')
+    if (tab === 'proximos') {
+      if (pill) { pill.style.left = '2px'; pill.style.width = 'calc(50% - 2px)'; pill.style.background = '#fff' }
+      if (btnP) { btnP.style.color = '#000' }
+      if (btnA) { btnA.style.color = '#888' }
+    } else {
+      if (pill) { pill.style.left = 'calc(50%)'; pill.style.width = 'calc(50% - 2px)'; pill.style.background = '#fff' }
+      if (btnP) { btnP.style.color = '#888' }
+      if (btnA) { btnA.style.color = '#000' }
+    }
+
+    var filtered = baseByAnio.filter(function(e) {
+      if (filtroMes !== 'todos' && e.fecha && parseFecha(e.fecha).mesKey !== filtroMes) return false
+      if (filtroSerie !== 'todos' && e.serie !== filtroSerie) return false
+      if (q && !(e.titulo||'').toLowerCase().includes(q) && !(e.serie||'').toLowerCase().includes(q) && !(e.ciudad||'').toLowerCase().includes(q)) return false
+      return true
+    })
+
+    var countEl = document.getElementById('ev-count')
+    if (countEl) countEl.textContent = (tab==='proximos' ? proximos.length : anteriores.length) + ' ' + (tab==='proximos' ? 'próximos' : 'anteriores')
+
+    var grupos = groupByMes(filtered)
+    if (tab === 'anteriores') grupos = grupos.reverse()
+    var grid = document.getElementById('ev-grid')
+    if (!grid) return
+
+    if (!grupos.length) {
+      grid.innerHTML = '<p class="text-sm text-[#555] py-12 text-center">No hay eventos ' + (tab==='proximos'?'próximos':'anteriores') + '.</p>'
+      return
+    }
+
+    var html = '<div class="columns-1 md:columns-2 gap-8">'
+    grupos.forEach(function(g) {
+      html += '<div class="break-inside-avoid mb-8">'
+      html += '<div class="flex items-baseline gap-2 mb-4"><p class="text-xl font-black tracking-widest text-white uppercase">' + esc(g.label) + '</p><p class="text-xl text-[#555]">' + g.anio + '</p></div>'
+      html += '<div class="space-y-2">'
+      g.eventos.forEach(function(ev) { html += renderCard(ev) })
+      html += '</div></div>'
+    })
+    html += '</div>'
+    grid.innerHTML = html
+  }
+
+  async function load() {
+    try {
+      const res = await fetch('https://www.roxaaanne.space/api/eventos')
+      const eventos = await res.json()
+      ALL = eventos
+      document.getElementById('ev-loading').style.display = 'none'
+      document.getElementById('ev-ui').style.display = 'block'
+      evRender()
+    } catch(e) {
+      document.getElementById('ev-loading').style.display = 'none'
+      document.getElementById('ev-error').style.display = 'block'
+    }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', load)
+  else load()
+})()
+</script>
+
+{% schema %}
+{
+  "name": "Eventos API",
+  "settings": [],
+  "presets": [{ "name": "Eventos API" }]
+}
+{% endschema %}

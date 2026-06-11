@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -I \"https://cdn.shopify.com/s/files/1/0700/8623/0213/files/logo-dark.png?v=1767200181\")",
+      "Bash(curl -s \"https://cdn.shopify.com/s/files/1/0700/8623/0213/files/logo-dark.png?v=1767200181\" -o /tmp/logo-dark.png)",
+      "Bash(python3 -c \"from PIL import Image; img=Image.open\\('/tmp/logo-dark.png'\\); print\\(img.size\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(git -C /Users/crstndssn/Documents/roxaaanne/roxaaanne-store diff sections/header.liquid)"
+    ]
+  }
+}

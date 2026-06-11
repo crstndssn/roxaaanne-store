@@ -9,7 +9,11 @@
  */
 {
   "sections": {
-    "eventos": {
+    "eventos_api": {
+      "type": "eventos-api",
+      "settings": {}
+    },
+    "eventos_DISABLED": {
       "type": "eventos",
       "blocks": {
         "evento_KRXGfF": {
@@ -608,6 +612,6 @@
     }
   },
   "order": [
-    "eventos"
+    "eventos_api"
   ]
 }

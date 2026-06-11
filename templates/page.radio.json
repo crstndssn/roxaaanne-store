@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "radio_section": {
+      "type": "radio",
+      "settings": {
+        "title": "roxaaanne radio",
+        "subtitle": "Música independiente, en vivo."
+      }
+    }
+  },
+  "order": ["radio_section"]
+}
