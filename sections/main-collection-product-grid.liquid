@@ -14,12 +14,13 @@
   <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-<div class="bg-[#feffee] dark:bg-black pb-8 md:py-12">
+<div class="bg-[#feffee] dark:bg-black pb-8 md:pb-12">
   {%- paginate collection.products by section.settings.products_per_page -%}
 
     <div class="container mx-auto px-8 md:px-0">
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-      <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'facets.js' | asset_url }}" defer="defer">
+    </script>
 
       {%- comment -%} Vendor / artista filter pills + search toggle {%- endcomment -%}
       {%- assign all_vendors_str = '' -%}
@@ -30,7 +31,7 @@
       {%- endfor -%}
       {%- assign vendor_array = all_vendors_str | split: '|||' | compact -%}
 
-      {%- if vendor_array.size > 0 -%}
+        {%- if vendor_array.size > 0 -%}
         <!-- Pills row (desktop only) — buscar pill al final -->
         <div class="hidden md:block mb-2">
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;">
@@ -38,13 +39,40 @@
             {%- for vendor in vendor_array -%}
               <button data-filter-vendor="{{ vendor | escape }}" class="cs-pill">{{ vendor }}</button>
             {%- endfor -%}
-            <button id="cs-search-pill" class="cs-pill" onclick="window.csOpenSearch(this,'cs-wrap')"><svg style="margin-right:6px" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>buscar</button>
+            <button
+              id="cs-search-pill"
+              class="cs-pill"
+              onclick="window.csOpenSearch(this,'cs-wrap')">
+              <svg
+                style="margin-right:6px"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"><circle
+                  cx="11"
+                  cy="11"
+                  r="8" /><path d="m21 21-4.35-4.35" /></svg>buscar</button>
           </div>
         </div>
 
         <!-- Search bar — hidden, appears below pills on toggle -->
         <div id="cs-wrap" class="hidden relative mb-4">
-          <svg class="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none text-black dark:text-[#feffee]/50" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <svg
+            class="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none text-black dark:text-[#feffee]/50"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            aria-hidden="true"><circle
+              cx="11"
+              cy="11"
+              r="8" /><path d="m21 21-4.35-4.35" /></svg>
           <input
             id="collection-search"
             type="search"
@@ -218,11 +246,13 @@
     align-items: center;
     padding: 0.7rem 1.5rem;
     border-radius: 9999px;
-    border: 1px solid rgba(0,0,0,0.25);
+    border: 1px solid rgba(0, 0, 0, 0.25);
     color: #000;
     font-size: 1.125rem;
     line-height: 1.5;
-    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    transition: background 0.15s
+    , color 0.15s
+    , border-color 0.15s;
     cursor: pointer;
     white-space: nowrap;
   }
@@ -232,7 +262,7 @@
     border-color: #000;
   }
   .dark .cs-pill {
-    border-color: rgba(254,255,238,0.25);
+    border-color: rgba(254, 255, 238, 0.25);
     color: #feffee;
   }
   .dark .cs-pill.cs-pill-active {
@@ -244,17 +274,35 @@
   #collection-search-m {
     background: #feffee;
     color: #000;
-    border-color: rgba(0,0,0,0.25);
+    border-color: rgba(0, 0, 0, 0.25);
   }
   #collection-search::placeholder,
   #collection-search-m::placeholder {
-    color: rgba(0,0,0,0.4);
+    color: rgba(0, 0, 0, 0.4);
   }
   .dark #collection-search,
   .dark #collection-search-m {
-    background: #feffee;
-    color: #000;
-    border-color: rgba(0,0,0,0.25);
+    background: #000;
+    color: #feffee;
+    border-color: #feffee;
+  }
+  .dark #collection-search::placeholder,
+  .dark #collection-search-m::placeholder {
+    color: rgba(254, 255, 238, 0.4);
+  }
+  /* Ocultar filtros nativos de Shopify en desktop */
+  @media screen and (min-width: 750px) {
+    facet-filters-form.facets,
+    .facets-container .product-count.small-hide {
+      display: none !important;
+    }
+  }
+  /* Pills más grandes en desktop */
+  @media screen and (min-width: 750px) {
+    .cs-pill {
+      padding: 0.9rem 2rem;
+      font-size: 1.3rem;
+    }
   }
 </style>
 

@@ -154,9 +154,12 @@
     color: rgba(0, 0, 0, 0.4);
   }
   .dark #ev-search {
-    background: #feffee;
-    color: #000;
-    border-color: rgba(0, 0, 0, 0.25);
+    background: #000;
+    color: #feffee;
+    border-color: #feffee;
+  }
+  .dark #ev-search::placeholder {
+    color: rgba(254,255,238,0.4);
   }
 
   /* Light mode */
@@ -229,6 +232,7 @@
   }
   #eventos-root .ev-empty {
     color: #000;
+    font-size: 1.5rem;
   }
   #eventos-root .ev-pill-active {
     background: #000;
@@ -303,7 +307,7 @@
     color: #555;
   }
   .dark #eventos-root .ev-empty {
-    color: #555;
+    color: #feffee;
   }
   .dark #eventos-root .ev-pill-active {
     background: #fff;
@@ -318,6 +322,12 @@
   .dark #eventos-root .ev-pill-inactive:hover {
     border-color: #fff;
     color: #fff;
+  }
+  @media screen and (min-width: 750px) {
+    .cs-pill {
+      padding: 0.9rem 2rem;
+      font-size: 1.3rem;
+    }
   }
 </style>
 

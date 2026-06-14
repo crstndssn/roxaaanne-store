@@ -42,7 +42,7 @@
         class="bg-white/5 dark:bg-white/5 backdrop-blur-md border border-black dark:border-[#feffee]/10 hover:bg-black/5 dark:hover:border-[#feffee] transition-colors duration-200 flex flex-col justify-center items-center py-12 mt-1 rounded-2xl"
         href="{{ block.settings.creator__link }}"
         data-name="{{ block.settings.creator__name | escape }}"
-        data-tag="{{ block.settings.creator__tag | escape }}">
+        data-tags="{% if block.settings.creator__tag_fotos %}fotos {% endif %}{% if block.settings.creator__tag_musica %}musica {% endif %}{% if block.settings.creator__tag_peliculas %}peliculas {% endif %}{% if block.settings.creator__tag_articulos %}articulos {% endif %}{% if block.settings.creator__tag_diario %}diario {% endif %}">
         <div class="w-[123px] h-[123px] md:w-[150px] md:h-[150px] rounded-full overflow-hidden mb-5">
           <img
             class="w-full h-full object-cover"
@@ -91,7 +91,8 @@
     var q = creatorsSearchOpen ? (document.getElementById('creators-search')?.value || '').toLowerCase().trim() : '';
     document.querySelectorAll('#creators-grid a[data-name]').forEach(function(card) {
       var nameMatch = !q || card.getAttribute('data-name').toLowerCase().includes(q);
-      var tagMatch = !creatorsActiveTag || card.getAttribute('data-tag') === creatorsActiveTag;
+      var cardTags = (card.getAttribute('data-tags') || '').trim().split(/\s+/);
+      var tagMatch = !creatorsActiveTag || cardTags.includes(creatorsActiveTag);
       card.style.display = (nameMatch && tagMatch) ? '' : 'none';
     });
   }
@@ -176,9 +177,12 @@
     color: rgba(0,0,0,0.4);
   }
   .dark #creators-search {
-    background: #feffee;
-    color: #000;
-    border-color: rgba(0,0,0,0.25);
+    background: #000;
+    color: #feffee;
+    border-color: #feffee;
+  }
+  .dark #creators-search::placeholder {
+    color: rgba(254,255,238,0.4);
   }
   .creator-ver-perfil {
     display: inline-flex;
@@ -206,6 +210,12 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  @media screen and (min-width: 750px) {
+    .cs-pill {
+      padding: 0.9rem 2rem;
+      font-size: 1.3rem;
+    }
+  }
 </style>
 
 {% schema %}
@@ -213,14 +223,6 @@
     "name": "Creators",
     "settings": [
       {
-        "type": "richtext",
-        "id": "title",
-        "label": "Título"
-      }, {
-        "type": "richtext",
-        "id": "content",
-        "label": "Contenido"
-      }, {
         "type": "blog",
         "id": "blog",
         "label": "Blog para 'aquí y ahora'"
@@ -245,22 +247,29 @@
             "id": "creator__link",
             "label": "Link"
           }, {
-            "type": "select",
-            "id": "creator__tag",
-            "label": "Tag",
-            "default": "",
-            "options": [
-              { "value": "", "label": "—" },
-              { "value": "fotos", "label": "fotos" },
-              { "value": "musica", "label": "musica" },
-              { "value": "peliculas", "label": "peliculas" },
-              { "value": "articulos", "label": "articulos" },
-              { "value": "diario", "label": "diario" }
-            ]
+            "type": "checkbox",
+            "id": "creator__tag_fotos",
+            "label": "Tag: fotos",
+            "default": false
           }, {
             "type": "checkbox",
-            "id": "show_new_post",
-            "label": "Mostrar 'new post'",
+            "id": "creator__tag_musica",
+            "label": "Tag: musica",
+            "default": false
+          }, {
+            "type": "checkbox",
+            "id": "creator__tag_peliculas",
+            "label": "Tag: peliculas",
+            "default": false
+          }, {
+            "type": "checkbox",
+            "id": "creator__tag_articulos",
+            "label": "Tag: articulos",
+            "default": false
+          }, {
+            "type": "checkbox",
+            "id": "creator__tag_diario",
+            "label": "Tag: diario",
             "default": false
           }
         ]
