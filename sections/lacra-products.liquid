@@ -8,14 +8,14 @@
       {% if product.media.size > 0 %}
         <!-- Imagen principal -->
         <div class="main-image mb-4">
-          <div class="relative aspect-square bg-gray-900 rounded-2xl overflow-hidden">
+          <div class="relative bg-gray-900 rounded-2xl overflow-hidden" style="aspect-ratio:2/3;">
             <img
               id="mainProductImage"
               src="{{ product.featured_image | image_url: width: 800 }}"
               alt="{{ product.title | escape }}"
               class="w-full h-full object-cover"
               width="800"
-              height="800">
+              height="1000">
           </div>
         </div>
 
@@ -23,16 +23,13 @@
         {% if product.media.size > 1 %}
           <div class="thumbnails grid grid-cols-4 gap-3">
             {% for media in product.media limit: 4 %}
-              <button
-                type="button"
-                class="thumbnail-btn relative aspect-square bg-gray-900 rounded-lg overflow-hidden border-2 border-black-800 hover:border-black dark:hover:border-[#feffee] transition-all {% if forloop.first %}border-black dark:border-[#feffee]{% endif %}"
-                onclick="changeMainImage('{{ media | image_url: width: 800 }}', this)">
+              <div class="thumbnail-btn relative aspect-square rounded-lg overflow-hidden bg-gray-900 cursor-pointer {% if forloop.first %}thumb-active{% endif %}" onclick="changeMainImage('{{ media | image_url: width: 800 }}', this)">
                 <img
                   src="{{ media | image_url: width: 200 }}"
                   alt="{{ product.title | escape }}"
                   class="w-full h-full object-cover"
                   loading="lazy">
-              </button>
+              </div>
             {% endfor %}
           </div>
         {% endif %}
@@ -71,7 +68,7 @@
 
         <!-- Descripción -->
         {% if product.description != blank %}
-          <div class="text-black dark:text-[#feffee] text-lg leading-relaxed mb-8">
+          <div class="text-black dark:text-[#feffee] text-2xl leading-relaxed mb-8">
             {{ product.description }}
           </div>
         {% endif %}
@@ -92,199 +89,252 @@
           <div class="variants-wrapper mb-6">
             {% for option in product.options_with_values %}
               <div class="variant-selector mb-6">
-                <label class="block text-black dark:text-[#feffee] text-lg font-medium mb-3">
+                <label class="variant-label block text-black dark:text-[#feffee] text-xl font-medium mb-3">
+                  {%- case option.name -%}
+                    {%- when 'Size'
+                      , 'size' -%}Talla
+                  {%- when 'Color'
+                    , 'color' -%}Color
+                {%- else -%}
                   {{ option.name }}
-                </label>
+              {%- endcase -%}
+            </label>
 
-                {% if option.name == 'Color' or option.name == 'color' %}
-                  <!-- Selector de colores -->
-                  <div class="flex gap-3 flex-wrap">
-                    {% for value in option.values %}
-                      <label class="relative cursor-pointer">
-                        <input
-                          type="radio"
-                          name="option-{{ option.position }}"
-                          value="{{ value | escape }}"
-                          class="sr-only peer"
-                          {% if option.selected_value == value %}
-                          checked{% endif %}>
-                        <div class="w-12 h-12 rounded-full border-2 border-gray-600 peer-checked:border-white transition-all flex items-center justify-center" style="background-color: {{ value | downcase | replace: ' ', '' }}">
-                          <svg
-                            class="w-6 h-6 text-black dark:text-[#feffee] hidden peer-checked:block"
-                            fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
-                          </svg>
-                        </div>
-                        <span class="sr-only">{{ value }}</span>
-                      </label>
-                    {% endfor %}
-                  </div>
-                {% elsif option.name == 'Talla' or option.name == 'Size' or option.name == 'size' or option.name == 'talla' %}
-                  <!-- Selector de tallas -->
-                  <div class="flex gap-3 flex-wrap">
-                    {% for value in option.values %}
-                      <label class="relative cursor-pointer">
-                        <input
-                          type="radio"
-                          name="option-{{ option.position }}"
-                          value="{{ value | escape }}"
-                          class="sr-only peer"
-                          {% if option.selected_value == value %}
-                          checked{% endif %}>
-                        <div class="px-6 py-3 border-2 border-gray-600 rounded-lg peer-checked:border-white peer-checked:bg-white peer-checked:text-black text-black dark:text-[#feffee] font-medium transition-all hover:border-gray-400">
-                          {{ value }}
-                        </div>
-                      </label>
-                    {% endfor %}
-                  </div>
-                {% else %}
-                  <!-- Selector dropdown para otras opciones -->
-                  <select name="option-{{ option.position }}" class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-black dark:text-[#feffee] focus:border-white focus:outline-none">
-                    {% for value in option.values %}
-                      <option
-                        value="{{ value | escape }}"
-                        {% if option.selected_value == value %}
-                        selected{% endif %}>
-                        {{ value }}
-                      </option>
-                    {% endfor %}
-                  </select>
-                {% endif %}
+            {% if option.name == 'Color' or option.name == 'color' %}
+              <!-- Selector de colores -->
+              <div class="flex gap-3 flex-wrap">
+                {% for value in option.values %}
+                  {%- assign cv = value | downcase | strip -%}
+                  {%- case cv -%}
+                    {%- when 'negro'
+                      , 'negra'
+                      , 'black' -%}
+                      {%- assign sc = '#111111' -%}
+                    {%- when 'blanco'
+                      , 'blanca'
+                      , 'white' -%}
+                      {%- assign sc = '#ffffff' -%}
+                    {%- when 'rojo'
+                      , 'roja'
+                      , 'red' -%}
+                      {%- assign sc = '#cc2222' -%}
+                    {%- when 'azul'
+                      , 'blue' -%}
+                      {%- assign sc = '#2255cc' -%}
+                    {%- when 'verde'
+                      , 'green' -%}
+                      {%- assign sc = '#226622' -%}
+                    {%- when 'amarillo'
+                      , 'amarilla'
+                      , 'yellow' -%}
+                      {%- assign sc = '#ffcc00' -%}
+                    {%- when 'gris'
+                      , 'grey'
+                      , 'gray' -%}
+                      {%- assign sc = '#888888' -%}
+                    {%- when 'rosa'
+                      , 'pink' -%}
+                      {%- assign sc = '#ff69b4' -%}
+                    {%- when 'naranja'
+                      , 'orange' -%}
+                      {%- assign sc = '#ff6600' -%}
+                    {%- when 'morado'
+                      , 'violeta'
+                      , 'purple'
+                      , 'violet' -%}
+                      {%- assign sc = '#7744bb' -%}
+                    {%- when 'beige'
+                      , 'crema'
+                      , 'cream' -%}
+                      {%- assign sc = '#feffee' -%}
+                    {%- when 'cafe'
+                      , 'café'
+                      , 'marron'
+                      , 'marrón'
+                      , 'brown' -%}
+                      {%- assign sc = '#7b5e3a' -%}
+                    {%- when 'turquesa'
+                      , 'turquoise' -%}
+                      {%- assign sc = '#40e0d0' -%}
+                    {%- else -%}
+                      {%- assign sc = value -%}
+                  {%- endcase -%}
+                  <label class="relative cursor-pointer">
+                    <input
+                      type="radio"
+                      name="option-{{ option.position }}"
+                      value="{{ value | escape }}"
+                      class="sr-only peer"
+                      {% if option.selected_value == value %}
+                      checked{% endif %}>
+                    <div
+                      class="color-swatch"
+                      style="background-color: {{ sc }};"
+                      data-checked="{% if option.selected_value == value %}true{% else %}false{% endif %}"></div>
+                    <span class="sr-only">{{ value }}</span>
+                  </label>
+                {% endfor %}
               </div>
-            {% endfor %}
+            {% elsif option.name == 'Talla' or option.name == 'Size' or option.name == 'size' or option.name == 'talla' %}
+              <!-- Selector de tallas -->
+              <div class="flex gap-3 flex-wrap">
+                {% for value in option.values %}
+                  <label class="relative cursor-pointer">
+                    <input
+                      type="radio"
+                      name="option-{{ option.position }}"
+                      value="{{ value | escape }}"
+                      class="sr-only peer"
+                      {% if option.selected_value == value %}
+                      checked{% endif %}>
+                    <div class="size-option {% if option.selected_value == value %}size-active{% endif %}">
+                      {{ value }}
+                    </div>
+                  </label>
+                {% endfor %}
+              </div>
+            {% else %}
+              <!-- Selector dropdown para otras opciones -->
+              <select name="option-{{ option.position }}" class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-black dark:text-[#feffee] focus:border-white focus:outline-none">
+                {% for value in option.values %}
+                  <option
+                    value="{{ value | escape }}"
+                    {% if option.selected_value == value %}
+                    selected{% endif %}>
+                    {{ value }}
+                  </option>
+                {% endfor %}
+              </select>
+            {% endif %}
           </div>
-        {% endunless %}
-
-        <!-- Cantidad -->
-        <div class="quantity-selector mb-6">
-          <label class="block text-black dark:text-[#feffee] text-[15px] font-medium mb-3">
-            Cantidad
-          </label>
-          <div class="flex items-center gap-4">
-            <button
-              type="button"
-              onclick="changeQuantity(-1)"
-              class="w-14 h-14 bg-[#feffee] dark:bg-black border-2 border-black dark:border-[#feffee] rounded-lg text-black hover:text-[#feffee] hover:dark:text-black dark:text-[#feffee] hover:bg-black hover:dark:bg-[#feffee] transition-colors">
-              -
-            </button>
-            <input
-              type="number"
-              id="quantity"
-              name="quantity"
-              value="1"
-              min="1"
-              class="w-24 h-14 text-center bg-[#feffee] dark:bg-black border-2 border-black dark:border-[#feffee] rounded-lg text-black dark:text-[#feffee] text-[15px] font-medium focus:outline-none focus:border-white">
-            <button
-              type="button"
-              onclick="changeQuantity(1)"
-              class="w-14 h-14 bg-[#feffee] dark:bg-black border-2 border-black dark:border-[#feffee] rounded-lg text-black hover:text-[#feffee] hover:dark:text-black dark:text-[#feffee] hover:bg-black hover:dark:bg-[#feffee] transition-colors">
-              +
-            </button>
-          </div>
-        </div>
-
-        <!-- Botón añadir al carrito -->
-        <button
-          type="submit"
-          name="add"
-          class="w-full bg-black text-[#feffee] py-4 px-8 rounded-xl text-[17px] font-[500] hover:bg-[#feffee] hover:text-black border-2 border-black dark:border-[#feffee] transition-colors mb-4">
-          {% if product.available %}
-            Añadir al carrito
-          {% else %}
-            Preventa
-          {% endif %}
-        </button>
-
-        <!-- Disponibilidad -->
-        <div class="flex items-center gap-2 text-sm">
-          {% if product.available %}
-            <svg
-              class="w-5 h-5 text-green-500"
-              fill="currentColor"
-              viewBox="0 0 20 20">
-              <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
-            </svg>
-            <span class="text-green-500 text-black dark:text-[#feffee]">En stock</span>
-          {% else %}
-            <svg
-              class="w-5 h-5 text-yellow-500"
-              fill="currentColor"
-              viewBox="0 0 20 20">
-              <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" />
-            </svg>
-            <span class="text-yellow-500 text-black dark:text-[#feffee]">Disponible en preventa</span>
-          {% endif %}
-        </div>
-      {% endform %}
-
-      <!-- Información adicional -->
-      <div class="mt-12 pt-8">
-        <details class="mb-4">
-          <summary class="text-black dark:text-[#feffee] text-[15px] font-medium cursor-pointer hover:text-black hover:dark:text-gray-300 transition-colors py-3 border border-gray-700 rounded-lg px-4">
-            Guía de tallas
-          </summary>
-          <div class="pt-4 text-black dark:text-[#feffee]">
-            <table class="w-full text-left">
-              <thead>
-                <tr class="border-b border-gray-700">
-                  <th class="py-2">Talla</th>
-                  <th class="py-2">Pecho (cm)</th>
-                  <th class="py-2">Largo (cm)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-gray-800">
-                  <td class="py-2">S</td>
-                  <td class="py-2">46-48</td>
-                  <td class="py-2">68-70</td>
-                </tr>
-                <tr class="border-b border-gray-800">
-                  <td class="py-2">M</td>
-                  <td class="py-2">50-52</td>
-                  <td class="py-2">70-72</td>
-                </tr>
-                <tr class="border-b border-gray-800">
-                  <td class="py-2">L</td>
-                  <td class="py-2">54-56</td>
-                  <td class="py-2">72-74</td>
-                </tr>
-                <tr>
-                  <td class="py-2">XL</td>
-                  <td class="py-2">58-60</td>
-                  <td class="py-2">74-76</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </details>
-
-        <details class="mb-4">
-          <summary class="text-black dark:text-[#feffee] text-[15px] font-medium cursor-pointer hover:text-black hover:dark:text-gray-300 transition-colors py-3 border border-gray-700 rounded-lg px-4">
-            Materiales y cuidados
-          </summary>
-          <div class="pt-4 text-black dark:text-[#feffee]">
-            <ul class="list-disc list-inside space-y-2">
-              <li>100% Algodón orgánico</li>
-              <li>Lavar a máquina en agua fría</li>
-              <li>No usar blanqueador</li>
-              <li>Secar a baja temperatura</li>
-              <li>Planchar a temperatura media si es necesario</li>
-            </ul>
-          </div>
-        </details>
-
-        <details>
-          <summary class="text-black dark:text-[#feffee] text-[15px] font-medium cursor-pointer hover:text-black hover:dark:text-gray-300 transition-colors py-3 border border-gray-700 rounded-lg px-4">
-            Envíos y devoluciones
-          </summary>
-          <div class="pt-4 text-black dark:text-[#feffee]">
-            <p class="mb-2">📦 Envío gratis en compras superiores a $100.000</p>
-            <p class="mb-2">🚚 Entrega en 3-5 días hábiles</p>
-            <p>↩️ Devoluciones gratuitas dentro de 30 días</p>
-          </div>
-        </details>
+        {% endfor %}
       </div>
+    {% endunless %}
+
+    <!-- Cantidad -->
+    <div class="quantity-selector mb-6">
+      <label class="variant-label block text-black dark:text-[#feffee] text-xl font-medium mb-3">
+        Cantidad
+      </label>
+      <div class="flex items-center gap-3">
+        <button
+          type="button"
+          onclick="changeQuantity(-1)"
+          class="qty-btn">−</button>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          value="1"
+          min="1"
+          class="qty-input">
+        <button
+          type="button"
+          onclick="changeQuantity(1)"
+          class="qty-btn">+</button>
+      </div>
+    </div>
+
+    <!-- Botón añadir al carrito -->
+    <button
+      type="submit"
+      name="add"
+      class="w-full bg-black dark:bg-[#feffee] text-[#feffee] dark:text-black py-5 px-8 rounded-2xl text-2xl font-medium hover:opacity-80 transition-opacity mb-4">
+      {% if product.available %}
+        Añadir al carrito
+      {% else %}
+        Preventa
+      {% endif %}
+    </button>
+
+    <!-- Disponibilidad -->
+    <div class="flex items-center gap-2 text-sm">
+      {% if product.available %}
+        <svg
+          class="w-5 h-5 text-green-500"
+          fill="currentColor"
+          viewBox="0 0 20 20">
+          <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+        </svg>
+        <span class="text-green-500 text-black dark:text-[#feffee]">En stock</span>
+      {% else %}
+        <svg
+          class="w-5 h-5 text-yellow-500"
+          fill="currentColor"
+          viewBox="0 0 20 20">
+          <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" />
+        </svg>
+        <span class="text-yellow-500 text-black dark:text-[#feffee]">Disponible en preventa</span>
+      {% endif %}
+    </div>
+  {% endform %}
+
+  <!-- Información adicional -->
+  <div class="mt-12 pt-8">
+    <details class="mb-4">
+      <summary class="text-black dark:text-[#feffee] text-[15px] font-medium cursor-pointer hover:text-black hover:dark:text-gray-300 transition-colors py-3 border border-gray-700 rounded-lg px-4">
+        Guía de tallas
+      </summary>
+      <div class="pt-4 text-black dark:text-[#feffee]">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b border-gray-700">
+              <th class="py-2">Talla</th>
+              <th class="py-2">Pecho (cm)</th>
+              <th class="py-2">Largo (cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-800">
+              <td class="py-2">S</td>
+              <td class="py-2">46-48</td>
+              <td class="py-2">68-70</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-2">M</td>
+              <td class="py-2">50-52</td>
+              <td class="py-2">70-72</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-2">L</td>
+              <td class="py-2">54-56</td>
+              <td class="py-2">72-74</td>
+            </tr>
+            <tr>
+              <td class="py-2">XL</td>
+              <td class="py-2">58-60</td>
+              <td class="py-2">74-76</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="mb-4">
+      <summary class="text-black dark:text-[#feffee] text-[15px] font-medium cursor-pointer hover:text-black hover:dark:text-gray-300 transition-colors py-3 border border-gray-700 rounded-lg px-4">
+        Materiales y cuidados
+      </summary>
+      <div class="pt-4 text-black dark:text-[#feffee]">
+        <ul class="list-disc list-inside space-y-2">
+          <li>100% Algodón orgánico</li>
+          <li>Lavar a máquina en agua fría</li>
+          <li>No usar blanqueador</li>
+          <li>Secar a baja temperatura</li>
+          <li>Planchar a temperatura media si es necesario</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary class="text-black dark:text-[#feffee] text-[15px] font-medium cursor-pointer hover:text-black hover:dark:text-gray-300 transition-colors py-3 border border-gray-700 rounded-lg px-4">
+        Envíos y devoluciones
+      </summary>
+      <div class="pt-4 text-black dark:text-[#feffee]">
+        <p class="mb-2">📦 Envío gratis en compras superiores a $100.000</p>
+        <p class="mb-2">🚚 Entrega en 3-5 días hábiles</p>
+        <p>↩️ Devoluciones gratuitas dentro de 30 días</p>
+      </div>
+    </details>
     </div>
   </div>
 </div>
@@ -293,15 +343,32 @@
   // Cambiar imagen principal
   function changeMainImage(imageUrl, button) {
     document.getElementById('mainProductImage').src = imageUrl;
-    
-    // Actualizar bordes de miniaturas
-    document.querySelectorAll('.thumbnail-btn').forEach(btn => {
-      btn.classList.remove('border-black');
-      btn.classList.add('border-transparent');
-    });
-    button.classList.add('border-black');
-    button.classList.remove('border-transparent');
+    document.querySelectorAll('.thumbnail-btn').forEach(btn => btn.classList.remove('thumb-active'));
+    button.classList.add('thumb-active');
   }
+
+  // Size options — marcar activo al cambiar
+  document.querySelectorAll('.size-option').forEach(function(opt) {
+    var radio = opt.closest('label').querySelector('input[type="radio"]');
+    radio && radio.addEventListener('change', function() {
+      var group = radio.closest('.flex');
+      group.querySelectorAll('.size-option').forEach(function(o) { o.classList.remove('size-active'); });
+      opt.classList.add('size-active');
+    });
+    opt.addEventListener('click', function() {
+      radio && radio.click();
+    });
+  });
+
+  // Color swatches — marcar activo al iniciar y al cambiar
+  document.querySelectorAll('.color-swatch').forEach(function(swatch) {
+    var radio = swatch.closest('label').querySelector('input[type="radio"]');
+    if (radio && radio.checked) swatch.classList.add('swatch-active');
+    radio && radio.addEventListener('change', function() {
+      document.querySelectorAll('.color-swatch').forEach(function(s) { s.classList.remove('swatch-active'); });
+      swatch.classList.add('swatch-active');
+    });
+  });
 
   // Cambiar cantidad
   function changeQuantity(change) {
@@ -325,50 +392,158 @@
     // Aquí podrías hacer una llamada AJAX para actualizar precio y disponibilidad
     // basado en la variante seleccionada
   }
-</script>
+</script><style>
 
-<style>
-  /* Ocultar incrementadores nativos del input number */
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+@media (min-width: 768px) {
+  .variant-label {
+    font-size: 1.5rem;
   }
+}
+.color-swatch {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: border-color 0.15s
+  , box-shadow 0.15s;
+}
+.color-swatch.swatch-active {
+  box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.5);
+}
+.dark .color-swatch {
+  border-color: rgba(254, 255, 238, 0.2);
+}
+.dark .color-swatch.swatch-active {
+  box-shadow: 0 0 0 1.5px rgba(254, 255, 238, 0.5);
+}
 
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
+.size-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  padding: 0 1.6rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s
+  , border-color 0.15s
+  , color 0.15s;
+}
+.size-option.size-active {
+  background: #000;
+  color: #feffee;
+  border-color: #000;
+}
+.dark .size-option {
+  border-color: rgba(254, 255, 238, 0.35);
+  color: #feffee;
+}
+.dark .size-option.size-active {
+  background: #feffee;
+  color: #000;
+  border-color: #feffee;
+}
 
-  /* Estilos para el details/summary */
-  details summary::-webkit-details-marker {
-    display: none;
-  }
+.qty-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: transparent;
+  color: #000;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s
+  , color 0.15s
+  , border-color 0.15s;
+}
+.qty-btn:hover {
+  background: #000;
+  color: #feffee;
+  border-color: #000;
+}
+.dark .qty-btn {
+  border-color: rgba(254, 255, 238, 0.35);
+  color: #feffee;
+}
+.dark .qty-btn:hover {
+  background: #feffee;
+  color: #000;
+  border-color: #feffee;
+}
+.qty-input {
+  width: 4.5rem;
+  height: 3.5rem;
+  text-align: center;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 9999px;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 500;
+  outline: none;
+}
+.dark .qty-input {
+  border-color: rgba(254, 255, 238, 0.35);
+  color: #feffee;
+}
 
-  details summary {
-    list-style: none;
-    position: relative;
-  }
+.thumbnail-btn {
+  cursor: pointer;
+  box-shadow: 0 0 0 2px transparent;
+  transition: box-shadow 0.15s;
+}
+.thumbnail-btn.thumb-active {
+  box-shadow: 0 0 0 2px #feffee;
+}
 
-  details summary::after {
-    content: '+';
-    position: absolute;
-    right: 17px;
-    font-size: 33px;
-    bottom: -7px;
-    font-weight: 300;
-    transition: transform 0.3s ease;
-  }
+/* Ocultar incrementadores nativos del input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-  details[open] summary::after {
-    transform: rotate(45deg);
-  }
-</style>
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
-{% schema %}
-  {
-    "name": "Producto - Hoodie",
-    "tag": "section",
-    "class": "section-product",
-    "settings": []
-  }
-{% endschema %}
+/* Estilos para el details/summary */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  list-style: none;
+  position: relative;
+}
+
+details summary::after {
+  content: '+';
+  position: absolute;
+  right: 17px;
+  font-size: 33px;
+  bottom: -7px;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(45deg);
+}</style>{% schema %}
+{
+  "name": "Producto - Hoodie",
+  "tag": "section",
+  "class": "section-product",
+  "settings": []
+}{% endschema %}

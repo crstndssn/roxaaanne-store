@@ -1,3 +1,20 @@
+/* Dark mode overrides for mobile filter drawer */
+.dark .mobile-facets__inner {
+  background-color: #000;
+}
+.dark .mobile-facets__header {
+  background-color: #000;
+  border-color: rgba(254, 255, 238, 0.1);
+}
+.dark .mobile-facets__footer {
+  background-color: #000;
+  border-color: rgba(254, 255, 238, 0.1);
+}
+.dark .mobile-facets__heading,
+.dark .mobile-facets__count {
+  color: #feffee;
+}
+
 .facets-container {
   display: grid;
   grid-template-columns: repeat(2, auto);

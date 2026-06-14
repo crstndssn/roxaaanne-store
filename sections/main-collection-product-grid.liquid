@@ -21,6 +21,107 @@
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 
+      {%- comment -%} Vendor / artista filter pills + search toggle {%- endcomment -%}
+      {%- assign all_vendors_str = '' -%}
+      {%- for product in collection.products -%}
+        {%- unless all_vendors_str contains product.vendor -%}
+          {%- assign all_vendors_str = all_vendors_str | append: product.vendor | append: '|||' -%}
+        {%- endunless -%}
+      {%- endfor -%}
+      {%- assign vendor_array = all_vendors_str | split: '|||' | compact -%}
+
+      {%- if vendor_array.size > 0 -%}
+        <!-- Pills row (desktop only) — buscar pill al final -->
+        <div class="hidden md:block mb-2">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;">
+            <button data-filter-vendor="todos" class="cs-pill cs-pill-active">todos</button>
+            {%- for vendor in vendor_array -%}
+              <button data-filter-vendor="{{ vendor | escape }}" class="cs-pill">{{ vendor }}</button>
+            {%- endfor -%}
+            <button id="cs-search-pill" class="cs-pill" onclick="window.csOpenSearch(this,'cs-wrap')"><svg style="margin-right:6px" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>buscar</button>
+          </div>
+        </div>
+
+        <!-- Search bar — hidden, appears below pills on toggle -->
+        <div id="cs-wrap" class="hidden relative mb-4">
+          <svg class="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none text-black dark:text-[#feffee]/50" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input
+            id="collection-search"
+            type="search"
+            placeholder="buscar merca…"
+            autocomplete="off"
+            class="w-full bg-white/5 dark:bg-[#feffee]/5 border border-black dark:border-[#feffee]/10 text-black dark:text-[#feffee] rounded-full pl-20 pr-6 py-4 text-2xl outline-none focus:outline-none focus:ring-0 dark:focus:border-[#feffee] transition-all placeholder:text-black dark:placeholder:text-[#feffee]/40">
+        </div>
+      {%- endif -%}
+
+      <script>
+        (function() {
+          var activeVendor = '';
+
+          function updateVendorPills() {
+            document.querySelectorAll('[data-filter-vendor]').forEach(function(p) {
+              var isActive = (activeVendor === '' && p.dataset.filterVendor === 'todos') || p.dataset.filterVendor === activeVendor;
+              p.classList.toggle('cs-pill-active', isActive);
+            });
+          }
+
+          function applyFilters() {
+            var q = ((document.getElementById('collection-search')?.value || '') || (document.getElementById('collection-search-m')?.value || '')).toLowerCase().trim();
+            document.querySelectorAll('#product-grid > li[data-vendor]').forEach(function(li) {
+              var title = (li.querySelector('h3')?.textContent || '').toLowerCase();
+              var vendor = li.dataset.vendor || '';
+              var matchSearch = !q || title.includes(q) || vendor.toLowerCase().includes(q);
+              var matchVendor = !activeVendor || vendor === activeVendor;
+              li.style.display = (matchSearch && matchVendor) ? '' : 'none';
+            });
+          }
+
+          var searchOpen = { 'cs-wrap': false, 'cs-wrap-m': false };
+
+          window.csOpenSearch = function(btn, wrapId) {
+            searchOpen[wrapId] = !searchOpen[wrapId];
+            var w = document.getElementById(wrapId);
+            w.classList.toggle('hidden', !searchOpen[wrapId]);
+            btn.classList.toggle('cs-pill-active', searchOpen[wrapId]);
+            if (searchOpen[wrapId]) {
+              w.querySelector('input').focus();
+              activeVendor = '';
+              updateVendorPills();
+              applyFilters();
+            } else {
+              w.querySelector('input').value = '';
+              applyFilters();
+            }
+          };
+
+          document.getElementById('collection-search')?.addEventListener('input', applyFilters);
+          document.getElementById('collection-search-m')?.addEventListener('input', applyFilters);
+
+          document.addEventListener('click', function(e) {
+            var pill = e.target.closest('[data-filter-vendor]');
+            if (!pill) return;
+            e.preventDefault();
+            // cerrar buscador al seleccionar un filtro
+            ['cs-wrap','cs-wrap-m'].forEach(function(id) {
+              var w = document.getElementById(id);
+              if (w && !w.classList.contains('hidden')) {
+                w.classList.add('hidden');
+                w.querySelector('input').value = '';
+                searchOpen[id] = false;
+              }
+            });
+            var sp = document.getElementById('cs-search-pill');
+            if (sp) sp.classList.remove('cs-pill-active');
+            var spm = document.getElementById('cs-search-pill-m');
+            if (spm) spm.classList.remove('cs-pill-active');
+            var selected = pill.dataset.filterVendor;
+            activeVendor = (selected === 'todos' || selected === activeVendor) ? '' : selected;
+            updateVendorPills();
+            applyFilters();
+          });
+        })();
+      </script>
+
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
         <aside
           aria-labelledby="verticalTitle"
@@ -74,6 +175,7 @@
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
                 <li
+                  data-vendor="{{ product.vendor | escape }}"
                   class="{% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -109,6 +211,52 @@
     </div>
   {%- endpaginate -%}
 </div>
+
+<style>
+  .cs-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(0,0,0,0.25);
+    color: #000;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .cs-pill.cs-pill-active {
+    background: #000;
+    color: #feffee;
+    border-color: #000;
+  }
+  .dark .cs-pill {
+    border-color: rgba(254,255,238,0.25);
+    color: #feffee;
+  }
+  .dark .cs-pill.cs-pill-active {
+    background: #feffee;
+    color: #000;
+    border-color: #feffee;
+  }
+  #collection-search,
+  #collection-search-m {
+    background: #feffee;
+    color: #000;
+    border-color: rgba(0,0,0,0.25);
+  }
+  #collection-search::placeholder,
+  #collection-search-m::placeholder {
+    color: rgba(0,0,0,0.4);
+  }
+  .dark #collection-search,
+  .dark #collection-search-m {
+    background: #feffee;
+    color: #000;
+    border-color: rgba(0,0,0,0.25);
+  }
+</style>
 
 {% schema %}
   {

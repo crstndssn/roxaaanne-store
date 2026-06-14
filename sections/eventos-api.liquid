@@ -1,16 +1,30 @@
-<div class="container mx-auto px-5 md:px-0 py-6 md:py-10" id="eventos-root">
+<div class="container mx-auto px-7 md:px-0" id="eventos-root">
 
   <!-- Header -->
   <div class="mb-6">
-    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black dark:text-white mb-1">eventos</h1>
-    <p class="text-sm md:text-base text-black/50 dark:text-white/50">eventos de tus creadorxs favoritos, crea los tuyos también.</p>
+    <h1 class="text-5xl md:text-6xl font-medium tracking-tight text-black dark:text-[#feffee] mb-2">eventos</h1>
+    <p class="text-2xl md:text-medium md:text-2xl text-dark dark:text-[#feffee]">eventos de tus creadorxs favoritos, crea los tuyos también.</p>
   </div>
 
   <!-- Skeleton / error -->
-  <div id="ev-loading" class="text-sm opacity-40 text-black dark:text-white py-12 text-center">Cargando eventos…</div>
+  <div id="ev-loading" class="py-16 flex justify-center">
+    <svg
+      class="animate-spin text-black dark:text-[#feffee]"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"><circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke-opacity="0.2" /><path d="M12 2a10 10 0 0 1 10 10" /></svg>
+  </div>
   <div
     id="ev-error"
-    class="text-sm opacity-40 text-black dark:text-white py-12 text-center"
+    class="text-sm opacity-40 text-black dark:text-[#feffee] py-12 text-center"
     style="display:none">No se pudieron cargar los eventos.</div>
 
   <!-- UI (hidden until data loads) -->
@@ -20,36 +34,42 @@
     class="space-y-5">
 
     <!-- Controls -->
-    <div class="space-y-2">
-      <p id="ev-count" class="text-lg text-[#888]"></p>
+    <div class="space-y-3">
+      <p id="ev-count" class="text-xl ev-muted"></p>
 
-      <div class="flex flex-wrap items-center gap-3">
-
-        <!-- Próximos / Anteriores toggle -->
-        <div id="ev-toggle" class="relative inline-flex bg-[#1a1a1a] rounded-full p-0.5 text-lg shrink-0">
+      <!-- Row 1: toggle (izq) + buscar pill (der) -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <div
+          id="ev-toggle"
+          role="tablist"
+          aria-label="Filtro de eventos"
+          class="relative inline-flex ev-toggle-bg rounded-full p-0.5 text-xl shrink-0">
           <div
             id="ev-toggle-pill"
-            class="absolute top-0.5 bottom-0.5 rounded-full bg-white transition-all duration-200"
+            class="absolute top-0.5 bottom-0.5 rounded-full ev-toggle-pill transition-all duration-200"
             style="width:calc(50% - 2px);left:2px;"></div>
           <button
             id="ev-btn-prox"
+            role="tab"
+            aria-selected="true"
             onclick="evSetTab('proximos')"
-            class="relative z-10 px-6 py-2.5 rounded-full transition-colors duration-200 text-[#000] font-medium">próximos</button>
+            class="relative z-10 px-6 py-2.5 rounded-full transition-colors duration-200 font-base ev-tab-active">próximos</button>
           <button
             id="ev-btn-antes"
+            role="tab"
+            aria-selected="false"
             onclick="evSetTab('anteriores')"
-            class="relative z-10 px-6 py-2.5 rounded-full transition-colors duration-200 text-[#888]">anteriores</button>
+            class="relative z-10 px-6 py-2.5 rounded-full transition-colors duration-200 ev-tab-inactive">anteriores</button>
         </div>
-
-        <!-- Dynamic pills -->
-        <div id="ev-pills" class="flex flex-wrap gap-2 items-center"></div>
-
-        <!-- Search -->
-        <div class="relative ml-auto">
+        <button
+          id="ev-buscar-pill"
+          class="cs-pill"
+          style="flex-shrink:0;"
+          onclick="evToggleBuscar(this)">
           <svg
-            class="absolute left-3.5 top-1/2 -translate-y-1/2 opacity-40 pointer-events-none"
-            width="18"
-            height="18"
+            style="margin-right:6px"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -57,16 +77,36 @@
             stroke-linecap="round"><circle
               cx="11"
               cy="11"
-              r="8" /><path d="m21 21-4.35-4.35" /></svg>
-          <input
-            id="ev-search"
-            type="text"
-            placeholder="buscar evento…"
-            oninput="evRender()"
-            class="text-lg bg-[#1a1a1a] border border-[#2a2a2a] text-white rounded-full pl-10 pr-5 py-2.5 outline-none focus:border-white/40 transition-all w-44 focus:w-60 placeholder:text-[#555]">
-        </div>
-
+              r="8" /><path d="m21 21-4.35-4.35" /></svg>buscar</button>
       </div>
+
+      <!-- Row 2: pills dinámicas -->
+      <div id="ev-pills" class="flex flex-wrap gap-2 items-center"></div>
+
+      <!-- Buscador oculto — aparece al clickar buscar -->
+      <div id="ev-search-bar" class="hidden relative">
+        <svg
+          class="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none text-black dark:text-[#feffee]/50"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          aria-hidden="true"><circle
+            cx="11"
+            cy="11"
+            r="8" /><path d="m21 21-4.35-4.35" /></svg>
+        <input
+          id="ev-search"
+          type="search"
+          aria-label="Buscar evento"
+          placeholder="buscar evento…"
+          oninput="evRender()"
+          class="w-full bg-white/5 dark:bg-[#feffee]/5 border border-black dark:border-[#feffee]/10 text-black dark:text-[#feffee] rounded-full pl-20 pr-6 py-4 text-2xl outline-none focus:outline-none focus:ring-0 dark:focus:border-[#feffee] transition-all placeholder:text-black dark:placeholder:text-[#feffee]/40">
+      </div>
+
     </div>
 
     <!-- Event grid -->
@@ -74,6 +114,212 @@
 
   </div>
 </div>
+
+<style>
+  .cs-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    color: #000;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    transition: background 0.15s
+    , color 0.15s
+    , border-color 0.15s;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .cs-pill.cs-pill-active {
+    background: #000;
+    color: #feffee;
+    border-color: #000;
+  }
+  .dark .cs-pill {
+    border-color: rgba(254, 255, 238, 0.25);
+    color: #feffee;
+  }
+  .dark .cs-pill.cs-pill-active {
+    background: #feffee;
+    color: #000;
+    border-color: #feffee;
+  }
+  #ev-search {
+    background: #feffee;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0.25);
+  }
+  #ev-search::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .dark #ev-search {
+    background: #feffee;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0.25);
+  }
+
+  /* Light mode */
+  #eventos-root .ev-toggle-bg {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  #eventos-root .ev-toggle-pill {
+    background: #000;
+  }
+  #eventos-root .ev-tab-active {
+    color: #fff;
+  }
+  #eventos-root .ev-tab-inactive {
+    color: #000;
+  }
+  #eventos-root .ev-muted {
+    color: #000;
+  }
+  #eventos-root .ev-search-input {
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: #000;
+  }
+  #eventos-root .ev-search-input::placeholder {
+    color: #666;
+  }
+  #eventos-root .ev-search-btn {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #000;
+    background: rgba(0, 0, 0, 0.04);
+  }
+  #eventos-root .ev-date-pill {
+    background: rgba(0, 0, 0, 0.08);
+    color: #000;
+    font-size: 1.25rem;
+    padding: 0.35rem 1.1rem;
+    border-radius: 999px;
+  }
+  .dark #eventos-root .ev-date-pill {
+    background: rgba(254, 255, 238, 0.1);
+    color: #feffee;
+  }
+  #eventos-root .ev-card {
+    background: rgba(0, 0, 0, 0.04);
+  }
+  #eventos-root .ev-card:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  #eventos-root .ev-card-img-bg {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  #eventos-root .ev-card-title {
+    color: #000;
+  }
+  #eventos-root .ev-card-meta {
+    color: #000;
+  }
+  #eventos-root .ev-tag {
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  #eventos-root .ev-tag span {
+    color: #000;
+  }
+  #eventos-root .ev-month {
+    color: #000;
+  }
+  #eventos-root .ev-year {
+    color: #000;
+  }
+  #eventos-root .ev-empty {
+    color: #000;
+  }
+  #eventos-root .ev-pill-active {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+  }
+  #eventos-root .ev-pill-inactive {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #000;
+  }
+  #eventos-root .ev-pill-inactive:hover {
+    border-color: #000;
+    color: #000;
+  }
+
+  /* Dark mode */
+  .dark #eventos-root .ev-toggle-bg {
+    background: #1a1a1a;
+  }
+  .dark #eventos-root .ev-toggle-pill {
+    background: #fff;
+  }
+  .dark #eventos-root .ev-tab-active {
+    color: #000;
+  }
+  .dark #eventos-root .ev-tab-inactive {
+    color: #888;
+  }
+  .dark #eventos-root .ev-muted {
+    color: #666;
+  }
+  .dark #eventos-root .ev-search-input {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #feffee;
+  }
+  .dark #eventos-root .ev-search-input::placeholder {
+    color: #555;
+  }
+  .dark #eventos-root .ev-search-btn {
+    border: 1px solid rgba(254, 255, 238, 0.15);
+    color: #feffee;
+    background: rgba(254, 255, 238, 0.05);
+  }
+  .dark #eventos-root .ev-card {
+    background: #111;
+  }
+  .dark #eventos-root .ev-card:hover {
+    background: #1a1a1a;
+  }
+  .dark #eventos-root .ev-card-img-bg {
+    background: #2a2a2a;
+  }
+  .dark #eventos-root .ev-card-title {
+    color: #feffee;
+  }
+  .dark #eventos-root .ev-card-meta {
+    color: #888;
+  }
+  .dark #eventos-root .ev-tag {
+    background: #2a2a2a;
+    border: 1px solid #333;
+  }
+  .dark #eventos-root .ev-tag span {
+    color: #888;
+  }
+  .dark #eventos-root .ev-month {
+    color: #feffee;
+  }
+  .dark #eventos-root .ev-year {
+    color: #555;
+  }
+  .dark #eventos-root .ev-empty {
+    color: #555;
+  }
+  .dark #eventos-root .ev-pill-active {
+    background: #fff;
+    color: #000;
+    border: 1px solid #fff;
+  }
+  .dark #eventos-root .ev-pill-inactive {
+    background: transparent;
+    border: 1px solid #333;
+    color: #888;
+  }
+  .dark #eventos-root .ev-pill-inactive:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+</style>
 
 <script>
   (function () {
@@ -106,29 +352,29 @@
     var loc = [ev.ciudad, ev.lugar].filter(Boolean).join(' · ')
     var url = ev.url_boleteria || ''
     var tag = ev.serie
-      ? '<div class="flex items-center gap-2 mt-3 px-3 py-1.5 rounded-full bg-[#2a2a2a] border border-[#333] w-fit">' +
+      ? '<div class="ev-tag flex items-center gap-2 mt-3 px-3 py-1.5 rounded-full w-fit">' +
           (ev.imagen_url ? '<img src="' + esc(ev.imagen_url) + '" class="w-5 h-5 rounded-full object-cover shrink-0" alt="">' : '') +
-          '<span class="text-sm text-[#888] leading-none">' + esc(ev.serie) + '</span>' +
+          '<span class="text-sm leading-none">' + esc(ev.serie) + '</span>' +
         '</div>'
       : ''
 
     var inner =
-      '<div class="relative w-44 h-44 rounded-xl overflow-hidden shrink-0 bg-[#2a2a2a]">' +
+      '<div class="ev-card-img-bg relative w-44 h-44 rounded-xl overflow-hidden shrink-0">' +
         (ev.imagen_url ? '<img src="' + esc(ev.imagen_url) + '" alt="' + esc(ev.titulo) + '" class="w-full h-full object-cover" loading="lazy">' : '') +
       '</div>' +
       '<div class="flex-1 min-w-0 px-3">' +
-        '<div class="flex items-baseline gap-2 mb-1.5">' +
-          '<span class="text-base text-[#888]">' + esc(f.diaSemana) + '</span>' +
-          '<span class="text-2xl font-black text-white">' + f.dia + '</span>' +
-        '</div>' +
-        '<p class="text-xl font-semibold leading-tight text-white truncate">' + esc(ev.titulo) + '</p>' +
-        (loc ? '<p class="text-base text-[#888] truncate mt-1">' + esc(loc) + '</p>' : '') +
+        '<time datetime="' + esc(ev.fecha) + '" class="inline-flex items-center gap-1.5 ev-date-pill mb-2">' +
+          '<span>' + esc(f.diaSemana) + '</span>' +
+          '<span class="font-semibold">' + f.dia + '</span>' +
+        '</time>' +
+        '<h3 class="ev-card-title text-2xl font-semibold leading-tight truncate">' + esc(ev.titulo) + '</h3>' +
+        (loc ? '<p class="ev-card-meta text-lg truncate mt-1">' + esc(loc) + '</p>' : '') +
         tag +
       '</div>'
 
     return url
-      ? '<a href="' + esc(url) + '" class="flex items-center gap-3 rounded-2xl p-2.5 bg-[#111] hover:bg-[#1a1a1a] transition-colors cursor-pointer">' + inner + '</a>'
-      : '<div class="flex items-center gap-3 rounded-2xl p-2.5 bg-[#111]">' + inner + '</div>'
+      ? '<article><a href="' + esc(url) + '" aria-label="' + esc(ev.titulo) + '" class="ev-card flex items-center gap-3 rounded-2xl p-2.5 transition-colors cursor-pointer">' + inner + '</a></article>'
+      : '<article class="ev-card flex items-center gap-3 rounded-2xl p-2.5">' + inner + '</article>'
   }
 
   function groupByMes(list) {
@@ -147,8 +393,13 @@
     filtroAnio = 'todos'
     filtroMes  = 'todos'
     filtroSerie = 'todos'
-    var search = document.getElementById('ev-search')
-    if (search) search.value = ''
+    // cerrar buscador al cambiar tab
+    var bar = document.getElementById('ev-search-bar')
+    var s = document.getElementById('ev-search')
+    var pill = document.getElementById('ev-buscar-pill')
+    if (bar) bar.classList.add('hidden')
+    if (s) s.value = ''
+    if (pill) pill.classList.remove('cs-pill-active')
     evRender()
   }
 
@@ -159,9 +410,29 @@
     evRender()
   }
 
+  window.evToggleBuscar = function(btn) {
+    var bar = document.getElementById('ev-search-bar')
+    var s = document.getElementById('ev-search')
+    var open = bar.classList.toggle('hidden')
+    // open=true significa que se ocultó (toggle añadió hidden), open=false = visible
+    btn.classList.toggle('cs-pill-active', !open)
+    if (!open) {
+      if (s) s.focus()
+    } else {
+      if (s) { s.value = ''; evRender() }
+    }
+  }
+
+  function getQ() {
+    var s = document.getElementById('ev-search')
+    var bar = document.getElementById('ev-search-bar')
+    if (!bar || bar.classList.contains('hidden')) return ''
+    return (s ? s.value : '').toLowerCase().trim()
+  }
+
   window.evRender = function() {
     var hoy = new Date(); hoy.setHours(0,0,0,0)
-    var q = ((document.getElementById('ev-search') || {}).value || '').toLowerCase().trim()
+    var q = getQ()
 
     var proximos   = ALL.filter(function(e) { return e.fecha && new Date(e.fecha) >= hoy }).sort(function(a,b){ return new Date(a.fecha) - new Date(b.fecha) })
     var anteriores = ALL.filter(function(e) { return e.fecha && new Date(e.fecha) <  hoy }).sort(function(a,b){ return new Date(b.fecha) - new Date(a.fecha) })
@@ -176,15 +447,15 @@
     var pillsHtml = ''
     series.forEach(function(s) {
       var active = filtroSerie === s
-      pillsHtml += '<button onclick="evTogglePill(\'serie\',\'' + esc(s) + '\')" class="text-base px-5 py-2.5 rounded-full border transition-colors cursor-pointer ' + (active ? 'bg-white text-black border-white' : 'border-[#333] text-[#888] hover:text-white hover:border-white') + '">' + esc(s) + '</button>'
+      pillsHtml += '<button onclick="evTogglePill(\'serie\',\'' + esc(s) + '\')" class="text-lg px-5 py-2.5 rounded-full transition-colors cursor-pointer ' + (active ? 'ev-pill-active' : 'ev-pill-inactive') + '">' + esc(s) + '</button>'
     })
     anios.forEach(function(a) {
       var active = filtroAnio === a
-      pillsHtml += '<button onclick="evTogglePill(\'anio\',\'' + a + '\')" class="text-base px-5 py-2.5 rounded-full border transition-colors cursor-pointer ' + (active ? 'bg-white text-black border-white' : 'border-[#333] text-[#888] hover:text-white hover:border-white') + '">' + a + '</button>'
+      pillsHtml += '<button onclick="evTogglePill(\'anio\',\'' + a + '\')" class="text-lg px-5 py-2.5 rounded-full transition-colors cursor-pointer ' + (active ? 'ev-pill-active' : 'ev-pill-inactive') + '">' + a + '</button>'
     })
     meses.forEach(function(m) {
       var active = filtroMes === m.key
-      pillsHtml += '<button onclick="evTogglePill(\'mes\',\'' + m.key + '\')" class="text-base px-5 py-2.5 rounded-full border transition-colors cursor-pointer ' + (active ? 'bg-white text-black border-white' : 'border-[#2a2a2a] text-[#666] hover:text-white hover:border-white') + '">' + esc(m.label) + '</button>'
+      pillsHtml += '<button onclick="evTogglePill(\'mes\',\'' + m.key + '\')" class="text-lg px-5 py-2.5 rounded-full transition-colors cursor-pointer ' + (active ? 'ev-pill-active' : 'ev-pill-inactive') + '">' + esc(m.label) + '</button>'
     })
     document.getElementById('ev-pills').innerHTML = pillsHtml
 
@@ -192,13 +463,13 @@
     var btnP = document.getElementById('ev-btn-prox')
     var btnA = document.getElementById('ev-btn-antes')
     if (tab === 'proximos') {
-      if (pill) { pill.style.left = '2px'; pill.style.width = 'calc(50% - 2px)'; pill.style.background = '#fff' }
-      if (btnP) { btnP.style.color = '#000' }
-      if (btnA) { btnA.style.color = '#888' }
+      if (pill) { pill.style.left = '2px'; pill.style.width = 'calc(50% - 2px)' }
+      if (btnP) { btnP.className = btnP.className.replace('ev-tab-inactive','').replace('ev-tab-active','').trim() + ' ev-tab-active relative z-10 px-6 py-2.5 rounded-full transition-colors duration-200 font-medium' }
+      if (btnA) { btnA.className = btnA.className.replace('ev-tab-inactive','').replace('ev-tab-active','').trim() + ' ev-tab-inactive relative z-10 px-6 py-2.5 rounded-full transition-colors duration-200' }
     } else {
-      if (pill) { pill.style.left = 'calc(50%)'; pill.style.width = 'calc(50% - 2px)'; pill.style.background = '#fff' }
-      if (btnP) { btnP.style.color = '#888' }
-      if (btnA) { btnA.style.color = '#000' }
+      if (pill) { pill.style.left = 'calc(50%)'; pill.style.width = 'calc(50% - 2px)' }
+      if (btnP) { btnP.className = btnP.className.replace('ev-tab-inactive','').replace('ev-tab-active','').trim() + ' ev-tab-inactive relative z-10 px-6 py-2.5 rounded-full transition-colors duration-200 font-medium' }
+      if (btnA) { btnA.className = btnA.className.replace('ev-tab-inactive','').replace('ev-tab-active','').trim() + ' ev-tab-active relative z-10 px-6 py-2.5 rounded-full transition-colors duration-200' }
     }
 
     var filtered = baseByAnio.filter(function(e) {
@@ -217,14 +488,14 @@
     if (!grid) return
 
     if (!grupos.length) {
-      grid.innerHTML = '<p class="text-sm text-[#555] py-12 text-center">No hay eventos ' + (tab==='proximos'?'próximos':'anteriores') + '.</p>'
+      grid.innerHTML = '<p class="ev-empty text-2xl py-12 text-center">No hay eventos ' + (tab==='proximos'?'próximos':'anteriores') + '.</p>'
       return
     }
 
     var html = '<div class="columns-1 md:columns-2 gap-8">'
     grupos.forEach(function(g) {
       html += '<div class="break-inside-avoid mb-8">'
-      html += '<div class="flex items-baseline gap-2 mb-4"><p class="text-xl font-black tracking-widest text-white uppercase">' + esc(g.label) + '</p><p class="text-xl text-[#555]">' + g.anio + '</p></div>'
+      html += '<div class="flex items-baseline gap-2 mb-4"><p class="ev-month text-2xl font-medium tracking-widest uppercase">' + esc(g.label) + '</p><p class="ev-year text-2xl">' + g.anio + '</p></div>'
       html += '<div class="space-y-2">'
       g.eventos.forEach(function(ev) { html += renderCard(ev) })
       html += '</div></div>'
@@ -233,11 +504,29 @@
     grid.innerHTML = html
   }
 
+  function injectJsonLd(eventos) {
+    var hoy = new Date(); hoy.setHours(0,0,0,0)
+    var proximos = eventos.filter(function(e) { return e.fecha && new Date(e.fecha) >= hoy })
+    if (!proximos.length) return
+    var items = proximos.map(function(e) {
+      var obj = { '@type': 'Event', 'name': e.titulo, 'startDate': e.fecha }
+      if (e.ciudad || e.lugar) obj.location = { '@type': 'Place', 'name': [e.lugar, e.ciudad].filter(Boolean).join(', ') }
+      if (e.imagen_url) obj.image = e.imagen_url
+      if (e.url_boleteria) obj.url = e.url_boleteria
+      return obj
+    })
+    var script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify({ '@context': 'https://schema.org', '@type': 'ItemList', 'itemListElement': items.map(function(item, i) { return { '@type': 'ListItem', 'position': i + 1, 'item': item } }) })
+    document.head.appendChild(script)
+  }
+
   async function load() {
     try {
       const res = await fetch('https://www.roxaaanne.space/api/eventos')
       const eventos = await res.json()
       ALL = eventos
+      injectJsonLd(eventos)
       document.getElementById('ev-loading').style.display = 'none'
       document.getElementById('ev-ui').style.display = 'block'
       evRender()

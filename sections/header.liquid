@@ -147,7 +147,7 @@
       endif
     %}
 
-    <div class="flex justify-end w-1/2 z-10 {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+    <div class="flex justify-end w-1/3 lg:w-1/2 z-10 {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
 
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}

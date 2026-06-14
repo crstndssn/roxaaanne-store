@@ -2294,7 +2294,7 @@ input[type='checkbox'] {
 
 /* section-header */
 .section-header.shopify-section-group-header-group {
-  z-index: 3;
+  z-index: 200;
 }
 
 .shopify-section-header-sticky {
@@ -2315,7 +2315,7 @@ input[type='checkbox'] {
 }
 
 .shopify-section-group-header-group {
-  z-index: 4;
+  z-index: 200;
 }
 
 .section-header ~ .shopify-section-group-header-group {
@@ -2549,7 +2549,7 @@ input[type='checkbox'] {
 
 .header__icon--menu[aria-expanded='true']::before {
   content: '';
-  top: -53px;
+  top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
