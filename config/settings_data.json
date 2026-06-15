@@ -113,7 +113,7 @@
     "brand_image_width": 550,
     "social_facebook_link": "https://www.facebook.com/profile.php?id=61576019340344",
     "social_instagram_link": "https://www.instagram.com/roxaaanne___/",
-      "social_youtube_link": "https://roxaaanne.com/pages/roxyfest",
+    "social_youtube_link": "https://roxaaanne.com/pages/roxyfest",
     "social_tiktok_link": "https://www.tiktok.com/@roxaaanne.com",
     "social_twitter_link": "",
     "social_snapchat_link": "",
@@ -140,6 +140,15 @@
         "type": "main-password-footer",
         "settings": {
           "color_scheme": "scheme-1"
+        }
+      },
+      "roxy-sidecart": {
+        "type": "roxy-sidecart",
+        "settings": {
+          "title": "Tu carrito",
+          "free_shipping_enabled": true,
+          "free_shipping_threshold": 200000,
+          "free_shipping_message": "¡Tienes envío gratis! 🎉"
         }
       }
     },
