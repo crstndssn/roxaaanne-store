@@ -23,7 +23,7 @@
     width: 400px;
     max-width: 100vw;
     z-index: 10001;
-    background: #141414;
+    background: #000;
     border-left: 1px solid rgba(255,255,255,0.08);
     display: flex;
     flex-direction: column;
@@ -31,6 +31,10 @@
     transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
     color: #fff;
     font-family: inherit;
+  }
+
+  @media (min-width: 750px) {
+    #roxy-sidecart { width: 480px; }
   }
 
   #roxy-sidecart.open { transform: translateX(0); }
@@ -53,7 +57,7 @@
 
   #roxy-sc-title {
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: -0.01em;
   }
 
@@ -61,7 +65,7 @@
     background: rgba(255,255,255,0.1);
     color: rgba(255,255,255,0.6);
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 400;
     border-radius: 100px;
     padding: 2px 8px;
     min-width: 22px;
@@ -165,7 +169,7 @@
 
   .roxy-sc-item-title {
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     color: #fff;
     line-height: 1.35;
     margin-bottom: 2px;
@@ -183,7 +187,7 @@
 
   .roxy-sc-item-price {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     color: #fff;
     margin-bottom: 10px;
   }
@@ -217,7 +221,7 @@
 
   .roxy-sc-item-qty span {
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 400;
     min-width: 28px;
     text-align: center;
     color: #fff;
@@ -259,7 +263,7 @@
 
   #roxy-sc-subtotal-val {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
     color: #fff;
   }
 
@@ -276,7 +280,7 @@
     background: #fff;
     color: #000;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 500;
     padding: 14px 20px;
     border-radius: 10px;
     text-decoration: none;
@@ -362,16 +366,8 @@
 (function() {
   var SC = {
     fmt: function(cents) {
-      var f = window.roxySCFmt || '${{amount}}';
-      var a = (cents / 100).toFixed(2);
-      var aNoDec = String(Math.round(cents / 100));
-      var aComma = a.replace('.', ',');
-      var aNoDecComma = aNoDec.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-      return f
-        .replace('{{amount_with_comma_separator_no_decimals}}', aNoDecComma)
-        .replace('{{amount_with_comma_separator}}', aComma)
-        .replace('{{amount_no_decimals}}', aNoDec)
-        .replace('{{amount}}', a);
+      var n = String(Math.round(cents / 100));
+      return '$' + n.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     },
 
     load: function() {
@@ -522,8 +518,9 @@
       if (e.key === 'Escape') window.roxyCloseSidecart();
     });
 
-    // Refresh on cart update events (Dawn-based themes)
+    // Refresh on cart update events
     document.addEventListener('cart:item-added', function() { SC.load(); });
+    document.addEventListener('cart:refresh', function() { SC.load(); });
   });
 })();
 </script>

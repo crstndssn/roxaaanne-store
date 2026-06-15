@@ -11,7 +11,10 @@
       "Bash(awk '/sections\\\\/header\\\\.liquid/{found=1} /sections\\\\/home-hero\\\\.liquid/{found=1} found && /╰/{found=0; print \"---\"} found{print}')",
       "Bash(cp /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/merch-related-products.liquid /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/related-products.liquid)",
       "Bash(sed -i '' 's/padding: 0.5rem 1.25rem;/padding: 0.7rem 1.5rem;/g' /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/main-collection-product-grid.liquid /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/creators.liquid /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/eventos-api.liquid)",
-      "Bash(sed -i '' 's/font-size: 1rem;/font-size: 1.125rem;/g' /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/main-collection-product-grid.liquid /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/creators.liquid /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/eventos-api.liquid)"
+      "Bash(sed -i '' 's/font-size: 1rem;/font-size: 1.125rem;/g' /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/main-collection-product-grid.liquid /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/creators.liquid /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/eventos-api.liquid)",
+      "Bash(python3)",
+      "Bash(find /Users/crstndssn/Documents/roxaaanne/roxaaanne-space -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.jsx\" | xargs grep -l \"search\\\\|cart\\\\|menu\\\\|hamburger\\\\|icon\" 2>/dev/null | grep -i \"header\\\\|nav\\\\|layout\" | head -10)",
+      "Read(//Users/crstndssn/Documents/roxaaanne/roxaaanne-space/**)"
     ],
     "additionalDirectories": [
       "/Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections"

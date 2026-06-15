@@ -393,7 +393,7 @@
       "settings": {}
     },
     "cinergia_merca": {
-      "type": "cinergia-merca",
+      "type": "merca-section",
       "settings": {
         "collection": "lacra"
       }

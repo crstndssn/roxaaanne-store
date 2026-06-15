@@ -388,10 +388,35 @@
   function updateSelectedVariant() {
     const form = document.getElementById('product-form');
     const formData = new FormData(form);
-    
-    // Aquí podrías hacer una llamada AJAX para actualizar precio y disponibilidad
-    // basado en la variante seleccionada
   }
+
+  // Interceptar submit para abrir el cart drawer
+  document.getElementById('product-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('[type="submit"]');
+    const originalText = btn.textContent.trim();
+    btn.textContent = '…';
+    btn.disabled = true;
+
+    const formData = new FormData(this);
+    const variantId = formData.get('id');
+    const quantity = parseInt(formData.get('quantity')) || 1;
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: variantId, quantity: quantity })
+    })
+    .then(r => r.json())
+    .then(() => {
+      btn.textContent = '✓ Agregado';
+      if (window.roxyOpenSidecart) {
+        window.roxyOpenSidecart();
+      }
+      setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
+    })
+    .catch(() => { btn.textContent = originalText; btn.disabled = false; });
+  });
 </script><style>
 
 @media (min-width: 768px) {

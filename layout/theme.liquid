@@ -1,11 +1,18 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
-    <!-- Script para prevenir flash del tema - debe ir primero -->
     <script>
       (function() {
-        const theme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.classList.add(theme);
+        var theme;
+        try { theme = localStorage.getItem('roxy-theme'); } catch(e) {}
+        if (!theme) {
+          var m = document.cookie.match(/(?:^|;\s*)roxy-theme=([^;]+)/);
+          if (m) theme = decodeURIComponent(m[1]);
+        }
+        if (theme !== 'light') theme = 'dark';
+        var h = document.documentElement;
+        h.classList.remove('dark', 'light');
+        h.classList.add(theme);
       })();
     </script>
 

@@ -2,7 +2,6 @@
   <a href="{{ card_product.url }}" class="group block">
     <div class="border border-black bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300">
 
-      {%- comment -%} Imagen del producto {%- endcomment -%}
       <div class="relative aspect-square overflow-hidden bg-gray-800">
         {%- if card_product.featured_media -%}
           <img
@@ -21,7 +20,6 @@
             width="{{ card_product.featured_media.width }}"
             height="{{ card_product.featured_media.height }}">
 
-          {%- comment -%} Imagen secundaria en hover {%- endcomment -%}
           {%- if card_product.media[1] != null and show_secondary_image -%}
             <img
               srcset="
@@ -43,7 +41,6 @@
           </div>
         {%- endif -%}
 
-        {%- comment -%} Badges {%- endcomment -%}
         {%- if card_product.available == false -%}
           <div class="absolute top-4 right-4 bg-gray-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
             {{ 'products.product.sold_out' | t }}
@@ -55,67 +52,58 @@
         {%- endif -%}
       </div>
 
-      {%- comment -%} Información del producto {%- endcomment -%}
       <div class="p-4">
-        {%- comment -%} Vendor {%- endcomment -%}
         {%- if show_vendor -%}
           <p class="text-gray-400 text-sm mb-1">{{ card_product.vendor }}</p>
         {%- endif -%}
 
-        {%- comment -%} Título {%- endcomment -%}
-        <h3 class="text-black dark:text-[#feffee] text-lg font-medium mb-2 line-clamp-2">
+        <h3 class="cpt-title text-xl font-medium mb-2 line-clamp-2">
           {{ card_product.title | escape }}
         </h3>
 
-        {%- comment -%} Rating {%- endcomment -%}
         {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
-          <div class="mb-2">
-            {% render 'product-rating'
-              , product: card_product %}
-          </div>
+          <div class="mb-2">{% render 'product-rating'
+, product: card_product %}</div>
         {%- endif -%}
 
-        {%- comment -%} Precio {%- endcomment -%}
-        <div class="flex items-center gap-2 mb-3">
+        <div class="flex items-center gap-2 mb-4">
           {%- if card_product.compare_at_price > card_product.price -%}
-            <span class="text-black dark:text-gray-400 line-through text-sm">
-              {{ card_product.compare_at_price | money }}
-            </span>
+            <span class="text-black dark:text-gray-400 line-through text-sm">{{ card_product.compare_at_price | money }}</span>
           {%- endif -%}
-          <span class="text-black dark:text-[#feffee] text-xl font-semibold">
-            {{ card_product.price | money }}
-          </span>
+          <span class="cpt-price text-xl font-semibold">{{ card_product.price | money }}</span>
         </div>
 
-        {%- comment -%} Quick add button {%- endcomment -%}
-        {%- if quick_add == 'standard' and card_product.available -%}
-          <button
-            type="button"
-            class="w-full bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors font-medium text-sm"
-            onclick="event.preventDefault(); event.stopPropagation();">
-            {{ 'products.product.add_to_cart' | t }}
-          </button>
-        {%- elsif quick_add == 'bulk' -%}
-          {%- render 'quick-add-bulk'
-            , product: card_product
-            , section_id: section_id -%}
+        {%- if card_product.available -%}
+          {%- if card_product.variants.size == 1 -%}
+            <button
+              type="button"
+              class="cpt-atc-btn"
+              data-variant-id="{{ card_product.first_available_variant.id }}"
+              onclick="event.preventDefault(); event.stopPropagation(); cptAddToCart(this);">
+              añadir al carrito
+            </button>
+          {%- else -%}
+            <a
+              href="{{ card_product.url }}"
+              class="cpt-atc-btn"
+              onclick="event.stopPropagation();">
+              ver opciones
+            </a>
+          {%- endif -%}
+        {%- else -%}
+          <div class="cpt-atc-btn" style="opacity:0.4;cursor:not-allowed;">agotado</div>
         {%- endif -%}
       </div>
     </div>
   </a>
 {%- else -%}
-  {%- comment -%} Placeholder cuando no hay producto {%- endcomment -%}
   <div class="bg-white/5 rounded-2xl overflow-hidden">
     <div class="aspect-square bg-gray-800 flex items-center justify-center">
       {{ placeholder_image | default: 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover opacity-20' }}
     </div>
     <div class="p-4">
-      <h3 class="text-white text-lg font-medium mb-2">
-        {{ 'onboarding.product_title' | t }}
-      </h3>
-      <div class="text-white text-xl font-semibold">
-        $99.00
-      </div>
+      <h3 class="text-white text-lg font-medium mb-2">{{ 'onboarding.product_title' | t }}</h3>
+      <div class="text-white text-xl font-semibold">$99.00</div>
     </div>
   </div>
 {%- endif -%}
@@ -127,4 +115,58 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  .cpt-title {
+    color: #000;
+  }
+  .dark .cpt-title {
+    color: #feffee;
+  }
+  .cpt-price {
+    color: #000;
+  }
+  .dark .cpt-price {
+    color: #feffee;
+  }
+  .cpt-atc-btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid #feffee;
+    background: transparent;
+    color: #feffee;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .cpt-atc-btn:hover {
+    background: rgba(254, 255, 238, 0.08);
+  }
 </style>
+<script>
+  if (!window.cptAddToCart) {
+    window.cptAddToCart = function(btn) {
+      var variantId = btn.getAttribute('data-variant-id');
+      var original = btn.textContent;
+      btn.textContent = '…';
+      btn.disabled = true;
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: variantId, quantity: 1 })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function() {
+        btn.textContent = '✓ agregado';
+        if (window.roxyOpenSidecart) window.roxyOpenSidecart();
+        else document.dispatchEvent(new CustomEvent('cart:refresh'));
+        setTimeout(function() { btn.textContent = original; btn.disabled = false; }, 2000);
+      })
+      .catch(function() { btn.textContent = original; btn.disabled = false; });
+    };
+  }
+</script>

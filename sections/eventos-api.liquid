@@ -1,4 +1,4 @@
-<div class="container mx-auto px-7 md:px-0" id="eventos-root">
+<div class="container mx-auto px-7 md:px-0 md:pt-7" id="eventos-root">
 
   <!-- Header -->
   <div class="mb-6">
@@ -159,7 +159,7 @@
     border-color: #feffee;
   }
   .dark #ev-search::placeholder {
-    color: rgba(254,255,238,0.4);
+    color: rgba(254, 255, 238, 0.4);
   }
 
   /* Light mode */
@@ -232,7 +232,7 @@
   }
   #eventos-root .ev-empty {
     color: #000;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
   #eventos-root .ev-pill-active {
     background: #000;
@@ -498,7 +498,7 @@
     if (!grid) return
 
     if (!grupos.length) {
-      grid.innerHTML = '<p class="ev-empty text-2xl py-12 text-center">No hay eventos ' + (tab==='proximos'?'próximos':'anteriores') + '.</p>'
+      grid.innerHTML = '<p class="ev-empty text-xl md:text-2xl py-12 text-center">no hay eventos ' + (tab==='proximos'?'próximos':'anteriores') + '</p>'
       return
     }
 

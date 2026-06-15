@@ -6,22 +6,9 @@
     <div class="relative">
       <div class="flex gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-custom snap-x snap-mandatory scroll-container-{{ section.id }}">
         {% for product in collection.products %}
-          <a
-            href="{{ product.url }}"
-            class="flex-shrink-0 w-[150px] md:w-[200px] lg:w-[250px] snap-start no-underline rounded-xl overflow-hidden border border-[#c9c9c9] md:border-2 dark:border-[#5a5a5a] hover:border-[#feffee] dark:hover:border-[#feffee] transition-all duration-300 bg-[#feffee] dark:bg-[#1c1c1c]">
-            {% if product.featured_image != blank %}
-              <img
-                src="{{ product.featured_image | image_url: width: 500 }}"
-                alt="{{ product.title | escape }}"
-                width="500"
-                height="500"
-                class="w-full h-auto aspect-square object-cover">
-            {% endif %}
-            <div class="px-3 py-3">
-              <h3 class="text-[14px] md:text-[17px] font-semibold text-black dark:text-[#feffee] text-center">{{ product.title }}</h3>
-              <p class="text-[13px] text-gray-500 dark:text-[#9e9e9e] text-center mt-1">{{ product.price | money }}</p>
-            </div>
-          </a>
+          <div class="flex-shrink-0 w-[150px] md:w-[200px] lg:w-[250px] snap-start">
+            {%- render 'card-product-tailwind', card_product: product, lazy_load: false, section_id: section.id -%}
+          </div>
         {% endfor %}
       </div>
 

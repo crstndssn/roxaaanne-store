@@ -1,60 +1,61 @@
 {%- if section.blocks.size > 0 -%}
-<div class="container mx-auto px-8 md:px-0 py-10">
-  <h2 class="text-black dark:text-[#feffee] text-4xl md:text-5xl font-medium tracking-tight mb-6">aparece en</h2>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-    {%- for block in section.blocks -%}
-      <a
-        href="{{ block.settings.link }}"
-        {{ block.shopify_attributes }}
-        class="bg-white/5 dark:bg-white/5 backdrop-blur-md border border-black dark:border-[#feffee]/10 hover:bg-black/5 dark:hover:border-[#feffee] transition-colors duration-200 flex flex-col justify-center items-center py-12 rounded-xl">
-        {%- if block.settings.image -%}
-          <div class="w-[123px] h-[123px] md:w-[150px] md:h-[150px] rounded-full overflow-hidden mb-5">
-            <img
-              class="w-full h-full object-cover"
-              src="{{ block.settings.image | image_url: width: 300 }}"
-              alt="{{ block.settings.name | escape }}">
+  <div class="container mx-auto px-8 md:px-0 py-7">
+    <h2 class="text-black dark:text-[#feffee] text-[28px] tracking-[-0.5px] font-[400] mb-2 mt-0">aparece en</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+      {%- for block in section.blocks -%}
+        <a
+          href="{{ block.settings.link }}"
+          {{ block.shopify_attributes }}
+          class="bg-white/5 dark:bg-white/5 backdrop-blur-md border border-black dark:border-[#feffee]/10 hover:bg-black/5 dark:hover:border-[#feffee] transition-colors duration-200 flex flex-col justify-center items-center py-12 mt-1 rounded-2xl">
+          {%- if block.settings.image -%}
+            <div class="w-[123px] h-[123px] md:w-[150px] md:h-[150px] rounded-full overflow-hidden mb-5">
+              <img
+                class="w-full h-full object-cover"
+                src="{{ block.settings.image | image_url: width: 300 }}"
+                alt="{{ block.settings.name | escape }}"
+                width="300"
+                height="300">
+            </div>
+          {%- endif -%}
+          <div class="text-black dark:text-[#feffee] text-[16px] md:text-[18px] tracking-[-0.3px] mt-3 font-[500] text-center">
+            {{ block.settings.name }}
           </div>
-        {%- endif -%}
-        <div class="text-black dark:text-[#feffee] text-[16px] md:text-[18px] tracking-[-0.3px] mt-3 font-[500] text-center px-4">
-          {{ block.settings.name }}
-        </div>
-      </a>
-    {%- endfor -%}
+          <div class="inline-flex items-center mt-3 py-2 px-5 rounded-full border border-black dark:border-[#feffee] text-black dark:text-[#feffee] text-base whitespace-nowrap">ver perfil</div>
+        </a>
+      {%- endfor -%}
+    </div>
   </div>
-</div>
 {%- endif -%}
 
 {% schema %}
-{
-  "name": "Aparece en",
-  "blocks": [
-    {
-      "type": "creator",
-      "name": "Creadorx",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Foto"
-        },
-        {
-          "type": "text",
-          "id": "name",
-          "label": "Nombre",
-          "default": "Nombre"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Link al perfil"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Aparece en"
-    }
-  ]
-}
+  {
+    "name": "Aparece en",
+    "blocks": [
+      {
+        "type": "creator",
+        "name": "Creadorx",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Foto"
+          }, {
+            "type": "text",
+            "id": "name",
+            "label": "Nombre",
+            "default": "Nombre"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link al perfil"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aparece en"
+      }
+    ]
+  }
 {% endschema %}
