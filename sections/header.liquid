@@ -43,10 +43,11 @@
     margin-right: -13px;
   }
 
-  /* Icon consistency */
-  .header__icon .icon {
-    width: 20px;
-    height: 20px;
+  /* Icon consistency — override Dawn's 4.4rem cart icon rule */
+  .header__icon .icon,
+  .header__icon--cart .icon {
+    width: 20px !important;
+    height: 20px !important;
   }
   details:not([open]) .header__icon-close {
     display: none !important;
@@ -77,6 +78,15 @@
   .cart-count-bubble {
     background-color: #8b5cf6 !important;
     color: #fff !important;
+  }
+
+  /* Remove scroll shadow */
+  .header-wrapper,
+  sticky-header,
+  .section-header {
+    box-shadow: none !important;
+    border-bottom: none !important;
+    filter: none !important;
   }
 
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
