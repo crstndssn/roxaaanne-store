@@ -1,15 +1,15 @@
 {
   "sections": {
     "product-main": {
-      "type": "product-main",
+      "type": "merch-product-main",
       "settings": {}
     },
     "product-story": {
-      "type": "product-story",
+      "type": "merch-product-story",
       "settings": {}
     },
     "product-specs": {
-      "type": "product-specs",
+      "type": "merch-product-specs",
       "settings": {}
     },
     "related-products": {

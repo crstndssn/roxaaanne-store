@@ -45,25 +45,102 @@
 
   /* Icon consistency — override Dawn's 4.4rem cart icon rule */
   .header__icon .icon,
-  .header__icon--cart .icon {
-    width: 20px !important;
-    height: 20px !important;
+  .header__icon--cart .icon,
+  #themeToggle svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  @media screen and (min-width: 990px) {
+    .header__icon .icon,
+    .header__icon--cart .icon,
+    #themeToggle svg {
+      width: 28px !important;
+      height: 28px !important;
+    }
+  }
+
+  /* Thumbnail seleccionado — borde visible en light mode */
+  .thumbnail button[aria-current],
+  .thumbnail [aria-current] {
+    outline: 2px solid #000 !important;
+    outline-offset: 2px !important;
+  }
+  .dark .thumbnail button[aria-current],
+  .dark .thumbnail [aria-current] {
+    outline-color: #feffee !important;
+  }
+
+  /* Color de iconos: negro en modo claro, #feffee en modo oscuro */
+  .header__icon,
+  #cart-icon-bubble,
+  #themeToggle {
+    color: #000 !important;
+  }
+  .dark .header__icon,
+  .dark #cart-icon-bubble,
+  .dark #themeToggle {
+    color: #feffee !important;
   }
   details:not([open]) .header__icon-close {
     display: none !important;
   }
 
+  /* Cart icon — contenedor compacto para que el badge se posicione bien */
+  #cart-icon-bubble {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+  }
+  #cart-icon-bubble .svg-wrapper {
+    width: 24px !important;
+    height: 24px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+  }
+  #cart-icon-bubble .icon {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+  }
+
+  @media screen and (min-width: 990px) {
+    #cart-icon-bubble {
+      width: 44px !important;
+      height: 44px !important;
+    }
+    #cart-icon-bubble .svg-wrapper {
+      width: 28px !important;
+      height: 28px !important;
+    }
+    #cart-icon-bubble .icon {
+      width: 28px !important;
+      height: 28px !important;
+      min-width: 28px !important;
+      min-height: 28px !important;
+    }
+  }
+
   /* Equal spacing between all header icons */
   @media screen and (max-width: 989px) {
-    .header__icon--cart {
-      margin-right: 0 !important;
-    }
     header-drawer {
       margin-left: 0 !important;
       margin-right: 0 !important;
     }
     .flex.justify-end {
-      gap: 0;
+      gap: 6px;
     }
     .flex.justify-end .header__icon,
     .flex.justify-end header-drawer {
@@ -74,10 +151,34 @@
     }
   }
 
-  /* Purple cart badge */
+  /* Purple cart badge — bottom-right of icon */
   .cart-count-bubble {
-    background-color: #8b5cf6 !important;
-    color: #fff !important;
+    position: absolute !important;
+    background-color: #8b5cf6;
+    color: #feffee !important;
+    height: 16px !important;
+    width: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    font-size: 10px !important;
+    line-height: 16px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    top: auto !important;
+    bottom: 4px !important;
+    left: auto !important;
+    right: 2px !important;
+    overflow: hidden !important;
+  }
+
+  /* Cart button — transparent background */
+  .header__icon--cart {
+    background: transparent !important;
+    border: none !important;
   }
 
   /* Remove scroll shadow */
@@ -373,12 +474,13 @@
       {% comment %} INICIO CARRITO {% endcomment %}
       <a
         href="{{ routes.cart_url }}"
-        class="header__icon header__icon--cart link focus-inset text-black dark:text-[#feffee]"
-        id="cart-icon-bubble">
+        class="header__icon header__icon--cart ml-3 mr-4 md:mx-0 text-black dark:text-[#feffee] link focus-inset"
+        id="cart-icon-bubble"
+        style="background:transparent;border:none;">
         {% if cart == empty %}
-          <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
+          <span class="svg-wrapper" style="width:24px;height:24px;">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
         {% else %}
-          <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+          <span class="svg-wrapper" style="width:24px;height:24px;">{{ 'icon-cart.svg' | inline_asset_content }}</span>
         {% endif %}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
@@ -787,8 +889,7 @@
     ],
     "blocks": [
       {
-        "type": "@app",
-        "name": "App block"
+        "type": "@app"
       }
     ]
   }

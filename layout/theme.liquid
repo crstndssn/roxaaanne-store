@@ -386,6 +386,31 @@ body {
 }
     {% endstyle %}
 
+    <style>
+      .thumbnail-btn.thumb-active {
+        box-shadow: 0 0 0 2px #000 !important;
+      }
+      .dark .thumbnail-btn.thumb-active {
+        box-shadow: 0 0 0 2px #feffee !important;
+      }
+
+      .swatch-input__input:checked + .swatch-input__label,
+      .swatch-input__input:active + .swatch-input__label {
+        outline: 2px solid #8b5cf6 !important;
+        outline-offset: 2px !important;
+      }
+
+      .color-swatch.swatch-active {
+        box-shadow: 0 0 0 2px #8b5cf6 !important;
+      }
+
+      .size-option {
+        border-radius: 9999px !important;
+      }
+      .size-option.size-active {
+        box-shadow: 0 0 0 2px #8b5cf6 !important;
+      }
+    </style>
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <link
@@ -521,6 +546,69 @@ body {
         countrySelectorSearchCount: `{{ 'localization.country_results_count' | t: count: '[count]' }}`,
       };
     </script>
+
+    {%- if request.page_type == 'product' -%}
+    <script>
+    /* Fix variante para secciones custom (product.ropa, product.lacra, etc.)
+       Actualiza input[name="id"] y estado del botón al cambiar opciones */
+    window.roxyProductVariants = {{ product.variants | json }};
+    document.addEventListener('DOMContentLoaded', function() {
+      var variants = window.roxyProductVariants;
+      if (!variants || !variants.length) return;
+
+      function getSelectedOptions() {
+        var opts = {};
+        document.querySelectorAll('input[name^="option-"]:checked').forEach(function(inp) {
+          var idx = parseInt(inp.name.replace('option-', ''), 10) - 1;
+          opts[idx] = inp.value;
+        });
+        document.querySelectorAll('select[name^="option-"]').forEach(function(sel) {
+          var idx = parseInt(sel.name.replace('option-', ''), 10) - 1;
+          opts[idx] = sel.value;
+        });
+        return opts;
+      }
+
+      function findVariant(opts) {
+        return variants.find(function(v) {
+          return v.options.every(function(val, i) { return opts[i] === val; });
+        });
+      }
+
+      function updateForm(variant) {
+        /* Actualiza el variant id oculto en todos los forms de la página */
+        document.querySelectorAll('input[name="id"]').forEach(function(inp) {
+          inp.value = variant ? variant.id : '';
+        });
+
+        /* Actualiza el botón de compra */
+        var btn = document.querySelector('button[name="add"], button[type="submit"][name="add"], .product-form__submit, [data-add-to-cart]');
+        if (!btn) return;
+        if (!variant || !variant.available) {
+          btn.disabled = true;
+          btn.textContent = 'Agotado';
+        } else {
+          btn.disabled = false;
+          btn.textContent = btn.dataset.addLabel || 'Añadir al carrito';
+        }
+      }
+
+      /* Guarda el texto original del botón */
+      var addBtn = document.querySelector('button[name="add"], button[type="submit"][name="add"], .product-form__submit, [data-add-to-cart]');
+      if (addBtn) addBtn.dataset.addLabel = addBtn.textContent.trim();
+
+      document.addEventListener('change', function(e) {
+        if (!e.target.name || !/^option-\d+$/.test(e.target.name)) return;
+        var opts    = getSelectedOptions();
+        var variant = findVariant(opts);
+        updateForm(variant);
+      });
+
+      /* Aplica estado inicial */
+      updateForm(findVariant(getSelectedOptions()));
+    });
+    </script>
+    {%- endif -%}
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
