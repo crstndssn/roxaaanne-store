@@ -471,6 +471,35 @@
   </div>
 </cart-items>
 
+<style>
+  /* Light mode: quantity background matches #feffee page */
+  .quantity:before,
+  quantity-popover .quantity {
+    background: #feffee;
+  }
+
+  /* Dark mode: override Dawn CSS variables */
+  .dark cart-items {
+    --color-foreground: 254, 255, 238;
+    --color-background: 0, 0, 0;
+    --color-secondary-button: 0, 0, 0;
+    --color-secondary-button-text: 254, 255, 238;
+    --color-shadow: 254, 255, 238;
+  }
+  .dark .quantity:before,
+  .dark quantity-popover .quantity {
+    background: #000;
+  }
+  .dark .quantity:after {
+    box-shadow: 0 0 0 var(--inputs-border-width) rgba(254, 255, 238, 0.35);
+  }
+  .dark .cart-items__info {
+    background: #111;
+    color: #feffee;
+    border-color: rgba(254, 255, 238, 0.2);
+  }
+</style>
+
 {% schema %}
   {
     "name": "t:sections.main-cart-items.name",
