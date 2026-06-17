@@ -35,6 +35,7 @@
         },
         "section_U3Utce": {
           "type": "section",
+          "disabled": true,
           "settings": {
             "title": "roxy fest",
             "link": "shopify://pages/roxyfest"
@@ -50,11 +51,33 @@
       "settings": {
         "image": "shopify://shop_images/angel-ceron-perez.jpg",
         "name": "Ángel Cerón",
-        "description": "<p><br/>Artista visual y sonoro, productor audiovisual y docente universitario. Su experiencia abarca la fotografía, el cine y la creación digital, con un enfoque en la relación entre arte, memoria y territorio. Ha trabajado en procesos de formación académica y en la gestión cultural a través de espacios de encuentro y reflexiones artísticas.<br/><br/><br/><br/><br/></p>"
+        "description": "<p><br/>Artista visual y sonoro, productor audiovisual y docente universitario. Su experiencia abarca la fotografía, el cine y la creación digital, con un enfoque en la relación entre arte, memoria y territorio. Ha trabajado en procesos de formación académica y en la gestión cultural a través de espacios de encuentro y reflexiones artísticas.<br/><br/><br/><br/><br/></p>",
+        "collection": "",
+        "products_title": "merca",
+        "products_count": 8
       }
+    },
+    "aparece_en_YgDx3j": {
+      "type": "aparece-en",
+      "blocks": {
+        "creator_68b6Ww": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
+        }
+      },
+      "block_order": [
+        "creator_68b6Ww"
+      ],
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
-    "creator"
+    "creator",
+    "aparece_en_YgDx3j"
   ]
 }
