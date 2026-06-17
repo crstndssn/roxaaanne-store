@@ -35,6 +35,14 @@
     "aparece_en_pfxgmA": {
       "type": "aparece-en",
       "blocks": {
+        "creator_XqKzYx": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
+        },
         "creator_crk3mW": {
           "type": "creator",
           "settings": {
@@ -45,6 +53,7 @@
         }
       },
       "block_order": [
+        "creator_XqKzYx",
         "creator_crk3mW"
       ],
       "name": "Aparece en",
