@@ -32,32 +32,52 @@
             "title": "artículos",
             "link": "shopify://blogs/articulos-de-felipe-quien"
           }
-        },
-        "section_9zyA49": {
-          "type": "section",
-          "settings": {
-            "title": "roxy fest",
-            "link": "shopify://pages/roxyfest"
-          }
         }
       },
       "block_order": [
         "section_PVtYQc",
         "section_LV7BQB",
-        "section_HTMaXh",
-        "section_9zyA49"
+        "section_HTMaXh"
       ],
       "settings": {
         "image": "shopify://shop_images/felipe-quien.jpg",
         "name": "Felipe quien",
         "description": "<p>músico, director, orquesta, profesor</p>",
-        "collection": "",
+        "collection": "merca",
         "products_title": "merca",
         "products_count": 8
       }
+    },
+    "aparece_en_kTFTed": {
+      "type": "aparece-en",
+      "blocks": {
+        "creator_J9Faej": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
+        },
+        "creator_pUgUKh": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
+          }
+        }
+      },
+      "block_order": [
+        "creator_J9Faej",
+        "creator_pUgUKh"
+      ],
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
-    "creator"
+    "creator",
+    "aparece_en_kTFTed"
   ]
 }
