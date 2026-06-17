@@ -59,8 +59,8 @@
         "image": "shopify://shop_images/cristian_dussan.jpg",
         "name": "cristian dussán",
         "description": "<p>artesano de portales a otros universos, hace películas caseras para todo tipo de criaturas extrañas. lo puedes encontrar al lado de la última cruz del sur, acá puedes nadar en su mente</p>",
-        "collection": "",
-        "products_title": "Productos",
+        "collection": "merca",
+        "products_title": "merca",
         "products_count": 8
       }
     },
