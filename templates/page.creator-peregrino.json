@@ -27,28 +27,51 @@
             "title": "video",
             "link": ""
           }
-        },
-        "section_TyVK98": {
-          "type": "section",
-          "settings": {
-            "title": "roxy fest",
-            "link": "shopify://pages/roxyfest"
-          }
         }
       },
       "block_order": [
         "section_DcmQBa",
-        "section_n7yhN8",
-        "section_TyVK98"
+        "section_n7yhN8"
       ],
       "settings": {
         "image": "shopify://shop_images/peregrino.jpg",
         "name": "Peregrino",
-        "description": "<p>Peregrino es la combinación de la lírica sagaz, la crítica social y los sonidos folclóricos rapeando a 6/8 rompe la norma y propone nuevos estilos en el Rap nacional.</p>"
+        "description": "<p>Peregrino es la combinación de la lírica sagaz, la crítica social y los sonidos folclóricos rapeando a 6/8 rompe la norma y propone nuevos estilos en el Rap nacional.</p>",
+        "collection": "merca",
+        "products_title": "merca",
+        "products_count": 8
       }
+    },
+    "aparece_en_TBpmGt": {
+      "type": "aparece-en",
+      "blocks": {
+        "creator_9Q4gPr": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
+        },
+        "creator_biiTRa": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
+          }
+        }
+      },
+      "block_order": [
+        "creator_9Q4gPr",
+        "creator_biiTRa"
+      ],
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
-    "creator"
+    "creator",
+    "aparece_en_TBpmGt"
   ]
 }
