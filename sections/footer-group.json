@@ -11,33 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "aparece_en_iG9QqF": {
-      "type": "aparece-en",
-      "blocks": {
-        "creator_TGAzAB": {
-          "type": "creator",
-          "settings": {
-            "image": "shopify://shop_images/roxy-fest-perfil.png",
-            "name": "roxy fest",
-            "link": "shopify://pages/roxyfest"
-          }
-        },
-        "creator_NUXWyC": {
-          "type": "creator",
-          "settings": {
-            "image": "shopify://shop_images/lacra_eventos.png",
-            "name": "LACRA",
-            "link": "shopify://pages/lacra"
-          }
-        }
-      },
-      "block_order": [
-        "creator_TGAzAB",
-        "creator_NUXWyC"
-      ],
-      "name": "Aparece en",
-      "settings": {}
-    },
     "aqui-y-ahora": {
       "type": "aqui-y-ahora",
       "blocks": {
@@ -88,7 +61,6 @@
     }
   },
   "order": [
-    "aparece_en_iG9QqF",
     "aqui-y-ahora",
     "footer"
   ]
