@@ -42,10 +42,19 @@
             "name": "roxy fest",
             "link": "shopify://pages/roxyfest"
           }
+        },
+        "creator_FXmwFa": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
+          }
         }
       },
       "block_order": [
-        "creator_P3PjjY"
+        "creator_P3PjjY",
+        "creator_FXmwFa"
       ],
       "name": "Aparece en",
       "settings": {}
