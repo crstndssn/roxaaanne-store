@@ -18,27 +18,28 @@
             "title": "música",
             "link": "shopify://blogs/musica-de-camila-noches"
           }
-        },
-        "section_9bxfNC": {
-          "type": "section",
-          "settings": {
-            "title": "roxy fest",
-            "link": "shopify://pages/roxyfest"
-          }
         }
       },
       "block_order": [
-        "section_wy4R8c",
-        "section_9bxfNC"
+        "section_wy4R8c"
       ],
       "settings": {
         "image": "shopify://shop_images/cami.png",
         "name": "Camila Noches",
-        "description": "<p>Artista integral y gestora cultural. Tuvo su primera gira nacional y gira internacional en 2024, actualmente trabaja en el lanzamiento de 2 sencillos colaborativos y en la implementación de nuevas propuestas como el performance y la poesía.</p>"
+        "description": "<p>Artista integral y gestora cultural. Tuvo su primera gira nacional y gira internacional en 2024, actualmente trabaja en el lanzamiento de 2 sencillos colaborativos y en la implementación de nuevas propuestas como el performance y la poesía.</p>",
+        "collection": "",
+        "products_title": "merca",
+        "products_count": 8
       }
+    },
+    "aparece_en_NmqDh8": {
+      "type": "aparece-en",
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
-    "creator"
+    "creator",
+    "aparece_en_NmqDh8"
   ]
 }
