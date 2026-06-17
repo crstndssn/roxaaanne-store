@@ -18,27 +18,50 @@
             "title": "películas",
             "link": "shopify://pages/peliculas"
           }
-        },
-        "section_kdydMr": {
-          "type": "section",
-          "settings": {
-            "title": "roxy fest",
-            "link": "shopify://pages/roxyfest"
-          }
         }
       },
       "block_order": [
-        "section_RtRyCc",
-        "section_kdydMr"
+        "section_RtRyCc"
       ],
       "settings": {
         "image": "shopify://shop_images/Screenshot_2025-11-27_at_6.40.31_PM.png",
         "name": "Vaneza Rojas",
-        "description": "<p>Vaneza Rojas descripcion</p>"
+        "description": "<p>Vaneza Rojas descripcion</p>",
+        "collection": "merca",
+        "products_title": "merca",
+        "products_count": 8
       }
+    },
+    "aparece_en_8cjxmX": {
+      "type": "aparece-en",
+      "blocks": {
+        "creator_QPw3pY": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
+        },
+        "creator_JJFzHw": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
+          }
+        }
+      },
+      "block_order": [
+        "creator_QPw3pY",
+        "creator_JJFzHw"
+      ],
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
-    "creator"
+    "creator",
+    "aparece_en_8cjxmX"
   ]
 }
