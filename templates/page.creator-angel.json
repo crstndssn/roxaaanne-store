@@ -43,7 +43,7 @@
         "image": "shopify://shop_images/angel-ceron-perez.jpg",
         "name": "Ángel Cerón",
         "description": "<p><br/>Artista visual y sonoro, productor audiovisual y docente universitario. Su experiencia abarca la fotografía, el cine y la creación digital, con un enfoque en la relación entre arte, memoria y territorio. Ha trabajado en procesos de formación académica y en la gestión cultural a través de espacios de encuentro y reflexiones artísticas.<br/><br/><br/><br/><br/></p>",
-        "collection": "",
+        "collection": "merca",
         "products_title": "merca",
         "products_count": 8
       }
@@ -51,14 +51,6 @@
     "aparece_en_YgDx3j": {
       "type": "aparece-en",
       "blocks": {
-        "creator_axPV76": {
-          "type": "creator",
-          "settings": {
-            "image": "shopify://shop_images/lacra_eventos.png",
-            "name": "LACRA",
-            "link": "shopify://pages/lacra"
-          }
-        },
         "creator_68b6Ww": {
           "type": "creator",
           "settings": {
@@ -66,11 +58,19 @@
             "name": "roxy fest",
             "link": "shopify://pages/roxyfest"
           }
+        },
+        "creator_axPV76": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
+          }
         }
       },
       "block_order": [
-        "creator_axPV76",
-        "creator_68b6Ww"
+        "creator_68b6Ww",
+        "creator_axPV76"
       ],
       "name": "Aparece en",
       "settings": {}
