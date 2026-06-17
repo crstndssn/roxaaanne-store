@@ -51,6 +51,14 @@
     "aparece_en_YgDx3j": {
       "type": "aparece-en",
       "blocks": {
+        "creator_axPV76": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
+          }
+        },
         "creator_68b6Ww": {
           "type": "creator",
           "settings": {
@@ -61,6 +69,7 @@
         }
       },
       "block_order": [
+        "creator_axPV76",
         "creator_68b6Ww"
       ],
       "name": "Aparece en",
