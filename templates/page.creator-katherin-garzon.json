@@ -18,27 +18,50 @@
             "title": "películas",
             "link": "shopify://pages/peliculas"
           }
-        },
-        "section_AYRqm4": {
-          "type": "section",
-          "settings": {
-            "title": "roxy fest",
-            "link": "shopify://pages/roxyfest"
-          }
         }
       },
       "block_order": [
-        "section_nyQfAH",
-        "section_AYRqm4"
+        "section_nyQfAH"
       ],
       "settings": {
         "image": "shopify://shop_images/WhatsApp_Image_2026-01-13_at_2.29.51_PM.jpg",
         "name": "Katherin Garzón",
-        "description": ""
+        "description": "",
+        "collection": "merca",
+        "products_title": "merca",
+        "products_count": 8
       }
+    },
+    "aparece_en_Hw7cTm": {
+      "type": "aparece-en",
+      "blocks": {
+        "creator_rXVwF3": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
+        },
+        "creator_cHd7yg": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
+          }
+        }
+      },
+      "block_order": [
+        "creator_rXVwF3",
+        "creator_cHd7yg"
+      ],
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
-    "creator"
+    "creator",
+    "aparece_en_Hw7cTm"
   ]
 }
