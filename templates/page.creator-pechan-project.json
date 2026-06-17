@@ -11,26 +11,45 @@
   "sections": {
     "creator": {
       "type": "creator",
+      "settings": {
+        "image": "shopify://shop_images/pechan-project.jpg",
+        "name": "Pechan Project",
+        "description": "<p>Pechan Project descripcion</p>",
+        "collection": "merca",
+        "products_title": "merca",
+        "products_count": 8
+      }
+    },
+    "aparece_en_TAQ94N": {
+      "type": "aparece-en",
       "blocks": {
-        "section_AXhddx": {
-          "type": "section",
+        "creator_GEyW8V": {
+          "type": "creator",
           "settings": {
-            "title": "roxy fest",
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
             "link": "shopify://pages/roxyfest"
+          }
+        },
+        "creator_8chBj7": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
           }
         }
       },
       "block_order": [
-        "section_AXhddx"
+        "creator_GEyW8V",
+        "creator_8chBj7"
       ],
-      "settings": {
-        "image": "shopify://shop_images/pechan-project.jpg",
-        "name": "Pechan Project",
-        "description": "<p>Pechan Project descripcion</p>"
-      }
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
-    "creator"
+    "creator",
+    "aparece_en_TAQ94N"
   ]
 }
