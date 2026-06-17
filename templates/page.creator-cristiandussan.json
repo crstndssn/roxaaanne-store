@@ -19,13 +19,6 @@
             "link": "shopify://blogs/diario-de-cristian-dussan"
           }
         },
-        "section_gGFQyk": {
-          "type": "section",
-          "settings": {
-            "title": "música",
-            "link": "shopify://blogs/musica-de-cristian-dussan"
-          }
-        },
         "section_VURfcD": {
           "type": "section",
           "settings": {
@@ -50,7 +43,6 @@
       },
       "block_order": [
         "section_ECJAxU",
-        "section_gGFQyk",
         "section_VURfcD",
         "section_UQULrC",
         "section_exETHi"
