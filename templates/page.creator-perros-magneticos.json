@@ -11,26 +11,45 @@
   "sections": {
     "creator": {
       "type": "creator",
+      "settings": {
+        "image": "shopify://shop_images/perros-mmagneticos.webp",
+        "name": "perros magneticos",
+        "description": "<p>perros <a href=\"/pages/perros-magneticos\" title=\"Perros Magnéticos\">magneticos</a></p>",
+        "collection": "merca",
+        "products_title": "merca",
+        "products_count": 8
+      }
+    },
+    "aparece_en_EjrjMp": {
+      "type": "aparece-en",
       "blocks": {
-        "section_WUQ4fG": {
-          "type": "section",
+        "creator_eQRVXT": {
+          "type": "creator",
           "settings": {
-            "title": "roxy fest",
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
             "link": "shopify://pages/roxyfest"
+          }
+        },
+        "creator_xcUMde": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
           }
         }
       },
       "block_order": [
-        "section_WUQ4fG"
+        "creator_eQRVXT",
+        "creator_xcUMde"
       ],
-      "settings": {
-        "image": "shopify://shop_images/perros-mmagneticos.webp",
-        "name": "perros magneticos",
-        "description": "<p>perros <a href=\"/pages/perros-magneticos\" title=\"Perros Magnéticos\">magneticos</a></p>"
-      }
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
-    "creator"
+    "creator",
+    "aparece_en_EjrjMp"
   ]
 }
