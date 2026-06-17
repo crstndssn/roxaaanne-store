@@ -46,13 +46,6 @@
             "title": "películas",
             "link": "shopify://pages/peliculas"
           }
-        },
-        "section_wy4R8c": {
-          "type": "section",
-          "settings": {
-            "title": "roxy fest",
-            "link": "shopify://pages/roxyfest"
-          }
         }
       },
       "block_order": [
@@ -60,8 +53,7 @@
         "section_gGFQyk",
         "section_VURfcD",
         "section_UQULrC",
-        "section_exETHi",
-        "section_wy4R8c"
+        "section_exETHi"
       ],
       "settings": {
         "image": "shopify://shop_images/cristian_dussan.jpg",
@@ -71,9 +63,37 @@
         "products_title": "Productos",
         "products_count": 8
       }
+    },
+    "aparece_en_edWV3W": {
+      "type": "aparece-en",
+      "blocks": {
+        "creator_EbyCJP": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
+        },
+        "creator_XjRVBT": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
+          }
+        }
+      },
+      "block_order": [
+        "creator_EbyCJP",
+        "creator_XjRVBT"
+      ],
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
-    "creator"
+    "creator",
+    "aparece_en_edWV3W"
   ]
 }
