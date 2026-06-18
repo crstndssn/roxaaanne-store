@@ -135,14 +135,11 @@
         "eventos_title": "Producción de Eventos"
       }
     },
-    "tienda": {
-      "type": "lacra-tienda",
+    "merca_section_3BkVqL": {
+      "type": "merca-section",
+      "name": "Cinergia Merca",
       "settings": {
-        "title": "",
-        "hero_image_alt": "Imagen destacada",
-        "hero_link_url": "",
-        "tienda_title": "Tienda",
-        "product_collection": "lacra"
+        "collection": "merca"
       }
     },
     "equipo": {
@@ -205,7 +202,6 @@
         "team_member_NaEU68": {
           "type": "team_member",
           "settings": {
-            "image": "shopify://shop_images/IMG_4805.jpg",
             "name": "cristian dussán",
             "url": "shopify://pages/cristian-dussan",
             "button_label": "ver perfil"
@@ -224,6 +220,33 @@
       "settings": {
         "title": "Nuestro Equipo"
       }
+    },
+    "aparece_en_H6A3HX": {
+      "type": "aparece-en",
+      "blocks": {
+        "creator_d8VwRm": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
+        },
+        "creator_bq8xKh": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
+          }
+        }
+      },
+      "block_order": [
+        "creator_d8VwRm",
+        "creator_bq8xKh"
+      ],
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
@@ -232,7 +255,8 @@
     "fotografias",
     "sonoro",
     "eventos",
-    "tienda",
-    "equipo"
+    "merca_section_3BkVqL",
+    "equipo",
+    "aparece_en_H6A3HX"
   ]
 }
