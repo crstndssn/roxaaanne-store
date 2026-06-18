@@ -395,8 +395,35 @@
     "cinergia_merca": {
       "type": "merca-section",
       "settings": {
-        "collection": "lacra"
+        "collection": "merca"
       }
+    },
+    "aparece_en_krr6MN": {
+      "type": "aparece-en",
+      "blocks": {
+        "creator_Np7EBK": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/roxy-fest-perfil.png",
+            "name": "roxy fest",
+            "link": "shopify://pages/roxyfest"
+          }
+        },
+        "creator_7UYBUA": {
+          "type": "creator",
+          "settings": {
+            "image": "shopify://shop_images/lacra_eventos.png",
+            "name": "LACRA",
+            "link": "shopify://pages/lacra"
+          }
+        }
+      },
+      "block_order": [
+        "creator_Np7EBK",
+        "creator_7UYBUA"
+      ],
+      "name": "Aparece en",
+      "settings": {}
     }
   },
   "order": [
@@ -406,6 +433,7 @@
     "cinergia_lonuestro",
     "cinergia_lecturas",
     "cinergia_referencias",
-    "cinergia_merca"
+    "cinergia_merca",
+    "aparece_en_krr6MN"
   ]
 }
