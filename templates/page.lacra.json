@@ -202,6 +202,7 @@
         "team_member_NaEU68": {
           "type": "team_member",
           "settings": {
+            "image": "shopify://shop_images/cristian_dussan.jpg",
             "name": "cristian dussán",
             "url": "shopify://pages/cristian-dussan",
             "button_label": "ver perfil"
