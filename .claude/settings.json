@@ -14,7 +14,10 @@
       "Bash(sed -i '' 's/font-size: 1rem;/font-size: 1.125rem;/g' /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/main-collection-product-grid.liquid /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/creators.liquid /Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections/eventos-api.liquid)",
       "Bash(python3)",
       "Bash(find /Users/crstndssn/Documents/roxaaanne/roxaaanne-space -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.jsx\" | xargs grep -l \"search\\\\|cart\\\\|menu\\\\|hamburger\\\\|icon\" 2>/dev/null | grep -i \"header\\\\|nav\\\\|layout\" | head -10)",
-      "Read(//Users/crstndssn/Documents/roxaaanne/roxaaanne-space/**)"
+      "Read(//Users/crstndssn/Documents/roxaaanne/roxaaanne-space/**)",
+      "Bash(curl -s 'https://www.roxaaanne.space/api/eventos')",
+      "Bash(python3 -m json.tool)",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); [print\\(e['titulo'], '->', e.get\\('url_redirect','NO CAMPO'\\)\\) for e in data]\")"
     ],
     "additionalDirectories": [
       "/Users/crstndssn/Documents/roxaaanne/roxaaanne-store/sections"

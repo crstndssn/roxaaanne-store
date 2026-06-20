@@ -360,7 +360,7 @@
   function renderCard(ev) {
     var f = parseFecha(ev.fecha)
     var loc = [ev.ciudad, ev.lugar].filter(Boolean).join(' · ')
-    var url = ev.url_boleteria || ''
+    var url = ev.url_redirect || ''
     var tag = ev.serie
       ? '<div class="ev-tag flex items-center gap-2 mt-3 px-3 py-1.5 rounded-full w-fit">' +
           (ev.imagen_url ? '<img src="' + esc(ev.imagen_url) + '" class="w-5 h-5 rounded-full object-cover shrink-0" alt="">' : '') +
