@@ -251,6 +251,14 @@
     "cinergia_referencias": {
       "type": "cinergia-referencias",
       "blocks": {
+        "movie_NCV8NE": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/The_Act_of_Killing.jpg",
+            "title": "The Act Of Killing",
+            "article_url": "shopify://blogs/peliculas-de-cinergia/cinergia-the-act-of-killing"
+          }
+        },
         "movie_XHqiQE": {
           "type": "movie",
           "settings": {
@@ -406,6 +414,7 @@
         }
       },
       "block_order": [
+        "movie_NCV8NE",
         "movie_XHqiQE",
         "movie_9rEKaM",
         "movie_yMMENK",
