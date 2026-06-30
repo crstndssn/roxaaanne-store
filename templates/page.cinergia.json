@@ -325,10 +325,10 @@
         },
         "movie_ffDxzL": {
           "type": "movie",
-          "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/el-jockey-poster.jpg",
             "title": "El jockey",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/el-jockey"
           }
         },
         "movie_R3FPDe": {
@@ -365,7 +365,6 @@
         },
         "movie_nMWRDf": {
           "type": "movie",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/veneno_para_las_hadas.jpg",
             "title": "Veneno Para Las Hadas",
