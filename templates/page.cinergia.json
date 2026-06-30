@@ -341,10 +341,10 @@
         },
         "movie_U8mzQ4": {
           "type": "movie",
-          "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/la-espina-de-la-noche-poster.jpg",
             "title": "The Spine Of The Night",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/the-spine-of-night"
           }
         },
         "movie_LqFFj9": {
