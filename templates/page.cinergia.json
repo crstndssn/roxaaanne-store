@@ -397,7 +397,6 @@
         },
         "movie_qrNyRz": {
           "type": "movie",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/el-viyi-poster.jpg",
             "title": "VIY",
