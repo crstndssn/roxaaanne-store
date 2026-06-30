@@ -349,10 +349,10 @@
         },
         "movie_LqFFj9": {
           "type": "movie",
-          "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/canino-poster.jpg",
             "title": "Canino",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/canino"
           }
         },
         "movie_qrNyRz": {
