@@ -243,6 +243,14 @@
     "cinergia_referencias": {
       "type": "cinergia-referencias",
       "blocks": {
+        "movie_yMMENK": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/cinergia-la-unica-opcion.png",
+            "title": "La Única Opción",
+            "article_url": "shopify://blogs/peliculas-de-cinergia/la-unica-opcion"
+          }
+        },
         "movie_el_conde": {
           "type": "movie",
           "settings": {
@@ -374,6 +382,7 @@
         }
       },
       "block_order": [
+        "movie_yMMENK",
         "movie_el_conde",
         "movie_pXtPUw",
         "movie_6eYW7Y",
