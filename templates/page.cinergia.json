@@ -82,6 +82,7 @@
         },
         "movie_new1": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/cinergia-la-unica-opcion.png",
             "title": "La Única Opción",
@@ -243,6 +244,14 @@
     "cinergia_referencias": {
       "type": "cinergia-referencias",
       "blocks": {
+        "movie_9rEKaM": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/cinergia-perro-que-ladra-no-muerde.jpg",
+            "title": "Perro que Ladra No Muerde",
+            "article_url": "shopify://blogs/peliculas-de-cinergia/perro-que-ladra-no-muerde"
+          }
+        },
         "movie_yMMENK": {
           "type": "movie",
           "settings": {
@@ -382,6 +391,7 @@
         }
       },
       "block_order": [
+        "movie_9rEKaM",
         "movie_yMMENK",
         "movie_el_conde",
         "movie_pXtPUw",
