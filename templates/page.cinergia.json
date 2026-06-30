@@ -309,7 +309,6 @@
         },
         "movie_iKiewn": {
           "type": "movie",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/perfect_days.jpg",
             "title": "Perfect Day",
@@ -318,10 +317,10 @@
         },
         "movie_83aanU": {
           "type": "movie",
-          "disabled": true,
           "settings": {
-            "title": "Malcom x",
-            "article_url": ""
+            "image": "shopify://shop_images/malcolm_x.jpg",
+            "title": "Malcolm x",
+            "article_url": "shopify://blogs/peliculas-de-cinergia/malcolm-x"
           }
         },
         "movie_ffDxzL": {
