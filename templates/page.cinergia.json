@@ -93,6 +93,7 @@
         },
         "movie_new2": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/cinergia-perro-que-ladra-no-muerde.jpg",
             "title": "Perro que Ladra No Muerde",
@@ -103,6 +104,7 @@
         },
         "movie_rAQTDd": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/la-espina-de-la-noche-poster.jpg",
             "title": "La Espina de la Noche",
@@ -113,6 +115,7 @@
         },
         "movie_TePyWm": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/canino-poster.jpg",
             "title": "Canino",
@@ -133,6 +136,7 @@
         },
         "movie_ErHrfD": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/el-viyi-poster.jpg",
             "title": "El Viyi",
@@ -143,6 +147,7 @@
         },
         "movie_AndQkE": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/tony-manero-poster.jpg",
             "title": "Tony Manero",
@@ -153,6 +158,7 @@
         },
         "movie_qNJ86C": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/el-jockey-poster.jpg",
             "title": "El Jokey",
@@ -163,6 +169,7 @@
         },
         "movie_zi7DEt": {
           "type": "movie",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/tardes-de-soledad.jpg",
             "title": "Tardes de Soledad",
@@ -244,6 +251,14 @@
     "cinergia_referencias": {
       "type": "cinergia-referencias",
       "blocks": {
+        "movie_XHqiQE": {
+          "type": "movie",
+          "settings": {
+            "image": "shopify://shop_images/tardes-de-soledad.jpg",
+            "title": "Tardes De Soledad",
+            "article_url": "shopify://blogs/peliculas-de-cinergia/tardes-de-soledad"
+          }
+        },
         "movie_9rEKaM": {
           "type": "movie",
           "settings": {
@@ -391,6 +406,7 @@
         }
       },
       "block_order": [
+        "movie_XHqiQE",
         "movie_9rEKaM",
         "movie_yMMENK",
         "movie_el_conde",
