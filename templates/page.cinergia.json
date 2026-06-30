@@ -367,8 +367,9 @@
           "type": "movie",
           "disabled": true,
           "settings": {
-            "title": "Veneno para las hadas",
-            "article_url": ""
+            "image": "shopify://shop_images/veneno_para_las_hadas.jpg",
+            "title": "Veneno Para Las Hadas",
+            "article_url": "shopify://blogs/peliculas-de-cinergia/cinergia-veneno-para-las-hadas"
           }
         }
       },
