@@ -311,8 +311,9 @@
           "type": "movie",
           "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/perfect_days.jpg",
             "title": "Perfect Day",
-            "article_url": ""
+            "article_url": "shopify://blogs/peliculas-de-cinergia/perfect-days"
           }
         },
         "movie_83aanU": {
