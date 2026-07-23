@@ -15,28 +15,28 @@
         "section_ECJAxU": {
           "type": "section",
           "settings": {
-            "title": "Diario",
+            "title": "diario",
             "link": "shopify://blogs/diario-de-cristian-dussan"
           }
         },
         "section_VURfcD": {
           "type": "section",
           "settings": {
-            "title": "Fotografías",
+            "title": "fotografías",
             "link": "shopify://blogs/fotografias-de-cristian-dussan"
           }
         },
         "section_UQULrC": {
           "type": "section",
           "settings": {
-            "title": "Software",
+            "title": "software",
             "link": "shopify://blogs/software-de-cristian-dussan"
           }
         },
         "section_exETHi": {
           "type": "section",
           "settings": {
-            "title": "Películas",
+            "title": "películas",
             "link": "shopify://pages/peliculas"
           }
         }
