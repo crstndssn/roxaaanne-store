@@ -20,28 +20,28 @@
         "section_iWzxce": {
           "type": "section",
           "settings": {
-            "title": "Audiovisual",
+            "title": "audiovisual",
             "link": "shopify://pages/lacra-audiovisual"
           }
         },
         "section_3jgbkM": {
           "type": "section",
           "settings": {
-            "title": "Fotografías",
+            "title": "fotografías",
             "link": "shopify://pages/lacra-fotografias"
           }
         },
         "section_iJUaVk": {
           "type": "section",
           "settings": {
-            "title": "Sonoro",
+            "title": "sonoro",
             "link": "shopify://pages/lacra-sonoro"
           }
         },
         "section_NwRKex": {
           "type": "section",
           "settings": {
-            "title": "Producción de Eventos",
+            "title": "producción de eventos",
             "link": "shopify://pages/lacra-eventos"
           }
         }
