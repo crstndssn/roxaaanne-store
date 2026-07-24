@@ -1,0 +1,80 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "lacra_audiovisual_JfxGLj": {
+      "type": "lacra-audiovisual",
+      "blocks": {
+        "article_card_AMHQpt": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-felipe-quien/bejuco-carta-del-director"
+          }
+        },
+        "article_card_6HhK3m": {
+          "type": "article_card",
+          "settings": {
+            "article": "peliculas/bejuco"
+          }
+        },
+        "article_card_4XmUG8": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-lacra/maito-iii"
+          }
+        },
+        "article_card_M7HLxf": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-lacra/maito-ii"
+          }
+        },
+        "article_card_iKF4Pm": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-angel-ceron/cocinando-la-resistencia-1"
+          }
+        },
+        "article_card_FTM9tB": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-angel-ceron/unidos-por-la-conservacion"
+          }
+        }
+      },
+      "block_order": [
+        "article_card_AMHQpt",
+        "article_card_6HhK3m",
+        "article_card_4XmUG8",
+        "article_card_M7HLxf",
+        "article_card_iKF4Pm",
+        "article_card_FTM9tB"
+      ],
+      "name": "Lacra Audiovisual",
+      "settings": {
+        "title": "",
+        "hero_image_alt": "Imagen destacada",
+        "hero_link_url": "",
+        "audiovisual_title": "Audiovisual"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "lacra_audiovisual_JfxGLj"
+  ]
+}
