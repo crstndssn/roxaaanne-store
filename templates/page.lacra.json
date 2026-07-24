@@ -11,7 +11,56 @@
   "sections": {
     "header": {
       "type": "lacra-header",
+      "disabled": true,
       "settings": {}
+    },
+    "creator_qGqqFU": {
+      "type": "creator",
+      "blocks": {
+        "section_iWzxce": {
+          "type": "section",
+          "settings": {
+            "title": "Audiovisual",
+            "link": "shopify://pages/lacra-audiovisual"
+          }
+        },
+        "section_3jgbkM": {
+          "type": "section",
+          "settings": {
+            "title": "Fotografías",
+            "link": "shopify://pages/lacra-fotografias"
+          }
+        },
+        "section_iJUaVk": {
+          "type": "section",
+          "settings": {
+            "title": "Sonoro",
+            "link": "shopify://pages/lacra-sonoro"
+          }
+        },
+        "section_NwRKex": {
+          "type": "section",
+          "settings": {
+            "title": "Producción de Eventos",
+            "link": "shopify://pages/lacra-eventos"
+          }
+        }
+      },
+      "block_order": [
+        "section_iWzxce",
+        "section_3jgbkM",
+        "section_iJUaVk",
+        "section_NwRKex"
+      ],
+      "name": "Sección de Bloques",
+      "settings": {
+        "image": "shopify://shop_images/lacra_eventos.png",
+        "name": "LACRA",
+        "description": "<p>Es un colectivo de artistas residentes en Neiva, que desde diversas disciplinas del arte llevan varios años produciendo obras y espacios culturales para la circulación de música y cine en la ciudad. Dentro de su actividad creativa se pueden encontrar textos, canciones, instalaciones sonoras, pinturas, fotografías y piezas audiovisuales de diversos formatos.</p>",
+        "collection": "",
+        "products_title": "merca",
+        "products_count": 8
+      }
     },
     "merca_section_3BkVqL": {
       "type": "merca-section",
@@ -126,53 +175,6 @@
       ],
       "name": "Aparece en",
       "settings": {}
-    },
-    "creator_qGqqFU": {
-      "type": "creator",
-      "blocks": {
-        "section_iWzxce": {
-          "type": "section",
-          "settings": {
-            "title": "Audiovisual",
-            "link": "shopify://pages/lacra-audiovisual"
-          }
-        },
-        "section_3jgbkM": {
-          "type": "section",
-          "settings": {
-            "title": "Fotografías",
-            "link": "shopify://pages/lacra-fotografias"
-          }
-        },
-        "section_iJUaVk": {
-          "type": "section",
-          "settings": {
-            "title": "Sonoro",
-            "link": "shopify://pages/lacra-sonoro"
-          }
-        },
-        "section_NwRKex": {
-          "type": "section",
-          "settings": {
-            "title": "Producción de Eventos",
-            "link": "shopify://pages/lacra-eventos"
-          }
-        }
-      },
-      "block_order": [
-        "section_iWzxce",
-        "section_3jgbkM",
-        "section_iJUaVk",
-        "section_NwRKex"
-      ],
-      "name": "Sección de Bloques",
-      "settings": {
-        "name": "",
-        "description": "",
-        "collection": "",
-        "products_title": "merca",
-        "products_count": 8
-      }
     }
   },
   "order": [
