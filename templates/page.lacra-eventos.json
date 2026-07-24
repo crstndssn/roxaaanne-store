@@ -16,65 +16,30 @@
         "padding_bottom": 28
       }
     },
-    "lacra_audiovisual_JfxGLj": {
-      "type": "lacra-audiovisual",
+    "lacra_eventos_jXYKBm": {
+      "type": "lacra-eventos",
       "blocks": {
-        "article_card_AMHQpt": {
+        "article_card_bjY7Be": {
           "type": "article_card",
           "settings": {
-            "article": "articulos-de-felipe-quien/bejuco-carta-del-director"
-          }
-        },
-        "article_card_6HhK3m": {
-          "type": "article_card",
-          "settings": {
-            "article": "peliculas/bejuco"
-          }
-        },
-        "article_card_4XmUG8": {
-          "type": "article_card",
-          "settings": {
-            "article": "articulos-de-lacra/maito-iii"
-          }
-        },
-        "article_card_M7HLxf": {
-          "type": "article_card",
-          "settings": {
-            "article": "articulos-de-lacra/maito-ii"
-          }
-        },
-        "article_card_iKF4Pm": {
-          "type": "article_card",
-          "settings": {
-            "article": "articulos-de-angel-ceron/cocinando-la-resistencia-1"
-          }
-        },
-        "article_card_FTM9tB": {
-          "type": "article_card",
-          "settings": {
-            "article": "articulos-de-angel-ceron/unidos-por-la-conservacion"
+            "article": "aqui-y-ahora/sesiones-roxy-fest-2025"
           }
         }
       },
       "block_order": [
-        "article_card_AMHQpt",
-        "article_card_6HhK3m",
-        "article_card_4XmUG8",
-        "article_card_M7HLxf",
-        "article_card_iKF4Pm",
-        "article_card_FTM9tB"
+        "article_card_bjY7Be"
       ],
-      "name": "Lacra Audiovisual",
+      "name": "Lacra eventos",
       "settings": {
         "title": "",
         "hero_image_alt": "Imagen destacada",
         "hero_link_url": "",
-        "audiovisual_title": "Audiovisual"
+        "eventos_title": "Producción de Eventos"
       }
     }
   },
   "order": [
     "main",
-    "lacra_audiovisual_JfxGLj"
+    "lacra_eventos_jXYKBm"
   ]
 }
