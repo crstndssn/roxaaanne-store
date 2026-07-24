@@ -13,129 +13,6 @@
       "type": "lacra-header",
       "settings": {}
     },
-    "audiovisual": {
-      "type": "lacra-audiovisual",
-      "blocks": {
-        "article_card_jgfeUt": {
-          "type": "article_card",
-          "settings": {
-            "article": "articulos-de-felipe-quien/bejuco-carta-del-director"
-          }
-        },
-        "article_card_yBQnPd": {
-          "type": "article_card",
-          "settings": {
-            "article": "peliculas/bejuco"
-          }
-        },
-        "article_card_gWFipb": {
-          "type": "article_card",
-          "settings": {
-            "article": "articulos-de-lacra/maito-iii"
-          }
-        },
-        "article_card_AHD8bP": {
-          "type": "article_card",
-          "settings": {
-            "article": "articulos-de-lacra/maito-ii"
-          }
-        },
-        "article_card_AMhfV4": {
-          "type": "article_card",
-          "settings": {
-            "article": "articulos-de-angel-ceron/cocinando-la-resistencia-1"
-          }
-        },
-        "article_card_TgRqXm": {
-          "type": "article_card",
-          "settings": {
-            "article": "articulos-de-angel-ceron/unidos-por-la-conservacion"
-          }
-        }
-      },
-      "block_order": [
-        "article_card_jgfeUt",
-        "article_card_yBQnPd",
-        "article_card_gWFipb",
-        "article_card_AHD8bP",
-        "article_card_AMhfV4",
-        "article_card_TgRqXm"
-      ],
-      "settings": {
-        "title": "",
-        "hero_image_alt": "Imagen destacada",
-        "hero_link_url": "",
-        "audiovisual_title": "Audiovisual"
-      }
-    },
-    "fotografias": {
-      "type": "lacra-fotografias",
-      "blocks": {
-        "article_card_UrdtBR": {
-          "type": "article_card",
-          "settings": {
-            "article": "fotografias-de-angel-ceron/pie-de-monte-amazonico"
-          }
-        },
-        "article_card_GRGQiX": {
-          "type": "article_card",
-          "settings": {
-            "article": "fotografias-de-cristian-dussan/quinto-festival-de-las-artes-rurales-de-maito"
-          }
-        }
-      },
-      "block_order": [
-        "article_card_UrdtBR",
-        "article_card_GRGQiX"
-      ],
-      "settings": {
-        "title": "",
-        "hero_image_alt": "Imagen destacada",
-        "hero_link_url": "",
-        "fotografias_title": "Fotografías"
-      }
-    },
-    "sonoro": {
-      "type": "lacra-sonoro",
-      "blocks": {
-        "article_card_FibitC": {
-          "type": "article_card",
-          "settings": {
-            "article": "articulos-de-angel-ceron/neiva-sonora-laboratorio-sonoro"
-          }
-        }
-      },
-      "block_order": [
-        "article_card_FibitC"
-      ],
-      "name": "Lacra Sonoro",
-      "settings": {
-        "title": "",
-        "hero_image_alt": "Imagen destacada",
-        "hero_link_url": "",
-        "sonoro_title": "Sonoro"
-      }
-    },
-    "eventos": {
-      "type": "lacra-eventos",
-      "blocks": {
-        "article_card_8X6gBD": {
-          "type": "article_card",
-          "settings": {
-            "article": "aqui-y-ahora/sesiones-roxy-fest-2025"
-          }
-        }
-      },
-      "block_order": [
-        "article_card_8X6gBD"
-      ],
-      "settings": {
-        "title": "",
-        "hero_image_alt": "Imagen destacada",
-        "hero_link_url": "",
-        "eventos_title": "Producción de Eventos"
-      }
-    },
     "merca_section_3BkVqL": {
       "type": "merca-section",
       "name": "Cinergia Merca",
@@ -249,14 +126,58 @@
       ],
       "name": "Aparece en",
       "settings": {}
+    },
+    "creator_qGqqFU": {
+      "type": "creator",
+      "blocks": {
+        "section_iWzxce": {
+          "type": "section",
+          "settings": {
+            "title": "Audiovisual",
+            "link": "shopify://pages/lacra-audiovisual"
+          }
+        },
+        "section_3jgbkM": {
+          "type": "section",
+          "settings": {
+            "title": "Fotografías",
+            "link": "shopify://pages/lacra-fotografias"
+          }
+        },
+        "section_iJUaVk": {
+          "type": "section",
+          "settings": {
+            "title": "Sonoro",
+            "link": "shopify://pages/lacra-sonoro"
+          }
+        },
+        "section_NwRKex": {
+          "type": "section",
+          "settings": {
+            "title": "Producción de Eventos",
+            "link": "shopify://pages/lacra-eventos"
+          }
+        }
+      },
+      "block_order": [
+        "section_iWzxce",
+        "section_3jgbkM",
+        "section_iJUaVk",
+        "section_NwRKex"
+      ],
+      "name": "Sección de Bloques",
+      "settings": {
+        "name": "",
+        "description": "",
+        "collection": "",
+        "products_title": "merca",
+        "products_count": 8
+      }
     }
   },
   "order": [
     "header",
-    "audiovisual",
-    "fotografias",
-    "sonoro",
-    "eventos",
+    "creator_qGqqFU",
     "merca_section_3BkVqL",
     "equipo",
     "aparece_en_H6A3HX"

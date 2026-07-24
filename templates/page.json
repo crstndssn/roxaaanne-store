@@ -11,13 +11,71 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "lacra_audiovisual_nj8iAN": {
+      "type": "lacra-audiovisual",
+      "blocks": {
+        "article_card_AthHFW": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-felipe-quien/bejuco-carta-del-director"
+          }
+        },
+        "article_card_xCpWzx": {
+          "type": "article_card",
+          "settings": {
+            "article": "peliculas/bejuco"
+          }
+        },
+        "article_card_ERVQR6": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-lacra/maito-iii"
+          }
+        },
+        "article_card_yBKznP": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-lacra/maito-ii"
+          }
+        },
+        "article_card_iedN7x": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-angel-ceron/cocinando-la-resistencia-1"
+          }
+        },
+        "article_card_U3GKFU": {
+          "type": "article_card",
+          "settings": {
+            "article": "articulos-de-angel-ceron/unidos-por-la-conservacion"
+          }
+        }
+      },
+      "block_order": [
+        "article_card_AthHFW",
+        "article_card_xCpWzx",
+        "article_card_ERVQR6",
+        "article_card_yBKznP",
+        "article_card_iedN7x",
+        "article_card_U3GKFU"
+      ],
+      "name": "Lacra Audiovisual",
+      "settings": {
+        "title": "",
+        "hero_image_alt": "Imagen destacada",
+        "hero_link_url": "",
+        "audiovisual_title": "Audiovisual"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "lacra_audiovisual_nj8iAN"
   ]
 }
