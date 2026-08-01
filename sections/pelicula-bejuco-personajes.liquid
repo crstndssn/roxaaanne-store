@@ -127,17 +127,33 @@
     var swiperEl = root && root.classList && root.classList.contains('swiper') ? root : (root && root.querySelector ? root.querySelector('.mySwiperPersonajes') : null);
     if (!swiperEl) return;
 
-    new Swiper(swiperEl, {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      freeMode: true,
-      grabCursor: true,
-      pagination: {
-        el: swiperEl.querySelector('.swiper-pagination'),
-        dynamicBullets: true,
-        clickable: true
-      }
-    });
+    function initSwiper() {
+      new Swiper(swiperEl, {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        freeMode: true,
+        grabCursor: true,
+        pagination: {
+          el: swiperEl.querySelector('.swiper-pagination'),
+          dynamicBullets: true,
+          clickable: true
+        },
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            initSwiper();
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      observer.observe(swiperEl);
+    } else {
+      initSwiper();
+    }
   })();
 </script>
 
