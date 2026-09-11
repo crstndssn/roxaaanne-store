@@ -85,6 +85,7 @@
       "blocks": {
         "creator_Ct7WPf": {
           "type": "creator",
+          "disabled": true,
           "settings": {
             "creator__image": "shopify://shop_images/InShot_20250512_191014071.jpg",
             "creator__name": "Alejandro Ospina",
